@@ -1,53 +1,136 @@
 {
-  "afs": "fast ",
-  "bko": "book ",
-  "cfinou": "function ",
-  "co": "code ",
-  "dgo": "dog ",
-  "dorw": "world ",
-  "enost": "steno ",
-  "hint": "think ",
-  "aelps": "please ",
-  "abekory": "keyboard ",
-  "cmopt": "computer ",
-  "ahtw": "what ",
-  "ehnw": "when ",
-  "how": "how ",
-  "abotu": "about ",
-  "hw": "why ",
-  "aklw": "walk ",
-  "in": "in ",
-  "bgi": "big ",
-  "epst": "step ",
-  "fi": "if ",
-  "oy": "you ",
-  "cmo": "come ",
-  "fo": "for ",
-  "acn": "can ",
-  "do": "do ",
-  "1i": "i ",
-  "eh": "he ",
-  "ehs": "she ",
-  "it": "it ",
-  "ew": "we ",
-  "eht": "they ",
-  "1how": "who ",
-  "ehrw": "where ",
-  "chiw": "which ",
-  "ehow": "whose ",
-  "2how": "whom ",
-  "efil": "file ",
-  "1efil": "life ",
-  "no": "on ",
-  "1no": "no ",
-  "aehv": "have ",
-  "dinow": "window ",
-  "acimn": "machine ",
-  "hitw": "with ",
-  "cnot": "connect ",
-  "aht": "that ",
-  "acl": "local ",
-  "any": "any ",
-  "aks": "ask ",
-  "antw": "want "
+  "roots": {
+    "do": {
+      "lemma": "do",
+      "chord": "do",
+      "emoji": "✅",
+      "note": "Base action verb",
+      "derivatives": {
+        "nu": { "morpheme": "un-", "chord": "nu", "word": "undo", "emoji": "↩️", "note": "Reverse action" },
+        "er": { "morpheme": "re-", "chord": "er", "word": "redo", "emoji": "🔁", "note": "Repeat action" },
+        "otu": { "morpheme": "out-", "chord": "otu", "word": "outdo", "emoji": "🏆", "note": "Surpass / excel" }
+      }
+    },
+    "cnot": {
+      "lemma": "connect",
+      "chord": "cnot",
+      "emoji": "🔗",
+      "note": "Join together",
+      "derivatives": {
+        "er": { "morpheme": "re-", "chord": "er", "word": "reconnect", "emoji": "🔄", "note": "Establish link again" },
+        "dsi": { "morpheme": "dis-", "chord": "dsi", "word": "disconnect", "emoji": "🔌", "note": "Sever link" }
+      }
+    },
+    "cmo": {
+      "lemma": "come",
+      "chord": "cmo",
+      "emoji": "🫴",
+      "note": "Move toward",
+      "derivatives": {
+        "in": { "morpheme": "in-", "chord": "in", "word": "income", "emoji": "💵", "note": "Earnings / money" },
+        "otu": { "morpheme": "out-", "chord": "otu", "word": "outcome", "emoji": "🎯", "note": "Result / consequence" },
+        "eorv": { "morpheme": "over-", "chord": "eorv", "word": "overcome", "emoji": "🧗", "note": "Prevail / conquer" },
+        "bce": { "morpheme": "become", "chord": "bce", "word": "become", "emoji": "🌱", "note": "Transform into" }
+      }
+    },
+    "aklw": {
+      "lemma": "walk",
+      "chord": "aklw",
+      "emoji": "🚶",
+      "note": "Move on foot",
+      "derivatives": {
+        "otu": { "morpheme": "out-", "chord": "otu", "word": "outwalk", "emoji": "🏃‍♂️", "note": "Walk faster than" }
+      }
+    },
+    "efil": {
+      "lemma": "file",
+      "chord": "efil",
+      "emoji": "📁",
+      "note": "Document / archive",
+      "derivatives": {
+        "er": { "morpheme": "re-", "chord": "er", "word": "refile", "emoji": "📂", "note": "File again" }
+      }
+    },
+    "1efil": {
+      "lemma": "life",
+      "chord": "1efil",
+      "emoji": "💖",
+      "note": "Existence / vitality",
+      "derivatives": {
+        "emti": { "morpheme": "time", "chord": "emti", "word": "lifetime", "emoji": "⏳", "note": "Duration of life" },
+        "1aelns": { "morpheme": "line", "chord": "1aelns", "word": "lifeline", "emoji": "🛟", "note": "Vital support link" }
+      }
+    },
+    "dorw": {
+      "lemma": "word",
+      "chord": "dorw",
+      "emoji": "💬",
+      "note": "Unit of language",
+      "derivatives": {
+        "aps": { "morpheme": "pass", "chord": "aps", "word": "password", "emoji": "🔑", "note": "Secret security word" }
+      }
+    },
+    "co": {
+      "lemma": "code",
+      "chord": "co",
+      "emoji": "💻",
+      "note": "Program instruction",
+      "derivatives": {
+        "er": { "morpheme": "re-", "chord": "er", "word": "recode", "emoji": "🛠️", "note": "Rewrite program code" }
+      }
+    }
+  },
+  "flat_chords": {
+    "afs": "fast ",
+    "bko": "book ",
+    "cfinou": "function ",
+    "co": "code ",
+    "dgo": "dog ",
+    "dorw": "world ",
+    "enost": "steno ",
+    "hint": "think ",
+    "aelps": "please ",
+    "abekory": "keyboard ",
+    "cmopt": "computer ",
+    "ahtw": "what ",
+    "ehnw": "when ",
+    "how": "how ",
+    "abotu": "about ",
+    "hw": "why ",
+    "aklw": "walk ",
+    "in": "in ",
+    "bgi": "big ",
+    "epst": "step ",
+    "fi": "if ",
+    "oy": "you ",
+    "cmo": "come ",
+    "fo": "for ",
+    "acn": "can ",
+    "do": "do ",
+    "1i": "i ",
+    "eh": "he ",
+    "ehs": "she ",
+    "it": "it ",
+    "ew": "we ",
+    "eht": "they ",
+    "1how": "who ",
+    "ehrw": "where ",
+    "chiw": "which ",
+    "ehow": "whose ",
+    "2how": "whom ",
+    "efil": "file ",
+    "1efil": "life ",
+    "no": "on ",
+    "1no": "no ",
+    "aehv": "have ",
+    "dinow": "window ",
+    "acimn": "machine ",
+    "hitw": "with ",
+    "cnot": "connect ",
+    "aht": "that ",
+    "acl": "local ",
+    "any": "any ",
+    "aks": "ask ",
+    "antw": "want "
+  }
 }

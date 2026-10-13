@@ -76,21 +76,24 @@ def word_to_chord(word: str):
 
 
 def load_dictionary():
-    """Loads chords from data.json and normalizes keys to sorted order."""
+    """Loads chords from data.json (supports both morpheme tree format and flat dictionary)."""
     if not os.path.exists(DATA_FILE):
-        return {}
+        return {}, {}
     with open(DATA_FILE, "r", encoding="utf-8") as f:
         try:
             raw = json.load(f)
-            # Ensure all dictionary keys are stored sorted in memory
-            normalized = {}
-            for k, v in raw.items():
-                sk = "".join(sorted(k))
-                normalized[sk] = v
-            return normalized
+            flat_source = raw.get("flat_chords", raw) if isinstance(raw, dict) else {}
+            tree_source = raw.get("roots", {}) if isinstance(raw, dict) else {}
+
+            normalized_flat = {}
+            for k, v in flat_source.items():
+                if isinstance(v, str):
+                    normalized_flat["".join(sorted(k))] = v
+
+            return normalized_flat, tree_source
         except json.JSONDecodeError:
             print("Error: data.json contains invalid JSON.")
-            return {}
+            return {}, {}
 
 
 def save_word(word: str, custom_chord: str = None):
@@ -98,7 +101,7 @@ def save_word(word: str, custom_chord: str = None):
     Generates a chord for a word, resolves any collisions with numbers,
     and saves to data.json.
     """
-    data = load_dictionary()
+    flat_data, tree_data = load_dictionary()
 
     if custom_chord:
         sorted_chord = "".join(sorted(custom_chord.lower()))
@@ -113,22 +116,24 @@ def save_word(word: str, custom_chord: str = None):
         return
 
     # Check for collisions with existing words; resolve by adding number 1, 2, 3...
-    existing_word = data.get(sorted_chord)
+    existing_word = flat_data.get(sorted_chord)
     if existing_word and existing_word.strip() != word.strip():
         base_chord = sorted_chord
         for n in range(1, 10):
             candidate = "".join(sorted(base_chord + str(n)))
-            if candidate not in data or data[candidate].strip() == word.strip():
+            if candidate not in flat_data or flat_data[candidate].strip() == word.strip():
                 print(f"[Collision Resolved] '{base_chord}' is taken by '{existing_word.strip()}'. Using '{candidate}' for '{word}'.")
                 sorted_chord = candidate
                 break
 
     # Trailing space enables continuous word-by-word chording
     word_output = word.strip() + " "
-    data[sorted_chord] = word_output
+    flat_data[sorted_chord] = word_output
 
+    # Read existing file to preserve roots structure if present
+    full_payload = {"roots": tree_data, "flat_chords": flat_data}
     with open(DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
+        json.dump(full_payload, f, indent=2, ensure_ascii=False)
 
     print("\n--- Word Added Successfully ---")
     print(f"Word:        '{word.strip()}'")
@@ -149,10 +154,10 @@ def run_steno():
         print("Please run: pip install keyboard")
         return
 
-    dictionary = load_dictionary()
+    dictionary, roots_tree = load_dictionary()
     print("==================================================", flush=True)
-    print("   Steno Keyboard Engine Started", flush=True)
-    print(f"   Loaded {len(dictionary)} chords from data.json", flush=True)
+    print("   Steno Keyboard Engine Started (Morpheme Tree Enabled)", flush=True)
+    print(f"   Loaded {len(dictionary)} base chords + {len(roots_tree)} root trees from data.json", flush=True)
     print("   Hold SPACE for normal typing bypass.", flush=True)
     print("   Press Ctrl + C in this terminal to exit.", flush=True)
     print("==================================================", flush=True)
@@ -161,6 +166,11 @@ def run_steno():
     history = set()
     is_writing = False  # Guard flag: prevents simulated keystrokes from self-triggering
     last_action_time = time.time()
+    
+    # 2-Step Morpheme State Machine:
+    # active_root holds the root object when a root was just typed, e.g. 'connect'
+    active_root = None
+    root_timestamp = 0.0
 
     def send_expansion(keys_to_delete, text_to_type):
         """Types out chord in a separate thread so Windows hook never blocks."""
@@ -174,7 +184,7 @@ def run_steno():
             is_writing = False
 
     def on_key(event):
-        nonlocal pressed_keys, history, is_writing, last_action_time
+        nonlocal pressed_keys, history, is_writing, last_action_time, active_root, root_timestamp
 
         try:
             # 1. Ignore simulated typing output created by this script
@@ -187,10 +197,11 @@ def run_steno():
 
             key = event.name.lower()
 
-            # 3. Bypass mode: If Space is pressed, reset state so single letters type normally
+            # 3. Bypass mode: If Space is pressed, commit/reset morpheme state so keys type normally
             if keyboard.is_pressed("space"):
                 pressed_keys.clear()
                 history.clear()
+                active_root = None
                 return
 
             if len(key) > 1:
@@ -201,6 +212,10 @@ def run_steno():
             if pressed_keys and (now - last_action_time > 1.2):
                 pressed_keys.clear()
                 history.clear()
+
+            # Timeout active root after 4.0s of inactivity
+            if active_root and (now - root_timestamp > 4.0):
+                active_root = None
 
             last_action_time = now
 
@@ -217,17 +232,43 @@ def run_steno():
                 # 7. Chord Release: When all keys are released, expand the chord
                 if not pressed_keys and history:
                     combo = "".join(sorted(history))
-                    mapped = dictionary.get(combo)
-
-                    if mapped:
-                        print(f" [Chord Detected] '{combo}' -> '{mapped.strip()}'", flush=True)
-                        keys_to_erase = list(history)
-                        # Offload backspacing & writing to a worker thread so hook returns in <0.1ms
+                    keys_to_erase = list(history)
+                    
+                    # STEP 2 CHECK: Is there an active root waiting for a morpheme?
+                    if active_root and "derivatives" in active_root and combo in active_root["derivatives"]:
+                        deriv = active_root["derivatives"][combo]
+                        target_word = deriv["word"] + " "
+                        prev_root_len = len(active_root["lemma"]) + 1  # includes trailing space
+                        print(f" [Morpheme Attached] Root '{active_root['lemma']}' + '{deriv['morpheme']}' -> '{deriv['word']}'", flush=True)
+                        
+                        # Erase the previous root word and type the derived word
+                        total_backspaces = keys_to_erase + ["bs"] * prev_root_len
                         threading.Thread(
                             target=send_expansion,
-                            args=(keys_to_erase, mapped),
+                            args=(total_backspaces, target_word),
                             daemon=True
                         ).start()
+                        active_root = None
+                    else:
+                        # STEP 1: Standard Chord / Check if this chord is a Root
+                        mapped = dictionary.get(combo)
+                        if mapped:
+                            print(f" [Chord Detected] '{combo}' -> '{mapped.strip()}'", flush=True)
+                            threading.Thread(
+                                target=send_expansion,
+                                args=(keys_to_erase, mapped),
+                                daemon=True
+                            ).start()
+
+                            # If this chord matches a Root in our Morpheme Tree, arm Step 2!
+                            if combo in roots_tree:
+                                active_root = roots_tree[combo]
+                                root_timestamp = time.time()
+                                print(f"   --> [Root Armed] Waiting for derivational morphemes: {', '.join([d['morpheme'] for d in active_root['derivatives'].values()])}...", flush=True)
+                            else:
+                                active_root = None
+                        else:
+                            active_root = None
 
                     history.clear()
 
@@ -254,10 +295,14 @@ if __name__ == "__main__":
             print(f"Fingers:   {len(fingers)}/10")
             print(f"Skipped:   {skipped if skipped else 'None'}")
         elif cmd in ("--list", "-l"):
-            data = load_dictionary()
-            print(f"Current Dictionary ({len(data)} entries):")
-            for chord, word in sorted(data.items()):
+            flat_d, tree_d = load_dictionary()
+            print(f"Current Base Chords ({len(flat_d)} entries):")
+            for chord, word in sorted(flat_d.items()):
                 print(f"  {chord:<10} -> {word}")
+            print(f"\nMorpheme Roots Tree ({len(tree_d)} roots):")
+            for chord, root_data in sorted(tree_d.items()):
+                deriv_list = [f"{d['morpheme']}->{d['word']} ({d['chord']})" for d in root_data.get('derivatives', {}).values()]
+                print(f"  {chord:<10} [{root_data['lemma'].upper()}] derivatives: {', '.join(deriv_list)}")
         else:
             print("Usage:")
             print("  python main.py                  # Run steno engine")

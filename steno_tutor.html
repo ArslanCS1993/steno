@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steno Chording Academy & Sandbox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .mono-font { font-family: 'JetBrains Mono', monospace; }
+        
+        .finger-highlight {
+            transition: all 0.15s ease-in-out;
+            filter: drop-shadow(0px 0px 10px rgba(99, 102, 241, 0.95));
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.6)); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 20px rgba(16, 185, 129, 1)); transform: scale(1.02); }
+        }
+
+        .active-chord-pulse {
+            animation: pulse-glow 1.5s infinite ease-in-out;
+        }
+
+        @keyframes flash-success {
+            0% { background-color: rgba(16, 185, 129, 0.35); border-color: #10b981; }
+            100% { background-color: transparent; }
+        }
+
+        .flash-win {
+            animation: flash-success 0.6s ease-out;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-full flex flex-col selection:bg-indigo-500 selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="bg-slate-900/95 border-b border-slate-800 px-4 md:px-8 py-3 flex flex-wrap items-center justify-between gap-4 sticky top-0 z-50 backdrop-blur">
+        <div class="flex items-center space-x-3">
+            <div class="bg-gradient-to-tr from-indigo-600 to-violet-500 p-2.5 rounded-2xl shadow-lg shadow-indigo-500/25 text-white font-bold text-xl flex items-center justify-center w-11 h-11">
+                ⚡
+            </div>
+            <div>
+                <h1 class="text-xl font-extrabold tracking-tight text-white flex items-center gap-2">
+                    Steno Keyboard Academy & Sandbox
+                </h1>
+                <p class="text-xs text-slate-400">Order-Independent 10-Finger Chording System (51 Words)</p>
+            </div>
+        </div>
+
+        <!-- Mode Toggle Buttons -->
+        <div class="flex items-center space-x-2 bg-slate-950/80 p-1.5 rounded-2xl border border-slate-800">
+            <button onclick="app.setMode('training')" id="tab-training" class="px-4 py-2 text-xs md:text-sm font-semibold rounded-xl transition-all bg-indigo-600 text-white shadow-md shadow-indigo-500/20">
+                🎯 Training Mode
+            </button>
+            <button onclick="app.setMode('sandbox')" id="tab-sandbox" class="px-4 py-2 text-xs md:text-sm font-semibold rounded-xl transition-all text-slate-400 hover:text-white">
+                🧪 Sandbox Mode
+            </button>
+            <button onclick="app.setMode('guide')" id="tab-guide" class="px-4 py-2 text-xs md:text-sm font-semibold rounded-xl transition-all text-slate-400 hover:text-white">
+                📖 Finger Scheme
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 flex flex-col justify-between gap-5">
+
+        <!-- ========================================== -->
+        <!-- VIEW 1: TRAINING MODE                      -->
+        <!-- ========================================== -->
+        <div id="view-training" class="space-y-5 flex-1 flex flex-col justify-between">
+            
+            <!-- Controls Bar: Word Select & Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                <!-- Navigation -->
+                <div class="md:col-span-7 bg-slate-900/90 border border-slate-800 p-2 rounded-2xl flex items-center gap-2 shadow-xl">
+                    <button onclick="app.prevWord()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold rounded-xl text-xs transition-all">
+                        ◀ Prev
+                    </button>
+                    <select id="training-word-select" onchange="app.selectWordIndex(parseInt(this.value))" class="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs md:text-sm font-mono font-bold text-slate-200 focus:outline-none focus:border-indigo-500">
+                        <!-- Populated by JS -->
+                    </select>
+                    <button onclick="app.nextWord()" class="px-3 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl text-xs transition-all shadow-md shadow-indigo-500/20">
+                        Next ▶
+                    </button>
+                </div>
+
+                <!-- Stats Badges -->
+                <div class="md:col-span-5 grid grid-cols-3 gap-2">
+                    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-2 text-center shadow-md">
+                        <div class="text-[10px] uppercase font-bold text-slate-400">Word</div>
+                        <div class="text-base font-bold mono-font text-indigo-400"><span id="train-stat-idx">1</span> <span class="text-[10px] font-normal text-slate-500">/ 51</span></div>
+                    </div>
+                    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-2 text-center shadow-md">
+                        <div class="text-[10px] uppercase font-bold text-slate-400">Score</div>
+                        <div class="text-base font-bold mono-font text-emerald-400" id="train-stat-score">0</div>
+                    </div>
+                    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-2 text-center shadow-md">
+                        <div class="text-[10px] uppercase font-bold text-slate-400">Streak</div>
+                        <div class="text-base font-bold mono-font text-amber-400" id="train-stat-streak">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Training Prompt Centerpiece -->
+            <div id="training-card" class="bg-gradient-to-b from-slate-900 to-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-2xl flex flex-col items-center justify-center gap-4 relative">
+                
+                <div class="flex items-center gap-4 flex-wrap justify-center">
+                    <!-- SVG Artwork Disc -->
+                    <div id="train-svg-box" class="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-slate-950 border-2 border-indigo-500/40 p-2.5 flex items-center justify-center shadow-xl shadow-indigo-500/10">
+                        <!-- Dynamic SVG -->
+                    </div>
+
+                    <!-- Target Word & Chord Info -->
+                    <div class="flex flex-col items-center md:items-start">
+                        <div class="text-xs uppercase font-extrabold tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20 mb-1">
+                            Target Word
+                        </div>
+                        <div id="train-word-title" class="text-4xl md:text-5xl font-black font-mono tracking-wider text-white">
+                            CAN
+                        </div>
+                        <div class="flex items-center gap-2 mt-1">
+                            <span class="text-xs text-slate-400">Sorted Chord:</span>
+                            <span id="train-chord-tag" class="text-sm font-mono font-extrabold text-amber-400 bg-amber-500/10 border border-amber-500/30 px-2 py-0.5 rounded-lg">
+                                acn
+                            </span>
+                            <span id="train-note-tag" class="text-xs text-slate-400 italic"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Badges with Live Physical Press Status -->
+                <div class="w-full flex flex-col items-center gap-2 mt-1">
+                    <div class="text-xs text-slate-400 font-semibold">
+                        Press all keys simultaneously, then release:
+                    </div>
+                    <div id="train-key-badges" class="flex flex-wrap justify-center gap-2.5">
+                        <!-- Badges rendered via JS -->
+                    </div>
+                </div>
+
+                <!-- Live Toast / Instructions -->
+                <div id="train-toast" class="text-xs md:text-sm font-bold text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 px-6 py-2 rounded-xl text-center">
+                    Strike the keys together on your keyboard!
+                </div>
+            </div>
+
+            <!-- Hands Visualization Section -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 shadow-2xl flex flex-col items-center">
+                <div class="w-full flex items-center justify-between mb-1 px-3 text-xs font-bold uppercase tracking-wider text-slate-400">
+                    <span>🖐️ Left Hand (<span class="text-violet-400">Thumb = B</span>)</span>
+                    <span class="text-indigo-400 font-mono">Simultaneous Finger Placement</span>
+                    <span>(<span class="text-indigo-400">Thumb = N</span>) Right Hand 🖐️</span>
+                </div>
+                <div id="train-hands-container" class="w-full max-w-3xl h-44 md:h-48 my-1">
+                    <!-- Dynamic SVG Hands -->
+                </div>
+            </div>
+
+            <!-- Interactive Virtual QWERTY Keyboard -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 shadow-2xl flex flex-col items-center gap-2.5 select-none overflow-x-auto">
+                <div class="w-full flex items-center justify-between px-3 text-[11px] font-extrabold uppercase tracking-wider text-slate-400">
+                    <span class="text-rose-400">Left Hand: Pinky(1qaz), Ring(2wsx), Middle(3edc), Index(45rfvtg), Thumb(B)</span>
+                    <span class="text-sky-400">Right Hand: Thumb(N), Index(67yhujm), Middle(8ik,), Ring(9ol.), Pinky(0p;/)</span>
+                </div>
+                <div class="flex gap-1.5 w-full justify-center" id="train-key-row-1"></div>
+                <div class="flex gap-1.5 w-full justify-center" id="train-key-row-2"></div>
+                <div class="flex gap-1.5 w-full justify-center" id="train-key-row-3"></div>
+                <div class="flex gap-1.5 w-full justify-center" id="train-key-row-4"></div>
+            </div>
+
+        </div>
+
+        <!-- ========================================== -->
+        <!-- VIEW 2: SANDBOX MODE                       -->
+        <!-- ========================================== -->
+        <div id="view-sandbox" class="space-y-5 hidden flex-1 flex flex-col justify-between">
+            
+            <!-- Sandbox Header: Display Form Selector -->
+            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-2xl flex flex-wrap items-center justify-between gap-4 shadow-xl">
+                <div class="flex items-center gap-2">
+                    <span class="text-xs uppercase font-extrabold text-slate-400 tracking-wider">Practice Display Form:</span>
+                    <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800">
+                        <button onclick="app.setSandboxForm('svg_only')" id="form-svg_only" class="px-3 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white">
+                            🖼️ Only SVG
+                        </button>
+                        <button onclick="app.setSandboxForm('words_only')" id="form-words_only" class="px-3 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white">
+                            📝 Only Words
+                        </button>
+                        <button onclick="app.setSandboxForm('combo')" id="form-combo" class="px-3 py-1.5 text-xs font-bold rounded-lg transition-all bg-indigo-600 text-white shadow">
+                            🎨 Combination (SVG + Words)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sandbox Challenge Actions -->
+                <div class="flex items-center gap-2">
+                    <button onclick="app.sandboxNextPrompt()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold rounded-xl transition-all">
+                        🔀 Random Challenge
+                    </button>
+                    <button onclick="app.toggleSandboxHint()" id="btn-sandbox-hint" class="px-3 py-1.5 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 text-xs font-bold rounded-xl transition-all">
+                        💡 Show Chord Hint
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sandbox Interactive 2-Column Workspace: Left = Typing Box, Right = Morpheme Tree -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+                
+                <!-- LEFT SECTION: Rich Interactive Typing Box & Real-Time Prompt -->
+                <div class="lg:col-span-7 bg-slate-900/90 border border-slate-800 rounded-3xl p-5 shadow-2xl flex flex-col justify-between gap-4">
+                    
+                    <!-- Sandbox Prompt Header -->
+                    <div id="sandbox-card" class="bg-gradient-to-r from-slate-950 to-slate-900 border border-slate-800 rounded-2xl p-4 shadow-xl flex items-center justify-between gap-4">
+                        <div id="sandbox-display-container" class="flex items-center gap-4">
+                            <!-- SVG Box -->
+                            <div id="sandbox-svg-box" class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-slate-950 border-2 border-indigo-500/40 p-2 flex items-center justify-center shadow-lg shadow-indigo-500/10">
+                                <!-- Dynamic Icon -->
+                            </div>
+                            <!-- Word Title -->
+                            <div id="sandbox-word-box" class="flex flex-col">
+                                <span class="text-[10px] uppercase font-extrabold tracking-widest text-indigo-400 bg-indigo-500/10 px-2.5 py-0.5 rounded-full border border-indigo-500/20 w-fit mb-1">Current Target</span>
+                                <span id="sandbox-prompt-title" class="text-2xl md:text-3xl font-black font-mono tracking-wider text-white">DOG</span>
+                                <span id="sandbox-hint-pill" class="text-[11px] font-mono text-amber-300 mt-0.5 hidden">
+                                    Keys: <span id="sandbox-hint-keys" class="text-white"></span> | Chord: <span id="sandbox-hint-chord" class="text-amber-400"></span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Quick Action -->
+                        <button onclick="app.sandboxNextPrompt()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 shrink-0 border border-slate-700/60 shadow">
+                            🔀 Next Target
+                        </button>
+                    </div>
+
+                    <!-- Live Freeform Steno Editor Controls -->
+                    <div class="space-y-2.5 flex-1 flex flex-col">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs font-extrabold uppercase tracking-wider text-slate-400">
+                                    ✍️ Type Box Output:
+                                </span>
+                                <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800">
+                                    <button onclick="app.setEditorOutputMode('words')" id="editor-mode-words" class="px-2.5 py-1 text-xs font-bold rounded-lg transition-all bg-indigo-600 text-white shadow">
+                                        📝 Word
+                                    </button>
+                                    <button onclick="app.setEditorOutputMode('svg')" id="editor-mode-svg" class="px-2.5 py-1 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white">
+                                        🖼️ SVG Only
+                                    </button>
+                                    <button onclick="app.setEditorOutputMode('combo')" id="editor-mode-combo" class="px-2.5 py-1 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white">
+                                        🎨 Combo
+                                    </button>
+                                </div>
+                            </div>
+                            <button onclick="app.clearEditor()" class="text-xs text-slate-400 hover:text-rose-400 font-semibold px-2.5 py-1 bg-slate-950 rounded-xl border border-slate-800 transition-colors">
+                                🗑️ Clear Box
+                            </button>
+                        </div>
+
+                        <!-- Rich Interactive Typing Box -->
+                        <div id="sandbox-editor" tabindex="0" class="w-full flex-1 min-h-[140px] max-h-[220px] overflow-y-auto bg-slate-950 border border-slate-800 rounded-2xl p-4 flex flex-wrap items-center gap-2 focus:outline-none focus:border-indigo-500 shadow-inner cursor-text relative">
+                            <span id="editor-placeholder" class="text-slate-600 font-mono text-xs md:text-sm select-none pointer-events-none">
+                                Chord root words and morphemes together on your keyboard to stream them here... (Press Backspace to delete last item)
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Real-time chord detected banner -->
+                    <div id="sandbox-toast" class="text-xs font-bold text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 px-4 py-2 rounded-xl text-center">
+                        Strike a root word chord on your keyboard to arm the Morpheme Tree on the right!
+                    </div>
+                </div>
+
+                <!-- RIGHT SECTION: Dynamic 2-Step Morpheme Tree for the Active Word -->
+                <div class="lg:col-span-5 bg-slate-900/90 border border-slate-800 rounded-3xl p-5 shadow-2xl flex flex-col justify-between gap-3">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="text-base">🌳</span>
+                            <div>
+                                <h3 class="text-xs md:text-sm font-extrabold uppercase tracking-wider text-white">Morpheme Word Tree</h3>
+                                <p class="text-[11px] text-slate-400">Step 1: Root Chord ➔ Step 2: Derivational Morpheme</p>
+                            </div>
+                        </div>
+                        <span id="tree-status-badge" class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700">
+                            IDLE (WAITING FOR ROOT)
+                        </span>
+                    </div>
+
+                    <!-- Interactive Tree Rendering Node Container -->
+                    <div id="sandbox-morpheme-tree-container" class="flex-1 min-h-[230px] flex flex-col justify-center items-center p-3 rounded-2xl bg-slate-950/80 border border-slate-800/60 overflow-y-auto">
+                        <!-- Dynamic Tree View generated via renderMorphemeTree() -->
+                    </div>
+
+                    <div class="text-[11px] text-slate-500 bg-slate-950 p-2.5 rounded-xl border border-slate-800/60 flex items-center gap-2">
+                        <span>💡</span>
+                        <span>Roots with morphemes: <span class="text-indigo-400 font-bold">DO, CONNECT, COME, WALK, FILE, LIFE, WORD, CODE</span>. Type any to branch!</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Hands Visualization for Sandbox -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 shadow-2xl flex flex-col items-center">
+                <div class="w-full flex items-center justify-between mb-1 px-3 text-xs font-bold uppercase tracking-wider text-slate-400">
+                    <span>🖐️ Left Hand (<span class="text-violet-400">Thumb = B</span>)</span>
+                    <span class="text-emerald-400 font-mono">Live Finger Touch Visualizer</span>
+                    <span>(<span class="text-indigo-400">Thumb = N</span>) Right Hand 🖐️</span>
+                </div>
+                <div id="sandbox-hands-container" class="w-full max-w-3xl h-44 md:h-48 my-1">
+                    <!-- Dynamic SVG Hands -->
+                </div>
+            </div>
+
+            <!-- Virtual Keyboard for Sandbox -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 shadow-2xl flex flex-col items-center gap-2.5 select-none overflow-x-auto">
+                <div class="flex gap-1.5 w-full justify-center" id="sandbox-key-row-1"></div>
+                <div class="flex gap-1.5 w-full justify-center" id="sandbox-key-row-2"></div>
+                <div class="flex gap-1.5 w-full justify-center" id="sandbox-key-row-3"></div>
+                <div class="flex gap-1.5 w-full justify-center" id="sandbox-key-row-4"></div>
+            </div>
+
+        </div>
+
+        <!-- ========================================== -->
+        <!-- VIEW 3: FINGER SCHEME GUIDE                -->
+        <!-- ========================================== -->
+        <div id="view-guide" class="space-y-6 hidden flex-1">
+            <div class="text-center space-y-2 py-2">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white">Our 10-Finger Steno Scheme</h2>
+                <p class="text-slate-400 text-sm max-w-xl mx-auto">Physical key boundaries where each finger presses at most 1 key per chord.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4" id="scheme-guide-cards">
+                <!-- Dynamically generated scheme cards -->
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Application Script -->
+    <script>
+        // Web Audio Synthesizer for chording audio feedback
+        class SoundFX {
+            constructor() { this.ctx = null; }
+            init() {
+                if (!this.ctx) {
+                    this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+            }
+            playTone(freq = 600, type = 'triangle', duration = 0.09) {
+                try {
+                    this.init();
+                    if (!this.ctx) return;
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    osc.type = type;
+                    osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+                    gain.gain.setValueAtTime(0.12, this.ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+                    osc.start();
+                    osc.stop(this.ctx.currentTime + duration);
+                } catch(e) {}
+            }
+            playSuccess() {
+                this.playTone(523.25, 'triangle', 0.08); // C5
+                setTimeout(() => this.playTone(659.25, 'triangle', 0.1), 60); // E5
+                setTimeout(() => this.playTone(783.99, 'triangle', 0.16), 120); // G5
+            }
+            playChime() {
+                this.playTone(440, 'sine', 0.05);
+            }
+        }
+        const sound = new SoundFX();
+
+        // 10-Finger Scheme strictly matching our Python system
+        const FINGER_SCHEME = [
+            // Left Hand
+            { id: 'left-pinky', name: 'Left Pinky', hand: 'left', finger: 'Pinky', keys: ['1', 'q', 'a', 'z'], color: '#f43f5e' },
+            { id: 'left-ring', name: 'Left Ring', hand: 'left', finger: 'Ring', keys: ['2', 'w', 's', 'x'], color: '#fb923c' },
+            { id: 'left-middle', name: 'Left Middle', hand: 'left', finger: 'Middle', keys: ['3', 'e', 'd', 'c'], color: '#fbbf24' },
+            { id: 'left-index', name: 'Left Index', hand: 'left', finger: 'Index', keys: ['4', '5', 'r', 'f', 'v', 't', 'g'], color: '#34d399' },
+            { id: 'left-thumb', name: 'Left Thumb', hand: 'left', finger: 'Thumb', keys: ['b'], color: '#a78bfa' },
+
+            // Right Hand
+            { id: 'right-thumb', name: 'Right Thumb', hand: 'right', finger: 'Thumb', keys: ['n'], color: '#818cf8' },
+            { id: 'right-index', name: 'Right Index', hand: 'right', finger: 'Index', keys: ['6', '7', 'y', 'u', 'h', 'j', 'm'], color: '#38bdf8' },
+            { id: 'right-middle', name: 'Right Middle', hand: 'right', finger: 'Middle', keys: ['8', 'i', 'k', ','], color: '#60a5fa' },
+            { id: 'right-ring', name: 'Right Ring', hand: 'right', finger: 'Ring', keys: ['9', 'o', 'l', '.'], color: '#c084fc' },
+            { id: 'right-pinky', name: 'Right Pinky', hand: 'right', finger: 'Pinky', keys: ['0', 'p', ';', '/', "'"], color: '#f472b6' }
+        ];
+
+        const KEYBOARD_ROWS = [
+            ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],
+            ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+            ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'"],
+            ['z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/']
+        ];
+
+        // 51 Steno Vocabulary Dictionary with Chords & Kept Keys
+        const STENO_DICTIONARY = [
+            { word: "can", chord: "acn", keys: "can", note: "Clean 3-finger match" },
+            { word: "dog", chord: "dgo", keys: "dog", note: "Clean 3-finger match" },
+            { word: "fast", chord: "afs", keys: "fas", note: "t skipped (conflict on Left Index)" },
+            { word: "book", chord: "bko", keys: "bok", note: "o duplicate skipped" },
+            { word: "file", chord: "efil", keys: "file", note: "Clean 4-finger match" },
+            { word: "life", chord: "1efil", keys: "life", note: "Anagram of file + number 1" },
+            { word: "on", chord: "no", keys: "on", note: "Clean 2-finger match" },
+            { word: "no", chord: "1no", keys: "no", note: "Anagram of on + number 1" },
+            { word: "how", chord: "how", keys: "how", note: "Clean 3-finger match" },
+            { word: "who", chord: "1how", keys: "who", note: "Anagram of how + number 1" },
+            { word: "whom", chord: "2how", keys: "who", note: "Anagram of how + number 2" },
+            { word: "i", chord: "1i", keys: "i1", note: "Single-letter rule (1 + i)" },
+            { word: "he", chord: "eh", keys: "he", note: "Clean 2-finger match" },
+            { word: "she", chord: "ehs", keys: "she", note: "Clean 3-finger match" },
+            { word: "it", chord: "it", keys: "it", note: "Clean 2-finger match" },
+            { word: "we", chord: "ew", keys: "we", note: "Clean 2-finger match" },
+            { word: "they", chord: "eht", keys: "the", note: "y skipped (conflict with h)" },
+            { word: "you", chord: "oy", keys: "yo", note: "u skipped (conflict with y)" },
+            { word: "what", chord: "ahtw", keys: "what", note: "Clean 4-finger match" },
+            { word: "when", chord: "ehnw", keys: "when", note: "Clean 4-finger match" },
+            { word: "why", chord: "hw", keys: "wh", note: "y skipped (conflict with h)" },
+            { word: "where", chord: "ehrw", keys: "wher", note: "e duplicate skipped" },
+            { word: "which", chord: "chiw", keys: "whic", note: "h duplicate skipped" },
+            { word: "whose", chord: "ehow", keys: "whoe", note: "s skipped (conflict with w)" },
+            { word: "walk", chord: "aklw", keys: "walk", note: "Clean 4-finger match" },
+            { word: "in", chord: "in", keys: "in", note: "Clean 2-finger match" },
+            { word: "big", chord: "bgi", keys: "big", note: "Clean 3-finger match (Left Thumb B)" },
+            { word: "step", chord: "epst", keys: "step", note: "Clean 4-finger match" },
+            { word: "if", chord: "fi", keys: "if", note: "Clean 2-finger match" },
+            { word: "come", chord: "cmo", keys: "com", note: "e skipped (conflict with c)" },
+            { word: "for", chord: "fo", keys: "fo", note: "r skipped (conflict with f)" },
+            { word: "do", chord: "do", keys: "do", note: "Clean 2-finger match" },
+            { word: "have", chord: "aehv", keys: "have", note: "Clean 4-finger match" },
+            { word: "with", chord: "hitw", keys: "with", note: "Clean 4-finger match" },
+            { word: "want", chord: "antw", keys: "want", note: "Clean 4-finger match" },
+            { word: "any", chord: "any", keys: "any", note: "Clean 3-finger match" },
+            { word: "ask", chord: "aks", keys: "ask", note: "Clean 3-finger match" },
+            { word: "window", chord: "dinow", keys: "windo", note: "w duplicate skipped" },
+            { word: "that", chord: "aht", keys: "tha", note: "t duplicate skipped" },
+            { word: "machine", chord: "acimn", keys: "macin", note: "h and e conflicts skipped" },
+            { word: "connect", chord: "cnot", keys: "cont", note: "n, e, c conflicts skipped" },
+            { word: "local", chord: "acl", keys: "lca", note: "o and l conflicts skipped" },
+            { word: "about", chord: "abotu", keys: "about", note: "Clean 5-finger match" },
+            { word: "think", chord: "hint", keys: "thin", note: "k skipped (conflict with i)" },
+            { word: "please", chord: "aelps", keys: "pleas", note: "e duplicate skipped" },
+            { word: "world", chord: "dorw", keys: "word", note: "l skipped (conflict with o)" },
+            { word: "steno", chord: "enost", keys: "steno", note: "Clean 5-finger match" },
+            { word: "code", chord: "co", keys: "co", note: "d and e conflicts skipped" },
+            { word: "computer", chord: "cmopt", keys: "compt", note: "u, e, r conflicts skipped" },
+            { word: "keyboard", chord: "abekory", keys: "keyboar", note: "d skipped (conflict with e)" },
+            { word: "function", chord: "cfinou", keys: "funcio", note: "t and n conflicts skipped" }
+        ];
+
+        // Map sorted chord to output word
+        const CHORD_MAP = {};
+        STENO_DICTIONARY.forEach(item => {
+            CHORD_MAP[item.chord] = item.word + " ";
+        });
+
+        // 51 Steno Vocabulary Visual System: Perfect Emojis & Expressive Graphics
+        const WORD_VISUALS = {
+            "can": { emoji: "🥫", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "CAN" },
+            "dog": { emoji: "🐶", bg: "#d97706", glow: "rgba(217, 119, 6, 0.4)", label: "DOG" },
+            "fast": { emoji: "⚡", bg: "#eab308", glow: "rgba(234, 179, 8, 0.4)", label: "FAST" },
+            "book": { emoji: "📖", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "BOOK" },
+            "file": { emoji: "📁", bg: "#2563eb", glow: "rgba(37, 99, 235, 0.4)", label: "FILE" },
+            "life": { emoji: "💖", bg: "#e11d48", glow: "rgba(225, 29, 72, 0.4)", label: "LIFE" },
+            "on": { emoji: "🟢", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "ON" },
+            "no": { emoji: "🚫", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "NO" },
+            "how": { emoji: "❓", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "HOW" },
+            "who": { emoji: "👤", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "WHO" },
+            "whom": { emoji: "👥", bg: "#4338ca", glow: "rgba(67, 56, 202, 0.4)", label: "WHOM" },
+            "i": { emoji: "🙋‍♂️", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "I (ME)" },
+            "he": { emoji: "👨", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "HE" },
+            "she": { emoji: "👩", bg: "#f43f5e", glow: "rgba(244, 63, 94, 0.4)", label: "SHE" },
+            "it": { emoji: "📦", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "IT" },
+            "we": { emoji: "🧑‍🤝‍🧑", bg: "#059669", glow: "rgba(5, 150, 105, 0.4)", label: "WE" },
+            "they": { emoji: "👥", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "THEY" },
+            "you": { emoji: "👉", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "YOU" },
+            "what": { emoji: "🤔", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "WHAT?" },
+            "when": { emoji: "⏰", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "WHEN?" },
+            "why": { emoji: "🤷", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "WHY?" },
+            "where": { emoji: "📍", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "WHERE?" },
+            "which": { emoji: "🔀", bg: "#38bdf8", glow: "rgba(56, 189, 248, 0.4)", label: "WHICH?" },
+            "whose": { emoji: "🏷️", bg: "#d97706", glow: "rgba(217, 119, 6, 0.4)", label: "WHOSE?" },
+            "walk": { emoji: "🚶", bg: "#059669", glow: "rgba(5, 150, 105, 0.4)", label: "WALK" },
+            "in": { emoji: "📥", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "IN" },
+            "big": { emoji: "🐘", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "BIG" },
+            "step": { emoji: "🪜", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "STEP" },
+            "if": { emoji: "⚖️", bg: "#f97316", glow: "rgba(249, 115, 22, 0.4)", label: "IF" },
+            "come": { emoji: "🫴", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "COME" },
+            "for": { emoji: "🎁", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "FOR" },
+            "do": { emoji: "✅", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "DO" },
+            "have": { emoji: "🤲", bg: "#ec4899", glow: "rgba(236, 72, 153, 0.4)", label: "HAVE" },
+            "with": { emoji: "🧩", bg: "#38bdf8", glow: "rgba(56, 189, 248, 0.4)", label: "WITH" },
+            "want": { emoji: "🌟", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "WANT" },
+            "any": { emoji: "🎲", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "ANY" },
+            "ask": { emoji: "🙋‍♀️", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "ASK" },
+            "window": { emoji: "🪟", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "WINDOW" },
+            "that": { emoji: "☝️", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "THAT" },
+            "machine": { emoji: "🤖", bg: "#475569", glow: "rgba(71, 85, 105, 0.4)", label: "MACHINE" },
+            "connect": { emoji: "🔗", bg: "#facc15", glow: "rgba(250, 204, 21, 0.4)", label: "CONNECT" },
+            "local": { emoji: "🏡", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "LOCAL" },
+            "about": { emoji: "ℹ️", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "ABOUT" },
+            "think": { emoji: "🧠", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "THINK" },
+            "please": { emoji: "🙏", bg: "#ec4899", glow: "rgba(236, 72, 153, 0.4)", label: "PLEASE" },
+            "world": { emoji: "🌍", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "WORLD" },
+            "steno": { emoji: "⚡", bg: "#4f46e5", glow: "rgba(79, 70, 229, 0.4)", label: "STENO" },
+            "code": { emoji: "💻", bg: "#0f172a", glow: "rgba(56, 189, 248, 0.4)", label: "CODE" },
+            "computer": { emoji: "🖥️", bg: "#1e293b", glow: "rgba(96, 165, 250, 0.4)", label: "COMPUTER" },
+            "keyboard": { emoji: "⌨️", bg: "#1e1b4b", glow: "rgba(129, 140, 248, 0.4)", label: "KEYBOARD" },
+            "function": { 
+                svg: `
+                    <rect width="48" height="48" rx="14" fill="#064e3b" />
+                    <circle cx="24" cy="24" r="18" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="4 2" />
+                    <text x="24" y="31" text-anchor="middle" font-size="20" font-style="italic" font-weight="900" font-family="'Times New Roman', serif" fill="#34d399">ƒ(x)</text>
+                `,
+                emoji: "⚙️",
+                bg: "#047857",
+                glow: "rgba(16, 185, 129, 0.4)",
+                label: "FUNCTION"
+            },
+            // Derived Morpheme Compound Words
+            "undo": { emoji: "↩️", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "UNDO" },
+            "redo": { emoji: "🔁", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "REDO" },
+            "outdo": { emoji: "🏆", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "OUTDO" },
+            "reconnect": { emoji: "🔄", bg: "#38bdf8", glow: "rgba(56, 189, 248, 0.4)", label: "RECONNECT" },
+            "disconnect": { emoji: "🔌", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "DISCONNECT" },
+            "income": { emoji: "💵", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "INCOME" },
+            "outcome": { emoji: "🎯", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "OUTCOME" },
+            "overcome": { emoji: "🧗", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "OVERCOME" },
+            "become": { emoji: "🌱", bg: "#059669", glow: "rgba(5, 150, 105, 0.4)", label: "BECOME" },
+            "outwalk": { emoji: "🏃‍♂️", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "OUTWALK" },
+            "refile": { emoji: "📂", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "REFILE" },
+            "lifetime": { emoji: "⏳", bg: "#e11d48", glow: "rgba(225, 29, 72, 0.4)", label: "LIFETIME" },
+            "lifeline": { emoji: "🛟", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "LIFELINE" },
+            "password": { emoji: "🔑", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "PASSWORD" },
+            "recode": { emoji: "🛠️", bg: "#38bdf8", glow: "rgba(56, 189, 248, 0.4)", label: "RECODE" }
+        };
+
+        // 2-Step Morpheme Tree Structure
+        const MORPHEME_ROOTS_TREE = {
+            "do": {
+                lemma: "do",
+                chord: "do",
+                emoji: "✅",
+                derivatives: {
+                    "nu": { morpheme: "un-", chord: "nu", word: "undo", emoji: "↩️", note: "Reverse action" },
+                    "er": { morpheme: "re-", chord: "er", word: "redo", emoji: "🔁", note: "Repeat action" },
+                    "otu": { morpheme: "out-", chord: "otu", word: "outdo", emoji: "🏆", note: "Surpass / excel" }
+                }
+            },
+            "cnot": {
+                lemma: "connect",
+                chord: "cnot",
+                emoji: "🔗",
+                derivatives: {
+                    "er": { morpheme: "re-", chord: "er", word: "reconnect", emoji: "🔄", note: "Establish link again" },
+                    "dsi": { morpheme: "dis-", chord: "dsi", word: "disconnect", emoji: "🔌", note: "Sever link" }
+                }
+            },
+            "cmo": {
+                lemma: "come",
+                chord: "cmo",
+                emoji: "🫴",
+                derivatives: {
+                    "in": { morpheme: "in-", chord: "in", word: "income", emoji: "💵", note: "Earnings / money" },
+                    "otu": { morpheme: "out-", chord: "otu", word: "outcome", emoji: "🎯", note: "Result / consequence" },
+                    "eorv": { morpheme: "over-", chord: "eorv", word: "overcome", emoji: "🧗", note: "Prevail / conquer" },
+                    "bce": { morpheme: "become", chord: "bce", word: "become", emoji: "🌱", note: "Transform into" }
+                }
+            },
+            "aklw": {
+                lemma: "walk",
+                chord: "aklw",
+                emoji: "🚶",
+                derivatives: {
+                    "otu": { morpheme: "out-", chord: "otu", word: "outwalk", emoji: "🏃‍♂️", note: "Walk faster than" }
+                }
+            },
+            "efil": {
+                lemma: "file",
+                chord: "efil",
+                emoji: "📁",
+                derivatives: {
+                    "er": { morpheme: "re-", chord: "er", word: "refile", emoji: "📂", note: "File again" }
+                }
+            },
+            "1efil": {
+                lemma: "life",
+                chord: "1efil",
+                emoji: "💖",
+                derivatives: {
+                    "emti": { morpheme: "time", chord: "emti", word: "lifetime", emoji: "⏳", note: "Duration of life" },
+                    "1aelns": { morpheme: "line", chord: "1aelns", word: "lifeline", emoji: "🛟", note: "Vital support link" }
+                }
+            },
+            "dorw": {
+                lemma: "word",
+                chord: "dorw",
+                emoji: "💬",
+                derivatives: {
+                    "aps": { morpheme: "pass", chord: "aps", word: "password", emoji: "🔑", note: "Secret security word" }
+                }
+            },
+            "co": {
+                lemma: "code",
+                chord: "co",
+                emoji: "💻",
+                derivatives: {
+                    "er": { morpheme: "re-", chord: "er", word: "recode", emoji: "🛠️", note: "Rewrite program code" }
+                }
+            }
+        };
+
+        class StenoTutorApp {
+            constructor() {
+                this.dictionary = STENO_DICTIONARY;
+                this.rootsTree = MORPHEME_ROOTS_TREE;
+                this.currentIndex = 0;
+                this.mode = 'training'; // 'training', 'sandbox', 'guide'
+                
+                // 2-Step Morpheme State Machine for Sandbox
+                this.activeRoot = null;
+                this.activeRootTimeout = null;
+                
+                // Sandbox form style
+                this.sandboxForm = 'combo'; // 'svg_only', 'words_only', 'combo'
+                this.sandboxIndex = 0;
+                this.showHint = false;
+
+                // Typing Box output mode: 'words', 'svg', 'combo'
+                this.editorOutputMode = 'words';
+
+                // Live physical key tracking
+                this.pressedKeys = new Set();
+                this.chordHistory = new Set();
+
+                // Stats
+                this.score = 0;
+                this.streak = 0;
+
+                this.init();
+            }
+
+            setEditorOutputMode(mode) {
+                this.editorOutputMode = mode;
+                ['words', 'svg', 'combo'].forEach(m => {
+                    const btn = document.getElementById(`editor-mode-${m}`);
+                    if (btn) {
+                        if (m === mode) {
+                            btn.className = "px-3 py-1.5 text-xs font-bold rounded-lg transition-all bg-indigo-600 text-white shadow";
+                        } else {
+                            btn.className = "px-3 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white";
+                        }
+                    }
+                });
+            }
+
+            clearEditor() {
+                const editor = document.getElementById('sandbox-editor');
+                if (editor) {
+                    editor.innerHTML = `
+                        <span id="editor-placeholder" class="text-slate-600 font-mono text-sm select-none pointer-events-none">
+                            Chord keys together and release to stream words or SVG icons right here... (Press Backspace to delete last item)
+                        </span>
+                    `;
+                }
+            }
+
+            insertChordOutput(matchedWord) {
+                const editor = document.getElementById('sandbox-editor');
+                if (!editor) return;
+
+                // Hide placeholder
+                const ph = document.getElementById('editor-placeholder');
+                if (ph) ph.classList.add('hidden');
+
+                const vis = WORD_VISUALS[matchedWord.toLowerCase()] || { emoji: "✨", bg: "#6366f1", label: matchedWord.toUpperCase() };
+                let el = document.createElement('span');
+                el.className = "chord-item transition-all duration-150 inline-flex items-center";
+
+                if (this.editorOutputMode === 'words') {
+                    el.innerHTML = `
+                        <span class="px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-700/80 font-mono font-bold text-sm md:text-base text-emerald-400 shadow mr-1.5 hover:border-emerald-500">
+                            ${matchedWord}
+                        </span>
+                    `;
+                } else if (this.editorOutputMode === 'svg') {
+                    el.innerHTML = `
+                        <span class="w-11 h-11 md:w-12 md:h-12 bg-slate-900 border-2 rounded-2xl p-1 mr-1.5 shadow-lg hover:scale-110 transition-transform cursor-pointer flex items-center justify-center text-2xl select-none" style="border-color: ${vis.bg}; box-shadow: 0 4px 14px ${vis.glow || 'rgba(99,102,241,0.2)'};" title="${matchedWord.toUpperCase()}">
+                            ${this.getWordDisplayHtml(matchedWord, 'text-2xl')}
+                        </span>
+                    `;
+                } else if (this.editorOutputMode === 'combo') {
+                    el.innerHTML = `
+                        <span class="flex items-center gap-2 bg-slate-900 border rounded-2xl px-2.5 py-1 mr-1.5 shadow hover:scale-105 transition-transform" style="border-color: ${vis.bg}">
+                            <span class="w-7 h-7 rounded-lg flex items-center justify-center text-lg select-none" style="background: ${vis.bg}22">
+                                ${this.getWordDisplayHtml(matchedWord, 'text-lg')}
+                            </span>
+                            <span class="font-mono font-extrabold text-xs md:text-sm text-slate-100 uppercase tracking-wide">${matchedWord}</span>
+                        </span>
+                    `;
+                }
+
+                editor.appendChild(el);
+                editor.scrollTop = editor.scrollHeight;
+            }
+
+            init() {
+                this.renderGuide();
+                this.renderKeyboardRows('train');
+                this.renderKeyboardRows('sandbox');
+                this.populateWordSelect();
+                this.loadCurrentWord();
+                this.loadSandboxWord();
+                this.setupKeyboardListeners();
+            }
+
+            setMode(newMode) {
+                this.mode = newMode;
+                document.getElementById('view-training').classList.toggle('hidden', newMode !== 'training');
+                document.getElementById('view-sandbox').classList.toggle('hidden', newMode !== 'sandbox');
+                document.getElementById('view-guide').classList.toggle('hidden', newMode !== 'guide');
+
+                ['training', 'sandbox', 'guide'].forEach(m => {
+                    const btn = document.getElementById(`tab-${m}`);
+                    if (m === newMode) {
+                        btn.className = "px-4 py-2 text-xs md:text-sm font-semibold rounded-xl transition-all bg-indigo-600 text-white shadow-md shadow-indigo-500/20";
+                    } else {
+                        btn.className = "px-4 py-2 text-xs md:text-sm font-semibold rounded-xl transition-all text-slate-400 hover:text-white";
+                    }
+                });
+
+                if (newMode === 'training') this.loadCurrentWord();
+                if (newMode === 'sandbox') this.loadSandboxWord();
+            }
+
+            setSandboxForm(form) {
+                this.sandboxForm = form;
+                ['svg_only', 'words_only', 'combo'].forEach(f => {
+                    const btn = document.getElementById(`form-${f}`);
+                    if (f === form) {
+                        btn.className = "px-3 py-1.5 text-xs font-bold rounded-lg transition-all bg-indigo-600 text-white shadow";
+                    } else {
+                        btn.className = "px-3 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white";
+                    }
+                });
+                this.updateSandboxDisplay();
+            }
+
+            populateWordSelect() {
+                const select = document.getElementById('training-word-select');
+                select.innerHTML = this.dictionary.map((item, idx) => {
+                    return `<option value="${idx}">#${idx + 1}: ${item.word.toUpperCase()} (Chord: ${item.chord})</option>`;
+                }).join('');
+            }
+
+            selectWordIndex(idx) {
+                this.currentIndex = idx;
+                this.loadCurrentWord();
+            }
+
+            nextWord() {
+                this.currentIndex = (this.currentIndex + 1) % this.dictionary.length;
+                document.getElementById('training-word-select').value = this.currentIndex;
+                this.loadCurrentWord();
+            }
+
+            prevWord() {
+                this.currentIndex = (this.currentIndex - 1 + this.dictionary.length) % this.dictionary.length;
+                document.getElementById('training-word-select').value = this.currentIndex;
+                this.loadCurrentWord();
+            }
+
+            getFingerForKey(char) {
+                const lower = char.toLowerCase();
+                for (let scheme of FINGER_SCHEME) {
+                    if (scheme.keys.includes(lower)) return scheme;
+                }
+                return FINGER_SCHEME[3]; // Fallback to Left Index
+            }
+
+            getWordVisual(word) {
+                const lower = word.toLowerCase();
+                return WORD_VISUALS[lower] || { emoji: "✨", bg: "#6366f1", glow: "rgba(99,102,241,0.4)", label: word.toUpperCase() };
+            }
+
+            getWordDisplayHtml(word, sizeClass = "text-5xl") {
+                const vis = this.getWordVisual(word);
+                if (vis.svg) {
+                    return `
+                        <svg viewBox="0 0 48 48" class="w-full h-full drop-shadow">
+                            ${vis.svg}
+                        </svg>
+                    `;
+                }
+                return `<span class="${sizeClass} select-none drop-shadow-md transform transition-transform duration-200">${vis.emoji}</span>`;
+            }
+
+            getWordSvg(word) {
+                const vis = this.getWordVisual(word);
+                if (vis.svg) return vis.svg;
+                return `
+                    <circle cx="24" cy="24" r="20" fill="${vis.bg}22" stroke="${vis.bg}" stroke-width="2"/>
+                    <text x="24" y="29" text-anchor="middle" font-size="20" font-family="'Segoe UI Emoji', 'Apple Color Emoji', sans-serif">${vis.emoji}</text>
+                `;
+            }
+
+            loadCurrentWord() {
+                const item = this.dictionary[this.currentIndex];
+                const vis = this.getWordVisual(item.word);
+                document.getElementById('train-stat-idx').innerText = (this.currentIndex + 1);
+                document.getElementById('training-word-select').value = this.currentIndex;
+
+                // Title & notes
+                document.getElementById('train-word-title').innerText = item.word.toUpperCase();
+                document.getElementById('train-chord-tag').innerText = item.chord;
+                document.getElementById('train-note-tag').innerText = item.note ? `(${item.note})` : '';
+
+                // Render Visual in Card Box with matching subtle glow
+                const trainBox = document.getElementById('train-svg-box');
+                trainBox.style.borderColor = vis.bg;
+                trainBox.style.boxShadow = `0 10px 25px -5px ${vis.glow || 'rgba(99,102,241,0.2)'}`;
+                trainBox.innerHTML = this.getWordDisplayHtml(item.word, 'text-5xl md:text-6xl');
+
+                // Calculate required schemes
+                const requiredChars = item.chord.split('');
+                const activeSchemes = requiredChars.map(c => this.getFingerForKey(c));
+
+                // Render Badges
+                const badgeContainer = document.getElementById('train-key-badges');
+                badgeContainer.innerHTML = requiredChars.map(c => {
+                    const scheme = this.getFingerForKey(c);
+                    return `
+                        <div id="badge-key-${c}" class="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-slate-700 bg-slate-900 transition-all font-mono">
+                            <span class="w-7 h-7 rounded-lg flex items-center justify-center font-black text-sm bg-slate-800 text-white border border-slate-600 shadow">${c.toUpperCase()}</span>
+                            <div class="flex flex-col text-left">
+                                <span class="text-[10px] font-bold text-slate-400 uppercase">${scheme.name}</span>
+                                <span class="text-[9px]" style="color: ${scheme.color};">Key: ${c}</span>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                // Render Hands SVG
+                this.renderDualHandsSvg('train-hands-container', activeSchemes);
+
+                // Highlight keyboard
+                this.highlightKeyboard('train', requiredChars);
+
+                // Reset toast
+                const toast = document.getElementById('train-toast');
+                toast.innerText = `Strike all ${requiredChars.length} keys [${requiredChars.map(c=>c.toUpperCase()).join(' + ')}] together, then release!`;
+                toast.className = "text-xs md:text-sm font-bold text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 px-6 py-2 rounded-xl text-center";
+            }
+
+            // Sandbox Word Loader
+            loadSandboxWord() {
+                const item = this.dictionary[this.sandboxIndex];
+                const vis = this.getWordVisual(item.word);
+                document.getElementById('sandbox-prompt-title').innerText = item.word.toUpperCase();
+                document.getElementById('sandbox-hint-keys').innerText = item.keys;
+                document.getElementById('sandbox-hint-chord').innerText = item.chord;
+
+                const sandboxBox = document.getElementById('sandbox-svg-box');
+                sandboxBox.style.borderColor = vis.bg;
+                sandboxBox.style.boxShadow = `0 12px 30px -5px ${vis.glow || 'rgba(99,102,241,0.2)'}`;
+                sandboxBox.innerHTML = this.getWordDisplayHtml(item.word, 'text-3xl md:text-4xl');
+
+                this.updateSandboxDisplay();
+                this.renderMorphemeTree();
+                this.renderDualHandsSvg('sandbox-hands-container', []);
+                this.highlightKeyboard('sandbox', []);
+            }
+
+            renderMorphemeTree(activeRootObj = this.activeRoot) {
+                const container = document.getElementById('sandbox-morpheme-tree-container');
+                const badge = document.getElementById('tree-status-badge');
+                if (!container || !badge) return;
+
+                if (!activeRootObj) {
+                    badge.innerText = "IDLE (WAITING FOR ROOT)";
+                    badge.className = "px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700";
+
+                    // Show preview of current sandbox word if it has a root, or general root explorer
+                    const currentWord = this.dictionary[this.sandboxIndex].word.toLowerCase();
+                    let matchingRoot = null;
+                    for (let chord in this.rootsTree) {
+                        const r = this.rootsTree[chord];
+                        if (r.lemma.toLowerCase() === currentWord) { matchingRoot = r; break; }
+                        for (let dKey in r.derivatives) {
+                            if (r.derivatives[dKey].word.toLowerCase() === currentWord) { matchingRoot = r; break; }
+                        }
+                    }
+
+                    const displayRoot = matchingRoot || this.rootsTree["cnot"]; // fallback preview
+
+                    container.innerHTML = `
+                        <div class="w-full flex flex-col items-center gap-3 py-2">
+                            <div class="flex items-center gap-3 p-3 rounded-2xl bg-slate-900 border border-slate-800 w-full max-w-sm justify-between shadow">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-2xl">${displayRoot.emoji}</span>
+                                    <div>
+                                        <div class="text-xs font-mono font-extrabold text-white uppercase">${displayRoot.lemma} (Root)</div>
+                                        <div class="text-[10px] font-mono text-indigo-400">Chord: [${displayRoot.chord}]</div>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] font-bold text-slate-500 bg-slate-950 px-2 py-1 rounded-lg border border-slate-800">Step 1 Trigger</span>
+                            </div>
+
+                            <div class="flex items-center justify-center text-slate-600 text-xs font-mono">
+                                <span>↓ attach morpheme</span>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-2 w-full max-w-sm">
+                                ${Object.values(displayRoot.derivatives).map(d => `
+                                    <div class="flex items-center gap-2 p-2 rounded-xl bg-slate-900/60 border border-slate-800/80">
+                                        <span class="text-lg">${d.emoji}</span>
+                                        <div class="flex flex-col text-left">
+                                            <span class="text-xs font-bold text-slate-300">${d.word}</span>
+                                            <span class="text-[10px] font-mono text-amber-400">${d.morpheme} (Chord: ${d.chord})</span>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    // ACTIVE ROOT ARMED!
+                    badge.innerText = `ARMED: [${activeRootObj.lemma.toUpperCase()}]`;
+                    badge.className = "px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 animate-pulse";
+
+                    container.innerHTML = `
+                        <div class="w-full flex flex-col items-center gap-3 py-2 animate-fade-in">
+                            <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-emerald-950/40 border-2 border-emerald-500 w-full max-w-sm justify-between shadow-lg shadow-emerald-500/10">
+                                <div class="flex items-center gap-2.5">
+                                    <span class="text-3xl">${activeRootObj.emoji}</span>
+                                    <div>
+                                        <div class="text-sm font-mono font-black text-emerald-300 uppercase">${activeRootObj.lemma} [LOCKED]</div>
+                                        <div class="text-[11px] font-mono text-emerald-400">Step 1 Complete! Now strike Step 2 morpheme:</div>
+                                    </div>
+                                </div>
+                                <span class="text-xs">⚡</span>
+                            </div>
+
+                            <div class="flex items-center justify-center text-emerald-400 text-xs font-mono font-bold">
+                                <span>👇 STRIKE A MORPHEME CHORD BELOW:</span>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full max-w-sm">
+                                ${Object.values(activeRootObj.derivatives).map(d => `
+                                    <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-900 border-2 border-indigo-500/60 shadow hover:border-indigo-400 transition-all cursor-pointer">
+                                        <span class="text-xl">${d.emoji}</span>
+                                        <div class="flex flex-col text-left">
+                                            <span class="text-xs font-black text-white">${d.word.toUpperCase()}</span>
+                                            <span class="text-[10px] font-mono font-bold text-amber-300">Chord: [${d.chord}] (${d.morpheme})</span>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+
+            updateSandboxDisplay() {
+                const svgBox = document.getElementById('sandbox-svg-box');
+                const wordBox = document.getElementById('sandbox-word-box');
+
+                if (this.sandboxForm === 'svg_only') {
+                    svgBox.classList.remove('hidden');
+                    wordBox.classList.add('hidden');
+                } else if (this.sandboxForm === 'words_only') {
+                    svgBox.classList.add('hidden');
+                    wordBox.classList.remove('hidden');
+                } else { // combo
+                    svgBox.classList.remove('hidden');
+                    wordBox.classList.remove('hidden');
+                }
+
+                // Update hint visibility
+                document.getElementById('sandbox-hint-pill').classList.toggle('hidden', !this.showHint);
+            }
+
+            sandboxNextPrompt() {
+                let nextIdx = Math.floor(Math.random() * this.dictionary.length);
+                if (nextIdx === this.sandboxIndex) nextIdx = (nextIdx + 1) % this.dictionary.length;
+                this.sandboxIndex = nextIdx;
+                this.loadSandboxWord();
+            }
+
+            toggleSandboxHint() {
+                this.showHint = !this.showHint;
+                const btn = document.getElementById('btn-sandbox-hint');
+                btn.innerText = this.showHint ? '🙈 Hide Chord Hint' : '💡 Show Chord Hint';
+                document.getElementById('sandbox-hint-pill').classList.toggle('hidden', !this.showHint);
+            }
+
+            renderDualHandsSvg(containerId, activeSchemes) {
+                const activeIds = new Set(activeSchemes.map(s => s.id));
+                const container = document.getElementById(containerId);
+                if (!container) return;
+
+                const getFingerColor = (id, defaultCol = '#1e293b') => {
+                    if (activeIds.has(id)) {
+                        const found = activeSchemes.find(s => s.id === id);
+                        return found ? found.color : '#6366f1';
+                    }
+                    return defaultCol;
+                };
+
+                const isLit = (id) => activeIds.has(id);
+
+                container.innerHTML = `
+                    <svg viewBox="0 0 800 230" class="w-full h-full drop-shadow-2xl">
+                        <!-- LEFT HAND -->
+                        <g id="left-hand" transform="translate(60, 15)">
+                            <!-- Palm -->
+                            <path d="M 60 140 C 60 190 120 200 160 200 C 190 200 200 160 200 120 C 200 90 170 90 150 90 Z" fill="#1e293b" stroke="#334155" stroke-width="3"/>
+                            
+                            <!-- Left Pinky (1, q, a, z) -->
+                            <rect x="50" y="45" width="22" height="85" rx="11" fill="${getFingerColor('left-pinky')}" stroke="${isLit('left-pinky') ? '#ffffff' : '#475569'}" stroke-width="${isLit('left-pinky') ? '3.5' : '1.5'}" class="${isLit('left-pinky') ? 'finger-highlight' : ''}"/>
+                            
+                            <!-- Left Ring (2, w, s, x) -->
+                            <rect x="80" y="25" width="22" height="100" rx="11" fill="${getFingerColor('left-ring')}" stroke="${isLit('left-ring') ? '#ffffff' : '#475569'}" stroke-width="${isLit('left-ring') ? '3.5' : '1.5'}" class="${isLit('left-ring') ? 'finger-highlight' : ''}"/>
+                            
+                            <!-- Left Middle (3, e, d, c) -->
+                            <rect x="110" y="15" width="22" height="108" rx="11" fill="${getFingerColor('left-middle')}" stroke="${isLit('left-middle') ? '#ffffff' : '#475569'}" stroke-width="${isLit('left-middle') ? '3.5' : '1.5'}" class="${isLit('left-middle') ? 'finger-highlight' : ''}"/>
+                            
+                            <!-- Left Index (4, 5, r, f, v, t, g) -->
+                            <rect x="140" y="28" width="22" height="98" rx="11" fill="${getFingerColor('left-index')}" stroke="${isLit('left-index') ? '#ffffff' : '#475569'}" stroke-width="${isLit('left-index') ? '3.5' : '1.5'}" class="${isLit('left-index') ? 'finger-highlight' : ''}"/>
+                            
+                            <!-- Left Thumb (B) -->
+                            <g transform="translate(180, 110) rotate(35)">
+                                <rect x="0" y="0" width="24" height="65" rx="12" fill="${getFingerColor('left-thumb')}" stroke="${isLit('left-thumb') ? '#ffffff' : '#475569'}" stroke-width="${isLit('left-thumb') ? '3.5' : '1.5'}" class="${isLit('left-thumb') ? 'finger-highlight' : ''}"/>
+                                <text x="12" y="38" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="900" font-family="'JetBrains Mono', monospace">B</text>
+                            </g>
+                            
+                            <text x="125" y="218" text-anchor="middle" fill="#94a3b8" font-size="12" font-weight="extrabold">LEFT HAND</text>
+                        </g>
+
+                        <!-- CENTER BADGE LOGO -->
+                        <g transform="translate(360, 45)">
+                            <circle cx="40" cy="45" r="36" fill="#0f172a" stroke="#4f46e5" stroke-width="2.5"/>
+                            <circle cx="40" cy="45" r="30" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="3 3"/>
+                            <text x="40" y="52" text-anchor="middle" font-size="20" font-weight="900" font-family="'JetBrains Mono', monospace" fill="#38bdf8">⚡</text>
+                            <text x="40" y="98" text-anchor="middle" font-size="10" font-weight="800" font-family="'JetBrains Mono', monospace" fill="#94a3b8">CHORD</text>
+                        </g>
+
+                        <!-- RIGHT HAND -->
+                        <g id="right-hand" transform="translate(480, 15)">
+                            <!-- Palm -->
+                            <path d="M 180 140 C 180 190 120 200 80 200 C 50 200 40 160 40 120 C 40 90 70 90 90 90 Z" fill="#1e293b" stroke="#334155" stroke-width="3"/>
+                            
+                            <!-- Right Thumb (N) -->
+                            <g transform="translate(40, 125) rotate(-35)">
+                                <rect x="0" y="0" width="24" height="65" rx="12" fill="${getFingerColor('right-thumb')}" stroke="${isLit('right-thumb') ? '#ffffff' : '#475569'}" stroke-width="${isLit('right-thumb') ? '3.5' : '1.5'}" class="${isLit('right-thumb') ? 'finger-highlight' : ''}"/>
+                                <text x="12" y="38" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="900" font-family="'JetBrains Mono', monospace">N</text>
+                            </g>
+
+                            <!-- Right Index (6, 7, y, u, h, j, m) -->
+                            <rect x="78" y="28" width="22" height="98" rx="11" fill="${getFingerColor('right-index')}" stroke="${isLit('right-index') ? '#ffffff' : '#475569'}" stroke-width="${isLit('right-index') ? '3.5' : '1.5'}" class="${isLit('right-index') ? 'finger-highlight' : ''}"/>
+                            
+                            <!-- Right Middle (8, i, k, ,) -->
+                            <rect x="108" y="15" width="22" height="108" rx="11" fill="${getFingerColor('right-middle')}" stroke="${isLit('right-middle') ? '#ffffff' : '#475569'}" stroke-width="${isLit('right-middle') ? '3.5' : '1.5'}" class="${isLit('right-middle') ? 'finger-highlight' : ''}"/>
+                            
+                            <!-- Right Ring (9, o, l, .) -->
+                            <rect x="138" y="25" width="22" height="100" rx="11" fill="${getFingerColor('right-ring')}" stroke="${isLit('right-ring') ? '#ffffff' : '#475569'}" stroke-width="${isLit('right-ring') ? '3.5' : '1.5'}" class="${isLit('right-ring') ? 'finger-highlight' : ''}"/>
+                            
+                            <!-- Right Pinky (0, p, ;, /, ') -->
+                            <rect x="168" y="45" width="22" height="85" rx="11" fill="${getFingerColor('right-pinky')}" stroke="${isLit('right-pinky') ? '#ffffff' : '#475569'}" stroke-width="${isLit('right-pinky') ? '3.5' : '1.5'}" class="${isLit('right-pinky') ? 'finger-highlight' : ''}"/>
+                            
+                            <text x="115" y="218" text-anchor="middle" fill="#94a3b8" font-size="12" font-weight="extrabold">RIGHT HAND</text>
+                        </g>
+                    </svg>
+                `;
+            }
+
+            renderKeyboardRows(prefix) {
+                for (let r = 0; r < 4; r++) {
+                    const rowEl = document.getElementById(`${prefix}-key-row-${r+1}`);
+                    if (!rowEl) continue;
+                    rowEl.innerHTML = KEYBOARD_ROWS[r].map(key => {
+                        const scheme = this.getFingerForKey(key);
+                        const isLeft = scheme.hand === 'left';
+                        const handBg = isLeft ? 'rgba(244, 63, 94, 0.08)' : 'rgba(56, 189, 248, 0.08)';
+                        const handBorder = isLeft ? 'rgba(244, 63, 94, 0.3)' : 'rgba(56, 189, 248, 0.3)';
+                        const handText = isLeft ? '#fecdd3' : '#bae6fd';
+
+                        return `
+                            <div id="${prefix}-key-${key}" 
+                                 data-finger-color="${scheme.color}"
+                                 class="h-10 md:h-11 min-w-[32px] md:min-w-[42px] px-2 rounded-xl flex items-center justify-center text-xs md:text-sm font-mono font-bold shadow transition-all duration-150 select-none cursor-default" 
+                                 style="background-color: ${handBg}; border: 1.5px solid ${handBorder}; border-bottom-color: ${scheme.color}; border-bottom-width: 4px; color: ${handText};">
+                                ${key.toUpperCase()}
+                            </div>
+                        `;
+                    }).join('');
+                }
+            }
+
+            highlightKeyboard(prefix, targetKeys) {
+                const targetSet = new Set(targetKeys.map(k => k.toLowerCase()));
+                
+                document.querySelectorAll(`[id^="${prefix}-key-"]`).forEach(el => {
+                    const keyVal = el.id.replace(`${prefix}-key-`, '');
+                    const fingerColor = el.dataset.fingerColor || '#38bdf8';
+
+                    if (targetSet.has(keyVal)) {
+                        el.classList.add('scale-110');
+                        el.style.backgroundColor = fingerColor;
+                        el.style.color = '#020617';
+                        el.style.borderColor = '#ffffff';
+                        el.style.boxShadow = `0 0 16px ${fingerColor}`;
+                        el.style.fontWeight = '900';
+                    } else {
+                        el.classList.remove('scale-110');
+                        el.style.backgroundColor = '';
+                        el.style.color = '';
+                        el.style.borderColor = '';
+                        el.style.boxShadow = '';
+                        el.style.fontWeight = '700';
+                    }
+                });
+            }
+
+            renderGuide() {
+                const guideContainer = document.getElementById('scheme-guide-cards');
+                guideContainer.innerHTML = FINGER_SCHEME.map(s => {
+                    return `
+                        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-lg space-y-2" style="border-left: 5px solid ${s.color};">
+                            <div class="flex items-center justify-between">
+                                <span class="font-extrabold text-sm text-white">${s.name}</span>
+                                <span class="text-[10px] uppercase font-bold text-slate-400">${s.hand} hand</span>
+                            </div>
+                            <div class="flex flex-wrap gap-1.5 pt-1">
+                                ${s.keys.map(k => `
+                                    <span class="w-7 h-7 rounded-lg font-mono font-black text-xs flex items-center justify-center bg-slate-950 text-white border border-slate-700 shadow">${k.toUpperCase()}</span>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            // Keyboard Listeners
+            setupKeyboardListeners() {
+                this.spaceBypass = false;
+
+                window.addEventListener('keydown', (e) => {
+                    if (e.key === 'Tab' || e.key === 'Alt' || e.key === 'Control') return;
+
+                    // Backspace in Sandbox: remove last typed chord item (word or SVG icon)
+                    if (e.key === 'Backspace' && this.mode === 'sandbox') {
+                        const editor = document.getElementById('sandbox-editor');
+                        if (editor) {
+                            const items = editor.querySelectorAll('.chord-item');
+                            if (items.length > 0) {
+                                items[items.length - 1].remove();
+                                if (editor.querySelectorAll('.chord-item').length === 0) {
+                                    const ph = document.getElementById('editor-placeholder');
+                                    if (ph) ph.classList.remove('hidden');
+                                }
+                                e.preventDefault();
+                                return;
+                            }
+                        }
+                    }
+
+                    // Spacebar bypass: hold space to type normal individual letters
+                    if (e.code === 'Space') {
+                        this.spaceBypass = true;
+                        this.pressedKeys.clear();
+                        this.chordHistory.clear();
+                        return;
+                    }
+                    if (this.spaceBypass) return;
+
+                    const k = e.key.toLowerCase();
+
+                    // Check if key is within allowed steno layout
+                    let isStenoKey = false;
+                    for (let s of FINGER_SCHEME) {
+                        if (s.keys.includes(k)) { isStenoKey = true; break; }
+                    }
+
+                    if (isStenoKey) {
+                        // Crucial fix: prevent raw keystrokes (e.g. 'cna', 'wtah') from printing into the textarea!
+                        e.preventDefault();
+
+                        this.pressedKeys.add(k);
+                        this.chordHistory.add(k);
+                        this.onKeysChange();
+                    }
+                });
+
+                window.addEventListener('keyup', (e) => {
+                    if (e.code === 'Space') {
+                        this.spaceBypass = false;
+                        return;
+                    }
+
+                    const k = e.key.toLowerCase();
+                    if (this.pressedKeys.has(k)) {
+                        this.pressedKeys.delete(k);
+                    }
+
+                    // When all keys are released, evaluate chord!
+                    if (this.pressedKeys.size === 0 && this.chordHistory.size > 0) {
+                        const chordCombo = Array.from(this.chordHistory).sort().join('');
+                        this.onChordRelease(chordCombo);
+                        this.chordHistory.clear();
+                        this.onKeysChange();
+                    }
+                });
+            }
+
+            onKeysChange() {
+                const heldList = Array.from(this.pressedKeys);
+                const activeSchemes = heldList.map(c => this.getFingerForKey(c));
+
+                if (this.mode === 'training') {
+                    // Update training badges
+                    document.querySelectorAll('[id^="badge-key-"]').forEach(b => {
+                        const keyChar = b.id.replace('badge-key-', '');
+                        if (this.pressedKeys.has(keyChar)) {
+                            b.classList.add('bg-indigo-600', 'border-white', 'text-white');
+                            b.classList.remove('bg-slate-900', 'border-slate-700');
+                        } else {
+                            b.classList.remove('bg-indigo-600', 'border-white', 'text-white');
+                            b.classList.add('bg-slate-900', 'border-slate-700');
+                        }
+                    });
+                } else if (this.mode === 'sandbox') {
+                    // Update sandbox hands & keyboard in real-time
+                    this.renderDualHandsSvg('sandbox-hands-container', activeSchemes);
+                    this.highlightKeyboard('sandbox', heldList);
+                }
+            }
+
+            onChordRelease(combo) {
+                const expanded = CHORD_MAP[combo];
+                const matchedWord = expanded ? expanded.trim() : null;
+
+                if (this.mode === 'training') {
+                    const targetItem = this.dictionary[this.currentIndex];
+                    const toast = document.getElementById('train-toast');
+                    const card = document.getElementById('training-card');
+
+                    if (combo === targetItem.chord) {
+                        // SUCCESS!
+                        sound.playSuccess();
+                        this.score += 10;
+                        this.streak += 1;
+                        document.getElementById('train-stat-score').innerText = this.score;
+                        document.getElementById('train-stat-streak').innerText = this.streak;
+
+                        toast.innerText = `🎉 Correct! Chord '${combo}' expanded to "${targetItem.word}"!`;
+                        toast.className = "text-xs md:text-sm font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-6 py-2 rounded-xl text-center shadow-lg";
+
+                        card.classList.add('flash-win');
+                        setTimeout(() => card.classList.remove('flash-win'), 600);
+
+                        // Advance to next after 750ms
+                        setTimeout(() => {
+                            this.nextWord();
+                        }, 750);
+                    } else {
+                        // MISMATCH
+                        sound.playChime();
+                        this.streak = 0;
+                        document.getElementById('train-stat-streak').innerText = 0;
+                        toast.innerText = `Chord struck: '${combo}' ${matchedWord ? `(yields "${matchedWord}")` : '(unmapped)'}. Need '${targetItem.chord}' for "${targetItem.word}".`;
+                        toast.className = "text-xs md:text-sm font-bold text-amber-300 bg-amber-500/20 border border-amber-500/40 px-6 py-2 rounded-xl text-center";
+                    }
+
+                } else if (this.mode === 'sandbox') {
+                    const targetItem = this.dictionary[this.sandboxIndex];
+                    const toast = document.getElementById('sandbox-toast');
+
+                    // STEP 2 CHECK: Is there an active root armed, and did this chord match one of its derivatives?
+                    if (this.activeRoot && this.activeRoot.derivatives && this.activeRoot.derivatives[combo]) {
+                        sound.playSuccess();
+                        const deriv = this.activeRoot.derivatives[combo];
+                        
+                        // Replace previous root output in editor with new derived compound word
+                        const editor = document.getElementById('sandbox-editor');
+                        if (editor && editor.lastElementChild && editor.lastElementChild.classList.contains('chord-item')) {
+                            editor.removeChild(editor.lastElementChild);
+                        }
+                        this.insertChordOutput(deriv.word);
+
+                        toast.innerText = `🌟 [Morpheme Attached] Root '${this.activeRoot.lemma.toUpperCase()}' + '${deriv.morpheme}' -> "${deriv.word.toUpperCase()}"!`;
+                        toast.className = "text-xs md:text-sm font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-6 py-2 rounded-xl text-center shadow-lg";
+
+                        // Disarm root state and refresh tree
+                        if (this.activeRootTimeout) clearTimeout(this.activeRootTimeout);
+                        this.activeRoot = null;
+                        this.renderMorphemeTree();
+
+                        // Check if matched target prompt
+                        if (deriv.word.toLowerCase() === targetItem.word.toLowerCase()) {
+                            const card = document.getElementById('sandbox-card');
+                            if (card) {
+                                card.classList.add('flash-win');
+                                setTimeout(() => card.classList.remove('flash-win'), 600);
+                            }
+                            setTimeout(() => this.sandboxNextPrompt(), 700);
+                        }
+                        return;
+                    }
+
+                    // STEP 1 CHECK: Standard word or root activation
+                    if (matchedWord) {
+                        sound.playSuccess();
+                        
+                        // Insert clean chord output (Word, SVG Only, or Combo)
+                        this.insertChordOutput(matchedWord);
+
+                        // Check if this chord is a Root in our Morpheme Tree
+                        if (this.rootsTree[combo]) {
+                            this.activeRoot = this.rootsTree[combo];
+                            toast.innerText = `🌳 [Root Locked: ${matchedWord.toUpperCase()}] Waiting for Step 2 Morpheme! (Look at the tree on the right)`;
+                            toast.className = "text-xs md:text-sm font-bold text-amber-300 bg-amber-500/20 border border-amber-500/40 px-6 py-2 rounded-xl text-center animate-pulse";
+                            
+                            // Render the live armed tree on the right
+                            this.renderMorphemeTree(this.activeRoot);
+
+                            // Auto-disarm after 6 seconds of no morpheme
+                            if (this.activeRootTimeout) clearTimeout(this.activeRootTimeout);
+                            this.activeRootTimeout = setTimeout(() => {
+                                this.activeRoot = null;
+                                this.renderMorphemeTree();
+                            }, 6000);
+                        } else {
+                            toast.innerText = `⚡ [Chord Match] '${combo}' -> "${matchedWord}"`;
+                            toast.className = "text-xs md:text-sm font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-6 py-2 rounded-xl text-center";
+                            if (this.activeRoot) {
+                                this.activeRoot = null;
+                                this.renderMorphemeTree();
+                            }
+                        }
+
+                        // Check if matched current sandbox prompt
+                        if (matchedWord.toLowerCase() === targetItem.word.toLowerCase()) {
+                            const card = document.getElementById('sandbox-card');
+                            if (card) {
+                                card.classList.add('flash-win');
+                                setTimeout(() => card.classList.remove('flash-win'), 600);
+                            }
+                            setTimeout(() => this.sandboxNextPrompt(), 700);
+                        }
+                    } else {
+                        sound.playChime();
+                        toast.innerText = `[Unmapped Chord] '${combo}' (No match in dictionary or morpheme tree)`;
+                        toast.className = "text-xs md:text-sm font-bold text-slate-400 bg-slate-800 border border-slate-700 px-6 py-2 rounded-xl text-center";
+                        if (this.activeRoot) {
+                            this.activeRoot = null;
+                            this.renderMorphemeTree();
+                        }
+                    }
+                }
+            }
+        }
+
+        const app = new StenoTutorApp();
+    </script>
+</body>
+</html>
