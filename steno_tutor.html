@@ -239,6 +239,45 @@
             animation: flash-success 0.6s ease-out;
         }
 
+        /* Split Keyboard Hand Outlines & Styling */
+        .keyboard-hand-zone {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.25rem 0.45rem;
+            border-radius: 0.75rem;
+            transition: all 0.2s ease;
+        }
+
+        .zone-left-hand {
+            background: linear-gradient(135deg, rgba(244, 63, 94, 0.08) 0%, rgba(244, 63, 94, 0.02) 100%);
+            border: 1.5px solid rgba(244, 63, 94, 0.35);
+            box-shadow: inset 0 0 12px rgba(244, 63, 94, 0.08), 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .zone-right-hand {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.02) 0%, rgba(56, 189, 248, 0.08) 100%);
+            border: 1.5px solid rgba(56, 189, 248, 0.35);
+            box-shadow: inset 0 0 12px rgba(56, 189, 248, 0.08), 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .split-divider {
+            width: 14px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.35;
+        }
+
+        .split-divider::after {
+            content: '';
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(244, 63, 94, 0.6), rgba(99, 102, 241, 0.6), rgba(56, 189, 248, 0.6));
+            border-radius: 2px;
+        }
+
         /* Custom scrollbar */
         ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
@@ -370,10 +409,16 @@
             </div>
 
             <!-- Interactive Virtual QWERTY Keyboard -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 shadow-2xl flex flex-col items-center gap-2.5 select-none overflow-x-auto">
-                <div class="w-full flex items-center justify-between px-3 text-[11px] font-extrabold uppercase tracking-wider text-slate-400">
-                    <span class="text-rose-400">Left Hand: Pinky(1qaz), Ring(2wsx), Middle(3edc), Index(45rfvtg), Thumb(B)</span>
-                    <span class="text-sky-400">Right Hand: Thumb(N), Index(67yhujm), Middle(8ik,), Ring(9ol.), Pinky(0p;/)</span>
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 shadow-2xl flex flex-col items-center gap-3 select-none overflow-x-auto">
+                <div class="w-full flex items-center justify-between px-3 text-[11px] font-extrabold uppercase tracking-wider">
+                    <span class="flex items-center gap-2 px-3 py-1 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300">
+                        <span>🖐️ Left Hand Zone</span>
+                        <span class="text-[10px] text-rose-400 font-mono font-normal">Pinky(1qaz) Ring(2wsx) Mid(3edc) Index(45rfvtg) Thumb(B)</span>
+                    </span>
+                    <span class="flex items-center gap-2 px-3 py-1 rounded-xl bg-sky-500/10 border border-sky-500/30 text-sky-300">
+                        <span class="text-[10px] text-sky-400 font-mono font-normal">Thumb(N) Index(67yhujm) Mid(8ik,) Ring(9ol.) Pinky(0p;/)</span>
+                        <span>Right Hand Zone 🖐️</span>
+                    </span>
                 </div>
                 <div class="flex gap-1.5 w-full justify-center" id="train-key-row-1"></div>
                 <div class="flex gap-1.5 w-full justify-center" id="train-key-row-2"></div>
@@ -524,7 +569,17 @@
             </div>
 
             <!-- Virtual Keyboard for Sandbox -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 shadow-2xl flex flex-col items-center gap-2.5 select-none overflow-x-auto">
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 shadow-2xl flex flex-col items-center gap-3 select-none overflow-x-auto">
+                <div class="w-full flex items-center justify-between px-3 text-[11px] font-extrabold uppercase tracking-wider">
+                    <span class="flex items-center gap-2 px-3 py-1 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300">
+                        <span>🖐️ Left Hand Zone</span>
+                        <span class="text-[10px] text-rose-400 font-mono font-normal">Pinky(1qaz) Ring(2wsx) Mid(3edc) Index(45rfvtg) Thumb(B)</span>
+                    </span>
+                    <span class="flex items-center gap-2 px-3 py-1 rounded-xl bg-sky-500/10 border border-sky-500/30 text-sky-300">
+                        <span class="text-[10px] text-sky-400 font-mono font-normal">Thumb(N) Index(67yhujm) Mid(8ik,) Ring(9ol.) Pinky(0p;/)</span>
+                        <span>Right Hand Zone 🖐️</span>
+                    </span>
+                </div>
                 <div class="flex gap-1.5 w-full justify-center" id="sandbox-key-row-1"></div>
                 <div class="flex gap-1.5 w-full justify-center" id="sandbox-key-row-2"></div>
                 <div class="flex gap-1.5 w-full justify-center" id="sandbox-key-row-3"></div>
@@ -1291,25 +1346,52 @@
             }
 
             renderKeyboardRows(prefix) {
+                // Split definitions for standard QWERTY rows according to our 10-finger mapping
+                const ROW_SPLITS = [
+                    { left: ['1', '2', '3', '4', '5'], right: ['6', '7', '8', '9', '0'] },
+                    { left: ['q', 'w', 'e', 'r', 't'], right: ['y', 'u', 'i', 'o', 'p'] },
+                    { left: ['a', 's', 'd', 'f', 'g'], right: ['h', 'j', 'k', 'l', ';', "'"] },
+                    { left: ['z', 'x', 'c', 'v', 'b'], right: ['n', 'm', ',', '.', '/'] }
+                ];
+
                 for (let r = 0; r < 4; r++) {
                     const rowEl = document.getElementById(`${prefix}-key-row-${r+1}`);
                     if (!rowEl) continue;
-                    rowEl.innerHTML = KEYBOARD_ROWS[r].map(key => {
+
+                    const split = ROW_SPLITS[r];
+
+                    const renderKeyItem = (key, isLeft) => {
                         const scheme = this.getFingerForKey(key);
-                        const isLeft = scheme.hand === 'left';
-                        const handBg = isLeft ? 'rgba(244, 63, 94, 0.08)' : 'rgba(56, 189, 248, 0.08)';
-                        const handBorder = isLeft ? 'rgba(244, 63, 94, 0.3)' : 'rgba(56, 189, 248, 0.3)';
-                        const handText = isLeft ? '#fecdd3' : '#bae6fd';
+                        const isThumb = key === 'b' || key === 'n';
+                        const handBg = isLeft ? 'rgba(244, 63, 94, 0.09)' : 'rgba(56, 189, 248, 0.09)';
+                        const handBorder = isLeft ? 'rgba(244, 63, 94, 0.45)' : 'rgba(56, 189, 248, 0.45)';
+                        const handText = isLeft ? '#ffe4e6' : '#e0f2fe';
+                        const thumbGlow = isThumb ? `box-shadow: 0 0 10px ${isLeft ? 'rgba(167, 139, 250, 0.5)' : 'rgba(129, 140, 248, 0.5)'};` : '';
 
                         return `
                             <div id="${prefix}-key-${key}" 
                                  data-finger-color="${scheme.color}"
                                  class="h-10 md:h-11 min-w-[32px] md:min-w-[42px] px-2 rounded-xl flex items-center justify-center text-xs md:text-sm font-mono font-bold shadow transition-all duration-150 select-none cursor-default" 
-                                 style="background-color: ${handBg}; border: 1.5px solid ${handBorder}; border-bottom-color: ${scheme.color}; border-bottom-width: 4px; color: ${handText};">
+                                 style="background-color: ${handBg}; border: 1.5px solid ${handBorder}; border-bottom-color: ${scheme.color}; border-bottom-width: 4px; color: ${handText}; ${thumbGlow}">
                                 ${key.toUpperCase()}
                             </div>
                         `;
-                    }).join('');
+                    };
+
+                    rowEl.innerHTML = `
+                        <!-- Left Hand Cluster Zone (Rose Outline & Glow) -->
+                        <div class="keyboard-hand-zone zone-left-hand">
+                            ${split.left.map(k => renderKeyItem(k, true)).join('')}
+                        </div>
+
+                        <!-- Split Gap & Hand Boundary Line -->
+                        <div class="split-divider"></div>
+
+                        <!-- Right Hand Cluster Zone (Sky/Blue Outline & Glow) -->
+                        <div class="keyboard-hand-zone zone-right-hand">
+                            ${split.right.map(k => renderKeyItem(k, false)).join('')}
+                        </div>
+                    `;
                 }
             }
 
