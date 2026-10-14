@@ -256,7 +256,7 @@
                 <h1 class="text-xl font-extrabold tracking-tight text-white flex items-center gap-2">
                     Steno Keyboard Academy & Sandbox
                 </h1>
-                <p class="text-xs text-slate-400">Order-Independent 10-Finger Chording System (51 Words)</p>
+                <p class="text-xs text-slate-400">Order-Independent 10-Finger Chording System (57 Words)</p>
             </div>
         </div>
 
@@ -301,7 +301,7 @@
                 <div class="md:col-span-5 grid grid-cols-3 gap-2">
                     <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-2 text-center shadow-md">
                         <div class="text-[10px] uppercase font-bold text-slate-400">Word</div>
-                        <div class="text-base font-bold mono-font text-indigo-400"><span id="train-stat-idx">1</span> <span class="text-[10px] font-normal text-slate-500">/ 51</span></div>
+                        <div class="text-base font-bold mono-font text-indigo-400"><span id="train-stat-idx">1</span> <span class="text-[10px] font-normal text-slate-500">/ <span id="train-stat-total">57</span></span></div>
                     </div>
                     <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-2 text-center shadow-md">
                         <div class="text-[10px] uppercase font-bold text-slate-400">Score</div>
@@ -613,7 +613,7 @@
             ['z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/']
         ];
 
-        // 51 Steno Vocabulary Dictionary with Chords & Kept Keys
+        // 57 Steno Vocabulary Dictionary with Chords & Kept Keys
         const STENO_DICTIONARY = [
             { word: "can", chord: "acn", keys: "can", note: "Clean 3-finger match" },
             { word: "dog", chord: "dgo", keys: "dog", note: "Clean 3-finger match" },
@@ -665,7 +665,13 @@
             { word: "code", chord: "co", keys: "co", note: "d and e conflicts skipped" },
             { word: "computer", chord: "cmopt", keys: "compt", note: "u, e, r conflicts skipped" },
             { word: "keyboard", chord: "abekory", keys: "keyboar", note: "d skipped (conflict with e)" },
-            { word: "function", chord: "cfinou", keys: "funcio", note: "t and n conflicts skipped" }
+            { word: "function", chord: "cfinou", keys: "funcio", note: "t and n conflicts skipped" },
+            { word: "stand", chord: "adnst", keys: "stand", note: "Clean 5-finger match" },
+            { word: "take", chord: "aekt", keys: "take", note: "Clean 4-finger match" },
+            { word: "turn", chord: "ntu", keys: "tun", note: "r skipped (conflict on Left Index)" },
+            { word: "form", chord: "fmo", keys: "fom", note: "r skipped (conflict on Left Index)" },
+            { word: "press", chord: "eprs", keys: "pres", note: "s duplicate skipped" },
+            { word: "act", chord: "act", keys: "act", note: "Clean 3-finger match" }
         ];
 
         // Map sorted chord to output word
@@ -737,6 +743,12 @@
                 glow: "rgba(16, 185, 129, 0.4)",
                 label: "FUNCTION"
             },
+            "stand": { emoji: "🧍", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "STAND" },
+            "take": { emoji: "✊", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "TAKE" },
+            "turn": { emoji: "🔄", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "TURN" },
+            "form": { emoji: "📐", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "FORM" },
+            "press": { emoji: "🔘", bg: "#ec4899", glow: "rgba(236, 72, 153, 0.4)", label: "PRESS" },
+            "act": { emoji: "🎭", bg: "#d97706", glow: "rgba(217, 119, 6, 0.4)", label: "ACT" },
             // Derived Morpheme Compound Words
             "undo": { emoji: "↩️", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "UNDO" },
             "redo": { emoji: "🔁", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "REDO" },
@@ -752,7 +764,41 @@
             "lifetime": { emoji: "⏳", bg: "#e11d48", glow: "rgba(225, 29, 72, 0.4)", label: "LIFETIME" },
             "lifeline": { emoji: "🛟", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "LIFELINE" },
             "password": { emoji: "🔑", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "PASSWORD" },
-            "recode": { emoji: "🛠️", bg: "#38bdf8", glow: "rgba(56, 189, 248, 0.4)", label: "RECODE" }
+            "recode": { emoji: "🛠️", bg: "#38bdf8", glow: "rgba(56, 189, 248, 0.4)", label: "RECODE" },
+            // Stand derivatives
+            "understand": { emoji: "💡", bg: "#eab308", glow: "rgba(234, 179, 8, 0.4)", label: "UNDERSTAND" },
+            "withstand": { emoji: "🛡️", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "WITHSTAND" },
+            "outstand": { emoji: "⭐", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "OUTSTAND" },
+            "upstand": { emoji: "🔝", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "UPSTAND" },
+            // Take derivatives
+            "mistake": { emoji: "⚠️", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "MISTAKE" },
+            "overtake": { emoji: "🏎️", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "OVERTAKE" },
+            "intake": { emoji: "🥤", bg: "#06b6d4", glow: "rgba(6, 182, 212, 0.4)", label: "INTAKE" },
+            "outtake": { emoji: "🎬", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "OUTTAKE" },
+            "uptake": { emoji: "📈", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "UPTAKE" },
+            "retake": { emoji: "🔁", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "RETAKE" },
+            // Turn derivatives
+            "return": { emoji: "🔙", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "RETURN" },
+            "overturn": { emoji: "🔁", bg: "#f97316", glow: "rgba(249, 115, 22, 0.4)", label: "OVERTURN" },
+            "upturn": { emoji: "📈", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "UPTURN" },
+            "outturn": { emoji: "📦", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "OUTTURN" },
+            // Form derivatives
+            "reform": { emoji: "🏛️", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "REFORM" },
+            "deform": { emoji: "💥", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "DEFORM" },
+            "inform": { emoji: "📢", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "INFORM" },
+            "transform": { emoji: "🦋", bg: "#a855f7", glow: "rgba(168, 85, 247, 0.4)", label: "TRANSFORM" },
+            "conform": { emoji: "🤝", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "CONFORM" },
+            // Press derivatives
+            "express": { emoji: "💬", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "EXPRESS" },
+            "impress": { emoji: "🤩", bg: "#eab308", glow: "rgba(234, 179, 8, 0.4)", label: "IMPRESS" },
+            "depress": { emoji: "📉", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "DEPRESS" },
+            "repress": { emoji: "🤐", bg: "#78716c", glow: "rgba(120, 113, 108, 0.4)", label: "REPRESS" },
+            "oppress": { emoji: "⛓️", bg: "#dc2626", glow: "rgba(220, 38, 38, 0.4)", label: "OPPRESS" },
+            // Act derivatives
+            "react": { emoji: "⚡", bg: "#eab308", glow: "rgba(234, 179, 8, 0.4)", label: "REACT" },
+            "interact": { emoji: "🗣️", bg: "#06b6d4", glow: "rgba(6, 182, 212, 0.4)", label: "INTERACT" },
+            "transact": { emoji: "💳", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "TRANSACT" },
+            "enact": { emoji: "📜", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "ENACT" }
         };
 
         // 2-Step Morpheme Tree Structure
@@ -783,7 +829,7 @@
                 derivatives: {
                     "in": { morpheme: "in-", chord: "in", word: "income", emoji: "💵", note: "Earnings / money" },
                     "otu": { morpheme: "out-", chord: "otu", word: "outcome", emoji: "🎯", note: "Result / consequence" },
-                    "eorv": { morpheme: "over-", chord: "eorv", word: "overcome", emoji: "🧗", note: "Prevail / conquer" },
+                    "eov": { morpheme: "over-", chord: "eov", word: "overcome", emoji: "🧗", note: "Prevail / conquer" },
                     "bce": { morpheme: "become", chord: "bce", word: "become", emoji: "🌱", note: "Transform into" }
                 }
             },
@@ -826,6 +872,76 @@
                 emoji: "💻",
                 derivatives: {
                     "er": { morpheme: "re-", chord: "er", word: "recode", emoji: "🛠️", note: "Rewrite program code" }
+                }
+            },
+            "adnst": {
+                lemma: "stand",
+                chord: "adnst",
+                emoji: "🧍",
+                derivatives: {
+                    "dnru": { morpheme: "under-", chord: "dnru", word: "understand", emoji: "💡", note: "Comprehend meaning" },
+                    "hitw": { morpheme: "with-", chord: "hitw", word: "withstand", emoji: "🛡️", note: "Endure / resist" },
+                    "otu": { morpheme: "out-", chord: "otu", word: "outstand", emoji: "⭐", note: "Be prominent / excel" },
+                    "pu": { morpheme: "up-", chord: "pu", word: "upstand", emoji: "🔝", note: "Stand erect / honest" }
+                }
+            },
+            "aekt": {
+                lemma: "take",
+                chord: "aekt",
+                emoji: "✊",
+                derivatives: {
+                    "ims": { morpheme: "mis-", chord: "ims", word: "mistake", emoji: "⚠️", note: "Error / blunder" },
+                    "eov": { morpheme: "over-", chord: "eov", word: "overtake", emoji: "🏎️", note: "Catch up and pass" },
+                    "in": { morpheme: "in-", chord: "in", word: "intake", emoji: "🥤", note: "Amount absorbed" },
+                    "otu": { morpheme: "out-", chord: "otu", word: "outtake", emoji: "🎬", note: "Discarded recorded scene" },
+                    "pu": { morpheme: "up-", chord: "pu", word: "uptake", emoji: "📈", note: "Absorption rate" },
+                    "er": { morpheme: "re-", chord: "er", word: "retake", emoji: "🔁", note: "Take again" }
+                }
+            },
+            "ntu": {
+                lemma: "turn",
+                chord: "ntu",
+                emoji: "🔄",
+                derivatives: {
+                    "er": { morpheme: "re-", chord: "er", word: "return", emoji: "🔙", note: "Come back" },
+                    "eov": { morpheme: "over-", chord: "eov", word: "overturn", emoji: "🔁", note: "Flip over / reverse" },
+                    "pu": { morpheme: "up-", chord: "pu", word: "upturn", emoji: "📈", note: "Upward trend" },
+                    "otu": { morpheme: "out-", chord: "otu", word: "outturn", emoji: "📦", note: "Production output" }
+                }
+            },
+            "fmo": {
+                lemma: "form",
+                chord: "fmo",
+                emoji: "📐",
+                derivatives: {
+                    "er": { morpheme: "re-", chord: "er", word: "reform", emoji: "🏛️", note: "Improve / reorganize" },
+                    "1d": { morpheme: "de-", chord: "1d", word: "deform", emoji: "💥", note: "Distort shape" },
+                    "in": { morpheme: "in-", chord: "in", word: "inform", emoji: "📢", note: "Convey knowledge" },
+                    "anst": { morpheme: "trans-", chord: "anst", word: "transform", emoji: "🦋", note: "Change nature or form" },
+                    "cno": { morpheme: "con-", chord: "cno", word: "conform", emoji: "🤝", note: "Comply with rules" }
+                }
+            },
+            "eprs": {
+                lemma: "press",
+                chord: "eprs",
+                emoji: "🔘",
+                derivatives: {
+                    "ex": { morpheme: "ex-", chord: "ex", word: "express", emoji: "💬", note: "Convey thought or feeling" },
+                    "im": { morpheme: "im-", chord: "im", word: "impress", emoji: "🤩", note: "Make strong impact" },
+                    "1d": { morpheme: "de-", chord: "1d", word: "depress", emoji: "📉", note: "Push down / lower" },
+                    "er": { morpheme: "re-", chord: "er", word: "repress", emoji: "🤐", note: "Hold back by force" },
+                    "op": { morpheme: "op-", chord: "op", word: "oppress", emoji: "⛓️", note: "Weigh down heavily" }
+                }
+            },
+            "act": {
+                lemma: "act",
+                chord: "act",
+                emoji: "🎭",
+                derivatives: {
+                    "er": { morpheme: "re-", chord: "er", word: "react", emoji: "⚡", note: "Respond to stimulus" },
+                    "eint": { morpheme: "inter-", chord: "eint", word: "interact", emoji: "🗣️", note: "Act reciprocally" },
+                    "anst": { morpheme: "trans-", chord: "anst", word: "transact", emoji: "💳", note: "Conduct business" },
+                    "en": { morpheme: "en-", chord: "en", word: "enact", emoji: "📜", note: "Put into law or practice" }
                 }
             }
         };
@@ -967,6 +1083,8 @@
             }
 
             populateWordSelect() {
+                const totalEl = document.getElementById('train-stat-total');
+                if (totalEl) totalEl.innerText = this.dictionary.length;
                 const select = document.getElementById('training-word-select');
                 select.innerHTML = this.dictionary.map((item, idx) => {
                     return `<option value="${idx}">#${idx + 1}: ${item.word.toUpperCase()} (Chord: ${item.chord})</option>`;

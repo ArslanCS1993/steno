@@ -29,7 +29,7 @@
       "derivatives": {
         "in": { "morpheme": "in-", "chord": "in", "word": "income", "emoji": "💵", "note": "Earnings / money" },
         "otu": { "morpheme": "out-", "chord": "otu", "word": "outcome", "emoji": "🎯", "note": "Result / consequence" },
-        "eorv": { "morpheme": "over-", "chord": "eorv", "word": "overcome", "emoji": "🧗", "note": "Prevail / conquer" },
+        "eov": { "morpheme": "over-", "chord": "eov", "word": "overcome", "emoji": "🧗", "note": "Prevail / conquer" },
         "bce": { "morpheme": "become", "chord": "bce", "word": "become", "emoji": "🌱", "note": "Transform into" }
       }
     },
@@ -77,6 +77,82 @@
       "note": "Program instruction",
       "derivatives": {
         "er": { "morpheme": "re-", "chord": "er", "word": "recode", "emoji": "🛠️", "note": "Rewrite program code" }
+      }
+    },
+    "adnst": {
+      "lemma": "stand",
+      "chord": "adnst",
+      "emoji": "🧍",
+      "note": "Remain upright / position",
+      "derivatives": {
+        "dnru": { "morpheme": "under-", "chord": "dnru", "word": "understand", "emoji": "💡", "note": "Comprehend meaning" },
+        "hitw": { "morpheme": "with-", "chord": "hitw", "word": "withstand", "emoji": "🛡️", "note": "Endure / resist" },
+        "otu": { "morpheme": "out-", "chord": "otu", "word": "outstand", "emoji": "⭐", "note": "Be prominent / excel" },
+        "pu": { "morpheme": "up-", "chord": "pu", "word": "upstand", "emoji": "🔝", "note": "Stand erect / honest" }
+      }
+    },
+    "aekt": {
+      "lemma": "take",
+      "chord": "aekt",
+      "emoji": "✊",
+      "note": "Grasp / acquire",
+      "derivatives": {
+        "ims": { "morpheme": "mis-", "chord": "ims", "word": "mistake", "emoji": "⚠️", "note": "Error / blunder" },
+        "eov": { "morpheme": "over-", "chord": "eov", "word": "overtake", "emoji": "🏎️", "note": "Catch up and pass" },
+        "in": { "morpheme": "in-", "chord": "in", "word": "intake", "emoji": "🥤", "note": "Amount absorbed" },
+        "otu": { "morpheme": "out-", "chord": "otu", "word": "outtake", "emoji": "🎬", "note": "Discarded recorded scene" },
+        "pu": { "morpheme": "up-", "chord": "pu", "word": "uptake", "emoji": "📈", "note": "Absorption rate" },
+        "er": { "morpheme": "re-", "chord": "er", "word": "retake", "emoji": "🔁", "note": "Take again" }
+      }
+    },
+    "ntu": {
+      "lemma": "turn",
+      "chord": "ntu",
+      "emoji": "🔄",
+      "note": "Rotate / change direction",
+      "derivatives": {
+        "er": { "morpheme": "re-", "chord": "er", "word": "return", "emoji": "🔙", "note": "Come back" },
+        "eov": { "morpheme": "over-", "chord": "eov", "word": "overturn", "emoji": "🔁", "note": "Flip over / reverse" },
+        "pu": { "morpheme": "up-", "chord": "pu", "word": "upturn", "emoji": "📈", "note": "Upward trend" },
+        "otu": { "morpheme": "out-", "chord": "otu", "word": "outturn", "emoji": "📦", "note": "Production output" }
+      }
+    },
+    "fmo": {
+      "lemma": "form",
+      "chord": "fmo",
+      "emoji": "📐",
+      "note": "Shape / structure",
+      "derivatives": {
+        "er": { "morpheme": "re-", "chord": "er", "word": "reform", "emoji": "🏛️", "note": "Improve / reorganize" },
+        "1d": { "morpheme": "de-", "chord": "1d", "word": "deform", "emoji": "💥", "note": "Distort shape" },
+        "in": { "morpheme": "in-", "chord": "in", "word": "inform", "emoji": "📢", "note": "Convey knowledge" },
+        "anst": { "morpheme": "trans-", "chord": "anst", "word": "transform", "emoji": "🦋", "note": "Change nature or form" },
+        "cno": { "morpheme": "con-", "chord": "cno", "word": "conform", "emoji": "🤝", "note": "Comply with rules" }
+      }
+    },
+    "eprs": {
+      "lemma": "press",
+      "chord": "eprs",
+      "emoji": "🔘",
+      "note": "Apply force / push",
+      "derivatives": {
+        "ex": { "morpheme": "ex-", "chord": "ex", "word": "express", "emoji": "💬", "note": "Convey thought or feeling" },
+        "im": { "morpheme": "im-", "chord": "im", "word": "impress", "emoji": "🤩", "note": "Make strong impact" },
+        "1d": { "morpheme": "de-", "chord": "1d", "word": "depress", "emoji": "📉", "note": "Push down / lower" },
+        "er": { "morpheme": "re-", "chord": "er", "word": "repress", "emoji": "🤐", "note": "Hold back by force" },
+        "op": { "morpheme": "op-", "chord": "op", "word": "oppress", "emoji": "⛓️", "note": "Weigh down heavily" }
+      }
+    },
+    "act": {
+      "lemma": "act",
+      "chord": "act",
+      "emoji": "🎭",
+      "note": "Take action / perform",
+      "derivatives": {
+        "er": { "morpheme": "re-", "chord": "er", "word": "react", "emoji": "⚡", "note": "Respond to stimulus" },
+        "eint": { "morpheme": "inter-", "chord": "eint", "word": "interact", "emoji": "🗣️", "note": "Act reciprocally" },
+        "anst": { "morpheme": "trans-", "chord": "anst", "word": "transact", "emoji": "💳", "note": "Conduct business" },
+        "en": { "morpheme": "en-", "chord": "en", "word": "enact", "emoji": "📜", "note": "Put into law or practice" }
       }
     }
   },
@@ -131,6 +207,12 @@
     "acl": "local ",
     "any": "any ",
     "aks": "ask ",
-    "antw": "want "
+    "antw": "want ",
+    "adnst": "stand ",
+    "aekt": "take ",
+    "ntu": "turn ",
+    "fmo": "form ",
+    "eprs": "press ",
+    "act": "act "
   }
 }
