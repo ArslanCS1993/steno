@@ -464,15 +464,23 @@
                                     </button>
                                 </div>
                             </div>
-                            <button onclick="app.clearEditor()" class="text-xs text-slate-400 hover:text-rose-400 font-semibold px-2.5 py-1 bg-slate-950 rounded-xl border border-slate-800 transition-colors">
-                                🗑️ Clear Box
-                            </button>
+                            <div class="flex items-center gap-1.5 flex-wrap">
+                                <button id="editor-copy-btn" onclick="app.copyEditorText()" class="text-xs text-slate-400 hover:text-emerald-400 font-semibold px-2.5 py-1 bg-slate-950 rounded-xl border border-slate-800 hover:border-emerald-500/50 transition-all flex items-center gap-1.5 active:scale-95 shadow" title="Copy clean lettered words (Ctrl+C)">
+                                    📋 Copy <span class="text-[10px] text-slate-500 font-mono">(Ctrl+C)</span>
+                                </button>
+                                <button id="editor-paste-btn" onclick="app.pasteEditorText()" class="text-xs text-slate-400 hover:text-sky-400 font-semibold px-2.5 py-1 bg-slate-950 rounded-xl border border-slate-800 hover:border-sky-500/50 transition-all flex items-center gap-1.5 active:scale-95 shadow" title="Paste text into editor (Ctrl+V)">
+                                    📥 Paste <span class="text-[10px] text-slate-500 font-mono">(Ctrl+V)</span>
+                                </button>
+                                <button onclick="app.clearEditor()" class="text-xs text-slate-400 hover:text-rose-400 font-semibold px-2.5 py-1 bg-slate-950 rounded-xl border border-slate-800 transition-colors" title="Clear sandbox box">
+                                    🗑️ Clear
+                                </button>
+                            </div>
                         </div>
 
                         <!-- Rich Interactive Typing Box -->
                         <div id="sandbox-editor" tabindex="0" class="w-full flex-1 min-h-[140px] max-h-[220px] overflow-y-auto bg-slate-950 border border-slate-800 rounded-2xl p-4 flex flex-wrap items-center gap-2 focus:outline-none focus:border-indigo-500 shadow-inner cursor-text relative">
                             <span id="editor-placeholder" class="text-slate-600 font-mono text-xs md:text-sm select-none pointer-events-none">
-                                Chord root words and morphemes together on your keyboard to stream them here... (Press Backspace to delete last item)
+                                Chord words or type normally letter-by-letter here... (Press 1-4 for grammar modifiers, Space to commit words, Backspace to delete/split)
                             </span>
                         </div>
 
@@ -1751,6 +1759,16 @@
             };
         }
 
+        // Reverse map from inflected forms back to base lemmas for SVG/visual inheritance
+        const INFLECTION_TO_LEMMA = {};
+        for (const [lemma, gData] of Object.entries(GRAMMAR_DATA)) {
+            if (gData && gData.forms) {
+                for (const [num, form] of Object.entries(gData.forms)) {
+                    INFLECTION_TO_LEMMA[form.toLowerCase().trim()] = lemma.toLowerCase().trim();
+                }
+            }
+        }
+
         class StenoTutorApp {
             constructor() {
                 this.dictionary = STENO_DICTIONARY;
@@ -1778,6 +1796,7 @@
                 // Live physical key tracking
                 this.pressedKeys = new Set();
                 this.chordHistory = new Set();
+                this.keyPressOrder = [];
 
                 // Stats
                 this.score = 0;
@@ -1798,24 +1817,235 @@
                         }
                     }
                 });
+
+                // Dynamically re-render existing chord elements to the selected mode
+                const editor = document.getElementById('sandbox-editor');
+                if (editor) {
+                    editor.querySelectorAll('.chord-item').forEach(el => {
+                        const word = el.dataset.word;
+                        if (!word) return;
+                        const vis = this.getWordVisual(word);
+                        if (mode === 'words') {
+                            el.innerHTML = `
+                                <span class="px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-700/80 font-mono font-bold text-sm md:text-base text-emerald-400 shadow mr-1.5 hover:border-emerald-500">
+                                    ${word}
+                                </span>
+                            `;
+                        } else if (mode === 'svg') {
+                            el.innerHTML = `
+                                <span class="w-11 h-11 md:w-12 md:h-12 bg-slate-900 border-2 rounded-2xl p-1 mr-1.5 shadow-lg hover:scale-110 transition-transform cursor-pointer flex items-center justify-center text-2xl select-none" style="border-color: ${vis.bg}; box-shadow: 0 4px 14px ${vis.glow || 'rgba(99,102,241,0.2)'};" title="${word.toUpperCase()}">
+                                    ${this.getWordDisplayHtml(word, 'text-2xl')}
+                                </span>
+                            `;
+                        } else if (mode === 'combo') {
+                            el.innerHTML = `
+                                <span class="flex items-center gap-2 bg-slate-900 border rounded-2xl px-2.5 py-1 mr-1.5 shadow hover:scale-105 transition-transform" style="border-color: ${vis.bg}">
+                                    <span class="w-7 h-7 rounded-lg flex items-center justify-center text-lg select-none" style="background: ${vis.bg}22">
+                                        ${this.getWordDisplayHtml(word, 'text-lg')}
+                                    </span>
+                                    <span class="font-mono font-extrabold text-xs md:text-sm text-slate-100 uppercase tracking-wide">${word}</span>
+                                </span>
+                            `;
+                        }
+                    });
+                }
             }
 
             clearEditor() {
                 const editor = document.getElementById('sandbox-editor');
                 if (editor) {
                     editor.innerHTML = `
-                        <span id="editor-placeholder" class="text-slate-600 font-mono text-sm select-none pointer-events-none">
-                            Chord keys together and release to stream words or SVG icons right here... (Press Backspace to delete last item)
+                        <span id="editor-placeholder" class="text-slate-600 font-mono text-xs md:text-sm select-none pointer-events-none">
+                            Chord words or type normally letter-by-letter here... (Press 1-4 for grammar modifiers, Space to commit words, Backspace to delete/split)
                         </span>
                     `;
                 }
                 this.activeGrammarWord = null;
                 this.activeGrammar = null;
+                this.lastMorphemeAttachment = null;
+                this.keyPressOrder = [];
                 const bar = document.getElementById('sandbox-grammar-bar');
                 if (bar) {
                     bar.classList.add('hidden');
                     bar.classList.remove('flex');
                 }
+            }
+
+            // Extract pure lettered words text from editor (preserving grammar, filtering out SVGs/emojis)
+            getEditorText() {
+                const editor = document.getElementById('sandbox-editor');
+                if (!editor) return '';
+
+                let result = '';
+                const children = Array.from(editor.children);
+
+                for (let el of children) {
+                    if (el.id === 'editor-placeholder') continue;
+
+                    if (el.classList.contains('chord-item')) {
+                        const word = el.dataset.word || el.innerText.trim();
+                        if (word) {
+                            if (result.length > 0 && !/[\s\n]$/.test(result)) {
+                                result += ' ';
+                            }
+                            result += word;
+                        }
+                    } else if (el.classList.contains('typed-span')) {
+                        result += el.textContent;
+                    } else if (el.classList.contains('basis-full')) {
+                        result += '\n';
+                    }
+                }
+                return result;
+            }
+
+            async copyEditorText() {
+                const text = this.getEditorText();
+                const toast = document.getElementById('sandbox-toast');
+
+                if (!text || text.trim().length === 0) {
+                    if (toast) {
+                        toast.innerText = "⚠️ Sandbox box is empty. Nothing to copy!";
+                        toast.className = "text-xs md:text-sm font-bold text-amber-300 bg-amber-500/20 border border-amber-500/40 px-6 py-2 rounded-xl text-center shadow";
+                    }
+                    return;
+                }
+
+                try {
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        await navigator.clipboard.writeText(text);
+                    } else {
+                        const ta = document.createElement('textarea');
+                        ta.value = text;
+                        ta.style.position = 'fixed';
+                        ta.style.opacity = '0';
+                        document.body.appendChild(ta);
+                        ta.focus();
+                        ta.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(ta);
+                    }
+                    this.showCopyFeedback(text);
+                } catch (err) {
+                    console.error('Clipboard copy error:', err);
+                    if (toast) {
+                        toast.innerText = `❌ Could not copy to clipboard: ${err.message}`;
+                        toast.className = "text-xs md:text-sm font-bold text-rose-300 bg-rose-500/20 border border-rose-500/40 px-6 py-2 rounded-xl text-center";
+                    }
+                }
+            }
+
+            showCopyFeedback(text) {
+                sound.playSuccess();
+                const copyBtn = document.getElementById('editor-copy-btn');
+                if (copyBtn) {
+                    const orig = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '✅ Copied!';
+                    copyBtn.classList.add('text-emerald-400', 'border-emerald-500');
+                    setTimeout(() => {
+                        copyBtn.innerHTML = orig;
+                        copyBtn.classList.remove('text-emerald-400', 'border-emerald-500');
+                    }, 1400);
+                }
+                const toast = document.getElementById('sandbox-toast');
+                if (toast) {
+                    const preview = text.length > 40 ? text.slice(0, 40) + '...' : text;
+                    toast.innerText = `📋 [Copied Words] "${preview}" copied to clipboard (Grammar preserved, no SVGs!)`;
+                    toast.className = "text-xs md:text-sm font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-6 py-2 rounded-xl text-center shadow-lg";
+                }
+            }
+
+            async pasteEditorText() {
+                try {
+                    if (navigator.clipboard && navigator.clipboard.readText) {
+                        const text = await navigator.clipboard.readText();
+                        if (text) {
+                            this.insertPastedText(text);
+                        }
+                    }
+                } catch (err) {
+                    console.warn('Clipboard readText restricted:', err);
+                    const toast = document.getElementById('sandbox-toast');
+                    if (toast) {
+                        toast.innerText = "ℹ️ Please click inside the box and press Ctrl+V directly to paste.";
+                        toast.className = "text-xs md:text-sm font-bold text-amber-300 bg-amber-500/20 border border-amber-500/40 px-6 py-2 rounded-xl text-center shadow";
+                    }
+                }
+            }
+
+            insertPastedText(text) {
+                if (this.mode !== 'sandbox' || !text) return;
+
+                // Split text into word tokens and whitespace tokens
+                const tokens = text.match(/\S+|\s+/g) || [text];
+
+                for (let token of tokens) {
+                    if (token === '\n') {
+                        this.typeCharacter('\n');
+                    } else if (/^\s+$/.test(token)) {
+                        this.typeCharacter(' ');
+                    } else {
+                        const clean = token.toLowerCase().trim();
+                        const isKnown = WORD_VISUALS[clean] || GRAMMAR_DATA[clean] || INFLECTION_TO_LEMMA[clean];
+                        if (isKnown) {
+                            this.insertChordOutput(token);
+                        } else {
+                            for (let ch of token) {
+                                this.typeCharacter(ch);
+                            }
+                        }
+                    }
+                }
+
+                sound.playSuccess();
+                const pasteBtn = document.getElementById('editor-paste-btn');
+                if (pasteBtn) {
+                    const orig = pasteBtn.innerHTML;
+                    pasteBtn.innerHTML = '✅ Pasted!';
+                    pasteBtn.classList.add('text-sky-400', 'border-sky-500');
+                    setTimeout(() => {
+                        pasteBtn.innerHTML = orig;
+                        pasteBtn.classList.remove('text-sky-400', 'border-sky-500');
+                    }, 1400);
+                }
+                const toast = document.getElementById('sandbox-toast');
+                if (toast) {
+                    const preview = text.length > 40 ? text.slice(0, 40) + '...' : text;
+                    toast.innerText = `📥 [Pasted Text] "${preview}" inserted into sandbox!`;
+                    toast.className = "text-xs md:text-sm font-bold text-sky-300 bg-sky-500/20 border border-sky-500/40 px-6 py-2 rounded-xl text-center shadow";
+                }
+            }
+
+            typeCharacter(char) {
+                if (this.mode !== 'sandbox') return;
+                const editor = document.getElementById('sandbox-editor');
+                if (!editor) return;
+
+                // Hide placeholder
+                const ph = document.getElementById('editor-placeholder');
+                if (ph) ph.classList.add('hidden');
+
+                // Any typing disarms morpheme undo memory
+                this.lastMorphemeAttachment = null;
+
+                if (char === '\n') {
+                    const br = document.createElement('div');
+                    br.className = "w-full basis-full h-0 my-1";
+                    editor.appendChild(br);
+                    editor.scrollTop = editor.scrollHeight;
+                    return;
+                }
+
+                let lastEl = editor.lastElementChild;
+                if (lastEl && lastEl.classList.contains('typed-span')) {
+                    lastEl.textContent += char;
+                } else {
+                    const span = document.createElement('span');
+                    span.className = "typed-span font-mono font-bold text-sm md:text-base text-slate-100 whitespace-pre tracking-wide transition-all";
+                    span.textContent = char;
+                    editor.appendChild(span);
+                }
+                editor.scrollTop = editor.scrollHeight;
             }
 
             insertChordOutput(matchedWord) {
@@ -1829,6 +2059,7 @@
                 const vis = WORD_VISUALS[matchedWord.toLowerCase()] || { emoji: "✨", bg: "#6366f1", label: matchedWord.toUpperCase() };
                 let el = document.createElement('span');
                 el.className = "chord-item transition-all duration-150 inline-flex items-center";
+                el.dataset.word = matchedWord;
 
                 if (this.editorOutputMode === 'words') {
                     el.innerHTML = `
@@ -1913,9 +2144,13 @@
                 const ph = document.getElementById('editor-placeholder');
                 if (ph) ph.classList.add('hidden');
 
-                const vis = WORD_VISUALS[newWord.toLowerCase()] || WORD_VISUALS[originalWord.toLowerCase()] || { emoji: "✨", bg: "#6366f1", label: newWord.toUpperCase() };
+                // Register reverse lookup for dynamic regular and irregular visual inheritance
+                INFLECTION_TO_LEMMA[newWord.toLowerCase().trim()] = originalWord.toLowerCase().trim();
+
+                const vis = this.getWordVisual(newWord);
                 let el = document.createElement('span');
                 el.className = "chord-item transition-all duration-150 inline-flex items-center";
+                el.dataset.word = newWord;
 
                 if (this.editorOutputMode === 'words') {
                     el.innerHTML = `
@@ -2037,8 +2272,12 @@
             }
 
             getWordVisual(word) {
-                const lower = word.toLowerCase();
-                return WORD_VISUALS[lower] || { emoji: "✨", bg: "#6366f1", glow: "rgba(99,102,241,0.4)", label: word.toUpperCase() };
+                if (!word) return { emoji: "✨", bg: "#6366f1", glow: "rgba(99,102,241,0.4)", label: "" };
+                const lower = word.toLowerCase().trim();
+                if (WORD_VISUALS[lower]) return WORD_VISUALS[lower];
+                const lemma = INFLECTION_TO_LEMMA[lower];
+                if (lemma && WORD_VISUALS[lemma]) return WORD_VISUALS[lemma];
+                return { emoji: "✨", bg: "#6366f1", glow: "rgba(99,102,241,0.4)", label: word.toUpperCase() };
             }
 
             getWordDisplayHtml(word, sizeClass = "text-5xl") {
@@ -2399,12 +2638,35 @@
                 this.spaceBypass = false;
 
                 window.addEventListener('keydown', (e) => {
-                    if (e.key === 'Tab' || e.key === 'Alt' || e.key === 'Control') return;
+                    // Keyboard Shortcuts: Ctrl+C (Copy), Ctrl+V (Paste)
+                    if (e.ctrlKey || e.metaKey) {
+                        if (e.key.toLowerCase() === 'c' && this.mode === 'sandbox') {
+                            e.preventDefault();
+                            this.copyEditorText();
+                            return;
+                        }
+                        if (e.key.toLowerCase() === 'v' && this.mode === 'sandbox') {
+                            e.preventDefault();
+                            this.pasteEditorText();
+                            return;
+                        }
+                        return; // Allow standard browser shortcuts without capturing
+                    }
+
+                    if (e.key === 'Tab' || e.key === 'Alt' || e.key === 'Control' || e.key === 'Meta' || e.key === 'Shift') return;
+
+                    // Enter in Sandbox:
+                    if (e.key === 'Enter' && this.mode === 'sandbox') {
+                        e.preventDefault();
+                        this.typeCharacter('\n');
+                        return;
+                    }
 
                     // Backspace in Sandbox:
                     // 1. If a morpheme compound word was just created (e.g. 'intake'), pressing Backspace splits it back into the two separate words ('take' + 'in')!
-                    // 2. Otherwise, deletes the last typed chord item.
+                    // 2. Otherwise, deletes the last typed character or last chord item.
                     if (e.key === 'Backspace' && this.mode === 'sandbox') {
+                        e.preventDefault();
                         if (this.lastMorphemeAttachment) {
                             const att = this.lastMorphemeAttachment;
                             this.lastMorphemeAttachment = null;
@@ -2419,24 +2681,38 @@
                                     toast.innerText = `↩️ [Separated] Compound "${att.compound.toUpperCase()}" split into separate words: "${att.root.toUpperCase()}" and "${att.morphemeWord.toUpperCase()}"`;
                                     toast.className = "text-xs md:text-sm font-bold text-amber-300 bg-amber-500/20 border border-amber-500/40 px-6 py-2 rounded-xl text-center shadow";
                                 }
-                                e.preventDefault();
                                 return;
                             }
                         }
 
                         const editor = document.getElementById('sandbox-editor');
-                        if (editor) {
-                            const items = editor.querySelectorAll('.chord-item');
-                            if (items.length > 0) {
-                                items[items.length - 1].remove();
-                                if (editor.querySelectorAll('.chord-item').length === 0) {
-                                    const ph = document.getElementById('editor-placeholder');
-                                    if (ph) ph.classList.remove('hidden');
+                        if (editor && editor.lastElementChild) {
+                            const lastChild = editor.lastElementChild;
+                            if (lastChild.classList.contains('typed-span')) {
+                                lastChild.textContent = lastChild.textContent.slice(0, -1);
+                                if (lastChild.textContent.length === 0) {
+                                    lastChild.remove();
                                 }
-                                e.preventDefault();
-                                return;
+                            } else if (lastChild.classList.contains('chord-item')) {
+                                lastChild.remove();
+                            } else if (lastChild.id !== 'editor-placeholder') {
+                                lastChild.remove();
+                            }
+
+                            const remaining = editor.querySelectorAll('.chord-item, .typed-span');
+                            if (remaining.length === 0) {
+                                const ph = document.getElementById('editor-placeholder');
+                                if (ph) ph.classList.remove('hidden');
+                                this.activeGrammarWord = null;
+                                this.activeGrammar = null;
+                                const bar = document.getElementById('sandbox-grammar-bar');
+                                if (bar) {
+                                    bar.classList.add('hidden');
+                                    bar.classList.remove('flex');
+                                }
                             }
                         }
+                        return;
                     }
 
                     // Grammar Number Modifier Tap (1, 2, 3, 4):
@@ -2449,23 +2725,28 @@
 
                     // Spacebar handling:
                     if (e.code === 'Space') {
-                        // If steno keys are currently held down, Space is part of a simultaneous chord!
+                        e.preventDefault();
+                        // If keys are currently held down, Space is part of a simultaneous chord!
                         if (this.pressedKeys.size > 0) {
-                            e.preventDefault();
                             this.chordHistory.add('space');
                             return;
                         }
 
-                        // Otherwise Space pressed alone: acts as commit / disarm / bypass
+                        // Otherwise Space pressed alone: acts as commit / disarm / bypass and spaces text in sandbox
                         this.spaceBypass = true;
                         this.pressedKeys.clear();
                         this.chordHistory.clear();
+                        this.keyPressOrder = [];
                         this.activeGrammarWord = null;
                         this.activeGrammar = null;
                         const bar = document.getElementById('sandbox-grammar-bar');
                         if (bar) {
                             bar.classList.add('hidden');
                             bar.classList.remove('flex');
+                        }
+
+                        if (this.mode === 'sandbox') {
+                            this.typeCharacter(' ');
                         }
 
                         if (this.activeRoot) {
@@ -2483,20 +2764,13 @@
                     }
                     if (this.spaceBypass) return;
 
-                    const k = e.key.toLowerCase();
-
-                    // Check if key is within allowed steno layout
-                    let isStenoKey = false;
-                    for (let s of FINGER_SCHEME) {
-                        if (s.keys.includes(k)) { isStenoKey = true; break; }
-                    }
-
-                    if (isStenoKey) {
-                        // Crucial fix: prevent raw keystrokes (e.g. 'cna', 'wtah') from printing into the textarea!
+                    // Handle single printable characters (letters, numbers, symbols)
+                    if (e.key.length === 1) {
                         e.preventDefault();
-
+                        const k = e.key.toLowerCase();
                         this.pressedKeys.add(k);
                         this.chordHistory.add(k);
+                        this.keyPressOrder.push(e.key);
                         this.onKeysChange();
                     }
                 });
@@ -2507,10 +2781,12 @@
                         if (this.pressedKeys.size === 0 && this.chordHistory.size > 0) {
                             const hasSpace = this.chordHistory.has('space');
                             const keysOnly = Array.from(this.chordHistory).filter(k => k !== 'space').sort().join('');
-                            if (keysOnly.length > 0) {
-                                this.onChordRelease(keysOnly, hasSpace);
-                            }
+                            const order = [...this.keyPressOrder];
                             this.chordHistory.clear();
+                            this.keyPressOrder = [];
+                            if (keysOnly.length > 0) {
+                                this.onChordRelease(keysOnly, hasSpace, order);
+                            }
                             this.onKeysChange();
                         }
                         return;
@@ -2521,15 +2797,44 @@
                         this.pressedKeys.delete(k);
                     }
 
-                    // When all keys are released, evaluate chord!
+                    // When all keys are released, evaluate chord or typed character(s)!
                     if (this.pressedKeys.size === 0 && this.chordHistory.size > 0) {
                         const hasSpace = this.chordHistory.has('space');
                         const keysOnly = Array.from(this.chordHistory).filter(k => k !== 'space').sort().join('');
-                        if (keysOnly.length > 0) {
-                            this.onChordRelease(keysOnly, hasSpace);
-                        }
+                        const order = [...this.keyPressOrder];
                         this.chordHistory.clear();
+                        this.keyPressOrder = [];
+
+                        if (keysOnly.length > 0) {
+                            this.onChordRelease(keysOnly, hasSpace, order);
+                        }
                         this.onKeysChange();
+                    }
+                });
+
+                // Native Copy Event Listener:
+                // Intercepts copy events in sandbox to ensure clean lettered words (no SVGs/emojis) are copied
+                window.addEventListener('copy', (e) => {
+                    if (this.mode === 'sandbox') {
+                        const text = this.getEditorText();
+                        if (text && text.trim().length > 0) {
+                            if (e.clipboardData) {
+                                e.clipboardData.setData('text/plain', text);
+                                e.preventDefault();
+                                this.showCopyFeedback(text);
+                            }
+                        }
+                    }
+                });
+
+                // Native Paste Event Listener:
+                window.addEventListener('paste', (e) => {
+                    if (this.mode === 'sandbox') {
+                        const clipText = (e.clipboardData || window.clipboardData).getData('text');
+                        if (clipText) {
+                            e.preventDefault();
+                            this.insertPastedText(clipText);
+                        }
                     }
                 });
             }
@@ -2557,7 +2862,7 @@
                 }
             }
 
-            onChordRelease(combo, hasSpace = false) {
+            onChordRelease(combo, hasSpace = false, keyOrder = []) {
                 const expanded = CHORD_MAP[combo];
                 const matchedWord = expanded ? expanded.trim() : null;
 
@@ -2688,9 +2993,20 @@
                             setTimeout(() => this.sandboxNextPrompt(), 700);
                         }
                     } else {
-                        sound.playChime();
-                        toast.innerText = `[Unmapped Chord] '${combo}' (No match in dictionary or morpheme tree)`;
-                        toast.className = "text-xs md:text-sm font-bold text-slate-400 bg-slate-800 border border-slate-700 px-6 py-2 rounded-xl text-center";
+                        // SMART REGULAR TYPING: No chord matched, so stream the typed characters into the sandbox!
+                        if (keyOrder && keyOrder.length > 0) {
+                            for (let ch of keyOrder) {
+                                this.typeCharacter(ch);
+                            }
+                            if (toast) {
+                                toast.innerText = `⌨️ Typed: "${keyOrder.join('')}"`;
+                                toast.className = "text-xs md:text-sm font-bold text-slate-300 bg-slate-900 border border-slate-700 px-6 py-2 rounded-xl text-center";
+                            }
+                        } else {
+                            sound.playChime();
+                            toast.innerText = `[Unmapped Chord] '${combo}' (No match in dictionary or morpheme tree)`;
+                            toast.className = "text-xs md:text-sm font-bold text-slate-400 bg-slate-800 border border-slate-700 px-6 py-2 rounded-xl text-center";
+                        }
                         if (this.activeRoot) {
                             this.activeRoot = null;
                             this.renderMorphemeTree();
