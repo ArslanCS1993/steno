@@ -6,9 +6,27 @@
       "emoji": "✅",
       "note": "Base action verb",
       "derivatives": {
-        "nu": { "morpheme": "un-", "chord": "nu", "word": "undo", "emoji": "↩️", "note": "Reverse action" },
-        "er": { "morpheme": "re-", "chord": "er", "word": "redo", "emoji": "🔁", "note": "Repeat action" },
-        "otu": { "morpheme": "out-", "chord": "otu", "word": "outdo", "emoji": "🏆", "note": "Surpass / excel" }
+        "nu": {
+          "morpheme": "un-",
+          "chord": "nu",
+          "word": "undo",
+          "emoji": "↩️",
+          "note": "Reverse action"
+        },
+        "er": {
+          "morpheme": "re-",
+          "chord": "er",
+          "word": "redo",
+          "emoji": "🔁",
+          "note": "Repeat action"
+        },
+        "otu": {
+          "morpheme": "out-",
+          "chord": "otu",
+          "word": "outdo",
+          "emoji": "🏆",
+          "note": "Surpass / excel"
+        }
       }
     },
     "cnot": {
@@ -17,8 +35,20 @@
       "emoji": "🔗",
       "note": "Join together",
       "derivatives": {
-        "er": { "morpheme": "re-", "chord": "er", "word": "reconnect", "emoji": "🔄", "note": "Establish link again" },
-        "dis": { "morpheme": "dis-", "chord": "dis", "word": "disconnect", "emoji": "🔌", "note": "Sever link" }
+        "er": {
+          "morpheme": "re-",
+          "chord": "er",
+          "word": "reconnect",
+          "emoji": "🔄",
+          "note": "Establish link again"
+        },
+        "dis": {
+          "morpheme": "dis-",
+          "chord": "dis",
+          "word": "disconnect",
+          "emoji": "🔌",
+          "note": "Sever link"
+        }
       }
     },
     "cmo": {
@@ -27,10 +57,34 @@
       "emoji": "🫴",
       "note": "Move toward",
       "derivatives": {
-        "in": { "morpheme": "in-", "chord": "in", "word": "income", "emoji": "💵", "note": "Earnings / money" },
-        "otu": { "morpheme": "out-", "chord": "otu", "word": "outcome", "emoji": "🎯", "note": "Result / consequence" },
-        "eov": { "morpheme": "over-", "chord": "eov", "word": "overcome", "emoji": "🧗", "note": "Prevail / conquer" },
-        "bce": { "morpheme": "become", "chord": "bce", "word": "become", "emoji": "🌱", "note": "Transform into" }
+        "in": {
+          "morpheme": "in-",
+          "chord": "in",
+          "word": "income",
+          "emoji": "💵",
+          "note": "Earnings / money"
+        },
+        "otu": {
+          "morpheme": "out-",
+          "chord": "otu",
+          "word": "outcome",
+          "emoji": "🎯",
+          "note": "Result / consequence"
+        },
+        "eov": {
+          "morpheme": "over-",
+          "chord": "eov",
+          "word": "overcome",
+          "emoji": "🧗",
+          "note": "Prevail / conquer"
+        },
+        "bce": {
+          "morpheme": "become",
+          "chord": "bce",
+          "word": "become",
+          "emoji": "🌱",
+          "note": "Transform into"
+        }
       }
     },
     "aklw": {
@@ -39,7 +93,13 @@
       "emoji": "🚶",
       "note": "Move on foot",
       "derivatives": {
-        "otu": { "morpheme": "out-", "chord": "otu", "word": "outwalk", "emoji": "🏃‍♂️", "note": "Walk faster than" }
+        "otu": {
+          "morpheme": "out-",
+          "chord": "otu",
+          "word": "outwalk",
+          "emoji": "🏃‍♂️",
+          "note": "Walk faster than"
+        }
       }
     },
     "efil": {
@@ -48,7 +108,13 @@
       "emoji": "📁",
       "note": "Document / archive",
       "derivatives": {
-        "er": { "morpheme": "re-", "chord": "er", "word": "refile", "emoji": "📂", "note": "File again" }
+        "er": {
+          "morpheme": "re-",
+          "chord": "er",
+          "word": "refile",
+          "emoji": "📂",
+          "note": "File again"
+        }
       }
     },
     "1efil": {
@@ -57,8 +123,20 @@
       "emoji": "💖",
       "note": "Existence / vitality",
       "derivatives": {
-        "emti": { "morpheme": "time", "chord": "emti", "word": "lifetime", "emoji": "⏳", "note": "Duration of life" },
-        "1aelns": { "morpheme": "line", "chord": "1aelns", "word": "lifeline", "emoji": "🛟", "note": "Vital support link" }
+        "emti": {
+          "morpheme": "time",
+          "chord": "emti",
+          "word": "lifetime",
+          "emoji": "⏳",
+          "note": "Duration of life"
+        },
+        "1aelns": {
+          "morpheme": "line",
+          "chord": "1aelns",
+          "word": "lifeline",
+          "emoji": "🛟",
+          "note": "Vital support link"
+        }
       }
     },
     "dorw": {
@@ -67,7 +145,13 @@
       "emoji": "💬",
       "note": "Unit of language",
       "derivatives": {
-        "aps": { "morpheme": "pass", "chord": "aps", "word": "password", "emoji": "🔑", "note": "Secret security word" }
+        "aps": {
+          "morpheme": "pass",
+          "chord": "aps",
+          "word": "password",
+          "emoji": "🔑",
+          "note": "Secret security word"
+        }
       }
     },
     "co": {
@@ -76,7 +160,13 @@
       "emoji": "💻",
       "note": "Program instruction",
       "derivatives": {
-        "er": { "morpheme": "re-", "chord": "er", "word": "recode", "emoji": "🛠️", "note": "Rewrite program code" }
+        "er": {
+          "morpheme": "re-",
+          "chord": "er",
+          "word": "recode",
+          "emoji": "🛠️",
+          "note": "Rewrite program code"
+        }
       }
     },
     "adnst": {
@@ -85,10 +175,34 @@
       "emoji": "🧍",
       "note": "Remain upright / position",
       "derivatives": {
-        "dnru": { "morpheme": "under-", "chord": "dnru", "word": "understand", "emoji": "💡", "note": "Comprehend meaning" },
-        "hitw": { "morpheme": "with-", "chord": "hitw", "word": "withstand", "emoji": "🛡️", "note": "Endure / resist" },
-        "otu": { "morpheme": "out-", "chord": "otu", "word": "outstand", "emoji": "⭐", "note": "Be prominent / excel" },
-        "pu": { "morpheme": "up-", "chord": "pu", "word": "upstand", "emoji": "🔝", "note": "Stand erect / honest" }
+        "dnru": {
+          "morpheme": "under-",
+          "chord": "dnru",
+          "word": "understand",
+          "emoji": "💡",
+          "note": "Comprehend meaning"
+        },
+        "hitw": {
+          "morpheme": "with-",
+          "chord": "hitw",
+          "word": "withstand",
+          "emoji": "🛡️",
+          "note": "Endure / resist"
+        },
+        "otu": {
+          "morpheme": "out-",
+          "chord": "otu",
+          "word": "outstand",
+          "emoji": "⭐",
+          "note": "Be prominent / excel"
+        },
+        "pu": {
+          "morpheme": "up-",
+          "chord": "pu",
+          "word": "upstand",
+          "emoji": "🔝",
+          "note": "Stand erect / honest"
+        }
       }
     },
     "aekt": {
@@ -97,12 +211,48 @@
       "emoji": "✊",
       "note": "Grasp / acquire",
       "derivatives": {
-        "ims": { "morpheme": "mis-", "chord": "ims", "word": "mistake", "emoji": "⚠️", "note": "Error / blunder" },
-        "eov": { "morpheme": "over-", "chord": "eov", "word": "overtake", "emoji": "🏎️", "note": "Catch up and pass" },
-        "in": { "morpheme": "in-", "chord": "in", "word": "intake", "emoji": "🥤", "note": "Amount absorbed" },
-        "otu": { "morpheme": "out-", "chord": "otu", "word": "outtake", "emoji": "🎬", "note": "Discarded recorded scene" },
-        "pu": { "morpheme": "up-", "chord": "pu", "word": "uptake", "emoji": "📈", "note": "Absorption rate" },
-        "er": { "morpheme": "re-", "chord": "er", "word": "retake", "emoji": "🔁", "note": "Take again" }
+        "ims": {
+          "morpheme": "mis-",
+          "chord": "ims",
+          "word": "mistake",
+          "emoji": "⚠️",
+          "note": "Error / blunder"
+        },
+        "eov": {
+          "morpheme": "over-",
+          "chord": "eov",
+          "word": "overtake",
+          "emoji": "🏎️",
+          "note": "Catch up and pass"
+        },
+        "in": {
+          "morpheme": "in-",
+          "chord": "in",
+          "word": "intake",
+          "emoji": "🥤",
+          "note": "Amount absorbed"
+        },
+        "otu": {
+          "morpheme": "out-",
+          "chord": "otu",
+          "word": "outtake",
+          "emoji": "🎬",
+          "note": "Discarded recorded scene"
+        },
+        "pu": {
+          "morpheme": "up-",
+          "chord": "pu",
+          "word": "uptake",
+          "emoji": "📈",
+          "note": "Absorption rate"
+        },
+        "er": {
+          "morpheme": "re-",
+          "chord": "er",
+          "word": "retake",
+          "emoji": "🔁",
+          "note": "Take again"
+        }
       }
     },
     "ntu": {
@@ -111,10 +261,34 @@
       "emoji": "🔄",
       "note": "Rotate / change direction",
       "derivatives": {
-        "er": { "morpheme": "re-", "chord": "er", "word": "return", "emoji": "🔙", "note": "Come back" },
-        "eov": { "morpheme": "over-", "chord": "eov", "word": "overturn", "emoji": "🔁", "note": "Flip over / reverse" },
-        "pu": { "morpheme": "up-", "chord": "pu", "word": "upturn", "emoji": "📈", "note": "Upward trend" },
-        "otu": { "morpheme": "out-", "chord": "otu", "word": "outturn", "emoji": "📦", "note": "Production output" }
+        "er": {
+          "morpheme": "re-",
+          "chord": "er",
+          "word": "return",
+          "emoji": "🔙",
+          "note": "Come back"
+        },
+        "eov": {
+          "morpheme": "over-",
+          "chord": "eov",
+          "word": "overturn",
+          "emoji": "🔁",
+          "note": "Flip over / reverse"
+        },
+        "pu": {
+          "morpheme": "up-",
+          "chord": "pu",
+          "word": "upturn",
+          "emoji": "📈",
+          "note": "Upward trend"
+        },
+        "otu": {
+          "morpheme": "out-",
+          "chord": "otu",
+          "word": "outturn",
+          "emoji": "📦",
+          "note": "Production output"
+        }
       }
     },
     "fmo": {
@@ -123,11 +297,41 @@
       "emoji": "📐",
       "note": "Shape / structure",
       "derivatives": {
-        "er": { "morpheme": "re-", "chord": "er", "word": "reform", "emoji": "🏛️", "note": "Improve / reorganize" },
-        "1d": { "morpheme": "de-", "chord": "1d", "word": "deform", "emoji": "💥", "note": "Distort shape" },
-        "in": { "morpheme": "in-", "chord": "in", "word": "inform", "emoji": "📢", "note": "Convey knowledge" },
-        "anst": { "morpheme": "trans-", "chord": "anst", "word": "transform", "emoji": "🦋", "note": "Change nature or form" },
-        "cno": { "morpheme": "con-", "chord": "cno", "word": "conform", "emoji": "🤝", "note": "Comply with rules" }
+        "er": {
+          "morpheme": "re-",
+          "chord": "er",
+          "word": "reform",
+          "emoji": "🏛️",
+          "note": "Improve / reorganize"
+        },
+        "1d": {
+          "morpheme": "de-",
+          "chord": "1d",
+          "word": "deform",
+          "emoji": "💥",
+          "note": "Distort shape"
+        },
+        "in": {
+          "morpheme": "in-",
+          "chord": "in",
+          "word": "inform",
+          "emoji": "📢",
+          "note": "Convey knowledge"
+        },
+        "anst": {
+          "morpheme": "trans-",
+          "chord": "anst",
+          "word": "transform",
+          "emoji": "🦋",
+          "note": "Change nature or form"
+        },
+        "cno": {
+          "morpheme": "con-",
+          "chord": "cno",
+          "word": "conform",
+          "emoji": "🤝",
+          "note": "Comply with rules"
+        }
       }
     },
     "eprs": {
@@ -136,11 +340,41 @@
       "emoji": "🔘",
       "note": "Apply force / push",
       "derivatives": {
-        "ex": { "morpheme": "ex-", "chord": "ex", "word": "express", "emoji": "💬", "note": "Convey thought or feeling" },
-        "im": { "morpheme": "im-", "chord": "im", "word": "impress", "emoji": "🤩", "note": "Make strong impact" },
-        "1d": { "morpheme": "de-", "chord": "1d", "word": "depress", "emoji": "📉", "note": "Push down / lower" },
-        "er": { "morpheme": "re-", "chord": "er", "word": "repress", "emoji": "🤐", "note": "Hold back by force" },
-        "op": { "morpheme": "op-", "chord": "op", "word": "oppress", "emoji": "⛓️", "note": "Weigh down heavily" }
+        "ex": {
+          "morpheme": "ex-",
+          "chord": "ex",
+          "word": "express",
+          "emoji": "💬",
+          "note": "Convey thought or feeling"
+        },
+        "im": {
+          "morpheme": "im-",
+          "chord": "im",
+          "word": "impress",
+          "emoji": "🤩",
+          "note": "Make strong impact"
+        },
+        "1d": {
+          "morpheme": "de-",
+          "chord": "1d",
+          "word": "depress",
+          "emoji": "📉",
+          "note": "Push down / lower"
+        },
+        "er": {
+          "morpheme": "re-",
+          "chord": "er",
+          "word": "repress",
+          "emoji": "🤐",
+          "note": "Hold back by force"
+        },
+        "op": {
+          "morpheme": "op-",
+          "chord": "op",
+          "word": "oppress",
+          "emoji": "⛓️",
+          "note": "Weigh down heavily"
+        }
       }
     },
     "act": {
@@ -149,10 +383,34 @@
       "emoji": "🎭",
       "note": "Take action / perform",
       "derivatives": {
-        "er": { "morpheme": "re-", "chord": "er", "word": "react", "emoji": "⚡", "note": "Respond to stimulus" },
-        "eint": { "morpheme": "inter-", "chord": "eint", "word": "interact", "emoji": "🗣️", "note": "Act reciprocally" },
-        "anst": { "morpheme": "trans-", "chord": "anst", "word": "transact", "emoji": "💳", "note": "Conduct business" },
-        "en": { "morpheme": "en-", "chord": "en", "word": "enact", "emoji": "📜", "note": "Put into law or practice" }
+        "er": {
+          "morpheme": "re-",
+          "chord": "er",
+          "word": "react",
+          "emoji": "⚡",
+          "note": "Respond to stimulus"
+        },
+        "eint": {
+          "morpheme": "inter-",
+          "chord": "eint",
+          "word": "interact",
+          "emoji": "🗣️",
+          "note": "Act reciprocally"
+        },
+        "anst": {
+          "morpheme": "trans-",
+          "chord": "anst",
+          "word": "transact",
+          "emoji": "💳",
+          "note": "Conduct business"
+        },
+        "en": {
+          "morpheme": "en-",
+          "chord": "en",
+          "word": "enact",
+          "emoji": "📜",
+          "note": "Put into law or practice"
+        }
       }
     }
   },
@@ -214,5 +472,782 @@
     "fmo": "form ",
     "eprs": "press ",
     "act": "act "
+  },
+  "grammar_rules": {
+    "verb": {
+      "1": {
+        "name": "past",
+        "label": "Past Tense (-ed)"
+      },
+      "2": {
+        "name": "gerund",
+        "label": "Continuous (-ing)"
+      },
+      "3": {
+        "name": "present_3rd",
+        "label": "3rd Person (-s)"
+      },
+      "4": {
+        "name": "past_participle",
+        "label": "Past Participle (-en)"
+      }
+    },
+    "noun": {
+      "1": {
+        "name": "plural",
+        "label": "Plural (-s)"
+      },
+      "2": {
+        "name": "possessive",
+        "label": "Possessive ('s)"
+      },
+      "3": {
+        "name": "plural_possessive",
+        "label": "Plural Possessive (s')"
+      }
+    },
+    "adjective": {
+      "1": {
+        "name": "comparative",
+        "label": "Comparative (-er)"
+      },
+      "2": {
+        "name": "superlative",
+        "label": "Superlative (-est)"
+      },
+      "3": {
+        "name": "adverb",
+        "label": "Adverb (-ly)"
+      }
+    },
+    "pronoun": {
+      "1": {
+        "name": "objective",
+        "label": "Objective Case"
+      },
+      "2": {
+        "name": "possessive",
+        "label": "Possessive Case"
+      },
+      "3": {
+        "name": "reflexive",
+        "label": "Reflexive Case"
+      }
+    }
+  },
+  "grammar": {
+    "can": {
+      "pos": "verb",
+      "forms": {
+        "1": "could"
+      }
+    },
+    "walk": {
+      "pos": "verb",
+      "forms": {
+        "1": "walked",
+        "2": "walking",
+        "3": "walks",
+        "4": "walked"
+      }
+    },
+    "step": {
+      "pos": "verb",
+      "forms": {
+        "1": "stepped",
+        "2": "stepping",
+        "3": "steps",
+        "4": "stepped"
+      }
+    },
+    "come": {
+      "pos": "verb",
+      "forms": {
+        "1": "came",
+        "2": "coming",
+        "3": "comes",
+        "4": "come"
+      }
+    },
+    "do": {
+      "pos": "verb",
+      "forms": {
+        "1": "did",
+        "2": "doing",
+        "3": "does",
+        "4": "done"
+      }
+    },
+    "have": {
+      "pos": "verb",
+      "forms": {
+        "1": "had",
+        "2": "having",
+        "3": "has",
+        "4": "had"
+      }
+    },
+    "want": {
+      "pos": "verb",
+      "forms": {
+        "1": "wanted",
+        "2": "wanting",
+        "3": "wants",
+        "4": "wanted"
+      }
+    },
+    "ask": {
+      "pos": "verb",
+      "forms": {
+        "1": "asked",
+        "2": "asking",
+        "3": "asks",
+        "4": "asked"
+      }
+    },
+    "connect": {
+      "pos": "verb",
+      "forms": {
+        "1": "connected",
+        "2": "connecting",
+        "3": "connects",
+        "4": "connected"
+      }
+    },
+    "think": {
+      "pos": "verb",
+      "forms": {
+        "1": "thought",
+        "2": "thinking",
+        "3": "thinks",
+        "4": "thought"
+      }
+    },
+    "code": {
+      "pos": "verb",
+      "forms": {
+        "1": "coded",
+        "2": "coding",
+        "3": "codes",
+        "4": "coded"
+      }
+    },
+    "stand": {
+      "pos": "verb",
+      "forms": {
+        "1": "stood",
+        "2": "standing",
+        "3": "stands",
+        "4": "stood"
+      }
+    },
+    "take": {
+      "pos": "verb",
+      "forms": {
+        "1": "took",
+        "2": "taking",
+        "3": "takes",
+        "4": "taken"
+      }
+    },
+    "turn": {
+      "pos": "verb",
+      "forms": {
+        "1": "turned",
+        "2": "turning",
+        "3": "turns",
+        "4": "turned"
+      }
+    },
+    "form": {
+      "pos": "verb",
+      "forms": {
+        "1": "formed",
+        "2": "forming",
+        "3": "forms",
+        "4": "formed"
+      }
+    },
+    "press": {
+      "pos": "verb",
+      "forms": {
+        "1": "pressed",
+        "2": "pressing",
+        "3": "presses",
+        "4": "pressed"
+      }
+    },
+    "act": {
+      "pos": "verb",
+      "forms": {
+        "1": "acted",
+        "2": "acting",
+        "3": "acts",
+        "4": "acted"
+      }
+    },
+    "dog": {
+      "pos": "noun",
+      "forms": {
+        "1": "dogs",
+        "2": "dog's",
+        "3": "dogs'"
+      }
+    },
+    "book": {
+      "pos": "noun",
+      "forms": {
+        "1": "books",
+        "2": "book's",
+        "3": "books'"
+      }
+    },
+    "file": {
+      "pos": "noun",
+      "forms": {
+        "1": "files",
+        "2": "file's",
+        "3": "files'"
+      }
+    },
+    "life": {
+      "pos": "noun",
+      "forms": {
+        "1": "lives",
+        "2": "life's",
+        "3": "lives'"
+      }
+    },
+    "window": {
+      "pos": "noun",
+      "forms": {
+        "1": "windows",
+        "2": "window's",
+        "3": "windows'"
+      }
+    },
+    "machine": {
+      "pos": "noun",
+      "forms": {
+        "1": "machines",
+        "2": "machine's",
+        "3": "machines'"
+      }
+    },
+    "world": {
+      "pos": "noun",
+      "forms": {
+        "1": "worlds",
+        "2": "world's",
+        "3": "worlds'"
+      }
+    },
+    "computer": {
+      "pos": "noun",
+      "forms": {
+        "1": "computers",
+        "2": "computer's",
+        "3": "computers'"
+      }
+    },
+    "keyboard": {
+      "pos": "noun",
+      "forms": {
+        "1": "keyboards",
+        "2": "keyboard's",
+        "3": "keyboards'"
+      }
+    },
+    "function": {
+      "pos": "noun",
+      "forms": {
+        "1": "functions",
+        "2": "function's",
+        "3": "functions'"
+      }
+    },
+    "steno": {
+      "pos": "noun",
+      "forms": {
+        "1": "stenos",
+        "2": "steno's"
+      }
+    },
+    "word": {
+      "pos": "noun",
+      "forms": {
+        "1": "words",
+        "2": "word's",
+        "3": "words'"
+      }
+    },
+    "fast": {
+      "pos": "adjective",
+      "forms": {
+        "1": "faster",
+        "2": "fastest"
+      }
+    },
+    "big": {
+      "pos": "adjective",
+      "forms": {
+        "1": "bigger",
+        "2": "biggest"
+      }
+    },
+    "local": {
+      "pos": "adjective",
+      "forms": {
+        "1": "more local",
+        "2": "most local",
+        "3": "locally"
+      }
+    },
+    "i": {
+      "pos": "pronoun",
+      "forms": {
+        "1": "me",
+        "2": "my",
+        "3": "myself",
+        "4": "mine"
+      }
+    },
+    "he": {
+      "pos": "pronoun",
+      "forms": {
+        "1": "him",
+        "2": "his",
+        "3": "himself"
+      }
+    },
+    "she": {
+      "pos": "pronoun",
+      "forms": {
+        "1": "her",
+        "2": "her",
+        "3": "herself",
+        "4": "hers"
+      }
+    },
+    "it": {
+      "pos": "pronoun",
+      "forms": {
+        "1": "it",
+        "2": "its",
+        "3": "itself"
+      }
+    },
+    "we": {
+      "pos": "pronoun",
+      "forms": {
+        "1": "us",
+        "2": "our",
+        "3": "ourselves",
+        "4": "ours"
+      }
+    },
+    "they": {
+      "pos": "pronoun",
+      "forms": {
+        "1": "them",
+        "2": "their",
+        "3": "themselves",
+        "4": "theirs"
+      }
+    },
+    "you": {
+      "pos": "pronoun",
+      "forms": {
+        "1": "you",
+        "2": "your",
+        "3": "yourself",
+        "4": "yours"
+      }
+    },
+    "who": {
+      "pos": "pronoun",
+      "forms": {
+        "1": "whom",
+        "2": "whose"
+      }
+    },
+    "undo": {
+      "pos": "verb",
+      "forms": {
+        "1": "undid",
+        "2": "undoing",
+        "3": "undoes",
+        "4": "undone"
+      }
+    },
+    "redo": {
+      "pos": "verb",
+      "forms": {
+        "1": "redid",
+        "2": "redoing",
+        "3": "redoes",
+        "4": "redone"
+      }
+    },
+    "outdo": {
+      "pos": "verb",
+      "forms": {
+        "1": "outdid",
+        "2": "outdoing",
+        "3": "outdoes",
+        "4": "outdone"
+      }
+    },
+    "reconnect": {
+      "pos": "verb",
+      "forms": {
+        "1": "reconnected",
+        "2": "reconnecting",
+        "3": "reconnects",
+        "4": "reconnected"
+      }
+    },
+    "disconnect": {
+      "pos": "verb",
+      "forms": {
+        "1": "disconnected",
+        "2": "disconnecting",
+        "3": "disconnects",
+        "4": "disconnected"
+      }
+    },
+    "overcome": {
+      "pos": "verb",
+      "forms": {
+        "1": "overcame",
+        "2": "overcoming",
+        "3": "overcomes",
+        "4": "overcome"
+      }
+    },
+    "become": {
+      "pos": "verb",
+      "forms": {
+        "1": "became",
+        "2": "becoming",
+        "3": "becomes",
+        "4": "become"
+      }
+    },
+    "outwalk": {
+      "pos": "verb",
+      "forms": {
+        "1": "outwalked",
+        "2": "outwalking",
+        "3": "outwalks",
+        "4": "outwalked"
+      }
+    },
+    "refile": {
+      "pos": "verb",
+      "forms": {
+        "1": "refiled",
+        "2": "refiling",
+        "3": "refiles",
+        "4": "refiled"
+      }
+    },
+    "recode": {
+      "pos": "verb",
+      "forms": {
+        "1": "recoded",
+        "2": "recoding",
+        "3": "recodes",
+        "4": "recoded"
+      }
+    },
+    "understand": {
+      "pos": "verb",
+      "forms": {
+        "1": "understood",
+        "2": "understanding",
+        "3": "understands",
+        "4": "understood"
+      }
+    },
+    "withstand": {
+      "pos": "verb",
+      "forms": {
+        "1": "withstood",
+        "2": "withstanding",
+        "3": "withstands",
+        "4": "withstood"
+      }
+    },
+    "outstand": {
+      "pos": "verb",
+      "forms": {
+        "1": "outstood",
+        "2": "outstanding",
+        "3": "outstands",
+        "4": "outstood"
+      }
+    },
+    "upstand": {
+      "pos": "verb",
+      "forms": {
+        "1": "upstood",
+        "2": "upstanding",
+        "3": "upstands",
+        "4": "upstood"
+      }
+    },
+    "mistake": {
+      "pos": "verb",
+      "forms": {
+        "1": "mistook",
+        "2": "mistaking",
+        "3": "mistakes",
+        "4": "mistaken"
+      }
+    },
+    "overtake": {
+      "pos": "verb",
+      "forms": {
+        "1": "overtook",
+        "2": "overtaking",
+        "3": "overtakes",
+        "4": "overtaken"
+      }
+    },
+    "retake": {
+      "pos": "verb",
+      "forms": {
+        "1": "retook",
+        "2": "retaking",
+        "3": "retakes",
+        "4": "retaken"
+      }
+    },
+    "return": {
+      "pos": "verb",
+      "forms": {
+        "1": "returned",
+        "2": "returning",
+        "3": "returns",
+        "4": "returned"
+      }
+    },
+    "overturn": {
+      "pos": "verb",
+      "forms": {
+        "1": "overturned",
+        "2": "overturning",
+        "3": "overturns",
+        "4": "overturned"
+      }
+    },
+    "upturn": {
+      "pos": "verb",
+      "forms": {
+        "1": "upturned",
+        "2": "upturning",
+        "3": "upturns",
+        "4": "upturned"
+      }
+    },
+    "reform": {
+      "pos": "verb",
+      "forms": {
+        "1": "reformed",
+        "2": "reforming",
+        "3": "reforms",
+        "4": "reformed"
+      }
+    },
+    "deform": {
+      "pos": "verb",
+      "forms": {
+        "1": "deformed",
+        "2": "deforming",
+        "3": "deforms",
+        "4": "deformed"
+      }
+    },
+    "inform": {
+      "pos": "verb",
+      "forms": {
+        "1": "informed",
+        "2": "informing",
+        "3": "informs",
+        "4": "informed"
+      }
+    },
+    "transform": {
+      "pos": "verb",
+      "forms": {
+        "1": "transformed",
+        "2": "transforming",
+        "3": "transforms",
+        "4": "transformed"
+      }
+    },
+    "conform": {
+      "pos": "verb",
+      "forms": {
+        "1": "conformed",
+        "2": "conforming",
+        "3": "conforms",
+        "4": "conformed"
+      }
+    },
+    "express": {
+      "pos": "verb",
+      "forms": {
+        "1": "expressed",
+        "2": "expressing",
+        "3": "expresses",
+        "4": "expressed"
+      }
+    },
+    "impress": {
+      "pos": "verb",
+      "forms": {
+        "1": "impressed",
+        "2": "impressing",
+        "3": "impresses",
+        "4": "impressed"
+      }
+    },
+    "depress": {
+      "pos": "verb",
+      "forms": {
+        "1": "depressed",
+        "2": "depressing",
+        "3": "depresses",
+        "4": "depressed"
+      }
+    },
+    "repress": {
+      "pos": "verb",
+      "forms": {
+        "1": "repressed",
+        "2": "repressing",
+        "3": "represses",
+        "4": "repressed"
+      }
+    },
+    "oppress": {
+      "pos": "verb",
+      "forms": {
+        "1": "oppressed",
+        "2": "oppressing",
+        "3": "oppresses",
+        "4": "oppressed"
+      }
+    },
+    "react": {
+      "pos": "verb",
+      "forms": {
+        "1": "reacted",
+        "2": "reacting",
+        "3": "reacts",
+        "4": "reacted"
+      }
+    },
+    "interact": {
+      "pos": "verb",
+      "forms": {
+        "1": "interacted",
+        "2": "interacting",
+        "3": "interacts",
+        "4": "interacted"
+      }
+    },
+    "transact": {
+      "pos": "verb",
+      "forms": {
+        "1": "transacted",
+        "2": "transacting",
+        "3": "transacts",
+        "4": "transacted"
+      }
+    },
+    "enact": {
+      "pos": "verb",
+      "forms": {
+        "1": "enacted",
+        "2": "enacting",
+        "3": "enacts",
+        "4": "enacted"
+      }
+    },
+    "income": {
+      "pos": "noun",
+      "forms": {
+        "1": "incomes",
+        "2": "income's",
+        "3": "incomes'"
+      }
+    },
+    "outcome": {
+      "pos": "noun",
+      "forms": {
+        "1": "outcomes",
+        "2": "outcome's",
+        "3": "outcomes'"
+      }
+    },
+    "lifetime": {
+      "pos": "noun",
+      "forms": {
+        "1": "lifetimes",
+        "2": "lifetime's",
+        "3": "lifetimes'"
+      }
+    },
+    "lifeline": {
+      "pos": "noun",
+      "forms": {
+        "1": "lifelines",
+        "2": "lifeline's",
+        "3": "lifelines'"
+      }
+    },
+    "password": {
+      "pos": "noun",
+      "forms": {
+        "1": "passwords",
+        "2": "password's",
+        "3": "passwords'"
+      }
+    },
+    "intake": {
+      "pos": "noun",
+      "forms": {
+        "1": "intakes",
+        "2": "intake's",
+        "3": "intakes'"
+      }
+    },
+    "outtake": {
+      "pos": "noun",
+      "forms": {
+        "1": "outtakes",
+        "2": "outtake's",
+        "3": "outtakes'"
+      }
+    },
+    "uptake": {
+      "pos": "noun",
+      "forms": {
+        "1": "uptakes",
+        "2": "uptake's",
+        "3": "uptakes'"
+      }
+    },
+    "outturn": {
+      "pos": "noun",
+      "forms": {
+        "1": "outturns",
+        "2": "outturn's",
+        "3": "outturns'"
+      }
+    }
   }
 }

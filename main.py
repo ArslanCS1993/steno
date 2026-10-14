@@ -76,24 +76,44 @@ def word_to_chord(word: str):
 
 
 def load_dictionary():
-    """Loads chords from data.json (supports both morpheme tree format and flat dictionary)."""
+    """Loads chords, roots, and grammar from data.json."""
     if not os.path.exists(DATA_FILE):
-        return {}, {}
+        return {}, {}, {}, {}
     with open(DATA_FILE, "r", encoding="utf-8") as f:
         try:
             raw = json.load(f)
             flat_source = raw.get("flat_chords", raw) if isinstance(raw, dict) else {}
             tree_source = raw.get("roots", {}) if isinstance(raw, dict) else {}
+            grammar_source = raw.get("grammar", {}) if isinstance(raw, dict) else {}
+            rules_source = raw.get("grammar_rules", {}) if isinstance(raw, dict) else {}
 
             normalized_flat = {}
             for k, v in flat_source.items():
                 if isinstance(v, str):
                     normalized_flat["".join(sorted(k))] = v
 
-            return normalized_flat, tree_source
+            return normalized_flat, tree_source, grammar_source, rules_source
         except json.JSONDecodeError:
             print("Error: data.json contains invalid JSON.")
-            return {}, {}
+            return {}, {}, {}, {}
+
+
+def get_word_grammar(word: str, grammar_dict: dict):
+    """Retrieves or generates grammar inflection forms for a word."""
+    if not word:
+        return None
+    lower = word.lower().strip()
+    if lower in grammar_dict:
+        return grammar_dict[lower]
+    # Smart regular fallback for regular verbs
+    return {
+        "pos": "verb",
+        "forms": {
+            "1": lower + "d" if lower.endswith("e") else lower + "ed",
+            "2": lower[:-1] + "ing" if lower.endswith("e") else lower + "ing",
+            "3": lower + "es" if lower.endswith(("s", "sh", "ch", "x", "z")) else lower + "s"
+        }
+    }
 
 
 def save_word(word: str, custom_chord: str = None):
@@ -101,7 +121,7 @@ def save_word(word: str, custom_chord: str = None):
     Generates a chord for a word, resolves any collisions with numbers,
     and saves to data.json.
     """
-    flat_data, tree_data = load_dictionary()
+    flat_data, tree_data, _, _ = load_dictionary()
 
     if custom_chord:
         sorted_chord = "".join(sorted(custom_chord.lower()))
@@ -154,11 +174,11 @@ def run_steno():
         print("Please run: pip install keyboard")
         return
 
-    dictionary, roots_tree = load_dictionary()
+    dictionary, roots_tree, grammar_dict, grammar_rules = load_dictionary()
     print("==================================================", flush=True)
-    print("   Steno Keyboard Engine Started (Morpheme Tree Enabled)", flush=True)
-    print(f"   Loaded {len(dictionary)} base chords + {len(roots_tree)} root trees from data.json", flush=True)
-    print("   Hold SPACE for normal typing bypass.", flush=True)
+    print("   Steno Keyboard Engine Started (Morpheme & Grammar Enabled)", flush=True)
+    print(f"   Loaded {len(dictionary)} base chords + {len(roots_tree)} roots + {len(grammar_dict)} grammar forms", flush=True)
+    print("   Hold SPACE for normal typing bypass. Press 1-4 after any word for grammar.", flush=True)
     print("   Press Ctrl + C in this terminal to exit.", flush=True)
     print("==================================================", flush=True)
 
@@ -167,10 +187,12 @@ def run_steno():
     is_writing = False  # Guard flag: prevents simulated keystrokes from self-triggering
     last_action_time = time.time()
     
-    # 2-Step Morpheme State Machine:
-    # active_root holds the root object when a root was just typed, e.g. 'connect'
+    # 2-Step Morpheme & Grammar State Machine
     active_root = None
     root_timestamp = 0.0
+    last_word = None
+    last_word_forms = None
+    grammar_timestamp = 0.0
 
     def send_expansion(keys_to_delete, text_to_type):
         """Types out chord in a separate thread so Windows hook never blocks."""
@@ -185,6 +207,7 @@ def run_steno():
 
     def on_key(event):
         nonlocal pressed_keys, history, is_writing, last_action_time, active_root, root_timestamp
+        nonlocal last_word, last_word_forms, grammar_timestamp
 
         try:
             # 1. Ignore simulated typing output created by this script
@@ -196,11 +219,32 @@ def run_steno():
                 return
 
             key = event.name.lower()
+            now = time.time()
 
-            # 3. Bypass / Commit mode: If Space is pressed, commit/reset morpheme state so next chord is a separate word
+            # 3. Grammar Modifier Tap: Single number (1, 2, 3, 4) right after a word
+            if key in ("1", "2", "3", "4") and event.event_type == "down" and not pressed_keys and last_word_forms and (now - grammar_timestamp < 4.0):
+                if key in last_word_forms.get("forms", {}):
+                    inflected = last_word_forms["forms"][key]
+                    pos = last_word_forms.get("pos", "word")
+                    prev_len = len(last_word) + 1  # includes trailing space
+                    print(f" ✨ [Grammar Morph] '{last_word}' + {key} -> '{inflected}' ({pos})", flush=True)
+                    total_backspaces = [key] + ["bs"] * prev_len
+                    threading.Thread(
+                        target=send_expansion,
+                        args=(total_backspaces, inflected + " "),
+                        daemon=True
+                    ).start()
+                    last_word = inflected
+                    last_word_forms = None
+                    active_root = None
+                    return
+
+            # 4. Bypass / Commit mode: If Space is pressed, commit/reset morpheme state so next chord is a separate word
             if key == "space" and event.event_type == "down":
                 pressed_keys.clear()
                 history.clear()
+                last_word = None
+                last_word_forms = None
                 if active_root:
                     print(f"   --> [Root Committed] '{active_root['lemma']}' committed via Space. Next chord is a separate word.", flush=True)
                     active_root = None
@@ -211,8 +255,7 @@ def run_steno():
             if len(key) > 1:
                 return  # Ignore modifier keys (Shift, Ctrl, Alt, etc.)
 
-            now = time.time()
-            # 4. Stuck-key protection: If keys remain held > 1.2s, auto-reset
+            # 5. Stuck-key protection: If keys remain held > 1.2s, auto-reset
             if pressed_keys and (now - last_action_time > 1.2):
                 pressed_keys.clear()
                 history.clear()
@@ -223,20 +266,21 @@ def run_steno():
 
             last_action_time = now
 
-            # 5. Key Down: Record key to active set and chord history
+            # 6. Key Down: Record key to active set and chord history
             if event.event_type == "down":
                 if key in ALLOWED:
                     pressed_keys.add(key)
                     history.add(key)
 
-            # 6. Key Up: Release key from active set
+            # 7. Key Up: Release key from active set
             elif event.event_type == "up":
                 pressed_keys.discard(key)
 
-                # 7. Chord Release: When all keys are released, expand the chord
+                # 8. Chord Release: When all keys are released, expand the chord
                 if not pressed_keys and history:
                     combo = "".join(sorted(history))
                     keys_to_erase = list(history)
+                    has_space_with_chord = keyboard.is_pressed("space")
                     
                     # STEP 2 CHECK: Is there an active root waiting for a morpheme?
                     if active_root and "derivatives" in active_root and combo in active_root["derivatives"]:
@@ -253,6 +297,11 @@ def run_steno():
                             daemon=True
                         ).start()
                         active_root = None
+
+                        # Track for grammar inflection
+                        last_word = deriv["word"].strip()
+                        last_word_forms = get_word_grammar(last_word, grammar_dict)
+                        grammar_timestamp = time.time()
                     else:
                         # STEP 1: Standard Chord / Check if this chord is a Root
                         mapped = dictionary.get(combo)
@@ -264,8 +313,16 @@ def run_steno():
                                 daemon=True
                             ).start()
 
-                            # If this chord matches a Root in our Morpheme Tree, arm Step 2!
-                            if combo in roots_tree:
+                            # Track for grammar inflection
+                            last_word = mapped.strip()
+                            last_word_forms = get_word_grammar(last_word, grammar_dict)
+                            grammar_timestamp = time.time()
+
+                            # If Space was held WITH the chord, finalize immediately and do not arm root
+                            if has_space_with_chord:
+                                print(f"   --> [Finalized Word] '{last_word}' committed with Space chord.", flush=True)
+                                active_root = None
+                            elif combo in roots_tree:
                                 active_root = roots_tree[combo]
                                 root_timestamp = time.time()
                                 print(f"   --> [Root Armed] Waiting for derivational morphemes: {', '.join([d['morpheme'] for d in active_root['derivatives'].values()])}...", flush=True)
@@ -273,6 +330,8 @@ def run_steno():
                                 active_root = None
                         else:
                             active_root = None
+                            last_word = None
+                            last_word_forms = None
 
                     history.clear()
 
