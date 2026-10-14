@@ -956,6 +956,7 @@
                 // 2-Step Morpheme State Machine for Sandbox
                 this.activeRoot = null;
                 this.activeRootTimeout = null;
+                this.lastMorphemeAttachment = null;
                 
                 // Sandbox form style
                 this.sandboxForm = 'combo'; // 'svg_only', 'words_only', 'combo'
@@ -1481,8 +1482,29 @@
                 window.addEventListener('keydown', (e) => {
                     if (e.key === 'Tab' || e.key === 'Alt' || e.key === 'Control') return;
 
-                    // Backspace in Sandbox: remove last typed chord item (word or SVG icon)
+                    // Backspace in Sandbox:
+                    // 1. If a morpheme compound word was just created (e.g. 'intake'), pressing Backspace splits it back into the two separate words ('take' + 'in')!
+                    // 2. Otherwise, deletes the last typed chord item.
                     if (e.key === 'Backspace' && this.mode === 'sandbox') {
+                        if (this.lastMorphemeAttachment) {
+                            const att = this.lastMorphemeAttachment;
+                            this.lastMorphemeAttachment = null;
+                            const editor = document.getElementById('sandbox-editor');
+                            if (editor && editor.lastElementChild && editor.lastElementChild.classList.contains('chord-item')) {
+                                editor.removeChild(editor.lastElementChild);
+                                // Insert the two separate words: root and morpheme
+                                this.insertChordOutput(att.root);
+                                this.insertChordOutput(att.morphemeWord);
+                                const toast = document.getElementById('sandbox-toast');
+                                if (toast) {
+                                    toast.innerText = `↩️ [Separated] Compound "${att.compound.toUpperCase()}" split into separate words: "${att.root.toUpperCase()}" and "${att.morphemeWord.toUpperCase()}"`;
+                                    toast.className = "text-xs md:text-sm font-bold text-amber-300 bg-amber-500/20 border border-amber-500/40 px-6 py-2 rounded-xl text-center shadow";
+                                }
+                                e.preventDefault();
+                                return;
+                            }
+                        }
+
                         const editor = document.getElementById('sandbox-editor');
                         if (editor) {
                             const items = editor.querySelectorAll('.chord-item');
@@ -1498,11 +1520,24 @@
                         }
                     }
 
-                    // Spacebar bypass: hold space to type normal individual letters
+                    // Spacebar handling:
+                    // 1. If an active root is armed (waiting for Step 2 morpheme), tapping Space immediately COMMITS the root as a standalone word and disarms morpheme mode!
+                    // 2. Holding Space allows normal individual non-chording typing.
                     if (e.code === 'Space') {
                         this.spaceBypass = true;
                         this.pressedKeys.clear();
                         this.chordHistory.clear();
+                        if (this.activeRoot) {
+                            if (this.activeRootTimeout) clearTimeout(this.activeRootTimeout);
+                            const committedWord = this.activeRoot.lemma;
+                            this.activeRoot = null;
+                            this.renderMorphemeTree();
+                            const toast = document.getElementById('sandbox-toast');
+                            if (toast && this.mode === 'sandbox') {
+                                toast.innerText = `⚡ [Committed Word: "${committedWord.toUpperCase()}"] Root disarmed via Space. Next chord will be a separate word!`;
+                                toast.className = "text-xs md:text-sm font-bold text-sky-300 bg-sky-500/20 border border-sky-500/40 px-6 py-2 rounded-xl text-center shadow";
+                            }
+                        }
                         return;
                     }
                     if (this.spaceBypass) return;
@@ -1613,6 +1648,7 @@
                     if (this.activeRoot && this.activeRoot.derivatives && this.activeRoot.derivatives[combo]) {
                         sound.playSuccess();
                         const deriv = this.activeRoot.derivatives[combo];
+                        const prevRootLemma = this.activeRoot.lemma;
                         
                         // Replace previous root output in editor with new derived compound word
                         const editor = document.getElementById('sandbox-editor');
@@ -1621,7 +1657,14 @@
                         }
                         this.insertChordOutput(deriv.word);
 
-                        toast.innerText = `🌟 [Morpheme Attached] Root '${this.activeRoot.lemma.toUpperCase()}' + '${deriv.morpheme}' -> "${deriv.word.toUpperCase()}"!`;
+                        // Save attachment for smart Backspace undo (e.g. undo intake -> take + in)
+                        this.lastMorphemeAttachment = {
+                            root: prevRootLemma,
+                            compound: deriv.word,
+                            morphemeWord: deriv.morpheme.replace('-', '')
+                        };
+
+                        toast.innerText = `🌟 [Morpheme Attached] Root '${prevRootLemma.toUpperCase()}' + '${deriv.morpheme}' -> "${deriv.word.toUpperCase()}"! (Hit Backspace to split back into separate words)`;
                         toast.className = "text-xs md:text-sm font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-6 py-2 rounded-xl text-center shadow-lg";
 
                         // Disarm root state and refresh tree
@@ -1641,6 +1684,9 @@
                         return;
                     }
 
+                    // Any normal chord clears previous attachment undo memory
+                    this.lastMorphemeAttachment = null;
+
                     // STEP 1 CHECK: Standard word or root activation
                     if (matchedWord) {
                         sound.playSuccess();
@@ -1651,18 +1697,18 @@
                         // Check if this chord is a Root in our Morpheme Tree
                         if (this.rootsTree[combo]) {
                             this.activeRoot = this.rootsTree[combo];
-                            toast.innerText = `🌳 [Root Locked: ${matchedWord.toUpperCase()}] Waiting for Step 2 Morpheme! (Look at the tree on the right)`;
+                            toast.innerText = `🌳 [Root Armed: ${matchedWord.toUpperCase()}] Ready for Step 2 Morpheme! (Or tap Space to commit as separate word)`;
                             toast.className = "text-xs md:text-sm font-bold text-amber-300 bg-amber-500/20 border border-amber-500/40 px-6 py-2 rounded-xl text-center animate-pulse";
                             
                             // Render the live armed tree on the right
                             this.renderMorphemeTree(this.activeRoot);
 
-                            // Auto-disarm after 6 seconds of no morpheme
+                            // Auto-disarm after 2.8 seconds of no morpheme (or tap Space to disarm immediately)
                             if (this.activeRootTimeout) clearTimeout(this.activeRootTimeout);
                             this.activeRootTimeout = setTimeout(() => {
                                 this.activeRoot = null;
                                 this.renderMorphemeTree();
-                            }, 6000);
+                            }, 2800);
                         } else {
                             toast.innerText = `⚡ [Chord Match] '${combo}' -> "${matchedWord}"`;
                             toast.className = "text-xs md:text-sm font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-6 py-2 rounded-xl text-center";

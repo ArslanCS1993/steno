@@ -197,11 +197,15 @@ def run_steno():
 
             key = event.name.lower()
 
-            # 3. Bypass mode: If Space is pressed, commit/reset morpheme state so keys type normally
-            if keyboard.is_pressed("space"):
+            # 3. Bypass / Commit mode: If Space is pressed, commit/reset morpheme state so next chord is a separate word
+            if key == "space" and event.event_type == "down":
                 pressed_keys.clear()
                 history.clear()
-                active_root = None
+                if active_root:
+                    print(f"   --> [Root Committed] '{active_root['lemma']}' committed via Space. Next chord is a separate word.", flush=True)
+                    active_root = None
+                    # Eat the extra space so the text stays single-spaced
+                    threading.Thread(target=lambda: (time.sleep(0.02), keyboard.send("backspace")), daemon=True).start()
                 return
 
             if len(key) > 1:
@@ -213,8 +217,8 @@ def run_steno():
                 pressed_keys.clear()
                 history.clear()
 
-            # Timeout active root after 4.0s of inactivity
-            if active_root and (now - root_timestamp > 4.0):
+            # Timeout active root after 2.5s of inactivity
+            if active_root and (now - root_timestamp > 2.5):
                 active_root = None
 
             last_action_time = now
