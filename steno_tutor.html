@@ -1,15 +1,221 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steno Chording Academy & Sandbox</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .mono-font { font-family: 'JetBrains Mono', monospace; }
-        
+        /* ======================================================== */
+        /* 100% OFFLINE ZERO-DEPENDENCY STYLING                     */
+        /* High-performance system typography & dark palette         */
+        /* ======================================================== */
+        :root {
+            --bg-body: #020617;
+            --bg-card: rgba(15, 23, 42, 0.95);
+            --bg-card-hover: #1e293b;
+            --bg-inner: #030712;
+            --border-card: #1e293b;
+            --border-subtle: #334155;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --accent-indigo: #6366f1;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --accent-sky: #38bdf8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            min-height: 100%;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        code, pre, .mono-font, .font-mono {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+
+        /* Helper Utilities */
+        .hidden { display: none !important; }
+        .flex { display: flex; }
+        .inline-flex { display: inline-flex; }
+        .grid { display: grid; }
+        .items-center { align-items: center; }
+        .items-stretch { align-items: stretch; }
+        .justify-between { justify-content: space-between; }
+        .justify-center { justify-content: center; }
+        .flex-col { flex-direction: column; }
+        .flex-wrap { flex-wrap: wrap; }
+        .flex-1 { flex: 1 1 0%; }
+        .gap-1 { gap: 0.25rem; }
+        .gap-1\.5 { gap: 0.375rem; }
+        .gap-2 { gap: 0.5rem; }
+        .gap-2\.5 { gap: 0.625rem; }
+        .gap-3 { gap: 0.75rem; }
+        .gap-4 { gap: 1rem; }
+        .gap-5 { gap: 1.25rem; }
+        .gap-6 { gap: 1.5rem; }
+        .space-y-2 > * + * { margin-top: 0.5rem; }
+        .space-y-3 > * + * { margin-top: 0.75rem; }
+        .space-y-5 > * + * { margin-top: 1.25rem; }
+        .space-y-6 > * + * { margin-top: 1.5rem; }
+
+        .w-full { width: 100%; }
+        .max-w-7xl { max-width: 80rem; }
+        .max-w-3xl { max-width: 48rem; }
+        .max-w-xl { max-width: 36rem; }
+        .max-w-sm { max-width: 24rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+
+        .p-1 { padding: 0.25rem; }
+        .p-1\.5 { padding: 0.375rem; }
+        .p-2 { padding: 0.5rem; }
+        .p-2\.5 { padding: 0.625rem; }
+        .p-3 { padding: 0.75rem; }
+        .p-3\.5 { padding: 0.875rem; }
+        .p-4 { padding: 1rem; }
+        .p-5 { padding: 1.25rem; }
+        .p-6 { padding: 1.5rem; }
+        .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+        .px-2\.5 { padding-left: 0.625rem; padding-right: 0.625rem; }
+        .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .py-0\.5 { padding-top: 0.125rem; padding-bottom: 0.125rem; }
+        .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+        .py-1\.5 { padding-top: 0.375rem; padding-bottom: 0.375rem; }
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+
+        .rounded-lg { border-radius: 0.5rem; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .rounded-2xl { border-radius: 1rem; }
+        .rounded-3xl { border-radius: 1.5rem; }
+        .rounded-full { border-radius: 9999px; }
+
+        .bg-slate-950 { background-color: #020617; }
+        .bg-slate-900 { background-color: #0f172a; }
+        .bg-slate-900\/90 { background-color: rgba(15, 23, 42, 0.9); }
+        .bg-slate-900\/95 { background-color: rgba(15, 23, 42, 0.95); }
+        .bg-slate-900\/60 { background-color: rgba(15, 23, 42, 0.6); }
+        .bg-slate-800 { background-color: #1e293b; }
+        .bg-slate-700 { background-color: #334155; }
+        .bg-indigo-600 { background-color: #4f46e5; }
+        .bg-indigo-500\/10 { background-color: rgba(99, 102, 241, 0.1); }
+        .bg-emerald-500\/10 { background-color: rgba(16, 185, 129, 0.1); }
+        .bg-emerald-500\/20 { background-color: rgba(16, 185, 129, 0.2); }
+        .bg-amber-500\/10 { background-color: rgba(245, 158, 11, 0.1); }
+        .bg-amber-500\/20 { background-color: rgba(245, 158, 11, 0.2); }
+
+        .border { border-width: 1px; border-style: solid; }
+        .border-2 { border-width: 2px; border-style: solid; }
+        .border-b { border-bottom-width: 1px; border-bottom-style: solid; }
+        .border-slate-800 { border-color: #1e293b; }
+        .border-slate-700 { border-color: #334155; }
+        .border-slate-600 { border-color: #475569; }
+        .border-indigo-500\/20 { border-color: rgba(99, 102, 241, 0.2); }
+        .border-indigo-500\/40 { border-color: rgba(99, 102, 241, 0.4); }
+        .border-emerald-500\/20 { border-color: rgba(16, 185, 129, 0.2); }
+        .border-emerald-500\/40 { border-color: rgba(16, 185, 129, 0.4); }
+        .border-amber-500\/30 { border-color: rgba(245, 158, 11, 0.3); }
+
+        .text-white { color: #ffffff; }
+        .text-slate-100 { color: #f1f5f9; }
+        .text-slate-200 { color: #e2e8f0; }
+        .text-slate-300 { color: #cbd5e1; }
+        .text-slate-400 { color: #94a3b8; }
+        .text-slate-500 { color: #64748b; }
+        .text-slate-600 { color: #475569; }
+        .text-indigo-300 { color: #a5b4fc; }
+        .text-indigo-400 { color: #818cf8; }
+        .text-emerald-300 { color: #6ee7b7; }
+        .text-emerald-400 { color: #34d399; }
+        .text-amber-300 { color: #fcd34d; }
+        .text-amber-400 { color: #fbbf24; }
+        .text-rose-400 { color: #fb7185; }
+        .text-sky-400 { color: #38bdf8; }
+        .text-violet-400 { color: #a78bfa; }
+
+        .text-\[10px\] { font-size: 10px; }
+        .text-\[11px\] { font-size: 11px; }
+        .text-xs { font-size: 0.75rem; }
+        .text-sm { font-size: 0.875rem; }
+        .text-base { font-size: 1rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-4xl { font-size: 2.25rem; }
+        .text-5xl { font-size: 3rem; }
+        .text-6xl { font-size: 3.75rem; }
+        .font-semibold { font-weight: 600; }
+        .font-bold { font-weight: 700; }
+        .font-extrabold { font-weight: 800; }
+        .font-black { font-weight: 900; }
+        .uppercase { text-transform: uppercase; }
+        .tracking-wider { letter-spacing: 0.05em; }
+        .tracking-widest { letter-spacing: 0.1em; }
+        .text-center { text-align: center; }
+
+        .shadow { box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3); }
+        .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4); }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5); }
+        .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); }
+        .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6); }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+        }
+
+        button:active {
+            transform: scale(0.97);
+        }
+
+        .select-none { user-select: none; }
+        .pointer-events-none { pointer-events: none; }
+        .relative { position: relative; }
+        .sticky { position: sticky; }
+        .top-0 { top: 0; }
+        .z-50 { z-index: 50; }
+
+        /* Grid layouts */
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+        @media (min-width: 768px) {
+            .md\:col-span-5 { grid-column: span 5 / span 5; }
+            .md\:col-span-7 { grid-column: span 7 / span 7; }
+            .md\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+            .md\:text-5xl { font-size: 3rem; }
+            .md\:text-3xl { font-size: 1.875rem; }
+            .md\:text-sm { font-size: 0.875rem; }
+            .md\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+            .md\:p-6 { padding: 1.5rem; }
+            .md\:w-28 { width: 7rem; }
+            .md\:h-28 { height: 7rem; }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:col-span-7 { grid-column: span 7 / span 7; }
+            .lg\:col-span-5 { grid-column: span 5 / span 5; }
+            .lg\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+            .lg\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+        }
+
+        /* SVG Hand & Animation Highlights */
         .finger-highlight {
             transition: all 0.15s ease-in-out;
             filter: drop-shadow(0px 0px 10px rgba(99, 102, 241, 0.95));
@@ -38,7 +244,7 @@
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-full flex flex-col selection:bg-indigo-500 selection:text-white">
+<body class="bg-slate-950 text-slate-100 min-h-full flex flex-col">
 
     <!-- Header Navigation -->
     <header class="bg-slate-900/95 border-b border-slate-800 px-4 md:px-8 py-3 flex flex-wrap items-center justify-between gap-4 sticky top-0 z-50 backdrop-blur">
