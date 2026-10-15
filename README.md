@@ -44,13 +44,16 @@ Open [`steno_tutor.html`](steno_tutor.html) directly in any web browser. It is 1
 
 ### Modes:
 1. **Training Mode:** Step-by-step guided lessons with real-time finger highlighting on dual hands, key-by-key breakdown, streak tracking, and sound feedback.
-2. **Sandbox Mode:** Free typing sandbox supporting:
-   - Simultaneous steno chords
-   - Sequential letter-by-letter typing
-   - Visual output selector (**Words**, **SVG Only**, or **Combo**)
-   - Real-time Morpheme Root Tree explorer
-   - Interactive Grammar Inflection bar (numbers `1-4`)
-   - `Ctrl+C` / `Ctrl+V` copy-paste preserving lettered words
+2. **Sandbox Mode (Minimalist 2-Box Design):**
+   - **Left Box (Typing Workspace):**
+     - Instant, zero-latency visible typing for regular letters on `keydown` with a live pulsing text caret.
+     - Multi-key steno chording ($\ge 2$ keys) dynamically expands into words, SVG signs, or combinations.
+     - Output mode options: **Words**, **SVG Only**, or **Combo**.
+     - Quick action buttons: **Copy** (`Ctrl+C`, clean lettered text without SVGs), **Paste** (`Ctrl+V`), and **Clear**.
+     - Interactive Grammar Inflection bar (tap `1-4` for POS-based inflections).
+   - **Right Box (Morpheme Word Tree):**
+     - Real-time 2-step Morpheme Tree with vector SVG signs on root and derivative branch cards.
+     - Arms dynamically on root chords (e.g., `take`, `come`, `connect`, `do`, `walk`) to display compound derivatives with instant chord hints.
 3. **Finger Guide:** Interactive 10-finger color scheme map and layout reference.
 
 ---
