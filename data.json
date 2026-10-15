@@ -478,7 +478,8 @@
     "2an": "拿 ",
     "3gou": "狗 ",
     "4ad": "大 ",
-    "1hsu": "书 "
+    "1hsu": "书 ",
+    "4ai": "爱 "
   },
   "grammar_rules": {
     "verb": {
@@ -1264,6 +1265,7 @@
     "2an":  { "char": "拿", "pinyin": "ná",  "keys": "2na",  "tone": 2, "english": "take" },
     "3gou": { "char": "狗", "pinyin": "gǒu", "keys": "3gou", "tone": 3, "english": "dog" },
     "4ad":  { "char": "大", "pinyin": "dà",  "keys": "4da",  "tone": 4, "english": "big" },
-    "1hsu": { "char": "书", "pinyin": "shū", "keys": "1shu", "tone": 1, "english": "book" }
+    "1hsu": { "char": "书", "pinyin": "shū", "keys": "1shu", "tone": 1, "english": "book" },
+    "4ai":  { "char": "爱", "pinyin": "ài",  "keys": "4ai",  "tone": 4, "english": "love", "mirror_keys": "7;i" }
   }
 }

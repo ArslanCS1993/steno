@@ -36,6 +36,21 @@ for finger, keys in FINGER_MAP.items():
 # Set of all valid chordable keys
 ALLOWED = set(KEY_TO_FINGER.keys())
 
+# Mirror mappings for alternating/bimanual key ergonomics:
+# Tones: Right hand 0, 9, 8, 7 -> Left hand 1, 2, 3, 4
+# Pinky letters: ; -> a, / -> z
+# Ring letters: l -> s
+MIRROR_KEYS = {
+    "0": "1", "9": "2", "8": "3", "7": "4",
+    ";": "a", "/": "z",
+    "l": "s"
+}
+
+
+def canonicalize_chord(chord_str: str) -> str:
+    """Canonicalizes mirrored keys (e.g. 7;i -> 4ai, 4lhi -> 4shi)."""
+    return "".join(sorted(MIRROR_KEYS.get(k, k) for k in chord_str))
+
 
 def word_to_chord(word: str):
     """
@@ -305,8 +320,18 @@ def run_steno():
                     else:
                         # STEP 1: Standard Chord / Check if this chord is a Root
                         mapped = dictionary.get(combo)
+                        resolved_combo = combo
+                        if not mapped:
+                            canon = canonicalize_chord(combo)
+                            if canon in dictionary:
+                                mapped = dictionary[canon]
+                                resolved_combo = canon
+
                         if mapped:
-                            print(f" [Chord Detected] '{combo}' -> '{mapped.strip()}'", flush=True)
+                            if resolved_combo != combo:
+                                print(f" [Mirrored Chord] '{combo}' (canonical '{resolved_combo}') -> '{mapped.strip()}'", flush=True)
+                            else:
+                                print(f" [Chord Detected] '{combo}' -> '{mapped.strip()}'", flush=True)
                             threading.Thread(
                                 target=send_expansion,
                                 args=(keys_to_erase, mapped),

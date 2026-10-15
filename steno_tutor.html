@@ -628,7 +628,8 @@
             { word: "拿", chord: "2an", keys: "2na", pinyin: "ná", english: "take", note: "Tone 2 + na (ná - take)" },
             { word: "狗", chord: "3gou", keys: "3gou", pinyin: "gǒu", english: "dog", note: "Tone 3 + gou (gǒu - dog)" },
             { word: "大", chord: "4ad", keys: "4da", pinyin: "dà", english: "big", note: "Tone 4 + da (dà - big)" },
-            { word: "书", chord: "1hsu", keys: "1shu", pinyin: "shū", english: "book", note: "Tone 1 + shu (shū - book)" }
+            { word: "书", chord: "1hsu", keys: "1shu", pinyin: "shū", english: "book", note: "Tone 1 + shu (shū - book)" },
+            { word: "爱", chord: "4ai", keys: "4ai", pinyin: "ài", english: "love", note: "Tone 4 + ai (ài - love, mirror: 7;i)" }
         ];
 
         // Map sorted chord to output word
@@ -636,6 +637,24 @@
         STENO_DICTIONARY.forEach(item => {
             CHORD_MAP[item.chord] = item.word + " ";
         });
+
+        // Mirror mappings for alternating/bimanual key ergonomics:
+        // Tones: Right hand 0, 9, 8, 7 -> Left hand 1, 2, 3, 4
+        // Pinky letters: ; -> a, / -> z
+        // Ring letters: l -> s
+        const MIRROR_KEYS = {
+            '0': '1', '9': '2', '8': '3', '7': '4',
+            ';': 'a', '/': 'z',
+            'l': 's'
+        };
+
+        function canonicalizeChord(chordStr) {
+            if (!chordStr) return "";
+            return Array.from(chordStr)
+                .map(k => MIRROR_KEYS[k] || k)
+                .sort()
+                .join('');
+        }
 
         // 51 Steno Vocabulary Visual System: Perfect Emojis & Expressive Graphics
         const WORD_VISUALS = {
@@ -763,7 +782,8 @@
             "拿": { emoji: "拿", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "拿 (ná - take)", svg: `<circle cx="24" cy="24" r="21" fill="#312e81" stroke="#6366f1" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#c7d2fe">拿</text>` },
             "狗": { emoji: "狗", bg: "#d97706", glow: "rgba(217, 119, 6, 0.4)", label: "狗 (gǒu - dog)", svg: `<circle cx="24" cy="24" r="21" fill="#78350f" stroke="#d97706" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#fde68a">狗</text>` },
             "大": { emoji: "大", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "大 (dà - big)", svg: `<circle cx="24" cy="24" r="21" fill="#4c1d95" stroke="#8b5cf6" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#ddd6fe">大</text>` },
-            "书": { emoji: "书", bg: "#ec4899", glow: "rgba(236, 72, 153, 0.4)", label: "书 (shū - book)", svg: `<circle cx="24" cy="24" r="21" fill="#831843" stroke="#ec4899" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#fbcfe8">书</text>` }
+            "书": { emoji: "书", bg: "#ec4899", glow: "rgba(236, 72, 153, 0.4)", label: "书 (shū - book)", svg: `<circle cx="24" cy="24" r="21" fill="#831843" stroke="#ec4899" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#fbcfe8">书</text>` },
+            "爱": { emoji: "爱", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "爱 (ài - love)", svg: `<circle cx="24" cy="24" r="21" fill="#7f1d1d" stroke="#ef4444" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#fecaca">爱</text>` }
         };
 
         // 2-Step Morpheme Tree Structure
@@ -2959,7 +2979,19 @@
             }
 
             onChordRelease(combo, hasSpace = false, keyOrder = [], strokeCount = 0) {
-                const expanded = CHORD_MAP[combo];
+                let expanded = CHORD_MAP[combo];
+                let resolvedChord = combo;
+                let isMirrored = false;
+
+                if (!expanded) {
+                    const canonical = canonicalizeChord(combo);
+                    if (CHORD_MAP[canonical]) {
+                        expanded = CHORD_MAP[canonical];
+                        resolvedChord = canonical;
+                        isMirrored = true;
+                    }
+                }
+
                 const matchedWord = expanded ? expanded.trim() : null;
 
                 if (this.mode === 'training') {
@@ -2967,7 +2999,7 @@
                     const toast = document.getElementById('train-toast');
                     const card = document.getElementById('training-card');
 
-                    if (combo === targetItem.chord) {
+                    if (combo === targetItem.chord || resolvedChord === targetItem.chord) {
                         // SUCCESS!
                         sound.playSuccess();
                         this.score += 10;
@@ -3076,9 +3108,10 @@
                                 this.renderMorphemeTree();
                             }, 2800);
                         } else {
-                            const dictItem = this.dictionary.find(d => d.chord === combo);
+                            const dictItem = this.dictionary.find(d => d.chord === resolvedChord);
                             const extra = (dictItem && dictItem.pinyin) ? ` (${dictItem.pinyin} - ${dictItem.english})` : '';
-                            toast.innerText = `⚡ [Chord Match] '${combo}' -> "${matchedWord}"${extra}`;
+                            const mirrorTag = isMirrored ? ` [Mirror: '${combo}' ➔ '${resolvedChord}']` : ` '${combo}'`;
+                            toast.innerText = `⚡ [Chord Match]${mirrorTag} -> "${matchedWord}"${extra}`;
                             toast.className = "text-xs md:text-sm font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-6 py-2 rounded-xl text-center";
                             if (this.activeRoot) {
                                 this.activeRoot = null;
