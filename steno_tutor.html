@@ -620,7 +620,15 @@
             { word: "turn", chord: "ntu", keys: "tun", note: "r skipped (conflict on Left Index)" },
             { word: "form", chord: "fmo", keys: "fom", note: "r skipped (conflict on Left Index)" },
             { word: "press", chord: "eprs", keys: "pres", note: "s duplicate skipped" },
-            { word: "act", chord: "act", keys: "act", note: "Clean 3-finger match" }
+            { word: "act", chord: "act", keys: "act", note: "Clean 3-finger match" },
+            // Chinese Pinyin Chords
+            { word: "这", chord: "4ehz", keys: "4zhe", pinyin: "zhè", english: "this", note: "Tone 4 + zhe (zhè - this)" },
+            { word: "是", chord: "4his", keys: "4shi", pinyin: "shì", english: "is/be", note: "Tone 4 + shi (shì - is/be)" },
+            { word: "他", chord: "1at", keys: "1ta", pinyin: "tā", english: "he/him", note: "Tone 1 + ta (tā - he/him)" },
+            { word: "拿", chord: "2an", keys: "2na", pinyin: "ná", english: "take", note: "Tone 2 + na (ná - take)" },
+            { word: "狗", chord: "3gou", keys: "3gou", pinyin: "gǒu", english: "dog", note: "Tone 3 + gou (gǒu - dog)" },
+            { word: "大", chord: "4ad", keys: "4da", pinyin: "dà", english: "big", note: "Tone 4 + da (dà - big)" },
+            { word: "书", chord: "1hsu", keys: "1shu", pinyin: "shū", english: "book", note: "Tone 1 + shu (shū - book)" }
         ];
 
         // Map sorted chord to output word
@@ -747,7 +755,15 @@
             "react": { emoji: "⚡", bg: "#eab308", glow: "rgba(234, 179, 8, 0.4)", label: "REACT" },
             "interact": { emoji: "🗣️", bg: "#06b6d4", glow: "rgba(6, 182, 212, 0.4)", label: "INTERACT" },
             "transact": { emoji: "💳", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "TRANSACT" },
-            "enact": { emoji: "📜", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "ENACT" }
+            "enact": { emoji: "📜", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "ENACT" },
+            // Chinese Characters
+            "这": { emoji: "这", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "这 (zhè - this)", svg: `<circle cx="24" cy="24" r="21" fill="#78350f" stroke="#f59e0b" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#fef3c7">这</text>` },
+            "是": { emoji: "是", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "是 (shì - is/be)", svg: `<circle cx="24" cy="24" r="21" fill="#064e3b" stroke="#10b981" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#a7f3d0">是</text>` },
+            "他": { emoji: "他", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "他 (tā - he/him)", svg: `<circle cx="24" cy="24" r="21" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#bfdbfe">他</text>` },
+            "拿": { emoji: "拿", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "拿 (ná - take)", svg: `<circle cx="24" cy="24" r="21" fill="#312e81" stroke="#6366f1" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#c7d2fe">拿</text>` },
+            "狗": { emoji: "狗", bg: "#d97706", glow: "rgba(217, 119, 6, 0.4)", label: "狗 (gǒu - dog)", svg: `<circle cx="24" cy="24" r="21" fill="#78350f" stroke="#d97706" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#fde68a">狗</text>` },
+            "大": { emoji: "大", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "大 (dà - big)", svg: `<circle cx="24" cy="24" r="21" fill="#4c1d95" stroke="#8b5cf6" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#ddd6fe">大</text>` },
+            "书": { emoji: "书", bg: "#ec4899", glow: "rgba(236, 72, 153, 0.4)", label: "书 (shū - book)", svg: `<circle cx="24" cy="24" r="21" fill="#831843" stroke="#ec4899" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#fbcfe8">书</text>` }
         };
 
         // 2-Step Morpheme Tree Structure
@@ -3060,7 +3076,9 @@
                                 this.renderMorphemeTree();
                             }, 2800);
                         } else {
-                            toast.innerText = `⚡ [Chord Match] '${combo}' -> "${matchedWord}"`;
+                            const dictItem = this.dictionary.find(d => d.chord === combo);
+                            const extra = (dictItem && dictItem.pinyin) ? ` (${dictItem.pinyin} - ${dictItem.english})` : '';
+                            toast.innerText = `⚡ [Chord Match] '${combo}' -> "${matchedWord}"${extra}`;
                             toast.className = "text-xs md:text-sm font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-6 py-2 rounded-xl text-center";
                             if (this.activeRoot) {
                                 this.activeRoot = null;

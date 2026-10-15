@@ -471,7 +471,14 @@
     "ntu": "turn ",
     "fmo": "form ",
     "eprs": "press ",
-    "act": "act "
+    "act": "act ",
+    "4ehz": "这 ",
+    "4his": "是 ",
+    "1at": "他 ",
+    "2an": "拿 ",
+    "3gou": "狗 ",
+    "4ad": "大 ",
+    "1hsu": "书 "
   },
   "grammar_rules": {
     "verb": {
@@ -1249,5 +1256,14 @@
         "3": "outturns'"
       }
     }
+  },
+  "chinese_chords": {
+    "4ehz": { "char": "这", "pinyin": "zhè", "keys": "4zhe", "tone": 4, "english": "this" },
+    "4his": { "char": "是", "pinyin": "shì", "keys": "4shi", "tone": 4, "english": "is/be" },
+    "1at":  { "char": "他", "pinyin": "tā",  "keys": "1ta",  "tone": 1, "english": "he/him" },
+    "2an":  { "char": "拿", "pinyin": "ná",  "keys": "2na",  "tone": 2, "english": "take" },
+    "3gou": { "char": "狗", "pinyin": "gǒu", "keys": "3gou", "tone": 3, "english": "dog" },
+    "4ad":  { "char": "大", "pinyin": "dà",  "keys": "4da",  "tone": 4, "english": "big" },
+    "1hsu": { "char": "书", "pinyin": "shū", "keys": "1shu", "tone": 1, "english": "book" }
   }
 }
