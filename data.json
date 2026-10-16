@@ -11,21 +11,24 @@
           "chord": "nu",
           "word": "undo",
           "emoji": "↩️",
-          "note": "Reverse action"
+          "note": "Reverse action",
+          "char": "撤销"
         },
         "er": {
           "morpheme": "re-",
           "chord": "er",
           "word": "redo",
           "emoji": "🔁",
-          "note": "Repeat action"
+          "note": "Repeat action",
+          "char": "重做"
         },
         "otu": {
           "morpheme": "out-",
           "chord": "otu",
           "word": "outdo",
           "emoji": "🏆",
-          "note": "Surpass / excel"
+          "note": "Surpass / excel",
+          "char": "超越"
         }
       }
     },
@@ -40,14 +43,16 @@
           "chord": "er",
           "word": "reconnect",
           "emoji": "🔄",
-          "note": "Establish link again"
+          "note": "Establish link again",
+          "char": "重新连接"
         },
         "dis": {
           "morpheme": "dis-",
           "chord": "dis",
           "word": "disconnect",
           "emoji": "🔌",
-          "note": "Sever link"
+          "note": "Sever link",
+          "char": "断开"
         }
       }
     },
@@ -62,28 +67,32 @@
           "chord": "in",
           "word": "income",
           "emoji": "💵",
-          "note": "Earnings / money"
+          "note": "Earnings / money",
+          "char": "收入"
         },
         "otu": {
           "morpheme": "out-",
           "chord": "otu",
           "word": "outcome",
           "emoji": "🎯",
-          "note": "Result / consequence"
+          "note": "Result / consequence",
+          "char": "结果"
         },
         "eov": {
           "morpheme": "over-",
           "chord": "eov",
           "word": "overcome",
           "emoji": "🧗",
-          "note": "Prevail / conquer"
+          "note": "Prevail / conquer",
+          "char": "克服"
         },
         "bce": {
           "morpheme": "become",
           "chord": "bce",
           "word": "become",
           "emoji": "🌱",
-          "note": "Transform into"
+          "note": "Transform into",
+          "char": "成为"
         }
       }
     },
@@ -98,7 +107,8 @@
           "chord": "otu",
           "word": "outwalk",
           "emoji": "🏃‍♂️",
-          "note": "Walk faster than"
+          "note": "Walk faster than",
+          "char": "走得快"
         }
       }
     },
@@ -113,7 +123,8 @@
           "chord": "er",
           "word": "refile",
           "emoji": "📂",
-          "note": "File again"
+          "note": "File again",
+          "char": "重新归档"
         }
       }
     },
@@ -128,14 +139,16 @@
           "chord": "emti",
           "word": "lifetime",
           "emoji": "⏳",
-          "note": "Duration of life"
+          "note": "Duration of life",
+          "char": "一生"
         },
         "1aelns": {
           "morpheme": "line",
           "chord": "1aelns",
           "word": "lifeline",
           "emoji": "🛟",
-          "note": "Vital support link"
+          "note": "Vital support link",
+          "char": "生命线"
         }
       }
     },
@@ -150,7 +163,8 @@
           "chord": "aps",
           "word": "password",
           "emoji": "🔑",
-          "note": "Secret security word"
+          "note": "Secret security word",
+          "char": "密码"
         }
       }
     },
@@ -165,7 +179,8 @@
           "chord": "er",
           "word": "recode",
           "emoji": "🛠️",
-          "note": "Rewrite program code"
+          "note": "Rewrite program code",
+          "char": "重新编码"
         }
       }
     },
@@ -180,28 +195,32 @@
           "chord": "dnru",
           "word": "understand",
           "emoji": "💡",
-          "note": "Comprehend meaning"
+          "note": "Comprehend meaning",
+          "char": "理解"
         },
         "hitw": {
           "morpheme": "with-",
           "chord": "hitw",
           "word": "withstand",
           "emoji": "🛡️",
-          "note": "Endure / resist"
+          "note": "Endure / resist",
+          "char": "承受"
         },
         "otu": {
           "morpheme": "out-",
           "chord": "otu",
           "word": "outstand",
           "emoji": "⭐",
-          "note": "Be prominent / excel"
+          "note": "Be prominent / excel",
+          "char": "杰出"
         },
         "pu": {
           "morpheme": "up-",
           "chord": "pu",
           "word": "upstand",
           "emoji": "🔝",
-          "note": "Stand erect / honest"
+          "note": "Stand erect / honest",
+          "char": "直立"
         }
       }
     },
@@ -216,42 +235,48 @@
           "chord": "ims",
           "word": "mistake",
           "emoji": "⚠️",
-          "note": "Error / blunder"
+          "note": "Error / blunder",
+          "char": "错误"
         },
         "eov": {
           "morpheme": "over-",
           "chord": "eov",
           "word": "overtake",
           "emoji": "🏎️",
-          "note": "Catch up and pass"
+          "note": "Catch up and pass",
+          "char": "赶上"
         },
         "in": {
           "morpheme": "in-",
           "chord": "in",
           "word": "intake",
           "emoji": "🥤",
-          "note": "Amount absorbed"
+          "note": "Amount absorbed",
+          "char": "摄入"
         },
         "otu": {
           "morpheme": "out-",
           "chord": "otu",
           "word": "outtake",
           "emoji": "🎬",
-          "note": "Discarded recorded scene"
+          "note": "Discarded recorded scene",
+          "char": "排除"
         },
         "pu": {
           "morpheme": "up-",
           "chord": "pu",
           "word": "uptake",
           "emoji": "📈",
-          "note": "Absorption rate"
+          "note": "Absorption rate",
+          "char": "吸收"
         },
         "er": {
           "morpheme": "re-",
           "chord": "er",
           "word": "retake",
           "emoji": "🔁",
-          "note": "Take again"
+          "note": "Take again",
+          "char": "重拍"
         }
       }
     },
@@ -266,28 +291,32 @@
           "chord": "er",
           "word": "return",
           "emoji": "🔙",
-          "note": "Come back"
+          "note": "Come back",
+          "char": "返回"
         },
         "eov": {
           "morpheme": "over-",
           "chord": "eov",
           "word": "overturn",
           "emoji": "🔁",
-          "note": "Flip over / reverse"
+          "note": "Flip over / reverse",
+          "char": "推翻"
         },
         "pu": {
           "morpheme": "up-",
           "chord": "pu",
           "word": "upturn",
           "emoji": "📈",
-          "note": "Upward trend"
+          "note": "Upward trend",
+          "char": "好转"
         },
         "otu": {
           "morpheme": "out-",
           "chord": "otu",
           "word": "outturn",
           "emoji": "📦",
-          "note": "Production output"
+          "note": "Production output",
+          "char": "产量"
         }
       }
     },
@@ -302,35 +331,40 @@
           "chord": "er",
           "word": "reform",
           "emoji": "🏛️",
-          "note": "Improve / reorganize"
+          "note": "Improve / reorganize",
+          "char": "改革"
         },
         "1d": {
           "morpheme": "de-",
           "chord": "1d",
           "word": "deform",
           "emoji": "💥",
-          "note": "Distort shape"
+          "note": "Distort shape",
+          "char": "变形"
         },
         "in": {
           "morpheme": "in-",
           "chord": "in",
           "word": "inform",
           "emoji": "📢",
-          "note": "Convey knowledge"
+          "note": "Convey knowledge",
+          "char": "通知"
         },
         "anst": {
           "morpheme": "trans-",
           "chord": "anst",
           "word": "transform",
           "emoji": "🦋",
-          "note": "Change nature or form"
+          "note": "Change nature or form",
+          "char": "转换"
         },
         "cno": {
           "morpheme": "con-",
           "chord": "cno",
           "word": "conform",
           "emoji": "🤝",
-          "note": "Comply with rules"
+          "note": "Comply with rules",
+          "char": "遵守"
         }
       }
     },
@@ -345,35 +379,40 @@
           "chord": "ex",
           "word": "express",
           "emoji": "💬",
-          "note": "Convey thought or feeling"
+          "note": "Convey thought or feeling",
+          "char": "表达"
         },
         "im": {
           "morpheme": "im-",
           "chord": "im",
           "word": "impress",
           "emoji": "🤩",
-          "note": "Make strong impact"
+          "note": "Make strong impact",
+          "char": "留下印象"
         },
         "1d": {
           "morpheme": "de-",
           "chord": "1d",
           "word": "depress",
           "emoji": "📉",
-          "note": "Push down / lower"
+          "note": "Push down / lower",
+          "char": "使沮丧"
         },
         "er": {
           "morpheme": "re-",
           "chord": "er",
           "word": "repress",
           "emoji": "🤐",
-          "note": "Hold back by force"
+          "note": "Hold back by force",
+          "char": "压制"
         },
         "op": {
           "morpheme": "op-",
           "chord": "op",
           "word": "oppress",
           "emoji": "⛓️",
-          "note": "Weigh down heavily"
+          "note": "Weigh down heavily",
+          "char": "压迫"
         }
       }
     },
@@ -388,28 +427,32 @@
           "chord": "er",
           "word": "react",
           "emoji": "⚡",
-          "note": "Respond to stimulus"
+          "note": "Respond to stimulus",
+          "char": "反应"
         },
         "eint": {
           "morpheme": "inter-",
           "chord": "eint",
           "word": "interact",
           "emoji": "🗣️",
-          "note": "Act reciprocally"
+          "note": "Act reciprocally",
+          "char": "互动"
         },
         "anst": {
           "morpheme": "trans-",
           "chord": "anst",
           "word": "transact",
           "emoji": "💳",
-          "note": "Conduct business"
+          "note": "Conduct business",
+          "char": "交易"
         },
         "en": {
           "morpheme": "en-",
           "chord": "en",
           "word": "enact",
           "emoji": "📜",
-          "note": "Put into law or practice"
+          "note": "Put into law or practice",
+          "char": "颁布"
         }
       }
     },
@@ -424,28 +467,32 @@
           "chord": "2nr",
           "word": "大人",
           "emoji": "🧑",
-          "note": "Adult (dàrén)"
+          "note": "Adult (dàrén)",
+          "char": "大人"
         },
         "1aij": {
           "morpheme": "家",
           "chord": "1aij",
           "word": "大家",
           "emoji": "👥",
-          "note": "Everyone (dàjiā)"
+          "note": "Everyone (dàjiā)",
+          "char": "大家"
         },
         "4eux": {
           "morpheme": "学",
           "chord": "4eux",
           "word": "大学",
           "emoji": "🎓",
-          "note": "University (dàxué)"
+          "note": "University (dàxué)",
+          "char": "大学"
         },
         "4aiox": {
           "morpheme": "小",
           "chord": "4aiox",
           "word": "大小",
           "emoji": "📏",
-          "note": "Size (dàxiǎo)"
+          "note": "Size (dàxiǎo)",
+          "char": "大小"
         }
       }
     },
@@ -460,21 +507,24 @@
           "chord": "1chu",
           "word": "拿出",
           "emoji": "📤",
-          "note": "Take out (náchū)"
+          "note": "Take out (náchū)",
+          "char": "拿出"
         },
         "4aix": {
           "morpheme": "下",
           "chord": "4aix",
           "word": "拿下",
           "emoji": "🎯",
-          "note": "Capture / win (náxià)"
+          "note": "Capture / win (náxià)",
+          "char": "拿下"
         },
         "3iq": {
           "morpheme": "起",
           "chord": "3iq",
           "word": "拿起",
           "emoji": "🫳",
-          "note": "Pick up (náqǐ)"
+          "note": "Pick up (náqǐ)",
+          "char": "拿起"
         }
       }
     },
@@ -489,21 +539,24 @@
           "chord": "4ahu",
           "word": "电话",
           "emoji": "☎️",
-          "note": "Telephone (diànhuà)"
+          "note": "Telephone (diànhuà)",
+          "char": "电话"
         },
         "3ano": {
           "morpheme": "脑",
           "chord": "3ano",
           "word": "电脑",
           "emoji": "💻",
-          "note": "Computer (diànnǎo)"
+          "note": "Computer (diànnǎo)",
+          "char": "电脑"
         },
         "4his": {
           "morpheme": "视",
           "chord": "4his",
           "word": "电视",
           "emoji": "📺",
-          "note": "Television (diànshì)"
+          "note": "Television (diànshì)",
+          "char": "电视"
         }
       }
     },
@@ -518,71 +571,24 @@
           "chord": "1ir",
           "word": "生日",
           "emoji": "🎂",
-          "note": "Birthday (shēngrì)"
+          "note": "Birthday (shēngrì)",
+          "char": "生日"
         },
         "4gimn": {
           "morpheme": "命",
           "chord": "4gimn",
           "word": "生命",
           "emoji": "💖",
-          "note": "Life / destiny (shēngmìng)"
+          "note": "Life / destiny (shēngmìng)",
+          "char": "生命"
         },
         "4acn": {
           "morpheme": "产",
           "chord": "4acn",
           "word": "生产",
           "emoji": "🏭",
-          "note": "Produce (shēngchǎn)"
-        }
-      }
-    },
-    "a": {
-      "lemma": "a",
-      "chord": "a",
-      "emoji": "🔤",
-      "note": "Indefinite article / prefix",
-      "derivatives": {
-        "n": {
-          "morpheme": "-n",
-          "chord": "n",
-          "word": "an",
-          "emoji": "🔤",
-          "note": "Vowel preceding article"
-        },
-        "ny": {
-          "morpheme": "-ny",
-          "chord": "ny",
-          "word": "any",
-          "emoji": "🎲",
-          "note": "Indeterminate amount"
-        },
-        "ehorrt": {
-          "morpheme": "other",
-          "chord": "ehorrt",
-          "word": "another",
-          "emoji": "➕",
-          "note": "One more / alternate"
-        },
-        "adeh": {
-          "morpheme": "head",
-          "chord": "adeh",
-          "word": "ahead",
-          "emoji": "⏩",
-          "note": "Further forward"
-        },
-        "elno": {
-          "morpheme": "lone",
-          "chord": "elno",
-          "word": "alone",
-          "emoji": "🧍",
-          "note": "By oneself"
-        },
-        "deis": {
-          "morpheme": "side",
-          "chord": "deis",
-          "word": "aside",
-          "emoji": "↔️",
-          "note": "To one side"
+          "note": "Produce (shēngchǎn)",
+          "char": "生产"
         }
       }
     },
@@ -597,21 +603,24 @@
           "chord": "ly",
           "word": "actually",
           "emoji": "💡",
-          "note": "In truth / reality"
+          "note": "In truth / reality",
+          "char": "实际上"
         },
         "ity": {
           "morpheme": "-ity",
           "chord": "ity",
           "word": "actuality",
           "emoji": "🌐",
-          "note": "Actual state / reality"
+          "note": "Actual state / reality",
+          "char": "现实"
         },
         "eiz": {
           "morpheme": "-ize",
           "chord": "eiz",
           "word": "actualize",
           "emoji": "✨",
-          "note": "Make real / fulfill"
+          "note": "Make real / fulfill",
+          "char": "实现"
         }
       }
     },
@@ -621,40 +630,45 @@
       "emoji": "⏩",
       "note": "Onward in time or direction",
       "derivatives": {
-        "s": {
-          "morpheme": "-s",
-          "chord": "s",
-          "word": "forwards",
-          "emoji": "⏩",
-          "note": "Toward the front"
-        },
         "gin": {
           "morpheme": "-ing",
           "chord": "gin",
           "word": "forwarding",
           "emoji": "📤",
-          "note": "Sending onward"
+          "note": "Sending onward",
+          "char": "转发"
         },
         "de": {
           "morpheme": "-ed",
           "chord": "de",
           "word": "forwarded",
           "emoji": "📬",
-          "note": "Transmitted"
+          "note": "Transmitted",
+          "char": "已转发"
         },
         "efor": {
           "morpheme": "fore-",
           "chord": "efor",
           "word": "foreword",
           "emoji": "📖",
-          "note": "Preface / introduction"
+          "note": "Preface / introduction",
+          "char": "前言"
         },
         "aghirst": {
           "morpheme": "straight-",
           "chord": "aghirst",
           "word": "straightforward",
           "emoji": "📏",
-          "note": "Direct and clear"
+          "note": "Direct and clear",
+          "char": "坦率"
+        },
+        "1s": {
+          "morpheme": "-s",
+          "chord": "1s",
+          "word": "forwards",
+          "emoji": "⏩",
+          "note": "Toward the front",
+          "char": "向前"
         }
       }
     },
@@ -669,35 +683,40 @@
           "chord": "ailty",
           "word": "functionality",
           "emoji": "🛠️",
-          "note": "Quality of functioning"
+          "note": "Quality of functioning",
+          "char": "功能"
         },
         "al": {
           "morpheme": "-al",
           "chord": "al",
           "word": "functional",
           "emoji": "🔧",
-          "note": "Working properly"
+          "note": "Working properly",
+          "char": "实用的"
         },
         "ally": {
           "morpheme": "-ally",
           "chord": "ally",
           "word": "functionally",
           "emoji": "💡",
-          "note": "In a functional way"
+          "note": "In a functional way",
+          "char": "在功能上"
         },
         "gin": {
           "morpheme": "-ing",
           "chord": "gin",
           "word": "functioning",
           "emoji": "⚡",
-          "note": "Currently operating"
+          "note": "Currently operating",
+          "char": "运转"
         },
         "alm": {
           "morpheme": "mal-",
           "chord": "alm",
           "word": "malfunction",
           "emoji": "⚠️",
-          "note": "Failure to function"
+          "note": "Failure to function",
+          "char": "故障"
         }
       }
     },
@@ -712,35 +731,40 @@
           "chord": "ly",
           "word": "rightly",
           "emoji": "🎯",
-          "note": "Correctly / justly"
+          "note": "Correctly / justly",
+          "char": "公正地"
         },
         "pu": {
           "morpheme": "up-",
           "chord": "pu",
           "word": "upright",
           "emoji": "🧍",
-          "note": "Erect / honorable"
+          "note": "Erect / honorable",
+          "char": "正直"
         },
         "otu": {
           "morpheme": "out-",
           "chord": "otu",
           "word": "outright",
           "emoji": "💯",
-          "note": "Completely / direct"
+          "note": "Completely / direct",
+          "char": "彻底"
         },
         "coyp": {
           "morpheme": "copy-",
           "chord": "coyp",
           "word": "copyright",
           "emoji": "©️",
-          "note": "Legal ownership right"
+          "note": "Legal ownership right",
+          "char": "版权"
         },
         "eosu": {
           "morpheme": "-eous",
           "chord": "eosu",
           "word": "righteous",
           "emoji": "⚖️",
-          "note": "Morally right"
+          "note": "Morally right",
+          "char": "正义"
         }
       }
     },
@@ -755,21 +779,24 @@
           "chord": "aadsy",
           "word": "nowadays",
           "emoji": "📅",
-          "note": "In the present time"
+          "note": "In the present time",
+          "char": "现今"
         },
         "eehr": {
           "morpheme": "-where",
           "chord": "eehr",
           "word": "nowhere",
           "emoji": "🌌",
-          "note": "Not in any place"
+          "note": "Not in any place",
+          "char": "无处"
         },
         "ghirt": {
           "morpheme": "right-",
           "chord": "ghirt",
           "word": "right now",
           "emoji": "⚡",
-          "note": "Immediately / this moment"
+          "note": "Immediately / this moment",
+          "char": "现在"
         }
       }
     },
@@ -784,49 +811,56 @@
           "chord": "en",
           "word": "then",
           "emoji": "⏳",
-          "note": "At that time"
+          "note": "At that time",
+          "char": "那时"
         },
         "er": {
           "morpheme": "-re",
           "chord": "er",
           "word": "there",
           "emoji": "📍",
-          "note": "In that place"
+          "note": "In that place",
+          "char": "那里"
         },
         "es": {
           "morpheme": "-se",
           "chord": "es",
           "word": "these",
           "emoji": "👉",
-          "note": "Plural near"
+          "note": "Plural near",
+          "char": "这些"
         },
         "eos": {
           "morpheme": "-ose",
           "chord": "eos",
           "word": "those",
           "emoji": "👈",
-          "note": "Plural far"
+          "note": "Plural far",
+          "char": "那些"
         },
         "eirt": {
           "morpheme": "-ir",
           "chord": "eirt",
           "word": "their",
           "emoji": "👥",
-          "note": "Belonging to them"
+          "note": "Belonging to them",
+          "char": "他们的"
         },
         "emt": {
           "morpheme": "-m",
           "chord": "emt",
           "word": "them",
           "emoji": "👥",
-          "note": "Objective plural"
+          "note": "Objective plural",
+          "char": "他们"
         },
         "efor": {
           "morpheme": "-fore",
           "chord": "efor",
           "word": "therefore",
           "emoji": "💡",
-          "note": "Consequently"
+          "note": "Consequently",
+          "char": "因此"
         }
       }
     },
@@ -841,42 +875,48 @@
           "chord": "er",
           "word": "timer",
           "emoji": "⏱️",
-          "note": "Time measurement tool"
+          "note": "Time measurement tool",
+          "char": "计时器"
         },
         "gin": {
           "morpheme": "-ing",
           "chord": "gin",
           "word": "timing",
           "emoji": "⏰",
-          "note": "Choice of moment"
+          "note": "Choice of moment",
+          "char": "时机"
         },
         "ly": {
           "morpheme": "-ly",
           "chord": "ly",
           "word": "timely",
           "emoji": "🎯",
-          "note": "Well-timed / opportune"
+          "note": "Well-timed / opportune",
+          "char": "及时的"
         },
         "otu": {
           "morpheme": "-out",
           "chord": "otu",
           "word": "timeout",
           "emoji": "⏸️",
-          "note": "Temporary pause"
+          "note": "Temporary pause",
+          "char": "超时"
         },
         "elss": {
           "morpheme": "-less",
           "chord": "elss",
           "word": "timeless",
           "emoji": "✨",
-          "note": "Unaffected by time"
+          "note": "Unaffected by time",
+          "char": "永恒"
         },
         "eov": {
           "morpheme": "over-",
           "chord": "eov",
           "word": "overtime",
           "emoji": "💼",
-          "note": "Time beyond regular hours"
+          "note": "Time beyond regular hours",
+          "char": "加班"
         }
       }
     },
@@ -891,42 +931,48 @@
           "chord": "ady",
           "word": "today",
           "emoji": "☀️",
-          "note": "On this day"
+          "note": "On this day",
+          "char": "今天"
         },
         "ghint": {
           "morpheme": "-night",
           "chord": "ghint",
           "word": "tonight",
           "emoji": "🌙",
-          "note": "On this night"
+          "note": "On this night",
+          "char": "今晚"
         },
         "moorrw": {
           "morpheme": "-morrow",
           "chord": "moorrw",
           "word": "tomorrow",
           "emoji": "🌅",
-          "note": "The day after today"
+          "note": "The day after today",
+          "char": "明天"
         },
         "eeghrt": {
           "morpheme": "-gether",
           "chord": "eeghrt",
           "word": "together",
           "emoji": "🤝",
-          "note": "In union / with each other"
+          "note": "In union / with each other",
+          "char": "一起"
         },
         "adrw": {
           "morpheme": "-ward",
           "chord": "adrw",
           "word": "toward",
           "emoji": "🧭",
-          "note": "In the direction of"
+          "note": "In the direction of",
+          "char": "朝向"
         },
         "in": {
           "morpheme": "in-",
           "chord": "in",
           "word": "into",
           "emoji": "📥",
-          "note": "Moving inside"
+          "note": "Moving inside",
+          "char": "进入"
         }
       }
     },
@@ -941,35 +987,40 @@
           "chord": "gin",
           "word": "waiting",
           "emoji": "⏳",
-          "note": "In the state of waiting"
+          "note": "In the state of waiting",
+          "char": "等待"
         },
         "er": {
           "morpheme": "-er",
           "chord": "er",
           "word": "waiter",
           "emoji": "🍽️",
-          "note": "Server at table"
+          "note": "Server at table",
+          "char": "服务员"
         },
         "erss": {
           "morpheme": "-ress",
           "chord": "erss",
           "word": "waitress",
           "emoji": "👩‍🍳",
-          "note": "Female server"
-        },
-        "a": {
-          "morpheme": "a-",
-          "chord": "a",
-          "word": "await",
-          "emoji": "👀",
-          "note": "Wait expectantly"
+          "note": "Female server",
+          "char": "女服务员"
         },
         "ade": {
           "morpheme": "a- -ed",
           "chord": "ade",
           "word": "awaited",
           "emoji": "✨",
-          "note": "Long-expected"
+          "note": "Long-expected",
+          "char": "等待中"
+        },
+        "1a": {
+          "morpheme": "a-",
+          "chord": "1a",
+          "word": "await",
+          "emoji": "👀",
+          "note": "Wait expectantly",
+          "char": "等候"
         }
       }
     },
@@ -979,47 +1030,53 @@
       "emoji": "📦",
       "note": "Container / enclosure",
       "derivatives": {
-        "s": {
-          "morpheme": "-es",
-          "chord": "s",
-          "word": "boxes",
-          "emoji": "📦",
-          "note": "Plural boxes"
-        },
         "gin": {
           "morpheme": "-ing",
           "chord": "gin",
           "word": "boxing",
           "emoji": "🥊",
-          "note": "Combat sport / packing"
+          "note": "Combat sport / packing",
+          "char": "拳击"
         },
         "er": {
           "morpheme": "-er",
           "chord": "er",
           "word": "boxer",
           "emoji": "🥊",
-          "note": "One who boxes"
+          "note": "One who boxes",
+          "char": "拳击手"
         },
         "in": {
           "morpheme": "in-",
           "chord": "in",
           "word": "inbox",
           "emoji": "📥",
-          "note": "Incoming message folder"
+          "note": "Incoming message folder",
+          "char": "收件箱"
         },
         "otu": {
           "morpheme": "out-",
           "chord": "otu",
           "word": "outbox",
           "emoji": "📤",
-          "note": "Outgoing message folder"
+          "note": "Outgoing message folder",
+          "char": "发件箱"
         },
         "adns": {
           "morpheme": "sand-",
           "chord": "adns",
           "word": "sandbox",
           "emoji": "🏖️",
-          "note": "Isolated test environment"
+          "note": "Isolated test environment",
+          "char": "沙盒"
+        },
+        "1s": {
+          "morpheme": "-es",
+          "chord": "1s",
+          "word": "boxes",
+          "emoji": "📦",
+          "note": "Plural boxes",
+          "char": "盒子"
         }
       }
     },
@@ -1034,28 +1091,32 @@
           "chord": "gin",
           "word": "clearing",
           "emoji": "🧹",
-          "note": "Making clear / open space"
+          "note": "Making clear / open space",
+          "char": "清理"
         },
         "de": {
           "morpheme": "-ed",
           "chord": "de",
           "word": "cleared",
           "emoji": "✅",
-          "note": "Emptied / approved"
+          "note": "Emptied / approved",
+          "char": "已清除"
         },
         "ly": {
           "morpheme": "-ly",
           "chord": "ly",
           "word": "clearly",
           "emoji": "💡",
-          "note": "Without doubt / plainly"
+          "note": "Without doubt / plainly",
+          "char": "清晰地"
         },
         "acnr": {
           "morpheme": "-ance",
           "chord": "acnr",
           "word": "clearance",
           "emoji": "🏷️",
-          "note": "Authorization / space"
+          "note": "Authorization / space",
+          "char": "许可"
         }
       }
     },
@@ -1070,35 +1131,40 @@
           "chord": "gin",
           "word": "depending",
           "emoji": "🔄",
-          "note": "Contingent upon"
+          "note": "Contingent upon",
+          "char": "依据"
         },
         "de": {
           "morpheme": "-ed",
           "chord": "de",
           "word": "depended",
           "emoji": "🤝",
-          "note": "Relied on"
-        },
-        "s": {
-          "morpheme": "-s",
-          "chord": "s",
-          "word": "depends",
-          "emoji": "⚖️",
-          "note": "Relies on"
+          "note": "Relied on",
+          "char": "依赖"
         },
         "ent": {
           "morpheme": "-ent",
           "chord": "ent",
           "word": "dependent",
           "emoji": "👶",
-          "note": "Relying on another"
+          "note": "Relying on another",
+          "char": "依靠"
         },
         "in": {
           "morpheme": "in-",
           "chord": "in",
           "word": "independent",
           "emoji": "🦅",
-          "note": "Autonomous / free"
+          "note": "Autonomous / free",
+          "char": "独立"
+        },
+        "1s": {
+          "morpheme": "-s",
+          "chord": "1s",
+          "word": "depends",
+          "emoji": "⚖️",
+          "note": "Relies on",
+          "char": "取决于"
         }
       }
     },
@@ -1113,21 +1179,24 @@
           "chord": "er",
           "word": "maker",
           "emoji": "🧑‍🏭",
-          "note": "Creator / producer"
+          "note": "Creator / producer",
+          "char": "制造者"
         },
         "gin": {
           "morpheme": "-ing",
           "chord": "gin",
           "word": "making",
           "emoji": "🏗️",
-          "note": "In process of creation"
+          "note": "In process of creation",
+          "char": "制作"
         },
-        "s": {
+        "1s": {
           "morpheme": "-s",
-          "chord": "s",
+          "chord": "1s",
           "word": "makes",
           "emoji": "⚙️",
-          "note": "Creates"
+          "note": "Creates",
+          "char": "使"
         }
       }
     },
@@ -1142,28 +1211,32 @@
           "chord": "gin",
           "word": "typing",
           "emoji": "⌨️",
-          "note": "Entering characters"
+          "note": "Entering characters",
+          "char": "打字"
         },
         "de": {
           "morpheme": "-ed",
           "chord": "de",
           "word": "typed",
           "emoji": "📄",
-          "note": "Already keyed in"
+          "note": "Already keyed in",
+          "char": "已打字"
         },
         "er": {
           "morpheme": "-er",
           "chord": "er",
           "word": "typer",
           "emoji": "👤",
-          "note": "Person typing"
+          "note": "Person typing",
+          "char": "打字员"
         },
-        "s": {
+        "1s": {
           "morpheme": "-s",
-          "chord": "s",
+          "chord": "1s",
           "word": "types",
           "emoji": "🗂️",
-          "note": "Kinds / categories"
+          "note": "Kinds / categories",
+          "char": "类型"
         }
       }
     },
@@ -1173,19 +1246,21 @@
       "emoji": "📊",
       "note": "Furniture / grid data",
       "derivatives": {
-        "s": {
-          "morpheme": "-s",
-          "chord": "s",
-          "word": "tables",
-          "emoji": "📊",
-          "note": "Plural tables"
-        },
         "emti": {
           "morpheme": "time-",
           "chord": "emti",
           "word": "timetable",
           "emoji": "🗓️",
-          "note": "Schedule of times"
+          "note": "Schedule of times",
+          "char": "时刻表"
+        },
+        "1s": {
+          "morpheme": "-s",
+          "chord": "1s",
+          "word": "tables",
+          "emoji": "📊",
+          "note": "Plural tables",
+          "char": "表格"
         }
       }
     },
@@ -1195,26 +1270,29 @@
       "emoji": "⚡",
       "note": "Action word",
       "derivatives": {
-        "s": {
-          "morpheme": "-s",
-          "chord": "s",
-          "word": "verbs",
-          "emoji": "⚡",
-          "note": "Plural verbs"
-        },
         "al": {
           "morpheme": "-al",
           "chord": "al",
           "word": "verbal",
           "emoji": "🗣️",
-          "note": "Spoken / relating to words"
+          "note": "Spoken / relating to words",
+          "char": "口头的"
         },
         "ad": {
           "morpheme": "ad-",
           "chord": "ad",
           "word": "adverb",
           "emoji": "🏷️",
-          "note": "Word modifying verb"
+          "note": "Word modifying verb",
+          "char": "副词"
+        },
+        "1s": {
+          "morpheme": "-s",
+          "chord": "1s",
+          "word": "verbs",
+          "emoji": "⚡",
+          "note": "Plural verbs",
+          "char": "动词"
         }
       }
     },
@@ -1229,14 +1307,16 @@
           "chord": "box",
           "word": "sandbox",
           "emoji": "🏖️",
-          "note": "Testing playground"
+          "note": "Testing playground",
+          "char": "沙盒"
         },
         "dy": {
           "morpheme": "-y",
           "chord": "dy",
           "word": "sandy",
           "emoji": "🏝️",
-          "note": "Full of sand"
+          "note": "Full of sand",
+          "char": "沙质"
         }
       }
     },
@@ -1251,28 +1331,32 @@
           "chord": "ly",
           "word": "shortly",
           "emoji": "⏱️",
-          "note": "Soon / in a brief time"
+          "note": "Soon / in a brief time",
+          "char": "不久"
         },
         "en": {
           "morpheme": "-en",
           "chord": "en",
           "word": "shorten",
           "emoji": "✂️",
-          "note": "Make shorter"
+          "note": "Make shorter",
+          "char": "缩短"
         },
         "aeg": {
           "morpheme": "-age",
           "chord": "aeg",
           "word": "shortage",
           "emoji": "📉",
-          "note": "Deficiency"
+          "note": "Deficiency",
+          "char": "短缺"
         },
         "cut": {
           "morpheme": "-cut",
           "chord": "ctu",
           "word": "shortcut",
           "emoji": "⚡",
-          "note": "Faster path"
+          "note": "Faster path",
+          "char": "快捷键"
         }
       }
     },
@@ -1287,14 +1371,16 @@
           "chord": "ly",
           "word": "simply",
           "emoji": "💡",
-          "note": "Merely / easily"
+          "note": "Merely / easily",
+          "char": "简单地"
         },
         "ity": {
           "morpheme": "-ity",
           "chord": "ity",
           "word": "simplicity",
           "emoji": "⚪",
-          "note": "State of being simple"
+          "note": "State of being simple",
+          "char": "简单"
         }
       }
     },
@@ -1304,26 +1390,29 @@
       "emoji": "🚪",
       "note": "Allow / permit",
       "derivatives": {
-        "s": {
-          "morpheme": "-s / 's",
-          "chord": "s",
-          "word": "lets",
-          "emoji": "👥",
-          "note": "Allows / let us"
-        },
         "otu": {
           "morpheme": "out-",
           "chord": "otu",
           "word": "outlet",
           "emoji": "🔌",
-          "note": "Release / power point"
+          "note": "Release / power point",
+          "char": "出口"
         },
         "in": {
           "morpheme": "in-",
           "chord": "in",
           "word": "inlet",
           "emoji": "🌊",
-          "note": "Narrow water entrance"
+          "note": "Narrow water entrance",
+          "char": "入口"
+        },
+        "1s": {
+          "morpheme": "-s / 's",
+          "chord": "1s",
+          "word": "lets",
+          "emoji": "👥",
+          "note": "Allows / let us",
+          "char": "让我们"
         }
       }
     },
@@ -1338,21 +1427,24 @@
           "chord": "no",
           "word": "upon",
           "emoji": "👆",
-          "note": "On top of"
+          "note": "On top of",
+          "char": "在...之上"
         },
         "er": {
           "morpheme": "-er",
           "chord": "er",
           "word": "upper",
           "emoji": "⬆️",
-          "note": "Higher in position"
+          "note": "Higher in position",
+          "char": "上面的"
         },
         "ardw": {
           "morpheme": "-ward",
           "chord": "ardw",
           "word": "upward",
           "emoji": "📈",
-          "note": "In an upward direction"
+          "note": "In an upward direction",
+          "char": "向上"
         }
       }
     },
@@ -1367,14 +1459,245 @@
           "chord": "ly",
           "word": "presently",
           "emoji": "⏱️",
-          "note": "At the present moment"
+          "note": "At the present moment",
+          "char": "目前"
         },
         "tion": {
           "morpheme": "-ation",
           "chord": "tion",
           "word": "presentation",
           "emoji": "📊",
-          "note": "Demonstration / exhibition"
+          "note": "Demonstration / exhibition",
+          "char": "演示"
+        }
+      }
+    },
+    "am": {
+      "lemma": "am",
+      "chord": "am",
+      "emoji": "🙋",
+      "note": "1st person be (I am)",
+      "char": "我是",
+      "derivatives": {}
+    },
+    "adkln": {
+      "lemma": "andlook",
+      "chord": "adkln",
+      "emoji": "👀",
+      "note": "Look compound (and look)",
+      "char": "来看",
+      "derivatives": {}
+    },
+    "aer": {
+      "lemma": "are",
+      "chord": "aer",
+      "emoji": "👥",
+      "note": "2nd/plural be",
+      "char": "是",
+      "derivatives": {}
+    },
+    "is": {
+      "lemma": "is",
+      "chord": "is",
+      "emoji": "☝️",
+      "note": "3rd person be",
+      "char": "是",
+      "derivatives": {}
+    },
+    "dilms": {
+      "lemma": "middles",
+      "chord": "dilms",
+      "emoji": "🎯",
+      "note": "Center / midpoint",
+      "char": "中间",
+      "derivatives": {
+        "ghint": {
+          "morpheme": "-night",
+          "chord": "ghint",
+          "word": "midnight",
+          "emoji": "🌌",
+          "note": "Middle of night",
+          "char": "午夜"
+        },
+        "ady": {
+          "morpheme": "-day",
+          "chord": "ady",
+          "word": "midday",
+          "emoji": "☀️",
+          "note": "Middle of day",
+          "char": "正午"
+        }
+      }
+    },
+    "eno": {
+      "lemma": "one",
+      "chord": "eno",
+      "emoji": "1️⃣",
+      "note": "Single entity",
+      "char": "一",
+      "derivatives": {
+        "fls": {
+          "morpheme": "-self",
+          "chord": "fls",
+          "word": "oneself",
+          "emoji": "🪞",
+          "note": "Person's self",
+          "char": "自己"
+        }
+      }
+    },
+    "emov": {
+      "lemma": "remove",
+      "chord": "emov",
+      "emoji": "❌",
+      "note": "Take away / delete",
+      "char": "移除",
+      "derivatives": {
+        "1al": {
+          "morpheme": "-al",
+          "chord": "1al",
+          "word": "removal",
+          "emoji": "🚫",
+          "note": "Act of removing",
+          "char": "消除"
+        },
+        "1d": {
+          "morpheme": "-d",
+          "chord": "1d",
+          "word": "removed",
+          "emoji": "🗑️",
+          "note": "Past tense of remove",
+          "char": "已移除"
+        }
+      }
+    },
+    "mnost": {
+      "lemma": "something",
+      "chord": "mnost",
+      "emoji": "📦",
+      "note": "Unspecified entity",
+      "char": "某事",
+      "derivatives": {}
+    },
+    "ckstu": {
+      "lemma": "strucuture",
+      "chord": "ckstu",
+      "emoji": "🏗️",
+      "note": "Framework / arrangement (structure)",
+      "char": "结构",
+      "derivatives": {
+        "1al": {
+          "morpheme": "-al",
+          "chord": "1al",
+          "word": "structural",
+          "emoji": "📐",
+          "note": "Related to structure",
+          "char": "结构的"
+        },
+        "er": {
+          "morpheme": "re-",
+          "chord": "er",
+          "word": "restructure",
+          "emoji": "🔄",
+          "note": "Reorganize structure",
+          "char": "重构"
+        }
+      }
+    },
+    "ghin": {
+      "lemma": "thing",
+      "chord": "ghin",
+      "emoji": "🔮",
+      "note": "Entity / object",
+      "char": "东西",
+      "derivatives": {
+        "any": {
+          "morpheme": "any-",
+          "chord": "any",
+          "word": "anything",
+          "emoji": "❓",
+          "note": "Any object or event",
+          "char": "任何事"
+        },
+        "erv": {
+          "morpheme": "every-",
+          "chord": "erv",
+          "word": "everything",
+          "emoji": "🌐",
+          "note": "All things",
+          "char": "一切"
+        },
+        "no": {
+          "morpheme": "no-",
+          "chord": "no",
+          "word": "nothing",
+          "emoji": "⭕",
+          "note": "Not anything",
+          "char": "无事"
+        }
+      }
+    },
+    "hist": {
+      "lemma": "this",
+      "chord": "hist",
+      "emoji": "👉",
+      "note": "Specific person or thing",
+      "char": "这",
+      "derivatives": {}
+    },
+    "1a": {
+      "lemma": "a",
+      "chord": "1a",
+      "emoji": "🔤",
+      "note": "Indefinite article / prefix",
+      "derivatives": {
+        "ny": {
+          "morpheme": "-ny",
+          "chord": "ny",
+          "word": "any",
+          "emoji": "🎲",
+          "note": "Indeterminate amount",
+          "char": "任何"
+        },
+        "ehorrt": {
+          "morpheme": "other",
+          "chord": "ehorrt",
+          "word": "another",
+          "emoji": "➕",
+          "note": "One more / alternate",
+          "char": "另一个"
+        },
+        "adeh": {
+          "morpheme": "head",
+          "chord": "adeh",
+          "word": "ahead",
+          "emoji": "⏩",
+          "note": "Further forward",
+          "char": "向前"
+        },
+        "elno": {
+          "morpheme": "lone",
+          "chord": "elno",
+          "word": "alone",
+          "emoji": "🧍",
+          "note": "By oneself",
+          "char": "独自"
+        },
+        "deis": {
+          "morpheme": "side",
+          "chord": "deis",
+          "word": "aside",
+          "emoji": "↔️",
+          "note": "To one side",
+          "char": "在一旁"
+        },
+        "1n": {
+          "morpheme": "-n",
+          "chord": "1n",
+          "word": "an",
+          "emoji": "🔤",
+          "note": "Vowel preceding article",
+          "char": "一个"
         }
       }
     }
@@ -1493,7 +1816,6 @@
     "2ginpx": "形 ",
     "4an": "按 ",
     "4dgnos": "动 ",
-    "a": "a ",
     "acltu": "actual ",
     "adforw": "forward ",
     "forw": "forward ",
@@ -1542,7 +1864,19 @@
     "ehvw": "we have ",
     "wehave": "we have ",
     "shortcut": "shortcut ",
-    "sandbox": "sandbox "
+    "sandbox": "sandbox ",
+    "am": "am ",
+    "adkln": "andlook ",
+    "aer": "are ",
+    "is": "is ",
+    "dilms": "middles ",
+    "eno": "one ",
+    "emov": "remove ",
+    "mnost": "something ",
+    "ckstu": "strucuture ",
+    "ghin": "thing ",
+    "hist": "this ",
+    "1a": "a "
   },
   "grammar_rules": {
     "verb": {

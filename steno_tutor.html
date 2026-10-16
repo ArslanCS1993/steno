@@ -441,20 +441,9 @@
                         <!-- Rich Interactive Typing Box with Live Visible Typing & Blinking Caret -->
                         <div id="sandbox-editor" tabindex="0" class="w-full flex-1 min-h-[220px] max-h-[360px] overflow-y-auto bg-slate-950 border border-slate-800 focus:border-indigo-500 rounded-2xl p-4 flex flex-wrap items-center content-start gap-2 focus:outline-none shadow-inner cursor-text relative transition-colors">
                             <span id="editor-placeholder" class="text-slate-600 font-mono text-xs md:text-sm select-none pointer-events-none">
-                                Type regular letters normally or strike steno chords here... (Press 1-4 for grammar modifiers, Space to commit words, Backspace to delete)
+                                Type regular letters normally or strike steno chords here... (Press Space for spaces, Backspace to delete)
                             </span>
                             <span id="editor-caret" class="inline-block w-0.5 h-5 bg-indigo-400 animate-pulse ml-0.5 align-middle rounded pointer-events-none select-none"></span>
-                        </div>
-
-                        <!-- Interactive Grammar Inflection HUD Bar -->
-                        <div id="sandbox-grammar-bar" class="hidden flex flex-wrap items-center justify-between gap-2 p-2.5 bg-slate-950/95 border border-indigo-500/40 rounded-2xl shadow-xl transition-all">
-                            <div class="flex items-center gap-2">
-                                <span class="text-sm">✨</span>
-                                <span class="text-slate-300 font-bold text-xs" id="grammar-bar-title">Grammar Modifiers:</span>
-                            </div>
-                            <div id="grammar-bar-options" class="flex flex-wrap items-center gap-1.5">
-                                <!-- Dynamic Options rendered via app.renderGrammarHud() -->
-                            </div>
                         </div>
                     </div>
 
@@ -679,7 +668,7 @@
             { word: "form", chord: "fmo", keys: "fom", note: "r skipped (conflict on Left Index)" },
             { word: "press", chord: "eprs", keys: "pres", note: "s duplicate skipped" },
             { word: "act", chord: "act", keys: "act", note: "Clean 3-finger match" },
-            { word: "a", chord: "a", keys: "a", note: "Indefinite article / base prefix" },
+            { word: "a", chord: "1a", keys: "1a", note: "Single-letter rule (1 + a)" },
             { word: "actual", chord: "acltu", keys: "actual", note: "Root for actually" },
             { word: "actually", chord: "actually", keys: "actually", note: "Derived from actual" },
             { word: "forward", chord: "adforw", keys: "forward", note: "Root for forwards, forwarding" },
@@ -777,7 +766,18 @@
             { word: "转", chord: "3ahnuz", keys: "3zhuan", pinyin: "zhuǎn", english: "turn", note: "Tone 3 + zhuan (turn)" },
             { word: "形", chord: "2ginpx", keys: "2xing", pinyin: "xíng", english: "form", note: "Tone 2 + xing (form/shape)" },
             { word: "按", chord: "4an", keys: "4an", pinyin: "àn", english: "press", note: "Tone 4 + an (press)" },
-            { word: "动", chord: "4dgnos", keys: "4dong", pinyin: "dòng", english: "act", note: "Tone 4 + dong (act/action)" }
+            { word: "动", chord: "4dgnos", keys: "4dong", pinyin: "dòng", english: "act", note: "Tone 4 + dong (act/action)" },
+            { word: "am", chord: "am", keys: "am", note: "1st person be (I am)", english: "am" },
+            { word: "andlook", chord: "adkln", keys: "adkln", note: "Look compound (and look)", english: "andlook" },
+            { word: "are", chord: "aer", keys: "aer", note: "2nd/plural be", english: "are" },
+            { word: "is", chord: "is", keys: "is", note: "3rd person be", english: "is" },
+            { word: "middles", chord: "dilms", keys: "dilms", note: "Center / midpoint", english: "middles" },
+            { word: "one", chord: "eno", keys: "eno", note: "Single entity / number one", english: "one" },
+            { word: "remove", chord: "emov", keys: "emov", note: "Take away / delete", english: "remove" },
+            { word: "something", chord: "mnost", keys: "mnost", note: "Unspecified entity", english: "something" },
+            { word: "strucuture", chord: "ckstu", keys: "ckstu", note: "Framework / arrangement (structure)", english: "strucuture" },
+            { word: "thing", chord: "ghin", keys: "ghin", note: "Object / entity", english: "thing" },
+            { word: "this", chord: "hist", keys: "hist", note: "Specific entity (near)", english: "this" }
         ];
 
         // Map sorted chord to output word
@@ -870,6 +870,188 @@
             "打字": "typing", "等待": "waiting", "实际": "actually",
             "曾经": "it was", "我们有": "we have", "这": "this", "是": "is", "爱": "love"
         });
+
+        const ALL_MORPHEME_TRANSLATIONS = {
+            "undo": "撤销",
+            "redo": "重做",
+            "outdo": "超越",
+            "reconnect": "重新连接",
+            "disconnect": "断开",
+            "income": "收入",
+            "outcome": "结果",
+            "overcome": "克服",
+            "become": "成为",
+            "outwalk": "走得快",
+            "refile": "重新归档",
+            "lifetime": "一生",
+            "lifeline": "生命线",
+            "password": "密码",
+            "recode": "重新编码",
+            "understand": "理解",
+            "withstand": "承受",
+            "outstand": "杰出",
+            "upstand": "直立",
+            "mistake": "错误",
+            "overtake": "赶上",
+            "intake": "摄入",
+            "outtake": "排除",
+            "uptake": "吸收",
+            "retake": "重拍",
+            "return": "返回",
+            "overturn": "推翻",
+            "upturn": "好转",
+            "outturn": "产量",
+            "reform": "改革",
+            "deform": "变形",
+            "inform": "通知",
+            "transform": "转换",
+            "conform": "遵守",
+            "express": "表达",
+            "impress": "留下印象",
+            "depress": "使沮丧",
+            "repress": "压制",
+            "oppress": "压迫",
+            "react": "反应",
+            "interact": "互动",
+            "transact": "交易",
+            "enact": "颁布",
+            "大人": "大人",
+            "大家": "大家",
+            "大学": "大学",
+            "大小": "大小",
+            "拿出": "拿出",
+            "拿下": "拿下",
+            "拿起": "拿起",
+            "电话": "电话",
+            "电脑": "电脑",
+            "电视": "电视",
+            "生日": "生日",
+            "生命": "生命",
+            "生产": "生产",
+            "an": "一个",
+            "any": "任何",
+            "another": "另一个",
+            "ahead": "向前",
+            "alone": "独自",
+            "aside": "在一旁",
+            "actually": "实际上",
+            "actuality": "现实",
+            "actualize": "实现",
+            "forwards": "向前",
+            "forwarding": "转发",
+            "forwarded": "已转发",
+            "foreword": "前言",
+            "straightforward": "坦率",
+            "functionality": "功能",
+            "functional": "实用的",
+            "functionally": "在功能上",
+            "functioning": "运转",
+            "malfunction": "故障",
+            "rightly": "公正地",
+            "upright": "正直",
+            "outright": "彻底",
+            "copyright": "版权",
+            "righteous": "正义",
+            "nowadays": "现今",
+            "nowhere": "无处",
+            "right now": "现在",
+            "then": "那时",
+            "there": "那里",
+            "these": "这些",
+            "those": "那些",
+            "their": "他们的",
+            "them": "他们",
+            "therefore": "因此",
+            "timer": "计时器",
+            "timing": "时机",
+            "timely": "及时的",
+            "timeout": "超时",
+            "timeless": "永恒",
+            "overtime": "加班",
+            "today": "今天",
+            "tonight": "今晚",
+            "tomorrow": "明天",
+            "together": "一起",
+            "toward": "朝向",
+            "into": "进入",
+            "waiting": "等待",
+            "waiter": "服务员",
+            "waitress": "女服务员",
+            "await": "等候",
+            "awaited": "等待中",
+            "boxes": "盒子",
+            "boxing": "拳击",
+            "boxer": "拳击手",
+            "inbox": "收件箱",
+            "outbox": "发件箱",
+            "sandbox": "沙盒",
+            "clearing": "清理",
+            "cleared": "已清除",
+            "clearly": "清晰地",
+            "clearance": "许可",
+            "depending": "依据",
+            "depended": "依赖",
+            "depends": "取决于",
+            "dependent": "依靠",
+            "independent": "独立",
+            "maker": "制造者",
+            "making": "制作",
+            "makes": "使",
+            "typing": "打字",
+            "typed": "已打字",
+            "typer": "打字员",
+            "types": "类型",
+            "tables": "表格",
+            "timetable": "时刻表",
+            "verbs": "动词",
+            "verbal": "口头的",
+            "adverb": "副词",
+            "sandy": "沙质",
+            "shortly": "不久",
+            "shorten": "缩短",
+            "shortage": "短缺",
+            "shortcut": "快捷键",
+            "simply": "简单地",
+            "simplicity": "简单",
+            "lets": "让我们",
+            "outlet": "出口",
+            "inlet": "入口",
+            "upon": "在...之上",
+            "upper": "上面的",
+            "upward": "向上",
+            "presently": "目前",
+            "presentation": "演示",
+            "am": "我是",
+            "andlook": "来看",
+            "are": "是",
+            "is": "是",
+            "middles": "中间",
+            "middle": "中间",
+            "midnight": "午夜",
+            "midday": "正午",
+            "midst": "当中",
+            "one": "一",
+            "oneself": "自己",
+            "only": "只有",
+            "remove": "移除",
+            "removal": "消除",
+            "removed": "已移除",
+            "removable": "可拆卸",
+            "something": "某事",
+            "strucuture": "结构",
+            "structure": "结构",
+            "structural": "结构的",
+            "restructure": "重构",
+            "infrastructure": "基础设施",
+            "thing": "东西",
+            "anything": "任何事",
+            "everything": "一切",
+            "nothing": "无事",
+            "this": "这",
+            "thistle": "蓟"
+        };
+        Object.assign(ENGLISH_TO_CHINESE, ALL_MORPHEME_TRANSLATIONS);
+
 
         // 51 Steno Vocabulary Visual System: Perfect Emojis & Expressive Graphics
         const WORD_VISUALS = {
@@ -1049,472 +1231,1707 @@
         // 2-Step Morpheme Tree Structure
         const MORPHEME_ROOTS_TREE = {
             "do": {
-                lemma: "do",
-                chord: "do",
-                emoji: "✅",
-                derivatives: {
-                    "nu": { morpheme: "un-", chord: "nu", word: "undo", emoji: "↩️", note: "Reverse action" },
-                    "er": { morpheme: "re-", chord: "er", word: "redo", emoji: "🔁", note: "Repeat action" },
-                    "otu": { morpheme: "out-", chord: "otu", word: "outdo", emoji: "🏆", note: "Surpass / excel" }
-                }
+                        "lemma": "do",
+                        "chord": "do",
+                        "emoji": "✅",
+                        "note": "Base action verb",
+                        "derivatives": {
+                                    "nu": {
+                                                "morpheme": "un-",
+                                                "chord": "nu",
+                                                "word": "undo",
+                                                "emoji": "↩️",
+                                                "note": "Reverse action",
+                                                "char": "撤销"
+                                    },
+                                    "er": {
+                                                "morpheme": "re-",
+                                                "chord": "er",
+                                                "word": "redo",
+                                                "emoji": "🔁",
+                                                "note": "Repeat action",
+                                                "char": "重做"
+                                    },
+                                    "otu": {
+                                                "morpheme": "out-",
+                                                "chord": "otu",
+                                                "word": "outdo",
+                                                "emoji": "🏆",
+                                                "note": "Surpass / excel",
+                                                "char": "超越"
+                                    }
+                        }
             },
             "cnot": {
-                lemma: "connect",
-                chord: "cnot",
-                emoji: "🔗",
-                derivatives: {
-                    "er": { morpheme: "re-", chord: "er", word: "reconnect", emoji: "🔄", note: "Establish link again" },
-                    "dis": { morpheme: "dis-", chord: "dis", word: "disconnect", emoji: "🔌", note: "Sever link" }
-                }
+                        "lemma": "connect",
+                        "chord": "cnot",
+                        "emoji": "🔗",
+                        "note": "Join together",
+                        "derivatives": {
+                                    "er": {
+                                                "morpheme": "re-",
+                                                "chord": "er",
+                                                "word": "reconnect",
+                                                "emoji": "🔄",
+                                                "note": "Establish link again",
+                                                "char": "重新连接"
+                                    },
+                                    "dis": {
+                                                "morpheme": "dis-",
+                                                "chord": "dis",
+                                                "word": "disconnect",
+                                                "emoji": "🔌",
+                                                "note": "Sever link",
+                                                "char": "断开"
+                                    }
+                        }
             },
             "cmo": {
-                lemma: "come",
-                chord: "cmo",
-                emoji: "🫴",
-                derivatives: {
-                    "in": { morpheme: "in-", chord: "in", word: "income", emoji: "💵", note: "Earnings / money" },
-                    "otu": { morpheme: "out-", chord: "otu", word: "outcome", emoji: "🎯", note: "Result / consequence" },
-                    "eov": { morpheme: "over-", chord: "eov", word: "overcome", emoji: "🧗", note: "Prevail / conquer" },
-                    "bce": { morpheme: "become", chord: "bce", word: "become", emoji: "🌱", note: "Transform into" }
-                }
+                        "lemma": "come",
+                        "chord": "cmo",
+                        "emoji": "🫴",
+                        "note": "Move toward",
+                        "derivatives": {
+                                    "in": {
+                                                "morpheme": "in-",
+                                                "chord": "in",
+                                                "word": "income",
+                                                "emoji": "💵",
+                                                "note": "Earnings / money",
+                                                "char": "收入"
+                                    },
+                                    "otu": {
+                                                "morpheme": "out-",
+                                                "chord": "otu",
+                                                "word": "outcome",
+                                                "emoji": "🎯",
+                                                "note": "Result / consequence",
+                                                "char": "结果"
+                                    },
+                                    "eov": {
+                                                "morpheme": "over-",
+                                                "chord": "eov",
+                                                "word": "overcome",
+                                                "emoji": "🧗",
+                                                "note": "Prevail / conquer",
+                                                "char": "克服"
+                                    },
+                                    "bce": {
+                                                "morpheme": "become",
+                                                "chord": "bce",
+                                                "word": "become",
+                                                "emoji": "🌱",
+                                                "note": "Transform into",
+                                                "char": "成为"
+                                    }
+                        }
             },
             "aklw": {
-                lemma: "walk",
-                chord: "aklw",
-                emoji: "🚶",
-                derivatives: {
-                    "otu": { morpheme: "out-", chord: "otu", word: "outwalk", emoji: "🏃‍♂️", note: "Walk faster than" }
-                }
+                        "lemma": "walk",
+                        "chord": "aklw",
+                        "emoji": "🚶",
+                        "note": "Move on foot",
+                        "derivatives": {
+                                    "otu": {
+                                                "morpheme": "out-",
+                                                "chord": "otu",
+                                                "word": "outwalk",
+                                                "emoji": "🏃‍♂️",
+                                                "note": "Walk faster than",
+                                                "char": "走得快"
+                                    }
+                        }
             },
             "efil": {
-                lemma: "file",
-                chord: "efil",
-                emoji: "📁",
-                derivatives: {
-                    "er": { morpheme: "re-", chord: "er", word: "refile", emoji: "📂", note: "File again" }
-                }
+                        "lemma": "file",
+                        "chord": "efil",
+                        "emoji": "📁",
+                        "note": "Document / archive",
+                        "derivatives": {
+                                    "er": {
+                                                "morpheme": "re-",
+                                                "chord": "er",
+                                                "word": "refile",
+                                                "emoji": "📂",
+                                                "note": "File again",
+                                                "char": "重新归档"
+                                    }
+                        }
             },
             "1efil": {
-                lemma: "life",
-                chord: "1efil",
-                emoji: "💖",
-                derivatives: {
-                    "emti": { morpheme: "time", chord: "emti", word: "lifetime", emoji: "⏳", note: "Duration of life" },
-                    "1aelns": { morpheme: "line", chord: "1aelns", word: "lifeline", emoji: "🛟", note: "Vital support link" }
-                }
+                        "lemma": "life",
+                        "chord": "1efil",
+                        "emoji": "💖",
+                        "note": "Existence / vitality",
+                        "derivatives": {
+                                    "emti": {
+                                                "morpheme": "time",
+                                                "chord": "emti",
+                                                "word": "lifetime",
+                                                "emoji": "⏳",
+                                                "note": "Duration of life",
+                                                "char": "一生"
+                                    },
+                                    "1aelns": {
+                                                "morpheme": "line",
+                                                "chord": "1aelns",
+                                                "word": "lifeline",
+                                                "emoji": "🛟",
+                                                "note": "Vital support link",
+                                                "char": "生命线"
+                                    }
+                        }
             },
             "dorw": {
-                lemma: "word",
-                chord: "dorw",
-                emoji: "💬",
-                derivatives: {
-                    "aps": { morpheme: "pass", chord: "aps", word: "password", emoji: "🔑", note: "Secret security word" }
-                }
+                        "lemma": "word",
+                        "chord": "dorw",
+                        "emoji": "💬",
+                        "note": "Unit of language",
+                        "derivatives": {
+                                    "aps": {
+                                                "morpheme": "pass",
+                                                "chord": "aps",
+                                                "word": "password",
+                                                "emoji": "🔑",
+                                                "note": "Secret security word",
+                                                "char": "密码"
+                                    }
+                        }
             },
             "co": {
-                lemma: "code",
-                chord: "co",
-                emoji: "💻",
-                derivatives: {
-                    "er": { morpheme: "re-", chord: "er", word: "recode", emoji: "🛠️", note: "Rewrite program code" }
-                }
+                        "lemma": "code",
+                        "chord": "co",
+                        "emoji": "💻",
+                        "note": "Program instruction",
+                        "derivatives": {
+                                    "er": {
+                                                "morpheme": "re-",
+                                                "chord": "er",
+                                                "word": "recode",
+                                                "emoji": "🛠️",
+                                                "note": "Rewrite program code",
+                                                "char": "重新编码"
+                                    }
+                        }
             },
             "adnst": {
-                lemma: "stand",
-                chord: "adnst",
-                emoji: "🧍",
-                derivatives: {
-                    "dnru": { morpheme: "under-", chord: "dnru", word: "understand", emoji: "💡", note: "Comprehend meaning" },
-                    "hitw": { morpheme: "with-", chord: "hitw", word: "withstand", emoji: "🛡️", note: "Endure / resist" },
-                    "otu": { morpheme: "out-", chord: "otu", word: "outstand", emoji: "⭐", note: "Be prominent / excel" },
-                    "pu": { morpheme: "up-", chord: "pu", word: "upstand", emoji: "🔝", note: "Stand erect / honest" }
-                }
+                        "lemma": "stand",
+                        "chord": "adnst",
+                        "emoji": "🧍",
+                        "note": "Remain upright / position",
+                        "derivatives": {
+                                    "dnru": {
+                                                "morpheme": "under-",
+                                                "chord": "dnru",
+                                                "word": "understand",
+                                                "emoji": "💡",
+                                                "note": "Comprehend meaning",
+                                                "char": "理解"
+                                    },
+                                    "hitw": {
+                                                "morpheme": "with-",
+                                                "chord": "hitw",
+                                                "word": "withstand",
+                                                "emoji": "🛡️",
+                                                "note": "Endure / resist",
+                                                "char": "承受"
+                                    },
+                                    "otu": {
+                                                "morpheme": "out-",
+                                                "chord": "otu",
+                                                "word": "outstand",
+                                                "emoji": "⭐",
+                                                "note": "Be prominent / excel",
+                                                "char": "杰出"
+                                    },
+                                    "pu": {
+                                                "morpheme": "up-",
+                                                "chord": "pu",
+                                                "word": "upstand",
+                                                "emoji": "🔝",
+                                                "note": "Stand erect / honest",
+                                                "char": "直立"
+                                    }
+                        }
             },
             "aekt": {
-                lemma: "take",
-                chord: "aekt",
-                emoji: "✊",
-                derivatives: {
-                    "ims": { morpheme: "mis-", chord: "ims", word: "mistake", emoji: "⚠️", note: "Error / blunder" },
-                    "eov": { morpheme: "over-", chord: "eov", word: "overtake", emoji: "🏎️", note: "Catch up and pass" },
-                    "in": { morpheme: "in-", chord: "in", word: "intake", emoji: "🥤", note: "Amount absorbed" },
-                    "otu": { morpheme: "out-", chord: "otu", word: "outtake", emoji: "🎬", note: "Discarded recorded scene" },
-                    "pu": { morpheme: "up-", chord: "pu", word: "uptake", emoji: "📈", note: "Absorption rate" },
-                    "er": { morpheme: "re-", chord: "er", word: "retake", emoji: "🔁", note: "Take again" }
-                }
+                        "lemma": "take",
+                        "chord": "aekt",
+                        "emoji": "✊",
+                        "note": "Grasp / acquire",
+                        "derivatives": {
+                                    "ims": {
+                                                "morpheme": "mis-",
+                                                "chord": "ims",
+                                                "word": "mistake",
+                                                "emoji": "⚠️",
+                                                "note": "Error / blunder",
+                                                "char": "错误"
+                                    },
+                                    "eov": {
+                                                "morpheme": "over-",
+                                                "chord": "eov",
+                                                "word": "overtake",
+                                                "emoji": "🏎️",
+                                                "note": "Catch up and pass",
+                                                "char": "赶上"
+                                    },
+                                    "in": {
+                                                "morpheme": "in-",
+                                                "chord": "in",
+                                                "word": "intake",
+                                                "emoji": "🥤",
+                                                "note": "Amount absorbed",
+                                                "char": "摄入"
+                                    },
+                                    "otu": {
+                                                "morpheme": "out-",
+                                                "chord": "otu",
+                                                "word": "outtake",
+                                                "emoji": "🎬",
+                                                "note": "Discarded recorded scene",
+                                                "char": "排除"
+                                    },
+                                    "pu": {
+                                                "morpheme": "up-",
+                                                "chord": "pu",
+                                                "word": "uptake",
+                                                "emoji": "📈",
+                                                "note": "Absorption rate",
+                                                "char": "吸收"
+                                    },
+                                    "er": {
+                                                "morpheme": "re-",
+                                                "chord": "er",
+                                                "word": "retake",
+                                                "emoji": "🔁",
+                                                "note": "Take again",
+                                                "char": "重拍"
+                                    }
+                        }
             },
             "ntu": {
-                lemma: "turn",
-                chord: "ntu",
-                emoji: "🔄",
-                derivatives: {
-                    "er": { morpheme: "re-", chord: "er", word: "return", emoji: "🔙", note: "Come back" },
-                    "eov": { morpheme: "over-", chord: "eov", word: "overturn", emoji: "🔁", note: "Flip over / reverse" },
-                    "pu": { morpheme: "up-", chord: "pu", word: "upturn", emoji: "📈", note: "Upward trend" },
-                    "otu": { morpheme: "out-", chord: "otu", word: "outturn", emoji: "📦", note: "Production output" }
-                }
+                        "lemma": "turn",
+                        "chord": "ntu",
+                        "emoji": "🔄",
+                        "note": "Rotate / change direction",
+                        "derivatives": {
+                                    "er": {
+                                                "morpheme": "re-",
+                                                "chord": "er",
+                                                "word": "return",
+                                                "emoji": "🔙",
+                                                "note": "Come back",
+                                                "char": "返回"
+                                    },
+                                    "eov": {
+                                                "morpheme": "over-",
+                                                "chord": "eov",
+                                                "word": "overturn",
+                                                "emoji": "🔁",
+                                                "note": "Flip over / reverse",
+                                                "char": "推翻"
+                                    },
+                                    "pu": {
+                                                "morpheme": "up-",
+                                                "chord": "pu",
+                                                "word": "upturn",
+                                                "emoji": "📈",
+                                                "note": "Upward trend",
+                                                "char": "好转"
+                                    },
+                                    "otu": {
+                                                "morpheme": "out-",
+                                                "chord": "otu",
+                                                "word": "outturn",
+                                                "emoji": "📦",
+                                                "note": "Production output",
+                                                "char": "产量"
+                                    }
+                        }
             },
             "fmo": {
-                lemma: "form",
-                chord: "fmo",
-                emoji: "📐",
-                derivatives: {
-                    "er": { morpheme: "re-", chord: "er", word: "reform", emoji: "🏛️", note: "Improve / reorganize" },
-                    "1d": { morpheme: "de-", chord: "1d", word: "deform", emoji: "💥", note: "Distort shape" },
-                    "in": { morpheme: "in-", chord: "in", word: "inform", emoji: "📢", note: "Convey knowledge" },
-                    "anst": { morpheme: "trans-", chord: "anst", word: "transform", emoji: "🦋", note: "Change nature or form" },
-                    "cno": { morpheme: "con-", chord: "cno", word: "conform", emoji: "🤝", note: "Comply with rules" }
-                }
+                        "lemma": "form",
+                        "chord": "fmo",
+                        "emoji": "📐",
+                        "note": "Shape / structure",
+                        "derivatives": {
+                                    "er": {
+                                                "morpheme": "re-",
+                                                "chord": "er",
+                                                "word": "reform",
+                                                "emoji": "🏛️",
+                                                "note": "Improve / reorganize",
+                                                "char": "改革"
+                                    },
+                                    "1d": {
+                                                "morpheme": "de-",
+                                                "chord": "1d",
+                                                "word": "deform",
+                                                "emoji": "💥",
+                                                "note": "Distort shape",
+                                                "char": "变形"
+                                    },
+                                    "in": {
+                                                "morpheme": "in-",
+                                                "chord": "in",
+                                                "word": "inform",
+                                                "emoji": "📢",
+                                                "note": "Convey knowledge",
+                                                "char": "通知"
+                                    },
+                                    "anst": {
+                                                "morpheme": "trans-",
+                                                "chord": "anst",
+                                                "word": "transform",
+                                                "emoji": "🦋",
+                                                "note": "Change nature or form",
+                                                "char": "转换"
+                                    },
+                                    "cno": {
+                                                "morpheme": "con-",
+                                                "chord": "cno",
+                                                "word": "conform",
+                                                "emoji": "🤝",
+                                                "note": "Comply with rules",
+                                                "char": "遵守"
+                                    }
+                        }
             },
             "eprs": {
-                lemma: "press",
-                chord: "eprs",
-                emoji: "🔘",
-                derivatives: {
-                    "ex": { morpheme: "ex-", chord: "ex", word: "express", emoji: "💬", note: "Convey thought or feeling" },
-                    "im": { morpheme: "im-", chord: "im", word: "impress", emoji: "🤩", note: "Make strong impact" },
-                    "1d": { morpheme: "de-", chord: "1d", word: "depress", emoji: "📉", note: "Push down / lower" },
-                    "er": { morpheme: "re-", chord: "er", word: "repress", emoji: "🤐", note: "Hold back by force" },
-                    "op": { morpheme: "op-", chord: "op", word: "oppress", emoji: "⛓️", note: "Weigh down heavily" }
-                }
+                        "lemma": "press",
+                        "chord": "eprs",
+                        "emoji": "🔘",
+                        "note": "Apply force / push",
+                        "derivatives": {
+                                    "ex": {
+                                                "morpheme": "ex-",
+                                                "chord": "ex",
+                                                "word": "express",
+                                                "emoji": "💬",
+                                                "note": "Convey thought or feeling",
+                                                "char": "表达"
+                                    },
+                                    "im": {
+                                                "morpheme": "im-",
+                                                "chord": "im",
+                                                "word": "impress",
+                                                "emoji": "🤩",
+                                                "note": "Make strong impact",
+                                                "char": "留下印象"
+                                    },
+                                    "1d": {
+                                                "morpheme": "de-",
+                                                "chord": "1d",
+                                                "word": "depress",
+                                                "emoji": "📉",
+                                                "note": "Push down / lower",
+                                                "char": "使沮丧"
+                                    },
+                                    "er": {
+                                                "morpheme": "re-",
+                                                "chord": "er",
+                                                "word": "repress",
+                                                "emoji": "🤐",
+                                                "note": "Hold back by force",
+                                                "char": "压制"
+                                    },
+                                    "op": {
+                                                "morpheme": "op-",
+                                                "chord": "op",
+                                                "word": "oppress",
+                                                "emoji": "⛓️",
+                                                "note": "Weigh down heavily",
+                                                "char": "压迫"
+                                    }
+                        }
             },
             "act": {
-                lemma: "act",
-                chord: "act",
-                emoji: "🎭",
-                derivatives: {
-                    "er": { morpheme: "re-", chord: "er", word: "react", emoji: "⚡", note: "Respond to stimulus" },
-                    "eint": { morpheme: "inter-", chord: "eint", word: "interact", emoji: "🗣️", note: "Act reciprocally" },
-                    "anst": { morpheme: "trans-", chord: "anst", word: "transact", emoji: "💳", note: "Conduct business" },
-                    "en": { morpheme: "en-", chord: "en", word: "enact", emoji: "📜", note: "Put into law or practice" }
-                }
+                        "lemma": "act",
+                        "chord": "act",
+                        "emoji": "🎭",
+                        "note": "Take action / perform",
+                        "derivatives": {
+                                    "er": {
+                                                "morpheme": "re-",
+                                                "chord": "er",
+                                                "word": "react",
+                                                "emoji": "⚡",
+                                                "note": "Respond to stimulus",
+                                                "char": "反应"
+                                    },
+                                    "eint": {
+                                                "morpheme": "inter-",
+                                                "chord": "eint",
+                                                "word": "interact",
+                                                "emoji": "🗣️",
+                                                "note": "Act reciprocally",
+                                                "char": "互动"
+                                    },
+                                    "anst": {
+                                                "morpheme": "trans-",
+                                                "chord": "anst",
+                                                "word": "transact",
+                                                "emoji": "💳",
+                                                "note": "Conduct business",
+                                                "char": "交易"
+                                    },
+                                    "en": {
+                                                "morpheme": "en-",
+                                                "chord": "en",
+                                                "word": "enact",
+                                                "emoji": "📜",
+                                                "note": "Put into law or practice",
+                                                "char": "颁布"
+                                    }
+                        }
             },
-            // Chinese Morpheme Trees
             "4ad": {
-                lemma: "大",
-                chord: "4ad",
-                emoji: "大",
-                note: "Big / Grand (dà)",
-                derivatives: {
-                    "2nr": { morpheme: "人", chord: "2nr", word: "大人", emoji: "🧑", note: "Adult (dàrén)" },
-                    "1aij": { morpheme: "家", chord: "1aij", word: "大家", emoji: "👥", note: "Everyone (dàjiā)" },
-                    "4eux": { morpheme: "学", chord: "4eux", word: "大学", emoji: "🎓", note: "University (dàxué)" },
-                    "4aiox": { morpheme: "小", chord: "4aiox", word: "大小", emoji: "📏", note: "Size (dàxiǎo)" }
-                }
+                        "lemma": "大",
+                        "chord": "4ad",
+                        "emoji": "大",
+                        "note": "Big / grand (dà)",
+                        "derivatives": {
+                                    "2nr": {
+                                                "morpheme": "人",
+                                                "chord": "2nr",
+                                                "word": "大人",
+                                                "emoji": "🧑",
+                                                "note": "Adult (dàrén)",
+                                                "char": "大人"
+                                    },
+                                    "1aij": {
+                                                "morpheme": "家",
+                                                "chord": "1aij",
+                                                "word": "大家",
+                                                "emoji": "👥",
+                                                "note": "Everyone (dàjiā)",
+                                                "char": "大家"
+                                    },
+                                    "4eux": {
+                                                "morpheme": "学",
+                                                "chord": "4eux",
+                                                "word": "大学",
+                                                "emoji": "🎓",
+                                                "note": "University (dàxué)",
+                                                "char": "大学"
+                                    },
+                                    "4aiox": {
+                                                "morpheme": "小",
+                                                "chord": "4aiox",
+                                                "word": "大小",
+                                                "emoji": "📏",
+                                                "note": "Size (dàxiǎo)",
+                                                "char": "大小"
+                                    }
+                        }
             },
             "2an": {
-                lemma: "拿",
-                chord: "2an",
-                emoji: "拿",
-                note: "Hold / Take (ná)",
-                derivatives: {
-                    "1chu": { morpheme: "出", chord: "1chu", word: "拿出", emoji: "📤", note: "Take out (náchū)" },
-                    "4aix": { morpheme: "下", chord: "4aix", word: "拿下", emoji: "🎯", note: "Capture / win (náxià)" },
-                    "3iq": { morpheme: "起", chord: "3iq", word: "拿起", emoji: "🫳", note: "Pick up (náqǐ)" }
-                }
+                        "lemma": "拿",
+                        "chord": "2an",
+                        "emoji": "拿",
+                        "note": "Hold / take (ná)",
+                        "derivatives": {
+                                    "1chu": {
+                                                "morpheme": "出",
+                                                "chord": "1chu",
+                                                "word": "拿出",
+                                                "emoji": "📤",
+                                                "note": "Take out (náchū)",
+                                                "char": "拿出"
+                                    },
+                                    "4aix": {
+                                                "morpheme": "下",
+                                                "chord": "4aix",
+                                                "word": "拿下",
+                                                "emoji": "🎯",
+                                                "note": "Capture / win (náxià)",
+                                                "char": "拿下"
+                                    },
+                                    "3iq": {
+                                                "morpheme": "起",
+                                                "chord": "3iq",
+                                                "word": "拿起",
+                                                "emoji": "🫳",
+                                                "note": "Pick up (náqǐ)",
+                                                "char": "拿起"
+                                    }
+                        }
             },
             "4adin": {
-                lemma: "电",
-                chord: "4adin",
-                emoji: "电",
-                note: "Electric (diàn)",
-                derivatives: {
-                    "4ahu": { morpheme: "话", chord: "4ahu", word: "电话", emoji: "☎️", note: "Telephone (diànhuà)" },
-                    "3ano": { morpheme: "脑", chord: "3ano", word: "电脑", emoji: "💻", note: "Computer (diànnǎo)" },
-                    "4his": { morpheme: "视", chord: "4his", word: "电视", emoji: "📺", note: "Television (diànshì)" }
-                }
+                        "lemma": "电",
+                        "chord": "4adin",
+                        "emoji": "电",
+                        "note": "Electric (diàn)",
+                        "derivatives": {
+                                    "4ahu": {
+                                                "morpheme": "话",
+                                                "chord": "4ahu",
+                                                "word": "电话",
+                                                "emoji": "☎️",
+                                                "note": "Telephone (diànhuà)",
+                                                "char": "电话"
+                                    },
+                                    "3ano": {
+                                                "morpheme": "脑",
+                                                "chord": "3ano",
+                                                "word": "电脑",
+                                                "emoji": "💻",
+                                                "note": "Computer (diànnǎo)",
+                                                "char": "电脑"
+                                    },
+                                    "4his": {
+                                                "morpheme": "视",
+                                                "chord": "4his",
+                                                "word": "电视",
+                                                "emoji": "📺",
+                                                "note": "Television (diànshì)",
+                                                "char": "电视"
+                                    }
+                        }
             },
             "1ehns": {
-                lemma: "生",
-                chord: "1ehns",
-                emoji: "生",
-                note: "Life / Birth (shēng)",
-                derivatives: {
-                    "1ir": { morpheme: "日", chord: "1ir", word: "生日", emoji: "🎂", note: "Birthday (shēngrì)" },
-                    "4gimn": { morpheme: "命", chord: "4gimn", word: "生命", emoji: "💖", note: "Life / destiny (shēngmìng)" },
-                    "4acn": { morpheme: "产", chord: "4acn", word: "生产", emoji: "🏭", note: "Produce (shēngchǎn)" }
-                }
+                        "lemma": "生",
+                        "chord": "1ehns",
+                        "emoji": "生",
+                        "note": "Life / birth (shēng)",
+                        "derivatives": {
+                                    "1ir": {
+                                                "morpheme": "日",
+                                                "chord": "1ir",
+                                                "word": "生日",
+                                                "emoji": "🎂",
+                                                "note": "Birthday (shēngrì)",
+                                                "char": "生日"
+                                    },
+                                    "4gimn": {
+                                                "morpheme": "命",
+                                                "chord": "4gimn",
+                                                "word": "生命",
+                                                "emoji": "💖",
+                                                "note": "Life / destiny (shēngmìng)",
+                                                "char": "生命"
+                                    },
+                                    "4acn": {
+                                                "morpheme": "产",
+                                                "chord": "4acn",
+                                                "word": "生产",
+                                                "emoji": "🏭",
+                                                "note": "Produce (shēngchǎn)",
+                                                "char": "生产"
+                                    }
+                        }
             },
-            // Additional High-Frequency Roots & Morphemes
             "a": {
-                lemma: "a",
-                chord: "a",
-                emoji: "🔤",
-                note: "Indefinite article / base prefix",
-                derivatives: {
-                    "n": { morpheme: "-n", chord: "n", word: "an", emoji: "🔤", note: "Vowel preceding article" },
-                    "ny": { morpheme: "-ny", chord: "ny", word: "any", emoji: "🎲", note: "Indeterminate amount" },
-                    "ehorrt": { morpheme: "other", chord: "ehorrt", word: "another", emoji: "➕", note: "One more / alternate" },
-                    "adeh": { morpheme: "head", chord: "adeh", word: "ahead", emoji: "⏩", note: "Further forward" },
-                    "elno": { morpheme: "lone", chord: "elno", word: "alone", emoji: "🧍", note: "By oneself" },
-                    "deis": { morpheme: "side", chord: "deis", word: "aside", emoji: "↔️", note: "To one side" }
-                }
+                        "lemma": "a",
+                        "chord": "a",
+                        "emoji": "🔤",
+                        "note": "Indefinite article / prefix",
+                        "derivatives": {
+                                    "n": {
+                                                "morpheme": "-n",
+                                                "chord": "n",
+                                                "word": "an",
+                                                "emoji": "🔤",
+                                                "note": "Vowel preceding article",
+                                                "char": "一个"
+                                    },
+                                    "ny": {
+                                                "morpheme": "-ny",
+                                                "chord": "ny",
+                                                "word": "any",
+                                                "emoji": "🎲",
+                                                "note": "Indeterminate amount",
+                                                "char": "任何"
+                                    },
+                                    "ehorrt": {
+                                                "morpheme": "other",
+                                                "chord": "ehorrt",
+                                                "word": "another",
+                                                "emoji": "➕",
+                                                "note": "One more / alternate",
+                                                "char": "另一个"
+                                    },
+                                    "adeh": {
+                                                "morpheme": "head",
+                                                "chord": "adeh",
+                                                "word": "ahead",
+                                                "emoji": "⏩",
+                                                "note": "Further forward",
+                                                "char": "向前"
+                                    },
+                                    "elno": {
+                                                "morpheme": "lone",
+                                                "chord": "elno",
+                                                "word": "alone",
+                                                "emoji": "🧍",
+                                                "note": "By oneself",
+                                                "char": "独自"
+                                    },
+                                    "deis": {
+                                                "morpheme": "side",
+                                                "chord": "deis",
+                                                "word": "aside",
+                                                "emoji": "↔️",
+                                                "note": "To one side",
+                                                "char": "在一旁"
+                                    }
+                        }
             },
             "acltu": {
-                lemma: "actual",
-                chord: "acltu",
-                emoji: "🎯",
-                note: "Existing in fact or reality",
-                derivatives: {
-                    "ly": { morpheme: "-ly", chord: "ly", word: "actually", emoji: "💡", note: "In truth / reality" },
-                    "ity": { morpheme: "-ity", chord: "ity", word: "actuality", emoji: "🌐", note: "Actual state / reality" },
-                    "eiz": { morpheme: "-ize", chord: "eiz", word: "actualize", emoji: "✨", note: "Make real / fulfill" }
-                }
+                        "lemma": "actual",
+                        "chord": "acltu",
+                        "emoji": "🎯",
+                        "note": "Existing in fact or reality",
+                        "derivatives": {
+                                    "ly": {
+                                                "morpheme": "-ly",
+                                                "chord": "ly",
+                                                "word": "actually",
+                                                "emoji": "💡",
+                                                "note": "In truth / reality",
+                                                "char": "实际上"
+                                    },
+                                    "ity": {
+                                                "morpheme": "-ity",
+                                                "chord": "ity",
+                                                "word": "actuality",
+                                                "emoji": "🌐",
+                                                "note": "Actual state / reality",
+                                                "char": "现实"
+                                    },
+                                    "eiz": {
+                                                "morpheme": "-ize",
+                                                "chord": "eiz",
+                                                "word": "actualize",
+                                                "emoji": "✨",
+                                                "note": "Make real / fulfill",
+                                                "char": "实现"
+                                    }
+                        }
             },
             "adforw": {
-                lemma: "forward",
-                chord: "adforw",
-                emoji: "⏩",
-                note: "Onward in time or direction",
-                derivatives: {
-                    "s": { morpheme: "-s", chord: "s", word: "forwards", emoji: "⏩", note: "Toward the front" },
-                    "gin": { morpheme: "-ing", chord: "gin", word: "forwarding", emoji: "📤", note: "Sending onward" },
-                    "de": { morpheme: "-ed", "chord": "de", word: "forwarded", emoji: "📬", note: "Transmitted" },
-                    "efor": { morpheme: "fore-", chord: "efor", word: "foreword", emoji: "📖", note: "Preface / introduction" },
-                    "aghirst": { morpheme: "straight-", chord: "aghirst", word: "straightforward", emoji: "📏", note: "Direct and clear" }
-                }
+                        "lemma": "forward",
+                        "chord": "adforw",
+                        "emoji": "⏩",
+                        "note": "Onward in time or direction",
+                        "derivatives": {
+                                    "s": {
+                                                "morpheme": "-s",
+                                                "chord": "s",
+                                                "word": "forwards",
+                                                "emoji": "⏩",
+                                                "note": "Toward the front",
+                                                "char": "向前"
+                                    },
+                                    "gin": {
+                                                "morpheme": "-ing",
+                                                "chord": "gin",
+                                                "word": "forwarding",
+                                                "emoji": "📤",
+                                                "note": "Sending onward",
+                                                "char": "转发"
+                                    },
+                                    "de": {
+                                                "morpheme": "-ed",
+                                                "chord": "de",
+                                                "word": "forwarded",
+                                                "emoji": "📬",
+                                                "note": "Transmitted",
+                                                "char": "已转发"
+                                    },
+                                    "efor": {
+                                                "morpheme": "fore-",
+                                                "chord": "efor",
+                                                "word": "foreword",
+                                                "emoji": "📖",
+                                                "note": "Preface / introduction",
+                                                "char": "前言"
+                                    },
+                                    "aghirst": {
+                                                "morpheme": "straight-",
+                                                "chord": "aghirst",
+                                                "word": "straightforward",
+                                                "emoji": "📏",
+                                                "note": "Direct and clear",
+                                                "char": "坦率"
+                                    }
+                        }
             },
             "cfinou": {
-                lemma: "function",
-                chord: "cfinou",
-                emoji: "⚙️",
-                note: "Operation / purpose",
-                derivatives: {
-                    "ailty": { morpheme: "-ality", chord: "ailty", word: "functionality", emoji: "🛠️", note: "Quality of functioning" },
-                    "al": { morpheme: "-al", chord: "al", word: "functional", emoji: "🔧", note: "Working properly" },
-                    "ally": { morpheme: "-ally", chord: "ally", word: "functionally", emoji: "💡", note: "In a functional way" },
-                    "gin": { morpheme: "-ing", chord: "gin", word: "functioning", emoji: "⚡", note: "Currently operating" },
-                    "alm": { morpheme: "mal-", chord: "alm", word: "malfunction", emoji: "⚠️", note: "Failure to function" }
-                }
+                        "lemma": "function",
+                        "chord": "cfinou",
+                        "emoji": "⚙️",
+                        "note": "Operation / purpose",
+                        "derivatives": {
+                                    "ailty": {
+                                                "morpheme": "-ality",
+                                                "chord": "ailty",
+                                                "word": "functionality",
+                                                "emoji": "🛠️",
+                                                "note": "Quality of functioning",
+                                                "char": "功能"
+                                    },
+                                    "al": {
+                                                "morpheme": "-al",
+                                                "chord": "al",
+                                                "word": "functional",
+                                                "emoji": "🔧",
+                                                "note": "Working properly",
+                                                "char": "实用的"
+                                    },
+                                    "ally": {
+                                                "morpheme": "-ally",
+                                                "chord": "ally",
+                                                "word": "functionally",
+                                                "emoji": "💡",
+                                                "note": "In a functional way",
+                                                "char": "在功能上"
+                                    },
+                                    "gin": {
+                                                "morpheme": "-ing",
+                                                "chord": "gin",
+                                                "word": "functioning",
+                                                "emoji": "⚡",
+                                                "note": "Currently operating",
+                                                "char": "运转"
+                                    },
+                                    "alm": {
+                                                "morpheme": "mal-",
+                                                "chord": "alm",
+                                                "word": "malfunction",
+                                                "emoji": "⚠️",
+                                                "note": "Failure to function",
+                                                "char": "故障"
+                                    }
+                        }
             },
             "ghirt": {
-                lemma: "right",
-                chord: "ghirt",
-                emoji: "✅",
-                note: "Correct / proper / direction",
-                derivatives: {
-                    "ly": { morpheme: "-ly", chord: "ly", word: "rightly", emoji: "🎯", note: "Correctly / justly" },
-                    "pu": { morpheme: "up-", chord: "pu", word: "upright", emoji: "🧍", note: "Erect / honorable" },
-                    "otu": { morpheme: "out-", chord: "otu", word: "outright", emoji: "💯", note: "Completely / direct" },
-                    "coyp": { morpheme: "copy-", chord: "coyp", word: "copyright", emoji: "©️", note: "Legal ownership right" },
-                    "eosu": { morpheme: "-eous", chord: "eosu", word: "righteous", emoji: "⚖️", note: "Morally right" }
-                }
+                        "lemma": "right",
+                        "chord": "ghirt",
+                        "emoji": "✅",
+                        "note": "Correct / proper / direction",
+                        "derivatives": {
+                                    "ly": {
+                                                "morpheme": "-ly",
+                                                "chord": "ly",
+                                                "word": "rightly",
+                                                "emoji": "🎯",
+                                                "note": "Correctly / justly",
+                                                "char": "公正地"
+                                    },
+                                    "pu": {
+                                                "morpheme": "up-",
+                                                "chord": "pu",
+                                                "word": "upright",
+                                                "emoji": "🧍",
+                                                "note": "Erect / honorable",
+                                                "char": "正直"
+                                    },
+                                    "otu": {
+                                                "morpheme": "out-",
+                                                "chord": "otu",
+                                                "word": "outright",
+                                                "emoji": "💯",
+                                                "note": "Completely / direct",
+                                                "char": "彻底"
+                                    },
+                                    "coyp": {
+                                                "morpheme": "copy-",
+                                                "chord": "coyp",
+                                                "word": "copyright",
+                                                "emoji": "©️",
+                                                "note": "Legal ownership right",
+                                                "char": "版权"
+                                    },
+                                    "eosu": {
+                                                "morpheme": "-eous",
+                                                "chord": "eosu",
+                                                "word": "righteous",
+                                                "emoji": "⚖️",
+                                                "note": "Morally right",
+                                                "char": "正义"
+                                    }
+                        }
             },
             "now": {
-                lemma: "now",
-                chord: "now",
-                emoji: "⏱️",
-                note: "At the present moment",
-                derivatives: {
-                    "aadsy": { morpheme: "-adays", chord: "aadsy", word: "nowadays", emoji: "📅", note: "In the present time" },
-                    "eehr": { morpheme: "-where", chord: "eehr", word: "nowhere", emoji: "🌌", note: "Not in any place" },
-                    "ghirt": { morpheme: "right-", chord: "ghirt", word: "right now", emoji: "⚡", note: "Immediately / this moment" }
-                }
+                        "lemma": "now",
+                        "chord": "now",
+                        "emoji": "⏱️",
+                        "note": "At the present moment",
+                        "derivatives": {
+                                    "aadsy": {
+                                                "morpheme": "-adays",
+                                                "chord": "aadsy",
+                                                "word": "nowadays",
+                                                "emoji": "📅",
+                                                "note": "In the present time",
+                                                "char": "现今"
+                                    },
+                                    "eehr": {
+                                                "morpheme": "-where",
+                                                "chord": "eehr",
+                                                "word": "nowhere",
+                                                "emoji": "🌌",
+                                                "note": "Not in any place",
+                                                "char": "无处"
+                                    },
+                                    "ghirt": {
+                                                "morpheme": "right-",
+                                                "chord": "ghirt",
+                                                "word": "right now",
+                                                "emoji": "⚡",
+                                                "note": "Immediately / this moment",
+                                                "char": "现在"
+                                    }
+                        }
             },
             "eht": {
-                lemma: "the",
-                chord: "eht",
-                emoji: "☝️",
-                note: "Definite article",
-                derivatives: {
-                    "en": { morpheme: "-n", chord: "en", word: "then", emoji: "⏳", note: "At that time" },
-                    "er": { morpheme: "-re", chord: "er", word: "there", emoji: "📍", note: "In that place" },
-                    "es": { morpheme: "-se", chord: "es", word: "these", emoji: "👉", note: "Plural near" },
-                    "eos": { morpheme: "-ose", chord: "eos", word: "those", emoji: "👈", note: "Plural far" },
-                    "eirt": { morpheme: "-ir", chord: "eirt", word: "their", emoji: "👥", note: "Belonging to them" },
-                    "emt": { morpheme: "-m", chord: "emt", word: "them", emoji: "👥", note: "Objective plural" },
-                    "efor": { morpheme: "-fore", chord: "efor", word: "therefore", emoji: "💡", note: "Consequently" }
-                }
+                        "lemma": "the",
+                        "chord": "eht",
+                        "emoji": "☝️",
+                        "note": "Definite article",
+                        "derivatives": {
+                                    "en": {
+                                                "morpheme": "-n",
+                                                "chord": "en",
+                                                "word": "then",
+                                                "emoji": "⏳",
+                                                "note": "At that time",
+                                                "char": "那时"
+                                    },
+                                    "er": {
+                                                "morpheme": "-re",
+                                                "chord": "er",
+                                                "word": "there",
+                                                "emoji": "📍",
+                                                "note": "In that place",
+                                                "char": "那里"
+                                    },
+                                    "es": {
+                                                "morpheme": "-se",
+                                                "chord": "es",
+                                                "word": "these",
+                                                "emoji": "👉",
+                                                "note": "Plural near",
+                                                "char": "这些"
+                                    },
+                                    "eos": {
+                                                "morpheme": "-ose",
+                                                "chord": "eos",
+                                                "word": "those",
+                                                "emoji": "👈",
+                                                "note": "Plural far",
+                                                "char": "那些"
+                                    },
+                                    "eirt": {
+                                                "morpheme": "-ir",
+                                                "chord": "eirt",
+                                                "word": "their",
+                                                "emoji": "👥",
+                                                "note": "Belonging to them",
+                                                "char": "他们的"
+                                    },
+                                    "emt": {
+                                                "morpheme": "-m",
+                                                "chord": "emt",
+                                                "word": "them",
+                                                "emoji": "👥",
+                                                "note": "Objective plural",
+                                                "char": "他们"
+                                    },
+                                    "efor": {
+                                                "morpheme": "-fore",
+                                                "chord": "efor",
+                                                "word": "therefore",
+                                                "emoji": "💡",
+                                                "note": "Consequently",
+                                                "char": "因此"
+                                    }
+                        }
             },
             "emti": {
-                lemma: "time",
-                chord: "emti",
-                emoji: "⏳",
-                note: "Temporal period or duration",
-                derivatives: {
-                    "er": { morpheme: "-er", chord: "er", word: "timer", emoji: "⏱️", note: "Time measurement tool" },
-                    "gin": { morpheme: "-ing", chord: "gin", word: "timing", emoji: "⏰", note: "Choice of moment" },
-                    "ly": { morpheme: "-ly", chord: "ly", word: "timely", emoji: "🎯", note: "Well-timed / opportune" },
-                    "otu": { morpheme: "-out", chord: "otu", word: "timeout", emoji: "⏸️", note: "Temporary pause" },
-                    "elss": { morpheme: "-less", chord: "elss", word: "timeless", emoji: "✨", note: "Unaffected by time" },
-                    "eov": { morpheme: "over-", chord: "eov", word: "overtime", emoji: "💼", note: "Time beyond regular hours" }
-                }
+                        "lemma": "time",
+                        "chord": "emti",
+                        "emoji": "⏳",
+                        "note": "Temporal period or duration",
+                        "derivatives": {
+                                    "er": {
+                                                "morpheme": "-er",
+                                                "chord": "er",
+                                                "word": "timer",
+                                                "emoji": "⏱️",
+                                                "note": "Time measurement tool",
+                                                "char": "计时器"
+                                    },
+                                    "gin": {
+                                                "morpheme": "-ing",
+                                                "chord": "gin",
+                                                "word": "timing",
+                                                "emoji": "⏰",
+                                                "note": "Choice of moment",
+                                                "char": "时机"
+                                    },
+                                    "ly": {
+                                                "morpheme": "-ly",
+                                                "chord": "ly",
+                                                "word": "timely",
+                                                "emoji": "🎯",
+                                                "note": "Well-timed / opportune",
+                                                "char": "及时的"
+                                    },
+                                    "otu": {
+                                                "morpheme": "-out",
+                                                "chord": "otu",
+                                                "word": "timeout",
+                                                "emoji": "⏸️",
+                                                "note": "Temporary pause",
+                                                "char": "超时"
+                                    },
+                                    "elss": {
+                                                "morpheme": "-less",
+                                                "chord": "elss",
+                                                "word": "timeless",
+                                                "emoji": "✨",
+                                                "note": "Unaffected by time",
+                                                "char": "永恒"
+                                    },
+                                    "eov": {
+                                                "morpheme": "over-",
+                                                "chord": "eov",
+                                                "word": "overtime",
+                                                "emoji": "💼",
+                                                "note": "Time beyond regular hours",
+                                                "char": "加班"
+                                    }
+                        }
             },
             "ot": {
-                lemma: "to",
-                chord: "ot",
-                emoji: "➡️",
-                note: "Direction / destination",
-                derivatives: {
-                    "ady": { morpheme: "-day", chord: "ady", word: "today", emoji: "☀️", note: "On this day" },
-                    "ghint": { morpheme: "-night", chord: "ghint", word: "tonight", emoji: "🌙", note: "On this night" },
-                    "moorrw": { morpheme: "-morrow", chord: "moorrw", word: "tomorrow", emoji: "🌅", note: "The day after today" },
-                    "eeghrt": { morpheme: "-gether", chord: "eeghrt", word: "together", emoji: "🤝", note: "In union / with each other" },
-                    "adrw": { morpheme: "-ward", chord: "adrw", word: "toward", emoji: "🧭", note: "In the direction of" },
-                    "in": { morpheme: "in-", chord: "in", word: "into", emoji: "📥", note: "Moving inside" }
-                }
+                        "lemma": "to",
+                        "chord": "ot",
+                        "emoji": "➡️",
+                        "note": "Direction / destination",
+                        "derivatives": {
+                                    "ady": {
+                                                "morpheme": "-day",
+                                                "chord": "ady",
+                                                "word": "today",
+                                                "emoji": "☀️",
+                                                "note": "On this day",
+                                                "char": "今天"
+                                    },
+                                    "ghint": {
+                                                "morpheme": "-night",
+                                                "chord": "ghint",
+                                                "word": "tonight",
+                                                "emoji": "🌙",
+                                                "note": "On this night",
+                                                "char": "今晚"
+                                    },
+                                    "moorrw": {
+                                                "morpheme": "-morrow",
+                                                "chord": "moorrw",
+                                                "word": "tomorrow",
+                                                "emoji": "🌅",
+                                                "note": "The day after today",
+                                                "char": "明天"
+                                    },
+                                    "eeghrt": {
+                                                "morpheme": "-gether",
+                                                "chord": "eeghrt",
+                                                "word": "together",
+                                                "emoji": "🤝",
+                                                "note": "In union / with each other",
+                                                "char": "一起"
+                                    },
+                                    "adrw": {
+                                                "morpheme": "-ward",
+                                                "chord": "adrw",
+                                                "word": "toward",
+                                                "emoji": "🧭",
+                                                "note": "In the direction of",
+                                                "char": "朝向"
+                                    },
+                                    "in": {
+                                                "morpheme": "in-",
+                                                "chord": "in",
+                                                "word": "into",
+                                                "emoji": "📥",
+                                                "note": "Moving inside",
+                                                "char": "进入"
+                                    }
+                        }
             },
             "aitw": {
-                lemma: "wait",
-                chord: "aitw",
-                emoji: "⏳",
-                note: "Stay in place / await",
-                derivatives: {
-                    "gin": { morpheme: "-ing", chord: "gin", word: "waiting", emoji: "⏳", note: "In the state of waiting" },
-                    "er": { morpheme: "-er", chord: "er", word: "waiter", emoji: "🍽️", note: "Server at table" },
-                    "erss": { morpheme: "-ress", chord: "erss", word: "waitress", emoji: "👩‍🍳", note: "Female server" },
-                    "a": { morpheme: "a-", chord: "a", word: "await", emoji: "👀", note: "Wait expectantly" },
-                    "ade": { morpheme: "a- -ed", chord: "ade", word: "awaited", emoji: "✨", note: "Long-expected" }
-                }
+                        "lemma": "wait",
+                        "chord": "aitw",
+                        "emoji": "⏳",
+                        "note": "Stay in place / await",
+                        "derivatives": {
+                                    "gin": {
+                                                "morpheme": "-ing",
+                                                "chord": "gin",
+                                                "word": "waiting",
+                                                "emoji": "⏳",
+                                                "note": "In the state of waiting",
+                                                "char": "等待"
+                                    },
+                                    "er": {
+                                                "morpheme": "-er",
+                                                "chord": "er",
+                                                "word": "waiter",
+                                                "emoji": "🍽️",
+                                                "note": "Server at table",
+                                                "char": "服务员"
+                                    },
+                                    "erss": {
+                                                "morpheme": "-ress",
+                                                "chord": "erss",
+                                                "word": "waitress",
+                                                "emoji": "👩‍🍳",
+                                                "note": "Female server",
+                                                "char": "女服务员"
+                                    },
+                                    "a": {
+                                                "morpheme": "a-",
+                                                "chord": "a",
+                                                "word": "await",
+                                                "emoji": "👀",
+                                                "note": "Wait expectantly",
+                                                "char": "等候"
+                                    },
+                                    "ade": {
+                                                "morpheme": "a- -ed",
+                                                "chord": "ade",
+                                                "word": "awaited",
+                                                "emoji": "✨",
+                                                "note": "Long-expected",
+                                                "char": "等待中"
+                                    }
+                        }
             },
             "box": {
-                lemma: "box",
-                chord: "box",
-                emoji: "📦",
-                note: "Container / enclosure",
-                derivatives: {
-                    "s": { morpheme: "-es", chord: "s", word: "boxes", emoji: "📦", note: "Plural boxes" },
-                    "gin": { morpheme: "-ing", chord: "gin", word: "boxing", emoji: "🥊", note: "Combat sport / packing" },
-                    "er": { morpheme: "-er", chord: "er", word: "boxer", emoji: "🥊", note: "One who boxes" },
-                    "in": { morpheme: "in-", chord: "in", word: "inbox", emoji: "📥", note: "Incoming message folder" },
-                    "otu": { morpheme: "out-", chord: "otu", word: "outbox", emoji: "📤", note: "Outgoing message folder" },
-                    "adns": { morpheme: "sand-", chord: "adns", word: "sandbox", emoji: "🏖️", note: "Isolated test environment" }
-                }
+                        "lemma": "box",
+                        "chord": "box",
+                        "emoji": "📦",
+                        "note": "Container / enclosure",
+                        "derivatives": {
+                                    "s": {
+                                                "morpheme": "-es",
+                                                "chord": "s",
+                                                "word": "boxes",
+                                                "emoji": "📦",
+                                                "note": "Plural boxes",
+                                                "char": "盒子"
+                                    },
+                                    "gin": {
+                                                "morpheme": "-ing",
+                                                "chord": "gin",
+                                                "word": "boxing",
+                                                "emoji": "🥊",
+                                                "note": "Combat sport / packing",
+                                                "char": "拳击"
+                                    },
+                                    "er": {
+                                                "morpheme": "-er",
+                                                "chord": "er",
+                                                "word": "boxer",
+                                                "emoji": "🥊",
+                                                "note": "One who boxes",
+                                                "char": "拳击手"
+                                    },
+                                    "in": {
+                                                "morpheme": "in-",
+                                                "chord": "in",
+                                                "word": "inbox",
+                                                "emoji": "📥",
+                                                "note": "Incoming message folder",
+                                                "char": "收件箱"
+                                    },
+                                    "otu": {
+                                                "morpheme": "out-",
+                                                "chord": "otu",
+                                                "word": "outbox",
+                                                "emoji": "📤",
+                                                "note": "Outgoing message folder",
+                                                "char": "发件箱"
+                                    },
+                                    "adns": {
+                                                "morpheme": "sand-",
+                                                "chord": "adns",
+                                                "word": "sandbox",
+                                                "emoji": "🏖️",
+                                                "note": "Isolated test environment",
+                                                "char": "沙盒"
+                                    }
+                        }
             },
             "aclr": {
-                lemma: "clear",
-                chord: "aclr",
-                emoji: "✨",
-                note: "Free from clutter / transparent",
-                derivatives: {
-                    "gin": { morpheme: "-ing", chord: "gin", word: "clearing", emoji: "🧹", note: "Making clear / open space" },
-                    "de": { morpheme: "-ed", chord: "de", word: "cleared", emoji: "✅", note: "Emptied / approved" },
-                    "ly": { morpheme: "-ly", chord: "ly", word: "clearly", emoji: "💡", note: "Without doubt / plainly" },
-                    "acnr": { morpheme: "-ance", chord: "acnr", word: "clearance", emoji: "🏷️", note: "Authorization / space" }
-                }
+                        "lemma": "clear",
+                        "chord": "aclr",
+                        "emoji": "✨",
+                        "note": "Free from clutter / transparent",
+                        "derivatives": {
+                                    "gin": {
+                                                "morpheme": "-ing",
+                                                "chord": "gin",
+                                                "word": "clearing",
+                                                "emoji": "🧹",
+                                                "note": "Making clear / open space",
+                                                "char": "清理"
+                                    },
+                                    "de": {
+                                                "morpheme": "-ed",
+                                                "chord": "de",
+                                                "word": "cleared",
+                                                "emoji": "✅",
+                                                "note": "Emptied / approved",
+                                                "char": "已清除"
+                                    },
+                                    "ly": {
+                                                "morpheme": "-ly",
+                                                "chord": "ly",
+                                                "word": "clearly",
+                                                "emoji": "💡",
+                                                "note": "Without doubt / plainly",
+                                                "char": "清晰地"
+                                    },
+                                    "acnr": {
+                                                "morpheme": "-ance",
+                                                "chord": "acnr",
+                                                "word": "clearance",
+                                                "emoji": "🏷️",
+                                                "note": "Authorization / space",
+                                                "char": "许可"
+                                    }
+                        }
             },
             "dnp": {
-                lemma: "depend",
-                chord: "dnp",
-                emoji: "🔗",
-                note: "Rely upon / contingent",
-                derivatives: {
-                    "gin": { morpheme: "-ing", chord: "gin", word: "depending", emoji: "🔄", note: "Contingent upon" },
-                    "de": { morpheme: "-ed", chord: "de", word: "depended", emoji: "🤝", note: "Relied on" },
-                    "s": { morpheme: "-s", chord: "s", word: "depends", emoji: "⚖️", note: "Relies on" },
-                    "ent": { morpheme: "-ent", chord: "ent", word: "dependent", emoji: "👶", note: "Relying on another" },
-                    "in": { morpheme: "in-", chord: "in", word: "independent", emoji: "🦅", note: "Autonomous / free" }
-                }
+                        "lemma": "depend",
+                        "chord": "dnp",
+                        "emoji": "🔗",
+                        "note": "Rely upon / contingent",
+                        "derivatives": {
+                                    "gin": {
+                                                "morpheme": "-ing",
+                                                "chord": "gin",
+                                                "word": "depending",
+                                                "emoji": "🔄",
+                                                "note": "Contingent upon",
+                                                "char": "依据"
+                                    },
+                                    "de": {
+                                                "morpheme": "-ed",
+                                                "chord": "de",
+                                                "word": "depended",
+                                                "emoji": "🤝",
+                                                "note": "Relied on",
+                                                "char": "依赖"
+                                    },
+                                    "s": {
+                                                "morpheme": "-s",
+                                                "chord": "s",
+                                                "word": "depends",
+                                                "emoji": "⚖️",
+                                                "note": "Relies on",
+                                                "char": "取决于"
+                                    },
+                                    "ent": {
+                                                "morpheme": "-ent",
+                                                "chord": "ent",
+                                                "word": "dependent",
+                                                "emoji": "👶",
+                                                "note": "Relying on another",
+                                                "char": "依靠"
+                                    },
+                                    "in": {
+                                                "morpheme": "in-",
+                                                "chord": "in",
+                                                "word": "independent",
+                                                "emoji": "🦅",
+                                                "note": "Autonomous / free",
+                                                "char": "独立"
+                                    }
+                        }
             },
             "aekm": {
-                lemma: "make",
-                chord: "aekm",
-                emoji: "🔨",
-                note: "Create / produce",
-                derivatives: {
-                    "er": { morpheme: "-er", chord: "er", word: "maker", emoji: "🧑‍🏭", note: "Creator / producer" },
-                    "gin": { morpheme: "-ing", chord: "gin", word: "making", emoji: "🏗️", note: "In process of creation" },
-                    "s": { morpheme: "-s", chord: "s", word: "makes", emoji: "⚙️", note: "Creates" }
-                }
+                        "lemma": "make",
+                        "chord": "aekm",
+                        "emoji": "🔨",
+                        "note": "Create / produce",
+                        "derivatives": {
+                                    "er": {
+                                                "morpheme": "-er",
+                                                "chord": "er",
+                                                "word": "maker",
+                                                "emoji": "🧑‍🏭",
+                                                "note": "Creator / producer",
+                                                "char": "制造者"
+                                    },
+                                    "gin": {
+                                                "morpheme": "-ing",
+                                                "chord": "gin",
+                                                "word": "making",
+                                                "emoji": "🏗️",
+                                                "note": "In process of creation",
+                                                "char": "制作"
+                                    },
+                                    "s": {
+                                                "morpheme": "-s",
+                                                "chord": "s",
+                                                "word": "makes",
+                                                "emoji": "⚙️",
+                                                "note": "Creates",
+                                                "char": "使"
+                                    }
+                        }
             },
             "epty": {
-                lemma: "type",
-                chord: "epty",
-                emoji: "⌨️",
-                note: "Input characters / category",
-                derivatives: {
-                    "gin": { morpheme: "-ing", chord: "gin", word: "typing", emoji: "⌨️", note: "Entering characters" },
-                    "de": { morpheme: "-ed", chord: "de", word: "typed", emoji: "📄", note: "Already keyed in" },
-                    "er": { morpheme: "-er", chord: "er", word: "typer", emoji: "👤", note: "Person typing" },
-                    "s": { morpheme: "-s", chord: "s", word: "types", emoji: "🗂️", note: "Kinds / categories" }
-                }
+                        "lemma": "type",
+                        "chord": "epty",
+                        "emoji": "⌨️",
+                        "note": "Input characters / category",
+                        "derivatives": {
+                                    "gin": {
+                                                "morpheme": "-ing",
+                                                "chord": "gin",
+                                                "word": "typing",
+                                                "emoji": "⌨️",
+                                                "note": "Entering characters",
+                                                "char": "打字"
+                                    },
+                                    "de": {
+                                                "morpheme": "-ed",
+                                                "chord": "de",
+                                                "word": "typed",
+                                                "emoji": "📄",
+                                                "note": "Already keyed in",
+                                                "char": "已打字"
+                                    },
+                                    "er": {
+                                                "morpheme": "-er",
+                                                "chord": "er",
+                                                "word": "typer",
+                                                "emoji": "👤",
+                                                "note": "Person typing",
+                                                "char": "打字员"
+                                    },
+                                    "s": {
+                                                "morpheme": "-s",
+                                                "chord": "s",
+                                                "word": "types",
+                                                "emoji": "🗂️",
+                                                "note": "Kinds / categories",
+                                                "char": "类型"
+                                    }
+                        }
             },
             "abelt": {
-                lemma: "table",
-                chord: "abelt",
-                emoji: "📊",
-                note: "Furniture / grid data",
-                derivatives: {
-                    "s": { morpheme: "-s", chord: "s", word: "tables", emoji: "📊", note: "Plural tables" },
-                    "emti": { morpheme: "time-", chord: "emti", word: "timetable", emoji: "🗓️", note: "Schedule of times" }
-                }
+                        "lemma": "table",
+                        "chord": "abelt",
+                        "emoji": "📊",
+                        "note": "Furniture / grid data",
+                        "derivatives": {
+                                    "s": {
+                                                "morpheme": "-s",
+                                                "chord": "s",
+                                                "word": "tables",
+                                                "emoji": "📊",
+                                                "note": "Plural tables",
+                                                "char": "表格"
+                                    },
+                                    "emti": {
+                                                "morpheme": "time-",
+                                                "chord": "emti",
+                                                "word": "timetable",
+                                                "emoji": "🗓️",
+                                                "note": "Schedule of times",
+                                                "char": "时刻表"
+                                    }
+                        }
             },
             "bev": {
-                lemma: "verb",
-                chord: "bev",
-                emoji: "⚡",
-                note: "Action word",
-                derivatives: {
-                    "s": { morpheme: "-s", chord: "s", word: "verbs", emoji: "⚡", note: "Plural verbs" },
-                    "al": { morpheme: "-al", chord: "al", word: "verbal", emoji: "🗣️", note: "Spoken / relating to words" },
-                    "ad": { morpheme: "ad-", chord: "ad", word: "adverb", emoji: "🏷️", note: "Word modifying verb" }
-                }
+                        "lemma": "verb",
+                        "chord": "bev",
+                        "emoji": "⚡",
+                        "note": "Action word",
+                        "derivatives": {
+                                    "s": {
+                                                "morpheme": "-s",
+                                                "chord": "s",
+                                                "word": "verbs",
+                                                "emoji": "⚡",
+                                                "note": "Plural verbs",
+                                                "char": "动词"
+                                    },
+                                    "al": {
+                                                "morpheme": "-al",
+                                                "chord": "al",
+                                                "word": "verbal",
+                                                "emoji": "🗣️",
+                                                "note": "Spoken / relating to words",
+                                                "char": "口头的"
+                                    },
+                                    "ad": {
+                                                "morpheme": "ad-",
+                                                "chord": "ad",
+                                                "word": "adverb",
+                                                "emoji": "🏷️",
+                                                "note": "Word modifying verb",
+                                                "char": "副词"
+                                    }
+                        }
             },
             "adns": {
-                lemma: "sand",
-                chord: "adns",
-                emoji: "🏖️",
-                note: "Granular sediment",
-                derivatives: {
-                    "box": { morpheme: "-box", chord: "box", word: "sandbox", emoji: "🏖️", note: "Testing playground" },
-                    "dy": { morpheme: "-y", chord: "dy", word: "sandy", emoji: "🏝️", note: "Full of sand" }
-                }
+                        "lemma": "sand",
+                        "chord": "adns",
+                        "emoji": "🏖️",
+                        "note": "Granular sediment",
+                        "derivatives": {
+                                    "box": {
+                                                "morpheme": "-box",
+                                                "chord": "box",
+                                                "word": "sandbox",
+                                                "emoji": "🏖️",
+                                                "note": "Testing playground",
+                                                "char": "沙盒"
+                                    },
+                                    "dy": {
+                                                "morpheme": "-y",
+                                                "chord": "dy",
+                                                "word": "sandy",
+                                                "emoji": "🏝️",
+                                                "note": "Full of sand",
+                                                "char": "沙质"
+                                    }
+                        }
             },
             "hors": {
-                lemma: "short",
-                chord: "hors",
-                emoji: "📏",
-                note: "Brief in length or duration",
-                derivatives: {
-                    "ly": { morpheme: "-ly", chord: "ly", word: "shortly", emoji: "⏱️", note: "Soon / in a brief time" },
-                    "en": { morpheme: "-en", chord: "en", word: "shorten", emoji: "✂️", note: "Make shorter" },
-                    "aeg": { morpheme: "-age", chord: "aeg", word: "shortage", emoji: "📉", note: "Deficiency" },
-                    "cut": { morpheme: "-cut", chord: "ctu", word: "shortcut", emoji: "⚡", note: "Faster path" }
-                }
+                        "lemma": "short",
+                        "chord": "hors",
+                        "emoji": "📏",
+                        "note": "Brief in length or duration",
+                        "derivatives": {
+                                    "ly": {
+                                                "morpheme": "-ly",
+                                                "chord": "ly",
+                                                "word": "shortly",
+                                                "emoji": "⏱️",
+                                                "note": "Soon / in a brief time",
+                                                "char": "不久"
+                                    },
+                                    "en": {
+                                                "morpheme": "-en",
+                                                "chord": "en",
+                                                "word": "shorten",
+                                                "emoji": "✂️",
+                                                "note": "Make shorter",
+                                                "char": "缩短"
+                                    },
+                                    "aeg": {
+                                                "morpheme": "-age",
+                                                "chord": "aeg",
+                                                "word": "shortage",
+                                                "emoji": "📉",
+                                                "note": "Deficiency",
+                                                "char": "短缺"
+                                    },
+                                    "cut": {
+                                                "morpheme": "-cut",
+                                                "chord": "ctu",
+                                                "word": "shortcut",
+                                                "emoji": "⚡",
+                                                "note": "Faster path",
+                                                "char": "快捷键"
+                                    }
+                        }
             },
             "eilmps": {
-                lemma: "simple",
-                chord: "eilmps",
-                emoji: "🌱",
-                note: "Uncomplicated / plain",
-                derivatives: {
-                    "ly": { morpheme: "-ly", chord: "ly", word: "simply", emoji: "💡", note: "Merely / easily" },
-                    "ity": { morpheme: "-ity", chord: "ity", word: "simplicity", emoji: "⚪", note: "State of being simple" }
-                }
+                        "lemma": "simple",
+                        "chord": "eilmps",
+                        "emoji": "🌱",
+                        "note": "Uncomplicated / plain",
+                        "derivatives": {
+                                    "ly": {
+                                                "morpheme": "-ly",
+                                                "chord": "ly",
+                                                "word": "simply",
+                                                "emoji": "💡",
+                                                "note": "Merely / easily",
+                                                "char": "简单地"
+                                    },
+                                    "ity": {
+                                                "morpheme": "-ity",
+                                                "chord": "ity",
+                                                "word": "simplicity",
+                                                "emoji": "⚪",
+                                                "note": "State of being simple",
+                                                "char": "简单"
+                                    }
+                        }
             },
             "elt": {
-                lemma: "let",
-                chord: "elt",
-                emoji: "🚪",
-                note: "Allow / permit",
-                derivatives: {
-                    "s": { morpheme: "-s / 's", "chord": "s", "word": "lets", "emoji": "👥", "note": "Allows / let us" },
-                    "otu": { morpheme: "out-", chord: "otu", word: "outlet", "emoji": "🔌", "note": "Release / power point" },
-                    "in": { morpheme: "in-", chord: "in", word: "inlet", "emoji": "🌊", "note": "Narrow water entrance" }
-                }
+                        "lemma": "let",
+                        "chord": "elt",
+                        "emoji": "🚪",
+                        "note": "Allow / permit",
+                        "derivatives": {
+                                    "s": {
+                                                "morpheme": "-s / 's",
+                                                "chord": "s",
+                                                "word": "lets",
+                                                "emoji": "👥",
+                                                "note": "Allows / let us",
+                                                "char": "让我们"
+                                    },
+                                    "otu": {
+                                                "morpheme": "out-",
+                                                "chord": "otu",
+                                                "word": "outlet",
+                                                "emoji": "🔌",
+                                                "note": "Release / power point",
+                                                "char": "出口"
+                                    },
+                                    "in": {
+                                                "morpheme": "in-",
+                                                "chord": "in",
+                                                "word": "inlet",
+                                                "emoji": "🌊",
+                                                "note": "Narrow water entrance",
+                                                "char": "入口"
+                                    }
+                        }
             },
             "pu": {
-                lemma: "up",
-                chord: "pu",
-                emoji: "🔝",
-                note: "Toward a higher place",
-                derivatives: {
-                    "no": { morpheme: "-on", chord: "no", word: "upon", emoji: "👆", note: "On top of" },
-                    "er": { morpheme: "-er", chord: "er", word: "upper", emoji: "⬆️", note: "Higher in position" },
-                    "ardw": { morpheme: "-ward", chord: "ardw", word: "upward", emoji: "📈", note: "In an upward direction" }
-                }
+                        "lemma": "up",
+                        "chord": "pu",
+                        "emoji": "🔝",
+                        "note": "Toward a higher place",
+                        "derivatives": {
+                                    "no": {
+                                                "morpheme": "-on",
+                                                "chord": "no",
+                                                "word": "upon",
+                                                "emoji": "👆",
+                                                "note": "On top of",
+                                                "char": "在...之上"
+                                    },
+                                    "er": {
+                                                "morpheme": "-er",
+                                                "chord": "er",
+                                                "word": "upper",
+                                                "emoji": "⬆️",
+                                                "note": "Higher in position",
+                                                "char": "上面的"
+                                    },
+                                    "ardw": {
+                                                "morpheme": "-ward",
+                                                "chord": "ardw",
+                                                "word": "upward",
+                                                "emoji": "📈",
+                                                "note": "In an upward direction",
+                                                "char": "向上"
+                                    }
+                        }
             },
             "enprs": {
-                lemma: "present",
-                chord: "enprs",
-                emoji: "🎁",
-                note: "Current time / gift / show",
-                derivatives: {
-                    "ly": { morpheme: "-ly", chord: "ly", word: "presently", emoji: "⏱️", note: "At the present moment" },
-                    "tion": { morpheme: "-ation", chord: "tion", word: "presentation", emoji: "📊", note: "Demonstration / exhibition" }
-                }
+                        "lemma": "present",
+                        "chord": "enprs",
+                        "emoji": "🎁",
+                        "note": "Current time / gift / show",
+                        "derivatives": {
+                                    "ly": {
+                                                "morpheme": "-ly",
+                                                "chord": "ly",
+                                                "word": "presently",
+                                                "emoji": "⏱️",
+                                                "note": "At the present moment",
+                                                "char": "目前"
+                                    },
+                                    "tion": {
+                                                "morpheme": "-ation",
+                                                "chord": "tion",
+                                                "word": "presentation",
+                                                "emoji": "📊",
+                                                "note": "Demonstration / exhibition",
+                                                "char": "演示"
+                                    }
+                        }
+            },
+            "am": {
+                        "lemma": "am",
+                        "chord": "am",
+                        "emoji": "🙋",
+                        "note": "1st person be (I am)",
+                        "char": "我是",
+                        "derivatives": {}
+            },
+            "adkln": {
+                        "lemma": "andlook",
+                        "chord": "adkln",
+                        "emoji": "👀",
+                        "note": "Look compound (and look)",
+                        "char": "来看",
+                        "derivatives": {}
+            },
+            "aer": {
+                        "lemma": "are",
+                        "chord": "aer",
+                        "emoji": "👥",
+                        "note": "2nd/plural be",
+                        "char": "是",
+                        "derivatives": {}
+            },
+            "is": {
+                        "lemma": "is",
+                        "chord": "is",
+                        "emoji": "☝️",
+                        "note": "3rd person be",
+                        "char": "是",
+                        "derivatives": {}
+            },
+            "dilms": {
+                        "lemma": "middles",
+                        "chord": "dilms",
+                        "emoji": "🎯",
+                        "note": "Center / midpoint",
+                        "char": "中间",
+                        "derivatives": {
+                                    "ghint": {
+                                                "morpheme": "-night",
+                                                "chord": "ghint",
+                                                "word": "midnight",
+                                                "emoji": "🌌",
+                                                "note": "Middle of night",
+                                                "char": "午夜"
+                                    },
+                                    "ady": {
+                                                "morpheme": "-day",
+                                                "chord": "ady",
+                                                "word": "midday",
+                                                "emoji": "☀️",
+                                                "note": "Middle of day",
+                                                "char": "正午"
+                                    }
+                        }
+            },
+            "eno": {
+                        "lemma": "one",
+                        "chord": "eno",
+                        "emoji": "1️⃣",
+                        "note": "Single entity",
+                        "char": "一",
+                        "derivatives": {
+                                    "fls": {
+                                                "morpheme": "-self",
+                                                "chord": "fls",
+                                                "word": "oneself",
+                                                "emoji": "🪞",
+                                                "note": "Person's self",
+                                                "char": "自己"
+                                    }
+                        }
+            },
+            "emov": {
+                        "lemma": "remove",
+                        "chord": "emov",
+                        "emoji": "❌",
+                        "note": "Take away / delete",
+                        "char": "移除",
+                        "derivatives": {
+                                    "1al": {
+                                                "morpheme": "-al",
+                                                "chord": "1al",
+                                                "word": "removal",
+                                                "emoji": "🚫",
+                                                "note": "Act of removing",
+                                                "char": "消除"
+                                    },
+                                    "1d": {
+                                                "morpheme": "-d",
+                                                "chord": "1d",
+                                                "word": "removed",
+                                                "emoji": "🗑️",
+                                                "note": "Past tense of remove",
+                                                "char": "已移除"
+                                    }
+                        }
+            },
+            "mnost": {
+                        "lemma": "something",
+                        "chord": "mnost",
+                        "emoji": "📦",
+                        "note": "Unspecified entity",
+                        "char": "某事",
+                        "derivatives": {}
+            },
+            "ckstu": {
+                        "lemma": "strucuture",
+                        "chord": "ckstu",
+                        "emoji": "🏗️",
+                        "note": "Framework / arrangement (structure)",
+                        "char": "结构",
+                        "derivatives": {
+                                    "1al": {
+                                                "morpheme": "-al",
+                                                "chord": "1al",
+                                                "word": "structural",
+                                                "emoji": "📐",
+                                                "note": "Related to structure",
+                                                "char": "结构的"
+                                    },
+                                    "er": {
+                                                "morpheme": "re-",
+                                                "chord": "er",
+                                                "word": "restructure",
+                                                "emoji": "🔄",
+                                                "note": "Reorganize structure",
+                                                "char": "重构"
+                                    }
+                        }
+            },
+            "ghin": {
+                        "lemma": "thing",
+                        "chord": "ghin",
+                        "emoji": "🔮",
+                        "note": "Entity / object",
+                        "char": "东西",
+                        "derivatives": {
+                                    "any": {
+                                                "morpheme": "any-",
+                                                "chord": "any",
+                                                "word": "anything",
+                                                "emoji": "❓",
+                                                "note": "Any object or event",
+                                                "char": "任何事"
+                                    },
+                                    "erv": {
+                                                "morpheme": "every-",
+                                                "chord": "erv",
+                                                "word": "everything",
+                                                "emoji": "🌐",
+                                                "note": "All things",
+                                                "char": "一切"
+                                    },
+                                    "no": {
+                                                "morpheme": "no-",
+                                                "chord": "no",
+                                                "word": "nothing",
+                                                "emoji": "⭕",
+                                                "note": "Not anything",
+                                                "char": "无事"
+                                    }
+                        }
+            },
+            "hist": {
+                        "lemma": "this",
+                        "chord": "hist",
+                        "emoji": "👉",
+                        "note": "Specific person or thing",
+                        "char": "这",
+                        "derivatives": {}
             }
-        };
+};
 
         const GRAMMAR_RULES = {
         "verb": {
@@ -2332,10 +3749,6 @@
                 this.activeRootTimeout = null;
                 this.lastMorphemeAttachment = null;
 
-                // Grammar Inflection State for Sandbox
-                this.activeGrammarWord = null;
-                this.activeGrammar = null;
-                
                 // Sandbox form style
                 this.sandboxForm = 'combo'; // 'svg_only', 'words_only', 'combo'
                 this.sandboxIndex = 0;
@@ -2419,25 +3832,18 @@
                 if (editor) {
                     editor.innerHTML = `
                         <span id="editor-placeholder" class="text-slate-600 font-mono text-xs md:text-sm select-none pointer-events-none">
-                            Type regular letters normally or strike steno chords here... (Press 1-4 for grammar modifiers, Space to commit words, Backspace to delete)
+                            Type regular letters normally or strike steno chords here... (Press Space for spaces, Backspace to delete)
                         </span>
                         <span id="editor-caret" class="inline-block w-0.5 h-5 bg-indigo-400 animate-pulse ml-0.5 align-middle rounded pointer-events-none select-none"></span>
                     `;
                 }
                 this.currentStrokeChars = [];
-                this.activeGrammarWord = null;
-                this.activeGrammar = null;
                 this.lastMorphemeAttachment = null;
                 this.keyPressOrder = [];
                 if (this.activeRootTimeout) clearTimeout(this.activeRootTimeout);
                 if (this.activeRoot) {
                     this.activeRoot = null;
                     this.renderMorphemeTree();
-                }
-                const bar = document.getElementById('sandbox-grammar-bar');
-                if (bar) {
-                    bar.classList.add('hidden');
-                    bar.classList.remove('flex');
                 }
                 const toast = document.getElementById('sandbox-toast');
                 if (toast) {
@@ -2491,11 +3897,31 @@
                                 translated += tok;
                             }
                         }
-                        result += translated;
+
+                        if (translated) {
+                            // If typed text starts with punctuation like , . ! ? ; : attach directly to previous word
+                            const mPunct = translated.match(/^([\s]*)([,.\!?;:])/);
+                            if (mPunct) {
+                                result = result.replace(/[\s]+$/, '');
+                                const punctAndRest = translated.slice(mPunct[1].length);
+                                result += punctAndRest;
+                            } else {
+                                // Transition from previous chord/word to typed letters: ensure space separation
+                                if (result.length > 0 && !/[\s\n]$/.test(result) && !translated.startsWith(' ')) {
+                                    result += ' ';
+                                }
+                                result += translated;
+                            }
+                        }
                     } else if (el.classList.contains('basis-full')) {
                         result += '\n';
                     }
                 }
+
+                // Clean up spacing: single space after punctuation, remove spaces before punctuation
+                result = result.replace(/[ ]+/g, ' ');
+                result = result.replace(/\s+([,.\!?;:])/g, '$1');
+                result = result.replace(/([,.\!?;:])([a-zA-Z0-9])/g, '$1 $2');
                 return result.trim();
             }
 
@@ -2891,7 +4317,7 @@
                     prevEl.textContent += char;
                 } else {
                     const span = document.createElement('span');
-                    span.className = "typed-span font-mono font-bold text-sm md:text-base text-slate-100 whitespace-pre tracking-wide transition-all";
+                    span.className = "typed-span font-mono font-bold text-sm md:text-base text-slate-100 whitespace-pre tracking-wide transition-all inline-block min-w-[0.55em]";
                     span.textContent = char;
                     if (caret && caret.parentNode === editor) {
                         editor.insertBefore(span, caret);
@@ -2961,139 +4387,6 @@
                 }
                 this.updateCaret();
                 editor.scrollTop = editor.scrollHeight;
-
-                // Track for grammar inflection HUD in Sandbox
-                if (this.mode === 'sandbox') {
-                    this.activeGrammarWord = matchedWord.toLowerCase().trim();
-                    this.activeGrammar = getWordGrammar(this.activeGrammarWord);
-                    this.renderGrammarHud(this.activeGrammarWord, this.activeGrammar);
-                }
-            }
-
-            renderGrammarHud(word, grammar) {
-                const bar = document.getElementById('sandbox-grammar-bar');
-                const title = document.getElementById('grammar-bar-title');
-                const options = document.getElementById('grammar-bar-options');
-                if (!bar || !title || !options) return;
-
-                if (!word || !grammar || !grammar.forms || Object.keys(grammar.forms).length === 0) {
-                    bar.classList.add('hidden');
-                    bar.classList.remove('flex');
-                    return;
-                }
-
-                const posRules = GRAMMAR_RULES[grammar.pos] || {};
-                title.innerHTML = `Grammar Modifiers for <span class="text-indigo-400 uppercase font-black">${word}</span> <span class="text-[10px] text-slate-400 font-bold">(${grammar.pos})</span>:`;
-
-                options.innerHTML = Object.keys(grammar.forms).map(num => {
-                    const ruleInfo = posRules[num] || { name: 'mod', label: 'form' };
-                    const inflected = grammar.forms[num];
-                    return `
-                        <button onclick="app.applyGrammarModifier('${num}')" class="px-2.5 py-1 rounded-xl bg-slate-900 hover:bg-indigo-600 text-indigo-300 hover:text-white border border-indigo-500/30 hover:border-indigo-400 font-mono font-bold text-xs flex items-center gap-1.5 transition-all shadow active:scale-95 group">
-                            <span class="w-5 h-5 rounded-md bg-indigo-500/20 group-hover:bg-indigo-400/30 text-indigo-300 group-hover:text-white flex items-center justify-center font-black">${num}</span>
-                            <span class="text-white">${inflected}</span>
-                            <span class="text-[10px] text-slate-400 group-hover:text-indigo-200 font-normal">(${ruleInfo.name})</span>
-                        </button>
-                    `;
-                }).join('');
-
-                bar.classList.remove('hidden');
-                bar.classList.add('flex');
-            }
-
-            applyGrammarModifier(num) {
-                if (!this.activeGrammarWord || !this.activeGrammar || !this.activeGrammar.forms || !this.activeGrammar.forms[num]) return;
-
-                const originalWord = this.activeGrammarWord;
-                const newWord = this.activeGrammar.forms[num];
-                const pos = this.activeGrammar.pos;
-                const ruleName = (GRAMMAR_RULES[pos] && GRAMMAR_RULES[pos][num]) ? GRAMMAR_RULES[pos][num].name : 'form';
-
-                // Replace last chord item in editor with newWord
-                const editor = document.getElementById('sandbox-editor');
-                if (editor) {
-                    const caret = document.getElementById('editor-caret');
-                    let target = caret ? caret.previousElementSibling : editor.lastElementChild;
-                    while (target && !target.classList.contains('chord-item')) {
-                        target = target.previousElementSibling;
-                    }
-                    if (target && target.classList.contains('chord-item')) {
-                        target.remove();
-                    }
-                }
-                
-                // Insert new inflected item
-                const ph = document.getElementById('editor-placeholder');
-                if (ph) ph.classList.add('hidden');
-
-                // Register reverse lookup for dynamic regular and irregular visual inheritance
-                INFLECTION_TO_LEMMA[newWord.toLowerCase().trim()] = originalWord.toLowerCase().trim();
-
-                const vis = this.getWordVisual(newWord);
-                let el = document.createElement('span');
-                el.className = "chord-item transition-all duration-150 inline-flex items-center";
-                el.dataset.word = newWord;
-
-                // Identify both English word and Chinese character for cross-language operations
-                const isChineseWord = /[\u4e00-\u9fa5]/.test(newWord);
-                const englishWord = isChineseWord ? (CHINESE_TO_ENGLISH[newWord] || newWord) : newWord;
-                const chineseChar = isChineseWord ? newWord : (ENGLISH_TO_CHINESE[newWord.toLowerCase()] || newWord);
-                el.dataset.english = englishWord;
-                el.dataset.chinese = chineseChar;
-
-                if (this.editorOutputMode === 'words') {
-                    el.innerHTML = `
-                        <span class="px-2.5 py-1 rounded-xl bg-indigo-950/80 border border-indigo-500/60 font-mono font-bold text-sm md:text-base text-indigo-300 shadow mr-1.5">
-                            ${newWord}
-                        </span>
-                    `;
-                } else if (this.editorOutputMode === 'chinese') {
-                    el.innerHTML = `
-                        <span class="px-3 py-1 rounded-xl bg-slate-900 border border-amber-500/50 font-sans font-black text-lg md:text-xl text-amber-300 shadow mr-1.5 hover:border-amber-400 select-none cursor-default" title="${newWord.toUpperCase()}">
-                            ${chineseChar}
-                        </span>
-                    `;
-                } else if (this.editorOutputMode === 'svg') {
-                    el.innerHTML = `
-                        <span class="w-11 h-11 md:w-12 md:h-12 bg-slate-900 border-2 rounded-2xl p-1 mr-1.5 shadow-lg flex items-center justify-center text-2xl select-none" style="border-color: ${vis.bg}">
-                            ${this.getWordDisplayHtml(newWord, 'text-2xl')}
-                        </span>
-                    `;
-                } else if (this.editorOutputMode === 'combo') {
-                    el.innerHTML = `
-                        <span class="flex items-center gap-2 bg-indigo-950/80 border border-indigo-500/60 rounded-2xl px-2.5 py-1 mr-1.5 shadow">
-                            <span class="w-7 h-7 rounded-lg flex items-center justify-center text-lg select-none" style="background: ${vis.bg}22">
-                                ${this.getWordDisplayHtml(newWord, 'text-lg')}
-                            </span>
-                            <span class="font-mono font-extrabold text-xs md:text-sm text-indigo-200 uppercase tracking-wide">${newWord}</span>
-                        </span>
-                    `;
-                }
-                if (editor) {
-                    const caret = document.getElementById('editor-caret');
-                    if (caret && caret.parentNode === editor) {
-                        editor.insertBefore(el, caret);
-                    } else {
-                        editor.appendChild(el);
-                    }
-                    this.updateCaret();
-                    editor.scrollTop = editor.scrollHeight;
-                }
-
-                sound.playSuccess();
-                const toast = document.getElementById('sandbox-toast');
-                if (toast) {
-                    toast.innerText = `✨ [Grammar Morph] "${originalWord.toUpperCase()}" + ${num} ➔ "${newWord.toUpperCase()}" (${ruleName})`;
-                    toast.className = "text-xs md:text-sm font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-6 py-2 rounded-xl text-center shadow-lg";
-                }
-
-                this.activeGrammarWord = newWord;
-                this.activeGrammar = null;
-                const bar = document.getElementById('sandbox-grammar-bar');
-                if (bar) {
-                    bar.classList.add('hidden');
-                    bar.classList.remove('flex');
-                }
             }
 
             init() {
@@ -3344,7 +4637,7 @@
                                             ${this.getWordDisplayHtml(d.word, 'text-xl')}
                                         </div>
                                         <div class="flex flex-col text-left overflow-hidden">
-                                            <span class="text-xs font-bold text-slate-200 truncate">${d.word}</span>
+                                            <span class="text-xs font-bold text-slate-200 truncate">${d.word} <span class="text-amber-400 font-sans font-bold">(${d.char || ENGLISH_TO_CHINESE[d.word.toLowerCase()] || ''})</span></span>
                                             <span class="text-[10px] font-mono text-amber-400 font-bold">${d.morpheme} [${d.chord}]</span>
                                         </div>
                                     </div>
@@ -3383,7 +4676,7 @@
                                             ${this.getWordDisplayHtml(d.word, 'text-xl')}
                                         </div>
                                         <div class="flex flex-col text-left overflow-hidden">
-                                            <span class="text-xs font-black text-white truncate">${d.word.toUpperCase()}</span>
+                                            <span class="text-xs font-black text-white truncate">${d.word.toUpperCase()} <span class="text-amber-300 font-sans font-bold text-xs">(${d.char || ENGLISH_TO_CHINESE[d.word.toLowerCase()] || ''})</span></span>
                                             <span class="text-[10px] font-mono font-bold text-amber-300">${d.morpheme} [${d.chord}]</span>
                                         </div>
                                     </div>
@@ -3581,8 +4874,6 @@
 
             // Keyboard Listeners
             setupKeyboardListeners() {
-                this.spaceBypass = false;
-
                 window.addEventListener('keydown', (e) => {
                     // Dedicated English-only copy shortcut: Alt+C
                     if (e.altKey && e.key.toLowerCase() === 'c' && this.mode === 'sandbox') {
@@ -3686,50 +4977,13 @@
                             }
                             this.updateCaret();
 
-                            const remaining = editor.querySelectorAll('.chord-item, .typed-span');
-                            if (remaining.length === 0) {
-                                this.activeGrammarWord = null;
-                                this.activeGrammar = null;
-                                const bar = document.getElementById('sandbox-grammar-bar');
-                                if (bar) {
-                                    bar.classList.add('hidden');
-                                    bar.classList.remove('flex');
-                                }
-                            }
                         }
                         return;
                     }
 
-                    // Grammar Number Modifier Tap (1, 2, 3, 4):
-                    // If a number is tapped alone without holding other keys while grammar options are active in Sandbox:
-                    if (['1', '2', '3', '4'].includes(e.key) && this.mode === 'sandbox' && this.activeGrammar && this.activeGrammar.forms && this.activeGrammar.forms[e.key] && this.pressedKeys.size === 0) {
+                    // Spacebar handling: ALWAYS inserts space in Sandbox and disarms active roots cleanly
+                    if (e.code === 'Space' || e.key === ' ') {
                         e.preventDefault();
-                        this.applyGrammarModifier(e.key);
-                        return;
-                    }
-
-                    // Spacebar handling:
-                    if (e.code === 'Space') {
-                        e.preventDefault();
-                        // If keys are currently held down, Space is part of a simultaneous chord!
-                        if (this.pressedKeys.size > 0) {
-                            this.chordHistory.add('space');
-                            return;
-                        }
-
-                        // Otherwise Space pressed alone: acts as commit / disarm / bypass and spaces text in sandbox
-                        this.spaceBypass = true;
-                        this.pressedKeys.clear();
-                        this.chordHistory.clear();
-                        this.keyPressOrder = [];
-                        this.currentStrokeChars = [];
-                        this.activeGrammarWord = null;
-                        this.activeGrammar = null;
-                        const bar = document.getElementById('sandbox-grammar-bar');
-                        if (bar) {
-                            bar.classList.add('hidden');
-                            bar.classList.remove('flex');
-                        }
 
                         if (this.mode === 'sandbox') {
                             this.typeCharacter(' ');
@@ -3737,18 +4991,21 @@
 
                         if (this.activeRoot) {
                             if (this.activeRootTimeout) clearTimeout(this.activeRootTimeout);
-                            const committedWord = this.activeRoot.lemma;
                             this.activeRoot = null;
                             this.renderMorphemeTree();
                             const toast = document.getElementById('sandbox-toast');
                             if (toast && this.mode === 'sandbox') {
-                                toast.innerText = `⚡ [Committed Word: "${committedWord.toUpperCase()}"] Root disarmed via Space. Next chord will be a separate word!`;
+                                toast.innerText = `⚡ Root disarmed via Space. Next chord will be a separate word!`;
                                 toast.className = "text-xs md:text-sm font-bold text-sky-300 bg-sky-500/20 border border-sky-500/40 px-6 py-2 rounded-xl text-center shadow";
                             }
                         }
+
+                        this.pressedKeys.clear();
+                        this.chordHistory.clear();
+                        this.keyPressOrder = [];
+                        this.currentStrokeChars = [];
                         return;
                     }
-                    if (this.spaceBypass) return;
 
                     // Handle single printable characters (letters, numbers, symbols)
                     // INSTANT REAL-TIME TYPING: Letters appear immediately on keydown!
@@ -3773,21 +5030,7 @@
                 });
 
                 window.addEventListener('keyup', (e) => {
-                    if (e.code === 'Space') {
-                        this.spaceBypass = false;
-                        if (this.pressedKeys.size === 0 && this.chordHistory.size > 0) {
-                            const hasSpace = this.chordHistory.has('space');
-                            const keysOnly = Array.from(this.chordHistory).filter(k => k !== 'space').sort().join('');
-                            const order = [...this.keyPressOrder];
-                            const strokeCount = this.currentStrokeChars.length;
-                            this.currentStrokeChars = [];
-                            this.chordHistory.clear();
-                            this.keyPressOrder = [];
-                            if (keysOnly.length > 0) {
-                                this.onChordRelease(keysOnly, hasSpace, order, strokeCount);
-                            }
-                            this.onKeysChange();
-                        }
+                    if (e.code === 'Space' || e.key === ' ') {
                         return;
                     }
 
@@ -3870,6 +5113,12 @@
             }
 
             onChordRelease(combo, hasSpace = false, keyOrder = [], strokeCount = 0) {
+                // Rule: Never treat a single letter (without digits) as a chord.
+                // Prevents normal typing from accidentally expanding chords or triggering morphemes!
+                if (combo.length === 1 && !/\d/.test(combo)) {
+                    return;
+                }
+
                 let expanded = CHORD_MAP[combo];
                 let resolvedChord = combo;
                 let isMirrored = false;
@@ -3949,7 +5198,9 @@
                             morphemeWord: deriv.morpheme.replace('-', '')
                         };
 
-                        toast.innerText = `🌟 [Morpheme Attached] Root '${prevRootLemma.toUpperCase()}' + '${deriv.morpheme}' -> "${deriv.word.toUpperCase()}"! (Hit Backspace to split back into separate words)`;
+                        const derivChar = deriv.char || ENGLISH_TO_CHINESE[deriv.word.toLowerCase()] || '';
+                        const derivCharText = derivChar ? ` (${derivChar})` : '';
+                        toast.innerText = `🌟 [Morpheme Attached] Root '${prevRootLemma.toUpperCase()}' + '${deriv.morpheme}' -> "${deriv.word.toUpperCase()}"${derivCharText}! (Hit Backspace to split back into separate words)`;
                         toast.className = "text-xs md:text-sm font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-6 py-2 rounded-xl text-center shadow-lg";
 
                         // Disarm root state and refresh tree
