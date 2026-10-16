@@ -404,6 +404,9 @@
                                 <button onclick="app.setEditorOutputMode('words')" id="editor-mode-words" class="px-3 py-1.5 text-xs font-bold rounded-lg transition-all bg-indigo-600 text-white shadow">
                                     📝 Words
                                 </button>
+                                <button onclick="app.setEditorOutputMode('chinese')" id="editor-mode-chinese" class="px-3 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white" title="Type English chords and automatically output Chinese Characters (汉字)">
+                                    🈯 汉字 (Chinese)
+                                </button>
                                 <button onclick="app.setEditorOutputMode('svg')" id="editor-mode-svg" class="px-3 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white">
                                     🖼️ SVG Only
                                 </button>
@@ -812,6 +815,40 @@
             "盘": "keyboard", "功": "function", "站": "stand", "拿": "take", "转": "turn",
             "形": "form", "按": "press", "动": "act", "这": "that", "是": "act", "爱": "life"
         };
+
+        // Bidirectional English to Chinese Character Mapping
+        const ENGLISH_TO_CHINESE = {};
+        for (const [ch, eng] of Object.entries(CHINESE_TO_ENGLISH)) {
+            ENGLISH_TO_CHINESE[eng.toLowerCase()] = ch;
+        }
+        Object.assign(ENGLISH_TO_CHINESE, {
+            "this": "这", "that": "那", "is": "是", "be": "是", "love": "爱",
+            "can": "能", "dog": "狗", "fast": "快", "book": "书", "file": "档",
+            "life": "命", "on": "上", "no": "不", "how": "怎", "who": "谁",
+            "whose": "谁", "i": "我", "me": "我", "he": "他", "him": "他",
+            "she": "她", "her": "她", "it": "它", "we": "们", "us": "们",
+            "they": "他", "them": "他", "you": "你", "what": "什", "when": "时",
+            "why": "为", "where": "哪", "which": "哪", "walk": "走", "in": "里",
+            "big": "大", "step": "步", "if": "如", "come": "来", "for": "给",
+            "do": "做", "have": "有", "with": "和", "want": "想", "any": "任",
+            "ask": "问", "window": "窗", "machine": "机", "connect": "连",
+            "local": "地", "about": "关", "think": "思", "please": "请",
+            "world": "界", "steno": "速", "code": "码", "computer": "脑",
+            "keyboard": "盘", "function": "功", "functionality": "功能",
+            "stand": "站", "take": "拿", "turn": "转", "form": "形",
+            "press": "按", "act": "动", "and": "和", "now": "现",
+            "right": "对", "the": "这", "time": "时", "timer": "计时器",
+            "to": "到", "wait": "等", "waiting": "等待", "actual": "实",
+            "actually": "实际", "forward": "前", "clear": "清",
+            "clearing": "清理", "cut": "切", "depend": "靠",
+            "depending": "依据", "box": "盒", "sandbox": "沙盒",
+            "table": "表", "type": "打字", "typing": "打字", "verb": "动词",
+            "verbs": "动词", "sand": "沙", "short": "短", "shortcut": "快捷键",
+            "simple": "简", "let": "让", "lets": "让", "up": "上",
+            "present": "现在", "make": "做", "only": "只", "other": "他",
+            "pop": "弹", "sentence": "句", "so": "所以", "it was": "曾经",
+            "we have": "我们有"
+        });
 
         // 51 Steno Vocabulary Visual System: Perfect Emojis & Expressive Graphics
         const WORD_VISUALS = {
@@ -2305,7 +2342,7 @@
 
             setEditorOutputMode(mode) {
                 this.editorOutputMode = mode;
-                ['words', 'svg', 'combo'].forEach(m => {
+                ['words', 'chinese', 'svg', 'combo'].forEach(m => {
                     const btn = document.getElementById(`editor-mode-${m}`);
                     if (btn) {
                         if (m === mode) {
@@ -2327,6 +2364,14 @@
                             el.innerHTML = `
                                 <span class="px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-700/80 font-mono font-bold text-sm md:text-base text-emerald-400 shadow mr-1.5 hover:border-emerald-500">
                                     ${word}
+                                </span>
+                            `;
+                        } else if (mode === 'chinese') {
+                            const chChar = ENGLISH_TO_CHINESE[word.toLowerCase()] || word;
+                            el.innerHTML = `
+                                <span class="px-2.5 py-1 rounded-xl bg-slate-900 border border-amber-500/50 font-sans font-black text-base md:text-lg text-amber-300 shadow mr-1.5 hover:border-amber-400 flex items-center gap-1.5" title="${word.toUpperCase()}">
+                                    <span>${chChar}</span>
+                                    <span class="text-[10px] text-slate-400 font-mono font-normal">(${word})</span>
                                 </span>
                             `;
                         } else if (mode === 'svg') {
@@ -2393,7 +2438,11 @@
                     if (el.id === 'editor-placeholder' || el.id === 'editor-caret') continue;
 
                     if (el.classList.contains('chord-item')) {
-                        const word = el.dataset.word || el.innerText.trim();
+                        let word = el.dataset.word || el.innerText.trim();
+                        if (this.editorOutputMode === 'chinese') {
+                            const ch = ENGLISH_TO_CHINESE[word.toLowerCase()];
+                            if (ch) word = ch;
+                        }
                         if (word) {
                             if (result.length > 0 && !/[\s\n]$/.test(result)) {
                                 result += ' ';
@@ -2822,6 +2871,14 @@
                     el.innerHTML = `
                         <span class="px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-700/80 font-mono font-bold text-sm md:text-base text-emerald-400 shadow mr-1.5 hover:border-emerald-500">
                             ${matchedWord}
+                        </span>
+                    `;
+                } else if (this.editorOutputMode === 'chinese') {
+                    const chChar = ENGLISH_TO_CHINESE[matchedWord.toLowerCase()] || matchedWord;
+                    el.innerHTML = `
+                        <span class="px-2.5 py-1 rounded-xl bg-slate-900 border border-amber-500/50 font-sans font-black text-base md:text-lg text-amber-300 shadow mr-1.5 hover:border-amber-400 flex items-center gap-1.5" title="${matchedWord.toUpperCase()}">
+                            <span>${chChar}</span>
+                            <span class="text-[10px] text-slate-400 font-mono font-normal">(${matchedWord})</span>
                         </span>
                     `;
                 } else if (this.editorOutputMode === 'svg') {
