@@ -400,18 +400,26 @@
                             <span class="text-xs font-extrabold uppercase tracking-wider text-slate-400">
                                 ✍️ Output Mode:
                             </span>
-                            <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 shadow-inner">
-                                <button onclick="app.setEditorOutputMode('words')" id="editor-mode-words" class="px-3 py-1.5 text-xs font-bold rounded-lg transition-all bg-indigo-600 text-white shadow">
-                                    📝 Words
+                            <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 shadow-inner items-center gap-1">
+                                <button onclick="app.setEditorOutputMode('words')" id="editor-mode-words" title="English Words Mode (Shortcut: Alt+1)" class="px-2.5 py-1.5 text-xs font-bold rounded-lg transition-all bg-indigo-600 text-white shadow flex items-center gap-1">
+                                    <span>📝 Words</span>
+                                    <span class="text-[10px] opacity-75 font-mono">Alt+1</span>
                                 </button>
-                                <button onclick="app.setEditorOutputMode('chinese')" id="editor-mode-chinese" class="px-3 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white" title="Type English chords and automatically output Chinese Characters (汉字)">
-                                    🈯 汉字 (Chinese)
+                                <button onclick="app.setEditorOutputMode('chinese')" id="editor-mode-chinese" title="Chinese Characters Mode (Shortcut: Alt+2)" class="px-2.5 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white flex items-center gap-1">
+                                    <span>🈯 汉字</span>
+                                    <span class="text-[10px] opacity-75 font-mono">Alt+2</span>
                                 </button>
-                                <button onclick="app.setEditorOutputMode('svg')" id="editor-mode-svg" class="px-3 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white">
-                                    🖼️ SVG Only
+                                <button onclick="app.setEditorOutputMode('svg')" id="editor-mode-svg" title="Graphics SVG Mode (Shortcut: Alt+3)" class="px-2.5 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white flex items-center gap-1">
+                                    <span>🖼️ SVG</span>
+                                    <span class="text-[10px] opacity-75 font-mono">Alt+3</span>
                                 </button>
-                                <button onclick="app.setEditorOutputMode('combo')" id="editor-mode-combo" class="px-3 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white">
-                                    🎨 Combo
+                                <button onclick="app.setEditorOutputMode('combo')" id="editor-mode-combo" title="Both Graphics & Words (Shortcut: Alt+4)" class="px-2.5 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white flex items-center gap-1">
+                                    <span>🎨 Combo</span>
+                                    <span class="text-[10px] opacity-75 font-mono">Alt+4</span>
+                                </button>
+                                <button onclick="app.cycleEditorOutputMode()" id="editor-mode-cycle" title="Cycle Output Mode (Shortcut: Alt+M)" class="px-2 py-1.5 text-xs font-bold rounded-lg transition-all text-indigo-400 hover:text-indigo-200 bg-slate-900 border border-slate-700 hover:border-indigo-500/50 shadow flex items-center gap-1">
+                                    <span>🔀</span>
+                                    <span class="text-[10px] font-mono">Alt+M</span>
                                 </button>
                             </div>
                         </div>
@@ -844,7 +852,27 @@
             { word: "t", chord: "1t", keys: "1t", note: "Single-letter rule (1 + t)" },
             { word: "triggers", chord: "girt", keys: "trig", note: "Clean 4-finger match (t-r-i-g)" },
             { word: "work", chord: "korw", keys: "work", note: "Clean 4-finger match (w-o-r-k)" },
-            { word: "works", chord: "korsw", keys: "works", note: "work + s (w-o-r-k-s)" }
+            { word: "works", chord: "korsw", keys: "works", note: "work + s (w-o-r-k-s)" },
+            // Additional Vocabulary Words (Clean, Ergonomic & Collision-Free)
+            { word: "answer", chord: "anrs", keys: "ansr", note: "Clean 4-finger match (a-n-s-r)" },
+            { word: "change", chord: "acghn", keys: "chang", note: "Clean 5-finger match (c-h-a-n-g)" },
+            { word: "click", chord: "1cil", keys: "1cli", note: "1 + c-l-i (click)" },
+            { word: "each", chord: "aeh", keys: "eah", note: "Clean 3-finger match (e-a-h)" },
+            { word: "exercise", chord: "erx", keys: "exr", note: "Clean 3-finger match (e-x-r)" },
+            { word: "exercises", chord: "1ersx", keys: "1exrs", note: "exercise + s" },
+            { word: "given", chord: "egin", keys: "gien", note: "Clean 4-finger match (g-i-e-n)" },
+            { word: "just", chord: "jst", keys: "jst", note: "Clean 3-finger match (j-s-t)" },
+            { word: "more", chord: "emor", keys: "more", note: "Clean 4-finger match (m-o-r-e)" },
+            { word: "next", chord: "entx", keys: "next", note: "Clean 4-finger match (n-e-x-t)" },
+            { word: "question", chord: "eqstu", keys: "quest", note: "Clean 5-finger match (q-u-e-s-t)" },
+            { word: "reading", chord: "adgr", keys: "radg", note: "read + ing (clean match)" },
+            { word: "say", chord: "asy", keys: "say", note: "Clean 3-finger match (s-a-y)" },
+            { word: "section", chord: "cnst", keys: "sctn", note: "Clean 4-finger match (s-c-t-n)" },
+            { word: "tenses", chord: "1enst", keys: "1tens", note: "1 + t-e-n-s (tenses)" },
+            { word: "text", chord: "etx", keys: "ext", note: "Clean 3-finger match (e-x-t)" },
+            { word: "used", chord: "dsu", keys: "usd", note: "Clean 3-finger match (u-s-d)" },
+            { word: "way", chord: "awy", keys: "way", note: "Clean 3-finger match (w-a-y)" },
+            { word: "will", chord: "ilw", keys: "wil", note: "Clean 3-finger match (w-i-l)" }
         ];
 
         // Map sorted chord to output word
@@ -873,7 +901,26 @@
             "special": "special ",
             "triggers": "triggers ",
             "work": "work ",
-            "works": "works "
+            "works": "works ",
+            "answer": "answer ",
+            "change": "change ",
+            "click": "click ",
+            "each": "each ",
+            "exercise": "exercise ",
+            "exercises": "exercises ",
+            "given": "given ",
+            "just": "just ",
+            "more": "more ",
+            "next": "next ",
+            "question": "question ",
+            "reading": "reading ",
+            "say": "say ",
+            "section": "section ",
+            "tenses": "tenses ",
+            "text": "text ",
+            "used": "used ",
+            "way": "way ",
+            "will": "will "
         });
 
         // Mirror mappings for alternating/bimanual key ergonomics:
@@ -1064,7 +1111,47 @@
             "字母t": "t",
             "触发器": "triggers", "触发": "triggers",
             "工作": "work",
-            "运转": "works", "作品": "works"
+            "运转": "works", "作品": "works",
+            "回答": "answer", "答案": "answer",
+            "改变": "change", "换": "change",
+            "点击": "click",
+            "每个": "each", "各自": "each",
+            "练习": "exercise", "运动": "exercise",
+            "给定": "given", "给予": "given",
+            "刚刚": "just", "仅仅": "just",
+            "更多": "more", "更": "more",
+            "下一个": "next", "其次": "next",
+            "问题": "question", "疑问": "question",
+            "阅读": "reading", "读": "reading",
+            "说": "say", "讲": "say",
+            "部分": "section", "小节": "section",
+            "时态": "tenses",
+            "文本": "text", "正文": "text",
+            "使用过的": "used", "用": "used",
+            "道路": "way", "方式": "way",
+            "将": "will", "意志": "will"
+        });
+
+        Object.assign(ENGLISH_TO_CHINESE, {
+            "answer": "回答",
+            "change": "改变",
+            "click": "点击",
+            "each": "每个",
+            "exercise": "练习",
+            "exercises": "练习",
+            "given": "给定",
+            "just": "刚刚",
+            "more": "更多",
+            "next": "下一个",
+            "question": "问题",
+            "reading": "阅读",
+            "say": "说",
+            "section": "部分",
+            "tenses": "时态",
+            "text": "文本",
+            "used": "使用过的",
+            "way": "方式",
+            "will": "将"
         });
 
         // Mirror into ENGLISH_TO_CHINESE
@@ -1561,7 +1648,26 @@
             "are": { emoji: "👥", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "ARE" },
             "is": { emoji: "🟢", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "IS" },
             "was": { emoji: "⏮️", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "WAS" },
-            "were": { emoji: "⏮️", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "WERE" }
+            "were": { emoji: "⏮️", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "WERE" },
+            "answer": { emoji: "💬", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "ANSWER" },
+            "change": { emoji: "🔄", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "CHANGE" },
+            "click": { emoji: "🖱️", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "CLICK" },
+            "each": { emoji: "🎯", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "EACH" },
+            "exercise": { emoji: "🏋️", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "EXERCISE" },
+            "exercises": { emoji: "🏋️", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "EXERCISES" },
+            "given": { emoji: "🎁", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "GIVEN" },
+            "just": { emoji: "⚖️", bg: "#eab308", glow: "rgba(234, 179, 8, 0.4)", label: "JUST" },
+            "more": { emoji: "➕", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "MORE" },
+            "next": { emoji: "⏭️", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "NEXT" },
+            "question": { emoji: "❓", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "QUESTION" },
+            "reading": { emoji: "📖", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "READING" },
+            "say": { emoji: "🗣️", bg: "#06b6d4", glow: "rgba(6, 182, 212, 0.4)", label: "SAY" },
+            "section": { emoji: "📑", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "SECTION" },
+            "tenses": { emoji: "⏳", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "TENSES" },
+            "text": { emoji: "📄", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "TEXT" },
+            "used": { emoji: "🛠️", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "USED" },
+            "way": { emoji: "🛤️", bg: "#d97706", glow: "rgba(217, 119, 6, 0.4)", label: "WAY" },
+            "will": { emoji: "🌟", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "WILL" }
         };
 
         // 2-Step Morpheme Tree Structure
@@ -4330,18 +4436,38 @@
                 return true;
             }
 
+            cycleEditorOutputMode() {
+                const modes = ['words', 'chinese', 'svg', 'combo'];
+                const idx = modes.indexOf(this.editorOutputMode);
+                const nextMode = modes[(idx + 1) % modes.length];
+                this.setEditorOutputMode(nextMode);
+            }
+
             setEditorOutputMode(mode) {
                 this.editorOutputMode = mode;
+                const modeLabels = {
+                    'words': 'English Words [ENG]',
+                    'chinese': 'Chinese Characters [中]',
+                    'svg': 'Graphics SVG [SVG]',
+                    'combo': 'Graphics & Words [COMBO]'
+                };
+
                 ['words', 'chinese', 'svg', 'combo'].forEach(m => {
                     const btn = document.getElementById(`editor-mode-${m}`);
                     if (btn) {
                         if (m === mode) {
-                            btn.className = "px-3 py-1.5 text-xs font-bold rounded-lg transition-all bg-indigo-600 text-white shadow";
+                            btn.className = "px-2.5 py-1.5 text-xs font-bold rounded-lg transition-all bg-indigo-600 text-white shadow flex items-center gap-1";
                         } else {
-                            btn.className = "px-3 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white";
+                            btn.className = "px-2.5 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white flex items-center gap-1";
                         }
                     }
                 });
+
+                const toast = document.getElementById('sandbox-toast');
+                if (toast && modeLabels[mode]) {
+                    toast.innerText = `🔀 [Output Mode] ${modeLabels[mode]} (Shortcut: Alt+M to cycle, or Alt+1/2/3/4)`;
+                    toast.className = "text-xs md:text-sm font-bold text-indigo-300 bg-indigo-500/20 border border-indigo-500/40 px-6 py-2 rounded-xl text-center shadow transition-all";
+                }
 
                 // Dynamically re-render existing chord elements to the selected mode
                 const editor = document.getElementById('sandbox-editor');
@@ -5494,6 +5620,21 @@
                     if (e.altKey && e.key.toLowerCase() === 'c' && this.mode === 'sandbox') {
                         e.preventDefault();
                         this.copyEnglishText();
+                        return;
+                    }
+
+                    // Mode Switch Shortcut: Alt+M or Ctrl+M (Cycle through modes: words -> chinese -> svg -> combo)
+                    if ((e.altKey || (e.ctrlKey && !e.shiftKey)) && e.key.toLowerCase() === 'm' && this.mode === 'sandbox') {
+                        e.preventDefault();
+                        this.cycleEditorOutputMode();
+                        return;
+                    }
+
+                    // Direct Mode Switch Shortcuts: Alt+1 (Words), Alt+2 (Chinese), Alt+3 (SVG), Alt+4 (Combo)
+                    if (e.altKey && ['1', '2', '3', '4'].includes(e.key) && this.mode === 'sandbox') {
+                        e.preventDefault();
+                        const modeMap = { '1': 'words', '2': 'chinese', '3': 'svg', '4': 'combo' };
+                        this.setEditorOutputMode(modeMap[e.key]);
                         return;
                     }
 
