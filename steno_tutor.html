@@ -810,13 +810,35 @@
             { word: "情况", chord: "24agknoqu", keys: "2qing+4kuang", pinyin: "qíngkuàng", english: "situation", note: "Compound: feeling + condition (situation)" },
             { word: "仅限", chord: "34aijnx", keys: "3jin+4xian", pinyin: "jǐnxiàn", english: "only", note: "Compound: only + limit (limited to)" },
             { word: "温良", chord: "12aegilnw", keys: "1wen+2liang", pinyin: "wēnliáng", english: "gentle and kind", note: "Compound: warm + good (gentle)" },
-            { word: "女士", chord: "134hinsu", keys: "3nu+14shi", pinyin: "nǚshì", english: "lady", note: "Compound: woman + scholar (lady/madam)" }
+            { word: "女士", chord: "134hinsu", keys: "3nu+14shi", pinyin: "nǚshì", english: "lady", note: "Compound: woman + scholar (lady/madam)" },
+            // Requested Vocabulary Chords (Clean & Ergonomic)
+            { word: "add", chord: "2ad", keys: "2ad", note: "Clean 3-finger match (2 + a + d)" },
+            { word: "all", chord: "2al", keys: "2al", note: "Clean 3-finger match (2 + a + l)" },
+            { word: "beginner", chord: "begin", keys: "begin", note: "Clean 5-finger match (b-e-g-i-n)" },
+            { word: "by", chord: "by", keys: "by", note: "Clean 2-finger match (Left Thumb B + Right Index Y)" },
+            { word: "characters", chord: "achrs", keys: "chars", note: "Clean 5-finger match (c-h-a-r-s)" },
+            { word: "chinese", chord: "chins", keys: "chins", note: "Clean 5-finger match (c-h-i-n-s)" },
+            { word: "here", chord: "ehr", keys: "her", note: "Clean 3-finger match (h-e-r)" },
+            { word: "not", chord: "not", keys: "not", note: "Clean 3-finger match (n-o-t)" },
+            { word: "see", chord: "1es", keys: "1se", note: "Clean 3-finger match (1 + s + e)" },
+            { word: "side", chord: "1dis", keys: "1sid", note: "Clean 4-finger match (1 + s + i + d)" },
+            { word: "teachers", chord: "aehst", keys: "teahs", note: "Clean 5-finger match (t-e-a-h-s)" },
+            { word: "try", chord: "ty", keys: "ty", note: "Clean 2-finger match (Left Index T + Right Index Y)" },
+            { word: "two", chord: "otw", keys: "two", note: "Clean 3-finger match (t-w-o)" }
         ];
 
         // Map sorted chord to output word
         const CHORD_MAP = {};
         STENO_DICTIONARY.forEach(item => {
             CHORD_MAP[item.chord] = item.word + " ";
+        });
+        // Ergonomic & Natural Typing Aliases
+        Object.assign(CHORD_MAP, {
+            "add": "add ",
+            "all": "all ",
+            "rty": "try ",
+            "achr": "character ",
+            "aehrt": "teacher "
         });
 
         // Mirror mappings for alternating/bimanual key ergonomics:
@@ -959,7 +981,37 @@
             "scholar": "士",
             "point": "指",
             "indicate": "指",
-            "place": "所"
+            "place": "所",
+            "add": "加",
+            "beginner": "初学者",
+            "by": "由",
+            "characters": "字符",
+            "character": "字",
+            "chinese": "中文",
+            "here": "这里",
+            "not": "不",
+            "see": "看",
+            "side": "边",
+            "teachers": "老师",
+            "teacher": "老师",
+            "try": "尝试",
+            "two": "二"
+        });
+
+        // Mirror new translations into CHINESE_TO_ENGLISH
+        Object.assign(CHINESE_TO_ENGLISH, {
+            "加": "add", "添加": "add",
+            "初学者": "beginner", "新手": "beginner",
+            "由": "by",
+            "字符": "characters",
+            "中文": "chinese", "汉语": "chinese",
+            "这里": "here", "此": "here",
+            "没": "not",
+            "看": "see", "见": "see",
+            "边": "side", "侧": "side",
+            "老师": "teachers", "教师": "teachers",
+            "尝试": "try",
+            "二": "two", "两个": "two"
         });
 
         const ALL_MORPHEME_TRANSLATIONS = {
@@ -1386,7 +1438,21 @@
             "point": { emoji: "👆", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "POINT" },
             "indicate": { emoji: "👆", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "INDICATE" },
             "place": { emoji: "🏠", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "PLACE" },
-            "all": { emoji: "🌐", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "ALL" }
+            "all": { emoji: "🌐", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "ALL" },
+            "add": { emoji: "➕", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "ADD" },
+            "beginner": { emoji: "🌱", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "BEGINNER" },
+            "by": { emoji: "📍", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "BY" },
+            "characters": { emoji: "🔤", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "CHARACTERS" },
+            "character": { emoji: "🔤", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "CHARACTER" },
+            "chinese": { emoji: "🇨🇳", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "CHINESE" },
+            "here": { emoji: "📍", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "HERE" },
+            "not": { emoji: "🚫", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "NOT" },
+            "see": { emoji: "👀", bg: "#38bdf8", glow: "rgba(56, 189, 248, 0.4)", label: "SEE" },
+            "side": { emoji: "📐", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "SIDE" },
+            "teachers": { emoji: "🧑‍🏫", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "TEACHERS" },
+            "teacher": { emoji: "🧑‍🏫", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "TEACHER" },
+            "try": { emoji: "🎯", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "TRY" },
+            "two": { emoji: "✌️", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "TWO" }
         };
 
         // 2-Step Morpheme Tree Structure
