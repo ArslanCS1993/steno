@@ -2369,9 +2369,8 @@
                         } else if (mode === 'chinese') {
                             const chChar = ENGLISH_TO_CHINESE[word.toLowerCase()] || word;
                             el.innerHTML = `
-                                <span class="px-2.5 py-1 rounded-xl bg-slate-900 border border-amber-500/50 font-sans font-black text-base md:text-lg text-amber-300 shadow mr-1.5 hover:border-amber-400 flex items-center gap-1.5" title="${word.toUpperCase()}">
-                                    <span>${chChar}</span>
-                                    <span class="text-[10px] text-slate-400 font-mono font-normal">(${word})</span>
+                                <span class="px-3 py-1 rounded-xl bg-slate-900 border border-amber-500/50 font-sans font-black text-lg md:text-xl text-amber-300 shadow mr-1.5 hover:border-amber-400 select-none cursor-default" title="${word.toUpperCase()}">
+                                    ${chChar}
                                 </span>
                             `;
                         } else if (mode === 'svg') {
@@ -2438,11 +2437,7 @@
                     if (el.id === 'editor-placeholder' || el.id === 'editor-caret') continue;
 
                     if (el.classList.contains('chord-item')) {
-                        let word = el.dataset.word || el.innerText.trim();
-                        if (this.editorOutputMode === 'chinese') {
-                            const ch = ENGLISH_TO_CHINESE[word.toLowerCase()];
-                            if (ch) word = ch;
-                        }
+                        const word = el.dataset.word || el.innerText.trim();
                         if (word) {
                             if (result.length > 0 && !/[\s\n]$/.test(result)) {
                                 result += ' ';
@@ -2876,9 +2871,8 @@
                 } else if (this.editorOutputMode === 'chinese') {
                     const chChar = ENGLISH_TO_CHINESE[matchedWord.toLowerCase()] || matchedWord;
                     el.innerHTML = `
-                        <span class="px-2.5 py-1 rounded-xl bg-slate-900 border border-amber-500/50 font-sans font-black text-base md:text-lg text-amber-300 shadow mr-1.5 hover:border-amber-400 flex items-center gap-1.5" title="${matchedWord.toUpperCase()}">
-                            <span>${chChar}</span>
-                            <span class="text-[10px] text-slate-400 font-mono font-normal">(${matchedWord})</span>
+                        <span class="px-3 py-1 rounded-xl bg-slate-900 border border-amber-500/50 font-sans font-black text-lg md:text-xl text-amber-300 shadow mr-1.5 hover:border-amber-400 select-none cursor-default" title="${matchedWord.toUpperCase()}">
+                            ${chChar}
                         </span>
                     `;
                 } else if (this.editorOutputMode === 'svg') {
