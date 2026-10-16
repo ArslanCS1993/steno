@@ -424,6 +424,9 @@
                             <button onclick="app.clearEditor()" class="text-xs text-slate-400 hover:text-rose-400 font-semibold px-3 py-1.5 bg-slate-950 rounded-xl border border-slate-800 hover:border-rose-500/50 transition-all active:scale-95 shadow" title="Clear typing box">
                                 🗑️ Clear
                             </button>
+                            <button id="editor-missing-btn" onclick="app.toggleMissingWordsModal()" class="text-xs text-amber-400 hover:text-amber-300 font-semibold px-3 py-1.5 bg-amber-500/10 rounded-xl border border-amber-500/30 hover:border-amber-400 transition-all flex items-center gap-1.5 active:scale-95 shadow" title="View & Export unmapped/missing words collected from copy/paste">
+                                📊 Unmapped <span id="unmapped-count-badge" class="px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-400/20 text-amber-300">0</span>
+                            </button>
                         </div>
                     </div>
 
@@ -496,6 +499,55 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4" id="scheme-guide-cards">
                 <!-- Dynamically generated scheme cards -->
+            </div>
+        </div>
+
+        <!-- Unmapped / Missing Words Modal Dialog -->
+        <div id="unmapped-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+            <div class="bg-slate-900 border border-slate-700/80 rounded-3xl max-w-xl w-full p-6 shadow-2xl space-y-4">
+                <!-- Modal Header -->
+                <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <div class="flex items-center gap-2.5">
+                        <span class="text-2xl">📊</span>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="text-lg font-bold text-white">Unmapped Words Tracker</h3>
+                                <span id="unmapped-modal-count" class="px-2 py-0.5 rounded-full text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">0 words</span>
+                            </div>
+                            <p class="text-xs text-slate-400">Captured automatically when copying or pasting in the Sandbox.</p>
+                        </div>
+                    </div>
+                    <button onclick="app.toggleMissingWordsModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center font-bold text-sm transition-colors">✕</button>
+                </div>
+
+                <!-- Modal Content / Description -->
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    These words were typed, copied, or pasted in the Sandbox but do not currently have a steno chord in the dictionary. You can copy the list or export JSON to create chords for them.
+                </p>
+
+                <!-- Text Area of Missing Words -->
+                <div class="space-y-1">
+                    <div class="flex items-center justify-between text-[11px] text-slate-500 font-mono px-1">
+                        <span>MISSING WORDS LIST (ONE PER LINE)</span>
+                        <span>AUTOMATICALLY DEDUPLICATED</span>
+                    </div>
+                    <textarea id="unmapped-words-textarea" readonly class="w-full h-52 bg-slate-950 border border-slate-800 rounded-xl p-3 font-mono text-xs text-amber-300 select-all resize-none focus:outline-none focus:border-amber-500/50 shadow-inner" placeholder="No unmapped words captured yet. Copy or paste text with unmapped words in the Sandbox to collect them here!"></textarea>
+                </div>
+
+                <!-- Modal Action Buttons -->
+                <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-800/80">
+                    <button onclick="app.clearMissingWords()" class="px-3 py-1.5 rounded-xl bg-slate-950 hover:bg-rose-950/40 text-slate-400 hover:text-rose-400 border border-slate-800 hover:border-rose-800/60 text-xs font-semibold transition-all flex items-center gap-1.5 active:scale-95">
+                        🗑️ Clear List
+                    </button>
+                    <div class="flex items-center gap-2">
+                        <button onclick="app.copyMissingWordsList()" class="px-3.5 py-1.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:border-amber-400 text-xs font-semibold transition-all flex items-center gap-1.5 active:scale-95 shadow">
+                            📋 Copy List
+                        </button>
+                        <button onclick="app.downloadMissingWordsJson()" class="px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition-all flex items-center gap-1.5 active:scale-95 shadow-lg shadow-indigo-600/30">
+                            💾 Download JSON
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -621,15 +673,63 @@
             { word: "form", chord: "fmo", keys: "fom", note: "r skipped (conflict on Left Index)" },
             { word: "press", chord: "eprs", keys: "pres", note: "s duplicate skipped" },
             { word: "act", chord: "act", keys: "act", note: "Clean 3-finger match" },
-            // Chinese Pinyin Chords
+            // Chinese Pinyin Chords (Corresponding to English Vocabulary)
             { word: "这", chord: "4ehz", keys: "4zhe", pinyin: "zhè", english: "this", note: "Tone 4 + zhe (zhè - this)" },
             { word: "是", chord: "4his", keys: "4shi", pinyin: "shì", english: "is/be", note: "Tone 4 + shi (shì - is/be)" },
-            { word: "他", chord: "1at", keys: "1ta", pinyin: "tā", english: "he/him", note: "Tone 1 + ta (tā - he/him)" },
-            { word: "拿", chord: "2an", keys: "2na", pinyin: "ná", english: "take", note: "Tone 2 + na (ná - take)" },
-            { word: "狗", chord: "3gou", keys: "3gou", pinyin: "gǒu", english: "dog", note: "Tone 3 + gou (gǒu - dog)" },
-            { word: "大", chord: "4ad", keys: "4da", pinyin: "dà", english: "big", note: "Tone 4 + da (dà - big)" },
-            { word: "书", chord: "1hsu", keys: "1shu", pinyin: "shū", english: "book", note: "Tone 1 + shu (shū - book)" },
-            { word: "爱", chord: "4ai", keys: "4ai", pinyin: "ài", english: "love", note: "Tone 4 + ai (ài - love, mirror: 7;i)" }
+            { word: "爱", chord: "4ai", keys: "4ai", pinyin: "ài", english: "love", note: "Tone 4 + ai (ài - love, mirror: 7;i)" },
+            { word: "能", chord: "2egn", keys: "2neng", pinyin: "néng", english: "can", note: "Tone 2 + neng (can)" },
+            { word: "狗", chord: "3gou", keys: "3gou", pinyin: "gǒu", english: "dog", note: "Tone 3 + gou (dog)" },
+            { word: "快", chord: "4aiku", keys: "4kuai", pinyin: "kuài", english: "fast", note: "Tone 4 + kuai (fast)" },
+            { word: "书", chord: "1hsu", keys: "1shu", pinyin: "shū", english: "book", note: "Tone 1 + shu (book)" },
+            { word: "档", chord: "3adgn", keys: "3dang", pinyin: "dǎng", english: "file", note: "Tone 3 + dang (file)" },
+            { word: "命", chord: "4gimn", keys: "4ming", pinyin: "mìng", english: "life", note: "Tone 4 + ming (life)" },
+            { word: "上", chord: "4aghns", keys: "4shang", pinyin: "shàng", english: "on", note: "Tone 4 + shang (on)" },
+            { word: "不", chord: "4bu", keys: "4bu", pinyin: "bù", english: "no", note: "Tone 4 + bu (no)" },
+            { word: "怎", chord: "3enz", keys: "3zen", pinyin: "zěn", english: "how", note: "Tone 3 + zen (how)" },
+            { word: "谁", chord: "2ehis", keys: "2shei", pinyin: "shéi", english: "who", note: "Tone 2 + shei (who)" },
+            { word: "我", chord: "3ow", keys: "3wo", pinyin: "wǒ", english: "i", note: "Tone 3 + wo (I/me)" },
+            { word: "他", chord: "1at", keys: "1ta", pinyin: "tā", english: "he", note: "Tone 1 + ta (he/him)" },
+            { word: "她", chord: "2at", keys: "2ta", pinyin: "tā", english: "she", note: "Tone 2 + ta (she/her)" },
+            { word: "它", chord: "3at", keys: "3ta", pinyin: "tā", english: "it", note: "Tone 3 + ta (it)" },
+            { word: "们", chord: "2emn", keys: "2men", pinyin: "men", english: "we", note: "Tone 2 + men (plural/we)" },
+            { word: "你", chord: "3in", keys: "3ni", pinyin: "nǐ", english: "you", note: "Tone 3 + ni (you)" },
+            { word: "什", chord: "2ehns", keys: "2shen", pinyin: "shén", english: "what", note: "Tone 2 + shen (what)" },
+            { word: "时", chord: "2his", keys: "2shi", pinyin: "shí", english: "when", note: "Tone 2 + shi (time/when)" },
+            { word: "为", chord: "4eiw", keys: "4wei", pinyin: "wèi", english: "why", note: "Tone 4 + wei (why/for)" },
+            { word: "哪", chord: "3an", keys: "3na", pinyin: "nǎ", english: "where", note: "Tone 3 + na (where/which)" },
+            { word: "走", chord: "3ouz", keys: "3zou", pinyin: "zǒu", english: "walk", note: "Tone 3 + zou (walk)" },
+            { word: "里", chord: "3il", keys: "3li", pinyin: "lǐ", english: "in", note: "Tone 3 + li (inside/in)" },
+            { word: "大", chord: "4ad", keys: "4da", pinyin: "dà", english: "big", note: "Tone 4 + da (big)" },
+            { word: "步", chord: "24bu", keys: "24bu", pinyin: "bù", english: "step", note: "Tone 4 + bu2 (step/pace)" },
+            { word: "如", chord: "2ru", keys: "2ru", pinyin: "rú", english: "if", note: "Tone 2 + ru (if/as)" },
+            { word: "来", chord: "2ail", keys: "2lai", pinyin: "lái", english: "come", note: "Tone 2 + lai (come)" },
+            { word: "给", chord: "3egi", keys: "3gei", pinyin: "gěi", english: "for", note: "Tone 3 + gei (give/for)" },
+            { word: "做", chord: "4ouz", keys: "4zuo", pinyin: "zuò", english: "do", note: "Tone 4 + zuo (do/make)" },
+            { word: "有", chord: "3ouy", keys: "3you", pinyin: "yǒu", english: "have", note: "Tone 3 + you (have)" },
+            { word: "和", chord: "2eh", keys: "2he", pinyin: "hé", english: "with", note: "Tone 2 + he (with/and)" },
+            { word: "想", chord: "3aginx", keys: "3xiang", pinyin: "xiǎng", english: "want", note: "Tone 3 + xiang (want/think)" },
+            { word: "任", chord: "4enr", keys: "4ren", pinyin: "rèn", english: "any", note: "Tone 4 + ren (any)" },
+            { word: "问", chord: "4enw", keys: "4wen", pinyin: "wèn", english: "ask", note: "Tone 4 + wen (ask)" },
+            { word: "窗", chord: "1acghnu", keys: "1chuang", pinyin: "chuāng", english: "window", note: "Tone 1 + chuang (window)" },
+            { word: "那", chord: "14an", keys: "14na", pinyin: "nà", english: "that", note: "Tone 4 + na1 (that)" },
+            { word: "机", chord: "1ij", keys: "1ji", pinyin: "jī", english: "machine", note: "Tone 1 + ji (machine)" },
+            { word: "连", chord: "2ailn", keys: "2lian", pinyin: "lián", english: "connect", note: "Tone 2 + lian (connect/link)" },
+            { word: "地", chord: "4di", keys: "4di", pinyin: "dì", english: "local", note: "Tone 4 + di (local/place)" },
+            { word: "关", chord: "1agnu", keys: "1guan", pinyin: "guān", english: "about", note: "Tone 1 + guan (about/concern)" },
+            { word: "思", chord: "1is", keys: "1si", pinyin: "sī", english: "think", note: "Tone 1 + si (think)" },
+            { word: "请", chord: "3ginq", keys: "3qing", pinyin: "qǐng", english: "please", note: "Tone 3 + qing (please)" },
+            { word: "界", chord: "4eij", keys: "4jie", pinyin: "jiè", english: "world", note: "Tone 4 + jie (world)" },
+            { word: "速", chord: "4su", keys: "4su", pinyin: "sù", english: "steno", note: "Tone 4 + su (speed/steno)" },
+            { word: "码", chord: "3am", keys: "3ma", pinyin: "mǎ", english: "code", note: "Tone 3 + ma (code)" },
+            { word: "脑", chord: "3ano", keys: "3nao", pinyin: "nǎo", english: "computer", note: "Tone 3 + nao (brain/computer)" },
+            { word: "盘", chord: "2anp", keys: "2pan", pinyin: "pán", english: "keyboard", note: "Tone 2 + pan (keyboard/disc)" },
+            { word: "功", chord: "1gno", keys: "1gong", pinyin: "gōng", english: "function", note: "Tone 1 + gong (function)" },
+            { word: "站", chord: "4ahnz", keys: "4zhan", pinyin: "zhàn", english: "stand", note: "Tone 4 + zhan (stand)" },
+            { word: "拿", chord: "2an", keys: "2na", pinyin: "ná", english: "take", note: "Tone 2 + na (take)" },
+            { word: "转", chord: "3ahnuz", keys: "3zhuan", pinyin: "zhuǎn", english: "turn", note: "Tone 3 + zhuan (turn)" },
+            { word: "形", chord: "2ginpx", keys: "2xing", pinyin: "xíng", english: "form", note: "Tone 2 + xing (form/shape)" },
+            { word: "按", chord: "4an", keys: "4an", pinyin: "àn", english: "press", note: "Tone 4 + an (press)" },
+            { word: "动", chord: "4dgnos", keys: "4dong", pinyin: "dòng", english: "act", note: "Tone 4 + dong (act/action)" }
         ];
 
         // Map sorted chord to output word
@@ -655,6 +755,21 @@
                 .sort()
                 .join('');
         }
+
+        // Bilingual Mapping connecting Chinese Characters to English Vocabulary
+        const CHINESE_TO_ENGLISH = {
+            "能": "can", "狗": "dog", "快": "fast", "书": "book", "档": "file",
+            "命": "life", "上": "on", "不": "no", "怎": "how", "谁": "who",
+            "我": "i", "他": "he", "她": "she", "它": "it", "们": "we",
+            "你": "you", "什": "what", "时": "when", "为": "why", "哪": "where",
+            "走": "walk", "里": "in", "大": "big", "步": "step", "如": "if",
+            "来": "come", "给": "for", "做": "do", "有": "have", "和": "with",
+            "想": "want", "任": "any", "问": "ask", "窗": "window", "那": "that",
+            "机": "machine", "连": "connect", "地": "local", "关": "about", "思": "think",
+            "请": "please", "界": "world", "速": "steno", "码": "code", "脑": "computer",
+            "盘": "keyboard", "功": "function", "站": "stand", "拿": "take", "转": "turn",
+            "形": "form", "按": "press", "动": "act", "这": "that", "是": "act", "爱": "life"
+        };
 
         // 51 Steno Vocabulary Visual System: Perfect Emojis & Expressive Graphics
         const WORD_VISUALS = {
@@ -927,6 +1042,52 @@
                     "eint": { morpheme: "inter-", chord: "eint", word: "interact", emoji: "🗣️", note: "Act reciprocally" },
                     "anst": { morpheme: "trans-", chord: "anst", word: "transact", emoji: "💳", note: "Conduct business" },
                     "en": { morpheme: "en-", chord: "en", word: "enact", emoji: "📜", note: "Put into law or practice" }
+                }
+            },
+            // Chinese Morpheme Trees
+            "4ad": {
+                lemma: "大",
+                chord: "4ad",
+                emoji: "大",
+                note: "Big / Grand (dà)",
+                derivatives: {
+                    "2nr": { morpheme: "人", chord: "2nr", word: "大人", emoji: "🧑", note: "Adult (dàrén)" },
+                    "1aij": { morpheme: "家", chord: "1aij", word: "大家", emoji: "👥", note: "Everyone (dàjiā)" },
+                    "4eux": { morpheme: "学", chord: "4eux", word: "大学", emoji: "🎓", note: "University (dàxué)" },
+                    "4aiox": { morpheme: "小", chord: "4aiox", word: "大小", emoji: "📏", note: "Size (dàxiǎo)" }
+                }
+            },
+            "2an": {
+                lemma: "拿",
+                chord: "2an",
+                emoji: "拿",
+                note: "Hold / Take (ná)",
+                derivatives: {
+                    "1chu": { morpheme: "出", chord: "1chu", word: "拿出", emoji: "📤", note: "Take out (náchū)" },
+                    "4aix": { morpheme: "下", chord: "4aix", word: "拿下", emoji: "🎯", note: "Capture / win (náxià)" },
+                    "3iq": { morpheme: "起", chord: "3iq", word: "拿起", emoji: "🫳", note: "Pick up (náqǐ)" }
+                }
+            },
+            "4adin": {
+                lemma: "电",
+                chord: "4adin",
+                emoji: "电",
+                note: "Electric (diàn)",
+                derivatives: {
+                    "4ahu": { morpheme: "话", chord: "4ahu", word: "电话", emoji: "☎️", note: "Telephone (diànhuà)" },
+                    "3ano": { morpheme: "脑", chord: "3ano", word: "电脑", emoji: "💻", note: "Computer (diànnǎo)" },
+                    "4his": { morpheme: "视", chord: "4his", word: "电视", emoji: "📺", note: "Television (diànshì)" }
+                }
+            },
+            "1ehns": {
+                lemma: "生",
+                chord: "1ehns",
+                emoji: "生",
+                note: "Life / Birth (shēng)",
+                derivatives: {
+                    "1ir": { morpheme: "日", chord: "1ir", word: "生日", emoji: "🎂", note: "Birthday (shēngrì)" },
+                    "4gimn": { morpheme: "命", chord: "4gimn", word: "生命", emoji: "💖", note: "Life / destiny (shēngmìng)" },
+                    "4acn": { morpheme: "产", chord: "4acn", word: "生产", emoji: "🏭", note: "Produce (shēngchǎn)" }
                 }
             }
         };
@@ -1769,6 +1930,10 @@
                 this.score = 0;
                 this.streak = 0;
 
+                // Missing / Unmapped Words tracking
+                this.missingWords = new Set();
+                this.loadMissingWords();
+
                 this.init();
             }
 
@@ -1920,6 +2085,183 @@
                 this.updateCaret();
             }
 
+            // ==========================================
+            // UNMAPPED / MISSING WORDS TRACKER
+            // ==========================================
+            getKnownWordsSet() {
+                const known = new Set();
+                // 1. All words in STENO_DICTIONARY
+                if (Array.isArray(this.dictionary)) {
+                    for (const d of this.dictionary) {
+                        if (d.word) known.add(d.word.toLowerCase().trim());
+                    }
+                }
+                // 2. All grammar inflections
+                if (typeof GRAMMAR_DATA !== 'undefined') {
+                    for (const [lemma, forms] of Object.entries(GRAMMAR_DATA)) {
+                        known.add(lemma.toLowerCase().trim());
+                        if (Array.isArray(forms)) {
+                            for (const f of forms) {
+                                if (f.form) known.add(f.form.toLowerCase().trim());
+                            }
+                        }
+                    }
+                }
+                if (typeof INFLECTION_TO_LEMMA !== 'undefined') {
+                    for (const f of Object.keys(INFLECTION_TO_LEMMA)) {
+                        known.add(f.toLowerCase().trim());
+                    }
+                }
+                // 3. All morpheme roots & derivatives
+                if (typeof MORPHEME_ROOTS_TREE !== 'undefined') {
+                    for (const [chord, root] of Object.entries(MORPHEME_ROOTS_TREE)) {
+                        if (root.lemma) known.add(root.lemma.toLowerCase().trim());
+                        if (root.word) known.add(root.word.toLowerCase().trim());
+                        if (root.derivatives) {
+                            for (const [subChord, deriv] of Object.entries(root.derivatives)) {
+                                if (deriv.word) known.add(deriv.word.toLowerCase().trim());
+                            }
+                        }
+                    }
+                }
+                return known;
+            }
+
+            loadMissingWords() {
+                try {
+                    const saved = localStorage.getItem('steno_missing_words');
+                    if (saved) {
+                        const arr = JSON.parse(saved);
+                        if (Array.isArray(arr)) {
+                            this.missingWords = new Set(arr);
+                        }
+                    }
+                } catch (e) {
+                    console.warn('Failed to load missing words from localStorage', e);
+                }
+                this.updateMissingWordsUI();
+            }
+
+            saveMissingWords() {
+                try {
+                    localStorage.setItem('steno_missing_words', JSON.stringify(Array.from(this.missingWords)));
+                } catch (e) {
+                    console.warn('Failed to save missing words to localStorage', e);
+                }
+            }
+
+            scanForMissingWords(text) {
+                if (!text || typeof text !== 'string') return;
+                const known = this.getKnownWordsSet();
+                // Extract English words and Chinese words/characters
+                const tokens = text.match(/[\u4e00-\u9fa5]+|[a-zA-Z]+(?:'[a-zA-Z]+)?/g) || [];
+                let addedCount = 0;
+                for (let token of tokens) {
+                    token = token.trim();
+                    if (!token) continue;
+                    const lower = token.toLowerCase();
+
+                    // If Chinese sequence:
+                    if (/[\u4e00-\u9fa5]+/.test(token)) {
+                        if (!known.has(token) && !known.has(lower)) {
+                            if (!this.missingWords.has(token)) {
+                                this.missingWords.add(token);
+                                addedCount++;
+                            }
+                        }
+                    } else {
+                        // English word:
+                        if (!known.has(lower)) {
+                            if (!this.missingWords.has(lower)) {
+                                this.missingWords.add(lower);
+                                addedCount++;
+                            }
+                        }
+                    }
+                }
+                if (addedCount > 0) {
+                    this.saveMissingWords();
+                    this.updateMissingWordsUI();
+                }
+            }
+
+            updateMissingWordsUI() {
+                const count = this.missingWords ? this.missingWords.size : 0;
+                const badge = document.getElementById('unmapped-count-badge');
+                if (badge) {
+                    badge.innerText = count;
+                    if (count > 0) {
+                        badge.className = 'px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-400 text-slate-950';
+                    } else {
+                        badge.className = 'px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-400/20 text-amber-300';
+                    }
+                }
+                const modalBadge = document.getElementById('unmapped-modal-count');
+                if (modalBadge) {
+                    modalBadge.innerText = `${count} word${count === 1 ? '' : 's'}`;
+                }
+                const ta = document.getElementById('unmapped-words-textarea');
+                if (ta) {
+                    const sorted = Array.from(this.missingWords).sort();
+                    ta.value = sorted.join('\n');
+                }
+            }
+
+            toggleMissingWordsModal() {
+                const modal = document.getElementById('unmapped-modal');
+                if (!modal) return;
+                const isHidden = modal.classList.contains('hidden');
+                if (isHidden) {
+                    this.updateMissingWordsUI();
+                    modal.classList.remove('hidden');
+                } else {
+                    modal.classList.add('hidden');
+                }
+            }
+
+            async copyMissingWordsList() {
+                const sorted = Array.from(this.missingWords).sort();
+                if (sorted.length === 0) return;
+                const text = sorted.join('\n');
+                try {
+                    await navigator.clipboard.writeText(text);
+                    const toast = document.getElementById('sandbox-toast');
+                    if (toast) {
+                        toast.innerText = `📋 Copied ${sorted.length} unmapped words to clipboard!`;
+                        toast.className = "text-xs md:text-sm font-bold text-amber-300 bg-amber-500/20 border border-amber-500/40 px-6 py-2 rounded-xl text-center shadow";
+                    }
+                } catch (err) {
+                    console.error('Clipboard copy error:', err);
+                }
+            }
+
+            downloadMissingWordsJson() {
+                const sorted = Array.from(this.missingWords).sort();
+                const data = {
+                    exported_at: new Date().toISOString(),
+                    total_missing: sorted.length,
+                    missing_words: sorted
+                };
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `steno_missing_words_${Date.now()}.json`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+
+            clearMissingWords() {
+                if (this.missingWords.size === 0) return;
+                if (confirm("Are you sure you want to clear the list of unmapped words?")) {
+                    this.missingWords.clear();
+                    this.saveMissingWords();
+                    this.updateMissingWordsUI();
+                }
+            }
+
             async copyEditorText() {
                 const text = this.getEditorText();
                 const toast = document.getElementById('sandbox-toast');
@@ -1931,6 +2273,9 @@
                     }
                     return;
                 }
+
+                // Scan and collect unmapped words on copy
+                this.scanForMissingWords(text);
 
                 try {
                     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -1996,6 +2341,9 @@
 
             insertPastedText(text) {
                 if (this.mode !== 'sandbox' || !text) return;
+
+                // Scan and collect unmapped words on paste
+                this.scanForMissingWords(text);
 
                 // Split text into word tokens and whitespace tokens
                 const tokens = text.match(/\S+|\s+/g) || [text];
@@ -2334,7 +2682,19 @@
             getWordVisual(word) {
                 if (!word) return { emoji: "✨", bg: "#6366f1", glow: "rgba(99,102,241,0.4)", label: "" };
                 const lower = word.toLowerCase().trim();
+                if (WORD_VISUALS[word]) return WORD_VISUALS[word];
                 if (WORD_VISUALS[lower]) return WORD_VISUALS[lower];
+
+                // Inherit SVG and styling from English counterpart for Chinese characters
+                const engEquiv = CHINESE_TO_ENGLISH[word] || CHINESE_TO_ENGLISH[lower];
+                if (engEquiv && WORD_VISUALS[engEquiv]) {
+                    const baseVis = WORD_VISUALS[engEquiv];
+                    return {
+                        ...baseVis,
+                        label: `${word} (${baseVis.label || engEquiv.toUpperCase()})`
+                    };
+                }
+
                 const lemma = INFLECTION_TO_LEMMA[lower];
                 if (lemma && WORD_VISUALS[lemma]) return WORD_VISUALS[lemma];
                 return { emoji: "✨", bg: "#6366f1", glow: "rgba(99,102,241,0.4)", label: word.toUpperCase() };
@@ -3031,10 +3391,13 @@
                     const toast = document.getElementById('sandbox-toast');
 
                     // STEP 2 CHECK: Is there an active root armed, and did this chord match one of its derivatives?
-                    if (this.activeRoot && this.activeRoot.derivatives && this.activeRoot.derivatives[combo]) {
+                    const activeDeriv = (this.activeRoot && this.activeRoot.derivatives) ? 
+                        (this.activeRoot.derivatives[combo] || this.activeRoot.derivatives[resolvedChord]) : null;
+
+                    if (activeDeriv) {
                         sound.playSuccess();
                         this.eraseStrokeChars(strokeCount);
-                        const deriv = this.activeRoot.derivatives[combo];
+                        const deriv = activeDeriv;
                         const prevRootLemma = this.activeRoot.lemma;
                         
                         // Replace previous root output in editor with new derived compound word
@@ -3093,8 +3456,8 @@
                                 this.activeRoot = null;
                                 this.renderMorphemeTree();
                             }
-                        } else if (this.rootsTree[combo]) {
-                            this.activeRoot = this.rootsTree[combo];
+                        } else if (this.rootsTree[combo] || this.rootsTree[resolvedChord]) {
+                            this.activeRoot = this.rootsTree[combo] || this.rootsTree[resolvedChord];
                             toast.innerText = `🌳 [Root Armed: ${matchedWord.toUpperCase()}] Ready for Step 2 Morpheme! (Or tap Space to commit as separate word)`;
                             toast.className = "text-xs md:text-sm font-bold text-amber-300 bg-amber-500/20 border border-amber-500/40 px-6 py-2 rounded-xl text-center animate-pulse";
                             

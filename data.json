@@ -412,6 +412,129 @@
           "note": "Put into law or practice"
         }
       }
+    },
+    "4ad": {
+      "lemma": "大",
+      "chord": "4ad",
+      "emoji": "大",
+      "note": "Big / grand (dà)",
+      "derivatives": {
+        "2nr": {
+          "morpheme": "人",
+          "chord": "2nr",
+          "word": "大人",
+          "emoji": "🧑",
+          "note": "Adult (dàrén)"
+        },
+        "1aij": {
+          "morpheme": "家",
+          "chord": "1aij",
+          "word": "大家",
+          "emoji": "👥",
+          "note": "Everyone (dàjiā)"
+        },
+        "4eux": {
+          "morpheme": "学",
+          "chord": "4eux",
+          "word": "大学",
+          "emoji": "🎓",
+          "note": "University (dàxué)"
+        },
+        "4aiox": {
+          "morpheme": "小",
+          "chord": "4aiox",
+          "word": "大小",
+          "emoji": "📏",
+          "note": "Size (dàxiǎo)"
+        }
+      }
+    },
+    "2an": {
+      "lemma": "拿",
+      "chord": "2an",
+      "emoji": "拿",
+      "note": "Hold / take (ná)",
+      "derivatives": {
+        "1chu": {
+          "morpheme": "出",
+          "chord": "1chu",
+          "word": "拿出",
+          "emoji": "📤",
+          "note": "Take out (náchū)"
+        },
+        "4aix": {
+          "morpheme": "下",
+          "chord": "4aix",
+          "word": "拿下",
+          "emoji": "🎯",
+          "note": "Capture / win (náxià)"
+        },
+        "3iq": {
+          "morpheme": "起",
+          "chord": "3iq",
+          "word": "拿起",
+          "emoji": "🫳",
+          "note": "Pick up (náqǐ)"
+        }
+      }
+    },
+    "4adin": {
+      "lemma": "电",
+      "chord": "4adin",
+      "emoji": "电",
+      "note": "Electric (diàn)",
+      "derivatives": {
+        "4ahu": {
+          "morpheme": "话",
+          "chord": "4ahu",
+          "word": "电话",
+          "emoji": "☎️",
+          "note": "Telephone (diànhuà)"
+        },
+        "3ano": {
+          "morpheme": "脑",
+          "chord": "3ano",
+          "word": "电脑",
+          "emoji": "💻",
+          "note": "Computer (diànnǎo)"
+        },
+        "4his": {
+          "morpheme": "视",
+          "chord": "4his",
+          "word": "电视",
+          "emoji": "📺",
+          "note": "Television (diànshì)"
+        }
+      }
+    },
+    "1ehns": {
+      "lemma": "生",
+      "chord": "1ehns",
+      "emoji": "生",
+      "note": "Life / birth (shēng)",
+      "derivatives": {
+        "1ir": {
+          "morpheme": "日",
+          "chord": "1ir",
+          "word": "生日",
+          "emoji": "🎂",
+          "note": "Birthday (shēngrì)"
+        },
+        "4gimn": {
+          "morpheme": "命",
+          "chord": "4gimn",
+          "word": "生命",
+          "emoji": "💖",
+          "note": "Life / destiny (shēngmìng)"
+        },
+        "4acn": {
+          "morpheme": "产",
+          "chord": "4acn",
+          "word": "生产",
+          "emoji": "🏭",
+          "note": "Produce (shēngchǎn)"
+        }
+      }
     }
   },
   "flat_chords": {
@@ -479,7 +602,55 @@
     "3gou": "狗 ",
     "4ad": "大 ",
     "1hsu": "书 ",
-    "4ai": "爱 "
+    "4ai": "爱 ",
+    "2egn": "能 ",
+    "4aiku": "快 ",
+    "3adgn": "档 ",
+    "4gimn": "命 ",
+    "4aghns": "上 ",
+    "4bu": "不 ",
+    "3enz": "怎 ",
+    "2ehis": "谁 ",
+    "3ow": "我 ",
+    "2at": "她 ",
+    "3at": "它 ",
+    "2emn": "们 ",
+    "3in": "你 ",
+    "2ehns": "什 ",
+    "2his": "时 ",
+    "4eiw": "为 ",
+    "3an": "哪 ",
+    "3ouz": "走 ",
+    "3il": "里 ",
+    "24bu": "步 ",
+    "2ru": "如 ",
+    "2ail": "来 ",
+    "3egi": "给 ",
+    "4ouz": "做 ",
+    "3ouy": "有 ",
+    "2eh": "和 ",
+    "3aginx": "想 ",
+    "4enr": "任 ",
+    "4enw": "问 ",
+    "1acghnu": "窗 ",
+    "14an": "那 ",
+    "1ij": "机 ",
+    "2ailn": "连 ",
+    "4di": "地 ",
+    "1agnu": "关 ",
+    "1is": "思 ",
+    "3ginq": "请 ",
+    "4eij": "界 ",
+    "4su": "速 ",
+    "3am": "码 ",
+    "3ano": "脑 ",
+    "2anp": "盘 ",
+    "1gno": "功 ",
+    "4ahnz": "站 ",
+    "3ahnuz": "转 ",
+    "2ginpx": "形 ",
+    "4an": "按 ",
+    "4dgnos": "动 "
   },
   "grammar_rules": {
     "verb": {
@@ -1259,13 +1430,397 @@
     }
   },
   "chinese_chords": {
-    "4ehz": { "char": "这", "pinyin": "zhè", "keys": "4zhe", "tone": 4, "english": "this" },
-    "4his": { "char": "是", "pinyin": "shì", "keys": "4shi", "tone": 4, "english": "is/be" },
-    "1at":  { "char": "他", "pinyin": "tā",  "keys": "1ta",  "tone": 1, "english": "he/him" },
-    "2an":  { "char": "拿", "pinyin": "ná",  "keys": "2na",  "tone": 2, "english": "take" },
-    "3gou": { "char": "狗", "pinyin": "gǒu", "keys": "3gou", "tone": 3, "english": "dog" },
-    "4ad":  { "char": "大", "pinyin": "dà",  "keys": "4da",  "tone": 4, "english": "big" },
-    "1hsu": { "char": "书", "pinyin": "shū", "keys": "1shu", "tone": 1, "english": "book" },
-    "4ai":  { "char": "爱", "pinyin": "ài",  "keys": "4ai",  "tone": 4, "english": "love", "mirror_keys": "7;i" }
+    "4ehz": {
+      "char": "这",
+      "pinyin": "zhè",
+      "keys": "4zhe",
+      "tone": 4,
+      "english": "this"
+    },
+    "4his": {
+      "char": "是",
+      "pinyin": "shì",
+      "keys": "4shi",
+      "tone": 4,
+      "english": "is/be"
+    },
+    "1at": {
+      "char": "他",
+      "pinyin": "tā",
+      "keys": "1ta",
+      "tone": 1,
+      "english": "they"
+    },
+    "2an": {
+      "char": "拿",
+      "pinyin": "ná",
+      "keys": "2na",
+      "tone": 2,
+      "english": "take"
+    },
+    "3gou": {
+      "char": "狗",
+      "pinyin": "gǒu",
+      "keys": "3gou",
+      "tone": 3,
+      "english": "dog"
+    },
+    "4ad": {
+      "char": "大",
+      "pinyin": "dà",
+      "keys": "4da",
+      "tone": 4,
+      "english": "big"
+    },
+    "1hsu": {
+      "char": "书",
+      "pinyin": "shū",
+      "keys": "1shu",
+      "tone": 1,
+      "english": "book"
+    },
+    "4ai": {
+      "char": "爱",
+      "pinyin": "ài",
+      "keys": "4ai",
+      "tone": 4,
+      "english": "love"
+    },
+    "2egn": {
+      "char": "能",
+      "pinyin": "néng",
+      "keys": "2neng",
+      "tone": 2,
+      "english": "can"
+    },
+    "4aiku": {
+      "char": "快",
+      "pinyin": "kuài",
+      "keys": "4kuai",
+      "tone": 4,
+      "english": "fast"
+    },
+    "3adgn": {
+      "char": "档",
+      "pinyin": "dǎng",
+      "keys": "3dang",
+      "tone": 3,
+      "english": "file"
+    },
+    "4gimn": {
+      "char": "命",
+      "pinyin": "mìng",
+      "keys": "4ming",
+      "tone": 4,
+      "english": "life"
+    },
+    "4aghns": {
+      "char": "上",
+      "pinyin": "shàng",
+      "keys": "4shang",
+      "tone": 4,
+      "english": "on"
+    },
+    "4bu": {
+      "char": "不",
+      "pinyin": "bù",
+      "keys": "4bu",
+      "tone": 4,
+      "english": "no"
+    },
+    "3enz": {
+      "char": "怎",
+      "pinyin": "zěn",
+      "keys": "3zen",
+      "tone": 3,
+      "english": "how"
+    },
+    "2ehis": {
+      "char": "谁",
+      "pinyin": "shéi",
+      "keys": "2shei",
+      "tone": 2,
+      "english": "whose"
+    },
+    "3ow": {
+      "char": "我",
+      "pinyin": "wǒ",
+      "keys": "3wo",
+      "tone": 3,
+      "english": "i"
+    },
+    "2at": {
+      "char": "她",
+      "pinyin": "tā",
+      "keys": "2ta",
+      "tone": 2,
+      "english": "she"
+    },
+    "3at": {
+      "char": "它",
+      "pinyin": "tā",
+      "keys": "3ta",
+      "tone": 3,
+      "english": "it"
+    },
+    "2emn": {
+      "char": "们",
+      "pinyin": "men",
+      "keys": "2men",
+      "tone": 2,
+      "english": "we"
+    },
+    "3in": {
+      "char": "你",
+      "pinyin": "nǐ",
+      "keys": "3ni",
+      "tone": 3,
+      "english": "you"
+    },
+    "2ehns": {
+      "char": "什",
+      "pinyin": "shén",
+      "keys": "2shen",
+      "tone": 2,
+      "english": "what"
+    },
+    "2his": {
+      "char": "时",
+      "pinyin": "shí",
+      "keys": "2shi",
+      "tone": 2,
+      "english": "when"
+    },
+    "4eiw": {
+      "char": "为",
+      "pinyin": "wèi",
+      "keys": "4wei",
+      "tone": 4,
+      "english": "why"
+    },
+    "3an": {
+      "char": "哪",
+      "pinyin": "nǎ",
+      "keys": "3na",
+      "tone": 3,
+      "english": "which"
+    },
+    "3ouz": {
+      "char": "走",
+      "pinyin": "zǒu",
+      "keys": "3zou",
+      "tone": 3,
+      "english": "walk"
+    },
+    "3il": {
+      "char": "里",
+      "pinyin": "lǐ",
+      "keys": "3li",
+      "tone": 3,
+      "english": "in"
+    },
+    "24bu": {
+      "char": "步",
+      "pinyin": "bù",
+      "keys": "24bu",
+      "tone": 4,
+      "english": "step"
+    },
+    "2ru": {
+      "char": "如",
+      "pinyin": "rú",
+      "keys": "2ru",
+      "tone": 2,
+      "english": "if"
+    },
+    "2ail": {
+      "char": "来",
+      "pinyin": "lái",
+      "keys": "2lai",
+      "tone": 2,
+      "english": "come"
+    },
+    "3egi": {
+      "char": "给",
+      "pinyin": "gěi",
+      "keys": "3gei",
+      "tone": 3,
+      "english": "for"
+    },
+    "4ouz": {
+      "char": "做",
+      "pinyin": "zuò",
+      "keys": "4zuo",
+      "tone": 4,
+      "english": "do"
+    },
+    "3ouy": {
+      "char": "有",
+      "pinyin": "yǒu",
+      "keys": "3you",
+      "tone": 3,
+      "english": "have"
+    },
+    "2eh": {
+      "char": "和",
+      "pinyin": "hé",
+      "keys": "2he",
+      "tone": 2,
+      "english": "with"
+    },
+    "3aginx": {
+      "char": "想",
+      "pinyin": "xiǎng",
+      "keys": "3xiang",
+      "tone": 3,
+      "english": "want"
+    },
+    "4enr": {
+      "char": "任",
+      "pinyin": "rèn",
+      "keys": "4ren",
+      "tone": 4,
+      "english": "any"
+    },
+    "4enw": {
+      "char": "问",
+      "pinyin": "wèn",
+      "keys": "4wen",
+      "tone": 4,
+      "english": "ask"
+    },
+    "1acghnu": {
+      "char": "窗",
+      "pinyin": "chuāng",
+      "keys": "1chuang",
+      "tone": 1,
+      "english": "window"
+    },
+    "14an": {
+      "char": "那",
+      "pinyin": "nà",
+      "keys": "14na",
+      "tone": 4,
+      "english": "that"
+    },
+    "1ij": {
+      "char": "机",
+      "pinyin": "jī",
+      "keys": "1ji",
+      "tone": 1,
+      "english": "machine"
+    },
+    "2ailn": {
+      "char": "连",
+      "pinyin": "lián",
+      "keys": "2lian",
+      "tone": 2,
+      "english": "connect"
+    },
+    "4di": {
+      "char": "地",
+      "pinyin": "dì",
+      "keys": "4di",
+      "tone": 4,
+      "english": "local"
+    },
+    "1agnu": {
+      "char": "关",
+      "pinyin": "guān",
+      "keys": "1guan",
+      "tone": 1,
+      "english": "about"
+    },
+    "1is": {
+      "char": "思",
+      "pinyin": "sī",
+      "keys": "1si",
+      "tone": 1,
+      "english": "think"
+    },
+    "3ginq": {
+      "char": "请",
+      "pinyin": "qǐng",
+      "keys": "3qing",
+      "tone": 3,
+      "english": "please"
+    },
+    "4eij": {
+      "char": "界",
+      "pinyin": "jiè",
+      "keys": "4jie",
+      "tone": 4,
+      "english": "world"
+    },
+    "4su": {
+      "char": "速",
+      "pinyin": "sù",
+      "keys": "4su",
+      "tone": 4,
+      "english": "steno"
+    },
+    "3am": {
+      "char": "码",
+      "pinyin": "mǎ",
+      "keys": "3ma",
+      "tone": 3,
+      "english": "code"
+    },
+    "3ano": {
+      "char": "脑",
+      "pinyin": "nǎo",
+      "keys": "3nao",
+      "tone": 3,
+      "english": "computer"
+    },
+    "2anp": {
+      "char": "盘",
+      "pinyin": "pán",
+      "keys": "2pan",
+      "tone": 2,
+      "english": "keyboard"
+    },
+    "1gno": {
+      "char": "功",
+      "pinyin": "gōng",
+      "keys": "1gong",
+      "tone": 1,
+      "english": "function"
+    },
+    "4ahnz": {
+      "char": "站",
+      "pinyin": "zhàn",
+      "keys": "4zhan",
+      "tone": 4,
+      "english": "stand"
+    },
+    "3ahnuz": {
+      "char": "转",
+      "pinyin": "zhuǎn",
+      "keys": "3zhuan",
+      "tone": 3,
+      "english": "turn"
+    },
+    "2ginpx": {
+      "char": "形",
+      "pinyin": "xíng",
+      "keys": "2xing",
+      "tone": 2,
+      "english": "form"
+    },
+    "4an": {
+      "char": "按",
+      "pinyin": "àn",
+      "keys": "4an",
+      "tone": 4,
+      "english": "press"
+    },
+    "4dgnos": {
+      "char": "动",
+      "pinyin": "dòng",
+      "keys": "4dong",
+      "tone": 4,
+      "english": "act"
+    }
   }
 }
