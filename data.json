@@ -535,6 +535,443 @@
           "note": "Produce (shēngchǎn)"
         }
       }
+    },
+    "a": {
+      "lemma": "a",
+      "chord": "a",
+      "emoji": "🔤",
+      "note": "Indefinite article / prefix",
+      "derivatives": {
+        "n": {
+          "morpheme": "-n",
+          "chord": "n",
+          "word": "an",
+          "emoji": "🔤",
+          "note": "Vowel preceding article"
+        },
+        "ny": {
+          "morpheme": "-ny",
+          "chord": "ny",
+          "word": "any",
+          "emoji": "🎲",
+          "note": "Indeterminate amount"
+        },
+        "ehorrt": {
+          "morpheme": "other",
+          "chord": "ehorrt",
+          "word": "another",
+          "emoji": "➕",
+          "note": "One more / alternate"
+        },
+        "adeh": {
+          "morpheme": "head",
+          "chord": "adeh",
+          "word": "ahead",
+          "emoji": "⏩",
+          "note": "Further forward"
+        },
+        "elno": {
+          "morpheme": "lone",
+          "chord": "elno",
+          "word": "alone",
+          "emoji": "🧍",
+          "note": "By oneself"
+        },
+        "deis": {
+          "morpheme": "side",
+          "chord": "deis",
+          "word": "aside",
+          "emoji": "↔️",
+          "note": "To one side"
+        }
+      }
+    },
+    "acltu": {
+      "lemma": "actual",
+      "chord": "acltu",
+      "emoji": "🎯",
+      "note": "Existing in fact or reality",
+      "derivatives": {
+        "ly": {
+          "morpheme": "-ly",
+          "chord": "ly",
+          "word": "actually",
+          "emoji": "💡",
+          "note": "In truth / reality"
+        },
+        "ity": {
+          "morpheme": "-ity",
+          "chord": "ity",
+          "word": "actuality",
+          "emoji": "🌐",
+          "note": "Actual state / reality"
+        },
+        "eiz": {
+          "morpheme": "-ize",
+          "chord": "eiz",
+          "word": "actualize",
+          "emoji": "✨",
+          "note": "Make real / fulfill"
+        }
+      }
+    },
+    "adforw": {
+      "lemma": "forward",
+      "chord": "adforw",
+      "emoji": "⏩",
+      "note": "Onward in time or direction",
+      "derivatives": {
+        "s": {
+          "morpheme": "-s",
+          "chord": "s",
+          "word": "forwards",
+          "emoji": "⏩",
+          "note": "Toward the front"
+        },
+        "gin": {
+          "morpheme": "-ing",
+          "chord": "gin",
+          "word": "forwarding",
+          "emoji": "📤",
+          "note": "Sending onward"
+        },
+        "de": {
+          "morpheme": "-ed",
+          "chord": "de",
+          "word": "forwarded",
+          "emoji": "📬",
+          "note": "Transmitted"
+        },
+        "efor": {
+          "morpheme": "fore-",
+          "chord": "efor",
+          "word": "foreword",
+          "emoji": "📖",
+          "note": "Preface / introduction"
+        },
+        "aghirst": {
+          "morpheme": "straight-",
+          "chord": "aghirst",
+          "word": "straightforward",
+          "emoji": "📏",
+          "note": "Direct and clear"
+        }
+      }
+    },
+    "cfinou": {
+      "lemma": "function",
+      "chord": "cfinou",
+      "emoji": "⚙️",
+      "note": "Operation / purpose",
+      "derivatives": {
+        "ailty": {
+          "morpheme": "-ality",
+          "chord": "ailty",
+          "word": "functionality",
+          "emoji": "🛠️",
+          "note": "Quality of functioning"
+        },
+        "al": {
+          "morpheme": "-al",
+          "chord": "al",
+          "word": "functional",
+          "emoji": "🔧",
+          "note": "Working properly"
+        },
+        "ally": {
+          "morpheme": "-ally",
+          "chord": "ally",
+          "word": "functionally",
+          "emoji": "💡",
+          "note": "In a functional way"
+        },
+        "gin": {
+          "morpheme": "-ing",
+          "chord": "gin",
+          "word": "functioning",
+          "emoji": "⚡",
+          "note": "Currently operating"
+        },
+        "alm": {
+          "morpheme": "mal-",
+          "chord": "alm",
+          "word": "malfunction",
+          "emoji": "⚠️",
+          "note": "Failure to function"
+        }
+      }
+    },
+    "ghirt": {
+      "lemma": "right",
+      "chord": "ghirt",
+      "emoji": "✅",
+      "note": "Correct / proper / direction",
+      "derivatives": {
+        "ly": {
+          "morpheme": "-ly",
+          "chord": "ly",
+          "word": "rightly",
+          "emoji": "🎯",
+          "note": "Correctly / justly"
+        },
+        "pu": {
+          "morpheme": "up-",
+          "chord": "pu",
+          "word": "upright",
+          "emoji": "🧍",
+          "note": "Erect / honorable"
+        },
+        "otu": {
+          "morpheme": "out-",
+          "chord": "otu",
+          "word": "outright",
+          "emoji": "💯",
+          "note": "Completely / direct"
+        },
+        "coyp": {
+          "morpheme": "copy-",
+          "chord": "coyp",
+          "word": "copyright",
+          "emoji": "©️",
+          "note": "Legal ownership right"
+        },
+        "eosu": {
+          "morpheme": "-eous",
+          "chord": "eosu",
+          "word": "righteous",
+          "emoji": "⚖️",
+          "note": "Morally right"
+        }
+      }
+    },
+    "now": {
+      "lemma": "now",
+      "chord": "now",
+      "emoji": "⏱️",
+      "note": "At the present moment",
+      "derivatives": {
+        "aadsy": {
+          "morpheme": "-adays",
+          "chord": "aadsy",
+          "word": "nowadays",
+          "emoji": "📅",
+          "note": "In the present time"
+        },
+        "eehr": {
+          "morpheme": "-where",
+          "chord": "eehr",
+          "word": "nowhere",
+          "emoji": "🌌",
+          "note": "Not in any place"
+        },
+        "ghirt": {
+          "morpheme": "right-",
+          "chord": "ghirt",
+          "word": "right now",
+          "emoji": "⚡",
+          "note": "Immediately / this moment"
+        }
+      }
+    },
+    "eht": {
+      "lemma": "the",
+      "chord": "eht",
+      "emoji": "☝️",
+      "note": "Definite article",
+      "derivatives": {
+        "en": {
+          "morpheme": "-n",
+          "chord": "en",
+          "word": "then",
+          "emoji": "⏳",
+          "note": "At that time"
+        },
+        "er": {
+          "morpheme": "-re",
+          "chord": "er",
+          "word": "there",
+          "emoji": "📍",
+          "note": "In that place"
+        },
+        "es": {
+          "morpheme": "-se",
+          "chord": "es",
+          "word": "these",
+          "emoji": "👉",
+          "note": "Plural near"
+        },
+        "eos": {
+          "morpheme": "-ose",
+          "chord": "eos",
+          "word": "those",
+          "emoji": "👈",
+          "note": "Plural far"
+        },
+        "eirt": {
+          "morpheme": "-ir",
+          "chord": "eirt",
+          "word": "their",
+          "emoji": "👥",
+          "note": "Belonging to them"
+        },
+        "emt": {
+          "morpheme": "-m",
+          "chord": "emt",
+          "word": "them",
+          "emoji": "👥",
+          "note": "Objective plural"
+        },
+        "efor": {
+          "morpheme": "-fore",
+          "chord": "efor",
+          "word": "therefore",
+          "emoji": "💡",
+          "note": "Consequently"
+        }
+      }
+    },
+    "emti": {
+      "lemma": "time",
+      "chord": "emti",
+      "emoji": "⏳",
+      "note": "Temporal period or duration",
+      "derivatives": {
+        "er": {
+          "morpheme": "-er",
+          "chord": "er",
+          "word": "timer",
+          "emoji": "⏱️",
+          "note": "Time measurement tool"
+        },
+        "gin": {
+          "morpheme": "-ing",
+          "chord": "gin",
+          "word": "timing",
+          "emoji": "⏰",
+          "note": "Choice of moment"
+        },
+        "ly": {
+          "morpheme": "-ly",
+          "chord": "ly",
+          "word": "timely",
+          "emoji": "🎯",
+          "note": "Well-timed / opportune"
+        },
+        "otu": {
+          "morpheme": "-out",
+          "chord": "otu",
+          "word": "timeout",
+          "emoji": "⏸️",
+          "note": "Temporary pause"
+        },
+        "elss": {
+          "morpheme": "-less",
+          "chord": "elss",
+          "word": "timeless",
+          "emoji": "✨",
+          "note": "Unaffected by time"
+        },
+        "eov": {
+          "morpheme": "over-",
+          "chord": "eov",
+          "word": "overtime",
+          "emoji": "💼",
+          "note": "Time beyond regular hours"
+        }
+      }
+    },
+    "ot": {
+      "lemma": "to",
+      "chord": "ot",
+      "emoji": "➡️",
+      "note": "Direction / destination",
+      "derivatives": {
+        "ady": {
+          "morpheme": "-day",
+          "chord": "ady",
+          "word": "today",
+          "emoji": "☀️",
+          "note": "On this day"
+        },
+        "ghint": {
+          "morpheme": "-night",
+          "chord": "ghint",
+          "word": "tonight",
+          "emoji": "🌙",
+          "note": "On this night"
+        },
+        "moorrw": {
+          "morpheme": "-morrow",
+          "chord": "moorrw",
+          "word": "tomorrow",
+          "emoji": "🌅",
+          "note": "The day after today"
+        },
+        "eeghrt": {
+          "morpheme": "-gether",
+          "chord": "eeghrt",
+          "word": "together",
+          "emoji": "🤝",
+          "note": "In union / with each other"
+        },
+        "adrw": {
+          "morpheme": "-ward",
+          "chord": "adrw",
+          "word": "toward",
+          "emoji": "🧭",
+          "note": "In the direction of"
+        },
+        "in": {
+          "morpheme": "in-",
+          "chord": "in",
+          "word": "into",
+          "emoji": "📥",
+          "note": "Moving inside"
+        }
+      }
+    },
+    "aitw": {
+      "lemma": "wait",
+      "chord": "aitw",
+      "emoji": "⏳",
+      "note": "Stay in place / await",
+      "derivatives": {
+        "gin": {
+          "morpheme": "-ing",
+          "chord": "gin",
+          "word": "waiting",
+          "emoji": "⏳",
+          "note": "In the state of waiting"
+        },
+        "er": {
+          "morpheme": "-er",
+          "chord": "er",
+          "word": "waiter",
+          "emoji": "🍽️",
+          "note": "Server at table"
+        },
+        "erss": {
+          "morpheme": "-ress",
+          "chord": "erss",
+          "word": "waitress",
+          "emoji": "👩‍🍳",
+          "note": "Female server"
+        },
+        "a": {
+          "morpheme": "a-",
+          "chord": "a",
+          "word": "await",
+          "emoji": "👀",
+          "note": "Wait expectantly"
+        },
+        "ade": {
+          "morpheme": "a- -ed",
+          "chord": "ade",
+          "word": "awaited",
+          "emoji": "✨",
+          "note": "Long-expected"
+        }
+      }
     }
   },
   "flat_chords": {
@@ -569,7 +1006,7 @@
     "ehs": "she ",
     "it": "it ",
     "ew": "we ",
-    "eht": "they ",
+    "eht": "the ",
     "1how": "who ",
     "ehrw": "where ",
     "chiw": "which ",
@@ -650,7 +1087,23 @@
     "3ahnuz": "转 ",
     "2ginpx": "形 ",
     "4an": "按 ",
-    "4dgnos": "动 "
+    "4dgnos": "动 ",
+    "a": "a ",
+    "acltu": "actual ",
+    "adforw": "forward ",
+    "forw": "forward ",
+    "ghirt": "right ",
+    "now": "now ",
+    "1eht": "they ",
+    "ehty": "they ",
+    "emti": "time ",
+    "ot": "to ",
+    "aitw": "wait ",
+    "aehirtv": "have right ",
+    "actually": "actually ",
+    "functionality": "functionality ",
+    "timer": "timer ",
+    "waiting": "waiting "
   },
   "grammar_rules": {
     "verb": {

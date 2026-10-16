@@ -421,8 +421,8 @@
                             <button id="editor-paste-btn" onclick="app.pasteEditorText()" class="text-xs text-slate-400 hover:text-sky-400 font-semibold px-3 py-1.5 bg-slate-950 rounded-xl border border-slate-800 hover:border-sky-500/50 transition-all flex items-center gap-1.5 active:scale-95 shadow" title="Paste text into editor (Ctrl+V)">
                                 📥 Paste <span class="text-[10px] text-slate-500 font-mono">(Ctrl+V)</span>
                             </button>
-                            <button onclick="app.clearEditor()" class="text-xs text-slate-400 hover:text-rose-400 font-semibold px-3 py-1.5 bg-slate-950 rounded-xl border border-slate-800 hover:border-rose-500/50 transition-all active:scale-95 shadow" title="Clear typing box">
-                                🗑️ Clear
+                            <button onclick="app.clearEditor()" class="text-xs text-slate-400 hover:text-rose-400 font-semibold px-3 py-1.5 bg-slate-950 rounded-xl border border-slate-800 hover:border-rose-500/50 transition-all flex items-center gap-1.5 active:scale-95 shadow" title="Clear typing box (Ctrl+L or Esc)">
+                                🗑️ Clear <span class="text-[10px] text-slate-500 font-mono">(Ctrl+L / Esc)</span>
                             </button>
                             <button id="editor-missing-btn" onclick="app.toggleMissingWordsModal()" class="text-xs text-amber-400 hover:text-amber-300 font-semibold px-3 py-1.5 bg-amber-500/10 rounded-xl border border-amber-500/30 hover:border-amber-400 transition-all flex items-center gap-1.5 active:scale-95 shadow" title="View & Export unmapped/missing words collected from copy/paste">
                                 📊 Unmapped <span id="unmapped-count-badge" class="px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-400/20 text-amber-300">0</span>
@@ -673,6 +673,19 @@
             { word: "form", chord: "fmo", keys: "fom", note: "r skipped (conflict on Left Index)" },
             { word: "press", chord: "eprs", keys: "pres", note: "s duplicate skipped" },
             { word: "act", chord: "act", keys: "act", note: "Clean 3-finger match" },
+            { word: "a", chord: "a", keys: "a", note: "Indefinite article / base prefix" },
+            { word: "actual", chord: "acltu", keys: "actual", note: "Root for actually" },
+            { word: "actually", chord: "actually", keys: "actually", note: "Derived from actual" },
+            { word: "forward", chord: "adforw", keys: "forward", note: "Root for forwards, forwarding" },
+            { word: "functionality", chord: "functionality", keys: "functionality", note: "Derived from function" },
+            { word: "right", chord: "ghirt", keys: "right", note: "Root for rightly, upright" },
+            { word: "now", chord: "now", keys: "now", note: "Root for nowadays, right now" },
+            { word: "the", chord: "eht", keys: "the", note: "Definite article" },
+            { word: "time", chord: "emti", keys: "time", note: "Root for timer, timing" },
+            { word: "timer", chord: "timer", keys: "timer", note: "Derived from time" },
+            { word: "to", chord: "ot", keys: "to", note: "Direction / destination" },
+            { word: "wait", chord: "aitw", keys: "wait", note: "Root for waiting, waiter" },
+            { word: "waiting", chord: "waiting", keys: "waiting", note: "Derived from wait" },
             // Chinese Pinyin Chords (Corresponding to English Vocabulary)
             { word: "这", chord: "4ehz", keys: "4zhe", pinyin: "zhè", english: "this", note: "Tone 4 + zhe (zhè - this)" },
             { word: "是", chord: "4his", keys: "4shi", pinyin: "shì", english: "is/be", note: "Tone 4 + shi (shì - is/be)" },
@@ -890,6 +903,21 @@
             "interact": { emoji: "🗣️", bg: "#06b6d4", glow: "rgba(6, 182, 212, 0.4)", label: "INTERACT" },
             "transact": { emoji: "💳", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "TRANSACT" },
             "enact": { emoji: "📜", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "ENACT" },
+            // High-Frequency Roots & Morphemes Visuals
+            "a": { emoji: "🔤", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "A" },
+            "actual": { emoji: "🎯", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "ACTUAL" },
+            "actually": { emoji: "💡", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "ACTUALLY" },
+            "forward": { emoji: "⏩", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "FORWARD" },
+            "forwards": { emoji: "⏩", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "FORWARDS" },
+            "functionality": { emoji: "🛠️", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "FUNCTIONALITY" },
+            "right": { emoji: "✅", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "RIGHT" },
+            "now": { emoji: "⏱️", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "NOW" },
+            "the": { emoji: "☝️", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "THE" },
+            "time": { emoji: "⏳", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "TIME" },
+            "timer": { emoji: "⏱️", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "TIMER" },
+            "to": { emoji: "➡️", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "TO" },
+            "wait": { emoji: "⏳", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "WAIT" },
+            "waiting": { emoji: "⏳", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "WAITING" },
             // Chinese Characters
             "这": { emoji: "这", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "这 (zhè - this)", svg: `<circle cx="24" cy="24" r="21" fill="#78350f" stroke="#f59e0b" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#fef3c7">这</text>` },
             "是": { emoji: "是", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "是 (shì - is/be)", svg: `<circle cx="24" cy="24" r="21" fill="#064e3b" stroke="#10b981" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#a7f3d0">是</text>` },
@@ -1088,6 +1116,138 @@
                     "1ir": { morpheme: "日", chord: "1ir", word: "生日", emoji: "🎂", note: "Birthday (shēngrì)" },
                     "4gimn": { morpheme: "命", chord: "4gimn", word: "生命", emoji: "💖", note: "Life / destiny (shēngmìng)" },
                     "4acn": { morpheme: "产", chord: "4acn", word: "生产", emoji: "🏭", note: "Produce (shēngchǎn)" }
+                }
+            },
+            // Additional High-Frequency Roots & Morphemes
+            "a": {
+                lemma: "a",
+                chord: "a",
+                emoji: "🔤",
+                note: "Indefinite article / base prefix",
+                derivatives: {
+                    "n": { morpheme: "-n", chord: "n", word: "an", emoji: "🔤", note: "Vowel preceding article" },
+                    "ny": { morpheme: "-ny", chord: "ny", word: "any", emoji: "🎲", note: "Indeterminate amount" },
+                    "ehorrt": { morpheme: "other", chord: "ehorrt", word: "another", emoji: "➕", note: "One more / alternate" },
+                    "adeh": { morpheme: "head", chord: "adeh", word: "ahead", emoji: "⏩", note: "Further forward" },
+                    "elno": { morpheme: "lone", chord: "elno", word: "alone", emoji: "🧍", note: "By oneself" },
+                    "deis": { morpheme: "side", chord: "deis", word: "aside", emoji: "↔️", note: "To one side" }
+                }
+            },
+            "acltu": {
+                lemma: "actual",
+                chord: "acltu",
+                emoji: "🎯",
+                note: "Existing in fact or reality",
+                derivatives: {
+                    "ly": { morpheme: "-ly", chord: "ly", word: "actually", emoji: "💡", note: "In truth / reality" },
+                    "ity": { morpheme: "-ity", chord: "ity", word: "actuality", emoji: "🌐", note: "Actual state / reality" },
+                    "eiz": { morpheme: "-ize", chord: "eiz", word: "actualize", emoji: "✨", note: "Make real / fulfill" }
+                }
+            },
+            "adforw": {
+                lemma: "forward",
+                chord: "adforw",
+                emoji: "⏩",
+                note: "Onward in time or direction",
+                derivatives: {
+                    "s": { morpheme: "-s", chord: "s", word: "forwards", emoji: "⏩", note: "Toward the front" },
+                    "gin": { morpheme: "-ing", chord: "gin", word: "forwarding", emoji: "📤", note: "Sending onward" },
+                    "de": { morpheme: "-ed", "chord": "de", word: "forwarded", emoji: "📬", note: "Transmitted" },
+                    "efor": { morpheme: "fore-", chord: "efor", word: "foreword", emoji: "📖", note: "Preface / introduction" },
+                    "aghirst": { morpheme: "straight-", chord: "aghirst", word: "straightforward", emoji: "📏", note: "Direct and clear" }
+                }
+            },
+            "cfinou": {
+                lemma: "function",
+                chord: "cfinou",
+                emoji: "⚙️",
+                note: "Operation / purpose",
+                derivatives: {
+                    "ailty": { morpheme: "-ality", chord: "ailty", word: "functionality", emoji: "🛠️", note: "Quality of functioning" },
+                    "al": { morpheme: "-al", chord: "al", word: "functional", emoji: "🔧", note: "Working properly" },
+                    "ally": { morpheme: "-ally", chord: "ally", word: "functionally", emoji: "💡", note: "In a functional way" },
+                    "gin": { morpheme: "-ing", chord: "gin", word: "functioning", emoji: "⚡", note: "Currently operating" },
+                    "alm": { morpheme: "mal-", chord: "alm", word: "malfunction", emoji: "⚠️", note: "Failure to function" }
+                }
+            },
+            "ghirt": {
+                lemma: "right",
+                chord: "ghirt",
+                emoji: "✅",
+                note: "Correct / proper / direction",
+                derivatives: {
+                    "ly": { morpheme: "-ly", chord: "ly", word: "rightly", emoji: "🎯", note: "Correctly / justly" },
+                    "pu": { morpheme: "up-", chord: "pu", word: "upright", emoji: "🧍", note: "Erect / honorable" },
+                    "otu": { morpheme: "out-", chord: "otu", word: "outright", emoji: "💯", note: "Completely / direct" },
+                    "coyp": { morpheme: "copy-", chord: "coyp", word: "copyright", emoji: "©️", note: "Legal ownership right" },
+                    "eosu": { morpheme: "-eous", chord: "eosu", word: "righteous", emoji: "⚖️", note: "Morally right" }
+                }
+            },
+            "now": {
+                lemma: "now",
+                chord: "now",
+                emoji: "⏱️",
+                note: "At the present moment",
+                derivatives: {
+                    "aadsy": { morpheme: "-adays", chord: "aadsy", word: "nowadays", emoji: "📅", note: "In the present time" },
+                    "eehr": { morpheme: "-where", chord: "eehr", word: "nowhere", emoji: "🌌", note: "Not in any place" },
+                    "ghirt": { morpheme: "right-", chord: "ghirt", word: "right now", emoji: "⚡", note: "Immediately / this moment" }
+                }
+            },
+            "eht": {
+                lemma: "the",
+                chord: "eht",
+                emoji: "☝️",
+                note: "Definite article",
+                derivatives: {
+                    "en": { morpheme: "-n", chord: "en", word: "then", emoji: "⏳", note: "At that time" },
+                    "er": { morpheme: "-re", chord: "er", word: "there", emoji: "📍", note: "In that place" },
+                    "es": { morpheme: "-se", chord: "es", word: "these", emoji: "👉", note: "Plural near" },
+                    "eos": { morpheme: "-ose", chord: "eos", word: "those", emoji: "👈", note: "Plural far" },
+                    "eirt": { morpheme: "-ir", chord: "eirt", word: "their", emoji: "👥", note: "Belonging to them" },
+                    "emt": { morpheme: "-m", chord: "emt", word: "them", emoji: "👥", note: "Objective plural" },
+                    "efor": { morpheme: "-fore", chord: "efor", word: "therefore", emoji: "💡", note: "Consequently" }
+                }
+            },
+            "emti": {
+                lemma: "time",
+                chord: "emti",
+                emoji: "⏳",
+                note: "Temporal period or duration",
+                derivatives: {
+                    "er": { morpheme: "-er", chord: "er", word: "timer", emoji: "⏱️", note: "Time measurement tool" },
+                    "gin": { morpheme: "-ing", chord: "gin", word: "timing", emoji: "⏰", note: "Choice of moment" },
+                    "ly": { morpheme: "-ly", chord: "ly", word: "timely", emoji: "🎯", note: "Well-timed / opportune" },
+                    "otu": { morpheme: "-out", chord: "otu", word: "timeout", emoji: "⏸️", note: "Temporary pause" },
+                    "elss": { morpheme: "-less", chord: "elss", word: "timeless", emoji: "✨", note: "Unaffected by time" },
+                    "eov": { morpheme: "over-", chord: "eov", word: "overtime", emoji: "💼", note: "Time beyond regular hours" }
+                }
+            },
+            "ot": {
+                lemma: "to",
+                chord: "ot",
+                emoji: "➡️",
+                note: "Direction / destination",
+                derivatives: {
+                    "ady": { morpheme: "-day", chord: "ady", word: "today", emoji: "☀️", note: "On this day" },
+                    "ghint": { morpheme: "-night", chord: "ghint", word: "tonight", emoji: "🌙", note: "On this night" },
+                    "moorrw": { morpheme: "-morrow", chord: "moorrw", word: "tomorrow", emoji: "🌅", note: "The day after today" },
+                    "eeghrt": { morpheme: "-gether", chord: "eeghrt", word: "together", emoji: "🤝", note: "In union / with each other" },
+                    "adrw": { morpheme: "-ward", chord: "adrw", word: "toward", emoji: "🧭", note: "In the direction of" },
+                    "in": { morpheme: "in-", chord: "in", word: "into", emoji: "📥", note: "Moving inside" }
+                }
+            },
+            "aitw": {
+                lemma: "wait",
+                chord: "aitw",
+                emoji: "⏳",
+                note: "Stay in place / await",
+                derivatives: {
+                    "gin": { morpheme: "-ing", chord: "gin", word: "waiting", emoji: "⏳", note: "In the state of waiting" },
+                    "er": { morpheme: "-er", chord: "er", word: "waiter", emoji: "🍽️", note: "Server at table" },
+                    "erss": { morpheme: "-ress", chord: "erss", word: "waitress", emoji: "👩‍🍳", note: "Female server" },
+                    "a": { morpheme: "a-", chord: "a", word: "await", emoji: "👀", note: "Wait expectantly" },
+                    "ade": { morpheme: "a- -ed", chord: "ade", word: "awaited", emoji: "✨", note: "Long-expected" }
                 }
             }
         };
@@ -1998,10 +2158,20 @@
                 this.activeGrammar = null;
                 this.lastMorphemeAttachment = null;
                 this.keyPressOrder = [];
+                if (this.activeRootTimeout) clearTimeout(this.activeRootTimeout);
+                if (this.activeRoot) {
+                    this.activeRoot = null;
+                    this.renderMorphemeTree();
+                }
                 const bar = document.getElementById('sandbox-grammar-bar');
                 if (bar) {
                     bar.classList.add('hidden');
                     bar.classList.remove('flex');
+                }
+                const toast = document.getElementById('sandbox-toast');
+                if (toast) {
+                    toast.innerText = "🗑️ [Cleared] Sandbox typing box cleared!";
+                    toast.className = "text-xs md:text-sm font-bold text-rose-300 bg-rose-500/20 border border-rose-500/40 px-6 py-2 rounded-xl text-center shadow transition-all";
                 }
             }
 
@@ -3083,7 +3253,7 @@
                 this.spaceBypass = false;
 
                 window.addEventListener('keydown', (e) => {
-                    // Keyboard Shortcuts: Ctrl+C (Copy), Ctrl+V (Paste)
+                    // Keyboard Shortcuts: Ctrl+C (Copy), Ctrl+V (Paste), Ctrl+L / Ctrl+Delete (Clear)
                     if (e.ctrlKey || e.metaKey) {
                         if (e.key.toLowerCase() === 'c' && this.mode === 'sandbox') {
                             e.preventDefault();
@@ -3095,7 +3265,25 @@
                             this.pasteEditorText();
                             return;
                         }
+                        if ((e.key.toLowerCase() === 'l' || e.key.toLowerCase() === 'k' || e.key === 'Delete') && this.mode === 'sandbox') {
+                            e.preventDefault();
+                            this.clearEditor();
+                            return;
+                        }
                         return; // Allow standard browser shortcuts without capturing
+                    }
+
+                    // Escape key closes modal or clears Sandbox
+                    if (e.key === 'Escape') {
+                        const modal = document.getElementById('unmapped-modal');
+                        if (modal && !modal.classList.contains('hidden')) {
+                            this.toggleMissingWordsModal();
+                            return;
+                        }
+                        if (this.mode === 'sandbox') {
+                            this.clearEditor();
+                            return;
+                        }
                     }
 
                     if (e.key === 'Tab' || e.key === 'Alt' || e.key === 'Control' || e.key === 'Meta' || e.key === 'Shift') return;
