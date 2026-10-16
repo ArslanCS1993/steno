@@ -972,6 +972,411 @@
           "note": "Long-expected"
         }
       }
+    },
+    "box": {
+      "lemma": "box",
+      "chord": "box",
+      "emoji": "📦",
+      "note": "Container / enclosure",
+      "derivatives": {
+        "s": {
+          "morpheme": "-es",
+          "chord": "s",
+          "word": "boxes",
+          "emoji": "📦",
+          "note": "Plural boxes"
+        },
+        "gin": {
+          "morpheme": "-ing",
+          "chord": "gin",
+          "word": "boxing",
+          "emoji": "🥊",
+          "note": "Combat sport / packing"
+        },
+        "er": {
+          "morpheme": "-er",
+          "chord": "er",
+          "word": "boxer",
+          "emoji": "🥊",
+          "note": "One who boxes"
+        },
+        "in": {
+          "morpheme": "in-",
+          "chord": "in",
+          "word": "inbox",
+          "emoji": "📥",
+          "note": "Incoming message folder"
+        },
+        "otu": {
+          "morpheme": "out-",
+          "chord": "otu",
+          "word": "outbox",
+          "emoji": "📤",
+          "note": "Outgoing message folder"
+        },
+        "adns": {
+          "morpheme": "sand-",
+          "chord": "adns",
+          "word": "sandbox",
+          "emoji": "🏖️",
+          "note": "Isolated test environment"
+        }
+      }
+    },
+    "aclr": {
+      "lemma": "clear",
+      "chord": "aclr",
+      "emoji": "✨",
+      "note": "Free from clutter / transparent",
+      "derivatives": {
+        "gin": {
+          "morpheme": "-ing",
+          "chord": "gin",
+          "word": "clearing",
+          "emoji": "🧹",
+          "note": "Making clear / open space"
+        },
+        "de": {
+          "morpheme": "-ed",
+          "chord": "de",
+          "word": "cleared",
+          "emoji": "✅",
+          "note": "Emptied / approved"
+        },
+        "ly": {
+          "morpheme": "-ly",
+          "chord": "ly",
+          "word": "clearly",
+          "emoji": "💡",
+          "note": "Without doubt / plainly"
+        },
+        "acnr": {
+          "morpheme": "-ance",
+          "chord": "acnr",
+          "word": "clearance",
+          "emoji": "🏷️",
+          "note": "Authorization / space"
+        }
+      }
+    },
+    "dnp": {
+      "lemma": "depend",
+      "chord": "dnp",
+      "emoji": "🔗",
+      "note": "Rely upon / contingent",
+      "derivatives": {
+        "gin": {
+          "morpheme": "-ing",
+          "chord": "gin",
+          "word": "depending",
+          "emoji": "🔄",
+          "note": "Contingent upon"
+        },
+        "de": {
+          "morpheme": "-ed",
+          "chord": "de",
+          "word": "depended",
+          "emoji": "🤝",
+          "note": "Relied on"
+        },
+        "s": {
+          "morpheme": "-s",
+          "chord": "s",
+          "word": "depends",
+          "emoji": "⚖️",
+          "note": "Relies on"
+        },
+        "ent": {
+          "morpheme": "-ent",
+          "chord": "ent",
+          "word": "dependent",
+          "emoji": "👶",
+          "note": "Relying on another"
+        },
+        "in": {
+          "morpheme": "in-",
+          "chord": "in",
+          "word": "independent",
+          "emoji": "🦅",
+          "note": "Autonomous / free"
+        }
+      }
+    },
+    "aekm": {
+      "lemma": "make",
+      "chord": "aekm",
+      "emoji": "🔨",
+      "note": "Create / produce",
+      "derivatives": {
+        "er": {
+          "morpheme": "-er",
+          "chord": "er",
+          "word": "maker",
+          "emoji": "🧑‍🏭",
+          "note": "Creator / producer"
+        },
+        "gin": {
+          "morpheme": "-ing",
+          "chord": "gin",
+          "word": "making",
+          "emoji": "🏗️",
+          "note": "In process of creation"
+        },
+        "s": {
+          "morpheme": "-s",
+          "chord": "s",
+          "word": "makes",
+          "emoji": "⚙️",
+          "note": "Creates"
+        }
+      }
+    },
+    "epty": {
+      "lemma": "type",
+      "chord": "epty",
+      "emoji": "⌨️",
+      "note": "Input characters / category",
+      "derivatives": {
+        "gin": {
+          "morpheme": "-ing",
+          "chord": "gin",
+          "word": "typing",
+          "emoji": "⌨️",
+          "note": "Entering characters"
+        },
+        "de": {
+          "morpheme": "-ed",
+          "chord": "de",
+          "word": "typed",
+          "emoji": "📄",
+          "note": "Already keyed in"
+        },
+        "er": {
+          "morpheme": "-er",
+          "chord": "er",
+          "word": "typer",
+          "emoji": "👤",
+          "note": "Person typing"
+        },
+        "s": {
+          "morpheme": "-s",
+          "chord": "s",
+          "word": "types",
+          "emoji": "🗂️",
+          "note": "Kinds / categories"
+        }
+      }
+    },
+    "abelt": {
+      "lemma": "table",
+      "chord": "abelt",
+      "emoji": "📊",
+      "note": "Furniture / grid data",
+      "derivatives": {
+        "s": {
+          "morpheme": "-s",
+          "chord": "s",
+          "word": "tables",
+          "emoji": "📊",
+          "note": "Plural tables"
+        },
+        "emti": {
+          "morpheme": "time-",
+          "chord": "emti",
+          "word": "timetable",
+          "emoji": "🗓️",
+          "note": "Schedule of times"
+        }
+      }
+    },
+    "bev": {
+      "lemma": "verb",
+      "chord": "bev",
+      "emoji": "⚡",
+      "note": "Action word",
+      "derivatives": {
+        "s": {
+          "morpheme": "-s",
+          "chord": "s",
+          "word": "verbs",
+          "emoji": "⚡",
+          "note": "Plural verbs"
+        },
+        "al": {
+          "morpheme": "-al",
+          "chord": "al",
+          "word": "verbal",
+          "emoji": "🗣️",
+          "note": "Spoken / relating to words"
+        },
+        "ad": {
+          "morpheme": "ad-",
+          "chord": "ad",
+          "word": "adverb",
+          "emoji": "🏷️",
+          "note": "Word modifying verb"
+        }
+      }
+    },
+    "adns": {
+      "lemma": "sand",
+      "chord": "adns",
+      "emoji": "🏖️",
+      "note": "Granular sediment",
+      "derivatives": {
+        "box": {
+          "morpheme": "-box",
+          "chord": "box",
+          "word": "sandbox",
+          "emoji": "🏖️",
+          "note": "Testing playground"
+        },
+        "dy": {
+          "morpheme": "-y",
+          "chord": "dy",
+          "word": "sandy",
+          "emoji": "🏝️",
+          "note": "Full of sand"
+        }
+      }
+    },
+    "hors": {
+      "lemma": "short",
+      "chord": "hors",
+      "emoji": "📏",
+      "note": "Brief in length or duration",
+      "derivatives": {
+        "ly": {
+          "morpheme": "-ly",
+          "chord": "ly",
+          "word": "shortly",
+          "emoji": "⏱️",
+          "note": "Soon / in a brief time"
+        },
+        "en": {
+          "morpheme": "-en",
+          "chord": "en",
+          "word": "shorten",
+          "emoji": "✂️",
+          "note": "Make shorter"
+        },
+        "aeg": {
+          "morpheme": "-age",
+          "chord": "aeg",
+          "word": "shortage",
+          "emoji": "📉",
+          "note": "Deficiency"
+        },
+        "cut": {
+          "morpheme": "-cut",
+          "chord": "ctu",
+          "word": "shortcut",
+          "emoji": "⚡",
+          "note": "Faster path"
+        }
+      }
+    },
+    "eilmps": {
+      "lemma": "simple",
+      "chord": "eilmps",
+      "emoji": "🌱",
+      "note": "Uncomplicated / plain",
+      "derivatives": {
+        "ly": {
+          "morpheme": "-ly",
+          "chord": "ly",
+          "word": "simply",
+          "emoji": "💡",
+          "note": "Merely / easily"
+        },
+        "ity": {
+          "morpheme": "-ity",
+          "chord": "ity",
+          "word": "simplicity",
+          "emoji": "⚪",
+          "note": "State of being simple"
+        }
+      }
+    },
+    "elt": {
+      "lemma": "let",
+      "chord": "elt",
+      "emoji": "🚪",
+      "note": "Allow / permit",
+      "derivatives": {
+        "s": {
+          "morpheme": "-s / 's",
+          "chord": "s",
+          "word": "lets",
+          "emoji": "👥",
+          "note": "Allows / let us"
+        },
+        "otu": {
+          "morpheme": "out-",
+          "chord": "otu",
+          "word": "outlet",
+          "emoji": "🔌",
+          "note": "Release / power point"
+        },
+        "in": {
+          "morpheme": "in-",
+          "chord": "in",
+          "word": "inlet",
+          "emoji": "🌊",
+          "note": "Narrow water entrance"
+        }
+      }
+    },
+    "pu": {
+      "lemma": "up",
+      "chord": "pu",
+      "emoji": "🔝",
+      "note": "Toward a higher place",
+      "derivatives": {
+        "no": {
+          "morpheme": "-on",
+          "chord": "no",
+          "word": "upon",
+          "emoji": "👆",
+          "note": "On top of"
+        },
+        "er": {
+          "morpheme": "-er",
+          "chord": "er",
+          "word": "upper",
+          "emoji": "⬆️",
+          "note": "Higher in position"
+        },
+        "ardw": {
+          "morpheme": "-ward",
+          "chord": "ardw",
+          "word": "upward",
+          "emoji": "📈",
+          "note": "In an upward direction"
+        }
+      }
+    },
+    "enprs": {
+      "lemma": "present",
+      "chord": "enprs",
+      "emoji": "🎁",
+      "note": "Current time / gift / show",
+      "derivatives": {
+        "ly": {
+          "morpheme": "-ly",
+          "chord": "ly",
+          "word": "presently",
+          "emoji": "⏱️",
+          "note": "At the present moment"
+        },
+        "tion": {
+          "morpheme": "-ation",
+          "chord": "tion",
+          "word": "presentation",
+          "emoji": "📊",
+          "note": "Demonstration / exhibition"
+        }
+      }
     }
   },
   "flat_chords": {
@@ -1103,7 +1508,41 @@
     "actually": "actually ",
     "functionality": "functionality ",
     "timer": "timer ",
-    "waiting": "waiting "
+    "waiting": "waiting ",
+    "adn": "and ",
+    "be": "be ",
+    "box": "box ",
+    "aclr": "clear ",
+    "aclrg": "clearing ",
+    "ctu": "cut ",
+    "dnp": "depend ",
+    "dgnp": "depending ",
+    "aist": "it was ",
+    "itwas": "it was ",
+    "elt": "let ",
+    "elst": "lets ",
+    "lets": "lets ",
+    "aekm": "make ",
+    "noy": "only ",
+    "ehot": "other ",
+    "1op": "pop ",
+    "pop": "pop ",
+    "enprs": "present ",
+    "adns": "sand ",
+    "enst": "sentence ",
+    "hors": "short ",
+    "eilmps": "simple ",
+    "os": "so ",
+    "abelt": "table ",
+    "epty": "type ",
+    "pu": "up ",
+    "bev": "verb ",
+    "besv": "verbs ",
+    "verbs": "verbs ",
+    "ehvw": "we have ",
+    "wehave": "we have ",
+    "shortcut": "shortcut ",
+    "sandbox": "sandbox "
   },
   "grammar_rules": {
     "verb": {
