@@ -2078,7 +2078,9 @@
     "unmapped": "unmapped ",
     "lntu": "untoggle ",
     "untl": "untoggle ",
-    "untoggle": "untoggle "
+    "untoggle": "untoggle ",
+    "1ad": "ad ",
+    "ad": "ad "
   },
   "grammar_rules": {
     "verb": {
@@ -3053,6 +3055,12 @@
       "1": "untoggled",
       "2": "untoggling",
       "3": "untoggles"
+    },
+    "ad": {
+      "lemma": "ad",
+      "type": "noun",
+      "1": "ads",
+      "2": "ad's"
     }
   },
   "chinese_chords": {

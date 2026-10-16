@@ -914,7 +914,8 @@
             { word: "pronouns", chord: "nprs", keys: "prns", note: "Clean 4-finger match (p-r-n-s)" },
             { word: "toggle", chord: "1got", keys: "1tog", note: "1 + t-o-g (toggle)" },
             { word: "unmapped", chord: "dnpu", keys: "unpd", note: "Clean 4-finger match (u-n-p-d)" },
-            { word: "untoggle", chord: "lntu", keys: "untl", note: "Clean 4-finger match (u-n-t-l)" }
+            { word: "untoggle", chord: "lntu", keys: "untl", note: "Clean 4-finger match (u-n-t-l)" },
+            { word: "ad", chord: "1ad", keys: "1ad", note: "1 + a-d (ad / advertisement)" }
         ];
 
         // Map sorted chord to output word
@@ -1023,7 +1024,9 @@
             "unmapped": "unmapped ",
             "unpd": "unmapped ",
             "untoggle": "untoggle ",
-            "untl": "untoggle "
+            "untl": "untoggle ",
+            "ad": "ad ",
+            "1ad": "ad "
         });
 
         // Mirror mappings for alternating/bimanual key ergonomics:
@@ -1271,7 +1274,8 @@
             "代词": "pronouns",
             "切换": "toggle",
             "未映射": "unmapped",
-            "取消切换": "untoggle"
+            "取消切换": "untoggle",
+            "广告": "ad"
         });
 
         Object.assign(ENGLISH_TO_CHINESE, {
@@ -1332,7 +1336,8 @@
             "pronouns": "代词",
             "toggle": "切换",
             "unmapped": "未映射",
-            "untoggle": "取消切换"
+            "untoggle": "取消切换",
+            "ad": "广告"
         });
 
         // Mirror into ENGLISH_TO_CHINESE
@@ -1887,7 +1892,8 @@
             "pronouns": { emoji: "👤", bg: "#ec4899", glow: "rgba(236, 72, 153, 0.4)", label: "PRONOUNS" },
             "toggle": { emoji: "🎚️", bg: "#06b6d4", glow: "rgba(6, 182, 212, 0.4)", label: "TOGGLE" },
             "unmapped": { emoji: "❓", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "UNMAPPED" },
-            "untoggle": { emoji: "⏹️", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "UNTOGGLE" }
+            "untoggle": { emoji: "⏹️", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "UNTOGGLE" },
+            "ad": { emoji: "📢", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "AD" }
         };
 
         // 2-Step Morpheme Tree Structure
