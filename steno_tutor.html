@@ -418,6 +418,9 @@
 
                         <!-- Actions -->
                         <div class="flex items-center gap-2">
+                            <button id="editor-copy-english-btn" onclick="app.copyEnglishText()" class="text-xs text-slate-400 hover:text-indigo-400 font-semibold px-3 py-1.5 bg-slate-950 rounded-xl border border-slate-800 hover:border-indigo-500/50 transition-all flex items-center gap-1.5 active:scale-95 shadow" title="Copy pure English words regardless of Chinese or English typing (Ctrl+Shift+C or Alt+C)">
+                                🇬🇧 Copy English <span class="text-[10px] text-slate-500 font-mono">(Ctrl+Shift+C)</span>
+                            </button>
                             <button id="editor-copy-btn" onclick="app.copyEditorText()" class="text-xs text-slate-400 hover:text-emerald-400 font-semibold px-3 py-1.5 bg-slate-950 rounded-xl border border-slate-800 hover:border-emerald-500/50 transition-all flex items-center gap-1.5 active:scale-95 shadow" title="Copy clean lettered words without SVGs (Ctrl+C)">
                                 📋 Copy <span class="text-[10px] text-slate-500 font-mono">(Ctrl+C)</span>
                             </button>
@@ -848,6 +851,24 @@
             "present": "现在", "make": "做", "only": "只", "other": "他",
             "pop": "弹", "sentence": "句", "so": "所以", "it was": "曾经",
             "we have": "我们有"
+        });
+
+        // Mirror back into CHINESE_TO_ENGLISH so all Chinese compounds translate back to English
+        for (const [eng, ch] of Object.entries(ENGLISH_TO_CHINESE)) {
+            if (!CHINESE_TO_ENGLISH[ch]) {
+                CHINESE_TO_ENGLISH[ch] = eng;
+            }
+        }
+        // Specific Chinese morpheme compound words mapping to English
+        Object.assign(CHINESE_TO_ENGLISH, {
+            "大人": "adult", "大家": "everyone", "大学": "university", "大小": "size",
+            "拿出": "take out", "拿下": "capture", "拿起": "pick up",
+            "电话": "telephone", "电脑": "computer", "电视": "television",
+            "生日": "birthday", "生命": "life", "生产": "produce",
+            "沙盒": "sandbox", "快捷键": "shortcut", "计时器": "timer",
+            "清理": "clearing", "依据": "depending", "动词": "verbs",
+            "打字": "typing", "等待": "waiting", "实际": "actually",
+            "曾经": "it was", "我们有": "we have", "这": "this", "是": "is", "爱": "love"
         });
 
         // 51 Steno Vocabulary Visual System: Perfect Emojis & Expressive Graphics
@@ -2427,6 +2448,11 @@
 
             // Extract pure lettered words text from editor (preserving grammar, filtering out SVGs/emojis)
             getEditorText() {
+                return this.getEnglishEditorText();
+            }
+
+            // Extract pure English words text (translating Chinese characters/compounds to English)
+            getEnglishEditorText() {
                 const editor = document.getElementById('sandbox-editor');
                 if (!editor) return '';
 
@@ -2437,7 +2463,10 @@
                     if (el.id === 'editor-placeholder' || el.id === 'editor-caret') continue;
 
                     if (el.classList.contains('chord-item')) {
-                        const word = el.dataset.word || el.innerText.trim();
+                        let word = el.dataset.english || el.dataset.word || el.innerText.trim();
+                        if (/[\u4e00-\u9fa5]/.test(word)) {
+                            word = CHINESE_TO_ENGLISH[word] || word;
+                        }
                         if (word) {
                             if (result.length > 0 && !/[\s\n]$/.test(result)) {
                                 result += ' ';
@@ -2445,12 +2474,29 @@
                             result += word;
                         }
                     } else if (el.classList.contains('typed-span')) {
-                        result += el.textContent;
+                        const text = el.textContent;
+                        let translated = '';
+                        const tokens = text.match(/[\u4e00-\u9fa5]+|[^\u4e00-\u9fa5]+/g) || [text];
+                        for (const tok of tokens) {
+                            if (/[\u4e00-\u9fa5]+/.test(tok)) {
+                                if (CHINESE_TO_ENGLISH[tok]) {
+                                    translated += (translated && !/\s$/.test(translated) ? ' ' : '') + CHINESE_TO_ENGLISH[tok];
+                                } else {
+                                    for (const ch of tok) {
+                                        const eng = CHINESE_TO_ENGLISH[ch] || ch;
+                                        translated += (translated && !/\s$/.test(translated) ? ' ' : '') + eng;
+                                    }
+                                }
+                            } else {
+                                translated += tok;
+                            }
+                        }
+                        result += translated;
                     } else if (el.classList.contains('basis-full')) {
                         result += '\n';
                     }
                 }
-                return result;
+                return result.trim();
             }
 
             updateCaret() {
@@ -2682,8 +2728,12 @@
                 }
             }
 
-            async copyEditorText() {
-                const text = this.getEditorText();
+            async copyEnglishText() {
+                await this.copyEditorText(true);
+            }
+
+            async copyEditorText(isEnglishOnly = false) {
+                const text = this.getEnglishEditorText();
                 const toast = document.getElementById('sandbox-toast');
 
                 if (!text || text.trim().length === 0) {
@@ -2711,7 +2761,7 @@
                         document.execCommand('copy');
                         document.body.removeChild(ta);
                     }
-                    this.showCopyFeedback(text);
+                    this.showCopyFeedback(text, isEnglishOnly);
                 } catch (err) {
                     console.error('Clipboard copy error:', err);
                     if (toast) {
@@ -2721,22 +2771,26 @@
                 }
             }
 
-            showCopyFeedback(text) {
+            showCopyFeedback(text, isEnglishOnly = false) {
                 sound.playSuccess();
-                const copyBtn = document.getElementById('editor-copy-btn');
-                if (copyBtn) {
-                    const orig = copyBtn.innerHTML;
-                    copyBtn.innerHTML = '✅ Copied!';
-                    copyBtn.classList.add('text-emerald-400', 'border-emerald-500');
+                const copyBtn = isEnglishOnly ? document.getElementById('editor-copy-english-btn') : document.getElementById('editor-copy-btn');
+                const defaultCopyBtn = document.getElementById('editor-copy-btn');
+                const targetBtn = copyBtn || defaultCopyBtn;
+                if (targetBtn) {
+                    const orig = targetBtn.innerHTML;
+                    targetBtn.innerHTML = isEnglishOnly ? '✅ English Copied!' : '✅ Copied!';
+                    targetBtn.classList.add('text-emerald-400', 'border-emerald-500');
                     setTimeout(() => {
-                        copyBtn.innerHTML = orig;
-                        copyBtn.classList.remove('text-emerald-400', 'border-emerald-500');
+                        targetBtn.innerHTML = orig;
+                        targetBtn.classList.remove('text-emerald-400', 'border-emerald-500');
                     }, 1400);
                 }
                 const toast = document.getElementById('sandbox-toast');
                 if (toast) {
                     const preview = text.length > 40 ? text.slice(0, 40) + '...' : text;
-                    toast.innerText = `📋 [Copied Words] "${preview}" copied to clipboard (Grammar preserved, no SVGs!)`;
+                    toast.innerText = isEnglishOnly 
+                        ? `🇬🇧 [Copied English] "${preview}" copied to clipboard!`
+                        : `📋 [Copied Words] "${preview}" copied to clipboard (Grammar preserved, no SVGs!)`;
                     toast.className = "text-xs md:text-sm font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-6 py-2 rounded-xl text-center shadow-lg";
                 }
             }
@@ -2862,6 +2916,13 @@
                 el.className = "chord-item transition-all duration-150 inline-flex items-center";
                 el.dataset.word = matchedWord;
 
+                // Identify both English word and Chinese character for reliable cross-language operations
+                const isChineseWord = /[\u4e00-\u9fa5]/.test(matchedWord);
+                const englishWord = isChineseWord ? (CHINESE_TO_ENGLISH[matchedWord] || matchedWord) : matchedWord;
+                const chineseChar = isChineseWord ? matchedWord : (ENGLISH_TO_CHINESE[matchedWord.toLowerCase()] || matchedWord);
+                el.dataset.english = englishWord;
+                el.dataset.chinese = chineseChar;
+
                 if (this.editorOutputMode === 'words') {
                     el.innerHTML = `
                         <span class="px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-700/80 font-mono font-bold text-sm md:text-base text-emerald-400 shadow mr-1.5 hover:border-emerald-500">
@@ -2973,10 +3034,23 @@
                 el.className = "chord-item transition-all duration-150 inline-flex items-center";
                 el.dataset.word = newWord;
 
+                // Identify both English word and Chinese character for cross-language operations
+                const isChineseWord = /[\u4e00-\u9fa5]/.test(newWord);
+                const englishWord = isChineseWord ? (CHINESE_TO_ENGLISH[newWord] || newWord) : newWord;
+                const chineseChar = isChineseWord ? newWord : (ENGLISH_TO_CHINESE[newWord.toLowerCase()] || newWord);
+                el.dataset.english = englishWord;
+                el.dataset.chinese = chineseChar;
+
                 if (this.editorOutputMode === 'words') {
                     el.innerHTML = `
                         <span class="px-2.5 py-1 rounded-xl bg-indigo-950/80 border border-indigo-500/60 font-mono font-bold text-sm md:text-base text-indigo-300 shadow mr-1.5">
                             ${newWord}
+                        </span>
+                    `;
+                } else if (this.editorOutputMode === 'chinese') {
+                    el.innerHTML = `
+                        <span class="px-3 py-1 rounded-xl bg-slate-900 border border-amber-500/50 font-sans font-black text-lg md:text-xl text-amber-300 shadow mr-1.5 hover:border-amber-400 select-none cursor-default" title="${newWord.toUpperCase()}">
+                            ${chineseChar}
                         </span>
                     `;
                 } else if (this.editorOutputMode === 'svg') {
@@ -3510,11 +3584,23 @@
                 this.spaceBypass = false;
 
                 window.addEventListener('keydown', (e) => {
-                    // Keyboard Shortcuts: Ctrl+C (Copy), Ctrl+V (Paste), Ctrl+L / Ctrl+Delete (Clear)
+                    // Dedicated English-only copy shortcut: Alt+C
+                    if (e.altKey && e.key.toLowerCase() === 'c' && this.mode === 'sandbox') {
+                        e.preventDefault();
+                        this.copyEnglishText();
+                        return;
+                    }
+
+                    // Keyboard Shortcuts: Ctrl+Shift+C (Dedicated English Copy), Ctrl+C (Copy English words), Ctrl+V (Paste), Ctrl+L / Ctrl+Delete (Clear)
                     if (e.ctrlKey || e.metaKey) {
+                        if (e.shiftKey && e.key.toLowerCase() === 'c' && this.mode === 'sandbox') {
+                            e.preventDefault();
+                            this.copyEnglishText();
+                            return;
+                        }
                         if (e.key.toLowerCase() === 'c' && this.mode === 'sandbox') {
                             e.preventDefault();
-                            this.copyEditorText();
+                            this.copyEnglishText();
                             return;
                         }
                         if (e.key.toLowerCase() === 'v' && this.mode === 'sandbox') {
