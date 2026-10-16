@@ -1876,7 +1876,19 @@
     "ckstu": "strucuture ",
     "ghin": "thing ",
     "hist": "this ",
-    "1a": "a "
+    "1a": "a ",
+    "4ijsu": "速记",
+    "34adiz": "打字",
+    "34adijsuz": "速记打字",
+    "14abimo": "目标",
+    "25ehmns": "什么",
+    "13abhio": "指标",
+    "3osuy": "所有",
+    "12abinuy": "边缘",
+    "24agknoqu": "情况",
+    "34aijnx": "仅限",
+    "12aegilnw": "温良",
+    "134hinsu": "女士"
   },
   "grammar_rules": {
     "verb": {
@@ -3047,6 +3059,139 @@
       "keys": "4dong",
       "tone": 4,
       "english": "act"
+    },
+    "4ij": {
+      "char": "记",
+      "pinyin": "jì",
+      "keys": "4ji",
+      "tone": 4,
+      "english": "record/write down"
+    },
+    "3ad": {
+      "char": "打",
+      "pinyin": "dǎ",
+      "keys": "3da",
+      "tone": 3,
+      "english": "type/hit/strike"
+    },
+    "4iz": {
+      "char": "字",
+      "pinyin": "zì",
+      "keys": "4zi",
+      "tone": 4,
+      "english": "character/letter"
+    },
+    "4mu": {
+      "char": "目",
+      "pinyin": "mù",
+      "keys": "4mu",
+      "tone": 4,
+      "english": "eye"
+    },
+    "1abio": {
+      "char": "标",
+      "pinyin": "biāo",
+      "keys": "1biao",
+      "tone": 1,
+      "english": "mark/target/standard"
+    },
+    "5em": {
+      "char": "么",
+      "pinyin": "me",
+      "keys": "5me",
+      "tone": 5,
+      "english": "question suffix"
+    },
+    "3ijn": {
+      "char": "仅",
+      "pinyin": "jǐn",
+      "keys": "3jin",
+      "tone": 3,
+      "english": "only/merely"
+    },
+    "4ainx": {
+      "char": "限",
+      "pinyin": "xiàn",
+      "keys": "4xian",
+      "tone": 4,
+      "english": "limit/restrict"
+    },
+    "1enw": {
+      "char": "温",
+      "pinyin": "wēn",
+      "keys": "1wen",
+      "tone": 1,
+      "english": "warm/gentle"
+    },
+    "2agiln": {
+      "char": "良",
+      "pinyin": "liáng",
+      "keys": "2liang",
+      "tone": 2,
+      "english": "good/kind"
+    },
+    "3nu": {
+      "char": "女",
+      "pinyin": "nǚ",
+      "keys": "3nu",
+      "tone": 3,
+      "english": "woman/female"
+    },
+    "14his": {
+      "char": "士",
+      "pinyin": "shì",
+      "keys": "14shi",
+      "tone": 4,
+      "english": "scholar/person"
+    },
+    "3hiz": {
+      "char": "指",
+      "pinyin": "zhǐ",
+      "keys": "3zhi",
+      "tone": 3,
+      "english": "point/indicate"
+    },
+    "3osu": {
+      "char": "所",
+      "pinyin": "suǒ",
+      "keys": "3suo",
+      "tone": 3,
+      "english": "place/that which"
+    },
+    "5de": {
+      "char": "的",
+      "pinyin": "de",
+      "keys": "5de",
+      "tone": 5,
+      "english": "structural particle"
+    },
+    "1abin": {
+      "char": "边",
+      "pinyin": "biān",
+      "keys": "1bian",
+      "tone": 1,
+      "english": "edge/side"
+    },
+    "2anuy": {
+      "char": "缘",
+      "pinyin": "yuán",
+      "keys": "2yuan",
+      "tone": 2,
+      "english": "edge/margin"
+    },
+    "2ginq": {
+      "char": "情",
+      "pinyin": "qíng",
+      "keys": "2qing",
+      "tone": 2,
+      "english": "situation/feeling"
+    },
+    "4agknu": {
+      "char": "况",
+      "pinyin": "kuàng",
+      "keys": "4kuang",
+      "tone": 4,
+      "english": "condition/circumstance"
     }
   }
 }

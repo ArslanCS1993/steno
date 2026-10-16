@@ -777,7 +777,40 @@
             { word: "something", chord: "mnost", keys: "mnost", note: "Unspecified entity", english: "something" },
             { word: "strucuture", chord: "ckstu", keys: "ckstu", note: "Framework / arrangement (structure)", english: "strucuture" },
             { word: "thing", chord: "ghin", keys: "ghin", note: "Object / entity", english: "thing" },
-            { word: "this", chord: "hist", keys: "hist", note: "Specific entity (near)", english: "this" }
+            { word: "this", chord: "hist", keys: "hist", note: "Specific entity (near)", english: "this" },
+            // Chinese Characters (Tone + Pinyin)
+            { word: "记", chord: "4ij", keys: "4ji", pinyin: "jì", english: "record", note: "Tone 4 + ji (record/write down)" },
+            { word: "打", chord: "3ad", keys: "3da", pinyin: "dǎ", english: "type", note: "Tone 3 + da (type/strike/hit)" },
+            { word: "字", chord: "4iz", keys: "4zi", pinyin: "zì", english: "character", note: "Tone 4 + zi (character/letter)" },
+            { word: "目", chord: "4mu", keys: "4mu", pinyin: "mù", english: "eye", note: "Tone 4 + mu (eye)" },
+            { word: "标", chord: "1abio", keys: "1biao", pinyin: "biāo", english: "target", note: "Tone 1 + biao (mark/target/standard)" },
+            { word: "么", chord: "5em", keys: "5me", pinyin: "me", english: "suffix", note: "Tone 5 + me (question suffix)" },
+            { word: "仅", chord: "3ijn", keys: "3jin", pinyin: "jǐn", english: "only", note: "Tone 3 + jin (only/merely)" },
+            { word: "限", chord: "4ainx", keys: "4xian", pinyin: "xiàn", english: "limit", note: "Tone 4 + xian (limit/restrict)" },
+            { word: "温", chord: "1enw", keys: "1wen", pinyin: "wēn", english: "warm", note: "Tone 1 + wen (warm/gentle)" },
+            { word: "良", chord: "2agiln", keys: "2liang", pinyin: "liáng", english: "good", note: "Tone 2 + liang (good/kind)" },
+            { word: "女", chord: "3nu", keys: "3nu", pinyin: "nǚ", english: "woman", note: "Tone 3 + nu (woman/female)" },
+            { word: "士", chord: "14his", keys: "14shi", pinyin: "shì", english: "scholar", note: "Tone 4 + shi2 (person/scholar)" },
+            { word: "指", chord: "3hiz", keys: "3zhi", pinyin: "zhǐ", english: "point", note: "Tone 3 + zhi (point/indicate)" },
+            { word: "所", chord: "3osu", keys: "3suo", pinyin: "suǒ", english: "place", note: "Tone 3 + suo (place/that which)" },
+            { word: "的", chord: "5de", keys: "5de", pinyin: "de", english: "of", note: "Tone 5 + de (structural particle)" },
+            { word: "边", chord: "1abin", keys: "1bian", pinyin: "biān", english: "edge", note: "Tone 1 + bian (edge/side)" },
+            { word: "缘", chord: "2anuy", keys: "2yuan", pinyin: "yuán", english: "margin", note: "Tone 2 + yuan (edge/margin)" },
+            { word: "情", chord: "2ginq", keys: "2qing", pinyin: "qíng", english: "situation", note: "Tone 2 + qing (situation/feeling)" },
+            { word: "况", chord: "4agknu", keys: "4kuang", pinyin: "kuàng", english: "condition", note: "Tone 4 + kuang (condition/circumstance)" },
+            // Chinese Compound Phrases
+            { word: "速记", chord: "4ijsu", keys: "4su+4ji", pinyin: "sùjì", english: "steno", note: "Compound: fast + record (steno/shorthand)" },
+            { word: "打字", chord: "34adiz", keys: "3da+4zi", pinyin: "dǎzì", english: "typing", note: "Compound: type + character (typing)" },
+            { word: "速记打字", chord: "34adijsuz", keys: "3da+4ji+4su+4zi", pinyin: "sùjì dǎzì", english: "steno typing", note: "Compound: steno typing" },
+            { word: "目标", chord: "14abimo", keys: "4mu+1biao", pinyin: "mùbiāo", english: "goal", note: "Compound: eye + target (goal)" },
+            { word: "什么", chord: "25ehmns", keys: "2shen+5me", pinyin: "shénme", english: "what", note: "Compound: what" },
+            { word: "指标", chord: "13abhio", keys: "3zhi+1biao", pinyin: "zhǐbiāo", english: "metric", note: "Compound: point + target (indicator/metric)" },
+            { word: "所有", chord: "3osuy", keys: "3suo+you", pinyin: "suǒyǒu", english: "all", note: "Compound: place + have (all/every)" },
+            { word: "边缘", chord: "12abinuy", keys: "1bian+2yuan", pinyin: "biānyuán", english: "edge", note: "Compound: edge + margin (edge/fringe)" },
+            { word: "情况", chord: "24agknoqu", keys: "2qing+4kuang", pinyin: "qíngkuàng", english: "situation", note: "Compound: feeling + condition (situation)" },
+            { word: "仅限", chord: "34aijnx", keys: "3jin+4xian", pinyin: "jǐnxiàn", english: "only", note: "Compound: only + limit (limited to)" },
+            { word: "温良", chord: "12aegilnw", keys: "1wen+2liang", pinyin: "wēnliáng", english: "gentle and kind", note: "Compound: warm + good (gentle)" },
+            { word: "女士", chord: "134hinsu", keys: "3nu+14shi", pinyin: "nǚshì", english: "lady", note: "Compound: woman + scholar (lady/madam)" }
         ];
 
         // Map sorted chord to output word
@@ -816,7 +849,7 @@
             "机": "machine", "连": "connect", "地": "local", "关": "about", "思": "think",
             "请": "please", "界": "world", "速": "steno", "码": "code", "脑": "computer",
             "盘": "keyboard", "功": "function", "站": "stand", "拿": "take", "转": "turn",
-            "形": "form", "按": "press", "动": "act", "这": "that", "是": "act", "爱": "life"
+            "形": "form", "按": "press", "动": "act", "这": "this", "是": "is", "爱": "love", "记": "record", "打": "type", "字": "character", "目": "eye", "标": "target", "么": "what", "仅": "only", "限": "limit", "温": "warm", "良": "good", "女": "woman", "士": "scholar", "指": "point", "所": "place", "的": "of", "边": "edge", "缘": "margin", "情": "situation", "况": "condition"
         };
 
         // Bidirectional English to Chinese Character Mapping
@@ -868,7 +901,65 @@
             "沙盒": "sandbox", "快捷键": "shortcut", "计时器": "timer",
             "清理": "clearing", "依据": "depending", "动词": "verbs",
             "打字": "typing", "等待": "waiting", "实际": "actually",
-            "曾经": "it was", "我们有": "we have", "这": "this", "是": "is", "爱": "love"
+            "曾经": "it was", "我们有": "we have", "这": "this", "是": "is", "爱": "love",
+            "大步走": "stride",
+            "速记": "steno", "打字": "typing", "速记打字": "steno typing",
+            "目标": "goal", "什么": "what",
+            "目标是什么": "what is the goal", "目标是什么？": "what is the goal?",
+            "仅限": "only", "温良": "gentle and kind", "女士": "lady",
+            "仅限温良女士": "only for gentle and kind ladies",
+            "指标": "metric", "指标是什么": "what is the metric", "指标是什么？": "what is the metric?",
+            "所有": "all", "边缘": "edge", "情况": "situation",
+            "边缘情况": "edge cases", "所有的边缘情况": "all the edge cases"
+        });
+
+        // Additional English phrases mapping to Chinese
+        Object.assign(ENGLISH_TO_CHINESE, {
+            "stride": "大步走",
+            "walk with big steps": "大步走",
+            "steno": "速记",
+            "shorthand": "速记",
+            "steno typing": "速记打字",
+            "goal": "目标",
+            "target": "目标",
+            "what is the goal": "目标是什么",
+            "what is the goal?": "目标是什么？",
+            "metric": "指标",
+            "metrics": "指标",
+            "indicator": "指标",
+            "indicators": "指标",
+            "what is the metric": "指标是什么",
+            "what is the metric?": "指标是什么？",
+            "what is the indicator": "指标是什么",
+            "what is the indicator?": "指标是什么？",
+            "what are the indicators": "指标是什么",
+            "what are the indicators?": "指标是什么？",
+            "gentle": "温良",
+            "kind": "良",
+            "gentle and kind": "温良",
+            "lady": "女士",
+            "madam": "女士",
+            "only for gentle and kind ladies": "仅限温良女士",
+            "all": "所有",
+            "every": "所有",
+            "edge": "边缘",
+            "margin": "边缘",
+            "fringe": "边缘",
+            "situation": "情况",
+            "condition": "情况",
+            "circumstance": "情况",
+            "circumstances": "情况",
+            "edge case": "边缘情况",
+            "edge cases": "边缘情况",
+            "all the edge cases": "所有的边缘情况",
+            "all edge cases": "所有的边缘情况",
+            "record": "记",
+            "write down": "记",
+            "eye": "目",
+            "scholar": "士",
+            "point": "指",
+            "indicate": "指",
+            "place": "所"
         });
 
         const ALL_MORPHEME_TRANSLATIONS = {
@@ -1225,7 +1316,77 @@
             "狗": { emoji: "狗", bg: "#d97706", glow: "rgba(217, 119, 6, 0.4)", label: "狗 (gǒu - dog)", svg: `<circle cx="24" cy="24" r="21" fill="#78350f" stroke="#d97706" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#fde68a">狗</text>` },
             "大": { emoji: "大", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "大 (dà - big)", svg: `<circle cx="24" cy="24" r="21" fill="#4c1d95" stroke="#8b5cf6" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#ddd6fe">大</text>` },
             "书": { emoji: "书", bg: "#ec4899", glow: "rgba(236, 72, 153, 0.4)", label: "书 (shū - book)", svg: `<circle cx="24" cy="24" r="21" fill="#831843" stroke="#ec4899" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#fbcfe8">书</text>` },
-            "爱": { emoji: "爱", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "爱 (ài - love)", svg: `<circle cx="24" cy="24" r="21" fill="#7f1d1d" stroke="#ef4444" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#fecaca">爱</text>` }
+            "爱": { emoji: "爱", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "爱 (ài - love)", svg: `<circle cx="24" cy="24" r="21" fill="#7f1d1d" stroke="#ef4444" stroke-width="2.5"/><text x="24" y="32" text-anchor="middle" font-size="22" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900" fill="#fecaca">爱</text>` },
+            // User-Specified Chinese Characters with Exact Emojis
+            "步": { emoji: "👣", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "步 (STEP)" },
+            "走": { emoji: "🚶", bg: "#059669", glow: "rgba(5, 150, 105, 0.4)", label: "走 (WALK)" },
+            "大": { emoji: "🐘", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "大 (BIG)" },
+            "速": { emoji: "⚡", bg: "#eab308", glow: "rgba(234, 179, 8, 0.4)", label: "速 (FAST)" },
+            "记": { emoji: "📝", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "记 (RECORD)" },
+            "打": { emoji: "⌨️", bg: "#1e1b4b", glow: "rgba(129, 140, 248, 0.4)", label: "打 (TYPE)" },
+            "字": { emoji: "🔤", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "字 (LETTER)" },
+            "目": { emoji: "👀", bg: "#38bdf8", glow: "rgba(56, 189, 248, 0.4)", label: "目 (EYE)" },
+            "标": { emoji: "🚩", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "标 (TARGET)" },
+            "是": { emoji: "🟢", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "是 (IS)" },
+            "什": { emoji: "❓🤷", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "什 (WHAT)" },
+            "么": { emoji: "❔", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "么 (SUFFIX)" },
+            "仅": { emoji: "🎯", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "仅 (ONLY)" },
+            "限": { emoji: "🛑", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "限 (LIMIT)" },
+            "温": { emoji: "🌱", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "温 (WARM)" },
+            "良": { emoji: "✨", bg: "#facc15", glow: "rgba(250, 204, 21, 0.4)", label: "良 (GOOD)" },
+            "女": { emoji: "👩", bg: "#f43f5e", glow: "rgba(244, 63, 94, 0.4)", label: "女 (WOMAN)" },
+            "士": { emoji: "🎓", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "士 (SCHOLAR)" },
+            "指": { emoji: "👆", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "指 (POINT)" },
+            "所": { emoji: "🏠", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "所 (PLACE)" },
+            "有": { emoji: "🤲", bg: "#ec4899", glow: "rgba(236, 72, 153, 0.4)", label: "有 (HAVE)" },
+            "的": { emoji: "🔗", bg: "#facc15", glow: "rgba(250, 204, 21, 0.4)", label: "的 (OF)" },
+            "边": { emoji: "📏", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "边 (EDGE)" },
+            "缘": { emoji: "🧶", bg: "#f97316", glow: "rgba(249, 115, 22, 0.4)", label: "缘 (MARGIN)" },
+            "情": { emoji: "💭", bg: "#06b6d4", glow: "rgba(6, 182, 212, 0.4)", label: "情 (FEELING)" },
+            "况": { emoji: "📋", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "况 (CONDITION)" },
+            // Chinese Compound Phrases Visuals
+            "大步走": { emoji: "🚶‍♂️", bg: "#059669", glow: "rgba(5, 150, 105, 0.4)", label: "大步走 (STRIDE)" },
+            "速记": { emoji: "⚡", bg: "#4f46e5", glow: "rgba(79, 70, 229, 0.4)", label: "速记 (STENO)" },
+            "打字": { emoji: "⌨️", bg: "#1e1b4b", glow: "rgba(129, 140, 248, 0.4)", label: "打字 (TYPING)" },
+            "速记打字": { emoji: "⌨️", bg: "#4f46e5", glow: "rgba(79, 70, 229, 0.4)", label: "速记打字 (STENO TYPING)" },
+            "目标": { emoji: "🎯", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "目标 (GOAL)" },
+            "什么": { emoji: "🤔", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "什么 (WHAT)" },
+            "目标是什么": { emoji: "🎯", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "目标是什么 (GOAL?)" },
+            "目标是什么？": { emoji: "🎯", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "目标是什么？ (GOAL?)" },
+            "仅限": { emoji: "🛑", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "仅限 (ONLY)" },
+            "温良": { emoji: "🌱", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "温良 (GENTLE)" },
+            "女士": { emoji: "👩", bg: "#f43f5e", glow: "rgba(244, 63, 94, 0.4)", label: "女士 (LADY)" },
+            "仅限温良女士": { emoji: "👩", bg: "#f43f5e", glow: "rgba(244, 63, 94, 0.4)", label: "仅限温良女士 (GENTLE LADIES ONLY)" },
+            "指标": { emoji: "📊", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "指标 (METRIC)" },
+            "指标是什么": { emoji: "📊", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "指标是什么 (METRIC?)" },
+            "指标是什么？": { emoji: "📊", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "指标是什么？ (METRIC?)" },
+            "所有": { emoji: "🌐", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "所有 (ALL)" },
+            "边缘": { emoji: "📏", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "边缘 (EDGE)" },
+            "情况": { emoji: "📋", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "情况 (SITUATION)" },
+            "边缘情况": { emoji: "📋", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "边缘情况 (EDGE CASES)" },
+            "所有的边缘情况": { emoji: "📋", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "所有的边缘情况 (ALL EDGE CASES)" },
+            // English Vocabulary Visuals
+            "goal": { emoji: "🎯", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "GOAL" },
+            "target": { emoji: "🎯", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "TARGET" },
+            "metric": { emoji: "📊", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "METRIC" },
+            "metrics": { emoji: "📊", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "METRICS" },
+            "indicator": { emoji: "📊", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "INDICATOR" },
+            "indicators": { emoji: "📊", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "INDICATORS" },
+            "stride": { emoji: "🚶‍♂️", bg: "#059669", glow: "rgba(5, 150, 105, 0.4)", label: "STRIDE" },
+            "lady": { emoji: "👩", bg: "#f43f5e", glow: "rgba(244, 63, 94, 0.4)", label: "LADY" },
+            "gentle": { emoji: "🌱", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "GENTLE" },
+            "scholar": { emoji: "🎓", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "SCHOLAR" },
+            "edge": { emoji: "📏", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "EDGE" },
+            "margin": { emoji: "🧶", bg: "#f97316", glow: "rgba(249, 115, 22, 0.4)", label: "MARGIN" },
+            "situation": { emoji: "💭", bg: "#06b6d4", glow: "rgba(6, 182, 212, 0.4)", label: "SITUATION" },
+            "condition": { emoji: "📋", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "CONDITION" },
+            "record": { emoji: "📝", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "RECORD" },
+            "character": { emoji: "🔤", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "CHARACTER" },
+            "eye": { emoji: "👀", bg: "#38bdf8", glow: "rgba(56, 189, 248, 0.4)", label: "EYE" },
+            "point": { emoji: "👆", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "POINT" },
+            "indicate": { emoji: "👆", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "INDICATE" },
+            "place": { emoji: "🏠", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "PLACE" },
+            "all": { emoji: "🌐", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "ALL" }
         };
 
         // 2-Step Morpheme Tree Structure
@@ -3862,60 +4023,119 @@
                 const editor = document.getElementById('sandbox-editor');
                 if (!editor) return '';
 
-                let result = '';
-                const children = Array.from(editor.children);
+                const children = Array.from(editor.children).filter(el => el.id !== 'editor-placeholder' && el.id !== 'editor-caret');
+                if (children.length === 0) return '';
 
+                // Build a unified stream of tokens: newline, chord words, or typed tokens
+                const tokens = [];
                 for (let el of children) {
-                    if (el.id === 'editor-placeholder' || el.id === 'editor-caret') continue;
-
-                    if (el.classList.contains('chord-item')) {
-                        let word = el.dataset.english || el.dataset.word || el.innerText.trim();
-                        if (/[\u4e00-\u9fa5]/.test(word)) {
-                            word = CHINESE_TO_ENGLISH[word] || word;
-                        }
-                        if (word) {
-                            if (result.length > 0 && !/[\s\n]$/.test(result)) {
-                                result += ' ';
-                            }
-                            result += word;
-                        }
+                    if (el.classList.contains('basis-full')) {
+                        tokens.push({ type: 'newline', text: '\n' });
+                    } else if (el.classList.contains('chord-item')) {
+                        const rawWord = el.dataset.word || el.innerText.trim();
+                        const isChinese = /[\u4e00-\u9fa5]/.test(rawWord);
+                        const eng = el.dataset.english || (isChinese ? (CHINESE_TO_ENGLISH[rawWord] || rawWord) : rawWord);
+                        tokens.push({
+                            type: 'word',
+                            isChinese: isChinese,
+                            raw: rawWord,
+                            english: eng
+                        });
                     } else if (el.classList.contains('typed-span')) {
                         const text = el.textContent;
-                        let translated = '';
-                        const tokens = text.match(/[\u4e00-\u9fa5]+|[^\u4e00-\u9fa5]+/g) || [text];
-                        for (const tok of tokens) {
-                            if (/[\u4e00-\u9fa5]+/.test(tok)) {
-                                if (CHINESE_TO_ENGLISH[tok]) {
-                                    translated += (translated && !/\s$/.test(translated) ? ' ' : '') + CHINESE_TO_ENGLISH[tok];
-                                } else {
-                                    for (const ch of tok) {
-                                        const eng = CHINESE_TO_ENGLISH[ch] || ch;
-                                        translated += (translated && !/\s$/.test(translated) ? ' ' : '') + eng;
-                                    }
+                        const parts = text.match(/[\u4e00-\u9fa5]+|[a-zA-Z0-9]+|[^\s\w\u4e00-\u9fa5]+|\s+/g) || [text];
+                        for (const part of parts) {
+                            if (/^\s+$/.test(part)) {
+                                tokens.push({ type: 'space', text: part });
+                            } else if (/[\u4e00-\u9fa5]/.test(part)) {
+                                for (const ch of part) {
+                                    tokens.push({
+                                        type: 'word',
+                                        isChinese: true,
+                                        raw: ch,
+                                        english: CHINESE_TO_ENGLISH[ch] || ch
+                                    });
                                 }
                             } else {
-                                translated += tok;
+                                tokens.push({
+                                    type: 'word',
+                                    isChinese: false,
+                                    raw: part,
+                                    english: part
+                                });
+                            }
+                        }
+                    }
+                }
+
+                // Greedy compound translation across Chinese characters
+                let result = '';
+                let i = 0;
+                while (i < tokens.length) {
+                    const tok = tokens[i];
+                    if (tok.type === 'newline') {
+                        result += '\n';
+                        i++;
+                        continue;
+                    }
+                    if (tok.type === 'space') {
+                        if (result.length > 0 && !result.endsWith(' ') && !result.endsWith('\n')) {
+                            result += ' ';
+                        }
+                        i++;
+                        continue;
+                    }
+
+                    // Check if starting at i we have consecutive Chinese characters that match a known compound
+                    if (tok.isChinese) {
+                        let matchedCompound = null;
+                        let matchedLen = 0;
+                        const maxLookahead = Math.min(10, tokens.length - i);
+
+                        for (let len = maxLookahead; len >= 2; len--) {
+                            let subStr = '';
+                            let valid = true;
+                            for (let j = 0; j < len; j++) {
+                                const t = tokens[i + j];
+                                if (t.type === 'newline') { valid = false; break; }
+                                if (t.isChinese || /[？?！!，,。.]/.test(t.raw)) {
+                                    subStr += t.raw;
+                                } else {
+                                    valid = false;
+                                    break;
+                                }
+                            }
+                            if (valid && (CHINESE_TO_ENGLISH[subStr] || CHINESE_TO_ENGLISH[subStr.replace(/[？?]$/, '')])) {
+                                matchedCompound = CHINESE_TO_ENGLISH[subStr] || (CHINESE_TO_ENGLISH[subStr.replace(/[？?]$/, '')] + (/[？?]/.test(subStr) ? '?' : ''));
+                                matchedLen = len;
+                                break;
                             }
                         }
 
-                        if (translated) {
-                            // If typed text starts with punctuation like , . ! ? ; : attach directly to previous word
-                            const mPunct = translated.match(/^([\s]*)([,.\!?;:])/);
-                            if (mPunct) {
-                                result = result.replace(/[\s]+$/, '');
-                                const punctAndRest = translated.slice(mPunct[1].length);
-                                result += punctAndRest;
-                            } else {
-                                // Transition from previous chord/word to typed letters: ensure space separation
-                                if (result.length > 0 && !/[\s\n]$/.test(result) && !translated.startsWith(' ')) {
-                                    result += ' ';
-                                }
-                                result += translated;
-                            }
+                        if (matchedCompound) {
+                            if (result.length > 0 && !/[\s\n]$/.test(result)) result += ' ';
+                            result += matchedCompound;
+                            i += matchedLen;
+                            continue;
                         }
-                    } else if (el.classList.contains('basis-full')) {
-                        result += '\n';
                     }
+
+                    // Single token output
+                    let wordText = tok.english || tok.raw;
+                    if (tok.isChinese) {
+                        wordText = CHINESE_TO_ENGLISH[tok.raw] || wordText;
+                    }
+
+                    if (/^[,.\!?;:]/.test(wordText)) {
+                        result = result.replace(/[\s]+$/, '');
+                        result += wordText;
+                    } else {
+                        if (result.length > 0 && !/[\s\n]$/.test(result) && !result.endsWith('(') && !result.endsWith('[')) {
+                            result += ' ';
+                        }
+                        result += wordText;
+                    }
+                    i++;
                 }
 
                 // Clean up spacing: single space after punctuation, remove spaces before punctuation
