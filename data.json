@@ -1906,7 +1906,38 @@
     "aehrt": "teacher",
     "ty": "try",
     "rty": "try",
-    "otw": "two"
+    "otw": "two",
+    "aft": "after",
+    "after": "after",
+    "btu": "but",
+    "adt": "data",
+    "dirt": "dirrect",
+    "direct": "direct",
+    "dnos": "doesn",
+    "doesn": "doesn",
+    "eglns": "english",
+    "english": "english",
+    "fix": "fix",
+    "agmr": "grammar",
+    "grammar": "grammar",
+    "aehnps": "happens",
+    "happens": "happens",
+    "hit": "hit",
+    "den": "need",
+    "need": "need",
+    "benrsu": "numbers",
+    "numbers": "numbers",
+    "aenors": "reason",
+    "reason": "reason",
+    "emos": "some",
+    "some": "some",
+    "aeps": "special",
+    "special": "special",
+    "1t": "t",
+    "girt": "triggers",
+    "triggers": "triggers",
+    "korw": "work",
+    "korsw": "works"
   },
   "grammar_rules": {
     "verb": {
@@ -2682,6 +2713,104 @@
         "1": "outturns",
         "2": "outturn's",
         "3": "outturns'"
+      }
+    },
+    "be": {
+      "pos": "verb",
+      "forms": {
+        "1": "am",
+        "2": "are",
+        "3": "is",
+        "4": "was",
+        "5": "were",
+        "6": "been",
+        "7": "being"
+      }
+    },
+    "see": {
+      "pos": "verb",
+      "forms": {
+        "1": "saw",
+        "2": "seeing",
+        "3": "sees",
+        "4": "seen"
+      }
+    },
+    "work": {
+      "pos": "verb",
+      "forms": {
+        "1": "worked",
+        "2": "working",
+        "3": "works"
+      }
+    },
+    "happen": {
+      "pos": "verb",
+      "forms": {
+        "1": "happened",
+        "2": "happening",
+        "3": "happens"
+      }
+    },
+    "try": {
+      "pos": "verb",
+      "forms": {
+        "1": "tried",
+        "2": "trying",
+        "3": "tries"
+      }
+    },
+    "add": {
+      "pos": "verb",
+      "forms": {
+        "1": "added",
+        "2": "adding",
+        "3": "adds",
+        "4": "addition"
+      }
+    },
+    "trigger": {
+      "pos": "verb",
+      "forms": {
+        "1": "triggered",
+        "2": "triggering",
+        "3": "triggers"
+      }
+    },
+    "fix": {
+      "pos": "verb",
+      "forms": {
+        "1": "fixed",
+        "2": "fixing",
+        "3": "fixes"
+      }
+    },
+    "number": {
+      "pos": "noun",
+      "forms": {
+        "1": "numbers",
+        "2": "number's"
+      }
+    },
+    "character": {
+      "pos": "noun",
+      "forms": {
+        "1": "characters",
+        "2": "character's"
+      }
+    },
+    "teacher": {
+      "pos": "noun",
+      "forms": {
+        "1": "teachers",
+        "2": "teacher's"
+      }
+    },
+    "reason": {
+      "pos": "noun",
+      "forms": {
+        "1": "reasons",
+        "2": "reason's"
       }
     }
   },

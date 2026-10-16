@@ -824,7 +824,27 @@
             { word: "side", chord: "1dis", keys: "1sid", note: "Clean 4-finger match (1 + s + i + d)" },
             { word: "teachers", chord: "aehst", keys: "teahs", note: "Clean 5-finger match (t-e-a-h-s)" },
             { word: "try", chord: "ty", keys: "ty", note: "Clean 2-finger match (Left Index T + Right Index Y)" },
-            { word: "two", chord: "otw", keys: "two", note: "Clean 3-finger match (t-w-o)" }
+            { word: "two", chord: "otw", keys: "two", note: "Clean 3-finger match (t-w-o)" },
+            // Additional Vocabulary Words (Clean, Ergonomic & Collision-Free)
+            { word: "after", chord: "aft", keys: "aft", note: "Clean 3-finger match (a-f-t)" },
+            { word: "but", chord: "btu", keys: "but", note: "Clean 3-finger match (b-u-t)" },
+            { word: "data", chord: "adt", keys: "dat", note: "Clean 3-finger match (d-a-t)" },
+            { word: "dirrect", chord: "dirt", keys: "dirt", note: "Clean 4-finger match (d-i-r-t)" },
+            { word: "doesn", chord: "dnos", keys: "dosn", note: "Clean 4-finger match (d-o-s-n)" },
+            { word: "english", chord: "eglns", keys: "engls", note: "Clean 5-finger match (e-n-g-l-s)" },
+            { word: "fix", chord: "fix", keys: "fix", note: "Clean 3-finger match (f-i-x)" },
+            { word: "grammar", chord: "agmr", keys: "gamr", note: "Clean 4-finger match (g-a-m-r)" },
+            { word: "happens", chord: "aehnps", keys: "hapens", note: "Clean 6-finger match (h-a-p-e-n-s)" },
+            { word: "hit", chord: "hit", keys: "hit", note: "Clean 3-finger match (h-i-t)" },
+            { word: "need", chord: "den", keys: "ned", note: "Clean 3-finger match (n-e-d)" },
+            { word: "numbers", chord: "benrsu", keys: "nubers", note: "Clean 6-finger match (n-u-b-e-r-s)" },
+            { word: "reason", chord: "aenors", keys: "reason", note: "Clean 6-finger match (r-e-a-s-o-n)" },
+            { word: "some", chord: "emos", keys: "some", note: "Clean 4-finger match (s-o-m-e)" },
+            { word: "special", chord: "aeps", keys: "specl", note: "Clean 4-finger match (s-p-e-l)" },
+            { word: "t", chord: "1t", keys: "1t", note: "Single-letter rule (1 + t)" },
+            { word: "triggers", chord: "girt", keys: "trig", note: "Clean 4-finger match (t-r-i-g)" },
+            { word: "work", chord: "korw", keys: "work", note: "Clean 4-finger match (w-o-r-k)" },
+            { word: "works", chord: "korsw", keys: "works", note: "work + s (w-o-r-k-s)" }
         ];
 
         // Map sorted chord to output word
@@ -838,7 +858,22 @@
             "all": "all ",
             "rty": "try ",
             "achr": "character ",
-            "aehrt": "teacher "
+            "aehrt": "teacher ",
+            "after": "after ",
+            "data": "data ",
+            "direct": "direct ",
+            "doesn": "doesn ",
+            "english": "english ",
+            "grammar": "grammar ",
+            "happens": "happens ",
+            "need": "need ",
+            "numbers": "numbers ",
+            "reason": "reason ",
+            "some": "some ",
+            "special": "special ",
+            "triggers": "triggers ",
+            "work": "work ",
+            "works": "works "
         });
 
         // Mirror mappings for alternating/bimanual key ergonomics:
@@ -1011,7 +1046,53 @@
             "边": "side", "侧": "side",
             "老师": "teachers", "教师": "teachers",
             "尝试": "try",
-            "二": "two", "两个": "two"
+            "二": "two", "两个": "two",
+            "之后": "after", "后": "after",
+            "但是": "but", "但": "but",
+            "数据": "data", "资料": "data",
+            "直接": "direct", "直": "direct",
+            "英语": "english", "英文": "english",
+            "修复": "fix", "固定": "fix",
+            "语法": "grammar",
+            "发生": "happens",
+            "击中": "hit",
+            "需要": "need",
+            "数字": "numbers", "号码": "numbers",
+            "原因": "reason", "理由": "reason",
+            "一些": "some", "某些": "some",
+            "特别": "special", "特殊": "special",
+            "字母t": "t",
+            "触发器": "triggers", "触发": "triggers",
+            "工作": "work",
+            "运转": "works", "作品": "works"
+        });
+
+        // Mirror into ENGLISH_TO_CHINESE
+        Object.assign(ENGLISH_TO_CHINESE, {
+            "after": "之后",
+            "but": "但是",
+            "data": "数据",
+            "dirrect": "直接",
+            "direct": "直接",
+            "doesn": "不",
+            "doesn't": "不",
+            "english": "英语",
+            "fix": "修复",
+            "grammar": "语法",
+            "happens": "发生",
+            "happen": "发生",
+            "hit": "击中",
+            "need": "需要",
+            "numbers": "数字",
+            "number": "数字",
+            "reason": "原因",
+            "some": "一些",
+            "special": "特别",
+            "t": "字母T",
+            "triggers": "触发",
+            "trigger": "触发",
+            "work": "工作",
+            "works": "运转"
         });
 
         const ALL_MORPHEME_TRANSLATIONS = {
@@ -1452,7 +1533,35 @@
             "teachers": { emoji: "🧑‍🏫", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "TEACHERS" },
             "teacher": { emoji: "🧑‍🏫", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "TEACHER" },
             "try": { emoji: "🎯", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "TRY" },
-            "two": { emoji: "✌️", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "TWO" }
+            "two": { emoji: "✌️", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "TWO" },
+            "after": { emoji: "⏭️", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "AFTER" },
+            "but": { emoji: "🔄", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "BUT" },
+            "data": { emoji: "💾", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "DATA" },
+            "dirrect": { emoji: "🎯", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "DIRECT" },
+            "direct": { emoji: "🎯", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "DIRECT" },
+            "doesn": { emoji: "🚫", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "DOESN'T" },
+            "english": { emoji: "🇬🇧", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "ENGLISH" },
+            "fix": { emoji: "🔧", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "FIX" },
+            "grammar": { emoji: "📖", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "GRAMMAR" },
+            "happens": { emoji: "⚡", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "HAPPENS" },
+            "happen": { emoji: "⚡", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "HAPPEN" },
+            "hit": { emoji: "🎯", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "HIT" },
+            "need": { emoji: "🆘", bg: "#f43f5e", glow: "rgba(244, 63, 94, 0.4)", label: "NEED" },
+            "numbers": { emoji: "🔢", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "NUMBERS" },
+            "number": { emoji: "🔢", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "NUMBER" },
+            "reason": { emoji: "💡", bg: "#eab308", glow: "rgba(234, 179, 8, 0.4)", label: "REASON" },
+            "some": { emoji: "✨", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "SOME" },
+            "special": { emoji: "⭐", bg: "#facc15", glow: "rgba(250, 204, 21, 0.4)", label: "SPECIAL" },
+            "t": { emoji: "🔤", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "T" },
+            "triggers": { emoji: "⚡", bg: "#f97316", glow: "rgba(249, 115, 22, 0.4)", label: "TRIGGERS" },
+            "trigger": { emoji: "⚡", bg: "#f97316", glow: "rgba(249, 115, 22, 0.4)", label: "TRIGGER" },
+            "work": { emoji: "💼", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "WORK" },
+            "works": { emoji: "⚙️", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "WORKS" },
+            "am": { emoji: "🙋‍♂️", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "AM" },
+            "are": { emoji: "👥", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "ARE" },
+            "is": { emoji: "🟢", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "IS" },
+            "was": { emoji: "⏮️", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "WAS" },
+            "were": { emoji: "⏮️", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "WERE" }
         };
 
         // 2-Step Morpheme Tree Structure
@@ -3936,6 +4045,140 @@
                         "2": "outturn's",
                         "3": "outturns'"
                 }
+        },
+        "be": {
+                "pos": "verb",
+                "forms": {
+                        "1": "am",
+                        "2": "are",
+                        "3": "is",
+                        "4": "was",
+                        "5": "were",
+                        "6": "been",
+                        "7": "being"
+                }
+        },
+        "is": {
+                "pos": "verb",
+                "forms": {
+                        "1": "am",
+                        "2": "are",
+                        "3": "is",
+                        "4": "was",
+                        "5": "were",
+                        "6": "been",
+                        "7": "being"
+                }
+        },
+        "am": {
+                "pos": "verb",
+                "forms": {
+                        "1": "am",
+                        "2": "are",
+                        "3": "is",
+                        "4": "was",
+                        "5": "were",
+                        "6": "been",
+                        "7": "being"
+                }
+        },
+        "are": {
+                "pos": "verb",
+                "forms": {
+                        "1": "am",
+                        "2": "are",
+                        "3": "is",
+                        "4": "was",
+                        "5": "were",
+                        "6": "been",
+                        "7": "being"
+                }
+        },
+        "see": {
+                "pos": "verb",
+                "forms": {
+                        "1": "saw",
+                        "2": "seeing",
+                        "3": "sees",
+                        "4": "seen"
+                }
+        },
+        "work": {
+                "pos": "verb",
+                "forms": {
+                        "1": "worked",
+                        "2": "working",
+                        "3": "works"
+                }
+        },
+        "happen": {
+                "pos": "verb",
+                "forms": {
+                        "1": "happened",
+                        "2": "happening",
+                        "3": "happens"
+                }
+        },
+        "try": {
+                "pos": "verb",
+                "forms": {
+                        "1": "tried",
+                        "2": "trying",
+                        "3": "tries"
+                }
+        },
+        "add": {
+                "pos": "verb",
+                "forms": {
+                        "1": "added",
+                        "2": "adding",
+                        "3": "adds",
+                        "4": "addition"
+                }
+        },
+        "trigger": {
+                "pos": "verb",
+                "forms": {
+                        "1": "triggered",
+                        "2": "triggering",
+                        "3": "triggers"
+                }
+        },
+        "fix": {
+                "pos": "verb",
+                "forms": {
+                        "1": "fixed",
+                        "2": "fixing",
+                        "3": "fixes"
+                }
+        },
+        "number": {
+                "pos": "noun",
+                "forms": {
+                        "1": "numbers",
+                        "2": "number's"
+                }
+        },
+        "character": {
+                "pos": "noun",
+                "forms": {
+                        "1": "characters",
+                        "2": "character's"
+                }
+        },
+        "teacher": {
+                "pos": "noun",
+                "forms": {
+                        "1": "teachers",
+                        "2": "teacher's"
+                }
+        },
+        "reason": {
+                "pos": "noun",
+                "forms": {
+                        "1": "reasons",
+                        "2": "reason's"
+                }
         }
 };
 
@@ -3943,13 +4186,21 @@
             if (!word) return null;
             const lower = word.toLowerCase().trim();
             if (GRAMMAR_DATA[lower]) return GRAMMAR_DATA[lower];
-            // Smart regular fallback for regular verbs
+            
+            const lemma = INFLECTION_TO_LEMMA[lower];
+            if (lemma && GRAMMAR_DATA[lemma]) return GRAMMAR_DATA[lemma];
+
+            // Smart regular fallback:
+            const endsE = lower.endsWith('e');
+            const endsY = lower.endsWith('y') && !/[aeiou]y$/.test(lower);
+            const rootY = endsY ? lower.slice(0, -1) : lower;
             return {
                 pos: 'verb',
                 forms: {
-                    '1': lower.endsWith('e') ? lower + 'd' : lower + 'ed',
-                    '2': lower.endsWith('e') ? lower.slice(0, -1) + 'ing' : lower + 'ing',
-                    '3': (lower.endsWith('s') || lower.endsWith('sh') || lower.endsWith('ch') || lower.endsWith('x')) ? lower + 'es' : lower + 's'
+                    '1': endsY ? rootY + 'ied' : (endsE ? lower + 'd' : lower + 'ed'),
+                    '2': endsE ? lower.slice(0, -1) + 'ing' : lower + 'ing',
+                    '3': endsY ? rootY + 'ies' : ((lower.endsWith('s') || lower.endsWith('sh') || lower.endsWith('ch') || lower.endsWith('x')) ? lower + 'es' : lower + 's'),
+                    '4': endsY ? rootY + 'ied' : (endsE ? lower + 'd' : lower + 'ed')
                 }
             };
         }
@@ -3976,6 +4227,11 @@
                 this.activeRootTimeout = null;
                 this.lastMorphemeAttachment = null;
 
+                // Grammar Inflection State for Sandbox (Number tap after word)
+                this.activeGrammarWord = null;
+                this.activeGrammarLemma = null;
+                this.activeGrammar = null;
+
                 // Sandbox form style
                 this.sandboxForm = 'combo'; // 'svg_only', 'words_only', 'combo'
                 this.sandboxIndex = 0;
@@ -3999,6 +4255,79 @@
                 this.loadMissingWords();
 
                 this.init();
+            }
+
+            getPrecedingWord() {
+                const editor = document.getElementById('sandbox-editor');
+                if (!editor) return null;
+                const caret = document.getElementById('editor-caret');
+                let target = caret ? caret.previousElementSibling : editor.lastElementChild;
+                if (!target) return null;
+
+                if (target.classList.contains('chord-item')) {
+                    const raw = target.dataset.english || target.dataset.word || target.innerText.trim();
+                    return {
+                        type: 'chord',
+                        element: target,
+                        word: raw
+                    };
+                }
+                if (target.classList.contains('typed-span')) {
+                    const text = target.textContent;
+                    const m = text.match(/\b([a-zA-Z]+)\s*$/);
+                    if (m) {
+                        return {
+                            type: 'typed',
+                            element: target,
+                            word: m[1],
+                            fullText: text,
+                            matchIndex: m.index
+                        };
+                    }
+                }
+                return null;
+            }
+
+            tryApplyGrammarModifier(num) {
+                const prec = this.getPrecedingWord();
+                if (!prec || !prec.word) return false;
+
+                const originalWord = prec.word.toLowerCase().trim();
+                const baseLemma = this.activeGrammarLemma || INFLECTION_TO_LEMMA[originalWord] || originalWord;
+                const grammar = getWordGrammar(baseLemma) || getWordGrammar(originalWord);
+
+                if (!grammar || !grammar.forms || !grammar.forms[num]) return false;
+
+                const newWord = grammar.forms[num];
+                if (newWord.toLowerCase() === originalWord) return false;
+
+                if (prec.type === 'chord') {
+                    prec.element.remove();
+                    this.insertChordOutput(newWord);
+                } else if (prec.type === 'typed') {
+                    const beforeWord = prec.fullText.slice(0, prec.matchIndex);
+                    prec.element.textContent = beforeWord;
+                    if (prec.element.textContent.length === 0) {
+                        prec.element.remove();
+                    }
+                    this.insertChordOutput(newWord);
+                }
+
+                this.activeGrammarWord = newWord;
+                this.activeGrammarLemma = baseLemma;
+                this.activeGrammar = grammar;
+
+                sound.playSuccess();
+                const pos = grammar.pos || 'verb';
+                const ruleName = (GRAMMAR_RULES[pos] && GRAMMAR_RULES[pos][num]) ? GRAMMAR_RULES[pos][num].name : `form ${num}`;
+                const toast = document.getElementById('sandbox-toast');
+                if (toast) {
+                    toast.innerText = `✨ [Grammar Morph] "${originalWord.toUpperCase()}" + ${num} ➔ "${newWord.toUpperCase()}" (${ruleName})`;
+                    toast.className = "text-xs md:text-sm font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-6 py-2 rounded-xl text-center shadow-lg";
+                }
+
+                this.updateCaret();
+                return true;
             }
 
             setEditorOutputMode(mode) {
@@ -5267,6 +5596,17 @@
                         return;
                     }
 
+                    // Grammar Number Modifier Tap (1-7):
+                    // If a number is tapped alone without holding other keys in Sandbox, check if it inflects the preceding word!
+                    if (['1', '2', '3', '4', '5', '6', '7'].includes(e.key) && this.mode === 'sandbox' && !e.ctrlKey && !e.altKey && !e.metaKey) {
+                        if (this.pressedKeys.size === 0) {
+                            if (this.tryApplyGrammarModifier(e.key)) {
+                                e.preventDefault();
+                                return;
+                            }
+                        }
+                    }
+
                     // Spacebar handling: ALWAYS inserts space in Sandbox and disarms active roots cleanly
                     if (e.code === 'Space' || e.key === ' ') {
                         e.preventDefault();
@@ -5274,6 +5614,10 @@
                         if (this.mode === 'sandbox') {
                             this.typeCharacter(' ');
                         }
+
+                        this.activeGrammarWord = null;
+                        this.activeGrammarLemma = null;
+                        this.activeGrammar = null;
 
                         if (this.activeRoot) {
                             if (this.activeRootTimeout) clearTimeout(this.activeRootTimeout);
@@ -5515,6 +5859,9 @@
                         
                         // Insert clean chord output (Word, SVG Only, or Combo)
                         this.insertChordOutput(matchedWord);
+                        this.activeGrammarWord = matchedWord;
+                        this.activeGrammarLemma = INFLECTION_TO_LEMMA[matchedWord.toLowerCase().trim()] || matchedWord.toLowerCase().trim();
+                        this.activeGrammar = getWordGrammar(this.activeGrammarLemma);
 
                         // If Space was held WITH the chord, finalize immediately and do not arm root
                         if (hasSpace) {
