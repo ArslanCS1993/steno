@@ -438,8 +438,9 @@
                             <button onclick="app.clearEditor()" class="text-xs text-slate-400 hover:text-rose-400 font-semibold px-3 py-1.5 bg-slate-950 rounded-xl border border-slate-800 hover:border-rose-500/50 transition-all flex items-center gap-1.5 active:scale-95 shadow" title="Clear typing box (Ctrl+L or Esc)">
                                 🗑️ Clear <span class="text-[10px] text-slate-500 font-mono">(Ctrl+L / Esc)</span>
                             </button>
-                            <button id="editor-missing-btn" onclick="app.toggleMissingWordsModal()" class="text-xs text-amber-400 hover:text-amber-300 font-semibold px-3 py-1.5 bg-amber-500/10 rounded-xl border border-amber-500/30 hover:border-amber-400 transition-all flex items-center gap-1.5 active:scale-95 shadow" title="View & Export unmapped/missing words collected from copy/paste">
+                            <button id="editor-missing-btn" onclick="app.toggleMissingWordsModal()" class="text-xs text-amber-400 hover:text-amber-300 font-semibold px-3 py-1.5 bg-amber-500/10 rounded-xl border border-amber-500/30 hover:border-amber-400 transition-all flex items-center gap-1.5 active:scale-95 shadow" title="View & Export unmapped/missing words (Shortcut: Alt+U to copy list, Alt+Shift+U to view)">
                                 📊 Unmapped <span id="unmapped-count-badge" class="px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-400/20 text-amber-300">0</span>
+                                <span class="text-[10px] opacity-75 font-mono text-amber-400/80">Alt+U</span>
                             </button>
                         </div>
                     </div>
@@ -543,8 +544,8 @@
                         🗑️ Clear List
                     </button>
                     <div class="flex items-center gap-2">
-                        <button onclick="app.copyMissingWordsList()" class="px-3.5 py-1.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:border-amber-400 text-xs font-semibold transition-all flex items-center gap-1.5 active:scale-95 shadow">
-                            📋 Copy List
+                        <button onclick="app.copyMissingWordsList()" class="px-3.5 py-1.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:border-amber-400 text-xs font-semibold transition-all flex items-center gap-1.5 active:scale-95 shadow" title="Copy unmapped words to clipboard (Shortcut: Alt+U or Ctrl+Shift+U)">
+                            📋 Copy List <span class="text-[10px] opacity-75 font-mono">(Alt+U)</span>
                         </button>
                         <button onclick="app.downloadMissingWordsJson()" class="px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition-all flex items-center gap-1.5 active:scale-95 shadow-lg shadow-indigo-600/30">
                             💾 Download JSON
@@ -904,7 +905,16 @@
             { word: "togglable", chord: "1glt", keys: "1tgl", note: "1 + t-g-l (togglable)" },
             { word: "vocabulary", chord: "bcov", keys: "vocb", note: "Clean 4-finger match (v-o-c-b)" },
             { word: "well", chord: "elw", keys: "wel", note: "Clean 3-finger match (w-e-l)" },
-            { word: "wholed", chord: "dhlw", keys: "whld", note: "Clean 4-finger match (w-h-l-d)" }
+            { word: "wholed", chord: "dhlw", keys: "whld", note: "Clean 4-finger match (w-h-l-d)" },
+            // Batch 4 Vocabulary Additions (8 words)
+            { word: "copying", chord: "cinp", keys: "cpin", note: "Clean 4-finger match (c-p-i-n)" },
+            { word: "created", chord: "1cdr", keys: "1crd", note: "1 + c-r-d (created)" },
+            { word: "last", chord: "alst", keys: "last", note: "Clean 4-finger match (l-a-s-t)" },
+            { word: "list", chord: "ilst", keys: "list", note: "Clean 4-finger match (l-i-s-t)" },
+            { word: "pronouns", chord: "nprs", keys: "prns", note: "Clean 4-finger match (p-r-n-s)" },
+            { word: "toggle", chord: "1got", keys: "1tog", note: "1 + t-o-g (toggle)" },
+            { word: "unmapped", chord: "dnpu", keys: "unpd", note: "Clean 4-finger match (u-n-p-d)" },
+            { word: "untoggle", chord: "lntu", keys: "untl", note: "Clean 4-finger match (u-n-t-l)" }
         ];
 
         // Map sorted chord to output word
@@ -999,7 +1009,21 @@
             "well": "well ",
             "wel": "well ",
             "wholed": "wholed ",
-            "whld": "wholed "
+            "whld": "wholed ",
+            "copying": "copying ",
+            "cpin": "copying ",
+            "created": "created ",
+            "1crd": "created ",
+            "last": "last ",
+            "list": "list ",
+            "pronouns": "pronouns ",
+            "prns": "pronouns ",
+            "toggle": "toggle ",
+            "1tog": "toggle ",
+            "unmapped": "unmapped ",
+            "unpd": "unmapped ",
+            "untoggle": "untoggle ",
+            "untl": "untoggle "
         });
 
         // Mirror mappings for alternating/bimanual key ergonomics:
@@ -1239,7 +1263,15 @@
             "可切换的": "togglable",
             "词汇": "vocabulary",
             "好": "well", "井": "well",
-            "完整": "wholed", "整个": "wholed"
+            "完整": "wholed", "整个": "wholed",
+            "复制": "copying", "抄写": "copying",
+            "创建": "created", "创造": "created",
+            "最后": "last", "持续": "last",
+            "列表": "list", "清单": "list",
+            "代词": "pronouns",
+            "切换": "toggle",
+            "未映射": "unmapped",
+            "取消切换": "untoggle"
         });
 
         Object.assign(ENGLISH_TO_CHINESE, {
@@ -1292,7 +1324,15 @@
             "togglable": "可切换的",
             "vocabulary": "词汇",
             "well": "好",
-            "wholed": "完整"
+            "wholed": "完整",
+            "copying": "复制",
+            "created": "创建",
+            "last": "最后",
+            "list": "列表",
+            "pronouns": "代词",
+            "toggle": "切换",
+            "unmapped": "未映射",
+            "untoggle": "取消切换"
         });
 
         // Mirror into ENGLISH_TO_CHINESE
@@ -1839,7 +1879,15 @@
             "togglable": { emoji: "🎚️", bg: "#06b6d4", glow: "rgba(6, 182, 212, 0.4)", label: "TOGGLABLE" },
             "vocabulary": { emoji: "📖", bg: "#6366f1", glow: "rgba(99, 102, 241, 0.4)", label: "VOCABULARY" },
             "well": { emoji: "👍", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "WELL" },
-            "wholed": { emoji: "🌐", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "WHOLED" }
+            "wholed": { emoji: "🌐", bg: "#0284c7", glow: "rgba(2, 132, 199, 0.4)", label: "WHOLED" },
+            "copying": { emoji: "📋", bg: "#3b82f6", glow: "rgba(59, 130, 246, 0.4)", label: "COPYING" },
+            "created": { emoji: "✨", bg: "#10b981", glow: "rgba(16, 185, 129, 0.4)", label: "CREATED" },
+            "last": { emoji: "🏁", bg: "#f59e0b", glow: "rgba(245, 158, 11, 0.4)", label: "LAST" },
+            "list": { emoji: "📜", bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.4)", label: "LIST" },
+            "pronouns": { emoji: "👤", bg: "#ec4899", glow: "rgba(236, 72, 153, 0.4)", label: "PRONOUNS" },
+            "toggle": { emoji: "🎚️", bg: "#06b6d4", glow: "rgba(6, 182, 212, 0.4)", label: "TOGGLE" },
+            "unmapped": { emoji: "❓", bg: "#ef4444", glow: "rgba(239, 68, 68, 0.4)", label: "UNMAPPED" },
+            "untoggle": { emoji: "⏹️", bg: "#64748b", glow: "rgba(100, 116, 139, 0.4)", label: "UNTOGGLE" }
         };
 
         // 2-Step Morpheme Tree Structure
@@ -5026,14 +5074,20 @@
 
             async copyMissingWordsList() {
                 const sorted = Array.from(this.missingWords).sort();
-                if (sorted.length === 0) return;
+                const toast = document.getElementById('sandbox-toast');
+                if (sorted.length === 0) {
+                    if (toast) {
+                        toast.innerText = "ℹ️ No unmapped words collected yet.";
+                        toast.className = "text-xs md:text-sm font-bold text-amber-300 bg-amber-500/20 border border-amber-500/40 px-6 py-2 rounded-xl text-center shadow transition-all";
+                    }
+                    return;
+                }
                 const text = sorted.join('\n');
                 try {
                     await navigator.clipboard.writeText(text);
-                    const toast = document.getElementById('sandbox-toast');
                     if (toast) {
-                        toast.innerText = `📋 Copied ${sorted.length} unmapped words to clipboard!`;
-                        toast.className = "text-xs md:text-sm font-bold text-amber-300 bg-amber-500/20 border border-amber-500/40 px-6 py-2 rounded-xl text-center shadow";
+                        toast.innerText = `📋 Copied ${sorted.length} unmapped words to clipboard! (Shortcut: Alt+U or Ctrl+Shift+U)`;
+                        toast.className = "text-xs md:text-sm font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-6 py-2 rounded-xl text-center shadow transition-all";
                     }
                 } catch (err) {
                     console.error('Clipboard copy error:', err);
@@ -5788,6 +5842,20 @@
             // Keyboard Listeners
             setupKeyboardListeners() {
                 window.addEventListener('keydown', (e) => {
+                    // Dedicated Unmapped Words Copy shortcut: Alt+U or Ctrl+Shift+U
+                    if (((e.altKey && !e.shiftKey) || (e.ctrlKey && e.shiftKey)) && e.key.toLowerCase() === 'u') {
+                        e.preventDefault();
+                        this.copyMissingWordsList();
+                        return;
+                    }
+
+                    // Toggle Unmapped Words Modal: Alt+Shift+U
+                    if (e.altKey && e.shiftKey && e.key.toLowerCase() === 'u') {
+                        e.preventDefault();
+                        this.toggleMissingWordsModal();
+                        return;
+                    }
+
                     // Dedicated English-only copy shortcut: Alt+C
                     if (e.altKey && e.key.toLowerCase() === 'c' && this.mode === 'sandbox') {
                         e.preventDefault();

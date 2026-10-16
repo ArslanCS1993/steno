@@ -2056,7 +2056,29 @@
     "well": "well ",
     "dhlw": "wholed ",
     "whld": "wholed ",
-    "wholed": "wholed "
+    "wholed": "wholed ",
+    "cinp": "copying ",
+    "cpin": "copying ",
+    "copying": "copying ",
+    "1cdr": "created ",
+    "1crd": "created ",
+    "created": "created ",
+    "alst": "last ",
+    "last": "last ",
+    "ilst": "list ",
+    "list": "list ",
+    "nprs": "pronouns ",
+    "prns": "pronouns ",
+    "pronouns": "pronouns ",
+    "1got": "toggle ",
+    "1tog": "toggle ",
+    "toggle": "toggle ",
+    "dnpu": "unmapped ",
+    "unpd": "unmapped ",
+    "unmapped": "unmapped ",
+    "lntu": "untoggle ",
+    "untl": "untoggle ",
+    "untoggle": "untoggle "
   },
   "grammar_rules": {
     "verb": {
@@ -2996,6 +3018,41 @@
       "1": "tested",
       "2": "testing",
       "3": "tests"
+    },
+    "create": {
+      "lemma": "create",
+      "type": "verb",
+      "1": "created",
+      "2": "creating",
+      "3": "creates"
+    },
+    "copy": {
+      "lemma": "copy",
+      "type": "verb",
+      "1": "copied",
+      "2": "copying",
+      "3": "copies"
+    },
+    "list": {
+      "lemma": "list",
+      "type": "verb_noun",
+      "1": "listed",
+      "2": "listing",
+      "3": "lists"
+    },
+    "toggle": {
+      "lemma": "toggle",
+      "type": "verb",
+      "1": "toggled",
+      "2": "toggling",
+      "3": "toggles"
+    },
+    "untoggle": {
+      "lemma": "untoggle",
+      "type": "verb",
+      "1": "untoggled",
+      "2": "untoggling",
+      "3": "untoggles"
     }
   },
   "chinese_chords": {
