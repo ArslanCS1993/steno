@@ -3619,5 +3619,10 @@
     "english": "chord",
     "chord": "chord",
     "lemma": "chord"
+  },
+  "manager": {
+    "english": "manager",
+    "chord": "manage",
+    "lemma": "manager"
   }
 }
