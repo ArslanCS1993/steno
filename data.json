@@ -1708,7 +1708,7 @@
     "cfinou": "function ",
     "co": "code ",
     "dgo": "dog ",
-    "dorw": "world ",
+    "dorw": "word ",
     "enost": "steno ",
     "hint": "think ",
     "aelps": "please ",
@@ -1726,7 +1726,7 @@
     "fi": "if ",
     "oy": "you ",
     "cmo": "come ",
-    "fo": "for ",
+    "fo": "of ",
     "acn": "can ",
     "do": "do ",
     "1i": "i ",
@@ -1823,32 +1823,31 @@
     "now": "now ",
     "1eht": "they ",
     "ehty": "they ",
-    "emti": "time ",
+    "eimt": "time ",
     "ot": "to ",
     "aitw": "wait ",
     "aehirtv": "have right ",
-    "actually": "actually ",
-    "functionality": "functionality ",
-    "timer": "timer ",
-    "waiting": "waiting ",
+    "aaclltuy": "actually ",
+    "acfiilnnottuy": "functionality ",
+    "eimrt": "timer ",
+    "agiintw": "waiting ",
     "adn": "and ",
     "be": "be ",
     "box": "box ",
     "aclr": "clear ",
-    "aclrg": "clearing ",
+    "acglr": "clearing ",
     "ctu": "cut ",
     "dnp": "depend ",
     "dgnp": "depending ",
     "aist": "it was ",
-    "itwas": "it was ",
+    "aistw": "it was ",
     "elt": "let ",
     "elst": "lets ",
-    "lets": "lets ",
     "aekm": "make ",
     "noy": "only ",
     "ehot": "other ",
     "1op": "pop ",
-    "pop": "pop ",
+    "opp": "pop ",
     "enprs": "present ",
     "adns": "sand ",
     "enst": "sentence ",
@@ -1860,11 +1859,11 @@
     "pu": "up ",
     "bev": "verb ",
     "besv": "verbs ",
-    "verbs": "verbs ",
+    "bersv": "verbs ",
     "ehvw": "we have ",
-    "wehave": "we have ",
-    "shortcut": "shortcut ",
-    "sandbox": "sandbox ",
+    "aeehvw": "we have ",
+    "chorsttu": "shortcut ",
+    "abdnosx": "sandbox ",
     "am": "am ",
     "adkln": "andlook ",
     "aer": "are ",
@@ -1908,241 +1907,147 @@
     "rty": "try",
     "otw": "two",
     "aft": "after",
-    "after": "after",
+    "aefrt": "after",
     "btu": "but",
     "adt": "data",
     "dirt": "dirrect",
-    "direct": "direct",
+    "cdeirt": "direct",
     "dnos": "doesn",
-    "doesn": "doesn",
+    "denos": "doesn",
     "eglns": "english",
-    "english": "english",
+    "eghilns": "english",
     "fix": "fix",
     "agmr": "grammar",
-    "grammar": "grammar",
+    "aagmmrr": "grammar",
     "aehnps": "happens",
-    "happens": "happens",
+    "aehnpps": "happens",
     "hit": "hit",
     "den": "need",
-    "need": "need",
+    "deen": "need",
     "benrsu": "numbers",
-    "numbers": "numbers",
+    "bemnrsu": "numbers",
     "aenors": "reason",
-    "reason": "reason",
     "emos": "some",
-    "some": "some",
     "aeps": "special",
-    "special": "special",
+    "aceilps": "special",
     "1t": "t",
     "girt": "triggers",
-    "triggers": "triggers",
+    "eggirrst": "triggers",
     "korw": "work",
     "korsw": "works",
     "anrs": "answer",
-    "answer": "answer",
+    "aenrsw": "answer",
     "acghn": "change",
-    "change": "change",
+    "aceghn": "change",
     "1cil": "click",
-    "click": "click",
+    "ccikl": "click",
     "aeh": "each",
-    "each": "each",
+    "aceh": "each",
     "erx": "exercise",
-    "exercise": "exercise",
+    "ceeeirsx": "exercise",
     "1ersx": "exercises",
-    "exercises": "exercises",
+    "ceeeirssx": "exercises",
     "egin": "given",
-    "given": "given",
+    "eginv": "given",
     "jst": "just",
-    "just": "just",
+    "jstu": "just",
     "emor": "more",
-    "more": "more",
     "entx": "next",
-    "next": "next",
     "eqstu": "question",
-    "question": "question",
+    "einoqstu": "question",
     "adgr": "reading",
-    "reading": "reading",
+    "adeginr": "reading",
     "asy": "say",
-    "say": "say",
     "cnst": "section",
-    "section": "section",
+    "ceinost": "section",
     "1enst": "tenses",
-    "tenses": "tenses",
+    "eensst": "tenses",
     "etx": "text",
-    "text": "text",
+    "ettx": "text",
     "dsu": "used",
-    "used": "used",
+    "desu": "used",
     "awy": "way",
-    "way": "way",
     "ilw": "will",
-    "will": "will",
+    "illw": "will",
     "abel": "able ",
-    "able": "able ",
     "als": "also ",
-    "also": "also ",
+    "alos": "also ",
     "as": "as ",
     "bntw": "between ",
-    "btwn": "between ",
-    "between": "between ",
+    "beeentw": "between ",
     "clmn": "column ",
-    "column": "column ",
+    "clmnou": "column ",
     "dfi": "different ",
-    "dif": "different ",
-    "different": "different ",
+    "deeffinrt": "different ",
     "1cdo": "doc ",
-    "1doc": "doc ",
-    "doc": "doc ",
+    "cdo": "doc ",
     "emnr": "enumerated ",
-    "enmr": "enumerated ",
-    "enumerated": "enumerated ",
+    "adeeemnrtu": "enumerated ",
     "1dfl": "folder ",
-    "1fld": "folder ",
-    "folder": "folder ",
+    "deflor": "folder ",
     "1flw": "following ",
-    "following": "following ",
+    "fgillnoow": "following ",
     "fmr": "from ",
-    "frm": "from ",
-    "from": "from ",
+    "fmor": "from ",
     "aegm": "game ",
-    "game": "game ",
     "1giv": "give ",
-    "give": "give ",
+    "egiv": "give ",
     "1gls": "glossary ",
-    "glossary": "glossary ",
+    "aglorssy": "glossary ",
     "dint": "intended ",
-    "intd": "intended ",
-    "intended": "intended ",
+    "ddeeinnt": "intended ",
     "dmos": "modes ",
-    "mods": "modes ",
-    "modes": "modes ",
+    "demos": "modes ",
     "bmov": "movable ",
-    "movb": "movable ",
-    "movable": "movable ",
+    "abelmov": "movable ",
     "1not": "note ",
-    "note": "note ",
+    "enot": "note ",
     "1fo": "of ",
-    "1of": "of ",
-    "of": "of ",
     "optu": "output ",
-    "outp": "output ",
-    "output": "output ",
+    "opttuu": "output ",
     "alnp": "pannel ",
-    "panl": "pannel ",
-    "pannel": "pannel ",
+    "aelnnp": "pannel ",
     "apst": "past ",
-    "past": "past ",
     "bops": "possible ",
-    "posb": "possible ",
-    "possible": "possible ",
+    "beilopss": "possible ",
     "aems": "same ",
-    "same": "same ",
     "1stw": "switch ",
-    "1swt": "switch ",
-    "switch": "switch ",
+    "chistw": "switch ",
     "nst": "tense ",
-    "tns": "tense ",
-    "tense": "tense ",
+    "eenst": "tense ",
     "1st": "tests ",
-    "1ts": "tests ",
-    "tests": "tests ",
+    "esstt": "tests ",
     "1glt": "togglable ",
-    "1tgl": "togglable ",
-    "togglable": "togglable ",
+    "abeggllot": "togglable ",
     "bcov": "vocabulary ",
-    "vocb": "vocabulary ",
-    "vocabulary": "vocabulary ",
+    "aabcloruvy": "vocabulary ",
     "elw": "well ",
-    "wel": "well ",
-    "well": "well ",
+    "ellw": "well ",
     "dhlw": "wholed ",
-    "whld": "wholed ",
-    "wholed": "wholed ",
+    "dehlow": "wholed ",
     "cinp": "copying ",
-    "cpin": "copying ",
-    "copying": "copying ",
+    "cginopy": "copying ",
     "1cdr": "created ",
-    "1crd": "created ",
-    "created": "created ",
+    "acdeert": "created ",
     "alst": "last ",
-    "last": "last ",
     "ilst": "list ",
-    "list": "list ",
     "nprs": "pronouns ",
-    "prns": "pronouns ",
-    "pronouns": "pronouns ",
+    "nnooprsu": "pronouns ",
     "1got": "toggle ",
-    "1tog": "toggle ",
-    "toggle": "toggle ",
+    "egglot": "toggle ",
     "dnpu": "unmapped ",
-    "unpd": "unmapped ",
-    "unmapped": "unmapped ",
+    "ademnppu": "unmapped ",
     "lntu": "untoggle ",
-    "untl": "untoggle ",
-    "untoggle": "untoggle ",
+    "egglnotu": "untoggle ",
     "1ad": "ad ",
-    "ad": "ad "
-  },
-  "grammar_rules": {
-    "verb": {
-      "1": {
-        "name": "past",
-        "label": "Past Tense (-ed)"
-      },
-      "2": {
-        "name": "gerund",
-        "label": "Continuous (-ing)"
-      },
-      "3": {
-        "name": "present_3rd",
-        "label": "3rd Person (-s)"
-      },
-      "4": {
-        "name": "past_participle",
-        "label": "Past Participle (-en)"
-      }
-    },
-    "noun": {
-      "1": {
-        "name": "plural",
-        "label": "Plural (-s)"
-      },
-      "2": {
-        "name": "possessive",
-        "label": "Possessive ('s)"
-      },
-      "3": {
-        "name": "plural_possessive",
-        "label": "Plural Possessive (s')"
-      }
-    },
-    "adjective": {
-      "1": {
-        "name": "comparative",
-        "label": "Comparative (-er)"
-      },
-      "2": {
-        "name": "superlative",
-        "label": "Superlative (-est)"
-      },
-      "3": {
-        "name": "adverb",
-        "label": "Adverb (-ly)"
-      }
-    },
-    "pronoun": {
-      "1": {
-        "name": "objective",
-        "label": "Objective Case"
-      },
-      "2": {
-        "name": "possessive",
-        "label": "Possessive Case"
-      },
-      "3": {
-        "name": "reflexive",
-        "label": "Reflexive Case"
-      }
-    }
+    "ad": "ad ",
+    "gi": "git ",
+    "bghi": "github ",
+    "go": "go ",
+    "ailnst": "install ",
+    "aeinst": "instead ",
+    "eksy": "keys ",
+    "1elst": "letters "
   },
   "grammar": {
     "can": {
@@ -3063,6 +2968,68 @@
       "2": "ad's"
     }
   },
+  "grammar_rules": {
+    "verb": {
+      "1": {
+        "name": "past",
+        "label": "Past Tense (-ed)"
+      },
+      "2": {
+        "name": "gerund",
+        "label": "Continuous (-ing)"
+      },
+      "3": {
+        "name": "present_3rd",
+        "label": "3rd Person (-s)"
+      },
+      "4": {
+        "name": "past_participle",
+        "label": "Past Participle (-en)"
+      }
+    },
+    "noun": {
+      "1": {
+        "name": "plural",
+        "label": "Plural (-s)"
+      },
+      "2": {
+        "name": "possessive",
+        "label": "Possessive ('s)"
+      },
+      "3": {
+        "name": "plural_possessive",
+        "label": "Plural Possessive (s')"
+      }
+    },
+    "adjective": {
+      "1": {
+        "name": "comparative",
+        "label": "Comparative (-er)"
+      },
+      "2": {
+        "name": "superlative",
+        "label": "Superlative (-est)"
+      },
+      "3": {
+        "name": "adverb",
+        "label": "Adverb (-ly)"
+      }
+    },
+    "pronoun": {
+      "1": {
+        "name": "objective",
+        "label": "Objective Case"
+      },
+      "2": {
+        "name": "possessive",
+        "label": "Possessive Case"
+      },
+      "3": {
+        "name": "reflexive",
+        "label": "Reflexive Case"
+      }
+    }
+  },
   "chinese_chords": {
     "4ehz": {
       "char": "这",
@@ -3589,40 +3556,5 @@
       "tone": 4,
       "english": "condition/circumstance"
     }
-  },
-  "word": {
-    "english": "word",
-    "chord": "word",
-    "lemma": "word"
-  },
-  "world": {
-    "english": "world",
-    "chord": "word8",
-    "lemma": "world"
-  },
-  "go": {
-    "english": "go",
-    "chord": "go",
-    "lemma": "go"
-  },
-  "install": {
-    "english": "install",
-    "chord": "install",
-    "lemma": "install"
-  },
-  "aded": {
-    "english": "aded",
-    "chord": "aded",
-    "lemma": "aded"
-  },
-  "chord": {
-    "english": "chord",
-    "chord": "chord",
-    "lemma": "chord"
-  },
-  "manager": {
-    "english": "manager",
-    "chord": "manage",
-    "lemma": "manager"
   }
 }

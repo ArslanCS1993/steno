@@ -321,7 +321,7 @@ def run_steno():
                         # STEP 1: Standard Chord / Check if this chord is a Root
                         mapped = dictionary.get(combo)
                         resolved_combo = combo
-                        if not mapped:
+                        if not mapped and not active_root:
                             canon = canonicalize_chord(combo)
                             if canon in dictionary:
                                 mapped = dictionary[canon]
