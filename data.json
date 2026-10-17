@@ -3589,5 +3589,35 @@
       "tone": 4,
       "english": "condition/circumstance"
     }
+  },
+  "word": {
+    "english": "word",
+    "chord": "word",
+    "lemma": "word"
+  },
+  "world": {
+    "english": "world",
+    "chord": "word8",
+    "lemma": "world"
+  },
+  "go": {
+    "english": "go",
+    "chord": "go",
+    "lemma": "go"
+  },
+  "install": {
+    "english": "install",
+    "chord": "install",
+    "lemma": "install"
+  },
+  "aded": {
+    "english": "aded",
+    "chord": "aded",
+    "lemma": "aded"
+  },
+  "chord": {
+    "english": "chord",
+    "chord": "chord",
+    "lemma": "chord"
   }
 }
