@@ -45,6 +45,36 @@
             font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         }
 
+        /* Volume slider */
+        .volume-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 6rem;
+            height: 6px;
+            border-radius: 9999px;
+            background: linear-gradient(to right, #6366f1, #8b5cf6);
+            outline: none;
+            cursor: pointer;
+        }
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #f8fafc;
+            border: 2px solid #6366f1;
+            cursor: pointer;
+        }
+        .volume-slider::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #f8fafc;
+            border: 2px solid #6366f1;
+            cursor: pointer;
+        }
+
         /* Helper Utilities */
         .hidden { display: none !important; }
         .flex { display: flex; }
@@ -272,6 +302,13 @@
             <button onclick="app.setMode('guide')" id="tab-guide" class="px-4 py-2 text-xs md:text-sm font-semibold rounded-xl transition-all text-slate-400 hover:text-white">
                 📖 Finger Scheme
             </button>
+        </div>
+
+        <!-- Volume Controller -->
+        <div class="flex items-center gap-2 bg-slate-950/80 px-3 py-2 rounded-2xl border border-slate-800">
+            <span id="volume-icon" class="text-sm leading-none">🔊</span>
+            <input id="volume-slider" type="range" min="0" max="100" value="100" class="volume-slider" oninput="setStenoVolume(this.value)" title="Feedback volume" aria-label="Feedback volume">
+            <span id="volume-label" class="text-xs font-mono font-bold text-slate-400 w-10 text-right">100%</span>
         </div>
     </header>
 
@@ -565,16 +602,35 @@
     <script>
         // Web Audio Synthesizer for chording audio feedback
         class SoundFX {
-            constructor() { this.ctx = null; }
+            constructor() {
+                this.ctx = null;
+                this.master = null;
+                this.volume = 1.0;
+                try {
+                    const saved = localStorage.getItem('steno_volume');
+                    if (saved !== null) {
+                        const v = parseFloat(saved);
+                        if (!isNaN(v)) this.volume = Math.max(0, Math.min(1, v));
+                    }
+                } catch(e) {}
+            }
             init() {
                 if (!this.ctx) {
                     this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+                    this.master = this.ctx.createGain();
+                    this.master.gain.value = this.volume;
+                    this.master.connect(this.ctx.destination);
                 }
+            }
+            setVolume(v) {
+                this.volume = Math.max(0, Math.min(1, v));
+                if (this.master) this.master.gain.value = this.volume;
+                try { localStorage.setItem('steno_volume', String(this.volume)); } catch(e) {}
             }
             playTone(freq = 600, type = 'triangle', duration = 0.09) {
                 try {
                     this.init();
-                    if (!this.ctx) return;
+                    if (!this.ctx || !this.master) return;
                     const osc = this.ctx.createOscillator();
                     const gain = this.ctx.createGain();
                     osc.type = type;
@@ -582,7 +638,7 @@
                     gain.gain.setValueAtTime(0.12, this.ctx.currentTime);
                     gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
                     osc.connect(gain);
-                    gain.connect(this.ctx.destination);
+                    gain.connect(this.master);
                     osc.start();
                     osc.stop(this.ctx.currentTime + duration);
                 } catch(e) {}
@@ -597,6 +653,17 @@
             }
         }
         const sound = new SoundFX();
+
+        // Volume controller (slider in header)
+        function setStenoVolume(v) {
+            const val = parseInt(v, 10);
+            if (isNaN(val)) return;
+            sound.setVolume(val / 100);
+            const label = document.getElementById('volume-label');
+            const icon = document.getElementById('volume-icon');
+            if (label) label.textContent = val + '%';
+            if (icon) icon.textContent = val === 0 ? '🔇' : (val < 50 ? '🔉' : '🔊');
+        }
 
         // 10-Finger Scheme strictly matching our Python system
         const FINGER_SCHEME = [
@@ -11278,6 +11345,16 @@
         }
 
         const app = new StenoTutorApp();
+
+        // Sync volume slider with saved value on load
+        (function initVolumeUI() {
+            const slider = document.getElementById('volume-slider');
+            if (slider) {
+                const pct = Math.round(sound.volume * 100);
+                slider.value = pct;
+                setStenoVolume(pct);
+            }
+        })();
     </script>
 </body>
 </html>
