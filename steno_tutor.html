@@ -307,7 +307,7 @@
         <!-- Volume Controller -->
         <div class="flex items-center gap-2 bg-slate-950/80 px-3 py-2 rounded-2xl border border-slate-800">
             <span id="volume-icon" class="text-sm leading-none">🔊</span>
-            <input id="volume-slider" type="range" min="0" max="100" value="100" class="volume-slider" oninput="setStenoVolume(this.value)" title="Feedback volume" aria-label="Feedback volume">
+            <input id="volume-slider" type="range" min="0" max="100" value="100" class="volume-slider" oninput="setStenoVolume(this.value)" title="Feedback volume (Alt+↑/↓ to adjust, Alt+0 to mute)" aria-label="Feedback volume">
             <span id="volume-label" class="text-xs font-mono font-bold text-slate-400 w-10 text-right">100%</span>
         </div>
     </header>
@@ -655,14 +655,36 @@
         const sound = new SoundFX();
 
         // Volume controller (slider in header)
+        let lastVolumeBeforeMute = 60;
+
+        function getStenoVolumePct() {
+            return Math.round(sound.volume * 100);
+        }
+
         function setStenoVolume(v) {
-            const val = parseInt(v, 10);
+            let val = parseInt(v, 10);
             if (isNaN(val)) return;
+            val = Math.max(0, Math.min(100, val));
             sound.setVolume(val / 100);
+            const slider = document.getElementById('volume-slider');
+            if (slider) slider.value = val;
             const label = document.getElementById('volume-label');
             const icon = document.getElementById('volume-icon');
             if (label) label.textContent = val + '%';
             if (icon) icon.textContent = val === 0 ? '🔇' : (val < 50 ? '🔉' : '🔊');
+        }
+
+        function adjustStenoVolume(delta) {
+            setStenoVolume(getStenoVolumePct() + delta);
+        }
+
+        function toggleStenoMute() {
+            if (getStenoVolumePct() > 0) {
+                lastVolumeBeforeMute = getStenoVolumePct();
+                setStenoVolume(0);
+            } else {
+                setStenoVolume(lastVolumeBeforeMute > 0 ? lastVolumeBeforeMute : 60);
+            }
         }
 
         // 10-Finger Scheme strictly matching our Python system
@@ -10909,6 +10931,15 @@
                         e.preventDefault();
                         const modeMap = { '1': 'words', '2': 'chinese', '3': 'svg', '4': 'combo' };
                         this.setEditorOutputMode(modeMap[e.key]);
+                        return;
+                    }
+
+                    // Volume shortcuts: Alt+↑ / Alt+↓ adjust, Alt+0 mutes/unmutes
+                    if (e.altKey && (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === '0')) {
+                        e.preventDefault();
+                        if (e.key === 'ArrowUp') adjustStenoVolume(5);
+                        else if (e.key === 'ArrowDown') adjustStenoVolume(-5);
+                        else toggleStenoMute();
                         return;
                     }
 
