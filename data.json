@@ -12,7 +12,33 @@
           "word": "undo",
           "emoji": "↩️",
           "note": "Reverse action",
-          "char": "撤销"
+          "char": "撤销",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "undid",
+              "char": "撤销（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "undoing",
+              "char": "撤销（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "undoes",
+              "char": "撤销（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "undone",
+              "char": "撤销（过去分词）"
+            }
+          }
         },
         "er": {
           "morpheme": "re-",
@@ -20,7 +46,33 @@
           "word": "redo",
           "emoji": "🔁",
           "note": "Repeat action",
-          "char": "重做"
+          "char": "重做",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "redid",
+              "char": "重做（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "redoing",
+              "char": "重做（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "redoes",
+              "char": "重做（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "redone",
+              "char": "重做（过去分词）"
+            }
+          }
         },
         "otu": {
           "morpheme": "out-",
@@ -28,7 +80,60 @@
           "word": "outdo",
           "emoji": "🏆",
           "note": "Surpass / excel",
-          "char": "超越"
+          "char": "超越",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "outdid",
+              "char": "超越（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "outdoing",
+              "char": "超越（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "outdoes",
+              "char": "超越（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "outdone",
+              "char": "超越（过去分词）"
+            }
+          }
+        }
+      },
+      "char": "做",
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "did",
+          "char": "做（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "doing",
+          "char": "做（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "does",
+          "char": "做（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "done",
+          "char": "做（过去分词）"
         }
       }
     },
@@ -44,7 +149,33 @@
           "word": "reconnect",
           "emoji": "🔄",
           "note": "Establish link again",
-          "char": "重新连接"
+          "char": "重新连接",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "reconnected",
+              "char": "重新连接（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "reconnecting",
+              "char": "重新连接（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "reconnects",
+              "char": "重新连接（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "reconnected",
+              "char": "重新连接（过去分词）"
+            }
+          }
         },
         "dis": {
           "morpheme": "dis-",
@@ -52,7 +183,60 @@
           "word": "disconnect",
           "emoji": "🔌",
           "note": "Sever link",
-          "char": "断开"
+          "char": "断开",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "disconnected",
+              "char": "断开（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "disconnecting",
+              "char": "断开（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "disconnects",
+              "char": "断开（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "disconnected",
+              "char": "断开（过去分词）"
+            }
+          }
+        }
+      },
+      "char": "连",
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "connected",
+          "char": "连（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "connecting",
+          "char": "连（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "connects",
+          "char": "连（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "connected",
+          "char": "连（过去分词）"
         }
       }
     },
@@ -68,7 +252,27 @@
           "word": "income",
           "emoji": "💵",
           "note": "Earnings / money",
-          "char": "收入"
+          "char": "收入",
+          "inflections": {
+            "1": {
+              "morpheme": "Plural (-s)",
+              "chord": "1",
+              "word": "incomes",
+              "char": "收入（复数）"
+            },
+            "2": {
+              "morpheme": "Possessive ('s)",
+              "chord": "2",
+              "word": "income's",
+              "char": "收入（所有格）"
+            },
+            "3": {
+              "morpheme": "Plural Possessive (s')",
+              "chord": "3",
+              "word": "incomes'",
+              "char": "收入（复数所有格）"
+            }
+          }
         },
         "otu": {
           "morpheme": "out-",
@@ -76,7 +280,27 @@
           "word": "outcome",
           "emoji": "🎯",
           "note": "Result / consequence",
-          "char": "结果"
+          "char": "结果",
+          "inflections": {
+            "1": {
+              "morpheme": "Plural (-s)",
+              "chord": "1",
+              "word": "outcomes",
+              "char": "结果（复数）"
+            },
+            "2": {
+              "morpheme": "Possessive ('s)",
+              "chord": "2",
+              "word": "outcome's",
+              "char": "结果（所有格）"
+            },
+            "3": {
+              "morpheme": "Plural Possessive (s')",
+              "chord": "3",
+              "word": "outcomes'",
+              "char": "结果（复数所有格）"
+            }
+          }
         },
         "eov": {
           "morpheme": "over-",
@@ -84,7 +308,33 @@
           "word": "overcome",
           "emoji": "🧗",
           "note": "Prevail / conquer",
-          "char": "克服"
+          "char": "克服",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "overcame",
+              "char": "克服（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "overcoming",
+              "char": "克服（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "overcomes",
+              "char": "克服（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "overcome",
+              "char": "克服"
+            }
+          }
         },
         "bce": {
           "morpheme": "become",
@@ -92,7 +342,60 @@
           "word": "become",
           "emoji": "🌱",
           "note": "Transform into",
-          "char": "成为"
+          "char": "成为",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "became",
+              "char": "成为（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "becoming",
+              "char": "成为（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "becomes",
+              "char": "成为（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "become",
+              "char": "成为"
+            }
+          }
+        }
+      },
+      "char": "来",
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "came",
+          "char": "来（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "coming",
+          "char": "来（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "comes",
+          "char": "来（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "come",
+          "char": "来"
         }
       }
     },
@@ -108,7 +411,60 @@
           "word": "outwalk",
           "emoji": "🏃‍♂️",
           "note": "Walk faster than",
-          "char": "走得快"
+          "char": "走得快",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "outwalked",
+              "char": "走得快（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "outwalking",
+              "char": "走得快（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "outwalks",
+              "char": "走得快（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "outwalked",
+              "char": "走得快（过去分词）"
+            }
+          }
+        }
+      },
+      "char": "走",
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "walked",
+          "char": "走（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "walking",
+          "char": "走（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "walks",
+          "char": "走（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "walked",
+          "char": "走（过去分词）"
         }
       }
     },
@@ -124,7 +480,54 @@
           "word": "refile",
           "emoji": "📂",
           "note": "File again",
-          "char": "重新归档"
+          "char": "重新归档",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "refiled",
+              "char": "重新归档（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "refiling",
+              "char": "重新归档（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "refiles",
+              "char": "重新归档（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "refiled",
+              "char": "重新归档（过去分词）"
+            }
+          }
+        }
+      },
+      "char": "档",
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "files",
+          "char": "档（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "file's",
+          "char": "档（所有格）"
+        },
+        "3": {
+          "morpheme": "Plural Possessive (s')",
+          "chord": "3",
+          "word": "files'",
+          "char": "档（复数所有格）"
         }
       }
     },
@@ -134,13 +537,33 @@
       "emoji": "💖",
       "note": "Existence / vitality",
       "derivatives": {
-        "emti": {
+        "eimt": {
           "morpheme": "time",
-          "chord": "emti",
+          "chord": "eimt",
           "word": "lifetime",
           "emoji": "⏳",
           "note": "Duration of life",
-          "char": "一生"
+          "char": "一生",
+          "inflections": {
+            "1": {
+              "morpheme": "Plural (-s)",
+              "chord": "1",
+              "word": "lifetimes",
+              "char": "一生（复数）"
+            },
+            "2": {
+              "morpheme": "Possessive ('s)",
+              "chord": "2",
+              "word": "lifetime's",
+              "char": "一生（所有格）"
+            },
+            "3": {
+              "morpheme": "Plural Possessive (s')",
+              "chord": "3",
+              "word": "lifetimes'",
+              "char": "一生（复数所有格）"
+            }
+          }
         },
         "1aelns": {
           "morpheme": "line",
@@ -148,7 +571,48 @@
           "word": "lifeline",
           "emoji": "🛟",
           "note": "Vital support link",
-          "char": "生命线"
+          "char": "生命线",
+          "inflections": {
+            "1": {
+              "morpheme": "Plural (-s)",
+              "chord": "1",
+              "word": "lifelines",
+              "char": "生命线（复数）"
+            },
+            "2": {
+              "morpheme": "Possessive ('s)",
+              "chord": "2",
+              "word": "lifeline's",
+              "char": "生命线（所有格）"
+            },
+            "3": {
+              "morpheme": "Plural Possessive (s')",
+              "chord": "3",
+              "word": "lifelines'",
+              "char": "生命线（复数所有格）"
+            }
+          }
+        }
+      },
+      "char": "命",
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "lives",
+          "char": "命（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "life's",
+          "char": "命（所有格）"
+        },
+        "3": {
+          "morpheme": "Plural Possessive (s')",
+          "chord": "3",
+          "word": "lives'",
+          "char": "命（复数所有格）"
         }
       }
     },
@@ -164,7 +628,69 @@
           "word": "password",
           "emoji": "🔑",
           "note": "Secret security word",
-          "char": "密码"
+          "char": "密码",
+          "inflections": {
+            "1": {
+              "morpheme": "Plural (-s)",
+              "chord": "1",
+              "word": "passwords",
+              "char": "密码（复数）"
+            },
+            "2": {
+              "morpheme": "Possessive ('s)",
+              "chord": "2",
+              "word": "password's",
+              "char": "密码（所有格）"
+            },
+            "3": {
+              "morpheme": "Plural Possessive (s')",
+              "chord": "3",
+              "word": "passwords'",
+              "char": "密码（复数所有格）"
+            }
+          }
+        },
+        "dorwy": {
+          "morpheme": "-y",
+          "chord": "dorwy",
+          "word": "wordy",
+          "note": "Word-family form supplied for word.",
+          "char": "冗长的"
+        },
+        "dinorw": {
+          "morpheme": "-iness",
+          "chord": "dinorw",
+          "word": "wordiness",
+          "note": "Word-family form supplied for word.",
+          "char": "冗长"
+        },
+        "1dinorw": {
+          "morpheme": "-ing",
+          "chord": "1dinorw",
+          "word": "wording",
+          "note": "Word-family form supplied for word.",
+          "char": "措辞"
+        }
+      },
+      "char": "词",
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "words",
+          "char": "词（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "word's",
+          "char": "词（所有格）"
+        },
+        "3": {
+          "morpheme": "Plural Possessive (s')",
+          "chord": "3",
+          "word": "words'",
+          "char": "词（复数所有格）"
         }
       }
     },
@@ -180,7 +706,60 @@
           "word": "recode",
           "emoji": "🛠️",
           "note": "Rewrite program code",
-          "char": "重新编码"
+          "char": "重新编码",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "recoded",
+              "char": "重新编码（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "recoding",
+              "char": "重新编码（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "recodes",
+              "char": "重新编码（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "recoded",
+              "char": "重新编码（过去分词）"
+            }
+          }
+        }
+      },
+      "char": "码",
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "coded",
+          "char": "码（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "coding",
+          "char": "码（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "codes",
+          "char": "码（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "coded",
+          "char": "码（过去分词）"
         }
       }
     },
@@ -196,7 +775,33 @@
           "word": "understand",
           "emoji": "💡",
           "note": "Comprehend meaning",
-          "char": "理解"
+          "char": "理解",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "understood",
+              "char": "理解（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "understanding",
+              "char": "理解（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "understands",
+              "char": "理解（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "understood",
+              "char": "理解（过去分词）"
+            }
+          }
         },
         "hitw": {
           "morpheme": "with-",
@@ -204,7 +809,33 @@
           "word": "withstand",
           "emoji": "🛡️",
           "note": "Endure / resist",
-          "char": "承受"
+          "char": "承受",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "withstood",
+              "char": "承受（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "withstanding",
+              "char": "承受（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "withstands",
+              "char": "承受（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "withstood",
+              "char": "承受（过去分词）"
+            }
+          }
         },
         "otu": {
           "morpheme": "out-",
@@ -212,7 +843,33 @@
           "word": "outstand",
           "emoji": "⭐",
           "note": "Be prominent / excel",
-          "char": "杰出"
+          "char": "杰出",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "outstood",
+              "char": "杰出（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "outstanding",
+              "char": "杰出（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "outstands",
+              "char": "杰出（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "outstood",
+              "char": "杰出（过去分词）"
+            }
+          }
         },
         "pu": {
           "morpheme": "up-",
@@ -220,7 +877,60 @@
           "word": "upstand",
           "emoji": "🔝",
           "note": "Stand erect / honest",
-          "char": "直立"
+          "char": "直立",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "upstood",
+              "char": "直立（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "upstanding",
+              "char": "直立（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "upstands",
+              "char": "直立（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "upstood",
+              "char": "直立（过去分词）"
+            }
+          }
+        }
+      },
+      "char": "站",
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "stood",
+          "char": "站（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "standing",
+          "char": "站（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "stands",
+          "char": "站（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "stood",
+          "char": "站（过去分词）"
         }
       }
     },
@@ -236,7 +946,33 @@
           "word": "mistake",
           "emoji": "⚠️",
           "note": "Error / blunder",
-          "char": "错误"
+          "char": "错误",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "mistook",
+              "char": "错误（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "mistaking",
+              "char": "错误（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "mistakes",
+              "char": "错误（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "mistaken",
+              "char": "错误（过去分词）"
+            }
+          }
         },
         "eov": {
           "morpheme": "over-",
@@ -244,7 +980,33 @@
           "word": "overtake",
           "emoji": "🏎️",
           "note": "Catch up and pass",
-          "char": "赶上"
+          "char": "赶上",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "overtook",
+              "char": "赶上（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "overtaking",
+              "char": "赶上（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "overtakes",
+              "char": "赶上（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "overtaken",
+              "char": "赶上（过去分词）"
+            }
+          }
         },
         "in": {
           "morpheme": "in-",
@@ -252,7 +1014,27 @@
           "word": "intake",
           "emoji": "🥤",
           "note": "Amount absorbed",
-          "char": "摄入"
+          "char": "摄入",
+          "inflections": {
+            "1": {
+              "morpheme": "Plural (-s)",
+              "chord": "1",
+              "word": "intakes",
+              "char": "摄入（复数）"
+            },
+            "2": {
+              "morpheme": "Possessive ('s)",
+              "chord": "2",
+              "word": "intake's",
+              "char": "摄入（所有格）"
+            },
+            "3": {
+              "morpheme": "Plural Possessive (s')",
+              "chord": "3",
+              "word": "intakes'",
+              "char": "摄入（复数所有格）"
+            }
+          }
         },
         "otu": {
           "morpheme": "out-",
@@ -260,7 +1042,27 @@
           "word": "outtake",
           "emoji": "🎬",
           "note": "Discarded recorded scene",
-          "char": "排除"
+          "char": "排除",
+          "inflections": {
+            "1": {
+              "morpheme": "Plural (-s)",
+              "chord": "1",
+              "word": "outtakes",
+              "char": "排除（复数）"
+            },
+            "2": {
+              "morpheme": "Possessive ('s)",
+              "chord": "2",
+              "word": "outtake's",
+              "char": "排除（所有格）"
+            },
+            "3": {
+              "morpheme": "Plural Possessive (s')",
+              "chord": "3",
+              "word": "outtakes'",
+              "char": "排除（复数所有格）"
+            }
+          }
         },
         "pu": {
           "morpheme": "up-",
@@ -268,7 +1070,27 @@
           "word": "uptake",
           "emoji": "📈",
           "note": "Absorption rate",
-          "char": "吸收"
+          "char": "吸收",
+          "inflections": {
+            "1": {
+              "morpheme": "Plural (-s)",
+              "chord": "1",
+              "word": "uptakes",
+              "char": "吸收（复数）"
+            },
+            "2": {
+              "morpheme": "Possessive ('s)",
+              "chord": "2",
+              "word": "uptake's",
+              "char": "吸收（所有格）"
+            },
+            "3": {
+              "morpheme": "Plural Possessive (s')",
+              "chord": "3",
+              "word": "uptakes'",
+              "char": "吸收（复数所有格）"
+            }
+          }
         },
         "er": {
           "morpheme": "re-",
@@ -276,7 +1098,60 @@
           "word": "retake",
           "emoji": "🔁",
           "note": "Take again",
-          "char": "重拍"
+          "char": "重拍",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "retook",
+              "char": "重拍（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "retaking",
+              "char": "重拍（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "retakes",
+              "char": "重拍（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "retaken",
+              "char": "重拍（过去分词）"
+            }
+          }
+        }
+      },
+      "char": "拿",
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "took",
+          "char": "拿（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "taking",
+          "char": "拿（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "takes",
+          "char": "拿（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "taken",
+          "char": "拿（过去分词）"
         }
       }
     },
@@ -292,7 +1167,33 @@
           "word": "return",
           "emoji": "🔙",
           "note": "Come back",
-          "char": "返回"
+          "char": "返回",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "returned",
+              "char": "返回（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "returning",
+              "char": "返回（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "returns",
+              "char": "返回（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "returned",
+              "char": "返回（过去分词）"
+            }
+          }
         },
         "eov": {
           "morpheme": "over-",
@@ -300,7 +1201,33 @@
           "word": "overturn",
           "emoji": "🔁",
           "note": "Flip over / reverse",
-          "char": "推翻"
+          "char": "推翻",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "overturned",
+              "char": "推翻（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "overturning",
+              "char": "推翻（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "overturns",
+              "char": "推翻（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "overturned",
+              "char": "推翻（过去分词）"
+            }
+          }
         },
         "pu": {
           "morpheme": "up-",
@@ -308,7 +1235,33 @@
           "word": "upturn",
           "emoji": "📈",
           "note": "Upward trend",
-          "char": "好转"
+          "char": "好转",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "upturned",
+              "char": "好转（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "upturning",
+              "char": "好转（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "upturns",
+              "char": "好转（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "upturned",
+              "char": "好转（过去分词）"
+            }
+          }
         },
         "otu": {
           "morpheme": "out-",
@@ -316,7 +1269,54 @@
           "word": "outturn",
           "emoji": "📦",
           "note": "Production output",
-          "char": "产量"
+          "char": "产量",
+          "inflections": {
+            "1": {
+              "morpheme": "Plural (-s)",
+              "chord": "1",
+              "word": "outturns",
+              "char": "产量（复数）"
+            },
+            "2": {
+              "morpheme": "Possessive ('s)",
+              "chord": "2",
+              "word": "outturn's",
+              "char": "产量（所有格）"
+            },
+            "3": {
+              "morpheme": "Plural Possessive (s')",
+              "chord": "3",
+              "word": "outturns'",
+              "char": "产量（复数所有格）"
+            }
+          }
+        }
+      },
+      "char": "转",
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "turned",
+          "char": "转（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "turning",
+          "char": "转（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "turns",
+          "char": "转（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "turned",
+          "char": "转（过去分词）"
         }
       }
     },
@@ -332,7 +1332,33 @@
           "word": "reform",
           "emoji": "🏛️",
           "note": "Improve / reorganize",
-          "char": "改革"
+          "char": "改革",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "reformed",
+              "char": "改革（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "reforming",
+              "char": "改革（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "reforms",
+              "char": "改革（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "reformed",
+              "char": "改革（过去分词）"
+            }
+          }
         },
         "1d": {
           "morpheme": "de-",
@@ -340,7 +1366,33 @@
           "word": "deform",
           "emoji": "💥",
           "note": "Distort shape",
-          "char": "变形"
+          "char": "变形",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "deformed",
+              "char": "变形（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "deforming",
+              "char": "变形（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "deforms",
+              "char": "变形（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "deformed",
+              "char": "变形（过去分词）"
+            }
+          }
         },
         "in": {
           "morpheme": "in-",
@@ -348,7 +1400,33 @@
           "word": "inform",
           "emoji": "📢",
           "note": "Convey knowledge",
-          "char": "通知"
+          "char": "通知",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "informed",
+              "char": "通知（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "informing",
+              "char": "通知（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "informs",
+              "char": "通知（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "informed",
+              "char": "通知（过去分词）"
+            }
+          }
         },
         "anst": {
           "morpheme": "trans-",
@@ -356,7 +1434,33 @@
           "word": "transform",
           "emoji": "🦋",
           "note": "Change nature or form",
-          "char": "转换"
+          "char": "转换",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "transformed",
+              "char": "转换（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "transforming",
+              "char": "转换（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "transforms",
+              "char": "转换（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "transformed",
+              "char": "转换（过去分词）"
+            }
+          }
         },
         "cno": {
           "morpheme": "con-",
@@ -364,7 +1468,60 @@
           "word": "conform",
           "emoji": "🤝",
           "note": "Comply with rules",
-          "char": "遵守"
+          "char": "遵守",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "conformed",
+              "char": "遵守（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "conforming",
+              "char": "遵守（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "conforms",
+              "char": "遵守（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "conformed",
+              "char": "遵守（过去分词）"
+            }
+          }
+        }
+      },
+      "char": "形",
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "formed",
+          "char": "形（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "forming",
+          "char": "形（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "forms",
+          "char": "形（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "formed",
+          "char": "形（过去分词）"
         }
       }
     },
@@ -380,7 +1537,33 @@
           "word": "express",
           "emoji": "💬",
           "note": "Convey thought or feeling",
-          "char": "表达"
+          "char": "表达",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "expressed",
+              "char": "表达（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "expressing",
+              "char": "表达（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "expresses",
+              "char": "表达（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "expressed",
+              "char": "表达（过去分词）"
+            }
+          }
         },
         "im": {
           "morpheme": "im-",
@@ -388,7 +1571,33 @@
           "word": "impress",
           "emoji": "🤩",
           "note": "Make strong impact",
-          "char": "留下印象"
+          "char": "留下印象",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "impressed",
+              "char": "留下印象（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "impressing",
+              "char": "留下印象（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "impresses",
+              "char": "留下印象（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "impressed",
+              "char": "留下印象（过去分词）"
+            }
+          }
         },
         "1d": {
           "morpheme": "de-",
@@ -396,7 +1605,33 @@
           "word": "depress",
           "emoji": "📉",
           "note": "Push down / lower",
-          "char": "使沮丧"
+          "char": "使沮丧",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "depressed",
+              "char": "使沮丧（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "depressing",
+              "char": "使沮丧（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "depresses",
+              "char": "使沮丧（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "depressed",
+              "char": "使沮丧（过去分词）"
+            }
+          }
         },
         "er": {
           "morpheme": "re-",
@@ -404,7 +1639,33 @@
           "word": "repress",
           "emoji": "🤐",
           "note": "Hold back by force",
-          "char": "压制"
+          "char": "压制",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "repressed",
+              "char": "压制（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "repressing",
+              "char": "压制（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "represses",
+              "char": "压制（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "repressed",
+              "char": "压制（过去分词）"
+            }
+          }
         },
         "op": {
           "morpheme": "op-",
@@ -412,7 +1673,60 @@
           "word": "oppress",
           "emoji": "⛓️",
           "note": "Weigh down heavily",
-          "char": "压迫"
+          "char": "压迫",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "oppressed",
+              "char": "压迫（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "oppressing",
+              "char": "压迫（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "oppresses",
+              "char": "压迫（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "oppressed",
+              "char": "压迫（过去分词）"
+            }
+          }
+        }
+      },
+      "char": "按",
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "pressed",
+          "char": "按（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "pressing",
+          "char": "按（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "presses",
+          "char": "按（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "pressed",
+          "char": "按（过去分词）"
         }
       }
     },
@@ -428,7 +1742,33 @@
           "word": "react",
           "emoji": "⚡",
           "note": "Respond to stimulus",
-          "char": "反应"
+          "char": "反应",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "reacted",
+              "char": "反应（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "reacting",
+              "char": "反应（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "reacts",
+              "char": "反应（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "reacted",
+              "char": "反应（过去分词）"
+            }
+          }
         },
         "eint": {
           "morpheme": "inter-",
@@ -436,7 +1776,33 @@
           "word": "interact",
           "emoji": "🗣️",
           "note": "Act reciprocally",
-          "char": "互动"
+          "char": "互动",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "interacted",
+              "char": "互动（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "interacting",
+              "char": "互动（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "interacts",
+              "char": "互动（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "interacted",
+              "char": "互动（过去分词）"
+            }
+          }
         },
         "anst": {
           "morpheme": "trans-",
@@ -444,7 +1810,33 @@
           "word": "transact",
           "emoji": "💳",
           "note": "Conduct business",
-          "char": "交易"
+          "char": "交易",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "transacted",
+              "char": "交易（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "transacting",
+              "char": "交易（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "transacts",
+              "char": "交易（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "transacted",
+              "char": "交易（过去分词）"
+            }
+          }
         },
         "en": {
           "morpheme": "en-",
@@ -452,7 +1844,60 @@
           "word": "enact",
           "emoji": "📜",
           "note": "Put into law or practice",
-          "char": "颁布"
+          "char": "颁布",
+          "inflections": {
+            "1": {
+              "morpheme": "Past Tense (-ed)",
+              "chord": "1",
+              "word": "enacted",
+              "char": "颁布（过去式）"
+            },
+            "2": {
+              "morpheme": "Continuous (-ing)",
+              "chord": "2",
+              "word": "enacting",
+              "char": "颁布（进行式）"
+            },
+            "3": {
+              "morpheme": "3rd Person (-s)",
+              "chord": "3",
+              "word": "enacts",
+              "char": "颁布（第三人称单数）"
+            },
+            "4": {
+              "morpheme": "Past Participle (-en)",
+              "chord": "4",
+              "word": "enacted",
+              "char": "颁布（过去分词）"
+            }
+          }
+        }
+      },
+      "char": "动",
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "acted",
+          "char": "动（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "acting",
+          "char": "动（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "acts",
+          "char": "动（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "acted",
+          "char": "动（过去分词）"
         }
       }
     },
@@ -494,7 +1939,8 @@
           "note": "Size (dàxiǎo)",
           "char": "大小"
         }
-      }
+      },
+      "char": "大"
     },
     "2an": {
       "lemma": "拿",
@@ -526,7 +1972,8 @@
           "note": "Pick up (náqǐ)",
           "char": "拿起"
         }
-      }
+      },
+      "char": "拿"
     },
     "4adin": {
       "lemma": "电",
@@ -558,7 +2005,8 @@
           "note": "Television (diànshì)",
           "char": "电视"
         }
-      }
+      },
+      "char": "电"
     },
     "1ehns": {
       "lemma": "生",
@@ -590,7 +2038,8 @@
           "note": "Produce (shēngchǎn)",
           "char": "生产"
         }
-      }
+      },
+      "char": "生"
     },
     "acltu": {
       "lemma": "actual",
@@ -622,7 +2071,8 @@
           "note": "Make real / fulfill",
           "char": "实现"
         }
-      }
+      },
+      "char": "实"
     },
     "adforw": {
       "lemma": "forward",
@@ -670,7 +2120,8 @@
           "note": "Toward the front",
           "char": "向前"
         }
-      }
+      },
+      "char": "前"
     },
     "cfinou": {
       "lemma": "function",
@@ -718,6 +2169,27 @@
           "note": "Failure to function",
           "char": "故障"
         }
+      },
+      "char": "功",
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "functions",
+          "char": "功（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "function's",
+          "char": "功（所有格）"
+        },
+        "3": {
+          "morpheme": "Plural Possessive (s')",
+          "chord": "3",
+          "word": "functions'",
+          "char": "功（复数所有格）"
+        }
       }
     },
     "ghirt": {
@@ -750,9 +2222,9 @@
           "note": "Completely / direct",
           "char": "彻底"
         },
-        "coyp": {
+        "copy": {
           "morpheme": "copy-",
-          "chord": "coyp",
+          "chord": "copy",
           "word": "copyright",
           "emoji": "©️",
           "note": "Legal ownership right",
@@ -766,7 +2238,8 @@
           "note": "Morally right",
           "char": "正义"
         }
-      }
+      },
+      "char": "对"
     },
     "now": {
       "lemma": "now",
@@ -798,7 +2271,8 @@
           "note": "Immediately / this moment",
           "char": "现在"
         }
-      }
+      },
+      "char": "现"
     },
     "eht": {
       "lemma": "the",
@@ -862,63 +2336,8 @@
           "note": "Consequently",
           "char": "因此"
         }
-      }
-    },
-    "emti": {
-      "lemma": "time",
-      "chord": "emti",
-      "emoji": "⏳",
-      "note": "Temporal period or duration",
-      "derivatives": {
-        "er": {
-          "morpheme": "-er",
-          "chord": "er",
-          "word": "timer",
-          "emoji": "⏱️",
-          "note": "Time measurement tool",
-          "char": "计时器"
-        },
-        "gin": {
-          "morpheme": "-ing",
-          "chord": "gin",
-          "word": "timing",
-          "emoji": "⏰",
-          "note": "Choice of moment",
-          "char": "时机"
-        },
-        "ly": {
-          "morpheme": "-ly",
-          "chord": "ly",
-          "word": "timely",
-          "emoji": "🎯",
-          "note": "Well-timed / opportune",
-          "char": "及时的"
-        },
-        "otu": {
-          "morpheme": "-out",
-          "chord": "otu",
-          "word": "timeout",
-          "emoji": "⏸️",
-          "note": "Temporary pause",
-          "char": "超时"
-        },
-        "elss": {
-          "morpheme": "-less",
-          "chord": "elss",
-          "word": "timeless",
-          "emoji": "✨",
-          "note": "Unaffected by time",
-          "char": "永恒"
-        },
-        "eov": {
-          "morpheme": "over-",
-          "chord": "eov",
-          "word": "overtime",
-          "emoji": "💼",
-          "note": "Time beyond regular hours",
-          "char": "加班"
-        }
-      }
+      },
+      "char": "这"
     },
     "ot": {
       "lemma": "to",
@@ -974,7 +2393,8 @@
           "note": "Moving inside",
           "char": "进入"
         }
-      }
+      },
+      "char": "到"
     },
     "aitw": {
       "lemma": "wait",
@@ -1022,7 +2442,8 @@
           "note": "Wait expectantly",
           "char": "等候"
         }
-      }
+      },
+      "char": "等"
     },
     "box": {
       "lemma": "box",
@@ -1078,7 +2499,8 @@
           "note": "Plural boxes",
           "char": "盒子"
         }
-      }
+      },
+      "char": "盒"
     },
     "aclr": {
       "lemma": "clear",
@@ -1118,7 +2540,8 @@
           "note": "Authorization / space",
           "char": "许可"
         }
-      }
+      },
+      "char": "清"
     },
     "dnp": {
       "lemma": "depend",
@@ -1166,7 +2589,8 @@
           "note": "Relies on",
           "char": "取决于"
         }
-      }
+      },
+      "char": "靠"
     },
     "aekm": {
       "lemma": "make",
@@ -1198,7 +2622,8 @@
           "note": "Creates",
           "char": "使"
         }
-      }
+      },
+      "char": "做"
     },
     "epty": {
       "lemma": "type",
@@ -1238,7 +2663,8 @@
           "note": "Kinds / categories",
           "char": "类型"
         }
-      }
+      },
+      "char": "打字"
     },
     "abelt": {
       "lemma": "table",
@@ -1246,9 +2672,9 @@
       "emoji": "📊",
       "note": "Furniture / grid data",
       "derivatives": {
-        "emti": {
+        "eimt": {
           "morpheme": "time-",
-          "chord": "emti",
+          "chord": "eimt",
           "word": "timetable",
           "emoji": "🗓️",
           "note": "Schedule of times",
@@ -1262,7 +2688,8 @@
           "note": "Plural tables",
           "char": "表格"
         }
-      }
+      },
+      "char": "表"
     },
     "bev": {
       "lemma": "verb",
@@ -1294,7 +2721,8 @@
           "note": "Plural verbs",
           "char": "动词"
         }
-      }
+      },
+      "char": "动词"
     },
     "adns": {
       "lemma": "sand",
@@ -1318,7 +2746,8 @@
           "note": "Full of sand",
           "char": "沙质"
         }
-      }
+      },
+      "char": "沙"
     },
     "hors": {
       "lemma": "short",
@@ -1350,7 +2779,7 @@
           "note": "Deficiency",
           "char": "短缺"
         },
-        "cut": {
+        "ctu": {
           "morpheme": "-cut",
           "chord": "ctu",
           "word": "shortcut",
@@ -1358,7 +2787,8 @@
           "note": "Faster path",
           "char": "快捷键"
         }
-      }
+      },
+      "char": "短"
     },
     "eilmps": {
       "lemma": "simple",
@@ -1382,7 +2812,8 @@
           "note": "State of being simple",
           "char": "简单"
         }
-      }
+      },
+      "char": "简"
     },
     "elt": {
       "lemma": "let",
@@ -1414,6 +2845,15 @@
           "note": "Allows / let us",
           "char": "让我们"
         }
+      },
+      "char": "让",
+      "inflections": {
+        "1": {
+          "morpheme": "Contraction",
+          "chord": "1",
+          "word": "let's",
+          "char": "让（缩写形式）"
+        }
       }
     },
     "pu": {
@@ -1438,15 +2878,16 @@
           "note": "Higher in position",
           "char": "上面的"
         },
-        "ardw": {
+        "adrw": {
           "morpheme": "-ward",
-          "chord": "ardw",
+          "chord": "adrw",
           "word": "upward",
           "emoji": "📈",
           "note": "In an upward direction",
           "char": "向上"
         }
-      }
+      },
+      "char": "上"
     },
     "enprs": {
       "lemma": "present",
@@ -1462,15 +2903,16 @@
           "note": "At the present moment",
           "char": "目前"
         },
-        "tion": {
+        "inot": {
           "morpheme": "-ation",
-          "chord": "tion",
+          "chord": "inot",
           "word": "presentation",
           "emoji": "📊",
           "note": "Demonstration / exhibition",
           "char": "演示"
         }
-      }
+      },
+      "char": "现在"
     },
     "am": {
       "lemma": "am",
@@ -1643,7 +3085,15 @@
       "emoji": "👉",
       "note": "Specific person or thing",
       "char": "这",
-      "derivatives": {}
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural",
+          "chord": "1",
+          "word": "these",
+          "char": "这些"
+        }
+      }
     },
     "1a": {
       "lemma": "a",
@@ -1699,7 +3149,4382 @@
           "note": "Vowel preceding article",
           "char": "一个"
         }
+      },
+      "char": "一个"
+    },
+    "at": {
+      "lemma": "at",
+      "chord": "at",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "aint": {
+          "morpheme": "-tain",
+          "chord": "aint",
+          "word": "attain",
+          "note": "Word-family form supplied for at.",
+          "char": "达到"
+        },
+        "adimt": {
+          "morpheme": "admit",
+          "chord": "adimt",
+          "word": "admit",
+          "note": "Word-family form supplied for at.",
+          "char": "承认"
+        },
+        "adhr": {
+          "morpheme": "adhere",
+          "chord": "adhr",
+          "word": "adhere",
+          "note": "Word-family form supplied for at.",
+          "char": "遵守"
+        }
+      },
+      "char": "在"
+    },
+    "awy": {
+      "lemma": "way",
+      "chord": "awy",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "1awy": {
+          "morpheme": "away",
+          "chord": "1awy",
+          "word": "away",
+          "note": "Word-family form supplied for way.",
+          "char": "离开"
+        },
+        "ahptw": {
+          "morpheme": "pathway",
+          "chord": "ahptw",
+          "word": "pathway",
+          "note": "Word-family form supplied for way.",
+          "char": "路径"
+        },
+        "agnow": {
+          "morpheme": "wagon",
+          "chord": "agnow",
+          "word": "wagon",
+          "note": "Word-family form supplied for way.",
+          "char": "马车"
+        }
+      },
+      "char": "方式"
+    },
+    "bdiln": {
+      "lemma": "blind",
+      "chord": "bdiln",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "bdfiln": {
+          "morpheme": "-fold",
+          "chord": "bdfiln",
+          "word": "blindfold",
+          "note": "Word-family form supplied for blind.",
+          "char": "眼罩"
+        },
+        "bdilns": {
+          "morpheme": "-ness",
+          "chord": "bdilns",
+          "word": "blindness",
+          "note": "Word-family form supplied for blind.",
+          "char": "失明"
+        },
+        "beln": {
+          "morpheme": "blend",
+          "chord": "beln",
+          "word": "blend",
+          "note": "Word-family form supplied for blind.",
+          "char": "混合"
+        },
+        "bdilny": {
+          "morpheme": "-ly",
+          "chord": "bdilny",
+          "word": "blindly",
+          "note": "Word-family form supplied for blind.",
+          "char": "盲目地"
+        }
+      },
+      "char": "盲目"
+    },
+    "chor": {
+      "lemma": "chord",
+      "chord": "chor",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "achioprs": {
+          "morpheme": "harpsichord",
+          "chord": "achioprs",
+          "word": "harpsichord",
+          "note": "Word-family form supplied for chord.",
+          "char": "羽管键琴"
+        },
+        "achor": {
+          "morpheme": "-al",
+          "chord": "achor",
+          "word": "chordal",
+          "note": "Word-family form supplied for chord.",
+          "char": "和弦的"
+        },
+        "cmnor": {
+          "morpheme": "monochord",
+          "chord": "cmnor",
+          "word": "monochord",
+          "note": "Word-family form supplied for chord.",
+          "char": "单弦琴"
+        },
+        "chors": {
+          "morpheme": "-s",
+          "chord": "chors",
+          "word": "chords",
+          "note": "Word-family form supplied for chord.",
+          "char": "和弦"
+        }
+      },
+      "char": "和弦"
+    },
+    "1cln": {
+      "lemma": "clone",
+      "chord": "1cln",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "cgiln": {
+          "morpheme": "cloning",
+          "chord": "cgiln",
+          "word": "cloning",
+          "note": "Word-family form supplied for clone.",
+          "char": "克隆"
+        },
+        "acmno": {
+          "morpheme": "monoclonal",
+          "chord": "acmno",
+          "word": "monoclonal",
+          "note": "Word-family form supplied for clone.",
+          "char": "单克隆的"
+        },
+        "acnopy": {
+          "morpheme": "polyclonal",
+          "chord": "acnopy",
+          "word": "polyclonal",
+          "note": "Word-family form supplied for clone.",
+          "char": "多克隆的"
+        },
+        "cln": {
+          "morpheme": "-d",
+          "chord": "cln",
+          "word": "cloned",
+          "note": "Word-family form supplied for clone.",
+          "char": "已克隆"
+        }
+      },
+      "char": "克隆"
+    },
+    "cis": {
+      "lemma": "cise",
+      "chord": "cis",
+      "note": "Root used by the supplied word family. Alternate root: cut (Latin caedere).",
+      "derivatives": {
+        "cinos": {
+          "morpheme": "concise",
+          "chord": "cinos",
+          "word": "concise",
+          "note": "Word-family form supplied for cise.",
+          "char": "简洁"
+        },
+        "eiprs": {
+          "morpheme": "precise",
+          "chord": "eiprs",
+          "word": "precise",
+          "note": "Word-family form supplied for cise.",
+          "char": "精确"
+        },
+        "dinos": {
+          "morpheme": "decision",
+          "chord": "dinos",
+          "word": "decision",
+          "note": "Word-family form supplied for cise.",
+          "char": "决定"
+        }
+      },
+      "char": "切"
+    },
+    "er": {
+      "lemma": "rect",
+      "chord": "er",
+      "note": "Root used by the supplied word family. Latin regere.",
+      "derivatives": {
+        "cor": {
+          "morpheme": "correct",
+          "chord": "cor",
+          "word": "correct",
+          "note": "Word-family form supplied for rect.",
+          "char": "正确"
+        },
+        "cdeirt": {
+          "morpheme": "direct",
+          "chord": "cdeirt",
+          "word": "direct",
+          "note": "Word-family form supplied for rect.",
+          "char": "直接"
+        },
+        "aelnr": {
+          "morpheme": "-angle",
+          "chord": "aelnr",
+          "word": "rectangle",
+          "note": "Word-family form supplied for rect.",
+          "char": "矩形"
+        }
+      },
+      "char": "正"
+    },
+    "adl": {
+      "lemma": "deal",
+      "chord": "adl",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "adlr": {
+          "morpheme": "-er",
+          "chord": "adlr",
+          "word": "dealer",
+          "note": "Word-family form supplied for deal.",
+          "char": "经销商"
+        },
+        "adgiln": {
+          "morpheme": "-ing",
+          "chord": "adgiln",
+          "word": "dealing",
+          "note": "Word-family form supplied for deal.",
+          "char": "处理"
+        },
+        "ador": {
+          "morpheme": "ordeal",
+          "chord": "ador",
+          "word": "ordeal",
+          "note": "Word-family form supplied for deal.",
+          "char": "磨难"
+        }
+      },
+      "char": "交易"
+    },
+    "ety": {
+      "lemma": "etym",
+      "chord": "ety",
+      "note": "Root used by the supplied word family. Greek etymon.",
+      "derivatives": {
+        "eoty": {
+          "morpheme": "-ology",
+          "chord": "eoty",
+          "word": "etymology",
+          "note": "Word-family form supplied for etym.",
+          "char": "词源学"
+        },
+        "enoty": {
+          "morpheme": "-on",
+          "chord": "enoty",
+          "word": "etymon",
+          "note": "Word-family form supplied for etym.",
+          "char": "词源词"
+        },
+        "aeioty": {
+          "morpheme": "-ologically",
+          "chord": "aeioty",
+          "word": "etymologically",
+          "note": "Word-family form supplied for etym.",
+          "char": "从词源上"
+        },
+        "aeimot": {
+          "morpheme": "etimologically",
+          "chord": "aeimot",
+          "word": "etimologically",
+          "note": "Word-family form supplied for etym.",
+          "char": "从词源上"
+        }
+      },
+      "char": "词源"
+    },
+    "gly": {
+      "lemma": "logy",
+      "chord": "gly",
+      "note": "Root used by the supplied word family. Greek logos.",
+      "derivatives": {
+        "cgil": {
+          "morpheme": "logic",
+          "chord": "cgil",
+          "word": "logic",
+          "note": "Word-family form supplied for logy.",
+          "char": "逻辑"
+        },
+        "bgioy": {
+          "morpheme": "biology",
+          "chord": "bgioy",
+          "word": "biology",
+          "note": "Word-family form supplied for logy.",
+          "char": "生物学"
+        }
+      },
+      "char": "学说"
+    },
+    "evy": {
+      "lemma": "every",
+      "chord": "evy",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "beovy": {
+          "morpheme": "-body",
+          "chord": "beovy",
+          "word": "everybody",
+          "note": "Word-family form supplied for every.",
+          "char": "每个人"
+        },
+        "enovy": {
+          "morpheme": "-one",
+          "chord": "enovy",
+          "word": "everyone",
+          "note": "Word-family form supplied for every.",
+          "char": "每个人"
+        },
+        "einvy": {
+          "morpheme": "-thing",
+          "chord": "einvy",
+          "word": "everything",
+          "note": "Word-family form supplied for every.",
+          "char": "一切"
+        }
+      },
+      "char": "每个"
+    },
+    "ailnp": {
+      "lemma": "plain",
+      "chord": "ailnp",
+      "note": "Root used by the supplied word family. Alternate root: plane (Latin planus).",
+      "derivatives": {
+        "aeilnpx": {
+          "morpheme": "explain",
+          "chord": "aeilnpx",
+          "word": "explain",
+          "note": "Word-family form supplied for plain.",
+          "char": "解释"
+        },
+        "aeilnptx": {
+          "morpheme": "explanation",
+          "chord": "aeilnptx",
+          "word": "explanation",
+          "note": "Word-family form supplied for plain.",
+          "char": "解释"
+        },
+        "aegilnpx": {
+          "morpheme": "explaining",
+          "chord": "aegilnpx",
+          "word": "explaining",
+          "note": "Word-family form supplied for plain.",
+          "char": "正在解释"
+        }
+      },
+      "char": "朴素"
+    },
+    "eg": {
+      "lemma": "get",
+      "chord": "eg",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "efo": {
+          "morpheme": "forget",
+          "chord": "efo",
+          "word": "forget",
+          "note": "Word-family form supplied for get.",
+          "char": "忘记"
+        },
+        "beg": {
+          "morpheme": "beget",
+          "chord": "beg",
+          "word": "beget",
+          "note": "Word-family form supplied for get.",
+          "char": "生育"
+        },
+        "abegl": {
+          "morpheme": "-able",
+          "chord": "abegl",
+          "word": "getable",
+          "note": "Word-family form supplied for get.",
+          "char": "可获得的"
+        }
+      },
+      "char": "得到"
+    },
+    "gil": {
+      "lemma": "girl",
+      "chord": "gil",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "ghils": {
+          "morpheme": "-ish",
+          "chord": "ghils",
+          "word": "girlish",
+          "note": "Word-family form supplied for girl.",
+          "char": "少女般的"
+        },
+        "dghil": {
+          "morpheme": "-hood",
+          "chord": "dghil",
+          "word": "girlhood",
+          "note": "Word-family form supplied for girl.",
+          "char": "少女时期"
+        },
+        "cghios": {
+          "morpheme": "schoolgirl",
+          "chord": "cghios",
+          "word": "schoolgirl",
+          "note": "Word-family form supplied for girl.",
+          "char": "女学生"
+        },
+        "gils": {
+          "morpheme": "-s",
+          "chord": "gils",
+          "word": "girls",
+          "note": "Word-family form supplied for girl.",
+          "char": "女孩们"
+        }
+      },
+      "char": "女孩"
+    },
+    "gi": {
+      "lemma": "git",
+      "chord": "gi",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "cgimo": {
+          "morpheme": "--commit",
+          "chord": "cgimo",
+          "word": "git-commit",
+          "note": "Word-family form supplied for git.",
+          "char": "Git提交"
+        },
+        "bghi": {
+          "morpheme": "-hub",
+          "chord": "bghi",
+          "word": "github",
+          "note": "Word-family form supplied for git.",
+          "char": "GitHub（代码托管平台）"
+        }
+      },
+      "char": "Git（版本控制系统）"
+    },
+    "bh": {
+      "lemma": "hub",
+      "chord": "bh",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "abchp": {
+          "morpheme": "-cap",
+          "chord": "abchp",
+          "word": "hubcap",
+          "note": "Word-family form supplied for hub.",
+          "char": "轮毂盖"
+        },
+        "bhopst": {
+          "morpheme": "-spot",
+          "chord": "bhopst",
+          "word": "hubspot",
+          "note": "Word-family form supplied for hub.",
+          "char": "HubSpot（客户关系管理平台）"
+        }
+      },
+      "char": "枢纽"
+    },
+    "go": {
+      "lemma": "go",
+      "chord": "go",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "gino": {
+          "morpheme": "ongoing",
+          "chord": "gino",
+          "word": "ongoing",
+          "note": "Word-family form supplied for go.",
+          "char": "持续进行"
+        },
+        "dnoru": {
+          "morpheme": "undergo",
+          "chord": "dnoru",
+          "word": "undergo",
+          "note": "Word-family form supplied for go.",
+          "char": "经历"
+        },
+        "1efo": {
+          "morpheme": "forego",
+          "chord": "1efo",
+          "word": "forego",
+          "note": "Word-family form supplied for go.",
+          "char": "放弃"
+        }
+      },
+      "char": "去"
+    },
+    "hit": {
+      "lemma": "hit",
+      "chord": "hit",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "ehit": {
+          "morpheme": "-ter",
+          "chord": "ehit",
+          "word": "hitter",
+          "note": "Word-family form supplied for hit.",
+          "char": "击球手"
+        },
+        "1hint": {
+          "morpheme": "-ting",
+          "chord": "1hint",
+          "word": "hitting",
+          "note": "Word-family form supplied for hit.",
+          "char": "击打"
+        },
+        "2hint": {
+          "morpheme": "-ing",
+          "chord": "2hint",
+          "word": "hiting",
+          "note": "Word-family form supplied for hit.",
+          "char": "击打"
+        },
+        "intu": {
+          "morpheme": "unhit",
+          "chord": "intu",
+          "word": "unhit",
+          "note": "Word-family form supplied for hit.",
+          "char": "未击中"
+        }
+      },
+      "char": "击打"
+    },
+    "ehos": {
+      "lemma": "house",
+      "chord": "ehos",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "1ehos": {
+          "morpheme": "-hold",
+          "chord": "1ehos",
+          "word": "household",
+          "note": "Word-family form supplied for house.",
+          "char": "家庭"
+        },
+        "ghinos": {
+          "morpheme": "housing",
+          "chord": "ghinos",
+          "word": "housing",
+          "note": "Word-family form supplied for house.",
+          "char": "住房"
+        },
+        "efhios": {
+          "morpheme": "-wife",
+          "chord": "efhios",
+          "word": "housewife",
+          "note": "Word-family form supplied for house.",
+          "char": "家庭主妇"
+        }
+      },
+      "char": "房子"
+    },
+    "eiv": {
+      "lemma": "iev",
+      "chord": "eiv",
+      "note": "Root used by the supplied word family. Name root: Job / Iev.",
+      "derivatives": {
+        "1eilv": {
+          "morpheme": "-lev",
+          "chord": "1eilv",
+          "word": "Ievlev",
+          "note": "Word-family form supplied for iev.",
+          "char": "伊夫列夫"
+        },
+        "2eilv": {
+          "morpheme": "-levli",
+          "chord": "2eilv",
+          "word": "Ievlevli",
+          "note": "Word-family form supplied for iev.",
+          "char": "伊夫列夫利"
+        },
+        "bjo": {
+          "morpheme": "Job",
+          "chord": "bjo",
+          "word": "Job",
+          "note": "Word-family form supplied for iev.",
+          "char": "工作"
+        }
+      },
+      "char": "约伯"
+    },
+    "1alst": {
+      "lemma": "stall",
+      "chord": "1alst",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "ailnst": {
+          "morpheme": "install",
+          "chord": "ailnst",
+          "word": "install",
+          "note": "Word-family form supplied for stall.",
+          "char": "安装"
+        },
+        "aefos": {
+          "morpheme": "forestall",
+          "chord": "aefos",
+          "word": "forestall",
+          "note": "Word-family form supplied for stall.",
+          "char": "预先阻止"
+        }
+      },
+      "char": "摊位"
+    },
+    "aest": {
+      "lemma": "stead",
+      "chord": "aest",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "aeinst": {
+          "morpheme": "instead",
+          "chord": "aeinst",
+          "word": "instead",
+          "note": "Word-family form supplied for stead.",
+          "char": "而不是"
+        },
+        "1aest": {
+          "morpheme": "-fast",
+          "chord": "1aest",
+          "word": "steadfast",
+          "note": "Word-family form supplied for stead.",
+          "char": "坚定的"
+        },
+        "aesty": {
+          "morpheme": "-y",
+          "chord": "aesty",
+          "word": "steady",
+          "note": "Word-family form supplied for stead.",
+          "char": "稳定的"
+        }
+      },
+      "char": "位置"
+    },
+    "eky": {
+      "lemma": "key",
+      "chord": "eky",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "abekory": {
+          "morpheme": "-board",
+          "chord": "abekory",
+          "word": "keyboard",
+          "note": "Word-family form supplied for key.",
+          "char": "盘",
+          "inflections": {
+            "1": {
+              "morpheme": "Plural (-s)",
+              "chord": "1",
+              "word": "keyboards",
+              "char": "盘（复数）"
+            },
+            "2": {
+              "morpheme": "Possessive ('s)",
+              "chord": "2",
+              "word": "keyboard's",
+              "char": "盘（所有格）"
+            },
+            "3": {
+              "morpheme": "Plural Possessive (s')",
+              "chord": "3",
+              "word": "keyboards'",
+              "char": "盘（复数所有格）"
+            }
+          }
+        },
+        "eknoty": {
+          "morpheme": "-note",
+          "chord": "eknoty",
+          "word": "keynote",
+          "note": "Word-family form supplied for key.",
+          "char": "主题演讲"
+        },
+        "ekoy": {
+          "morpheme": "-hole",
+          "chord": "ekoy",
+          "word": "keyhole",
+          "note": "Word-family form supplied for key.",
+          "char": "钥匙孔"
+        },
+        "eksy": {
+          "morpheme": "-s",
+          "chord": "eksy",
+          "word": "keys",
+          "note": "Word-family form supplied for key.",
+          "char": "按键"
+        }
+      },
+      "char": "关键"
+    },
+    "eilt": {
+      "lemma": "liter",
+      "chord": "eilt",
+      "note": "Root used by the supplied word family. Alternate root: letter (Latin littera).",
+      "derivatives": {
+        "aeilt": {
+          "morpheme": "-al",
+          "chord": "aeilt",
+          "word": "literal",
+          "note": "Word-family form supplied for liter.",
+          "char": "字面的"
+        },
+        "aeiltu": {
+          "morpheme": "-ature",
+          "chord": "aeiltu",
+          "word": "literature",
+          "note": "Word-family form supplied for liter.",
+          "char": "文学"
+        },
+        "1aeilt": {
+          "morpheme": "illiterate",
+          "chord": "1aeilt",
+          "word": "illiterate",
+          "note": "Word-family form supplied for liter.",
+          "char": "文盲"
+        },
+        "1elst": {
+          "morpheme": "letters",
+          "chord": "1elst",
+          "word": "letters",
+          "note": "Word-family form supplied for liter.",
+          "char": "字母"
+        }
+      },
+      "char": "文字"
+    },
+    "eilv": {
+      "lemma": "live",
+      "chord": "eilv",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "eilvy": {
+          "morpheme": "-ly",
+          "chord": "eilvy",
+          "word": "lively",
+          "note": "Word-family form supplied for live.",
+          "char": "活泼的"
+        },
+        "aeilv": {
+          "morpheme": "alive",
+          "chord": "aeilv",
+          "word": "alive",
+          "note": "Word-family form supplied for live.",
+          "char": "活着"
+        },
+        "ehilv": {
+          "morpheme": "-lihood",
+          "chord": "ehilv",
+          "word": "livelihood",
+          "note": "Word-family form supplied for live.",
+          "char": "生计"
+        }
+      },
+      "char": "居住"
+    },
+    "kl": {
+      "lemma": "look",
+      "chord": "kl",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "kotu": {
+          "morpheme": "outlook",
+          "chord": "kotu",
+          "word": "outlook",
+          "note": "Word-family form supplied for look.",
+          "char": "展望"
+        },
+        "eklr": {
+          "morpheme": "-er",
+          "chord": "eklr",
+          "word": "looker",
+          "note": "Word-family form supplied for look.",
+          "char": "观察者"
+        },
+        "ekov": {
+          "morpheme": "overlook",
+          "chord": "ekov",
+          "word": "overlook",
+          "note": "Word-family form supplied for look.",
+          "char": "忽略"
+        }
+      },
+      "char": "看"
+    },
+    "amn": {
+      "lemma": "man",
+      "chord": "amn",
+      "note": "Root used by the supplied word family. Latin manus.",
+      "derivatives": {
+        "aegmn": {
+          "morpheme": "-ager",
+          "chord": "aegmn",
+          "word": "manager",
+          "note": "Word-family form supplied for man.",
+          "char": "管理者"
+        },
+        "almn": {
+          "morpheme": "-ual",
+          "chord": "almn",
+          "word": "manual",
+          "note": "Word-family form supplied for man.",
+          "char": "手册"
+        },
+        "acfmn": {
+          "morpheme": "-ufacture",
+          "chord": "acfmn",
+          "word": "manufacture",
+          "note": "Word-family form supplied for man.",
+          "char": "制造"
+        }
+      },
+      "char": "手"
+    },
+    "1am": {
+      "lemma": "may",
+      "chord": "1am",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "gim": {
+          "morpheme": "might",
+          "chord": "gim",
+          "word": "might",
+          "note": "Word-family form supplied for may.",
+          "char": "可能"
+        },
+        "1gim": {
+          "morpheme": "mighty",
+          "chord": "1gim",
+          "word": "mighty",
+          "note": "Word-family form supplied for may.",
+          "char": "强大的"
+        },
+        "adims": {
+          "morpheme": "dismay",
+          "chord": "adims",
+          "word": "dismay",
+          "note": "Word-family form supplied for may.",
+          "char": "沮丧"
+        }
+      },
+      "char": "可能"
+    },
+    "dmo": {
+      "lemma": "mod",
+      "chord": "dmo",
+      "note": "Root used by the supplied word family. Latin modus.",
+      "derivatives": {
+        "1dmo": {
+          "morpheme": "-e",
+          "chord": "1dmo",
+          "word": "mode",
+          "note": "Word-family form supplied for mod.",
+          "char": "模式",
+          "inflections": {
+            "1": {
+              "morpheme": "Plural (-s)",
+              "chord": "1",
+              "word": "modes",
+              "char": "模式"
+            },
+            "2": {
+              "morpheme": "Possessive ('s)",
+              "chord": "2",
+              "word": "mode's",
+              "char": "模式（所有格）"
+            }
+          }
+        },
+        "2dmo": {
+          "morpheme": "-el",
+          "chord": "2dmo",
+          "word": "model",
+          "note": "Word-family form supplied for mod.",
+          "char": "模型"
+        },
+        "dfimo": {
+          "morpheme": "-ify",
+          "chord": "dfimo",
+          "word": "modify",
+          "note": "Word-family form supplied for mod.",
+          "char": "修改"
+        }
+      },
+      "char": "模式"
+    },
+    "1cis": {
+      "lemma": "sci",
+      "chord": "1cis",
+      "note": "Root used by the supplied word family. Latin scire.",
+      "derivatives": {
+        "cin": {
+          "morpheme": "nice",
+          "chord": "cin",
+          "word": "nice",
+          "note": "Word-family form supplied for sci.",
+          "char": "美好的"
+        },
+        "cins": {
+          "morpheme": "-ence",
+          "chord": "cins",
+          "word": "science",
+          "note": "Word-family form supplied for sci.",
+          "char": "科学"
+        },
+        "cinosu": {
+          "morpheme": "conscious",
+          "chord": "cinosu",
+          "word": "conscious",
+          "note": "Word-family form supplied for sci.",
+          "char": "有意识的"
+        }
+      },
+      "char": "知"
+    },
+    "not": {
+      "lemma": "not",
+      "chord": "not",
+      "note": "Root used by the supplied word family. Alternate root: note (Latin nota / noscere).",
+      "derivatives": {
+        "1enot": {
+          "morpheme": "-ed",
+          "chord": "1enot",
+          "word": "noted",
+          "note": "Word-family form supplied for not.",
+          "char": "著名的"
+        },
+        "cinot": {
+          "morpheme": "-ice",
+          "chord": "cinot",
+          "word": "notice",
+          "note": "Word-family form supplied for not.",
+          "char": "通知"
+        },
+        "inot": {
+          "morpheme": "-ion",
+          "chord": "inot",
+          "word": "notion",
+          "note": "Word-family form supplied for not.",
+          "char": "概念"
+        }
+      },
+      "char": "不"
+    },
+    "iv": {
+      "lemma": "vi",
+      "chord": "iv",
+      "note": "Root used by the supplied word family. Alternate root: via (Latin via).",
+      "derivatives": {
+        "biosuv": {
+          "morpheme": "obviously",
+          "chord": "biosuv",
+          "word": "obviously",
+          "note": "Word-family form supplied for vi.",
+          "char": "显然"
+        },
+        "adiv": {
+          "morpheme": "deviate",
+          "chord": "adiv",
+          "word": "deviate",
+          "note": "Word-family form supplied for vi.",
+          "char": "偏离"
+        },
+        "aeovy": {
+          "morpheme": "voyage",
+          "chord": "aeovy",
+          "word": "voyage",
+          "note": "Word-family form supplied for vi.",
+          "char": "航行"
+        }
+      },
+      "char": "通过"
+    },
+    "aepst": {
+      "lemma": "paste",
+      "chord": "aepst",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "apsty": {
+          "morpheme": "pastry",
+          "chord": "apsty",
+          "word": "pastry",
+          "note": "Word-family form supplied for paste.",
+          "char": "糕点"
+        },
+        "1apst": {
+          "morpheme": "pasta",
+          "chord": "1apst",
+          "word": "pasta",
+          "note": "Word-family form supplied for paste.",
+          "char": "意大利面"
+        },
+        "achipst": {
+          "morpheme": "pastiche",
+          "chord": "achipst",
+          "word": "pastiche",
+          "note": "Word-family form supplied for paste.",
+          "char": "仿作"
+        },
+        "1aepst": {
+          "morpheme": "-s",
+          "chord": "1aepst",
+          "word": "pastes",
+          "note": "Word-family form supplied for paste.",
+          "char": "粘贴物"
+        }
+      },
+      "char": "粘贴"
+    },
+    "enoprs": {
+      "lemma": "person",
+      "chord": "enoprs",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "aenoprs": {
+          "morpheme": "-al",
+          "chord": "aenoprs",
+          "word": "personal",
+          "note": "Word-family form supplied for person.",
+          "char": "个人的"
+        },
+        "einoprsy": {
+          "morpheme": "-ify",
+          "chord": "einoprsy",
+          "word": "personify",
+          "note": "Word-family form supplied for person.",
+          "char": "拟人化"
+        },
+        "aeinoprsy": {
+          "morpheme": "-ality",
+          "chord": "aeinoprsy",
+          "word": "personality",
+          "note": "Word-family form supplied for person.",
+          "char": "个性"
+        }
+      },
+      "char": "人"
+    },
+    "ejt": {
+      "lemma": "ject",
+      "chord": "ejt",
+      "note": "Root used by the supplied word family. Latin iacere.",
+      "derivatives": {
+        "ejopr": {
+          "morpheme": "project",
+          "chord": "ejopr",
+          "word": "project",
+          "note": "Word-family form supplied for ject.",
+          "char": "项目"
+        },
+        "eijnt": {
+          "morpheme": "inject",
+          "chord": "eijnt",
+          "word": "inject",
+          "note": "Word-family form supplied for ject.",
+          "char": "注入"
+        },
+        "1ejt": {
+          "morpheme": "eject",
+          "chord": "1ejt",
+          "word": "eject",
+          "note": "Word-family form supplied for ject.",
+          "char": "弹出"
+        }
+      },
+      "char": "投掷"
+    },
+    "psu": {
+      "lemma": "push",
+      "chord": "psu",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "eprsu": {
+          "morpheme": "-er",
+          "chord": "eprsu",
+          "word": "pusher",
+          "note": "Word-family form supplied for push.",
+          "char": "推手"
+        },
+        "1psu": {
+          "morpheme": "-y",
+          "chord": "1psu",
+          "word": "pushy",
+          "note": "Word-family form supplied for push.",
+          "char": "咄咄逼人的"
+        }
+      },
+      "char": "推"
+    },
+    "elp": {
+      "lemma": "pel",
+      "chord": "elp",
+      "note": "Root used by the supplied word family. Alternate root: pulse (Latin pellere).",
+      "derivatives": {
+        "elpsu": {
+          "morpheme": "pulse",
+          "chord": "elpsu",
+          "word": "pulse",
+          "note": "Word-family form supplied for pel.",
+          "char": "脉搏"
+        },
+        "cmop": {
+          "morpheme": "compel",
+          "chord": "cmop",
+          "word": "compel",
+          "note": "Word-family form supplied for pel.",
+          "char": "迫使"
+        }
+      },
+      "char": "推"
+    },
+    "ptu": {
+      "lemma": "put",
+      "chord": "ptu",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "inptu": {
+          "morpheme": "input",
+          "chord": "inptu",
+          "word": "input",
+          "note": "Word-family form supplied for put.",
+          "char": "输入"
+        },
+        "optu": {
+          "morpheme": "output",
+          "chord": "optu",
+          "word": "output",
+          "note": "Word-family form supplied for put.",
+          "char": "输出"
+        },
+        "eptu": {
+          "morpheme": "-ter",
+          "chord": "eptu",
+          "word": "putter",
+          "note": "Word-family form supplied for put.",
+          "char": "推杆"
+        }
+      },
+      "char": "放"
+    },
+    "1aer": {
+      "lemma": "read",
+      "chord": "1aer",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "2aer": {
+          "morpheme": "-er",
+          "chord": "2aer",
+          "word": "reader",
+          "note": "Word-family form supplied for read.",
+          "char": "读者"
+        },
+        "abelr": {
+          "morpheme": "-able",
+          "chord": "abelr",
+          "word": "readable",
+          "note": "Word-family form supplied for read.",
+          "char": "可读的"
+        },
+        "aenru": {
+          "morpheme": "unread",
+          "chord": "aenru",
+          "word": "unread",
+          "note": "Word-family form supplied for read.",
+          "char": "未读"
+        },
+        "aemr": {
+          "morpheme": "-me",
+          "chord": "aemr",
+          "word": "readme",
+          "note": "Word-family form supplied for read.",
+          "char": "自述文件"
+        }
+      },
+      "char": "读"
+    },
+    "aelr": {
+      "lemma": "real",
+      "chord": "aelr",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "aeilry": {
+          "morpheme": "-ity",
+          "chord": "aeilry",
+          "word": "reality",
+          "note": "Word-family form supplied for real.",
+          "char": "现实"
+        },
+        "aeilr": {
+          "morpheme": "-ize",
+          "chord": "aeilr",
+          "word": "realize",
+          "note": "Word-family form supplied for real.",
+          "char": "意识到"
+        },
+        "aeilmrs": {
+          "morpheme": "-ism",
+          "chord": "aeilmrs",
+          "word": "realism",
+          "note": "Word-family form supplied for real.",
+          "char": "现实主义"
+        },
+        "aelry": {
+          "morpheme": "-ly",
+          "chord": "aelry",
+          "word": "really",
+          "note": "Word-family form supplied for real.",
+          "char": "真的"
+        }
+      },
+      "char": "真实"
+    },
+    "eiqru": {
+      "lemma": "quire",
+      "chord": "eiqru",
+      "note": "Root used by the supplied word family. Alternate root: quest (Latin quaerere).",
+      "derivatives": {
+        "1eiqru": {
+          "morpheme": "require",
+          "chord": "1eiqru",
+          "word": "require",
+          "note": "Word-family form supplied for quire.",
+          "char": "需要"
+        },
+        "eqru": {
+          "morpheme": "query",
+          "chord": "eqru",
+          "word": "query",
+          "note": "Word-family form supplied for quire.",
+          "char": "查询"
+        },
+        "eqstu": {
+          "morpheme": "question",
+          "chord": "eqstu",
+          "word": "question",
+          "note": "Word-family form supplied for quire.",
+          "char": "问题"
+        },
+        "einqru": {
+          "morpheme": "requirement",
+          "chord": "einqru",
+          "word": "requirement",
+          "note": "Word-family form supplied for quire.",
+          "char": "要求"
+        },
+        "1einqru": {
+          "morpheme": "requirment",
+          "chord": "1einqru",
+          "word": "requirment",
+          "note": "Word-family form supplied for quire.",
+          "char": "要求"
+        }
+      },
+      "char": "寻求"
+    },
+    "or": {
+      "lemma": "root",
+      "chord": "or",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "opru": {
+          "morpheme": "uproot",
+          "chord": "opru",
+          "word": "uproot",
+          "note": "Word-family form supplied for root.",
+          "char": "连根拔起"
+        },
+        "eor": {
+          "morpheme": "-let",
+          "chord": "eor",
+          "word": "rootlet",
+          "note": "Word-family form supplied for root.",
+          "char": "小根"
+        },
+        "ckors": {
+          "morpheme": "-stock",
+          "chord": "ckors",
+          "word": "rootstock",
+          "note": "Word-family form supplied for root.",
+          "char": "根茎"
+        },
+        "ors": {
+          "morpheme": "-s",
+          "chord": "ors",
+          "word": "roots",
+          "note": "Word-family form supplied for root.",
+          "char": "根"
+        }
+      },
+      "char": "根"
+    },
+    "ahls": {
+      "lemma": "shall",
+      "chord": "ahls",
+      "note": "Root used by the supplied word family. Alternate root: should.",
+      "derivatives": {
+        "dhos": {
+          "morpheme": "should",
+          "chord": "dhos",
+          "word": "should",
+          "note": "Word-family form supplied for shall.",
+          "char": "应该"
+        },
+        "2dhos": {
+          "morpheme": "shoud",
+          "chord": "2dhos",
+          "word": "shoud",
+          "note": "Word-family form supplied for shall.",
+          "char": "应该"
+        }
+      },
+      "char": "将"
+    },
+    "ast": {
+      "lemma": "start",
+      "chord": "ast",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "aers": {
+          "morpheme": "restart",
+          "chord": "aers",
+          "word": "restart",
+          "note": "Word-family form supplied for start.",
+          "char": "重新开始"
+        },
+        "2aest": {
+          "morpheme": "-er",
+          "chord": "2aest",
+          "word": "starter",
+          "note": "Word-family form supplied for start.",
+          "char": "启动器"
+        },
+        "aelst": {
+          "morpheme": "-le",
+          "chord": "aelst",
+          "word": "startle",
+          "note": "Word-family form supplied for start.",
+          "char": "使惊吓"
+        }
+      },
+      "char": "开始"
+    },
+    "enost": {
+      "lemma": "steno",
+      "chord": "enost",
+      "note": "Root used by the supplied word family. Greek stenos.",
+      "derivatives": {
+        "aehnopst": {
+          "morpheme": "-graphy",
+          "chord": "aehnopst",
+          "word": "stenography",
+          "note": "Word-family form supplied for steno.",
+          "char": "速记术"
+        },
+        "einost": {
+          "morpheme": "-sis",
+          "chord": "einost",
+          "word": "stenosis",
+          "note": "Word-family form supplied for steno.",
+          "char": "狭窄"
+        },
+        "enostu": {
+          "morpheme": "-tutor",
+          "chord": "enostu",
+          "word": "stenotutor",
+          "note": "Word-family form supplied for steno.",
+          "char": "速记导师"
+        }
+      },
+      "char": "速",
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "stenos",
+          "char": "速（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "steno's",
+          "char": "速（所有格）"
+        }
       }
+    },
+    "tu": {
+      "lemma": "tut",
+      "chord": "tu",
+      "note": "Root used by the supplied word family. Alternate root: tutor (Latin tueri).",
+      "derivatives": {
+        "aiotu": {
+          "morpheme": "-orial",
+          "chord": "aiotu",
+          "word": "tutorial",
+          "note": "Word-family form supplied for tut.",
+          "char": "教程"
+        },
+        "inotu": {
+          "morpheme": "tuition",
+          "chord": "inotu",
+          "word": "tuition",
+          "note": "Word-family form supplied for tut.",
+          "char": "学费"
+        },
+        "eintu": {
+          "morpheme": "intuitive",
+          "chord": "eintu",
+          "word": "intuitive",
+          "note": "Word-family form supplied for tut.",
+          "char": "直觉的"
+        }
+      },
+      "char": "教导"
+    },
+    "1cstu": {
+      "lemma": "struct",
+      "chord": "1cstu",
+      "note": "Root used by the supplied word family. Latin struere.",
+      "derivatives": {
+        "cstu": {
+          "morpheme": "-ure",
+          "chord": "cstu",
+          "word": "structure",
+          "note": "Word-family form supplied for struct.",
+          "char": "结构"
+        },
+        "cnostu": {
+          "morpheme": "construct",
+          "chord": "cnostu",
+          "word": "construct",
+          "note": "Word-family form supplied for struct.",
+          "char": "建造"
+        },
+        "dosty": {
+          "morpheme": "destroy",
+          "chord": "dosty",
+          "word": "destroy",
+          "note": "Word-family form supplied for struct.",
+          "char": "摧毁"
+        }
+      },
+      "char": "构造"
+    },
+    "1adt": {
+      "lemma": "date",
+      "chord": "1adt",
+      "note": "Root used by the supplied word family. Alternate root: dat (Latin dare).",
+      "derivatives": {
+        "adptu": {
+          "morpheme": "update",
+          "chord": "adptu",
+          "word": "update",
+          "note": "Word-family form supplied for date.",
+          "char": "更新"
+        },
+        "adt": {
+          "morpheme": "data",
+          "chord": "adt",
+          "word": "data",
+          "note": "Word-family form supplied for date.",
+          "char": "数据"
+        },
+        "einot": {
+          "morpheme": "edition",
+          "chord": "einot",
+          "word": "edition",
+          "note": "Word-family form supplied for date.",
+          "char": "版本"
+        }
+      },
+      "char": "日期"
+    },
+    "ehnw": {
+      "lemma": "when",
+      "chord": "ehnw",
+      "note": "Root used by the supplied word family.",
+      "derivatives": {
+        "ehnvw": {
+          "morpheme": "-ever",
+          "chord": "ehnvw",
+          "word": "whenever",
+          "note": "Word-family form supplied for when.",
+          "char": "无论何时"
+        },
+        "ehnovw": {
+          "morpheme": "-soever",
+          "chord": "ehnovw",
+          "word": "whensoever",
+          "note": "Word-family form supplied for when.",
+          "char": "任何时候"
+        },
+        "1ehnw": {
+          "morpheme": "-ed",
+          "chord": "1ehnw",
+          "word": "whened",
+          "note": "Word-family form supplied for when.",
+          "char": "当时"
+        }
+      },
+      "char": "时"
+    },
+    "ctu": {
+      "lemma": "cut",
+      "chord": "ctu",
+      "note": "Alternate root in the cise word family.",
+      "derivatives": {
+        "cinos": {
+          "morpheme": "concise",
+          "chord": "cinos",
+          "word": "concise",
+          "note": "Word-family form supplied for cise.",
+          "char": "简洁"
+        },
+        "eiprs": {
+          "morpheme": "precise",
+          "chord": "eiprs",
+          "word": "precise",
+          "note": "Word-family form supplied for cise.",
+          "char": "精确"
+        },
+        "dinos": {
+          "morpheme": "decision",
+          "chord": "dinos",
+          "word": "decision",
+          "note": "Word-family form supplied for cise.",
+          "char": "决定"
+        }
+      },
+      "char": "切"
+    },
+    "aelnp": {
+      "lemma": "plane",
+      "chord": "aelnp",
+      "note": "Alternate root in the plain word family.",
+      "derivatives": {
+        "aeilnpx": {
+          "morpheme": "explain",
+          "chord": "aeilnpx",
+          "word": "explain",
+          "note": "Word-family form supplied for plain.",
+          "char": "解释"
+        },
+        "aeilnptx": {
+          "morpheme": "explanation",
+          "chord": "aeilnptx",
+          "word": "explanation",
+          "note": "Word-family form supplied for plain.",
+          "char": "解释"
+        },
+        "aegilnpx": {
+          "morpheme": "explaining",
+          "chord": "aegilnpx",
+          "word": "explaining",
+          "note": "Word-family form supplied for plain.",
+          "char": "正在解释"
+        }
+      },
+      "char": "平面"
+    },
+    "1elt": {
+      "lemma": "letter",
+      "chord": "1elt",
+      "note": "Alternate root in the liter word family.",
+      "derivatives": {
+        "aeilt": {
+          "morpheme": "-al",
+          "chord": "aeilt",
+          "word": "literal",
+          "note": "Word-family form supplied for liter.",
+          "char": "字面的"
+        },
+        "aeiltu": {
+          "morpheme": "-ature",
+          "chord": "aeiltu",
+          "word": "literature",
+          "note": "Word-family form supplied for liter.",
+          "char": "文学"
+        },
+        "1aeilt": {
+          "morpheme": "illiterate",
+          "chord": "1aeilt",
+          "word": "illiterate",
+          "note": "Word-family form supplied for liter.",
+          "char": "文盲"
+        },
+        "1elst": {
+          "morpheme": "letters",
+          "chord": "1elst",
+          "word": "letters",
+          "note": "Word-family form supplied for liter.",
+          "char": "字母"
+        }
+      },
+      "char": "字母"
+    },
+    "enot": {
+      "lemma": "note",
+      "chord": "enot",
+      "note": "Alternate root in the not word family.",
+      "derivatives": {
+        "1enot": {
+          "morpheme": "-ed",
+          "chord": "1enot",
+          "word": "noted",
+          "note": "Word-family form supplied for not.",
+          "char": "著名的"
+        },
+        "cinot": {
+          "morpheme": "-ice",
+          "chord": "cinot",
+          "word": "notice",
+          "note": "Word-family form supplied for not.",
+          "char": "通知"
+        },
+        "inot": {
+          "morpheme": "-ion",
+          "chord": "inot",
+          "word": "notion",
+          "note": "Word-family form supplied for not.",
+          "char": "概念"
+        }
+      },
+      "char": "笔记",
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "noted",
+          "char": "著名的"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "noting",
+          "char": "笔记（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "notes",
+          "char": "笔记（第三人称单数）"
+        }
+      }
+    },
+    "aiv": {
+      "lemma": "via",
+      "chord": "aiv",
+      "note": "Alternate root in the vi word family.",
+      "derivatives": {
+        "biosuv": {
+          "morpheme": "obviously",
+          "chord": "biosuv",
+          "word": "obviously",
+          "note": "Word-family form supplied for vi.",
+          "char": "显然"
+        },
+        "adiv": {
+          "morpheme": "deviate",
+          "chord": "adiv",
+          "word": "deviate",
+          "note": "Word-family form supplied for vi.",
+          "char": "偏离"
+        },
+        "aeovy": {
+          "morpheme": "voyage",
+          "chord": "aeovy",
+          "word": "voyage",
+          "note": "Word-family form supplied for vi.",
+          "char": "航行"
+        }
+      },
+      "char": "通过"
+    },
+    "elpsu": {
+      "lemma": "pulse",
+      "chord": "elpsu",
+      "note": "Alternate root in the pel word family.",
+      "derivatives": {
+        "elpsu": {
+          "morpheme": "pulse",
+          "chord": "elpsu",
+          "word": "pulse",
+          "note": "Word-family form supplied for pel.",
+          "char": "脉搏"
+        },
+        "cmop": {
+          "morpheme": "compel",
+          "chord": "cmop",
+          "word": "compel",
+          "note": "Word-family form supplied for pel.",
+          "char": "迫使"
+        }
+      },
+      "char": "脉搏"
+    },
+    "1eqstu": {
+      "lemma": "quest",
+      "chord": "1eqstu",
+      "note": "Alternate root in the quire word family.",
+      "derivatives": {
+        "1eiqru": {
+          "morpheme": "require",
+          "chord": "1eiqru",
+          "word": "require",
+          "note": "Word-family form supplied for quire.",
+          "char": "需要"
+        },
+        "eqru": {
+          "morpheme": "query",
+          "chord": "eqru",
+          "word": "query",
+          "note": "Word-family form supplied for quire.",
+          "char": "查询"
+        },
+        "eqstu": {
+          "morpheme": "question",
+          "chord": "eqstu",
+          "word": "question",
+          "note": "Word-family form supplied for quire.",
+          "char": "问题"
+        },
+        "einqru": {
+          "morpheme": "requirement",
+          "chord": "einqru",
+          "word": "requirement",
+          "note": "Word-family form supplied for quire.",
+          "char": "要求"
+        },
+        "1einqru": {
+          "morpheme": "requirment",
+          "chord": "1einqru",
+          "word": "requirment",
+          "note": "Word-family form supplied for quire.",
+          "char": "要求"
+        }
+      },
+      "char": "探索"
+    },
+    "dhos": {
+      "lemma": "should",
+      "chord": "dhos",
+      "note": "Alternate root in the shall word family.",
+      "derivatives": {
+        "dhos": {
+          "morpheme": "should",
+          "chord": "dhos",
+          "word": "should",
+          "note": "Word-family form supplied for shall.",
+          "char": "应该"
+        },
+        "2dhos": {
+          "morpheme": "shoud",
+          "chord": "2dhos",
+          "word": "shoud",
+          "note": "Word-family form supplied for shall.",
+          "char": "应该"
+        }
+      },
+      "char": "应该"
+    },
+    "otu": {
+      "lemma": "tutor",
+      "chord": "otu",
+      "note": "Alternate root in the tut word family.",
+      "derivatives": {
+        "aiotu": {
+          "morpheme": "-orial",
+          "chord": "aiotu",
+          "word": "tutorial",
+          "note": "Word-family form supplied for tut.",
+          "char": "教程"
+        },
+        "inotu": {
+          "morpheme": "tuition",
+          "chord": "inotu",
+          "word": "tuition",
+          "note": "Word-family form supplied for tut.",
+          "char": "学费"
+        },
+        "eintu": {
+          "morpheme": "intuitive",
+          "chord": "eintu",
+          "word": "intuitive",
+          "note": "Word-family form supplied for tut.",
+          "char": "直觉的"
+        }
+      },
+      "char": "导师"
+    },
+    "2adt": {
+      "lemma": "dat",
+      "chord": "2adt",
+      "note": "Alternate root in the date word family.",
+      "derivatives": {
+        "adptu": {
+          "morpheme": "update",
+          "chord": "adptu",
+          "word": "update",
+          "note": "Word-family form supplied for date.",
+          "char": "更新"
+        },
+        "adt": {
+          "morpheme": "data",
+          "chord": "adt",
+          "word": "data",
+          "note": "Word-family form supplied for date.",
+          "char": "数据"
+        },
+        "einot": {
+          "morpheme": "edition",
+          "chord": "einot",
+          "word": "edition",
+          "note": "Word-family form supplied for date.",
+          "char": "版本"
+        }
+      },
+      "char": "给予"
+    },
+    "bjo": {
+      "lemma": "job",
+      "chord": "bjo",
+      "note": "Alternate root in the iev word family.",
+      "derivatives": {
+        "1eilv": {
+          "morpheme": "-lev",
+          "chord": "1eilv",
+          "word": "Ievlev",
+          "note": "Word-family form supplied for iev.",
+          "char": "伊夫列夫"
+        },
+        "2eilv": {
+          "morpheme": "-levli",
+          "chord": "2eilv",
+          "word": "Ievlevli",
+          "note": "Word-family form supplied for iev.",
+          "char": "伊夫列夫利"
+        },
+        "bjo": {
+          "morpheme": "Job",
+          "chord": "bjo",
+          "word": "Job",
+          "note": "Word-family form supplied for iev.",
+          "char": "工作"
+        }
+      },
+      "char": "工作"
+    },
+    "afs": {
+      "lemma": "fast",
+      "chord": "afs",
+      "char": "快",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Comparative (-er)",
+          "chord": "1",
+          "word": "faster",
+          "char": "快（比较级）"
+        },
+        "2": {
+          "morpheme": "Superlative (-est)",
+          "chord": "2",
+          "word": "fastest",
+          "char": "快（最高级）"
+        }
+      }
+    },
+    "bko": {
+      "lemma": "book",
+      "chord": "bko",
+      "char": "书",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "books",
+          "char": "书（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "book's",
+          "char": "书（所有格）"
+        },
+        "3": {
+          "morpheme": "Plural Possessive (s')",
+          "chord": "3",
+          "word": "books'",
+          "char": "书（复数所有格）"
+        }
+      }
+    },
+    "dgo": {
+      "lemma": "dog",
+      "chord": "dgo",
+      "char": "狗",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "dogs",
+          "char": "狗（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "dog's",
+          "char": "狗（所有格）"
+        },
+        "3": {
+          "morpheme": "Plural Possessive (s')",
+          "chord": "3",
+          "word": "dogs'",
+          "char": "狗（复数所有格）"
+        }
+      }
+    },
+    "8dorw": {
+      "lemma": "world",
+      "chord": "8dorw",
+      "char": "界",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "worlds",
+          "char": "界（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "world's",
+          "char": "界（所有格）"
+        },
+        "3": {
+          "morpheme": "Plural Possessive (s')",
+          "chord": "3",
+          "word": "worlds'",
+          "char": "界（复数所有格）"
+        }
+      }
+    },
+    "hint": {
+      "lemma": "think",
+      "chord": "hint",
+      "char": "思",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "thought",
+          "char": "思（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "thinking",
+          "char": "思（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "thinks",
+          "char": "思（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "thought",
+          "char": "思（过去分词）"
+        }
+      }
+    },
+    "aelps": {
+      "lemma": "please",
+      "chord": "aelps",
+      "char": "请",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "cmopt": {
+      "lemma": "computer",
+      "chord": "cmopt",
+      "char": "脑",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "computers",
+          "char": "脑（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "computer's",
+          "char": "脑（所有格）"
+        },
+        "3": {
+          "morpheme": "Plural Possessive (s')",
+          "chord": "3",
+          "word": "computers'",
+          "char": "脑（复数所有格）"
+        }
+      }
+    },
+    "ahtw": {
+      "lemma": "what",
+      "chord": "ahtw",
+      "char": "什",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "how": {
+      "lemma": "how",
+      "chord": "how",
+      "char": "怎",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "abotu": {
+      "lemma": "about",
+      "chord": "abotu",
+      "char": "关",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "hw": {
+      "lemma": "why",
+      "chord": "hw",
+      "char": "为",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "in": {
+      "lemma": "in",
+      "chord": "in",
+      "char": "里",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "bgi": {
+      "lemma": "big",
+      "chord": "bgi",
+      "char": "大",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Comparative (-er)",
+          "chord": "1",
+          "word": "bigger",
+          "char": "大（比较级）"
+        },
+        "2": {
+          "morpheme": "Superlative (-est)",
+          "chord": "2",
+          "word": "biggest",
+          "char": "大（最高级）"
+        }
+      }
+    },
+    "epst": {
+      "lemma": "step",
+      "chord": "epst",
+      "char": "步",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "stepped",
+          "char": "步（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "stepping",
+          "char": "步（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "steps",
+          "char": "步（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "stepped",
+          "char": "步（过去分词）"
+        }
+      }
+    },
+    "fi": {
+      "lemma": "if",
+      "chord": "fi",
+      "char": "如",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "oy": {
+      "lemma": "you",
+      "chord": "oy",
+      "char": "你",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Objective Case",
+          "chord": "1",
+          "word": "you",
+          "char": "你"
+        },
+        "2": {
+          "morpheme": "Possessive Case",
+          "chord": "2",
+          "word": "your",
+          "char": "你的"
+        },
+        "3": {
+          "morpheme": "Reflexive Case",
+          "chord": "3",
+          "word": "yourself",
+          "char": "你自己"
+        },
+        "4": {
+          "morpheme": "Possessive Pronoun",
+          "chord": "4",
+          "word": "yours",
+          "char": "你的（名词性）"
+        }
+      }
+    },
+    "fo": {
+      "lemma": "of",
+      "chord": "fo",
+      "char": "的",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "for": {
+      "lemma": "for",
+      "chord": "for",
+      "char": "给",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aegimn": {
+      "lemma": "imagine",
+      "chord": "aegimn",
+      "char": "想象",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "imagined",
+          "char": "想象（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "imagining",
+          "char": "想象（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "imagines",
+          "char": "想象（第三人称单数）"
+        }
+      }
+    },
+    "cmno": {
+      "lemma": "condemn",
+      "chord": "cmno",
+      "char": "谴责",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "condemned",
+          "char": "谴责（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "condemning",
+          "char": "谴责（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "condemns",
+          "char": "谴责（第三人称单数）"
+        }
+      }
+    },
+    "2aegimn": {
+      "lemma": "meaning",
+      "chord": "2aegimn",
+      "char": "意义",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "meanings",
+          "char": "意义（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "meaning's",
+          "char": "意义（所有格）"
+        }
+      }
+    },
+    "acn": {
+      "lemma": "can",
+      "chord": "acn",
+      "char": "能",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "could",
+          "char": "能（过去式）"
+        }
+      }
+    },
+    "1i": {
+      "lemma": "i",
+      "chord": "1i",
+      "char": "我",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Objective Case",
+          "chord": "1",
+          "word": "me",
+          "char": "我（宾格）"
+        },
+        "2": {
+          "morpheme": "Possessive Case",
+          "chord": "2",
+          "word": "my",
+          "char": "我（所有格）"
+        },
+        "3": {
+          "morpheme": "Reflexive Case",
+          "chord": "3",
+          "word": "myself",
+          "char": "我（反身形式）"
+        },
+        "4": {
+          "morpheme": "Possessive Pronoun",
+          "chord": "4",
+          "word": "mine",
+          "char": "我（物主代词）"
+        }
+      }
+    },
+    "eh": {
+      "lemma": "he",
+      "chord": "eh",
+      "char": "他",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Objective Case",
+          "chord": "1",
+          "word": "him",
+          "char": "他（宾格）"
+        },
+        "2": {
+          "morpheme": "Possessive Case",
+          "chord": "2",
+          "word": "his",
+          "char": "他（所有格）"
+        },
+        "3": {
+          "morpheme": "Reflexive Case",
+          "chord": "3",
+          "word": "himself",
+          "char": "他（反身形式）"
+        }
+      }
+    },
+    "ehs": {
+      "lemma": "she",
+      "chord": "ehs",
+      "char": "她",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Objective Case",
+          "chord": "1",
+          "word": "her",
+          "char": "她（宾格）"
+        },
+        "2": {
+          "morpheme": "Possessive Case",
+          "chord": "2",
+          "word": "her",
+          "char": "她（所有格）"
+        },
+        "3": {
+          "morpheme": "Reflexive Case",
+          "chord": "3",
+          "word": "herself",
+          "char": "她（反身形式）"
+        },
+        "4": {
+          "morpheme": "Possessive Pronoun",
+          "chord": "4",
+          "word": "hers",
+          "char": "她（物主代词）"
+        }
+      }
+    },
+    "it": {
+      "lemma": "it",
+      "chord": "it",
+      "char": "它",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Objective Case",
+          "chord": "1",
+          "word": "it",
+          "char": "它"
+        },
+        "2": {
+          "morpheme": "Possessive Case",
+          "chord": "2",
+          "word": "its",
+          "char": "它（所有格）"
+        },
+        "3": {
+          "morpheme": "Reflexive Case",
+          "chord": "3",
+          "word": "itself",
+          "char": "它（反身形式）"
+        }
+      }
+    },
+    "ew": {
+      "lemma": "we",
+      "chord": "ew",
+      "char": "们",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Objective Case",
+          "chord": "1",
+          "word": "us",
+          "char": "们（宾格）"
+        },
+        "2": {
+          "morpheme": "Possessive Case",
+          "chord": "2",
+          "word": "our",
+          "char": "们（所有格）"
+        },
+        "3": {
+          "morpheme": "Reflexive Case",
+          "chord": "3",
+          "word": "ourselves",
+          "char": "们（反身形式）"
+        },
+        "4": {
+          "morpheme": "Possessive Pronoun",
+          "chord": "4",
+          "word": "ours",
+          "char": "们（物主代词）"
+        }
+      }
+    },
+    "1how": {
+      "lemma": "who",
+      "chord": "1how",
+      "char": "谁",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Objective Case",
+          "chord": "1",
+          "word": "whom",
+          "char": "谁（宾格）"
+        },
+        "2": {
+          "morpheme": "Possessive Case",
+          "chord": "2",
+          "word": "whose",
+          "char": "谁"
+        }
+      }
+    },
+    "ehrw": {
+      "lemma": "where",
+      "chord": "ehrw",
+      "char": "哪",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "chiw": {
+      "lemma": "which",
+      "chord": "chiw",
+      "char": "哪",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "ehow": {
+      "lemma": "whose",
+      "chord": "ehow",
+      "char": "谁",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "2how": {
+      "lemma": "whom",
+      "chord": "2how",
+      "char": "谁（宾格）",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "no": {
+      "lemma": "on",
+      "chord": "no",
+      "char": "上",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1no": {
+      "lemma": "no",
+      "chord": "1no",
+      "char": "不",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aehv": {
+      "lemma": "have",
+      "chord": "aehv",
+      "char": "有",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "had",
+          "char": "有（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "having",
+          "char": "有（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "has",
+          "char": "有（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "had",
+          "char": "有（过去分词）"
+        }
+      }
+    },
+    "dinow": {
+      "lemma": "window",
+      "chord": "dinow",
+      "char": "窗",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "windows",
+          "char": "窗（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "window's",
+          "char": "窗（所有格）"
+        },
+        "3": {
+          "morpheme": "Plural Possessive (s')",
+          "chord": "3",
+          "word": "windows'",
+          "char": "窗（复数所有格）"
+        }
+      }
+    },
+    "acimn": {
+      "lemma": "machine",
+      "chord": "acimn",
+      "char": "机",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "machines",
+          "char": "机（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "machine's",
+          "char": "机（所有格）"
+        },
+        "3": {
+          "morpheme": "Plural Possessive (s')",
+          "chord": "3",
+          "word": "machines'",
+          "char": "机（复数所有格）"
+        }
+      }
+    },
+    "hitw": {
+      "lemma": "with",
+      "chord": "hitw",
+      "char": "和",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aht": {
+      "lemma": "that",
+      "chord": "aht",
+      "char": "那",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "acl": {
+      "lemma": "local",
+      "chord": "acl",
+      "char": "地",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Comparative (-er)",
+          "chord": "1",
+          "word": "more local",
+          "char": "地（比较级）"
+        },
+        "2": {
+          "morpheme": "Superlative (-est)",
+          "chord": "2",
+          "word": "most local",
+          "char": "地（最高级）"
+        },
+        "3": {
+          "morpheme": "Adverb (-ly)",
+          "chord": "3",
+          "word": "locally",
+          "char": "地（副词）"
+        }
+      }
+    },
+    "aks": {
+      "lemma": "ask",
+      "chord": "aks",
+      "char": "问",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "asked",
+          "char": "问（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "asking",
+          "char": "问（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "asks",
+          "char": "问（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "asked",
+          "char": "问（过去分词）"
+        }
+      }
+    },
+    "antw": {
+      "lemma": "want",
+      "chord": "antw",
+      "char": "想",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "wanted",
+          "char": "想（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "wanting",
+          "char": "想（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "wants",
+          "char": "想（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "wanted",
+          "char": "想（过去分词）"
+        }
+      }
+    },
+    "1eht": {
+      "lemma": "they",
+      "chord": "1eht",
+      "char": "他",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Objective Case",
+          "chord": "1",
+          "word": "them",
+          "char": "他们"
+        },
+        "2": {
+          "morpheme": "Possessive Case",
+          "chord": "2",
+          "word": "their",
+          "char": "他们的"
+        },
+        "3": {
+          "morpheme": "Reflexive Case",
+          "chord": "3",
+          "word": "themselves",
+          "char": "他（反身形式）"
+        },
+        "4": {
+          "morpheme": "Possessive Pronoun",
+          "chord": "4",
+          "word": "theirs",
+          "char": "他（物主代词）"
+        }
+      }
+    },
+    "aehirtv": {
+      "lemma": "have right",
+      "chord": "aehirtv",
+      "char": "拥有权利",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "adn": {
+      "lemma": "and",
+      "chord": "adn",
+      "char": "和",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "be": {
+      "lemma": "be",
+      "chord": "be",
+      "char": "是",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "1st Person Singular Present",
+          "chord": "1",
+          "word": "am",
+          "char": "我是"
+        },
+        "2": {
+          "morpheme": "2nd Person or Plural Present",
+          "chord": "2",
+          "word": "are",
+          "char": "是"
+        },
+        "3": {
+          "morpheme": "3rd Person Singular Present",
+          "chord": "3",
+          "word": "is",
+          "char": "是"
+        },
+        "4": {
+          "morpheme": "Past Tense (Singular)",
+          "chord": "4",
+          "word": "was",
+          "char": "曾是"
+        },
+        "5": {
+          "morpheme": "Past Tense (Plural/Subjunctive)",
+          "chord": "5",
+          "word": "were",
+          "char": "是（复数或虚拟过去式）"
+        },
+        "6": {
+          "morpheme": "Past Participle",
+          "chord": "6",
+          "word": "been",
+          "char": "是（过去分词）"
+        },
+        "7": {
+          "morpheme": "Present Participle (-ing)",
+          "chord": "7",
+          "word": "being",
+          "char": "是（现在分词）"
+        }
+      }
+    },
+    "aist": {
+      "lemma": "it was",
+      "chord": "aist",
+      "char": "曾经",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "noy": {
+      "lemma": "only",
+      "chord": "noy",
+      "char": "只有",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "ehot": {
+      "lemma": "other",
+      "chord": "ehot",
+      "char": "他",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1op": {
+      "lemma": "pop",
+      "chord": "1op",
+      "char": "弹",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "enst": {
+      "lemma": "sentence",
+      "chord": "enst",
+      "char": "句",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "os": {
+      "lemma": "so",
+      "chord": "os",
+      "char": "所以",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "ehvw": {
+      "lemma": "we have",
+      "chord": "ehvw",
+      "char": "我们有",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "2ad": {
+      "lemma": "add",
+      "chord": "2ad",
+      "char": "加",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "added",
+          "char": "加（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "adding",
+          "char": "加（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "adds",
+          "char": "加（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "addition",
+          "char": "加（过去分词）"
+        }
+      }
+    },
+    "2al": {
+      "lemma": "all",
+      "chord": "2al",
+      "char": "所有",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "begin": {
+      "lemma": "beginner",
+      "chord": "begin",
+      "char": "初学者",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "by": {
+      "lemma": "by",
+      "chord": "by",
+      "char": "由",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "achrs": {
+      "lemma": "characters",
+      "chord": "achrs",
+      "char": "字符",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "achr": {
+      "lemma": "character",
+      "chord": "achr",
+      "char": "字",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "characters",
+          "char": "字符"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "character's",
+          "char": "字（所有格）"
+        }
+      }
+    },
+    "chins": {
+      "lemma": "chinese",
+      "chord": "chins",
+      "char": "中文",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "ehr": {
+      "lemma": "here",
+      "chord": "ehr",
+      "char": "这里",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1es": {
+      "lemma": "see",
+      "chord": "1es",
+      "char": "看",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "saw",
+          "char": "看（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "seeing",
+          "char": "看（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "sees",
+          "char": "看（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "seen",
+          "char": "看（过去分词）"
+        }
+      }
+    },
+    "1dis": {
+      "lemma": "side",
+      "chord": "1dis",
+      "char": "边",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aehst": {
+      "lemma": "teachers",
+      "chord": "aehst",
+      "char": "老师",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aehrt": {
+      "lemma": "teacher",
+      "chord": "aehrt",
+      "char": "老师",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "teachers",
+          "char": "老师"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "teacher's",
+          "char": "老师（所有格）"
+        }
+      }
+    },
+    "ty": {
+      "lemma": "try",
+      "chord": "ty",
+      "char": "尝试",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "tried",
+          "char": "尝试（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "trying",
+          "char": "尝试（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "tries",
+          "char": "尝试（第三人称单数）"
+        }
+      }
+    },
+    "otw": {
+      "lemma": "two",
+      "chord": "otw",
+      "char": "二",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aft": {
+      "lemma": "after",
+      "chord": "aft",
+      "char": "之后",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "btu": {
+      "lemma": "but",
+      "chord": "btu",
+      "char": "但是",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "dirt": {
+      "lemma": "dirrect",
+      "chord": "dirt",
+      "char": "直接",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "dnos": {
+      "lemma": "doesn",
+      "chord": "dnos",
+      "char": "不",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "eghilns": {
+      "lemma": "english",
+      "chord": "eghilns",
+      "char": "英语",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "fix": {
+      "lemma": "fix",
+      "chord": "fix",
+      "char": "修复",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "fixed",
+          "char": "修复（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "fixing",
+          "char": "修复（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "fixes",
+          "char": "修复（第三人称单数）"
+        }
+      }
+    },
+    "agmr": {
+      "lemma": "grammar",
+      "chord": "agmr",
+      "char": "语法",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aehnps": {
+      "lemma": "happens",
+      "chord": "aehnps",
+      "char": "发生",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "den": {
+      "lemma": "need",
+      "chord": "den",
+      "char": "需要",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "benrsu": {
+      "lemma": "numbers",
+      "chord": "benrsu",
+      "char": "数字",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aenors": {
+      "lemma": "reason",
+      "chord": "aenors",
+      "char": "原因",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "reasons",
+          "char": "原因（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "reason's",
+          "char": "原因（所有格）"
+        }
+      }
+    },
+    "emos": {
+      "lemma": "some",
+      "chord": "emos",
+      "char": "一些",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aeps": {
+      "lemma": "special",
+      "chord": "aeps",
+      "char": "特别",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1t": {
+      "lemma": "t",
+      "chord": "1t",
+      "char": "字母T",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "girt": {
+      "lemma": "triggers",
+      "chord": "girt",
+      "char": "触发",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "korw": {
+      "lemma": "work",
+      "chord": "korw",
+      "char": "工作",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "worked",
+          "char": "工作（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "working",
+          "char": "工作中的"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "works",
+          "char": "运转"
+        }
+      }
+    },
+    "korsw": {
+      "lemma": "works",
+      "chord": "korsw",
+      "char": "运转",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "anrs": {
+      "lemma": "answer",
+      "chord": "anrs",
+      "char": "回答",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "acghn": {
+      "lemma": "change",
+      "chord": "acghn",
+      "char": "改变",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1cil": {
+      "lemma": "click",
+      "chord": "1cil",
+      "char": "点击",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aeh": {
+      "lemma": "each",
+      "chord": "aeh",
+      "char": "每个",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "erx": {
+      "lemma": "exercise",
+      "chord": "erx",
+      "char": "练习",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1ersx": {
+      "lemma": "exercises",
+      "chord": "1ersx",
+      "char": "练习",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "egin": {
+      "lemma": "given",
+      "chord": "egin",
+      "char": "给定",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "jst": {
+      "lemma": "just",
+      "chord": "jst",
+      "char": "刚刚",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "emor": {
+      "lemma": "more",
+      "chord": "emor",
+      "char": "更多",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "entx": {
+      "lemma": "next",
+      "chord": "entx",
+      "char": "下一个",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "adgr": {
+      "lemma": "reading",
+      "chord": "adgr",
+      "char": "阅读",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "asy": {
+      "lemma": "say",
+      "chord": "asy",
+      "char": "说",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "cnst": {
+      "lemma": "section",
+      "chord": "cnst",
+      "char": "部分",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1enst": {
+      "lemma": "tenses",
+      "chord": "1enst",
+      "char": "时态",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "etx": {
+      "lemma": "text",
+      "chord": "etx",
+      "char": "文本",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "dsu": {
+      "lemma": "used",
+      "chord": "dsu",
+      "char": "使用过的",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "ilw": {
+      "lemma": "will",
+      "chord": "ilw",
+      "char": "将",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "abel": {
+      "lemma": "able",
+      "chord": "abel",
+      "char": "能够",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "als": {
+      "lemma": "also",
+      "chord": "als",
+      "char": "也",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "as": {
+      "lemma": "as",
+      "chord": "as",
+      "char": "作为",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "bntw": {
+      "lemma": "between",
+      "chord": "bntw",
+      "char": "之间",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "clmn": {
+      "lemma": "column",
+      "chord": "clmn",
+      "char": "列",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "columns",
+          "char": "列（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "column's",
+          "char": "列（所有格）"
+        }
+      }
+    },
+    "dfi": {
+      "lemma": "different",
+      "chord": "dfi",
+      "char": "不同",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1cdo": {
+      "lemma": "doc",
+      "chord": "1cdo",
+      "char": "文档",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "docs",
+          "char": "文档（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "doc's",
+          "char": "文档（所有格）"
+        }
+      }
+    },
+    "emnr": {
+      "lemma": "enumerated",
+      "chord": "emnr",
+      "char": "枚举的",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1dfl": {
+      "lemma": "folder",
+      "chord": "1dfl",
+      "char": "文件夹",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "folders",
+          "char": "文件夹（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "folder's",
+          "char": "文件夹（所有格）"
+        }
+      }
+    },
+    "1flw": {
+      "lemma": "following",
+      "chord": "1flw",
+      "char": "下列",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "fmr": {
+      "lemma": "from",
+      "chord": "fmr",
+      "char": "来自",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aegm": {
+      "lemma": "game",
+      "chord": "aegm",
+      "char": "游戏",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "games",
+          "char": "游戏（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "game's",
+          "char": "游戏（所有格）"
+        }
+      }
+    },
+    "1giv": {
+      "lemma": "give",
+      "chord": "1giv",
+      "char": "给",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "gave",
+          "char": "给（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "giving",
+          "char": "给（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "gives",
+          "char": "给（第三人称单数）"
+        },
+        "4": {
+          "morpheme": "Past Participle (-en)",
+          "chord": "4",
+          "word": "given",
+          "char": "给定"
+        }
+      }
+    },
+    "1gls": {
+      "lemma": "glossary",
+      "chord": "1gls",
+      "char": "词汇表",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "dint": {
+      "lemma": "intended",
+      "chord": "dint",
+      "char": "预期的",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "dmos": {
+      "lemma": "modes",
+      "chord": "dmos",
+      "char": "模式",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "bmov": {
+      "lemma": "movable",
+      "chord": "bmov",
+      "char": "可移动的",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "alnp": {
+      "lemma": "pannel",
+      "chord": "alnp",
+      "char": "面板",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "apst": {
+      "lemma": "past",
+      "chord": "apst",
+      "char": "过去",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "bops": {
+      "lemma": "possible",
+      "chord": "bops",
+      "char": "可能",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aems": {
+      "lemma": "same",
+      "chord": "aems",
+      "char": "相同",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1stw": {
+      "lemma": "switch",
+      "chord": "1stw",
+      "char": "切换",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "switched",
+          "char": "切换（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "switching",
+          "char": "切换（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "switches",
+          "char": "切换（第三人称单数）"
+        }
+      }
+    },
+    "nst": {
+      "lemma": "tense",
+      "chord": "nst",
+      "char": "时态",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "tenses",
+          "char": "时态"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "tense's",
+          "char": "时态（所有格）"
+        }
+      }
+    },
+    "1st": {
+      "lemma": "tests",
+      "chord": "1st",
+      "char": "测试",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1glt": {
+      "lemma": "togglable",
+      "chord": "1glt",
+      "char": "可切换的",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "bcov": {
+      "lemma": "vocabulary",
+      "chord": "bcov",
+      "char": "词汇",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "elw": {
+      "lemma": "well",
+      "chord": "elw",
+      "char": "好",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "dhlw": {
+      "lemma": "wholed",
+      "chord": "dhlw",
+      "char": "完整",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "cginopy": {
+      "lemma": "copying",
+      "chord": "cginopy",
+      "char": "复制",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1cdr": {
+      "lemma": "created",
+      "chord": "1cdr",
+      "char": "创建",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "alst": {
+      "lemma": "last",
+      "chord": "alst",
+      "char": "最后",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "ilst": {
+      "lemma": "list",
+      "chord": "ilst",
+      "char": "列表",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "listed",
+          "char": "列表（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "listing",
+          "char": "列表（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "lists",
+          "char": "列表（第三人称单数）"
+        }
+      }
+    },
+    "nprs": {
+      "lemma": "pronouns",
+      "chord": "nprs",
+      "char": "代词",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1got": {
+      "lemma": "toggle",
+      "chord": "1got",
+      "char": "切换",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "toggled",
+          "char": "切换（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "toggling",
+          "char": "切换（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "toggles",
+          "char": "切换（第三人称单数）"
+        }
+      }
+    },
+    "dnpu": {
+      "lemma": "unmapped",
+      "chord": "dnpu",
+      "char": "未映射",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "lntu": {
+      "lemma": "untoggle",
+      "chord": "lntu",
+      "char": "取消切换",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "untoggled",
+          "char": "取消切换（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "untoggling",
+          "char": "取消切换（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "untoggles",
+          "char": "取消切换（第三人称单数）"
+        }
+      }
+    },
+    "ad": {
+      "lemma": "ad",
+      "chord": "ad",
+      "char": "广告",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "ads",
+          "char": "广告（复数）"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "ad's",
+          "char": "广告（所有格）"
+        }
+      }
+    },
+    "3ad": {
+      "lemma": "aded",
+      "chord": "3ad",
+      "char": "已添加",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "ory": {
+      "lemma": "your",
+      "chord": "ory",
+      "char": "你的",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "orsy": {
+      "lemma": "yours",
+      "chord": "orsy",
+      "char": "你的（名词性）",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "eorsy": {
+      "lemma": "yourself",
+      "chord": "eorsy",
+      "char": "你自己",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1eorsy": {
+      "lemma": "yourselves",
+      "chord": "1eorsy",
+      "char": "你们自己",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "ai": {
+      "lemma": "AI",
+      "chord": "ai",
+      "char": "人工智能",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "acilr": {
+      "lemma": "artificial",
+      "chord": "acilr",
+      "char": "人工的",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "eilnt": {
+      "lemma": "intelligence",
+      "chord": "eilnt",
+      "char": "智能",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "acilnr": {
+      "lemma": "Artificial Intelligence",
+      "chord": "acilnr",
+      "char": "人工智能",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "ar": {
+      "lemma": "art",
+      "chord": "ar",
+      "char": "艺术",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "airs": {
+      "lemma": "artist",
+      "chord": "airs",
+      "char": "艺术家",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "ainrs": {
+      "lemma": "artisan",
+      "chord": "ainrs",
+      "char": "工匠",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "acfoy": {
+      "lemma": "factory",
+      "chord": "acfoy",
+      "char": "工厂",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "acfo": {
+      "lemma": "factor",
+      "chord": "acfo",
+      "char": "因素",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "df": {
+      "lemma": "defect",
+      "chord": "df",
+      "char": "缺陷",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1eilnt": {
+      "lemma": "intellect",
+      "chord": "1eilnt",
+      "char": "智力",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aeilntu": {
+      "lemma": "intellectual",
+      "chord": "aeilntu",
+      "char": "知识分子",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "begil": {
+      "lemma": "eligible",
+      "chord": "begil",
+      "char": "合格的",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "2elt": {
+      "lemma": "elect",
+      "chord": "2elt",
+      "char": "选举",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "eltu": {
+      "lemma": "lecture",
+      "chord": "eltu",
+      "char": "讲座",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1begil": {
+      "lemma": "legible",
+      "chord": "1begil",
+      "char": "易辨认的",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "acht": {
+      "lemma": "chat",
+      "chord": "acht",
+      "char": "聊天",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1acht": {
+      "lemma": "chatter",
+      "chord": "1acht",
+      "char": "喋喋不休",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "abchotx": {
+      "lemma": "chatterbox",
+      "chord": "abchotx",
+      "char": "话匣子",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "2acht": {
+      "lemma": "chatty",
+      "chord": "2acht",
+      "char": "健谈的",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "bot": {
+      "lemma": "bot",
+      "chord": "bot",
+      "char": "机器人",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "bor": {
+      "lemma": "robot",
+      "chord": "bor",
+      "char": "机器人",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "bcior": {
+      "lemma": "robotic",
+      "chord": "bcior",
+      "char": "机器人的",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "bciors": {
+      "lemma": "robotics",
+      "chord": "bciors",
+      "char": "机器人学",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aw": {
+      "lemma": "was",
+      "chord": "aw",
+      "char": "曾是",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "ens": {
+      "lemma": "essence",
+      "chord": "ens",
+      "char": "本质",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aeilnst": {
+      "lemma": "essential",
+      "chord": "aeilnst",
+      "char": "必要的",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "abenst": {
+      "lemma": "absent",
+      "chord": "abenst",
+      "char": "缺席的",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "knorw": {
+      "lemma": "working",
+      "chord": "knorw",
+      "char": "工作中的",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "ekorw": {
+      "lemma": "worker",
+      "chord": "ekorw",
+      "char": "工人",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "ackoprw": {
+      "lemma": "workplace",
+      "chord": "ackoprw",
+      "char": "工作场所",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "behknorw": {
+      "lemma": "workbench",
+      "chord": "behknorw",
+      "char": "工作台",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "enry": {
+      "lemma": "energy",
+      "chord": "enry",
+      "char": "能量",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "enrsy": {
+      "lemma": "synergy",
+      "chord": "enrsy",
+      "char": "协同作用",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "eimnors": {
+      "lemma": "ergonomics",
+      "chord": "eimnors",
+      "char": "人体工程学",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "anor": {
+      "lemma": "organ",
+      "chord": "anor",
+      "char": "器官",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aeinor": {
+      "lemma": "organize",
+      "chord": "aeinor",
+      "char": "组织",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "2not": {
+      "lemma": "onto",
+      "chord": "2not",
+      "char": "到……上",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "1enost": {
+      "lemma": "onset",
+      "chord": "1enost",
+      "char": "开始",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "adnorw": {
+      "lemma": "onward",
+      "chord": "adnorw",
+      "char": "向前",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "hst": {
+      "lemma": "thus",
+      "chord": "hst",
+      "char": "因此",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "adhnost": {
+      "lemma": "thousand",
+      "chord": "adhnost",
+      "char": "一千",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "eorw": {
+      "lemma": "reword",
+      "chord": "eorw",
+      "char": "改写",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "abeimv": {
+      "lemma": "verbatim",
+      "chord": "abeimv",
+      "char": "逐字地",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "beopr": {
+      "lemma": "proverb",
+      "chord": "beopr",
+      "char": "谚语",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "ailnsy": {
+      "lemma": "analysis",
+      "chord": "ailnsy",
+      "char": "分析",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aelny": {
+      "lemma": "analyze",
+      "chord": "aelny",
+      "char": "分析",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "alnsty": {
+      "lemma": "analyst",
+      "chord": "alnsty",
+      "char": "分析师",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "acilnty": {
+      "lemma": "analytical",
+      "chord": "acilnty",
+      "char": "分析的",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "ailprsy": {
+      "lemma": "paralysis",
+      "chord": "ailprsy",
+      "char": "瘫痪",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aclsty": {
+      "lemma": "catalyst",
+      "chord": "aclsty",
+      "char": "催化剂",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "elty": {
+      "lemma": "electrolyte",
+      "chord": "elty",
+      "char": "电解质",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {}
+    },
+    "aehnp": {
+      "lemma": "happen",
+      "chord": "aehnp",
+      "char": "发生",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "happened",
+          "char": "发生（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "happening",
+          "char": "发生（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "happens",
+          "char": "发生"
+        }
+      }
+    },
+    "eit": {
+      "lemma": "trigger",
+      "chord": "eit",
+      "char": "触发",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "triggered",
+          "char": "触发（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "triggering",
+          "char": "触发（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "triggers",
+          "char": "触发"
+        }
+      }
+    },
+    "benru": {
+      "lemma": "number",
+      "chord": "benru",
+      "char": "数字",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Plural (-s)",
+          "chord": "1",
+          "word": "numbers",
+          "char": "数字"
+        },
+        "2": {
+          "morpheme": "Possessive ('s)",
+          "chord": "2",
+          "word": "number's",
+          "char": "数字（所有格）"
+        }
+      }
+    },
+    "est": {
+      "lemma": "test",
+      "chord": "est",
+      "char": "测试",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "tested",
+          "char": "测试（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "testing",
+          "char": "测试（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "tests",
+          "char": "测试"
+        }
+      }
+    },
+    "acr": {
+      "lemma": "create",
+      "chord": "acr",
+      "char": "创建",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "created",
+          "char": "创建"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "creating",
+          "char": "创建（进行式）"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "creates",
+          "char": "创建（第三人称单数）"
+        }
+      }
+    },
+    "copy": {
+      "lemma": "copy",
+      "chord": "copy",
+      "char": "复制",
+      "note": "Standalone vocabulary entry.",
+      "derivatives": {},
+      "inflections": {
+        "1": {
+          "morpheme": "Past Tense (-ed)",
+          "chord": "1",
+          "word": "copied",
+          "char": "复制（过去式）"
+        },
+        "2": {
+          "morpheme": "Continuous (-ing)",
+          "chord": "2",
+          "word": "copying",
+          "char": "复制"
+        },
+        "3": {
+          "morpheme": "3rd Person (-s)",
+          "chord": "3",
+          "word": "copies",
+          "char": "复制（第三人称单数）"
+        }
+      }
+    },
+    "eimt": {
+      "lemma": "time",
+      "chord": "eimt",
+      "emoji": "⏳",
+      "note": "Temporal period or duration",
+      "derivatives": {
+        "er": {
+          "morpheme": "-er",
+          "chord": "er",
+          "word": "timer",
+          "emoji": "⏱️",
+          "note": "Time measurement tool",
+          "char": "计时器"
+        },
+        "gin": {
+          "morpheme": "-ing",
+          "chord": "gin",
+          "word": "timing",
+          "emoji": "⏰",
+          "note": "Choice of moment",
+          "char": "时机"
+        },
+        "ly": {
+          "morpheme": "-ly",
+          "chord": "ly",
+          "word": "timely",
+          "emoji": "🎯",
+          "note": "Well-timed / opportune",
+          "char": "及时的"
+        },
+        "otu": {
+          "morpheme": "-out",
+          "chord": "otu",
+          "word": "timeout",
+          "emoji": "⏸️",
+          "note": "Temporary pause",
+          "char": "超时"
+        },
+        "elss": {
+          "morpheme": "-less",
+          "chord": "elss",
+          "word": "timeless",
+          "emoji": "✨",
+          "note": "Unaffected by time",
+          "char": "永恒"
+        },
+        "eov": {
+          "morpheme": "over-",
+          "chord": "eov",
+          "word": "overtime",
+          "emoji": "💼",
+          "note": "Time beyond regular hours",
+          "char": "加班"
+        }
+      },
+      "char": "时"
     }
   },
   "flat_chords": {
@@ -1709,6 +7534,7 @@
     "co": "code ",
     "dgo": "dog ",
     "dorw": "word",
+    "8dorw": "world ",
     "enost": "steno ",
     "hint": "think ",
     "aelps": "please ",
@@ -1727,6 +7553,10 @@
     "oy": "you ",
     "cmo": "come ",
     "fo": "of ",
+    "for": "for ",
+    "aegimn": "imagine ",
+    "cmno": "condemn ",
+    "2aegimn": "meaning ",
     "acn": "can ",
     "do": "do ",
     "1i": "i ",
@@ -1875,6 +7705,7 @@
     "ckstu": "strucuture ",
     "ghin": "thing ",
     "hist": "this ",
+    "ehst": "these ",
     "1a": "a ",
     "4ijsu": "速记",
     "34adiz": "打字",
@@ -2082,988 +7913,235 @@
     "dorwy": "wordy ",
     "2dhos": "shoud ",
     "dhosu": "should ",
-    "dhlosu": "should "
-  },
-  "grammar": {
-    "can": {
-      "pos": "verb",
-      "forms": {
-        "1": "could"
-      }
-    },
-    "walk": {
-      "pos": "verb",
-      "forms": {
-        "1": "walked",
-        "2": "walking",
-        "3": "walks",
-        "4": "walked"
-      }
-    },
-    "step": {
-      "pos": "verb",
-      "forms": {
-        "1": "stepped",
-        "2": "stepping",
-        "3": "steps",
-        "4": "stepped"
-      }
-    },
-    "come": {
-      "pos": "verb",
-      "forms": {
-        "1": "came",
-        "2": "coming",
-        "3": "comes",
-        "4": "come"
-      }
-    },
-    "do": {
-      "pos": "verb",
-      "forms": {
-        "1": "did",
-        "2": "doing",
-        "3": "does",
-        "4": "done"
-      }
-    },
-    "have": {
-      "pos": "verb",
-      "forms": {
-        "1": "had",
-        "2": "having",
-        "3": "has",
-        "4": "had"
-      }
-    },
-    "want": {
-      "pos": "verb",
-      "forms": {
-        "1": "wanted",
-        "2": "wanting",
-        "3": "wants",
-        "4": "wanted"
-      }
-    },
-    "ask": {
-      "pos": "verb",
-      "forms": {
-        "1": "asked",
-        "2": "asking",
-        "3": "asks",
-        "4": "asked"
-      }
-    },
-    "connect": {
-      "pos": "verb",
-      "forms": {
-        "1": "connected",
-        "2": "connecting",
-        "3": "connects",
-        "4": "connected"
-      }
-    },
-    "think": {
-      "pos": "verb",
-      "forms": {
-        "1": "thought",
-        "2": "thinking",
-        "3": "thinks",
-        "4": "thought"
-      }
-    },
-    "code": {
-      "pos": "verb",
-      "forms": {
-        "1": "coded",
-        "2": "coding",
-        "3": "codes",
-        "4": "coded"
-      }
-    },
-    "stand": {
-      "pos": "verb",
-      "forms": {
-        "1": "stood",
-        "2": "standing",
-        "3": "stands",
-        "4": "stood"
-      }
-    },
-    "take": {
-      "pos": "verb",
-      "forms": {
-        "1": "took",
-        "2": "taking",
-        "3": "takes",
-        "4": "taken"
-      }
-    },
-    "turn": {
-      "pos": "verb",
-      "forms": {
-        "1": "turned",
-        "2": "turning",
-        "3": "turns",
-        "4": "turned"
-      }
-    },
-    "form": {
-      "pos": "verb",
-      "forms": {
-        "1": "formed",
-        "2": "forming",
-        "3": "forms",
-        "4": "formed"
-      }
-    },
-    "press": {
-      "pos": "verb",
-      "forms": {
-        "1": "pressed",
-        "2": "pressing",
-        "3": "presses",
-        "4": "pressed"
-      }
-    },
-    "act": {
-      "pos": "verb",
-      "forms": {
-        "1": "acted",
-        "2": "acting",
-        "3": "acts",
-        "4": "acted"
-      }
-    },
-    "dog": {
-      "pos": "noun",
-      "forms": {
-        "1": "dogs",
-        "2": "dog's",
-        "3": "dogs'"
-      }
-    },
-    "book": {
-      "pos": "noun",
-      "forms": {
-        "1": "books",
-        "2": "book's",
-        "3": "books'"
-      }
-    },
-    "file": {
-      "pos": "noun",
-      "forms": {
-        "1": "files",
-        "2": "file's",
-        "3": "files'"
-      }
-    },
-    "life": {
-      "pos": "noun",
-      "forms": {
-        "1": "lives",
-        "2": "life's",
-        "3": "lives'"
-      }
-    },
-    "window": {
-      "pos": "noun",
-      "forms": {
-        "1": "windows",
-        "2": "window's",
-        "3": "windows'"
-      }
-    },
-    "machine": {
-      "pos": "noun",
-      "forms": {
-        "1": "machines",
-        "2": "machine's",
-        "3": "machines'"
-      }
-    },
-    "world": {
-      "pos": "noun",
-      "forms": {
-        "1": "worlds",
-        "2": "world's",
-        "3": "worlds'"
-      }
-    },
-    "computer": {
-      "pos": "noun",
-      "forms": {
-        "1": "computers",
-        "2": "computer's",
-        "3": "computers'"
-      }
-    },
-    "keyboard": {
-      "pos": "noun",
-      "forms": {
-        "1": "keyboards",
-        "2": "keyboard's",
-        "3": "keyboards'"
-      }
-    },
-    "function": {
-      "pos": "noun",
-      "forms": {
-        "1": "functions",
-        "2": "function's",
-        "3": "functions'"
-      }
-    },
-    "steno": {
-      "pos": "noun",
-      "forms": {
-        "1": "stenos",
-        "2": "steno's"
-      }
-    },
-    "word": {
-      "pos": "noun",
-      "forms": {
-        "1": "words",
-        "2": "word's",
-        "3": "words'"
-      }
-    },
-    "fast": {
-      "pos": "adjective",
-      "forms": {
-        "1": "faster",
-        "2": "fastest"
-      }
-    },
-    "big": {
-      "pos": "adjective",
-      "forms": {
-        "1": "bigger",
-        "2": "biggest"
-      }
-    },
-    "local": {
-      "pos": "adjective",
-      "forms": {
-        "1": "more local",
-        "2": "most local",
-        "3": "locally"
-      }
-    },
-    "i": {
-      "pos": "pronoun",
-      "forms": {
-        "1": "me",
-        "2": "my",
-        "3": "myself",
-        "4": "mine"
-      }
-    },
-    "he": {
-      "pos": "pronoun",
-      "forms": {
-        "1": "him",
-        "2": "his",
-        "3": "himself"
-      }
-    },
-    "she": {
-      "pos": "pronoun",
-      "forms": {
-        "1": "her",
-        "2": "her",
-        "3": "herself",
-        "4": "hers"
-      }
-    },
-    "it": {
-      "pos": "pronoun",
-      "forms": {
-        "1": "it",
-        "2": "its",
-        "3": "itself"
-      }
-    },
-    "we": {
-      "pos": "pronoun",
-      "forms": {
-        "1": "us",
-        "2": "our",
-        "3": "ourselves",
-        "4": "ours"
-      }
-    },
-    "they": {
-      "pos": "pronoun",
-      "forms": {
-        "1": "them",
-        "2": "their",
-        "3": "themselves",
-        "4": "theirs"
-      }
-    },
-    "you": {
-      "pos": "pronoun",
-      "forms": {
-        "1": "you",
-        "2": "your",
-        "3": "yourself",
-        "4": "yours"
-      }
-    },
-    "who": {
-      "pos": "pronoun",
-      "forms": {
-        "1": "whom",
-        "2": "whose"
-      }
-    },
-    "undo": {
-      "pos": "verb",
-      "forms": {
-        "1": "undid",
-        "2": "undoing",
-        "3": "undoes",
-        "4": "undone"
-      }
-    },
-    "redo": {
-      "pos": "verb",
-      "forms": {
-        "1": "redid",
-        "2": "redoing",
-        "3": "redoes",
-        "4": "redone"
-      }
-    },
-    "outdo": {
-      "pos": "verb",
-      "forms": {
-        "1": "outdid",
-        "2": "outdoing",
-        "3": "outdoes",
-        "4": "outdone"
-      }
-    },
-    "reconnect": {
-      "pos": "verb",
-      "forms": {
-        "1": "reconnected",
-        "2": "reconnecting",
-        "3": "reconnects",
-        "4": "reconnected"
-      }
-    },
-    "disconnect": {
-      "pos": "verb",
-      "forms": {
-        "1": "disconnected",
-        "2": "disconnecting",
-        "3": "disconnects",
-        "4": "disconnected"
-      }
-    },
-    "overcome": {
-      "pos": "verb",
-      "forms": {
-        "1": "overcame",
-        "2": "overcoming",
-        "3": "overcomes",
-        "4": "overcome"
-      }
-    },
-    "become": {
-      "pos": "verb",
-      "forms": {
-        "1": "became",
-        "2": "becoming",
-        "3": "becomes",
-        "4": "become"
-      }
-    },
-    "outwalk": {
-      "pos": "verb",
-      "forms": {
-        "1": "outwalked",
-        "2": "outwalking",
-        "3": "outwalks",
-        "4": "outwalked"
-      }
-    },
-    "refile": {
-      "pos": "verb",
-      "forms": {
-        "1": "refiled",
-        "2": "refiling",
-        "3": "refiles",
-        "4": "refiled"
-      }
-    },
-    "recode": {
-      "pos": "verb",
-      "forms": {
-        "1": "recoded",
-        "2": "recoding",
-        "3": "recodes",
-        "4": "recoded"
-      }
-    },
-    "understand": {
-      "pos": "verb",
-      "forms": {
-        "1": "understood",
-        "2": "understanding",
-        "3": "understands",
-        "4": "understood"
-      }
-    },
-    "withstand": {
-      "pos": "verb",
-      "forms": {
-        "1": "withstood",
-        "2": "withstanding",
-        "3": "withstands",
-        "4": "withstood"
-      }
-    },
-    "outstand": {
-      "pos": "verb",
-      "forms": {
-        "1": "outstood",
-        "2": "outstanding",
-        "3": "outstands",
-        "4": "outstood"
-      }
-    },
-    "upstand": {
-      "pos": "verb",
-      "forms": {
-        "1": "upstood",
-        "2": "upstanding",
-        "3": "upstands",
-        "4": "upstood"
-      }
-    },
-    "mistake": {
-      "pos": "verb",
-      "forms": {
-        "1": "mistook",
-        "2": "mistaking",
-        "3": "mistakes",
-        "4": "mistaken"
-      }
-    },
-    "overtake": {
-      "pos": "verb",
-      "forms": {
-        "1": "overtook",
-        "2": "overtaking",
-        "3": "overtakes",
-        "4": "overtaken"
-      }
-    },
-    "retake": {
-      "pos": "verb",
-      "forms": {
-        "1": "retook",
-        "2": "retaking",
-        "3": "retakes",
-        "4": "retaken"
-      }
-    },
-    "return": {
-      "pos": "verb",
-      "forms": {
-        "1": "returned",
-        "2": "returning",
-        "3": "returns",
-        "4": "returned"
-      }
-    },
-    "overturn": {
-      "pos": "verb",
-      "forms": {
-        "1": "overturned",
-        "2": "overturning",
-        "3": "overturns",
-        "4": "overturned"
-      }
-    },
-    "upturn": {
-      "pos": "verb",
-      "forms": {
-        "1": "upturned",
-        "2": "upturning",
-        "3": "upturns",
-        "4": "upturned"
-      }
-    },
-    "reform": {
-      "pos": "verb",
-      "forms": {
-        "1": "reformed",
-        "2": "reforming",
-        "3": "reforms",
-        "4": "reformed"
-      }
-    },
-    "deform": {
-      "pos": "verb",
-      "forms": {
-        "1": "deformed",
-        "2": "deforming",
-        "3": "deforms",
-        "4": "deformed"
-      }
-    },
-    "inform": {
-      "pos": "verb",
-      "forms": {
-        "1": "informed",
-        "2": "informing",
-        "3": "informs",
-        "4": "informed"
-      }
-    },
-    "transform": {
-      "pos": "verb",
-      "forms": {
-        "1": "transformed",
-        "2": "transforming",
-        "3": "transforms",
-        "4": "transformed"
-      }
-    },
-    "conform": {
-      "pos": "verb",
-      "forms": {
-        "1": "conformed",
-        "2": "conforming",
-        "3": "conforms",
-        "4": "conformed"
-      }
-    },
-    "express": {
-      "pos": "verb",
-      "forms": {
-        "1": "expressed",
-        "2": "expressing",
-        "3": "expresses",
-        "4": "expressed"
-      }
-    },
-    "impress": {
-      "pos": "verb",
-      "forms": {
-        "1": "impressed",
-        "2": "impressing",
-        "3": "impresses",
-        "4": "impressed"
-      }
-    },
-    "depress": {
-      "pos": "verb",
-      "forms": {
-        "1": "depressed",
-        "2": "depressing",
-        "3": "depresses",
-        "4": "depressed"
-      }
-    },
-    "repress": {
-      "pos": "verb",
-      "forms": {
-        "1": "repressed",
-        "2": "repressing",
-        "3": "represses",
-        "4": "repressed"
-      }
-    },
-    "oppress": {
-      "pos": "verb",
-      "forms": {
-        "1": "oppressed",
-        "2": "oppressing",
-        "3": "oppresses",
-        "4": "oppressed"
-      }
-    },
-    "react": {
-      "pos": "verb",
-      "forms": {
-        "1": "reacted",
-        "2": "reacting",
-        "3": "reacts",
-        "4": "reacted"
-      }
-    },
-    "interact": {
-      "pos": "verb",
-      "forms": {
-        "1": "interacted",
-        "2": "interacting",
-        "3": "interacts",
-        "4": "interacted"
-      }
-    },
-    "transact": {
-      "pos": "verb",
-      "forms": {
-        "1": "transacted",
-        "2": "transacting",
-        "3": "transacts",
-        "4": "transacted"
-      }
-    },
-    "enact": {
-      "pos": "verb",
-      "forms": {
-        "1": "enacted",
-        "2": "enacting",
-        "3": "enacts",
-        "4": "enacted"
-      }
-    },
-    "income": {
-      "pos": "noun",
-      "forms": {
-        "1": "incomes",
-        "2": "income's",
-        "3": "incomes'"
-      }
-    },
-    "outcome": {
-      "pos": "noun",
-      "forms": {
-        "1": "outcomes",
-        "2": "outcome's",
-        "3": "outcomes'"
-      }
-    },
-    "lifetime": {
-      "pos": "noun",
-      "forms": {
-        "1": "lifetimes",
-        "2": "lifetime's",
-        "3": "lifetimes'"
-      }
-    },
-    "lifeline": {
-      "pos": "noun",
-      "forms": {
-        "1": "lifelines",
-        "2": "lifeline's",
-        "3": "lifelines'"
-      }
-    },
-    "password": {
-      "pos": "noun",
-      "forms": {
-        "1": "passwords",
-        "2": "password's",
-        "3": "passwords'"
-      }
-    },
-    "intake": {
-      "pos": "noun",
-      "forms": {
-        "1": "intakes",
-        "2": "intake's",
-        "3": "intakes'"
-      }
-    },
-    "outtake": {
-      "pos": "noun",
-      "forms": {
-        "1": "outtakes",
-        "2": "outtake's",
-        "3": "outtakes'"
-      }
-    },
-    "uptake": {
-      "pos": "noun",
-      "forms": {
-        "1": "uptakes",
-        "2": "uptake's",
-        "3": "uptakes'"
-      }
-    },
-    "outturn": {
-      "pos": "noun",
-      "forms": {
-        "1": "outturns",
-        "2": "outturn's",
-        "3": "outturns'"
-      }
-    },
-    "be": {
-      "pos": "verb",
-      "forms": {
-        "1": "am",
-        "2": "are",
-        "3": "is",
-        "4": "was",
-        "5": "were",
-        "6": "been",
-        "7": "being"
-      }
-    },
-    "see": {
-      "pos": "verb",
-      "forms": {
-        "1": "saw",
-        "2": "seeing",
-        "3": "sees",
-        "4": "seen"
-      }
-    },
-    "work": {
-      "pos": "verb",
-      "forms": {
-        "1": "worked",
-        "2": "working",
-        "3": "works"
-      }
-    },
-    "happen": {
-      "pos": "verb",
-      "forms": {
-        "1": "happened",
-        "2": "happening",
-        "3": "happens"
-      }
-    },
-    "try": {
-      "pos": "verb",
-      "forms": {
-        "1": "tried",
-        "2": "trying",
-        "3": "tries"
-      }
-    },
-    "add": {
-      "pos": "verb",
-      "forms": {
-        "1": "added",
-        "2": "adding",
-        "3": "adds",
-        "4": "addition"
-      }
-    },
-    "trigger": {
-      "pos": "verb",
-      "forms": {
-        "1": "triggered",
-        "2": "triggering",
-        "3": "triggers"
-      }
-    },
-    "fix": {
-      "pos": "verb",
-      "forms": {
-        "1": "fixed",
-        "2": "fixing",
-        "3": "fixes"
-      }
-    },
-    "number": {
-      "pos": "noun",
-      "forms": {
-        "1": "numbers",
-        "2": "number's"
-      }
-    },
-    "character": {
-      "pos": "noun",
-      "forms": {
-        "1": "characters",
-        "2": "character's"
-      }
-    },
-    "teacher": {
-      "pos": "noun",
-      "forms": {
-        "1": "teachers",
-        "2": "teacher's"
-      }
-    },
-    "reason": {
-      "pos": "noun",
-      "forms": {
-        "1": "reasons",
-        "2": "reason's"
-      }
-    },
-    "give": {
-      "lemma": "give",
-      "type": "verb_irregular",
-      "1": "gave",
-      "2": "giving",
-      "3": "gives",
-      "4": "given"
-    },
-    "switch": {
-      "lemma": "switch",
-      "type": "verb",
-      "1": "switched",
-      "2": "switching",
-      "3": "switches"
-    },
-    "note": {
-      "lemma": "note",
-      "type": "verb_noun",
-      "1": "noted",
-      "2": "noting",
-      "3": "notes"
-    },
-    "mode": {
-      "lemma": "mode",
-      "type": "noun",
-      "1": "modes",
-      "2": "mode's"
-    },
-    "doc": {
-      "lemma": "doc",
-      "type": "noun",
-      "1": "docs",
-      "2": "doc's"
-    },
-    "folder": {
-      "lemma": "folder",
-      "type": "noun",
-      "1": "folders",
-      "2": "folder's"
-    },
-    "game": {
-      "lemma": "game",
-      "type": "noun",
-      "1": "games",
-      "2": "game's"
-    },
-    "column": {
-      "lemma": "column",
-      "type": "noun",
-      "1": "columns",
-      "2": "column's"
-    },
-    "tense": {
-      "lemma": "tense",
-      "type": "noun",
-      "1": "tenses",
-      "2": "tense's"
-    },
-    "test": {
-      "lemma": "test",
-      "type": "verb_noun",
-      "1": "tested",
-      "2": "testing",
-      "3": "tests"
-    },
-    "create": {
-      "lemma": "create",
-      "type": "verb",
-      "1": "created",
-      "2": "creating",
-      "3": "creates"
-    },
-    "copy": {
-      "lemma": "copy",
-      "type": "verb",
-      "1": "copied",
-      "2": "copying",
-      "3": "copies"
-    },
-    "list": {
-      "lemma": "list",
-      "type": "verb_noun",
-      "1": "listed",
-      "2": "listing",
-      "3": "lists"
-    },
-    "toggle": {
-      "lemma": "toggle",
-      "type": "verb",
-      "1": "toggled",
-      "2": "toggling",
-      "3": "toggles"
-    },
-    "untoggle": {
-      "lemma": "untoggle",
-      "type": "verb",
-      "1": "untoggled",
-      "2": "untoggling",
-      "3": "untoggles"
-    },
-    "ad": {
-      "lemma": "ad",
-      "type": "noun",
-      "1": "ads",
-      "2": "ad's"
-    }
-  },
-  "grammar_rules": {
-    "verb": {
-      "1": {
-        "name": "past",
-        "label": "Past Tense (-ed)"
-      },
-      "2": {
-        "name": "gerund",
-        "label": "Continuous (-ing)"
-      },
-      "3": {
-        "name": "present_3rd",
-        "label": "3rd Person (-s)"
-      },
-      "4": {
-        "name": "past_participle",
-        "label": "Past Participle (-en)"
-      }
-    },
-    "noun": {
-      "1": {
-        "name": "plural",
-        "label": "Plural (-s)"
-      },
-      "2": {
-        "name": "possessive",
-        "label": "Possessive ('s)"
-      },
-      "3": {
-        "name": "plural_possessive",
-        "label": "Plural Possessive (s')"
-      }
-    },
-    "adjective": {
-      "1": {
-        "name": "comparative",
-        "label": "Comparative (-er)"
-      },
-      "2": {
-        "name": "superlative",
-        "label": "Superlative (-est)"
-      },
-      "3": {
-        "name": "adverb",
-        "label": "Adverb (-ly)"
-      }
-    },
-    "pronoun": {
-      "1": {
-        "name": "objective",
-        "label": "Objective Case"
-      },
-      "2": {
-        "name": "possessive",
-        "label": "Possessive Case"
-      },
-      "3": {
-        "name": "reflexive",
-        "label": "Reflexive Case"
-      }
-    }
+    "dhlosu": "should ",
+    "aint": "attain ",
+    "adimt": "admit ",
+    "adhr": "adhere ",
+    "1awy": "away ",
+    "ahptw": "pathway ",
+    "agnow": "wagon ",
+    "bdiln": "blind ",
+    "bdfiln": "blindfold ",
+    "bdilns": "blindness ",
+    "beln": "blend ",
+    "achioprs": "harpsichord ",
+    "achor": "chordal ",
+    "cmnor": "monochord ",
+    "1cln": "clone ",
+    "cgiln": "cloning ",
+    "acmno": "monoclonal ",
+    "acnopy": "polyclonal ",
+    "cis": "cise ",
+    "dinos": "decision ",
+    "er": "rect ",
+    "aelnr": "rectangle ",
+    "adl": "deal ",
+    "adlr": "dealer ",
+    "adgiln": "dealing ",
+    "ador": "ordeal ",
+    "ety": "etym ",
+    "eoty": "etymology ",
+    "enoty": "etymon ",
+    "aeioty": "etymologically ",
+    "gly": "logy ",
+    "cgil": "logic ",
+    "bgioy": "biology ",
+    "beovy": "everybody ",
+    "enovy": "everyone ",
+    "einvy": "everything ",
+    "ailnp": "plain ",
+    "aeilnpx": "explain ",
+    "aeilnptx": "explanation ",
+    "eg": "get ",
+    "efo": "forget ",
+    "beg": "beget ",
+    "abegl": "getable ",
+    "gil": "girl ",
+    "ghils": "girlish ",
+    "dghil": "girlhood ",
+    "cghios": "schoolgirl ",
+    "cgimo": "git-commit ",
+    "bh": "hub ",
+    "abchp": "hubcap ",
+    "bhopst": "hubspot ",
+    "gino": "ongoing ",
+    "dnoru": "undergo ",
+    "1efo": "forego ",
+    "ehit": "hitter ",
+    "1hint": "hitting ",
+    "2hint": "hiting ",
+    "intu": "unhit ",
+    "ehos": "house ",
+    "1ehos": "household ",
+    "ghinos": "housing ",
+    "efhios": "housewife ",
+    "eiv": "iev ",
+    "1eilv": "Ievlev ",
+    "2eilv": "Ievlevli ",
+    "bjo": "Job ",
+    "1alst": "stall ",
+    "aefos": "forestall ",
+    "aest": "stead ",
+    "1aest": "steadfast ",
+    "aesty": "steady ",
+    "eky": "key ",
+    "eknoty": "keynote ",
+    "ekoy": "keyhole ",
+    "eilt": "liter ",
+    "aeilt": "literal ",
+    "aeiltu": "literature ",
+    "1aeilt": "illiterate ",
+    "eilvy": "lively ",
+    "aeilv": "alive ",
+    "ehilv": "livelihood ",
+    "kotu": "outlook ",
+    "eklr": "looker ",
+    "ekov": "overlook ",
+    "amn": "man ",
+    "almn": "manual ",
+    "acfmn": "manufacture ",
+    "1am": "may ",
+    "gim": "might ",
+    "1gim": "mighty ",
+    "adims": "dismay ",
+    "dmo": "mod ",
+    "1dmo": "mode ",
+    "2dmo": "model ",
+    "dfimo": "modify ",
+    "1cis": "sci ",
+    "cins": "science ",
+    "cinosu": "conscious ",
+    "cinot": "notice ",
+    "inot": "notion ",
+    "iv": "vi ",
+    "adiv": "deviate ",
+    "aeovy": "voyage ",
+    "apsty": "pastry ",
+    "1apst": "pasta ",
+    "achipst": "pastiche ",
+    "enoprs": "person ",
+    "aenoprs": "personal ",
+    "einoprsy": "personify ",
+    "aeinoprsy": "personality ",
+    "ejt": "ject ",
+    "eijnt": "inject ",
+    "1ejt": "eject ",
+    "eprsu": "pusher ",
+    "1psu": "pushy ",
+    "elp": "pel ",
+    "elpsu": "pulse ",
+    "cmop": "compel ",
+    "ptu": "put ",
+    "inptu": "input ",
+    "eptu": "putter ",
+    "1aer": "read ",
+    "2aer": "reader ",
+    "abelr": "readable ",
+    "aenru": "unread ",
+    "aelr": "real ",
+    "aeilry": "reality ",
+    "aeilr": "realize ",
+    "aeilmrs": "realism ",
+    "aelry": "really ",
+    "eiqru": "quire ",
+    "1eiqru": "require ",
+    "eqru": "query ",
+    "einqru": "requirement ",
+    "1einqru": "requirment ",
+    "or": "root ",
+    "opru": "uproot ",
+    "eor": "rootlet ",
+    "ckors": "rootstock ",
+    "ahls": "shall ",
+    "ast": "start ",
+    "aers": "restart ",
+    "2aest": "starter ",
+    "aelst": "startle ",
+    "aehnopst": "stenography ",
+    "einost": "stenosis ",
+    "tu": "tut ",
+    "aiotu": "tutorial ",
+    "inotu": "tuition ",
+    "eintu": "intuitive ",
+    "1cstu": "struct ",
+    "cnostu": "construct ",
+    "dosty": "destroy ",
+    "1adt": "date ",
+    "einot": "edition ",
+    "ehnvw": "whenever ",
+    "ehnovw": "whensoever ",
+    "dinorw": "wordiness ",
+    "1dinorw": "wording ",
+    "aelnp": "plane ",
+    "1elt": "letter ",
+    "aiv": "via ",
+    "1eqstu": "quest ",
+    "otu": "tutor ",
+    "2adt": "dat ",
+    "ory": "your ",
+    "orsy": "yours ",
+    "eorsy": "yourself ",
+    "1eorsy": "yourselves ",
+    "ai": "AI ",
+    "acilr": "artificial ",
+    "eilnt": "intelligence ",
+    "acilnr": "Artificial Intelligence ",
+    "ar": "art ",
+    "airs": "artist ",
+    "ainrs": "artisan ",
+    "acfoy": "factory ",
+    "acfo": "factor ",
+    "df": "defect ",
+    "1eilnt": "intellect ",
+    "aeilntu": "intellectual ",
+    "begil": "eligible ",
+    "2elt": "elect ",
+    "eltu": "lecture ",
+    "1begil": "legible ",
+    "acht": "chat ",
+    "1acht": "chatter ",
+    "abchotx": "chatterbox ",
+    "2acht": "chatty ",
+    "bot": "bot ",
+    "bor": "robot ",
+    "bcior": "robotic ",
+    "bciors": "robotics ",
+    "aw": "was ",
+    "ens": "essence ",
+    "aeilnst": "essential ",
+    "abenst": "absent ",
+    "knorw": "working ",
+    "ekorw": "worker ",
+    "ackoprw": "workplace ",
+    "behknorw": "workbench ",
+    "enry": "energy ",
+    "enrsy": "synergy ",
+    "eimnors": "ergonomics ",
+    "anor": "organ ",
+    "aeinor": "organize ",
+    "2not": "onto ",
+    "1enost": "onset ",
+    "adnorw": "onward ",
+    "hst": "thus ",
+    "adhnost": "thousand ",
+    "eorw": "reword ",
+    "abeimv": "verbatim ",
+    "beopr": "proverb ",
+    "ailnsy": "analysis ",
+    "aelny": "analyze ",
+    "alnsty": "analyst ",
+    "acilnty": "analytical ",
+    "ailprsy": "paralysis ",
+    "aclsty": "catalyst ",
+    "elty": "electrolyte ",
+    "4adin": "电",
+    "1ehns": "生",
+    "aehnp": "happen ",
+    "eit": "trigger ",
+    "benru": "number ",
+    "est": "test ",
+    "acr": "create ",
+    "copy": "copy "
   },
   "chinese_chords": {
     "4ehz": {
@@ -3559,7 +8637,7 @@
     "5de": {
       "char": "的",
       "pinyin": "de",
-      "keys": "5de",
+      "keys": "5d",
       "tone": 5,
       "english": "structural particle"
     },
@@ -3590,6 +8668,41 @@
       "keys": "4kuang",
       "tone": 4,
       "english": "condition/circumstance"
+    },
+    "shenb": {
+      "char": "神",
+      "pinyin": "shén",
+      "keys": "shenb",
+      "tone": 2,
+      "english": "god/spirit"
+    },
+    "shic": {
+      "char": "是",
+      "pinyin": "shì",
+      "keys": "shic",
+      "tone": 4,
+      "english": "is/be"
+    },
+    "weiv": {
+      "char": "伟",
+      "pinyin": "wěi",
+      "keys": "weiv",
+      "tone": 3,
+      "english": "great / magnificent"
+    },
+    "dac": {
+      "char": "大",
+      "pinyin": "dà",
+      "keys": "dac",
+      "tone": 4,
+      "english": "big / great"
+    },
+    "de": {
+      "char": "的",
+      "pinyin": "de",
+      "keys": "de",
+      "tone": 5,
+      "english": "structural particle"
     }
   }
 }

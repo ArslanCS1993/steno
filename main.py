@@ -36,8 +36,8 @@ for finger, keys in FINGER_MAP.items():
 # Set of all valid chordable keys
 ALLOWED = set(KEY_TO_FINGER.keys())
 
-# Mirror mappings for alternating/bimanual key ergonomics:
-# Tones: Right hand 0, 9, 8, 7 -> Left hand 1, 2, 3, 4
+# Mirror mappings for alternating/bimanual key ergonomics.
+# Tone trigger keys are mirrored both ways, so 1/0, 2/9, 3/8, 4/7 are treated as equivalents.
 # Pinky letters: ; -> a, / -> z
 # Ring letters: l -> s
 MIRROR_KEYS = {
@@ -91,52 +91,76 @@ def word_to_chord(word: str):
 
 
 def load_dictionary():
-    """Loads chords, roots, and grammar from data.json."""
+    """Loads the fast chord lookup and root-centered vocabulary data."""
     if not os.path.exists(DATA_FILE):
-        return {}, {}, {}, {}
+        return {}, {}
     with open(DATA_FILE, "r", encoding="utf-8") as f:
         try:
             raw = json.load(f)
             flat_source = raw.get("flat_chords", raw) if isinstance(raw, dict) else {}
             tree_source = raw.get("roots", {}) if isinstance(raw, dict) else {}
-            grammar_source = raw.get("grammar", {}) if isinstance(raw, dict) else {}
-            rules_source = raw.get("grammar_rules", {}) if isinstance(raw, dict) else {}
 
             normalized_flat = {}
             for k, v in flat_source.items():
                 if isinstance(v, str):
                     normalized_flat["".join(sorted(k))] = v
 
-            return normalized_flat, tree_source, grammar_source, rules_source
+            return normalized_flat, tree_source
         except json.JSONDecodeError:
             print("Error: data.json contains invalid JSON.")
-            return {}, {}, {}, {}
+            return {}, {}
 
 
-def get_word_grammar(word: str, grammar_dict: dict):
-    """Retrieves or generates grammar inflection forms for a word."""
+def get_word_entry(word: str, roots_tree: dict):
+    """Finds a word as either a root lemma or a root derivative."""
     if not word:
         return None
     lower = word.lower().strip()
-    if lower in grammar_dict:
-        return grammar_dict[lower]
-    # Smart regular fallback for regular verbs
-    return {
-        "pos": "verb",
-        "forms": {
-            "1": lower + "d" if lower.endswith("e") else lower + "ed",
-            "2": lower[:-1] + "ing" if lower.endswith("e") else lower + "ing",
-            "3": lower + "es" if lower.endswith(("s", "sh", "ch", "x", "z")) else lower + "s"
-        }
-    }
+    for root in roots_tree.values():
+        if root.get("lemma", "").lower().strip() == lower:
+            return root
+        for derivative in root.get("derivatives", {}).values():
+            if derivative.get("word", "").lower().strip() == lower:
+                return derivative
+    return None
 
 
-def save_word(word: str, custom_chord: str = None):
+def get_word_inflections(word: str, roots_tree: dict):
+    """Retrieves grammar forms stored directly on a root or derivative."""
+    entry = get_word_entry(word, roots_tree)
+    if not isinstance(entry, dict):
+        return None
+    inflections = entry.get("inflections")
+    return inflections if isinstance(inflections, dict) and inflections else None
+
+
+def save_word(word: str, custom_chord: str = None, chinese_char: str = None):
     """
-    Generates a chord for a word, resolves any collisions with numbers,
-    and saves to data.json.
+    Generates a chord for a standalone root word, resolves collisions, and
+    saves the word with its Chinese translation to data.json.
     """
-    flat_data, tree_data, _, _ = load_dictionary()
+    if not word or not word.strip():
+        print("Error: A word is required.")
+        return
+    if not chinese_char or not chinese_char.strip():
+        print("Error: Provide a Chinese translation with --char.")
+        return
+
+    flat_data, tree_data = load_dictionary()
+    with open(DATA_FILE, "r", encoding="utf-8") as f:
+        full_payload = json.load(f)
+
+    normalized_word = word.strip().casefold()
+    if any(
+        root.get("lemma", "").strip().casefold() == normalized_word
+        or any(
+            derivative.get("word", "").strip().casefold() == normalized_word
+            for derivative in root.get("derivatives", {}).values()
+        )
+        for root in tree_data.values()
+    ):
+        print(f"Error: '{word.strip()}' is already stored in the roots dictionary.")
+        return
 
     if custom_chord:
         sorted_chord = "".join(sorted(custom_chord.lower()))
@@ -152,21 +176,44 @@ def save_word(word: str, custom_chord: str = None):
 
     # Check for collisions with existing words; resolve by adding number 1, 2, 3...
     existing_word = flat_data.get(sorted_chord)
-    if existing_word and existing_word.strip() != word.strip():
+    existing_root = tree_data.get(sorted_chord)
+    if (
+        (existing_word and existing_word.strip().casefold() != word.strip().casefold())
+        or (existing_root and existing_root.get("lemma", "").strip().casefold() != word.strip().casefold())
+    ):
         base_chord = sorted_chord
+        resolved = False
         for n in range(1, 10):
             candidate = "".join(sorted(base_chord + str(n)))
-            if candidate not in flat_data or flat_data[candidate].strip() == word.strip():
-                print(f"[Collision Resolved] '{base_chord}' is taken by '{existing_word.strip()}'. Using '{candidate}' for '{word}'.")
+            candidate_word = flat_data.get(candidate, "").strip().casefold()
+            candidate_root = tree_data.get(candidate, {}).get("lemma", "").strip().casefold()
+            if (
+                candidate_word in ("", word.strip().casefold())
+                and candidate_root in ("", word.strip().casefold())
+            ):
+                taken_by = existing_word.strip() if existing_word else existing_root["lemma"]
+                print(f"[Collision Resolved] '{base_chord}' is taken by '{taken_by}'. Using '{candidate}' for '{word}'.")
                 sorted_chord = candidate
+                resolved = True
                 break
+        if not resolved:
+            print(f"Error: Could not resolve a chord collision for '{word}'.")
+            return
 
     # Trailing space enables continuous word-by-word chording
     word_output = word.strip() + " "
     flat_data[sorted_chord] = word_output
+    tree_data[sorted_chord] = {
+        "lemma": word.strip(),
+        "chord": sorted_chord,
+        "char": chinese_char.strip(),
+        "note": "Standalone vocabulary entry.",
+        "derivatives": {}
+    }
 
-    # Read existing file to preserve roots structure if present
-    full_payload = {"roots": tree_data, "flat_chords": flat_data}
+    # Preserve grammar, Chinese chords, and other top-level dictionary data.
+    full_payload["roots"] = tree_data
+    full_payload["flat_chords"] = flat_data
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(full_payload, f, indent=2, ensure_ascii=False)
 
@@ -189,11 +236,16 @@ def run_steno():
         print("Please run: pip install keyboard")
         return
 
-    dictionary, roots_tree, grammar_dict, grammar_rules = load_dictionary()
+    dictionary, roots_tree = load_dictionary()
+    grammar_form_count = sum(
+        len(word_entry.get("inflections", {}))
+        for root in roots_tree.values()
+        for word_entry in [root, *root.get("derivatives", {}).values()]
+    )
     print("==================================================", flush=True)
     print("   Steno Keyboard Engine Started (Morpheme & Grammar Enabled)", flush=True)
-    print(f"   Loaded {len(dictionary)} base chords + {len(roots_tree)} roots + {len(grammar_dict)} grammar forms", flush=True)
-    print("   Hold SPACE for normal typing bypass. Press 1-4 after any word for grammar.", flush=True)
+    print(f"   Loaded {len(dictionary)} base chords + {len(roots_tree)} roots + {grammar_form_count} word inflections", flush=True)
+    print("   Hold SPACE for normal typing bypass. Tap a listed number after a word to inflect it.", flush=True)
     print("   Press Ctrl + C in this terminal to exit.", flush=True)
     print("==================================================", flush=True)
 
@@ -206,7 +258,7 @@ def run_steno():
     active_root = None
     root_timestamp = 0.0
     last_word = None
-    last_word_forms = None
+    last_word_inflections = None
     grammar_timestamp = 0.0
 
     def send_expansion(keys_to_delete, text_to_type):
@@ -222,7 +274,7 @@ def run_steno():
 
     def on_key(event):
         nonlocal pressed_keys, history, is_writing, last_action_time, active_root, root_timestamp
-        nonlocal last_word, last_word_forms, grammar_timestamp
+        nonlocal last_word, last_word_inflections, grammar_timestamp
 
         try:
             # 1. Ignore simulated typing output created by this script
@@ -237,29 +289,35 @@ def run_steno():
             now = time.time()
 
             # 3. Grammar Modifier Tap: Single number (1, 2, 3, 4) right after a word
-            if key in ("1", "2", "3", "4") and event.event_type == "down" and not pressed_keys and last_word_forms and (now - grammar_timestamp < 4.0):
-                if key in last_word_forms.get("forms", {}):
-                    inflected = last_word_forms["forms"][key]
-                    pos = last_word_forms.get("pos", "word")
-                    prev_len = len(last_word) + 1  # includes trailing space
-                    print(f" ✨ [Grammar Morph] '{last_word}' + {key} -> '{inflected}' ({pos})", flush=True)
-                    total_backspaces = [key] + ["bs"] * prev_len
-                    threading.Thread(
-                        target=send_expansion,
-                        args=(total_backspaces, inflected + " "),
-                        daemon=True
-                    ).start()
-                    last_word = inflected
-                    last_word_forms = None
-                    active_root = None
-                    return
+            if (
+                event.event_type == "down"
+                and not pressed_keys
+                and last_word_inflections
+                and key in last_word_inflections
+                and now - grammar_timestamp < 4.0
+            ):
+                inflection = last_word_inflections[key]
+                inflected = inflection["word"]
+                morpheme = inflection["morpheme"]
+                prev_len = len(last_word) + 1  # includes trailing space
+                print(f" ✨ [Grammar Morph] '{last_word}' + {morpheme} -> '{inflected}'", flush=True)
+                total_backspaces = [key] + ["bs"] * prev_len
+                threading.Thread(
+                    target=send_expansion,
+                    args=(total_backspaces, inflected + " "),
+                    daemon=True
+                ).start()
+                last_word = inflected
+                last_word_inflections = None
+                active_root = None
+                return
 
             # 4. Bypass / Commit mode: If Space is pressed, commit/reset morpheme state so next chord is a separate word
             if key == "space" and event.event_type == "down":
                 pressed_keys.clear()
                 history.clear()
                 last_word = None
-                last_word_forms = None
+                last_word_inflections = None
                 if active_root:
                     print(f"   --> [Root Committed] '{active_root['lemma']}' committed via Space. Next chord is a separate word.", flush=True)
                     active_root = None
@@ -315,7 +373,7 @@ def run_steno():
 
                         # Track for grammar inflection
                         last_word = deriv["word"].strip()
-                        last_word_forms = get_word_grammar(last_word, grammar_dict)
+                        last_word_inflections = get_word_inflections(last_word, roots_tree)
                         grammar_timestamp = time.time()
                     else:
                         # STEP 1: Standard Chord / Check if this chord is a Root
@@ -323,8 +381,9 @@ def run_steno():
                         resolved_combo = combo
                         if not mapped and not active_root:
                             canon = canonicalize_chord(combo)
-                            if canon in dictionary:
-                                mapped = dictionary[canon]
+                            canonical_output = dictionary.get(canon, "")
+                            if any("\u4e00" <= char <= "\u9fff" for char in canonical_output):
+                                mapped = canonical_output
                                 resolved_combo = canon
 
                         if mapped:
@@ -340,7 +399,7 @@ def run_steno():
 
                             # Track for grammar inflection
                             last_word = mapped.strip()
-                            last_word_forms = get_word_grammar(last_word, grammar_dict)
+                            last_word_inflections = get_word_inflections(last_word, roots_tree)
                             grammar_timestamp = time.time()
 
                             # If Space was held WITH the chord, finalize immediately and do not arm root
@@ -356,7 +415,7 @@ def run_steno():
                         else:
                             active_root = None
                             last_word = None
-                            last_word_forms = None
+                            last_word_inflections = None
 
                     history.clear()
 
@@ -372,9 +431,9 @@ def run_steno():
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         cmd = sys.argv[1].lower()
-        if cmd in ("--add", "-a") and len(sys.argv) > 2:
+        if cmd in ("--add", "-a") and len(sys.argv) > 4 and sys.argv[3] == "--char":
             target_word = sys.argv[2]
-            save_word(target_word)
+            save_word(target_word, chinese_char=sys.argv[4])
         elif cmd in ("--generate", "-g") and len(sys.argv) > 2:
             target_word = sys.argv[2]
             keys_str, sorted_c, fingers, skipped = word_to_chord(target_word)
@@ -394,7 +453,7 @@ if __name__ == "__main__":
         else:
             print("Usage:")
             print("  python main.py                  # Run steno engine")
-            print("  python main.py --add <word>     # Generate & save chord to data.json")
+            print("  python main.py --add <word> --char <Chinese translation>  # Add a translated root")
             print("  python main.py --generate <word># Preview chord generation without saving")
             print("  python main.py --list           # View all saved chords")
     else:
