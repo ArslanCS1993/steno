@@ -8704,5 +8704,4940 @@
       "tone": 5,
       "english": "structural particle"
     }
+  },
+  "steno_dictionary": [
+    {
+      "word": "can",
+      "chord": "acn",
+      "keys": "can",
+      "note": "Clean 3-finger match"
+    },
+    {
+      "word": "dog",
+      "chord": "dgo",
+      "keys": "dog",
+      "note": "Clean 3-finger match"
+    },
+    {
+      "word": "fast",
+      "chord": "afs",
+      "keys": "fas",
+      "note": "t skipped (conflict on Left Index)"
+    },
+    {
+      "word": "book",
+      "chord": "bko",
+      "keys": "bok",
+      "note": "o duplicate skipped"
+    },
+    {
+      "word": "file",
+      "chord": "efil",
+      "keys": "file",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "life",
+      "chord": "1efil",
+      "keys": "life",
+      "note": "Anagram of file + number 1"
+    },
+    {
+      "word": "on",
+      "chord": "no",
+      "keys": "on",
+      "note": "Clean 2-finger match"
+    },
+    {
+      "word": "no",
+      "chord": "1no",
+      "keys": "no",
+      "note": "Anagram of on + number 1"
+    },
+    {
+      "word": "how",
+      "chord": "how",
+      "keys": "how",
+      "note": "Clean 3-finger match"
+    },
+    {
+      "word": "who",
+      "chord": "1how",
+      "keys": "who",
+      "note": "Anagram of how + number 1"
+    },
+    {
+      "word": "whom",
+      "chord": "2how",
+      "keys": "who",
+      "note": "Anagram of how + number 2"
+    },
+    {
+      "word": "i",
+      "chord": "1i",
+      "keys": "i1",
+      "note": "Single-letter rule (1 + i)"
+    },
+    {
+      "word": "he",
+      "chord": "eh",
+      "keys": "he",
+      "note": "Clean 2-finger match"
+    },
+    {
+      "word": "she",
+      "chord": "ehs",
+      "keys": "she",
+      "note": "Clean 3-finger match"
+    },
+    {
+      "word": "it",
+      "chord": "it",
+      "keys": "it",
+      "note": "Clean 2-finger match"
+    },
+    {
+      "word": "we",
+      "chord": "ew",
+      "keys": "we",
+      "note": "Clean 2-finger match"
+    },
+    {
+      "word": "they",
+      "chord": "eht",
+      "keys": "the",
+      "note": "y skipped (conflict with h)"
+    },
+    {
+      "word": "you",
+      "chord": "oy",
+      "keys": "yo",
+      "note": "u skipped (conflict with y)"
+    },
+    {
+      "word": "what",
+      "chord": "ahtw",
+      "keys": "what",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "when",
+      "chord": "ehnw",
+      "keys": "when",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "why",
+      "chord": "hw",
+      "keys": "wh",
+      "note": "y skipped (conflict with h)"
+    },
+    {
+      "word": "where",
+      "chord": "ehrw",
+      "keys": "wher",
+      "note": "e duplicate skipped"
+    },
+    {
+      "word": "which",
+      "chord": "chiw",
+      "keys": "whic",
+      "note": "h duplicate skipped"
+    },
+    {
+      "word": "whose",
+      "chord": "ehow",
+      "keys": "whoe",
+      "note": "s skipped (conflict with w)"
+    },
+    {
+      "word": "walk",
+      "chord": "aklw",
+      "keys": "walk",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "in",
+      "chord": "in",
+      "keys": "in",
+      "note": "Clean 2-finger match"
+    },
+    {
+      "word": "big",
+      "chord": "bgi",
+      "keys": "big",
+      "note": "Clean 3-finger match (Left Thumb B)"
+    },
+    {
+      "word": "step",
+      "chord": "epst",
+      "keys": "step",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "if",
+      "chord": "fi",
+      "keys": "if",
+      "note": "Clean 2-finger match"
+    },
+    {
+      "word": "come",
+      "chord": "cmo",
+      "keys": "com",
+      "note": "e skipped (conflict with c)"
+    },
+    {
+      "word": "for",
+      "chord": "fo",
+      "keys": "fo",
+      "note": "r skipped (conflict with f)"
+    },
+    {
+      "word": "do",
+      "chord": "do",
+      "keys": "do",
+      "note": "Clean 2-finger match"
+    },
+    {
+      "word": "have",
+      "chord": "aehv",
+      "keys": "have",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "with",
+      "chord": "hitw",
+      "keys": "with",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "want",
+      "chord": "antw",
+      "keys": "want",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "any",
+      "chord": "any",
+      "keys": "any",
+      "note": "Clean 3-finger match"
+    },
+    {
+      "word": "ask",
+      "chord": "aks",
+      "keys": "ask",
+      "note": "Clean 3-finger match"
+    },
+    {
+      "word": "window",
+      "chord": "dinow",
+      "keys": "windo",
+      "note": "w duplicate skipped"
+    },
+    {
+      "word": "that",
+      "chord": "aht",
+      "keys": "tha",
+      "note": "t duplicate skipped"
+    },
+    {
+      "word": "machine",
+      "chord": "acimn",
+      "keys": "macin",
+      "note": "h and e conflicts skipped"
+    },
+    {
+      "word": "connect",
+      "chord": "cnot",
+      "keys": "cont",
+      "note": "n, e, c conflicts skipped"
+    },
+    {
+      "word": "local",
+      "chord": "acl",
+      "keys": "lca",
+      "note": "o and l conflicts skipped"
+    },
+    {
+      "word": "about",
+      "chord": "abotu",
+      "keys": "about",
+      "note": "Clean 5-finger match"
+    },
+    {
+      "word": "think",
+      "chord": "hint",
+      "keys": "thin",
+      "note": "k skipped (conflict with i)"
+    },
+    {
+      "word": "please",
+      "chord": "aelps",
+      "keys": "pleas",
+      "note": "e duplicate skipped"
+    },
+    {
+      "word": "world",
+      "chord": "dorw",
+      "keys": "word",
+      "note": "l skipped (conflict with o)"
+    },
+    {
+      "word": "steno",
+      "chord": "enost",
+      "keys": "steno",
+      "note": "Clean 5-finger match"
+    },
+    {
+      "word": "code",
+      "chord": "co",
+      "keys": "co",
+      "note": "d and e conflicts skipped"
+    },
+    {
+      "word": "computer",
+      "chord": "cmopt",
+      "keys": "compt",
+      "note": "u, e, r conflicts skipped"
+    },
+    {
+      "word": "keyboard",
+      "chord": "abekory",
+      "keys": "keyboar",
+      "note": "d skipped (conflict with e)"
+    },
+    {
+      "word": "function",
+      "chord": "cfinou",
+      "keys": "funcio",
+      "note": "t and n conflicts skipped"
+    },
+    {
+      "word": "stand",
+      "chord": "adnst",
+      "keys": "stand",
+      "note": "Clean 5-finger match"
+    },
+    {
+      "word": "take",
+      "chord": "aekt",
+      "keys": "take",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "turn",
+      "chord": "ntu",
+      "keys": "tun",
+      "note": "r skipped (conflict on Left Index)"
+    },
+    {
+      "word": "form",
+      "chord": "fmo",
+      "keys": "fom",
+      "note": "r skipped (conflict on Left Index)"
+    },
+    {
+      "word": "press",
+      "chord": "eprs",
+      "keys": "pres",
+      "note": "s duplicate skipped"
+    },
+    {
+      "word": "act",
+      "chord": "act",
+      "keys": "act",
+      "note": "Clean 3-finger match"
+    },
+    {
+      "word": "a",
+      "chord": "1a",
+      "keys": "1a",
+      "note": "Single-letter rule (1 + a)"
+    },
+    {
+      "word": "actual",
+      "chord": "acltu",
+      "keys": "actual",
+      "note": "Root for actually"
+    },
+    {
+      "word": "actually",
+      "chord": "actually",
+      "keys": "actually",
+      "note": "Derived from actual"
+    },
+    {
+      "word": "forward",
+      "chord": "adforw",
+      "keys": "forward",
+      "note": "Root for forwards, forwarding"
+    },
+    {
+      "word": "functionality",
+      "chord": "functionality",
+      "keys": "functionality",
+      "note": "Derived from function"
+    },
+    {
+      "word": "right",
+      "chord": "ghirt",
+      "keys": "right",
+      "note": "Root for rightly, upright"
+    },
+    {
+      "word": "now",
+      "chord": "now",
+      "keys": "now",
+      "note": "Root for nowadays, right now"
+    },
+    {
+      "word": "the",
+      "chord": "eht",
+      "keys": "the",
+      "note": "Definite article"
+    },
+    {
+      "word": "time",
+      "chord": "emti",
+      "keys": "time",
+      "note": "Root for timer, timing"
+    },
+    {
+      "word": "timer",
+      "chord": "timer",
+      "keys": "timer",
+      "note": "Derived from time"
+    },
+    {
+      "word": "to",
+      "chord": "ot",
+      "keys": "to",
+      "note": "Direction / destination"
+    },
+    {
+      "word": "wait",
+      "chord": "aitw",
+      "keys": "wait",
+      "note": "Root for waiting, waiter"
+    },
+    {
+      "word": "waiting",
+      "chord": "waiting",
+      "keys": "waiting",
+      "note": "Derived from wait"
+    },
+    {
+      "word": "and",
+      "chord": "adn",
+      "keys": "adn",
+      "note": "Clean 3-finger match"
+    },
+    {
+      "word": "be",
+      "chord": "be",
+      "keys": "be",
+      "note": "Clean 2-finger match"
+    },
+    {
+      "word": "box",
+      "chord": "box",
+      "keys": "box",
+      "note": "Root for sandbox, boxes"
+    },
+    {
+      "word": "clear",
+      "chord": "aclr",
+      "keys": "aclr",
+      "note": "Root for clearing, clearly"
+    },
+    {
+      "word": "clearing",
+      "chord": "aclrg",
+      "keys": "aclrg",
+      "note": "Derived from clear"
+    },
+    {
+      "word": "cut",
+      "chord": "ctu",
+      "keys": "cut",
+      "note": "Clean 3-finger match"
+    },
+    {
+      "word": "depend",
+      "chord": "dnp",
+      "keys": "depend",
+      "note": "Root for depending, dependent"
+    },
+    {
+      "word": "depending",
+      "chord": "dgnp",
+      "keys": "depending",
+      "note": "Derived from depend"
+    },
+    {
+      "word": "it was",
+      "chord": "aist",
+      "keys": "itwas",
+      "note": "Phrasing: it + was"
+    },
+    {
+      "word": "let",
+      "chord": "elt",
+      "keys": "let",
+      "note": "Root for lets, outlet"
+    },
+    {
+      "word": "lets",
+      "chord": "elst",
+      "keys": "lets",
+      "note": "let + s (or let us)"
+    },
+    {
+      "word": "make",
+      "chord": "aekm",
+      "keys": "make",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "only",
+      "chord": "noy",
+      "keys": "only",
+      "note": "Clean 3-finger match"
+    },
+    {
+      "word": "other",
+      "chord": "ehot",
+      "keys": "other",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "pop",
+      "chord": "1op",
+      "keys": "pop",
+      "note": "1 + op (pop)"
+    },
+    {
+      "word": "present",
+      "chord": "enprs",
+      "keys": "present",
+      "note": "Root for presentation"
+    },
+    {
+      "word": "sand",
+      "chord": "adns",
+      "keys": "sand",
+      "note": "Root for sandbox, sandy"
+    },
+    {
+      "word": "sandbox",
+      "chord": "sandbox",
+      "keys": "sandbox",
+      "note": "Compound: sand + box"
+    },
+    {
+      "word": "sentence",
+      "chord": "enst",
+      "keys": "sentence",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "short",
+      "chord": "hors",
+      "keys": "short",
+      "note": "Root for shortcut, shortly"
+    },
+    {
+      "word": "shortcut",
+      "chord": "shortcut",
+      "keys": "shortcut",
+      "note": "Compound: short + cut"
+    },
+    {
+      "word": "simple",
+      "chord": "eilmps",
+      "keys": "simple",
+      "note": "Root for simply, simplicity"
+    },
+    {
+      "word": "so",
+      "chord": "os",
+      "keys": "so",
+      "note": "Clean 2-finger match"
+    },
+    {
+      "word": "table",
+      "chord": "abelt",
+      "keys": "table",
+      "note": "Root for timetable"
+    },
+    {
+      "word": "type",
+      "chord": "epty",
+      "keys": "type",
+      "note": "Root for typing, typed"
+    },
+    {
+      "word": "up",
+      "chord": "pu",
+      "keys": "up",
+      "note": "Clean 2-finger match"
+    },
+    {
+      "word": "verb",
+      "chord": "bev",
+      "keys": "verb",
+      "note": "Root for verbs, verbal"
+    },
+    {
+      "word": "verbs",
+      "chord": "besv",
+      "keys": "verbs",
+      "note": "verb + s"
+    },
+    {
+      "word": "we have",
+      "chord": "ehvw",
+      "keys": "wehave",
+      "note": "Phrasing: we + have"
+    },
+    {
+      "word": "这",
+      "chord": "4ehz",
+      "keys": "4zhe",
+      "pinyin": "zhè",
+      "english": "this",
+      "note": "Tone 4 + zhe (zhè - this)"
+    },
+    {
+      "word": "是",
+      "chord": "4his",
+      "keys": "4shi",
+      "pinyin": "shì",
+      "english": "is/be",
+      "note": "Tone 4 + shi (shì - is/be)"
+    },
+    {
+      "word": "爱",
+      "chord": "4ai",
+      "keys": "4ai",
+      "pinyin": "ài",
+      "english": "love",
+      "note": "Tone 4 + ai (ài - love, mirror: 7;i)"
+    },
+    {
+      "word": "能",
+      "chord": "2egn",
+      "keys": "2neng",
+      "pinyin": "néng",
+      "english": "can",
+      "note": "Tone 2 + neng (can)"
+    },
+    {
+      "word": "狗",
+      "chord": "3gou",
+      "keys": "3gou",
+      "pinyin": "gǒu",
+      "english": "dog",
+      "note": "Tone 3 + gou (dog)"
+    },
+    {
+      "word": "快",
+      "chord": "4aiku",
+      "keys": "4kuai",
+      "pinyin": "kuài",
+      "english": "fast",
+      "note": "Tone 4 + kuai (fast)"
+    },
+    {
+      "word": "书",
+      "chord": "1hsu",
+      "keys": "1shu",
+      "pinyin": "shū",
+      "english": "book",
+      "note": "Tone 1 + shu (book)"
+    },
+    {
+      "word": "档",
+      "chord": "3adgn",
+      "keys": "3dang",
+      "pinyin": "dǎng",
+      "english": "file",
+      "note": "Tone 3 + dang (file)"
+    },
+    {
+      "word": "命",
+      "chord": "4gimn",
+      "keys": "4ming",
+      "pinyin": "mìng",
+      "english": "life",
+      "note": "Tone 4 + ming (life)"
+    },
+    {
+      "word": "上",
+      "chord": "4aghns",
+      "keys": "4shang",
+      "pinyin": "shàng",
+      "english": "on",
+      "note": "Tone 4 + shang (on)"
+    },
+    {
+      "word": "不",
+      "chord": "4bu",
+      "keys": "4bu",
+      "pinyin": "bù",
+      "english": "no",
+      "note": "Tone 4 + bu (no)"
+    },
+    {
+      "word": "怎",
+      "chord": "3enz",
+      "keys": "3zen",
+      "pinyin": "zěn",
+      "english": "how",
+      "note": "Tone 3 + zen (how)"
+    },
+    {
+      "word": "谁",
+      "chord": "2ehis",
+      "keys": "2shei",
+      "pinyin": "shéi",
+      "english": "who",
+      "note": "Tone 2 + shei (who)"
+    },
+    {
+      "word": "我",
+      "chord": "3ow",
+      "keys": "3wo",
+      "pinyin": "wǒ",
+      "english": "i",
+      "note": "Tone 3 + wo (I/me)"
+    },
+    {
+      "word": "他",
+      "chord": "1at",
+      "keys": "1ta",
+      "pinyin": "tā",
+      "english": "he",
+      "note": "Tone 1 + ta (he/him)"
+    },
+    {
+      "word": "她",
+      "chord": "2at",
+      "keys": "2ta",
+      "pinyin": "tā",
+      "english": "she",
+      "note": "Tone 2 + ta (she/her)"
+    },
+    {
+      "word": "它",
+      "chord": "3at",
+      "keys": "3ta",
+      "pinyin": "tā",
+      "english": "it",
+      "note": "Tone 3 + ta (it)"
+    },
+    {
+      "word": "们",
+      "chord": "2emn",
+      "keys": "2men",
+      "pinyin": "men",
+      "english": "we",
+      "note": "Tone 2 + men (plural/we)"
+    },
+    {
+      "word": "你",
+      "chord": "3in",
+      "keys": "3ni",
+      "pinyin": "nǐ",
+      "english": "you",
+      "note": "Tone 3 + ni (you)"
+    },
+    {
+      "word": "什",
+      "chord": "2ehns",
+      "keys": "2shen",
+      "pinyin": "shén",
+      "english": "what",
+      "note": "Tone 2 + shen (what)"
+    },
+    {
+      "word": "时",
+      "chord": "2his",
+      "keys": "2shi",
+      "pinyin": "shí",
+      "english": "when",
+      "note": "Tone 2 + shi (time/when)"
+    },
+    {
+      "word": "为",
+      "chord": "4eiw",
+      "keys": "4wei",
+      "pinyin": "wèi",
+      "english": "why",
+      "note": "Tone 4 + wei (why/for)"
+    },
+    {
+      "word": "哪",
+      "chord": "3an",
+      "keys": "3na",
+      "pinyin": "nǎ",
+      "english": "where",
+      "note": "Tone 3 + na (where/which)"
+    },
+    {
+      "word": "走",
+      "chord": "3ouz",
+      "keys": "3zou",
+      "pinyin": "zǒu",
+      "english": "walk",
+      "note": "Tone 3 + zou (walk)"
+    },
+    {
+      "word": "里",
+      "chord": "3il",
+      "keys": "3li",
+      "pinyin": "lǐ",
+      "english": "in",
+      "note": "Tone 3 + li (inside/in)"
+    },
+    {
+      "word": "大",
+      "chord": "4ad",
+      "keys": "4da",
+      "pinyin": "dà",
+      "english": "big",
+      "note": "Tone 4 + da (big)"
+    },
+    {
+      "word": "步",
+      "chord": "24bu",
+      "keys": "24bu",
+      "pinyin": "bù",
+      "english": "step",
+      "note": "Tone 4 + bu2 (step/pace)"
+    },
+    {
+      "word": "如",
+      "chord": "2ru",
+      "keys": "2ru",
+      "pinyin": "rú",
+      "english": "if",
+      "note": "Tone 2 + ru (if/as)"
+    },
+    {
+      "word": "来",
+      "chord": "2ail",
+      "keys": "2lai",
+      "pinyin": "lái",
+      "english": "come",
+      "note": "Tone 2 + lai (come)"
+    },
+    {
+      "word": "给",
+      "chord": "3egi",
+      "keys": "3gei",
+      "pinyin": "gěi",
+      "english": "for",
+      "note": "Tone 3 + gei (give/for)"
+    },
+    {
+      "word": "做",
+      "chord": "4ouz",
+      "keys": "4zuo",
+      "pinyin": "zuò",
+      "english": "do",
+      "note": "Tone 4 + zuo (do/make)"
+    },
+    {
+      "word": "有",
+      "chord": "3ouy",
+      "keys": "3you",
+      "pinyin": "yǒu",
+      "english": "have",
+      "note": "Tone 3 + you (have)"
+    },
+    {
+      "word": "和",
+      "chord": "2eh",
+      "keys": "2he",
+      "pinyin": "hé",
+      "english": "with",
+      "note": "Tone 2 + he (with/and)"
+    },
+    {
+      "word": "想",
+      "chord": "3aginx",
+      "keys": "3xiang",
+      "pinyin": "xiǎng",
+      "english": "want",
+      "note": "Tone 3 + xiang (want/think)"
+    },
+    {
+      "word": "任",
+      "chord": "4enr",
+      "keys": "4ren",
+      "pinyin": "rèn",
+      "english": "any",
+      "note": "Tone 4 + ren (any)"
+    },
+    {
+      "word": "问",
+      "chord": "4enw",
+      "keys": "4wen",
+      "pinyin": "wèn",
+      "english": "ask",
+      "note": "Tone 4 + wen (ask)"
+    },
+    {
+      "word": "窗",
+      "chord": "1acghnu",
+      "keys": "1chuang",
+      "pinyin": "chuāng",
+      "english": "window",
+      "note": "Tone 1 + chuang (window)"
+    },
+    {
+      "word": "那",
+      "chord": "14an",
+      "keys": "14na",
+      "pinyin": "nà",
+      "english": "that",
+      "note": "Tone 4 + na1 (that)"
+    },
+    {
+      "word": "机",
+      "chord": "1ij",
+      "keys": "1ji",
+      "pinyin": "jī",
+      "english": "machine",
+      "note": "Tone 1 + ji (machine)"
+    },
+    {
+      "word": "连",
+      "chord": "2ailn",
+      "keys": "2lian",
+      "pinyin": "lián",
+      "english": "connect",
+      "note": "Tone 2 + lian (connect/link)"
+    },
+    {
+      "word": "地",
+      "chord": "4di",
+      "keys": "4di",
+      "pinyin": "dì",
+      "english": "local",
+      "note": "Tone 4 + di (local/place)"
+    },
+    {
+      "word": "关",
+      "chord": "1agnu",
+      "keys": "1guan",
+      "pinyin": "guān",
+      "english": "about",
+      "note": "Tone 1 + guan (about/concern)"
+    },
+    {
+      "word": "思",
+      "chord": "1is",
+      "keys": "1si",
+      "pinyin": "sī",
+      "english": "think",
+      "note": "Tone 1 + si (think)"
+    },
+    {
+      "word": "请",
+      "chord": "3ginq",
+      "keys": "3qing",
+      "pinyin": "qǐng",
+      "english": "please",
+      "note": "Tone 3 + qing (please)"
+    },
+    {
+      "word": "界",
+      "chord": "4eij",
+      "keys": "4jie",
+      "pinyin": "jiè",
+      "english": "world",
+      "note": "Tone 4 + jie (world)"
+    },
+    {
+      "word": "速",
+      "chord": "4su",
+      "keys": "4su",
+      "pinyin": "sù",
+      "english": "steno",
+      "note": "Tone 4 + su (speed/steno)"
+    },
+    {
+      "word": "码",
+      "chord": "3am",
+      "keys": "3ma",
+      "pinyin": "mǎ",
+      "english": "code",
+      "note": "Tone 3 + ma (code)"
+    },
+    {
+      "word": "脑",
+      "chord": "3ano",
+      "keys": "3nao",
+      "pinyin": "nǎo",
+      "english": "computer",
+      "note": "Tone 3 + nao (brain/computer)"
+    },
+    {
+      "word": "盘",
+      "chord": "2anp",
+      "keys": "2pan",
+      "pinyin": "pán",
+      "english": "keyboard",
+      "note": "Tone 2 + pan (keyboard/disc)"
+    },
+    {
+      "word": "功",
+      "chord": "1gno",
+      "keys": "1gong",
+      "pinyin": "gōng",
+      "english": "function",
+      "note": "Tone 1 + gong (function)"
+    },
+    {
+      "word": "站",
+      "chord": "4ahnz",
+      "keys": "4zhan",
+      "pinyin": "zhàn",
+      "english": "stand",
+      "note": "Tone 4 + zhan (stand)"
+    },
+    {
+      "word": "拿",
+      "chord": "2an",
+      "keys": "2na",
+      "pinyin": "ná",
+      "english": "take",
+      "note": "Tone 2 + na (take)"
+    },
+    {
+      "word": "转",
+      "chord": "3ahnuz",
+      "keys": "3zhuan",
+      "pinyin": "zhuǎn",
+      "english": "turn",
+      "note": "Tone 3 + zhuan (turn)"
+    },
+    {
+      "word": "形",
+      "chord": "2ginpx",
+      "keys": "2xing",
+      "pinyin": "xíng",
+      "english": "form",
+      "note": "Tone 2 + xing (form/shape)"
+    },
+    {
+      "word": "按",
+      "chord": "4an",
+      "keys": "4an",
+      "pinyin": "àn",
+      "english": "press",
+      "note": "Tone 4 + an (press)"
+    },
+    {
+      "word": "动",
+      "chord": "4dgnos",
+      "keys": "4dong",
+      "pinyin": "dòng",
+      "english": "act",
+      "note": "Tone 4 + dong (act/action)"
+    },
+    {
+      "word": "am",
+      "chord": "am",
+      "keys": "am",
+      "note": "1st person be (I am)",
+      "english": "am"
+    },
+    {
+      "word": "andlook",
+      "chord": "adkln",
+      "keys": "adkln",
+      "note": "Look compound (and look)",
+      "english": "andlook"
+    },
+    {
+      "word": "are",
+      "chord": "aer",
+      "keys": "aer",
+      "note": "2nd/plural be",
+      "english": "are"
+    },
+    {
+      "word": "is",
+      "chord": "is",
+      "keys": "is",
+      "note": "3rd person be",
+      "english": "is"
+    },
+    {
+      "word": "middles",
+      "chord": "dilms",
+      "keys": "dilms",
+      "note": "Center / midpoint",
+      "english": "middles"
+    },
+    {
+      "word": "one",
+      "chord": "eno",
+      "keys": "eno",
+      "note": "Single entity / number one",
+      "english": "one"
+    },
+    {
+      "word": "remove",
+      "chord": "emov",
+      "keys": "emov",
+      "note": "Take away / delete",
+      "english": "remove"
+    },
+    {
+      "word": "something",
+      "chord": "mnost",
+      "keys": "mnost",
+      "note": "Unspecified entity",
+      "english": "something"
+    },
+    {
+      "word": "strucuture",
+      "chord": "ckstu",
+      "keys": "ckstu",
+      "note": "Framework / arrangement (structure)",
+      "english": "strucuture"
+    },
+    {
+      "word": "thing",
+      "chord": "ghin",
+      "keys": "ghin",
+      "note": "Object / entity",
+      "english": "thing"
+    },
+    {
+      "word": "this",
+      "chord": "hist",
+      "keys": "hist",
+      "note": "Specific entity (near)",
+      "english": "this"
+    },
+    {
+      "word": "记",
+      "chord": "4ij",
+      "keys": "4ji",
+      "pinyin": "jì",
+      "english": "record",
+      "note": "Tone 4 + ji (record/write down)"
+    },
+    {
+      "word": "打",
+      "chord": "3ad",
+      "keys": "3da",
+      "pinyin": "dǎ",
+      "english": "type",
+      "note": "Tone 3 + da (type/strike/hit)"
+    },
+    {
+      "word": "字",
+      "chord": "4iz",
+      "keys": "4zi",
+      "pinyin": "zì",
+      "english": "character",
+      "note": "Tone 4 + zi (character/letter)"
+    },
+    {
+      "word": "目",
+      "chord": "4mu",
+      "keys": "4mu",
+      "pinyin": "mù",
+      "english": "eye",
+      "note": "Tone 4 + mu (eye)"
+    },
+    {
+      "word": "标",
+      "chord": "1abio",
+      "keys": "1biao",
+      "pinyin": "biāo",
+      "english": "target",
+      "note": "Tone 1 + biao (mark/target/standard)"
+    },
+    {
+      "word": "么",
+      "chord": "5em",
+      "keys": "5me",
+      "pinyin": "me",
+      "english": "suffix",
+      "note": "Tone 5 + me (question suffix)"
+    },
+    {
+      "word": "仅",
+      "chord": "3ijn",
+      "keys": "3jin",
+      "pinyin": "jǐn",
+      "english": "only",
+      "note": "Tone 3 + jin (only/merely)"
+    },
+    {
+      "word": "限",
+      "chord": "4ainx",
+      "keys": "4xian",
+      "pinyin": "xiàn",
+      "english": "limit",
+      "note": "Tone 4 + xian (limit/restrict)"
+    },
+    {
+      "word": "温",
+      "chord": "1enw",
+      "keys": "1wen",
+      "pinyin": "wēn",
+      "english": "warm",
+      "note": "Tone 1 + wen (warm/gentle)"
+    },
+    {
+      "word": "良",
+      "chord": "2agiln",
+      "keys": "2liang",
+      "pinyin": "liáng",
+      "english": "good",
+      "note": "Tone 2 + liang (good/kind)"
+    },
+    {
+      "word": "女",
+      "chord": "3nu",
+      "keys": "3nu",
+      "pinyin": "nǚ",
+      "english": "woman",
+      "note": "Tone 3 + nu (woman/female)"
+    },
+    {
+      "word": "士",
+      "chord": "14his",
+      "keys": "14shi",
+      "pinyin": "shì",
+      "english": "scholar",
+      "note": "Tone 4 + shi2 (person/scholar)"
+    },
+    {
+      "word": "指",
+      "chord": "3hiz",
+      "keys": "3zhi",
+      "pinyin": "zhǐ",
+      "english": "point",
+      "note": "Tone 3 + zhi (point/indicate)"
+    },
+    {
+      "word": "所",
+      "chord": "3osu",
+      "keys": "3suo",
+      "pinyin": "suǒ",
+      "english": "place",
+      "note": "Tone 3 + suo (place/that which)"
+    },
+    {
+      "word": "的",
+      "chord": "5de",
+      "keys": "5de",
+      "pinyin": "de",
+      "english": "of",
+      "note": "Tone 5 + de (structural particle)"
+    },
+    {
+      "word": "边",
+      "chord": "1abin",
+      "keys": "1bian",
+      "pinyin": "biān",
+      "english": "edge",
+      "note": "Tone 1 + bian (edge/side)"
+    },
+    {
+      "word": "缘",
+      "chord": "2anuy",
+      "keys": "2yuan",
+      "pinyin": "yuán",
+      "english": "margin",
+      "note": "Tone 2 + yuan (edge/margin)"
+    },
+    {
+      "word": "情",
+      "chord": "2ginq",
+      "keys": "2qing",
+      "pinyin": "qíng",
+      "english": "situation",
+      "note": "Tone 2 + qing (situation/feeling)"
+    },
+    {
+      "word": "况",
+      "chord": "4agknu",
+      "keys": "4kuang",
+      "pinyin": "kuàng",
+      "english": "condition",
+      "note": "Tone 4 + kuang (condition/circumstance)"
+    },
+    {
+      "word": "速记",
+      "chord": "4ijsu",
+      "keys": "4su+4ji",
+      "pinyin": "sùjì",
+      "english": "steno",
+      "note": "Compound: fast + record (steno/shorthand)"
+    },
+    {
+      "word": "打字",
+      "chord": "34adiz",
+      "keys": "3da+4zi",
+      "pinyin": "dǎzì",
+      "english": "typing",
+      "note": "Compound: type + character (typing)"
+    },
+    {
+      "word": "速记打字",
+      "chord": "34adijsuz",
+      "keys": "3da+4ji+4su+4zi",
+      "pinyin": "sùjì dǎzì",
+      "english": "steno typing",
+      "note": "Compound: steno typing"
+    },
+    {
+      "word": "目标",
+      "chord": "14abimo",
+      "keys": "4mu+1biao",
+      "pinyin": "mùbiāo",
+      "english": "goal",
+      "note": "Compound: eye + target (goal)"
+    },
+    {
+      "word": "什么",
+      "chord": "25ehmns",
+      "keys": "2shen+5me",
+      "pinyin": "shénme",
+      "english": "what",
+      "note": "Compound: what"
+    },
+    {
+      "word": "指标",
+      "chord": "13abhio",
+      "keys": "3zhi+1biao",
+      "pinyin": "zhǐbiāo",
+      "english": "metric",
+      "note": "Compound: point + target (indicator/metric)"
+    },
+    {
+      "word": "所有",
+      "chord": "3osuy",
+      "keys": "3suo+you",
+      "pinyin": "suǒyǒu",
+      "english": "all",
+      "note": "Compound: place + have (all/every)"
+    },
+    {
+      "word": "边缘",
+      "chord": "12abinuy",
+      "keys": "1bian+2yuan",
+      "pinyin": "biānyuán",
+      "english": "edge",
+      "note": "Compound: edge + margin (edge/fringe)"
+    },
+    {
+      "word": "情况",
+      "chord": "24agknoqu",
+      "keys": "2qing+4kuang",
+      "pinyin": "qíngkuàng",
+      "english": "situation",
+      "note": "Compound: feeling + condition (situation)"
+    },
+    {
+      "word": "仅限",
+      "chord": "34aijnx",
+      "keys": "3jin+4xian",
+      "pinyin": "jǐnxiàn",
+      "english": "only",
+      "note": "Compound: only + limit (limited to)"
+    },
+    {
+      "word": "温良",
+      "chord": "12aegilnw",
+      "keys": "1wen+2liang",
+      "pinyin": "wēnliáng",
+      "english": "gentle and kind",
+      "note": "Compound: warm + good (gentle)"
+    },
+    {
+      "word": "女士",
+      "chord": "134hinsu",
+      "keys": "3nu+14shi",
+      "pinyin": "nǚshì",
+      "english": "lady",
+      "note": "Compound: woman + scholar (lady/madam)"
+    },
+    {
+      "word": "add",
+      "chord": "2ad",
+      "keys": "2ad",
+      "note": "Clean 3-finger match (2 + a + d)"
+    },
+    {
+      "word": "all",
+      "chord": "2al",
+      "keys": "2al",
+      "note": "Clean 3-finger match (2 + a + l)"
+    },
+    {
+      "word": "beginner",
+      "chord": "begin",
+      "keys": "begin",
+      "note": "Clean 5-finger match (b-e-g-i-n)"
+    },
+    {
+      "word": "by",
+      "chord": "by",
+      "keys": "by",
+      "note": "Clean 2-finger match (Left Thumb B + Right Index Y)"
+    },
+    {
+      "word": "characters",
+      "chord": "achrs",
+      "keys": "chars",
+      "note": "Clean 5-finger match (c-h-a-r-s)"
+    },
+    {
+      "word": "chinese",
+      "chord": "chins",
+      "keys": "chins",
+      "note": "Clean 5-finger match (c-h-i-n-s)"
+    },
+    {
+      "word": "here",
+      "chord": "ehr",
+      "keys": "her",
+      "note": "Clean 3-finger match (h-e-r)"
+    },
+    {
+      "word": "not",
+      "chord": "not",
+      "keys": "not",
+      "note": "Clean 3-finger match (n-o-t)"
+    },
+    {
+      "word": "see",
+      "chord": "1es",
+      "keys": "1se",
+      "note": "Clean 3-finger match (1 + s + e)"
+    },
+    {
+      "word": "side",
+      "chord": "1dis",
+      "keys": "1sid",
+      "note": "Clean 4-finger match (1 + s + i + d)"
+    },
+    {
+      "word": "teachers",
+      "chord": "aehst",
+      "keys": "teahs",
+      "note": "Clean 5-finger match (t-e-a-h-s)"
+    },
+    {
+      "word": "try",
+      "chord": "ty",
+      "keys": "ty",
+      "note": "Clean 2-finger match (Left Index T + Right Index Y)"
+    },
+    {
+      "word": "two",
+      "chord": "otw",
+      "keys": "two",
+      "note": "Clean 3-finger match (t-w-o)"
+    },
+    {
+      "word": "after",
+      "chord": "aft",
+      "keys": "aft",
+      "note": "Clean 3-finger match (a-f-t)"
+    },
+    {
+      "word": "but",
+      "chord": "btu",
+      "keys": "but",
+      "note": "Clean 3-finger match (b-u-t)"
+    },
+    {
+      "word": "data",
+      "chord": "adt",
+      "keys": "dat",
+      "note": "Clean 3-finger match (d-a-t)"
+    },
+    {
+      "word": "dirrect",
+      "chord": "dirt",
+      "keys": "dirt",
+      "note": "Clean 4-finger match (d-i-r-t)"
+    },
+    {
+      "word": "doesn",
+      "chord": "dnos",
+      "keys": "dosn",
+      "note": "Clean 4-finger match (d-o-s-n)"
+    },
+    {
+      "word": "english",
+      "chord": "eglns",
+      "keys": "engls",
+      "note": "Clean 5-finger match (e-n-g-l-s)"
+    },
+    {
+      "word": "fix",
+      "chord": "fix",
+      "keys": "fix",
+      "note": "Clean 3-finger match (f-i-x)"
+    },
+    {
+      "word": "grammar",
+      "chord": "agmr",
+      "keys": "gamr",
+      "note": "Clean 4-finger match (g-a-m-r)"
+    },
+    {
+      "word": "happens",
+      "chord": "aehnps",
+      "keys": "hapens",
+      "note": "Clean 6-finger match (h-a-p-e-n-s)"
+    },
+    {
+      "word": "hit",
+      "chord": "hit",
+      "keys": "hit",
+      "note": "Clean 3-finger match (h-i-t)"
+    },
+    {
+      "word": "need",
+      "chord": "den",
+      "keys": "ned",
+      "note": "Clean 3-finger match (n-e-d)"
+    },
+    {
+      "word": "numbers",
+      "chord": "benrsu",
+      "keys": "nubers",
+      "note": "Clean 6-finger match (n-u-b-e-r-s)"
+    },
+    {
+      "word": "reason",
+      "chord": "aenors",
+      "keys": "reason",
+      "note": "Clean 6-finger match (r-e-a-s-o-n)"
+    },
+    {
+      "word": "some",
+      "chord": "emos",
+      "keys": "some",
+      "note": "Clean 4-finger match (s-o-m-e)"
+    },
+    {
+      "word": "special",
+      "chord": "aeps",
+      "keys": "specl",
+      "note": "Clean 4-finger match (s-p-e-l)"
+    },
+    {
+      "word": "t",
+      "chord": "1t",
+      "keys": "1t",
+      "note": "Single-letter rule (1 + t)"
+    },
+    {
+      "word": "triggers",
+      "chord": "girt",
+      "keys": "trig",
+      "note": "Clean 4-finger match (t-r-i-g)"
+    },
+    {
+      "word": "work",
+      "chord": "korw",
+      "keys": "work",
+      "note": "Clean 4-finger match (w-o-r-k)"
+    },
+    {
+      "word": "works",
+      "chord": "korsw",
+      "keys": "works",
+      "note": "work + s (w-o-r-k-s)"
+    },
+    {
+      "word": "answer",
+      "chord": "anrs",
+      "keys": "ansr",
+      "note": "Clean 4-finger match (a-n-s-r)"
+    },
+    {
+      "word": "change",
+      "chord": "acghn",
+      "keys": "chang",
+      "note": "Clean 5-finger match (c-h-a-n-g)"
+    },
+    {
+      "word": "click",
+      "chord": "1cil",
+      "keys": "1cli",
+      "note": "1 + c-l-i (click)"
+    },
+    {
+      "word": "each",
+      "chord": "aeh",
+      "keys": "eah",
+      "note": "Clean 3-finger match (e-a-h)"
+    },
+    {
+      "word": "exercise",
+      "chord": "erx",
+      "keys": "exr",
+      "note": "Clean 3-finger match (e-x-r)"
+    },
+    {
+      "word": "exercises",
+      "chord": "1ersx",
+      "keys": "1exrs",
+      "note": "exercise + s"
+    },
+    {
+      "word": "given",
+      "chord": "egin",
+      "keys": "gien",
+      "note": "Clean 4-finger match (g-i-e-n)"
+    },
+    {
+      "word": "just",
+      "chord": "jst",
+      "keys": "jst",
+      "note": "Clean 3-finger match (j-s-t)"
+    },
+    {
+      "word": "more",
+      "chord": "emor",
+      "keys": "more",
+      "note": "Clean 4-finger match (m-o-r-e)"
+    },
+    {
+      "word": "next",
+      "chord": "entx",
+      "keys": "next",
+      "note": "Clean 4-finger match (n-e-x-t)"
+    },
+    {
+      "word": "question",
+      "chord": "eqstu",
+      "keys": "quest",
+      "note": "Clean 5-finger match (q-u-e-s-t)"
+    },
+    {
+      "word": "reading",
+      "chord": "adgr",
+      "keys": "radg",
+      "note": "read + ing (clean match)"
+    },
+    {
+      "word": "say",
+      "chord": "asy",
+      "keys": "say",
+      "note": "Clean 3-finger match (s-a-y)"
+    },
+    {
+      "word": "section",
+      "chord": "cnst",
+      "keys": "sctn",
+      "note": "Clean 4-finger match (s-c-t-n)"
+    },
+    {
+      "word": "tenses",
+      "chord": "1enst",
+      "keys": "1tens",
+      "note": "1 + t-e-n-s (tenses)"
+    },
+    {
+      "word": "text",
+      "chord": "etx",
+      "keys": "ext",
+      "note": "Clean 3-finger match (e-x-t)"
+    },
+    {
+      "word": "used",
+      "chord": "dsu",
+      "keys": "usd",
+      "note": "Clean 3-finger match (u-s-d)"
+    },
+    {
+      "word": "way",
+      "chord": "awy",
+      "keys": "way",
+      "note": "Clean 3-finger match (w-a-y)"
+    },
+    {
+      "word": "will",
+      "chord": "ilw",
+      "keys": "wil",
+      "note": "Clean 3-finger match (w-i-l)"
+    },
+    {
+      "word": "able",
+      "chord": "abel",
+      "keys": "able",
+      "note": "Clean 4-finger match (a-b-l-e)"
+    },
+    {
+      "word": "also",
+      "chord": "als",
+      "keys": "als",
+      "note": "Clean 3-finger match (a-l-s)"
+    },
+    {
+      "word": "as",
+      "chord": "as",
+      "keys": "as",
+      "note": "2-finger chord (a-s)"
+    },
+    {
+      "word": "between",
+      "chord": "bntw",
+      "keys": "btwn",
+      "note": "Clean 4-finger match (b-t-w-n)"
+    },
+    {
+      "word": "column",
+      "chord": "clmn",
+      "keys": "clmn",
+      "note": "Clean 4-finger match (c-l-m-n)"
+    },
+    {
+      "word": "different",
+      "chord": "dfi",
+      "keys": "dif",
+      "note": "Clean 3-finger match (d-i-f)"
+    },
+    {
+      "word": "doc",
+      "chord": "1cdo",
+      "keys": "1doc",
+      "note": "1 + d-o-c (doc)"
+    },
+    {
+      "word": "enumerated",
+      "chord": "emnr",
+      "keys": "enmr",
+      "note": "Clean 4-finger match (e-n-m-r)"
+    },
+    {
+      "word": "folder",
+      "chord": "1dfl",
+      "keys": "1fld",
+      "note": "1 + f-l-d (folder)"
+    },
+    {
+      "word": "following",
+      "chord": "1flw",
+      "keys": "1flw",
+      "note": "1 + f-l-w (following)"
+    },
+    {
+      "word": "from",
+      "chord": "fmr",
+      "keys": "frm",
+      "note": "f-r-m (from)"
+    },
+    {
+      "word": "game",
+      "chord": "aegm",
+      "keys": "game",
+      "note": "Clean 4-finger match (g-a-m-e)"
+    },
+    {
+      "word": "give",
+      "chord": "1giv",
+      "keys": "1giv",
+      "note": "1 + g-i-v (give)"
+    },
+    {
+      "word": "glossary",
+      "chord": "1gls",
+      "keys": "1gls",
+      "note": "1 + g-l-s (glossary)"
+    },
+    {
+      "word": "intended",
+      "chord": "dint",
+      "keys": "intd",
+      "note": "Clean 4-finger match (i-n-t-d)"
+    },
+    {
+      "word": "modes",
+      "chord": "dmos",
+      "keys": "mods",
+      "note": "Clean 4-finger match (m-o-d-s)"
+    },
+    {
+      "word": "movable",
+      "chord": "bmov",
+      "keys": "movb",
+      "note": "Clean 4-finger match (m-o-v-b)"
+    },
+    {
+      "word": "note",
+      "chord": "1not",
+      "keys": "1not",
+      "note": "1 + n-o-t (note)"
+    },
+    {
+      "word": "of",
+      "chord": "1fo",
+      "keys": "1of",
+      "note": "1 + o-f (of)"
+    },
+    {
+      "word": "output",
+      "chord": "optu",
+      "keys": "outp",
+      "note": "Clean 4-finger match (o-u-t-p)"
+    },
+    {
+      "word": "pannel",
+      "chord": "alnp",
+      "keys": "panl",
+      "note": "Clean 4-finger match (p-a-n-l)"
+    },
+    {
+      "word": "past",
+      "chord": "apst",
+      "keys": "past",
+      "note": "Clean 4-finger match (p-a-s-t)"
+    },
+    {
+      "word": "possible",
+      "chord": "bops",
+      "keys": "posb",
+      "note": "Clean 4-finger match (p-o-s-b)"
+    },
+    {
+      "word": "same",
+      "chord": "aems",
+      "keys": "same",
+      "note": "Clean 4-finger match (s-a-m-e)"
+    },
+    {
+      "word": "switch",
+      "chord": "1stw",
+      "keys": "1swt",
+      "note": "1 + s-w-t (switch)"
+    },
+    {
+      "word": "tense",
+      "chord": "nst",
+      "keys": "tns",
+      "note": "Clean 3-finger match (t-n-s)"
+    },
+    {
+      "word": "tests",
+      "chord": "1st",
+      "keys": "1ts",
+      "note": "1 + t-s (tests)"
+    },
+    {
+      "word": "togglable",
+      "chord": "1glt",
+      "keys": "1tgl",
+      "note": "1 + t-g-l (togglable)"
+    },
+    {
+      "word": "vocabulary",
+      "chord": "bcov",
+      "keys": "vocb",
+      "note": "Clean 4-finger match (v-o-c-b)"
+    },
+    {
+      "word": "well",
+      "chord": "elw",
+      "keys": "wel",
+      "note": "Clean 3-finger match (w-e-l)"
+    },
+    {
+      "word": "wholed",
+      "chord": "dhlw",
+      "keys": "whld",
+      "note": "Clean 4-finger match (w-h-l-d)"
+    },
+    {
+      "word": "copying",
+      "chord": "cinp",
+      "keys": "cpin",
+      "note": "Clean 4-finger match (c-p-i-n)"
+    },
+    {
+      "word": "created",
+      "chord": "1cdr",
+      "keys": "1crd",
+      "note": "1 + c-r-d (created)"
+    },
+    {
+      "word": "last",
+      "chord": "alst",
+      "keys": "last",
+      "note": "Clean 4-finger match (l-a-s-t)"
+    },
+    {
+      "word": "list",
+      "chord": "ilst",
+      "keys": "list",
+      "note": "Clean 4-finger match (l-i-s-t)"
+    },
+    {
+      "word": "pronouns",
+      "chord": "nprs",
+      "keys": "prns",
+      "note": "Clean 4-finger match (p-r-n-s)"
+    },
+    {
+      "word": "toggle",
+      "chord": "1got",
+      "keys": "1tog",
+      "note": "1 + t-o-g (toggle)"
+    },
+    {
+      "word": "unmapped",
+      "chord": "dnpu",
+      "keys": "unpd",
+      "note": "Clean 4-finger match (u-n-p-d)"
+    },
+    {
+      "word": "untoggle",
+      "chord": "lntu",
+      "keys": "untl",
+      "note": "Clean 4-finger match (u-n-t-l)"
+    },
+    {
+      "word": "ad",
+      "chord": "1ad",
+      "keys": "1ad",
+      "note": "1 + a-d (ad / advertisement)"
+    }
+  ],
+  "chord_map": {
+    "acn": "can ",
+    "dgo": "dog ",
+    "afs": "fast ",
+    "bko": "book ",
+    "efil": "file ",
+    "1efil": "life ",
+    "no": "on ",
+    "1no": "no ",
+    "how": "how ",
+    "1how": "who ",
+    "2how": "whom ",
+    "1i": "i ",
+    "eh": "he ",
+    "ehs": "she ",
+    "it": "it ",
+    "ew": "we ",
+    "eht": "the ",
+    "oy": "you ",
+    "ahtw": "what ",
+    "ehnw": "when ",
+    "hw": "why ",
+    "ehrw": "where ",
+    "chiw": "which ",
+    "ehow": "whose ",
+    "aklw": "walk ",
+    "in": "in ",
+    "bgi": "big ",
+    "epst": "step ",
+    "fi": "if ",
+    "cmo": "come ",
+    "fo": "for ",
+    "do": "do ",
+    "aehv": "have ",
+    "hitw": "with ",
+    "antw": "want ",
+    "any": "any ",
+    "aks": "ask ",
+    "dinow": "window ",
+    "aht": "that ",
+    "acimn": "machine ",
+    "cnot": "connect ",
+    "acl": "local ",
+    "abotu": "about ",
+    "hint": "think ",
+    "aelps": "please ",
+    "dorw": "world ",
+    "enost": "steno ",
+    "co": "code ",
+    "cmopt": "computer ",
+    "abekory": "keyboard ",
+    "cfinou": "function ",
+    "adnst": "stand ",
+    "aekt": "take ",
+    "ntu": "turn ",
+    "fmo": "form ",
+    "eprs": "press ",
+    "act": "act ",
+    "1a": "a ",
+    "acltu": "actual ",
+    "actually": "actually ",
+    "adforw": "forward ",
+    "functionality": "functionality ",
+    "ghirt": "right ",
+    "now": "now ",
+    "emti": "time ",
+    "timer": "timer ",
+    "ot": "to ",
+    "aitw": "wait ",
+    "waiting": "waiting ",
+    "adn": "and ",
+    "be": "be ",
+    "box": "box ",
+    "aclr": "clear ",
+    "aclrg": "clearing ",
+    "ctu": "cut ",
+    "dnp": "depend ",
+    "dgnp": "depending ",
+    "aist": "it was ",
+    "elt": "let ",
+    "elst": "lets ",
+    "aekm": "make ",
+    "noy": "only ",
+    "ehot": "other ",
+    "1op": "pop ",
+    "enprs": "present ",
+    "adns": "sand ",
+    "sandbox": "sandbox ",
+    "enst": "sentence ",
+    "hors": "short ",
+    "shortcut": "shortcut ",
+    "eilmps": "simple ",
+    "os": "so ",
+    "abelt": "table ",
+    "epty": "type ",
+    "pu": "up ",
+    "bev": "verb ",
+    "besv": "verbs ",
+    "ehvw": "we have ",
+    "4ehz": "这 ",
+    "4his": "是 ",
+    "4ai": "爱 ",
+    "2egn": "能 ",
+    "3gou": "狗 ",
+    "4aiku": "快 ",
+    "1hsu": "书 ",
+    "3adgn": "档 ",
+    "4gimn": "命 ",
+    "4aghns": "上 ",
+    "4bu": "不 ",
+    "3enz": "怎 ",
+    "2ehis": "谁 ",
+    "3ow": "我 ",
+    "1at": "他 ",
+    "2at": "她 ",
+    "3at": "它 ",
+    "2emn": "们 ",
+    "3in": "你 ",
+    "2ehns": "什 ",
+    "2his": "时 ",
+    "4eiw": "为 ",
+    "3an": "哪 ",
+    "3ouz": "走 ",
+    "3il": "里 ",
+    "4ad": "大 ",
+    "24bu": "步 ",
+    "2ru": "如 ",
+    "2ail": "来 ",
+    "3egi": "给 ",
+    "4ouz": "做 ",
+    "3ouy": "有 ",
+    "2eh": "和 ",
+    "3aginx": "想 ",
+    "4enr": "任 ",
+    "4enw": "问 ",
+    "1acghnu": "窗 ",
+    "14an": "那 ",
+    "1ij": "机 ",
+    "2ailn": "连 ",
+    "4di": "地 ",
+    "1agnu": "关 ",
+    "1is": "思 ",
+    "3ginq": "请 ",
+    "4eij": "界 ",
+    "4su": "速 ",
+    "3am": "码 ",
+    "3ano": "脑 ",
+    "2anp": "盘 ",
+    "1gno": "功 ",
+    "4ahnz": "站 ",
+    "2an": "拿 ",
+    "3ahnuz": "转 ",
+    "2ginpx": "形 ",
+    "4an": "按 ",
+    "4dgnos": "动 ",
+    "am": "am ",
+    "adkln": "andlook ",
+    "aer": "are ",
+    "is": "is ",
+    "dilms": "middles ",
+    "eno": "one ",
+    "emov": "remove ",
+    "mnost": "something ",
+    "ckstu": "strucuture ",
+    "ghin": "thing ",
+    "hist": "this ",
+    "4ij": "记 ",
+    "3ad": "打 ",
+    "4iz": "字 ",
+    "4mu": "目 ",
+    "1abio": "标 ",
+    "5em": "么 ",
+    "3ijn": "仅 ",
+    "4ainx": "限 ",
+    "1enw": "温 ",
+    "2agiln": "良 ",
+    "3nu": "女 ",
+    "14his": "士 ",
+    "3hiz": "指 ",
+    "3osu": "所 ",
+    "5de": "的 ",
+    "1abin": "边 ",
+    "2anuy": "缘 ",
+    "2ginq": "情 ",
+    "4agknu": "况 ",
+    "4ijsu": "速记 ",
+    "34adiz": "打字 ",
+    "34adijsuz": "速记打字 ",
+    "14abimo": "目标 ",
+    "25ehmns": "什么 ",
+    "13abhio": "指标 ",
+    "3osuy": "所有 ",
+    "12abinuy": "边缘 ",
+    "24agknoqu": "情况 ",
+    "34aijnx": "仅限 ",
+    "12aegilnw": "温良 ",
+    "134hinsu": "女士 ",
+    "2ad": "add ",
+    "2al": "all ",
+    "begin": "beginner ",
+    "by": "by ",
+    "achrs": "characters ",
+    "chins": "chinese ",
+    "ehr": "here ",
+    "not": "not ",
+    "1es": "see ",
+    "1dis": "side ",
+    "aehst": "teachers ",
+    "ty": "try ",
+    "otw": "two ",
+    "aft": "after ",
+    "btu": "but ",
+    "adt": "data ",
+    "dirt": "dirrect ",
+    "dnos": "doesn ",
+    "eglns": "english ",
+    "fix": "fix ",
+    "agmr": "grammar ",
+    "aehnps": "happens ",
+    "hit": "hit ",
+    "den": "need ",
+    "benrsu": "numbers ",
+    "aenors": "reason ",
+    "emos": "some ",
+    "aeps": "special ",
+    "1t": "t ",
+    "girt": "triggers ",
+    "korw": "work ",
+    "korsw": "works ",
+    "anrs": "answer ",
+    "acghn": "change ",
+    "1cil": "click ",
+    "aeh": "each ",
+    "erx": "exercise ",
+    "1ersx": "exercises ",
+    "egin": "given ",
+    "jst": "just ",
+    "emor": "more ",
+    "entx": "next ",
+    "eqstu": "question ",
+    "adgr": "reading ",
+    "asy": "say ",
+    "cnst": "section ",
+    "1enst": "tenses ",
+    "etx": "text ",
+    "dsu": "used ",
+    "awy": "way ",
+    "ilw": "will ",
+    "abel": "able ",
+    "als": "also ",
+    "as": "as ",
+    "bntw": "between ",
+    "clmn": "column ",
+    "dfi": "different ",
+    "1cdo": "doc ",
+    "emnr": "enumerated ",
+    "1dfl": "folder ",
+    "1flw": "following ",
+    "fmr": "from ",
+    "aegm": "game ",
+    "1giv": "give ",
+    "1gls": "glossary ",
+    "dint": "intended ",
+    "dmos": "modes ",
+    "bmov": "movable ",
+    "1not": "note ",
+    "1fo": "of ",
+    "optu": "output ",
+    "alnp": "pannel ",
+    "apst": "past ",
+    "bops": "possible ",
+    "aems": "same ",
+    "1stw": "switch ",
+    "nst": "tense ",
+    "1st": "tests ",
+    "1glt": "togglable ",
+    "bcov": "vocabulary ",
+    "elw": "well ",
+    "dhlw": "wholed ",
+    "cinp": "copying ",
+    "1cdr": "created ",
+    "alst": "last ",
+    "ilst": "list ",
+    "nprs": "pronouns ",
+    "1got": "toggle ",
+    "dnpu": "unmapped ",
+    "lntu": "untoggle ",
+    "1ad": "ad ",
+    "add": "add ",
+    "all": "all ",
+    "rty": "try ",
+    "achr": "character ",
+    "aehrt": "teacher ",
+    "after": "after ",
+    "data": "data ",
+    "direct": "direct ",
+    "doesn": "doesn ",
+    "english": "english ",
+    "grammar": "grammar ",
+    "happens": "happens ",
+    "need": "need ",
+    "numbers": "numbers ",
+    "reason": "reason ",
+    "some": "some ",
+    "special": "special ",
+    "triggers": "triggers ",
+    "work": "work ",
+    "works": "works ",
+    "answer": "answer ",
+    "change": "change ",
+    "click": "click ",
+    "each": "each ",
+    "exercise": "exercise ",
+    "exercises": "exercises ",
+    "given": "given ",
+    "just": "just ",
+    "more": "more ",
+    "next": "next ",
+    "question": "question ",
+    "reading": "reading ",
+    "say": "say ",
+    "section": "section ",
+    "tenses": "tenses ",
+    "text": "text ",
+    "used": "used ",
+    "way": "way ",
+    "will": "will ",
+    "able": "able ",
+    "also": "also ",
+    "between": "between ",
+    "btwn": "between ",
+    "column": "column ",
+    "different": "different ",
+    "dif": "different ",
+    "doc": "doc ",
+    "enumerated": "enumerated ",
+    "enmr": "enumerated ",
+    "folder": "folder ",
+    "following": "following ",
+    "from": "from ",
+    "frm": "from ",
+    "game": "game ",
+    "give": "give ",
+    "glossary": "glossary ",
+    "intended": "intended ",
+    "intd": "intended ",
+    "modes": "modes ",
+    "mods": "modes ",
+    "movable": "movable ",
+    "movb": "movable ",
+    "note": "note ",
+    "of": "of ",
+    "output": "output ",
+    "outp": "output ",
+    "pannel": "pannel ",
+    "panl": "pannel ",
+    "panel": "pannel ",
+    "past": "past ",
+    "possible": "possible ",
+    "posb": "possible ",
+    "same": "same ",
+    "switch": "switch ",
+    "tense": "tense ",
+    "tns": "tense ",
+    "tests": "tests ",
+    "togglable": "togglable ",
+    "vocabulary": "vocabulary ",
+    "vocb": "vocabulary ",
+    "well": "well ",
+    "wel": "well ",
+    "wholed": "wholed ",
+    "whld": "wholed ",
+    "copying": "copying ",
+    "cpin": "copying ",
+    "created": "created ",
+    "1crd": "created ",
+    "last": "last ",
+    "list": "list ",
+    "pronouns": "pronouns ",
+    "prns": "pronouns ",
+    "toggle": "toggle ",
+    "1tog": "toggle ",
+    "unmapped": "unmapped ",
+    "unpd": "unmapped ",
+    "untoggle": "untoggle ",
+    "untl": "untoggle ",
+    "ad": "ad "
+  },
+  "chinese_to_english": {
+    "能": "can",
+    "狗": "dog",
+    "快": "fast",
+    "书": "book",
+    "档": "file",
+    "命": "life",
+    "上": "on",
+    "不": "no",
+    "怎": "how",
+    "谁": "who",
+    "我": "i",
+    "他": "he",
+    "她": "she",
+    "它": "it",
+    "们": "we",
+    "你": "you",
+    "什": "what",
+    "时": "when",
+    "为": "why",
+    "哪": "where",
+    "走": "walk",
+    "里": "in",
+    "大": "big",
+    "步": "step",
+    "如": "if",
+    "来": "come",
+    "给": "give",
+    "做": "do",
+    "有": "have",
+    "和": "with",
+    "想": "want",
+    "任": "any",
+    "问": "ask",
+    "窗": "window",
+    "那": "that",
+    "机": "machine",
+    "连": "connect",
+    "地": "local",
+    "关": "about",
+    "思": "think",
+    "请": "please",
+    "界": "world",
+    "速": "steno",
+    "码": "code",
+    "脑": "computer",
+    "盘": "keyboard",
+    "功": "function",
+    "站": "stand",
+    "拿": "take",
+    "转": "turn",
+    "形": "form",
+    "按": "press",
+    "动": "act",
+    "这": "this",
+    "是": "is",
+    "爱": "love",
+    "记": "record",
+    "打": "type",
+    "字": "character",
+    "目": "eye",
+    "标": "target",
+    "么": "what",
+    "仅": "only",
+    "限": "limit",
+    "温": "warm",
+    "良": "good",
+    "女": "woman",
+    "士": "scholar",
+    "指": "point",
+    "所": "place",
+    "的": "of",
+    "边": "side",
+    "缘": "margin",
+    "情": "situation",
+    "况": "condition",
+    "打字": "typing",
+    "只": "only",
+    "功能": "functionality",
+    "现": "now",
+    "对": "right",
+    "计时器": "timer",
+    "到": "to",
+    "等": "wait",
+    "等待": "waiting",
+    "实": "actual",
+    "实际": "actually",
+    "前": "forward",
+    "清": "clear",
+    "清理": "clearing",
+    "切": "cut",
+    "靠": "depend",
+    "依据": "depending",
+    "盒": "box",
+    "沙盒": "sandbox",
+    "表": "table",
+    "动词": "verbs",
+    "沙": "sand",
+    "短": "short",
+    "快捷键": "shortcut",
+    "简": "simple",
+    "让": "let",
+    "现在": "present",
+    "弹": "pop",
+    "句": "sentence",
+    "所以": "so",
+    "曾经": "it was",
+    "我们有": "we have",
+    "大人": "adult",
+    "大家": "everyone",
+    "大学": "university",
+    "大小": "size",
+    "拿出": "take out",
+    "拿下": "capture",
+    "拿起": "pick up",
+    "电话": "telephone",
+    "电脑": "computer",
+    "电视": "television",
+    "生日": "birthday",
+    "生命": "life",
+    "生产": "produce",
+    "大步走": "stride",
+    "速记": "steno",
+    "速记打字": "steno typing",
+    "目标": "goal",
+    "什么": "what",
+    "目标是什么": "what is the goal",
+    "目标是什么？": "what is the goal?",
+    "仅限": "only",
+    "温良": "gentle and kind",
+    "女士": "lady",
+    "仅限温良女士": "only for gentle and kind ladies",
+    "指标": "metric",
+    "指标是什么": "what is the metric",
+    "指标是什么？": "what is the metric?",
+    "所有": "all",
+    "边缘": "edge",
+    "情况": "situation",
+    "边缘情况": "edge cases",
+    "所有的边缘情况": "all the edge cases",
+    "加": "add",
+    "添加": "add",
+    "初学者": "beginner",
+    "新手": "beginner",
+    "由": "by",
+    "字符": "characters",
+    "中文": "chinese",
+    "汉语": "chinese",
+    "这里": "here",
+    "此": "here",
+    "没": "not",
+    "看": "see",
+    "见": "see",
+    "侧": "side",
+    "老师": "teachers",
+    "教师": "teachers",
+    "尝试": "try",
+    "二": "two",
+    "两个": "two",
+    "之后": "after",
+    "后": "after",
+    "但是": "but",
+    "但": "but",
+    "数据": "data",
+    "资料": "data",
+    "直接": "direct",
+    "直": "direct",
+    "英语": "english",
+    "英文": "english",
+    "修复": "fix",
+    "固定": "fix",
+    "语法": "grammar",
+    "发生": "happens",
+    "击中": "hit",
+    "需要": "need",
+    "数字": "numbers",
+    "号码": "numbers",
+    "原因": "reason",
+    "理由": "reason",
+    "一些": "some",
+    "某些": "some",
+    "特别": "special",
+    "特殊": "special",
+    "字母t": "t",
+    "触发器": "triggers",
+    "触发": "triggers",
+    "工作": "work",
+    "运转": "works",
+    "作品": "works",
+    "回答": "answer",
+    "答案": "answer",
+    "改变": "change",
+    "换": "change",
+    "点击": "click",
+    "每个": "each",
+    "各自": "each",
+    "练习": "exercise",
+    "运动": "exercise",
+    "给定": "given",
+    "给予": "give",
+    "刚刚": "just",
+    "仅仅": "just",
+    "更多": "more",
+    "更": "more",
+    "下一个": "next",
+    "其次": "next",
+    "问题": "question",
+    "疑问": "question",
+    "阅读": "reading",
+    "读": "reading",
+    "说": "say",
+    "讲": "say",
+    "部分": "section",
+    "小节": "section",
+    "时态": "tense",
+    "文本": "text",
+    "正文": "text",
+    "使用过的": "used",
+    "用": "used",
+    "道路": "way",
+    "方式": "way",
+    "将": "will",
+    "意志": "will",
+    "能够": "able",
+    "可以": "able",
+    "也": "also",
+    "同样": "also",
+    "作为": "as",
+    "如同": "as",
+    "之间": "between",
+    "当中": "between",
+    "列": "column",
+    "栏": "column",
+    "不同": "different",
+    "差异": "different",
+    "文档": "doc",
+    "文件": "doc",
+    "枚举的": "enumerated",
+    "列举的": "enumerated",
+    "文件夹": "folder",
+    "跟随": "following",
+    "下列": "following",
+    "来自": "from",
+    "从": "from",
+    "游戏": "game",
+    "词汇表": "glossary",
+    "术语表": "glossary",
+    "预期的": "intended",
+    "打算": "intended",
+    "模式": "modes",
+    "可移动的": "movable",
+    "笔记": "note",
+    "便签": "note",
+    "输出": "output",
+    "面板": "pannel",
+    "过去": "past",
+    "以往": "past",
+    "可能": "possible",
+    "潜在": "possible",
+    "相同": "same",
+    "一样": "same",
+    "切换": "toggle",
+    "开关": "switch",
+    "测试": "tests",
+    "可切换的": "togglable",
+    "词汇": "vocabulary",
+    "好": "well",
+    "井": "well",
+    "完整": "wholed",
+    "整个": "wholed",
+    "复制": "copying",
+    "抄写": "copying",
+    "创建": "created",
+    "创造": "created",
+    "最后": "last",
+    "持续": "last",
+    "列表": "list",
+    "清单": "list",
+    "代词": "pronouns",
+    "未映射": "unmapped",
+    "取消切换": "untoggle",
+    "广告": "ad"
+  },
+  "english_to_chinese": {
+    "can": "能",
+    "dog": "狗",
+    "fast": "快",
+    "book": "书",
+    "file": "档",
+    "life": "命",
+    "on": "上",
+    "no": "不",
+    "how": "怎",
+    "who": "谁",
+    "i": "我",
+    "he": "他",
+    "she": "她",
+    "it": "它",
+    "we": "们",
+    "you": "你",
+    "what": "什",
+    "when": "时",
+    "why": "为",
+    "where": "哪",
+    "walk": "走",
+    "in": "里",
+    "big": "大",
+    "step": "步",
+    "if": "如",
+    "come": "来",
+    "for": "给",
+    "do": "做",
+    "have": "有",
+    "with": "和",
+    "want": "想",
+    "any": "任何",
+    "ask": "问",
+    "window": "窗",
+    "that": "那",
+    "machine": "机",
+    "connect": "连",
+    "local": "地",
+    "about": "关",
+    "think": "思",
+    "please": "请",
+    "world": "界",
+    "steno": "速记",
+    "code": "码",
+    "computer": "脑",
+    "keyboard": "盘",
+    "function": "功",
+    "stand": "站",
+    "take": "拿",
+    "turn": "转",
+    "form": "形",
+    "press": "按",
+    "act": "动",
+    "this": "这",
+    "is": "是",
+    "love": "爱",
+    "record": "记",
+    "type": "打字",
+    "character": "字",
+    "eye": "目",
+    "target": "目标",
+    "only": "只有",
+    "limit": "限",
+    "warm": "温",
+    "good": "良",
+    "woman": "女",
+    "scholar": "士",
+    "point": "指",
+    "place": "所",
+    "of": "的",
+    "edge": "边缘",
+    "margin": "边缘",
+    "situation": "情况",
+    "condition": "情况",
+    "be": "是",
+    "whose": "谁",
+    "me": "我",
+    "him": "他",
+    "her": "她",
+    "us": "们",
+    "they": "他",
+    "them": "他们",
+    "which": "哪",
+    "functionality": "功能",
+    "and": "和",
+    "now": "现",
+    "right": "对",
+    "the": "这",
+    "time": "时",
+    "timer": "计时器",
+    "to": "到",
+    "wait": "等",
+    "waiting": "等待",
+    "actual": "实",
+    "actually": "实际上",
+    "forward": "前",
+    "clear": "清",
+    "clearing": "清理",
+    "cut": "切",
+    "depend": "靠",
+    "depending": "依据",
+    "box": "盒",
+    "sandbox": "沙盒",
+    "table": "表",
+    "typing": "打字",
+    "verb": "动词",
+    "verbs": "动词",
+    "sand": "沙",
+    "short": "短",
+    "shortcut": "快捷键",
+    "simple": "简",
+    "let": "让",
+    "lets": "让我们",
+    "up": "上",
+    "present": "现在",
+    "make": "做",
+    "other": "他",
+    "pop": "弹",
+    "sentence": "句",
+    "so": "所以",
+    "it was": "曾经",
+    "we have": "我们有",
+    "stride": "大步走",
+    "walk with big steps": "大步走",
+    "shorthand": "速记",
+    "steno typing": "速记打字",
+    "goal": "目标",
+    "what is the goal": "目标是什么",
+    "what is the goal?": "目标是什么？",
+    "metric": "指标",
+    "metrics": "指标",
+    "indicator": "指标",
+    "indicators": "指标",
+    "what is the metric": "指标是什么",
+    "what is the metric?": "指标是什么？",
+    "what is the indicator": "指标是什么",
+    "what is the indicator?": "指标是什么？",
+    "what are the indicators": "指标是什么",
+    "what are the indicators?": "指标是什么？",
+    "gentle": "温良",
+    "kind": "良",
+    "gentle and kind": "温良",
+    "lady": "女士",
+    "madam": "女士",
+    "only for gentle and kind ladies": "仅限温良女士",
+    "all": "所有",
+    "every": "所有",
+    "fringe": "边缘",
+    "circumstance": "情况",
+    "circumstances": "情况",
+    "edge case": "边缘情况",
+    "edge cases": "边缘情况",
+    "all the edge cases": "所有的边缘情况",
+    "all edge cases": "所有的边缘情况",
+    "write down": "记",
+    "indicate": "指",
+    "add": "加",
+    "beginner": "初学者",
+    "by": "由",
+    "characters": "字符",
+    "chinese": "中文",
+    "here": "这里",
+    "not": "不",
+    "see": "看",
+    "side": "边",
+    "teachers": "老师",
+    "teacher": "老师",
+    "try": "尝试",
+    "two": "二",
+    "answer": "回答",
+    "change": "改变",
+    "click": "点击",
+    "each": "每个",
+    "exercise": "练习",
+    "exercises": "练习",
+    "given": "给定",
+    "just": "刚刚",
+    "more": "更多",
+    "next": "下一个",
+    "question": "问题",
+    "reading": "阅读",
+    "say": "说",
+    "section": "部分",
+    "tenses": "时态",
+    "text": "文本",
+    "used": "使用过的",
+    "way": "方式",
+    "will": "将",
+    "able": "能够",
+    "also": "也",
+    "as": "作为",
+    "between": "之间",
+    "column": "列",
+    "different": "不同",
+    "doc": "文档",
+    "enumerated": "枚举的",
+    "folder": "文件夹",
+    "following": "下列",
+    "from": "来自",
+    "game": "游戏",
+    "give": "给",
+    "glossary": "词汇表",
+    "intended": "预期的",
+    "modes": "模式",
+    "movable": "可移动的",
+    "note": "笔记",
+    "output": "输出",
+    "pannel": "面板",
+    "past": "过去",
+    "possible": "可能",
+    "same": "相同",
+    "switch": "切换",
+    "tense": "时态",
+    "tests": "测试",
+    "togglable": "可切换的",
+    "vocabulary": "词汇",
+    "well": "好",
+    "wholed": "完整",
+    "copying": "复制",
+    "created": "创建",
+    "last": "最后",
+    "list": "列表",
+    "pronouns": "代词",
+    "toggle": "切换",
+    "unmapped": "未映射",
+    "untoggle": "取消切换",
+    "ad": "广告",
+    "after": "之后",
+    "but": "但是",
+    "data": "数据",
+    "dirrect": "直接",
+    "direct": "直接",
+    "doesn": "不",
+    "doesn't": "不",
+    "english": "英语",
+    "fix": "修复",
+    "grammar": "语法",
+    "happens": "发生",
+    "happen": "发生",
+    "hit": "击中",
+    "need": "需要",
+    "numbers": "数字",
+    "number": "数字",
+    "reason": "原因",
+    "some": "一些",
+    "special": "特别",
+    "t": "字母T",
+    "triggers": "触发",
+    "trigger": "触发",
+    "work": "工作",
+    "works": "运转",
+    "undo": "撤销",
+    "redo": "重做",
+    "outdo": "超越",
+    "reconnect": "重新连接",
+    "disconnect": "断开",
+    "income": "收入",
+    "outcome": "结果",
+    "overcome": "克服",
+    "become": "成为",
+    "outwalk": "走得快",
+    "refile": "重新归档",
+    "lifetime": "一生",
+    "lifeline": "生命线",
+    "password": "密码",
+    "recode": "重新编码",
+    "understand": "理解",
+    "withstand": "承受",
+    "outstand": "杰出",
+    "upstand": "直立",
+    "mistake": "错误",
+    "overtake": "赶上",
+    "intake": "摄入",
+    "outtake": "排除",
+    "uptake": "吸收",
+    "retake": "重拍",
+    "return": "返回",
+    "overturn": "推翻",
+    "upturn": "好转",
+    "outturn": "产量",
+    "reform": "改革",
+    "deform": "变形",
+    "inform": "通知",
+    "transform": "转换",
+    "conform": "遵守",
+    "express": "表达",
+    "impress": "留下印象",
+    "depress": "使沮丧",
+    "repress": "压制",
+    "oppress": "压迫",
+    "react": "反应",
+    "interact": "互动",
+    "transact": "交易",
+    "enact": "颁布",
+    "大人": "大人",
+    "大家": "大家",
+    "大学": "大学",
+    "大小": "大小",
+    "拿出": "拿出",
+    "拿下": "拿下",
+    "拿起": "拿起",
+    "电话": "电话",
+    "电脑": "电脑",
+    "电视": "电视",
+    "生日": "生日",
+    "生命": "生命",
+    "生产": "生产",
+    "an": "一个",
+    "another": "另一个",
+    "ahead": "向前",
+    "alone": "独自",
+    "aside": "在一旁",
+    "actuality": "现实",
+    "actualize": "实现",
+    "forwards": "向前",
+    "forwarding": "转发",
+    "forwarded": "已转发",
+    "foreword": "前言",
+    "straightforward": "坦率",
+    "functional": "实用的",
+    "functionally": "在功能上",
+    "functioning": "运转",
+    "malfunction": "故障",
+    "rightly": "公正地",
+    "upright": "正直",
+    "outright": "彻底",
+    "copyright": "版权",
+    "righteous": "正义",
+    "nowadays": "现今",
+    "nowhere": "无处",
+    "right now": "现在",
+    "then": "那时",
+    "there": "那里",
+    "these": "这些",
+    "those": "那些",
+    "their": "他们的",
+    "therefore": "因此",
+    "timing": "时机",
+    "timely": "及时的",
+    "timeout": "超时",
+    "timeless": "永恒",
+    "overtime": "加班",
+    "today": "今天",
+    "tonight": "今晚",
+    "tomorrow": "明天",
+    "together": "一起",
+    "toward": "朝向",
+    "into": "进入",
+    "waiter": "服务员",
+    "waitress": "女服务员",
+    "await": "等候",
+    "awaited": "等待中",
+    "boxes": "盒子",
+    "boxing": "拳击",
+    "boxer": "拳击手",
+    "inbox": "收件箱",
+    "outbox": "发件箱",
+    "cleared": "已清除",
+    "clearly": "清晰地",
+    "clearance": "许可",
+    "depended": "依赖",
+    "depends": "取决于",
+    "dependent": "依靠",
+    "independent": "独立",
+    "maker": "制造者",
+    "making": "制作",
+    "makes": "使",
+    "typed": "已打字",
+    "typer": "打字员",
+    "types": "类型",
+    "tables": "表格",
+    "timetable": "时刻表",
+    "verbal": "口头的",
+    "adverb": "副词",
+    "sandy": "沙质",
+    "shortly": "不久",
+    "shorten": "缩短",
+    "shortage": "短缺",
+    "simply": "简单地",
+    "simplicity": "简单",
+    "outlet": "出口",
+    "inlet": "入口",
+    "upon": "在...之上",
+    "upper": "上面的",
+    "upward": "向上",
+    "presently": "目前",
+    "presentation": "演示",
+    "am": "我是",
+    "andlook": "来看",
+    "are": "是",
+    "middles": "中间",
+    "middle": "中间",
+    "midnight": "午夜",
+    "midday": "正午",
+    "midst": "当中",
+    "one": "一",
+    "oneself": "自己",
+    "remove": "移除",
+    "removal": "消除",
+    "removed": "已移除",
+    "removable": "可拆卸",
+    "something": "某事",
+    "strucuture": "结构",
+    "structure": "结构",
+    "structural": "结构的",
+    "restructure": "重构",
+    "infrastructure": "基础设施",
+    "thing": "东西",
+    "anything": "任何事",
+    "everything": "一切",
+    "nothing": "无事",
+    "thistle": "蓟"
+  },
+  "word_visuals": {
+    "can": {
+      "emoji": "🥫",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "CAN"
+    },
+    "dog": {
+      "emoji": "🐶",
+      "bg": "#d97706",
+      "glow": "rgba(217, 119, 6, 0.4)",
+      "label": "DOG"
+    },
+    "fast": {
+      "emoji": "⚡",
+      "bg": "#eab308",
+      "glow": "rgba(234, 179, 8, 0.4)",
+      "label": "FAST"
+    },
+    "book": {
+      "emoji": "📖",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "BOOK"
+    },
+    "file": {
+      "emoji": "📁",
+      "bg": "#2563eb",
+      "glow": "rgba(37, 99, 235, 0.4)",
+      "label": "FILE"
+    },
+    "life": {
+      "emoji": "💖",
+      "bg": "#e11d48",
+      "glow": "rgba(225, 29, 72, 0.4)",
+      "label": "LIFE"
+    },
+    "on": {
+      "emoji": "🟢",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "ON"
+    },
+    "no": {
+      "emoji": "🚫",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "NO"
+    },
+    "how": {
+      "emoji": "❓",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "HOW"
+    },
+    "who": {
+      "emoji": "👤",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "WHO"
+    },
+    "whom": {
+      "emoji": "👥",
+      "bg": "#4338ca",
+      "glow": "rgba(67, 56, 202, 0.4)",
+      "label": "WHOM"
+    },
+    "i": {
+      "emoji": "🙋‍♂️",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "I (ME)"
+    },
+    "he": {
+      "emoji": "👨",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "HE"
+    },
+    "she": {
+      "emoji": "👩",
+      "bg": "#f43f5e",
+      "glow": "rgba(244, 63, 94, 0.4)",
+      "label": "SHE"
+    },
+    "it": {
+      "emoji": "📦",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "IT"
+    },
+    "we": {
+      "emoji": "🧑‍🤝‍🧑",
+      "bg": "#059669",
+      "glow": "rgba(5, 150, 105, 0.4)",
+      "label": "WE"
+    },
+    "they": {
+      "emoji": "👥",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "THEY"
+    },
+    "you": {
+      "emoji": "👉",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "YOU"
+    },
+    "what": {
+      "emoji": "🤔",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "WHAT?"
+    },
+    "when": {
+      "emoji": "⏰",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "WHEN?"
+    },
+    "why": {
+      "emoji": "🤷",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "WHY?"
+    },
+    "where": {
+      "emoji": "📍",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "WHERE?"
+    },
+    "which": {
+      "emoji": "🔀",
+      "bg": "#38bdf8",
+      "glow": "rgba(56, 189, 248, 0.4)",
+      "label": "WHICH?"
+    },
+    "whose": {
+      "emoji": "🏷️",
+      "bg": "#d97706",
+      "glow": "rgba(217, 119, 6, 0.4)",
+      "label": "WHOSE?"
+    },
+    "walk": {
+      "emoji": "🚶",
+      "bg": "#059669",
+      "glow": "rgba(5, 150, 105, 0.4)",
+      "label": "WALK"
+    },
+    "in": {
+      "emoji": "📥",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "IN"
+    },
+    "big": {
+      "emoji": "🐘",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "BIG"
+    },
+    "step": {
+      "emoji": "🪜",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "STEP"
+    },
+    "if": {
+      "emoji": "⚖️",
+      "bg": "#f97316",
+      "glow": "rgba(249, 115, 22, 0.4)",
+      "label": "IF"
+    },
+    "come": {
+      "emoji": "🫴",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "COME"
+    },
+    "for": {
+      "emoji": "🎁",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "FOR"
+    },
+    "do": {
+      "emoji": "✅",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "DO"
+    },
+    "have": {
+      "emoji": "🤲",
+      "bg": "#ec4899",
+      "glow": "rgba(236, 72, 153, 0.4)",
+      "label": "HAVE"
+    },
+    "with": {
+      "emoji": "🧩",
+      "bg": "#38bdf8",
+      "glow": "rgba(56, 189, 248, 0.4)",
+      "label": "WITH"
+    },
+    "want": {
+      "emoji": "🌟",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "WANT"
+    },
+    "any": {
+      "emoji": "🎲",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "ANY"
+    },
+    "ask": {
+      "emoji": "🙋‍♀️",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "ASK"
+    },
+    "window": {
+      "emoji": "🪟",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "WINDOW"
+    },
+    "that": {
+      "emoji": "☝️",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "THAT"
+    },
+    "machine": {
+      "emoji": "🤖",
+      "bg": "#475569",
+      "glow": "rgba(71, 85, 105, 0.4)",
+      "label": "MACHINE"
+    },
+    "connect": {
+      "emoji": "🔗",
+      "bg": "#facc15",
+      "glow": "rgba(250, 204, 21, 0.4)",
+      "label": "CONNECT"
+    },
+    "local": {
+      "emoji": "🏡",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "LOCAL"
+    },
+    "about": {
+      "emoji": "ℹ️",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "ABOUT"
+    },
+    "think": {
+      "emoji": "🧠",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "THINK"
+    },
+    "please": {
+      "emoji": "🙏",
+      "bg": "#ec4899",
+      "glow": "rgba(236, 72, 153, 0.4)",
+      "label": "PLEASE"
+    },
+    "world": {
+      "emoji": "🌍",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "WORLD"
+    },
+    "steno": {
+      "emoji": "⚡",
+      "bg": "#4f46e5",
+      "glow": "rgba(79, 70, 229, 0.4)",
+      "label": "STENO"
+    },
+    "code": {
+      "emoji": "💻",
+      "bg": "#0f172a",
+      "glow": "rgba(56, 189, 248, 0.4)",
+      "label": "CODE"
+    },
+    "computer": {
+      "emoji": "🖥️",
+      "bg": "#1e293b",
+      "glow": "rgba(96, 165, 250, 0.4)",
+      "label": "COMPUTER"
+    },
+    "keyboard": {
+      "emoji": "⌨️",
+      "bg": "#1e1b4b",
+      "glow": "rgba(129, 140, 248, 0.4)",
+      "label": "KEYBOARD"
+    },
+    "function": {
+      "svg": "\n                    <rect width=\"48\" height=\"48\" rx=\"14\" fill=\"#064e3b\" />\n                    <circle cx=\"24\" cy=\"24\" r=\"18\" fill=\"none\" stroke=\"#10b981\" stroke-width=\"2\" stroke-dasharray=\"4 2\" />\n                    <text x=\"24\" y=\"31\" text-anchor=\"middle\" font-size=\"20\" font-style=\"italic\" font-weight=\"900\" font-family=\"'Times New Roman', serif\" fill=\"#34d399\">ƒ(x)</text>\n                ",
+      "emoji": "⚙️",
+      "bg": "#047857",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "FUNCTION"
+    },
+    "stand": {
+      "emoji": "🧍",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "STAND"
+    },
+    "take": {
+      "emoji": "✊",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "TAKE"
+    },
+    "turn": {
+      "emoji": "🔄",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "TURN"
+    },
+    "form": {
+      "emoji": "📐",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "FORM"
+    },
+    "press": {
+      "emoji": "🔘",
+      "bg": "#ec4899",
+      "glow": "rgba(236, 72, 153, 0.4)",
+      "label": "PRESS"
+    },
+    "act": {
+      "emoji": "🎭",
+      "bg": "#d97706",
+      "glow": "rgba(217, 119, 6, 0.4)",
+      "label": "ACT"
+    },
+    "undo": {
+      "emoji": "↩️",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "UNDO"
+    },
+    "redo": {
+      "emoji": "🔁",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "REDO"
+    },
+    "outdo": {
+      "emoji": "🏆",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "OUTDO"
+    },
+    "reconnect": {
+      "emoji": "🔄",
+      "bg": "#38bdf8",
+      "glow": "rgba(56, 189, 248, 0.4)",
+      "label": "RECONNECT"
+    },
+    "disconnect": {
+      "emoji": "🔌",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "DISCONNECT"
+    },
+    "income": {
+      "emoji": "💵",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "INCOME"
+    },
+    "outcome": {
+      "emoji": "🎯",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "OUTCOME"
+    },
+    "overcome": {
+      "emoji": "🧗",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "OVERCOME"
+    },
+    "become": {
+      "emoji": "🌱",
+      "bg": "#059669",
+      "glow": "rgba(5, 150, 105, 0.4)",
+      "label": "BECOME"
+    },
+    "outwalk": {
+      "emoji": "🏃‍♂️",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "OUTWALK"
+    },
+    "refile": {
+      "emoji": "📂",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "REFILE"
+    },
+    "lifetime": {
+      "emoji": "⏳",
+      "bg": "#e11d48",
+      "glow": "rgba(225, 29, 72, 0.4)",
+      "label": "LIFETIME"
+    },
+    "lifeline": {
+      "emoji": "🛟",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "LIFELINE"
+    },
+    "password": {
+      "emoji": "🔑",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "PASSWORD"
+    },
+    "recode": {
+      "emoji": "🛠️",
+      "bg": "#38bdf8",
+      "glow": "rgba(56, 189, 248, 0.4)",
+      "label": "RECODE"
+    },
+    "understand": {
+      "emoji": "💡",
+      "bg": "#eab308",
+      "glow": "rgba(234, 179, 8, 0.4)",
+      "label": "UNDERSTAND"
+    },
+    "withstand": {
+      "emoji": "🛡️",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "WITHSTAND"
+    },
+    "outstand": {
+      "emoji": "⭐",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "OUTSTAND"
+    },
+    "upstand": {
+      "emoji": "🔝",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "UPSTAND"
+    },
+    "mistake": {
+      "emoji": "⚠️",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "MISTAKE"
+    },
+    "overtake": {
+      "emoji": "🏎️",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "OVERTAKE"
+    },
+    "intake": {
+      "emoji": "🥤",
+      "bg": "#06b6d4",
+      "glow": "rgba(6, 182, 212, 0.4)",
+      "label": "INTAKE"
+    },
+    "outtake": {
+      "emoji": "🎬",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "OUTTAKE"
+    },
+    "uptake": {
+      "emoji": "📈",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "UPTAKE"
+    },
+    "retake": {
+      "emoji": "🔁",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "RETAKE"
+    },
+    "return": {
+      "emoji": "🔙",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "RETURN"
+    },
+    "overturn": {
+      "emoji": "🔁",
+      "bg": "#f97316",
+      "glow": "rgba(249, 115, 22, 0.4)",
+      "label": "OVERTURN"
+    },
+    "upturn": {
+      "emoji": "📈",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "UPTURN"
+    },
+    "outturn": {
+      "emoji": "📦",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "OUTTURN"
+    },
+    "reform": {
+      "emoji": "🏛️",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "REFORM"
+    },
+    "deform": {
+      "emoji": "💥",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "DEFORM"
+    },
+    "inform": {
+      "emoji": "📢",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "INFORM"
+    },
+    "transform": {
+      "emoji": "🦋",
+      "bg": "#a855f7",
+      "glow": "rgba(168, 85, 247, 0.4)",
+      "label": "TRANSFORM"
+    },
+    "conform": {
+      "emoji": "🤝",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "CONFORM"
+    },
+    "express": {
+      "emoji": "💬",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "EXPRESS"
+    },
+    "impress": {
+      "emoji": "🤩",
+      "bg": "#eab308",
+      "glow": "rgba(234, 179, 8, 0.4)",
+      "label": "IMPRESS"
+    },
+    "depress": {
+      "emoji": "📉",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "DEPRESS"
+    },
+    "repress": {
+      "emoji": "🤐",
+      "bg": "#78716c",
+      "glow": "rgba(120, 113, 108, 0.4)",
+      "label": "REPRESS"
+    },
+    "oppress": {
+      "emoji": "⛓️",
+      "bg": "#dc2626",
+      "glow": "rgba(220, 38, 38, 0.4)",
+      "label": "OPPRESS"
+    },
+    "react": {
+      "emoji": "⚡",
+      "bg": "#eab308",
+      "glow": "rgba(234, 179, 8, 0.4)",
+      "label": "REACT"
+    },
+    "interact": {
+      "emoji": "🗣️",
+      "bg": "#06b6d4",
+      "glow": "rgba(6, 182, 212, 0.4)",
+      "label": "INTERACT"
+    },
+    "transact": {
+      "emoji": "💳",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "TRANSACT"
+    },
+    "enact": {
+      "emoji": "📜",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "ENACT"
+    },
+    "a": {
+      "emoji": "🔤",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "A"
+    },
+    "actual": {
+      "emoji": "🎯",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "ACTUAL"
+    },
+    "actually": {
+      "emoji": "💡",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "ACTUALLY"
+    },
+    "forward": {
+      "emoji": "⏩",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "FORWARD"
+    },
+    "forwards": {
+      "emoji": "⏩",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "FORWARDS"
+    },
+    "functionality": {
+      "emoji": "🛠️",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "FUNCTIONALITY"
+    },
+    "right": {
+      "emoji": "✅",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "RIGHT"
+    },
+    "now": {
+      "emoji": "⏱️",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "NOW"
+    },
+    "the": {
+      "emoji": "☝️",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "THE"
+    },
+    "time": {
+      "emoji": "⏳",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "TIME"
+    },
+    "timer": {
+      "emoji": "⏱️",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "TIMER"
+    },
+    "to": {
+      "emoji": "➡️",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "TO"
+    },
+    "wait": {
+      "emoji": "⏳",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "WAIT"
+    },
+    "waiting": {
+      "emoji": "⏳",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "WAITING"
+    },
+    "and": {
+      "emoji": "➕",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "AND"
+    },
+    "be": {
+      "emoji": "🐝",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "BE"
+    },
+    "box": {
+      "emoji": "📦",
+      "bg": "#d97706",
+      "glow": "rgba(217, 119, 6, 0.4)",
+      "label": "BOX"
+    },
+    "boxes": {
+      "emoji": "📦",
+      "bg": "#d97706",
+      "glow": "rgba(217, 119, 6, 0.4)",
+      "label": "BOXES"
+    },
+    "clear": {
+      "emoji": "✨",
+      "bg": "#38bdf8",
+      "glow": "rgba(56, 189, 248, 0.4)",
+      "label": "CLEAR"
+    },
+    "clearing": {
+      "emoji": "🧹",
+      "bg": "#38bdf8",
+      "glow": "rgba(56, 189, 248, 0.4)",
+      "label": "CLEARING"
+    },
+    "cut": {
+      "emoji": "✂️",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "CUT"
+    },
+    "depend": {
+      "emoji": "🔗",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "DEPEND"
+    },
+    "depending": {
+      "emoji": "🔄",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "DEPENDING"
+    },
+    "it was": {
+      "emoji": "⏮️",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "IT WAS"
+    },
+    "let": {
+      "emoji": "🚪",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "LET"
+    },
+    "lets": {
+      "emoji": "👥",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "LETS"
+    },
+    "make": {
+      "emoji": "🔨",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "MAKE"
+    },
+    "only": {
+      "emoji": "☝️",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "ONLY"
+    },
+    "other": {
+      "emoji": "🔀",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "OTHER"
+    },
+    "pop": {
+      "emoji": "🎈",
+      "bg": "#ec4899",
+      "glow": "rgba(236, 72, 153, 0.4)",
+      "label": "POP"
+    },
+    "present": {
+      "emoji": "🎁",
+      "bg": "#e11d48",
+      "glow": "rgba(225, 29, 72, 0.4)",
+      "label": "PRESENT"
+    },
+    "sand": {
+      "emoji": "🏖️",
+      "bg": "#d97706",
+      "glow": "rgba(217, 119, 6, 0.4)",
+      "label": "SAND"
+    },
+    "sandbox": {
+      "emoji": "🏖️",
+      "bg": "#d97706",
+      "glow": "rgba(217, 119, 6, 0.4)",
+      "label": "SANDBOX"
+    },
+    "sentence": {
+      "emoji": "📝",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "SENTENCE"
+    },
+    "short": {
+      "emoji": "📏",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "SHORT"
+    },
+    "shortcut": {
+      "emoji": "⚡",
+      "bg": "#eab308",
+      "glow": "rgba(234, 179, 8, 0.4)",
+      "label": "SHORTCUT"
+    },
+    "simple": {
+      "emoji": "🌱",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "SIMPLE"
+    },
+    "so": {
+      "emoji": "👉",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "SO"
+    },
+    "table": {
+      "emoji": "📊",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "TABLE"
+    },
+    "type": {
+      "emoji": "⌨️",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "TYPE"
+    },
+    "up": {
+      "emoji": "🔝",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "UP"
+    },
+    "verb": {
+      "emoji": "⚡",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "VERB"
+    },
+    "verbs": {
+      "emoji": "⚡",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "VERBS"
+    },
+    "we have": {
+      "emoji": "🤝",
+      "bg": "#059669",
+      "glow": "rgba(5, 150, 105, 0.4)",
+      "label": "WE HAVE"
+    },
+    "这": {
+      "emoji": "这",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "这 (zhè - this)",
+      "svg": "<circle cx=\"24\" cy=\"24\" r=\"21\" fill=\"#78350f\" stroke=\"#f59e0b\" stroke-width=\"2.5\"/><text x=\"24\" y=\"32\" text-anchor=\"middle\" font-size=\"22\" font-family=\"'Microsoft YaHei', 'PingFang SC', sans-serif\" font-weight=\"900\" fill=\"#fef3c7\">这</text>"
+    },
+    "是": {
+      "emoji": "🟢",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "是 (IS)"
+    },
+    "他": {
+      "emoji": "他",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "他 (tā - he/him)",
+      "svg": "<circle cx=\"24\" cy=\"24\" r=\"21\" fill=\"#1e3a8a\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/><text x=\"24\" y=\"32\" text-anchor=\"middle\" font-size=\"22\" font-family=\"'Microsoft YaHei', 'PingFang SC', sans-serif\" font-weight=\"900\" fill=\"#bfdbfe\">他</text>"
+    },
+    "拿": {
+      "emoji": "拿",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "拿 (ná - take)",
+      "svg": "<circle cx=\"24\" cy=\"24\" r=\"21\" fill=\"#312e81\" stroke=\"#6366f1\" stroke-width=\"2.5\"/><text x=\"24\" y=\"32\" text-anchor=\"middle\" font-size=\"22\" font-family=\"'Microsoft YaHei', 'PingFang SC', sans-serif\" font-weight=\"900\" fill=\"#c7d2fe\">拿</text>"
+    },
+    "狗": {
+      "emoji": "狗",
+      "bg": "#d97706",
+      "glow": "rgba(217, 119, 6, 0.4)",
+      "label": "狗 (gǒu - dog)",
+      "svg": "<circle cx=\"24\" cy=\"24\" r=\"21\" fill=\"#78350f\" stroke=\"#d97706\" stroke-width=\"2.5\"/><text x=\"24\" y=\"32\" text-anchor=\"middle\" font-size=\"22\" font-family=\"'Microsoft YaHei', 'PingFang SC', sans-serif\" font-weight=\"900\" fill=\"#fde68a\">狗</text>"
+    },
+    "大": {
+      "emoji": "🐘",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "大 (BIG)"
+    },
+    "书": {
+      "emoji": "书",
+      "bg": "#ec4899",
+      "glow": "rgba(236, 72, 153, 0.4)",
+      "label": "书 (shū - book)",
+      "svg": "<circle cx=\"24\" cy=\"24\" r=\"21\" fill=\"#831843\" stroke=\"#ec4899\" stroke-width=\"2.5\"/><text x=\"24\" y=\"32\" text-anchor=\"middle\" font-size=\"22\" font-family=\"'Microsoft YaHei', 'PingFang SC', sans-serif\" font-weight=\"900\" fill=\"#fbcfe8\">书</text>"
+    },
+    "爱": {
+      "emoji": "爱",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "爱 (ài - love)",
+      "svg": "<circle cx=\"24\" cy=\"24\" r=\"21\" fill=\"#7f1d1d\" stroke=\"#ef4444\" stroke-width=\"2.5\"/><text x=\"24\" y=\"32\" text-anchor=\"middle\" font-size=\"22\" font-family=\"'Microsoft YaHei', 'PingFang SC', sans-serif\" font-weight=\"900\" fill=\"#fecaca\">爱</text>"
+    },
+    "步": {
+      "emoji": "👣",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "步 (STEP)"
+    },
+    "走": {
+      "emoji": "🚶",
+      "bg": "#059669",
+      "glow": "rgba(5, 150, 105, 0.4)",
+      "label": "走 (WALK)"
+    },
+    "速": {
+      "emoji": "⚡",
+      "bg": "#eab308",
+      "glow": "rgba(234, 179, 8, 0.4)",
+      "label": "速 (FAST)"
+    },
+    "记": {
+      "emoji": "📝",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "记 (RECORD)"
+    },
+    "打": {
+      "emoji": "⌨️",
+      "bg": "#1e1b4b",
+      "glow": "rgba(129, 140, 248, 0.4)",
+      "label": "打 (TYPE)"
+    },
+    "字": {
+      "emoji": "🔤",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "字 (LETTER)"
+    },
+    "目": {
+      "emoji": "👀",
+      "bg": "#38bdf8",
+      "glow": "rgba(56, 189, 248, 0.4)",
+      "label": "目 (EYE)"
+    },
+    "标": {
+      "emoji": "🚩",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "标 (TARGET)"
+    },
+    "什": {
+      "emoji": "❓🤷",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "什 (WHAT)"
+    },
+    "么": {
+      "emoji": "❔",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "么 (SUFFIX)"
+    },
+    "仅": {
+      "emoji": "🎯",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "仅 (ONLY)"
+    },
+    "限": {
+      "emoji": "🛑",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "限 (LIMIT)"
+    },
+    "温": {
+      "emoji": "🌱",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "温 (WARM)"
+    },
+    "良": {
+      "emoji": "✨",
+      "bg": "#facc15",
+      "glow": "rgba(250, 204, 21, 0.4)",
+      "label": "良 (GOOD)"
+    },
+    "女": {
+      "emoji": "👩",
+      "bg": "#f43f5e",
+      "glow": "rgba(244, 63, 94, 0.4)",
+      "label": "女 (WOMAN)"
+    },
+    "士": {
+      "emoji": "🎓",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "士 (SCHOLAR)"
+    },
+    "指": {
+      "emoji": "👆",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "指 (POINT)"
+    },
+    "所": {
+      "emoji": "🏠",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "所 (PLACE)"
+    },
+    "有": {
+      "emoji": "🤲",
+      "bg": "#ec4899",
+      "glow": "rgba(236, 72, 153, 0.4)",
+      "label": "有 (HAVE)"
+    },
+    "的": {
+      "emoji": "🔗",
+      "bg": "#facc15",
+      "glow": "rgba(250, 204, 21, 0.4)",
+      "label": "的 (OF)"
+    },
+    "边": {
+      "emoji": "📏",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "边 (EDGE)"
+    },
+    "缘": {
+      "emoji": "🧶",
+      "bg": "#f97316",
+      "glow": "rgba(249, 115, 22, 0.4)",
+      "label": "缘 (MARGIN)"
+    },
+    "情": {
+      "emoji": "💭",
+      "bg": "#06b6d4",
+      "glow": "rgba(6, 182, 212, 0.4)",
+      "label": "情 (FEELING)"
+    },
+    "况": {
+      "emoji": "📋",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "况 (CONDITION)"
+    },
+    "切": {
+      "emoji": "✂️",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "切 (CUT)"
+    },
+    "勿": {
+      "emoji": "🙅",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "勿 (DO NOT)"
+    },
+    "证": {
+      "emoji": "📜",
+      "bg": "#d97706",
+      "glow": "rgba(217, 119, 6, 0.4)",
+      "label": "证 (PROOF)"
+    },
+    "明": {
+      "emoji": "☀️",
+      "bg": "#eab308",
+      "glow": "rgba(234, 179, 8, 0.4)",
+      "label": "明 (BRIGHT)"
+    },
+    "大步走": {
+      "emoji": "🚶‍♂️",
+      "bg": "#059669",
+      "glow": "rgba(5, 150, 105, 0.4)",
+      "label": "大步走 (STRIDE)"
+    },
+    "速记": {
+      "emoji": "⚡",
+      "bg": "#4f46e5",
+      "glow": "rgba(79, 70, 229, 0.4)",
+      "label": "速记 (STENO)"
+    },
+    "打字": {
+      "emoji": "⌨️",
+      "bg": "#1e1b4b",
+      "glow": "rgba(129, 140, 248, 0.4)",
+      "label": "打字 (TYPING)"
+    },
+    "速记打字": {
+      "emoji": "⌨️",
+      "bg": "#4f46e5",
+      "glow": "rgba(79, 70, 229, 0.4)",
+      "label": "速记打字 (STENO TYPING)"
+    },
+    "目标": {
+      "emoji": "🎯",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "目标 (GOAL)"
+    },
+    "什么": {
+      "emoji": "🤔",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "什么 (WHAT)"
+    },
+    "目标是什么": {
+      "emoji": "🎯",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "目标是什么 (GOAL?)"
+    },
+    "目标是什么？": {
+      "emoji": "🎯",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "目标是什么？ (GOAL?)"
+    },
+    "仅限": {
+      "emoji": "🛑",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "仅限 (ONLY)"
+    },
+    "温良": {
+      "emoji": "🌱",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "温良 (GENTLE)"
+    },
+    "女士": {
+      "emoji": "👩",
+      "bg": "#f43f5e",
+      "glow": "rgba(244, 63, 94, 0.4)",
+      "label": "女士 (LADY)"
+    },
+    "仅限温良女士": {
+      "emoji": "👩",
+      "bg": "#f43f5e",
+      "glow": "rgba(244, 63, 94, 0.4)",
+      "label": "仅限温良女士 (GENTLE LADIES ONLY)"
+    },
+    "指标": {
+      "emoji": "📊",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "指标 (METRIC)"
+    },
+    "指标是什么": {
+      "emoji": "📊",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "指标是什么 (METRIC?)"
+    },
+    "指标是什么？": {
+      "emoji": "📊",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "指标是什么？ (METRIC?)"
+    },
+    "所有": {
+      "emoji": "🌐",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "所有 (ALL)"
+    },
+    "边缘": {
+      "emoji": "📏",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "边缘 (EDGE)"
+    },
+    "情况": {
+      "emoji": "📋",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "情况 (SITUATION)"
+    },
+    "边缘情况": {
+      "emoji": "📋",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "边缘情况 (EDGE CASES)"
+    },
+    "所有的边缘情况": {
+      "emoji": "📋",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "所有的边缘情况 (ALL EDGE CASES)"
+    },
+    "goal": {
+      "emoji": "🎯",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "GOAL"
+    },
+    "target": {
+      "emoji": "🎯",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "TARGET"
+    },
+    "metric": {
+      "emoji": "📊",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "METRIC"
+    },
+    "metrics": {
+      "emoji": "📊",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "METRICS"
+    },
+    "indicator": {
+      "emoji": "📊",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "INDICATOR"
+    },
+    "indicators": {
+      "emoji": "📊",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "INDICATORS"
+    },
+    "stride": {
+      "emoji": "🚶‍♂️",
+      "bg": "#059669",
+      "glow": "rgba(5, 150, 105, 0.4)",
+      "label": "STRIDE"
+    },
+    "lady": {
+      "emoji": "👩",
+      "bg": "#f43f5e",
+      "glow": "rgba(244, 63, 94, 0.4)",
+      "label": "LADY"
+    },
+    "gentle": {
+      "emoji": "🌱",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "GENTLE"
+    },
+    "scholar": {
+      "emoji": "🎓",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "SCHOLAR"
+    },
+    "edge": {
+      "emoji": "📏",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "EDGE"
+    },
+    "margin": {
+      "emoji": "🧶",
+      "bg": "#f97316",
+      "glow": "rgba(249, 115, 22, 0.4)",
+      "label": "MARGIN"
+    },
+    "situation": {
+      "emoji": "💭",
+      "bg": "#06b6d4",
+      "glow": "rgba(6, 182, 212, 0.4)",
+      "label": "SITUATION"
+    },
+    "condition": {
+      "emoji": "📋",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "CONDITION"
+    },
+    "record": {
+      "emoji": "📝",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "RECORD"
+    },
+    "character": {
+      "emoji": "🔤",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "CHARACTER"
+    },
+    "eye": {
+      "emoji": "👀",
+      "bg": "#38bdf8",
+      "glow": "rgba(56, 189, 248, 0.4)",
+      "label": "EYE"
+    },
+    "point": {
+      "emoji": "👆",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "POINT"
+    },
+    "indicate": {
+      "emoji": "👆",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "INDICATE"
+    },
+    "place": {
+      "emoji": "🏠",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "PLACE"
+    },
+    "all": {
+      "emoji": "🌐",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "ALL"
+    },
+    "add": {
+      "emoji": "➕",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "ADD"
+    },
+    "beginner": {
+      "emoji": "🌱",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "BEGINNER"
+    },
+    "by": {
+      "emoji": "📍",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "BY"
+    },
+    "characters": {
+      "emoji": "🔤",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "CHARACTERS"
+    },
+    "chinese": {
+      "emoji": "🇨🇳",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "CHINESE"
+    },
+    "here": {
+      "emoji": "📍",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "HERE"
+    },
+    "not": {
+      "emoji": "🚫",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "NOT"
+    },
+    "see": {
+      "emoji": "👀",
+      "bg": "#38bdf8",
+      "glow": "rgba(56, 189, 248, 0.4)",
+      "label": "SEE"
+    },
+    "side": {
+      "emoji": "📐",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "SIDE"
+    },
+    "teachers": {
+      "emoji": "🧑‍🏫",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "TEACHERS"
+    },
+    "teacher": {
+      "emoji": "🧑‍🏫",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "TEACHER"
+    },
+    "try": {
+      "emoji": "🎯",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "TRY"
+    },
+    "two": {
+      "emoji": "✌️",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "TWO"
+    },
+    "after": {
+      "emoji": "⏭️",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "AFTER"
+    },
+    "but": {
+      "emoji": "🔄",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "BUT"
+    },
+    "data": {
+      "emoji": "💾",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "DATA"
+    },
+    "dirrect": {
+      "emoji": "🎯",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "DIRECT"
+    },
+    "direct": {
+      "emoji": "🎯",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "DIRECT"
+    },
+    "doesn": {
+      "emoji": "🚫",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "DOESN'T"
+    },
+    "english": {
+      "emoji": "🇬🇧",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "ENGLISH"
+    },
+    "fix": {
+      "emoji": "🔧",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "FIX"
+    },
+    "grammar": {
+      "emoji": "📖",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "GRAMMAR"
+    },
+    "happens": {
+      "emoji": "⚡",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "HAPPENS"
+    },
+    "happen": {
+      "emoji": "⚡",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "HAPPEN"
+    },
+    "hit": {
+      "emoji": "🎯",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "HIT"
+    },
+    "need": {
+      "emoji": "🆘",
+      "bg": "#f43f5e",
+      "glow": "rgba(244, 63, 94, 0.4)",
+      "label": "NEED"
+    },
+    "numbers": {
+      "emoji": "🔢",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "NUMBERS"
+    },
+    "number": {
+      "emoji": "🔢",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "NUMBER"
+    },
+    "reason": {
+      "emoji": "💡",
+      "bg": "#eab308",
+      "glow": "rgba(234, 179, 8, 0.4)",
+      "label": "REASON"
+    },
+    "some": {
+      "emoji": "✨",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "SOME"
+    },
+    "special": {
+      "emoji": "⭐",
+      "bg": "#facc15",
+      "glow": "rgba(250, 204, 21, 0.4)",
+      "label": "SPECIAL"
+    },
+    "t": {
+      "emoji": "🔤",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "T"
+    },
+    "triggers": {
+      "emoji": "⚡",
+      "bg": "#f97316",
+      "glow": "rgba(249, 115, 22, 0.4)",
+      "label": "TRIGGERS"
+    },
+    "trigger": {
+      "emoji": "⚡",
+      "bg": "#f97316",
+      "glow": "rgba(249, 115, 22, 0.4)",
+      "label": "TRIGGER"
+    },
+    "work": {
+      "emoji": "💼",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "WORK"
+    },
+    "works": {
+      "emoji": "⚙️",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "WORKS"
+    },
+    "am": {
+      "emoji": "🙋‍♂️",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "AM"
+    },
+    "are": {
+      "emoji": "👥",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "ARE"
+    },
+    "is": {
+      "emoji": "🟢",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "IS"
+    },
+    "was": {
+      "emoji": "⏮️",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "WAS"
+    },
+    "were": {
+      "emoji": "⏮️",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "WERE"
+    },
+    "answer": {
+      "emoji": "💬",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "ANSWER"
+    },
+    "change": {
+      "emoji": "🔄",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "CHANGE"
+    },
+    "click": {
+      "emoji": "🖱️",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "CLICK"
+    },
+    "each": {
+      "emoji": "🎯",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "EACH"
+    },
+    "exercise": {
+      "emoji": "🏋️",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "EXERCISE"
+    },
+    "exercises": {
+      "emoji": "🏋️",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "EXERCISES"
+    },
+    "given": {
+      "emoji": "🎁",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "GIVEN"
+    },
+    "just": {
+      "emoji": "⚖️",
+      "bg": "#eab308",
+      "glow": "rgba(234, 179, 8, 0.4)",
+      "label": "JUST"
+    },
+    "more": {
+      "emoji": "➕",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "MORE"
+    },
+    "next": {
+      "emoji": "⏭️",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "NEXT"
+    },
+    "question": {
+      "emoji": "❓",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "QUESTION"
+    },
+    "reading": {
+      "emoji": "📖",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "READING"
+    },
+    "say": {
+      "emoji": "🗣️",
+      "bg": "#06b6d4",
+      "glow": "rgba(6, 182, 212, 0.4)",
+      "label": "SAY"
+    },
+    "section": {
+      "emoji": "📑",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "SECTION"
+    },
+    "tenses": {
+      "emoji": "⏳",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "TENSES"
+    },
+    "text": {
+      "emoji": "📄",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "TEXT"
+    },
+    "used": {
+      "emoji": "🛠️",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "USED"
+    },
+    "way": {
+      "emoji": "🛤️",
+      "bg": "#d97706",
+      "glow": "rgba(217, 119, 6, 0.4)",
+      "label": "WAY"
+    },
+    "will": {
+      "emoji": "🌟",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "WILL"
+    },
+    "able": {
+      "emoji": "💪",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "ABLE"
+    },
+    "also": {
+      "emoji": "➕",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "ALSO"
+    },
+    "as": {
+      "emoji": "🟰",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "AS"
+    },
+    "between": {
+      "emoji": "↔️",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "BETWEEN"
+    },
+    "column": {
+      "emoji": "🏛️",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "COLUMN"
+    },
+    "different": {
+      "emoji": "🔀",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "DIFFERENT"
+    },
+    "doc": {
+      "emoji": "📃",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "DOC"
+    },
+    "enumerated": {
+      "emoji": "🔢",
+      "bg": "#06b6d4",
+      "glow": "rgba(6, 182, 212, 0.4)",
+      "label": "ENUMERATED"
+    },
+    "folder": {
+      "emoji": "📁",
+      "bg": "#eab308",
+      "glow": "rgba(234, 179, 8, 0.4)",
+      "label": "FOLDER"
+    },
+    "following": {
+      "emoji": "⬇️",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "FOLLOWING"
+    },
+    "from": {
+      "emoji": "🛫",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "FROM"
+    },
+    "game": {
+      "emoji": "🎮",
+      "bg": "#ec4899",
+      "glow": "rgba(236, 72, 153, 0.4)",
+      "label": "GAME"
+    },
+    "give": {
+      "emoji": "🤲",
+      "bg": "#14b8a6",
+      "glow": "rgba(20, 184, 166, 0.4)",
+      "label": "GIVE"
+    },
+    "glossary": {
+      "emoji": "📚",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "GLOSSARY"
+    },
+    "intended": {
+      "emoji": "🎯",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "INTENDED"
+    },
+    "modes": {
+      "emoji": "⚙️",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "MODES"
+    },
+    "movable": {
+      "emoji": "📦",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "MOVABLE"
+    },
+    "note": {
+      "emoji": "📝",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "NOTE"
+    },
+    "of": {
+      "emoji": "🔗",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "OF"
+    },
+    "output": {
+      "emoji": "📤",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "OUTPUT"
+    },
+    "pannel": {
+      "emoji": "🎛️",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "PANNEL"
+    },
+    "past": {
+      "emoji": "⏮️",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "PAST"
+    },
+    "possible": {
+      "emoji": "✨",
+      "bg": "#14b8a6",
+      "glow": "rgba(20, 184, 166, 0.4)",
+      "label": "POSSIBLE"
+    },
+    "same": {
+      "emoji": "🟰",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "SAME"
+    },
+    "switch": {
+      "emoji": "🔄",
+      "bg": "#eab308",
+      "glow": "rgba(234, 179, 8, 0.4)",
+      "label": "SWITCH"
+    },
+    "tense": {
+      "emoji": "⏳",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "TENSE"
+    },
+    "tests": {
+      "emoji": "🧪",
+      "bg": "#ec4899",
+      "glow": "rgba(236, 72, 153, 0.4)",
+      "label": "TESTS"
+    },
+    "togglable": {
+      "emoji": "🎚️",
+      "bg": "#06b6d4",
+      "glow": "rgba(6, 182, 212, 0.4)",
+      "label": "TOGGLABLE"
+    },
+    "vocabulary": {
+      "emoji": "📖",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "VOCABULARY"
+    },
+    "well": {
+      "emoji": "👍",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "WELL"
+    },
+    "wholed": {
+      "emoji": "🌐",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "WHOLED"
+    },
+    "copying": {
+      "emoji": "📋",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "COPYING"
+    },
+    "created": {
+      "emoji": "✨",
+      "bg": "#10b981",
+      "glow": "rgba(16, 185, 129, 0.4)",
+      "label": "CREATED"
+    },
+    "last": {
+      "emoji": "🏁",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "LAST"
+    },
+    "list": {
+      "emoji": "📜",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "LIST"
+    },
+    "pronouns": {
+      "emoji": "👤",
+      "bg": "#ec4899",
+      "glow": "rgba(236, 72, 153, 0.4)",
+      "label": "PRONOUNS"
+    },
+    "toggle": {
+      "emoji": "🎚️",
+      "bg": "#06b6d4",
+      "glow": "rgba(6, 182, 212, 0.4)",
+      "label": "TOGGLE"
+    },
+    "unmapped": {
+      "emoji": "❓",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "UNMAPPED"
+    },
+    "untoggle": {
+      "emoji": "⏹️",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "UNTOGGLE"
+    },
+    "ad": {
+      "emoji": "📢",
+      "bg": "#3b82f6",
+      "glow": "rgba(59, 130, 246, 0.4)",
+      "label": "AD"
+    }
   }
 }
