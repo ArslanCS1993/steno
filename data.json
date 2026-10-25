@@ -8142,11 +8142,15 @@
   },
   "flat_chords": {
     "0abein": "编 ",
+    "0abgn": "帮 ",
     "0abin": "边 ",
     "0abio": "标 ",
     "0acghn": "窗 ",
+    "0aginx": "相 ",
     "0agnu": "关 ",
+    "0aij": "家 ",
     "0at": "他 ",
+    "0ghnoz": "中 ",
     "12abinuy": "边缘",
     "12aegilnw": "温良",
     "134hinsu": "女士",
@@ -8178,6 +8182,7 @@
     "1dinorw": "wording ",
     "1dis": "side",
     "1dmo": "mode ",
+    "1efi": "非 ",
     "1efil": "life ",
     "1efo": "forego ",
     "1ehns": "生",
@@ -8210,6 +8215,7 @@
     "1gls": "glossary ",
     "1glt": "togglable ",
     "1gno": "功 ",
+    "1gnov": "供 ",
     "1gnoy": "拥 ",
     "1go": "go ",
     "1got": "toggle ",
@@ -8220,18 +8226,21 @@
     "1ht": "thumb ",
     "1i": "i ",
     "1ij": "机 ",
+    "1iny": "因 ",
     "1is": "思 ",
     "1iy": "一 ",
     "1no": "no ",
     "1not": "note ",
     "1op": "pop ",
     "1or": "or ",
+    "1oy": "优 ",
     "1psu": "pushy ",
     "1st": "tests ",
     "1stw": "switch ",
     "1t": "t",
     "24agknoqu": "情况",
     "25ehmns": "什么",
+    "2acghn": "常 ",
     "2acht": "chatty ",
     "2ad": "add",
     "2adt": "dat ",
@@ -8240,6 +8249,8 @@
     "2aer": "reader ",
     "2aest": "starter ",
     "2agiln": "良 ",
+    "2ahi": "还 ",
+    "2ahn": "涵 ",
     "2ail": "来 ",
     "2ailn": "连 ",
     "2al": "all",
@@ -8249,10 +8260,13 @@
     "2any": "缘 ",
     "2at": "她 ",
     "2ceghn": "程 ",
+    "2cegn": "层 ",
     "2dhos": "shoud ",
     "2dmo": "model ",
     "2egn": "能 ",
     "2eh": "和 ",
+    "2ehv": "合 ",
+    "2eij": "结 ",
     "2eilv": "Ievlevli ",
     "2elt": "elect ",
     "2emn": "们 ",
@@ -8260,26 +8274,40 @@
     "2ginq": "情 ",
     "2hint": "hiting ",
     "2how": "whom ",
+    "2ij": "及 ",
+    "2it": "题 ",
+    "2itv": "提 ",
     "2not": "onto ",
+    "2notv": "同 ",
     "2ru": "如 ",
+    "2y": "于 ",
     "34adijsuz": "速记打字",
     "34adiz": "打字",
     "34aijnx": "仅限",
     "3ad": "aded ",
+    "3af": "法 ",
     "3aginx": "想 ",
+    "3aho": "好 ",
     "3am": "码 ",
     "3an": "哪 ",
     "3ano": "脑 ",
     "3at": "它 ",
+    "3ci": "此 ",
+    "3ghnoz": "种 ",
     "3gi": "给 ",
     "3ginq": "请 ",
     "3gou": "狗 ",
     "3hiz": "指 ",
     "3hnz": "转 ",
+    "3i": "底 ",
+    "3ij": "解 ",
     "3ijn": "仅 ",
     "3il": "里 ",
     "3in": "你 ",
     "3iw": "伟 ",
+    "3ix": "写 ",
+    "3iy": "以 ",
+    "3k": "可 ",
     "3not": "统 ",
     "3nu": "女 ",
     "3osu": "所 ",
@@ -8287,6 +8315,7 @@
     "3ouz": "走 ",
     "3ow": "我 ",
     "3oy": "有 ",
+    "3vy": "与 ",
     "3y": "语 ",
     "4ad": "大 ",
     "4adi": "代 ",
@@ -8294,35 +8323,51 @@
     "4ah": "化 ",
     "4ahns": "上 ",
     "4ai": "爱 ",
+    "4aijo": "教 ",
     "4ainvx": "现 ",
     "4ainx": "限 ",
     "4aknu": "况 ",
     "4aku": "快 ",
     "4an": "那 ",
+    "4ansu": "算 ",
     "4anv": "按 ",
     "4bnu": "步 ",
     "4bu": "不 ",
+    "4chis": "适 ",
     "4di": "地 ",
+    "4diu": "对 ",
     "4ehz": "这 ",
     "4eij": "界 ",
     "4eil": "类 ",
     "4enw": "问 ",
+    "4hins": "释 ",
     "4his": "是 ",
     "4hisv": "士 ",
     "4hnz": "站 ",
+    "4hs": "数 ",
+    "4hvz": "助 ",
+    "4hz": "注 ",
     "4ij": "记 ",
     "4ijsu": "速记",
     "4imn": "命 ",
     "4is": "似 ",
     "4ix": "系 ",
     "4iz": "字 ",
+    "4j": "据 ",
     "4m": "目 ",
+    "4noy": "用 ",
+    "4ou": "构 ",
     "4ouvz": "作 ",
     "4ouz": "做 ",
+    "4oy": "又 ",
     "4su": "速 ",
     "5d": "的 ",
+    "5el": "了 ",
     "5em": "么 ",
+    "7agi": "盖 ",
     "7dgno": "动 ",
+    "7eg": "各 ",
+    "7egn": "更 ",
     "7enr": "任 ",
     "7ginx": "性 ",
     "8ad": "打 ",
@@ -8333,8 +8378,12 @@
     "9ehns": "什 ",
     "9ehnsv": "神 ",
     "9eiw": "为 ",
+    "9enw": "文 ",
+    "9eux": "学 ",
     "9ginx": "形 ",
     "9his": "时 ",
+    "9hisv": "实 ",
+    "9ix": "习 ",
     "aabcloruvy": "vocabulary ",
     "aaclltuy": "actually ",
     "aagmmrr": "grammar",
@@ -9484,6 +9533,349 @@
       "keys": "xing7",
       "tone": 4,
       "english": "nature / property"
+    },
+    "3vy": {
+      "char": "与",
+      "pinyin": "yǔ",
+      "keys": "yv3",
+      "tone": 3,
+      "english": "and / with"
+    },
+    "2notv": {
+      "char": "同",
+      "pinyin": "tóng",
+      "keys": "tonv2",
+      "tone": 2,
+      "english": "same / together"
+    },
+    "4oy": {
+      "char": "又",
+      "pinyin": "yòu",
+      "keys": "yo4",
+      "tone": 4,
+      "english": "again / also"
+    },
+    "1efi": {
+      "char": "非",
+      "pinyin": "fēi",
+      "keys": "fei1",
+      "tone": 1,
+      "english": "not / non-"
+    },
+    "2acghn": {
+      "char": "常",
+      "pinyin": "cháng",
+      "keys": "chang2",
+      "tone": 2,
+      "english": "often / constant"
+    },
+    "3i": {
+      "char": "底",
+      "pinyin": "dǐ",
+      "keys": "i3",
+      "tone": 3,
+      "english": "bottom / base"
+    },
+    "2cegn": {
+      "char": "层",
+      "pinyin": "céng",
+      "keys": "ceng2",
+      "tone": 2,
+      "english": "layer / floor"
+    },
+    "1oy": {
+      "char": "优",
+      "pinyin": "yōu",
+      "keys": "yo1",
+      "tone": 1,
+      "english": "excellent"
+    },
+    "1iny": {
+      "char": "因",
+      "pinyin": "yīn",
+      "keys": "yin1",
+      "tone": 1,
+      "english": "cause / because"
+    },
+    "3ci": {
+      "char": "此",
+      "pinyin": "cǐ",
+      "keys": "ci3",
+      "tone": 3,
+      "english": "this / here"
+    },
+    "4chis": {
+      "char": "适",
+      "pinyin": "shì",
+      "keys": "shic4",
+      "tone": 4,
+      "english": "suitable / fit"
+    },
+    "2ehv": {
+      "char": "合",
+      "pinyin": "hé",
+      "keys": "hev2",
+      "tone": 2,
+      "english": "join / combine"
+    },
+    "3ix": {
+      "char": "写",
+      "pinyin": "xiě",
+      "keys": "xi3",
+      "tone": 3,
+      "english": "write"
+    },
+    "4ansu": {
+      "char": "算",
+      "pinyin": "suàn",
+      "keys": "suan4",
+      "tone": 4,
+      "english": "calculate"
+    },
+    "3af": {
+      "char": "法",
+      "pinyin": "fǎ",
+      "keys": "fa3",
+      "tone": 3,
+      "english": "method / law"
+    },
+    "4aijo": {
+      "char": "教",
+      "pinyin": "jiào",
+      "keys": "jiao4",
+      "tone": 4,
+      "english": "teach"
+    },
+    "2ahn": {
+      "char": "涵",
+      "pinyin": "hán",
+      "keys": "han2",
+      "tone": 2,
+      "english": "contain / cover"
+    },
+    "7agi": {
+      "char": "盖",
+      "pinyin": "gài",
+      "keys": "gai7",
+      "tone": 4,
+      "english": "cover / lid"
+    },
+    "5el": {
+      "char": "了",
+      "pinyin": "le",
+      "keys": "le5",
+      "tone": 5,
+      "english": "completed (particle)"
+    },
+    "7eg": {
+      "char": "各",
+      "pinyin": "gè",
+      "keys": "ge7",
+      "tone": 4,
+      "english": "each / various"
+    },
+    "3ghnoz": {
+      "char": "种",
+      "pinyin": "zhǒng",
+      "keys": "zhong3",
+      "tone": 3,
+      "english": "kind / seed"
+    },
+    "4noy": {
+      "char": "用",
+      "pinyin": "yòng",
+      "keys": "yon4",
+      "tone": 4,
+      "english": "use"
+    },
+    "4hs": {
+      "char": "数",
+      "pinyin": "shù",
+      "keys": "sh4",
+      "tone": 4,
+      "english": "number"
+    },
+    "4j": {
+      "char": "据",
+      "pinyin": "jù",
+      "keys": "j4",
+      "tone": 4,
+      "english": "according to / data"
+    },
+    "2eij": {
+      "char": "结",
+      "pinyin": "jié",
+      "keys": "jie2",
+      "tone": 2,
+      "english": "tie / knot / result"
+    },
+    "4ou": {
+      "char": "构",
+      "pinyin": "gòu",
+      "keys": "ou4",
+      "tone": 4,
+      "english": "structure / construct"
+    },
+    "9hisv": {
+      "char": "实",
+      "pinyin": "shí",
+      "keys": "shiv9",
+      "tone": 2,
+      "english": "real / solid"
+    },
+    "3iy": {
+      "char": "以",
+      "pinyin": "yǐ",
+      "keys": "yi3",
+      "tone": 3,
+      "english": "by means of"
+    },
+    "2ij": {
+      "char": "及",
+      "pinyin": "jí",
+      "keys": "ji2",
+      "tone": 2,
+      "english": "and / reach"
+    },
+    "2it": {
+      "char": "题",
+      "pinyin": "tí",
+      "keys": "ti2",
+      "tone": 2,
+      "english": "topic / question"
+    },
+    "3ij": {
+      "char": "解",
+      "pinyin": "jiě",
+      "keys": "ji3",
+      "tone": 3,
+      "english": "solve / untie"
+    },
+    "4diu": {
+      "char": "对",
+      "pinyin": "duì",
+      "keys": "dui4",
+      "tone": 4,
+      "english": "correct / toward"
+    },
+    "2y": {
+      "char": "于",
+      "pinyin": "yú",
+      "keys": "y2",
+      "tone": 2,
+      "english": "at / to (prep)"
+    },
+    "0aginx": {
+      "char": "相",
+      "pinyin": "xiāng",
+      "keys": "xiang0",
+      "tone": 1,
+      "english": "mutual / appearance"
+    },
+    "2ahi": {
+      "char": "还",
+      "pinyin": "hái",
+      "keys": "hai2",
+      "tone": 2,
+      "english": "still / return"
+    },
+    "2itv": {
+      "char": "提",
+      "pinyin": "tí",
+      "keys": "tiv2",
+      "tone": 2,
+      "english": "lift / raise"
+    },
+    "1gnov": {
+      "char": "供",
+      "pinyin": "gōng",
+      "keys": "gonv1",
+      "tone": 1,
+      "english": "provide / supply"
+    },
+    "0ghnoz": {
+      "char": "中",
+      "pinyin": "zhōng",
+      "keys": "zhong0",
+      "tone": 1,
+      "english": "middle / China"
+    },
+    "9enw": {
+      "char": "文",
+      "pinyin": "wén",
+      "keys": "wen9",
+      "tone": 2,
+      "english": "writing / culture"
+    },
+    "4hz": {
+      "char": "注",
+      "pinyin": "zhù",
+      "keys": "zh4",
+      "tone": 4,
+      "english": "note / annotate"
+    },
+    "4hins": {
+      "char": "释",
+      "pinyin": "shì",
+      "keys": "shin4",
+      "tone": 4,
+      "english": "explain / release"
+    },
+    "3k": {
+      "char": "可",
+      "pinyin": "kě",
+      "keys": "k3",
+      "tone": 3,
+      "english": "can / may"
+    },
+    "0abgn": {
+      "char": "帮",
+      "pinyin": "bāng",
+      "keys": "bang0",
+      "tone": 1,
+      "english": "help"
+    },
+    "4hvz": {
+      "char": "助",
+      "pinyin": "zhù",
+      "keys": "zhv4",
+      "tone": 4,
+      "english": "assist"
+    },
+    "0aij": {
+      "char": "家",
+      "pinyin": "jiā",
+      "keys": "jia0",
+      "tone": 1,
+      "english": "home / family"
+    },
+    "7egn": {
+      "char": "更",
+      "pinyin": "gèng",
+      "keys": "gen7",
+      "tone": 4,
+      "english": "more / change"
+    },
+    "3aho": {
+      "char": "好",
+      "pinyin": "hǎo",
+      "keys": "hao3",
+      "tone": 3,
+      "english": "good"
+    },
+    "9eux": {
+      "char": "学",
+      "pinyin": "xué",
+      "keys": "xue9",
+      "tone": 2,
+      "english": "study"
+    },
+    "9ix": {
+      "char": "习",
+      "pinyin": "xí",
+      "keys": "xi9",
+      "tone": 2,
+      "english": "practice"
     }
   },
   "steno_dictionary": [
@@ -11621,15 +12013,313 @@
       "chord": "douw",
       "keys": "woud",
       "note": "Clean 4-finger match"
+    },
+    {
+      "word": "与",
+      "chord": "3vy",
+      "keys": "yv3",
+      "note": "yǔ - and / with"
+    },
+    {
+      "word": "同",
+      "chord": "2notv",
+      "keys": "tonv2",
+      "note": "tóng - same / together"
+    },
+    {
+      "word": "又",
+      "chord": "4oy",
+      "keys": "yo4",
+      "note": "yòu - again / also"
+    },
+    {
+      "word": "非",
+      "chord": "1efi",
+      "keys": "fei1",
+      "note": "fēi - not / non-"
+    },
+    {
+      "word": "常",
+      "chord": "2acghn",
+      "keys": "chang2",
+      "note": "cháng - often / constant"
+    },
+    {
+      "word": "底",
+      "chord": "3i",
+      "keys": "i3",
+      "note": "dǐ - bottom / base"
+    },
+    {
+      "word": "层",
+      "chord": "2cegn",
+      "keys": "ceng2",
+      "note": "céng - layer / floor"
+    },
+    {
+      "word": "优",
+      "chord": "1oy",
+      "keys": "yo1",
+      "note": "yōu - excellent"
+    },
+    {
+      "word": "因",
+      "chord": "1iny",
+      "keys": "yin1",
+      "note": "yīn - cause / because"
+    },
+    {
+      "word": "此",
+      "chord": "3ci",
+      "keys": "ci3",
+      "note": "cǐ - this / here"
+    },
+    {
+      "word": "适",
+      "chord": "4chis",
+      "keys": "shic4",
+      "note": "shì - suitable / fit"
+    },
+    {
+      "word": "合",
+      "chord": "2ehv",
+      "keys": "hev2",
+      "note": "hé - join / combine"
+    },
+    {
+      "word": "写",
+      "chord": "3ix",
+      "keys": "xi3",
+      "note": "xiě - write"
+    },
+    {
+      "word": "算",
+      "chord": "4ansu",
+      "keys": "suan4",
+      "note": "suàn - calculate"
+    },
+    {
+      "word": "法",
+      "chord": "3af",
+      "keys": "fa3",
+      "note": "fǎ - method / law"
+    },
+    {
+      "word": "教",
+      "chord": "4aijo",
+      "keys": "jiao4",
+      "note": "jiào - teach"
+    },
+    {
+      "word": "涵",
+      "chord": "2ahn",
+      "keys": "han2",
+      "note": "hán - contain / cover"
+    },
+    {
+      "word": "盖",
+      "chord": "7agi",
+      "keys": "gai7",
+      "note": "gài - cover / lid"
+    },
+    {
+      "word": "了",
+      "chord": "5el",
+      "keys": "le5",
+      "note": "le - completed (particle)"
+    },
+    {
+      "word": "各",
+      "chord": "7eg",
+      "keys": "ge7",
+      "note": "gè - each / various"
+    },
+    {
+      "word": "种",
+      "chord": "3ghnoz",
+      "keys": "zhong3",
+      "note": "zhǒng - kind / seed"
+    },
+    {
+      "word": "用",
+      "chord": "4noy",
+      "keys": "yon4",
+      "note": "yòng - use"
+    },
+    {
+      "word": "数",
+      "chord": "4hs",
+      "keys": "sh4",
+      "note": "shù - number"
+    },
+    {
+      "word": "据",
+      "chord": "4j",
+      "keys": "j4",
+      "note": "jù - according to / data"
+    },
+    {
+      "word": "结",
+      "chord": "2eij",
+      "keys": "jie2",
+      "note": "jié - tie / knot / result"
+    },
+    {
+      "word": "构",
+      "chord": "4ou",
+      "keys": "ou4",
+      "note": "gòu - structure / construct"
+    },
+    {
+      "word": "实",
+      "chord": "9hisv",
+      "keys": "shiv9",
+      "note": "shí - real / solid"
+    },
+    {
+      "word": "以",
+      "chord": "3iy",
+      "keys": "yi3",
+      "note": "yǐ - by means of"
+    },
+    {
+      "word": "及",
+      "chord": "2ij",
+      "keys": "ji2",
+      "note": "jí - and / reach"
+    },
+    {
+      "word": "题",
+      "chord": "2it",
+      "keys": "ti2",
+      "note": "tí - topic / question"
+    },
+    {
+      "word": "解",
+      "chord": "3ij",
+      "keys": "ji3",
+      "note": "jiě - solve / untie"
+    },
+    {
+      "word": "对",
+      "chord": "4diu",
+      "keys": "dui4",
+      "note": "duì - correct / toward"
+    },
+    {
+      "word": "于",
+      "chord": "2y",
+      "keys": "y2",
+      "note": "yú - at / to (prep)"
+    },
+    {
+      "word": "相",
+      "chord": "0aginx",
+      "keys": "xiang0",
+      "note": "xiāng - mutual / appearance"
+    },
+    {
+      "word": "还",
+      "chord": "2ahi",
+      "keys": "hai2",
+      "note": "hái - still / return"
+    },
+    {
+      "word": "提",
+      "chord": "2itv",
+      "keys": "tiv2",
+      "note": "tí - lift / raise"
+    },
+    {
+      "word": "供",
+      "chord": "1gnov",
+      "keys": "gonv1",
+      "note": "gōng - provide / supply"
+    },
+    {
+      "word": "中",
+      "chord": "0ghnoz",
+      "keys": "zhong0",
+      "note": "zhōng - middle / China"
+    },
+    {
+      "word": "文",
+      "chord": "9enw",
+      "keys": "wen9",
+      "note": "wén - writing / culture"
+    },
+    {
+      "word": "注",
+      "chord": "4hz",
+      "keys": "zh4",
+      "note": "zhù - note / annotate"
+    },
+    {
+      "word": "释",
+      "chord": "4hins",
+      "keys": "shin4",
+      "note": "shì - explain / release"
+    },
+    {
+      "word": "可",
+      "chord": "3k",
+      "keys": "k3",
+      "note": "kě - can / may"
+    },
+    {
+      "word": "帮",
+      "chord": "0abgn",
+      "keys": "bang0",
+      "note": "bāng - help"
+    },
+    {
+      "word": "助",
+      "chord": "4hvz",
+      "keys": "zhv4",
+      "note": "zhù - assist"
+    },
+    {
+      "word": "家",
+      "chord": "0aij",
+      "keys": "jia0",
+      "note": "jiā - home / family"
+    },
+    {
+      "word": "更",
+      "chord": "7egn",
+      "keys": "gen7",
+      "note": "gèng - more / change"
+    },
+    {
+      "word": "好",
+      "chord": "3aho",
+      "keys": "hao3",
+      "note": "hǎo - good"
+    },
+    {
+      "word": "学",
+      "chord": "9eux",
+      "keys": "xue9",
+      "note": "xué - study"
+    },
+    {
+      "word": "习",
+      "chord": "9ix",
+      "keys": "xi9",
+      "note": "xí - practice"
     }
   ],
   "chord_map": {
     "0abein": "编 ",
+    "0abgn": "帮 ",
     "0abin": "边 ",
     "0abio": "标 ",
     "0acghn": "窗 ",
+    "0aginx": "相 ",
     "0agnu": "关 ",
+    "0aij": "家 ",
     "0at": "他 ",
+    "0ghnoz": "中 ",
     "12abinuy": "边缘 ",
     "12aegilnw": "温良 ",
     "134hinsu": "女士 ",
@@ -11645,6 +12335,7 @@
     "1crd": "created ",
     "1dfl": "folder ",
     "1dis": "side ",
+    "1efi": "非 ",
     "1efil": "life ",
     "1ehow": "whole ",
     "1enst": "tenses ",
@@ -11660,6 +12351,7 @@
     "1gls": "glossary ",
     "1glt": "togglable ",
     "1gno": "功 ",
+    "1gnov": "供 ",
     "1gnoy": "拥 ",
     "1go": "go ",
     "1got": "toggle ",
@@ -11669,21 +12361,26 @@
     "1ht": "thumb ",
     "1i": "i ",
     "1ij": "机 ",
+    "1iny": "因 ",
     "1is": "思 ",
     "1iy": "一 ",
     "1no": "no ",
     "1not": "note ",
     "1op": "pop ",
     "1or": "or ",
+    "1oy": "优 ",
     "1st": "tests ",
     "1stw": "switch ",
     "1t": "t ",
     "1tog": "toggle ",
     "24agknoqu": "情况 ",
     "25ehmns": "什么 ",
+    "2acghn": "常 ",
     "2ad": "add ",
     "2aelnr": "learn ",
     "2agiln": "良 ",
+    "2ahi": "还 ",
+    "2ahn": "涵 ",
     "2ail": "来 ",
     "2ailn": "连 ",
     "2al": "all ",
@@ -11693,30 +12390,47 @@
     "2any": "缘 ",
     "2at": "她 ",
     "2ceghn": "程 ",
+    "2cegn": "层 ",
     "2egn": "能 ",
     "2eh": "和 ",
+    "2ehv": "合 ",
+    "2eij": "结 ",
     "2emn": "们 ",
     "2emnv": "门 ",
     "2ginq": "情 ",
     "2how": "whom ",
+    "2ij": "及 ",
+    "2it": "题 ",
+    "2itv": "提 ",
+    "2notv": "同 ",
     "2ru": "如 ",
+    "2y": "于 ",
     "34adijsuz": "速记打字 ",
     "34adiz": "打字 ",
     "34aijnx": "仅限 ",
+    "3af": "法 ",
     "3aginx": "想 ",
+    "3aho": "好 ",
     "3am": "码 ",
     "3an": "哪 ",
     "3ano": "脑 ",
     "3at": "它 ",
+    "3ci": "此 ",
+    "3ghnoz": "种 ",
     "3gi": "给 ",
     "3ginq": "请 ",
     "3gou": "狗 ",
     "3hiz": "指 ",
     "3hnz": "转 ",
+    "3i": "底 ",
+    "3ij": "解 ",
     "3ijn": "仅 ",
     "3il": "里 ",
     "3in": "你 ",
     "3iw": "伟 ",
+    "3ix": "写 ",
+    "3iy": "以 ",
+    "3k": "可 ",
     "3not": "统 ",
     "3nu": "女 ",
     "3osu": "所 ",
@@ -11724,41 +12438,58 @@
     "3ouz": "走 ",
     "3ow": "我 ",
     "3oy": "有 ",
+    "3vy": "与 ",
     "3y": "语 ",
     "4ad": "大 ",
     "4adi": "代 ",
     "4ah": "化 ",
     "4ahns": "上 ",
     "4ai": "爱 ",
+    "4aijo": "教 ",
     "4ainvx": "现 ",
     "4ainx": "限 ",
     "4aknu": "况 ",
     "4aku": "快 ",
     "4an": "那 ",
+    "4ansu": "算 ",
     "4anv": "按 ",
     "4bnu": "步 ",
     "4bu": "不 ",
+    "4chis": "适 ",
     "4di": "地 ",
+    "4diu": "对 ",
     "4ehz": "这 ",
     "4eij": "界 ",
     "4eil": "类 ",
     "4enw": "问 ",
+    "4hins": "释 ",
     "4his": "是 ",
     "4hisv": "士 ",
     "4hnz": "站 ",
+    "4hs": "数 ",
+    "4hvz": "助 ",
+    "4hz": "注 ",
     "4ij": "记 ",
     "4ijsu": "速记 ",
     "4imn": "命 ",
     "4is": "似 ",
     "4ix": "系 ",
     "4iz": "字 ",
+    "4j": "据 ",
     "4m": "目 ",
+    "4noy": "用 ",
+    "4ou": "构 ",
     "4ouvz": "作 ",
     "4ouz": "做 ",
+    "4oy": "又 ",
     "4su": "速 ",
     "5d": "的 ",
+    "5el": "了 ",
     "5em": "么 ",
+    "7agi": "盖 ",
     "7dgno": "动 ",
+    "7eg": "各 ",
+    "7egn": "更 ",
     "7enr": "任 ",
     "7ginx": "性 ",
     "8ad": "打 ",
@@ -11769,8 +12500,12 @@
     "9ehns": "什 ",
     "9ehnsv": "神 ",
     "9eiw": "为 ",
+    "9enw": "文 ",
+    "9eux": "学 ",
     "9ginx": "形 ",
     "9his": "时 ",
+    "9hisv": "实 ",
+    "9ix": "习 ",
     "abekory": "keyboard ",
     "abel": "able ",
     "abelt": "table ",
@@ -12149,12 +12884,12 @@
     "只": "only",
     "功能": "functionality",
     "现": "present",
-    "对": "right",
+    "对": "correct / toward",
     "计时器": "timer",
     "到": "to",
     "等": "wait",
     "等待": "waiting",
-    "实": "actual",
+    "实": "real / solid",
     "实际": "actually",
     "前": "forward",
     "清": "clear",
@@ -12218,7 +12953,7 @@
     "中文": "chinese",
     "汉语": "chinese",
     "这里": "here",
-    "此": "here",
+    "此": "this / here",
     "没": "not",
     "看": "see",
     "见": "see",
@@ -12272,7 +13007,7 @@
     "刚刚": "just",
     "仅仅": "just",
     "更多": "more",
-    "更": "more",
+    "更": "more / change",
     "下一个": "next",
     "其次": "next",
     "问题": "question",
@@ -12287,7 +13022,7 @@
     "文本": "text",
     "正文": "text",
     "使用过的": "used",
-    "用": "used",
+    "用": "use",
     "道路": "way",
     "方式": "way",
     "将": "will",
@@ -12335,7 +13070,7 @@
     "测试": "tests",
     "可切换的": "togglable",
     "词汇": "vocabulary",
-    "好": "well",
+    "好": "good",
     "井": "well",
     "完整": "wholed",
     "整个": "wholed",
@@ -12367,7 +13102,50 @@
     "拥": "hold / have",
     "类": "kind / type",
     "似": "similar / like",
-    "性": "nature / property"
+    "性": "nature / property",
+    "与": "and / with",
+    "同": "same / together",
+    "又": "again / also",
+    "非": "not / non-",
+    "常": "often / constant",
+    "底": "bottom / base",
+    "层": "layer / floor",
+    "优": "excellent",
+    "因": "cause / because",
+    "适": "suitable / fit",
+    "合": "join / combine",
+    "写": "write",
+    "算": "calculate",
+    "法": "method / law",
+    "教": "teach",
+    "涵": "contain / cover",
+    "盖": "cover / lid",
+    "了": "completed (particle)",
+    "各": "each / various",
+    "种": "kind / seed",
+    "数": "number",
+    "据": "according to / data",
+    "结": "tie / knot / result",
+    "构": "structure / construct",
+    "以": "by means of",
+    "及": "and / reach",
+    "题": "topic / question",
+    "解": "solve / untie",
+    "于": "at / to (prep)",
+    "相": "mutual / appearance",
+    "还": "still / return",
+    "提": "lift / raise",
+    "供": "provide / supply",
+    "中": "middle / China",
+    "文": "writing / culture",
+    "注": "note / annotate",
+    "释": "explain / release",
+    "可": "can / may",
+    "帮": "help",
+    "助": "assist",
+    "家": "home / family",
+    "学": "study",
+    "习": "practice"
   },
   "english_to_chinese": {
     "can": "能",
@@ -15186,6 +15964,300 @@
       "bg": "#f59e0b",
       "glow": "rgba(245,158,11,0.4)",
       "label": "THUMB"
+    },
+    "与": {
+      "emoji": "➕",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "与 YǓ"
+    },
+    "同": {
+      "emoji": "🫂",
+      "bg": "#0ea5e9",
+      "glow": "rgba(14, 165, 233, 0.4)",
+      "label": "同 TÓNG"
+    },
+    "又": {
+      "emoji": "🔁",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "又 YÒU"
+    },
+    "非": {
+      "emoji": "❌",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "非 FĒI"
+    },
+    "常": {
+      "emoji": "♾️",
+      "bg": "#14b8a6",
+      "glow": "rgba(20, 184, 166, 0.4)",
+      "label": "常 CHÁNG"
+    },
+    "底": {
+      "emoji": "🔽",
+      "bg": "#78716c",
+      "glow": "rgba(120, 113, 108, 0.4)",
+      "label": "底 DǏ"
+    },
+    "层": {
+      "emoji": "🥞",
+      "bg": "#f97316",
+      "glow": "rgba(249, 115, 22, 0.4)",
+      "label": "层 CÉNG"
+    },
+    "优": {
+      "emoji": "🥇",
+      "bg": "#eab308",
+      "glow": "rgba(234, 179, 8, 0.4)",
+      "label": "优 YŌU"
+    },
+    "因": {
+      "emoji": "💡",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "因 YĪN"
+    },
+    "此": {
+      "emoji": "⬇️",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "此 CǏ"
+    },
+    "适": {
+      "emoji": "👌",
+      "bg": "#22c55e",
+      "glow": "rgba(34, 197, 94, 0.4)",
+      "label": "适 SHÌ"
+    },
+    "合": {
+      "emoji": "🔗",
+      "bg": "#0891b2",
+      "glow": "rgba(8, 145, 178, 0.4)",
+      "label": "合 HÉ"
+    },
+    "写": {
+      "emoji": "✍️",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "写 XIĚ"
+    },
+    "算": {
+      "emoji": "🧮",
+      "bg": "#a855f7",
+      "glow": "rgba(168, 85, 247, 0.4)",
+      "label": "算 SUÀN"
+    },
+    "法": {
+      "emoji": "⚖️",
+      "bg": "#0369a1",
+      "glow": "rgba(3, 105, 161, 0.4)",
+      "label": "法 FǍ"
+    },
+    "教": {
+      "emoji": "📚",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "教 JIÀO"
+    },
+    "涵": {
+      "emoji": "🗃️",
+      "bg": "#7c3aed",
+      "glow": "rgba(124, 58, 237, 0.4)",
+      "label": "涵 HÁN"
+    },
+    "盖": {
+      "emoji": "🧢",
+      "bg": "#dc2626",
+      "glow": "rgba(220, 38, 38, 0.4)",
+      "label": "盖 GÀI"
+    },
+    "了": {
+      "emoji": "🏁",
+      "bg": "#475569",
+      "glow": "rgba(71, 85, 105, 0.4)",
+      "label": "了 LE"
+    },
+    "各": {
+      "emoji": "🌈",
+      "bg": "#ec4899",
+      "glow": "rgba(236, 72, 153, 0.4)",
+      "label": "各 GÈ"
+    },
+    "种": {
+      "emoji": "🌾",
+      "bg": "#ca8a04",
+      "glow": "rgba(202, 138, 4, 0.4)",
+      "label": "种 ZHǑNG"
+    },
+    "用": {
+      "emoji": "🧰",
+      "bg": "#0ea5e9",
+      "glow": "rgba(14, 165, 233, 0.4)",
+      "label": "用 YÒNG"
+    },
+    "数": {
+      "emoji": "#️⃣",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "数 SHÙ"
+    },
+    "据": {
+      "emoji": "📊",
+      "bg": "#0284c7",
+      "glow": "rgba(2, 132, 199, 0.4)",
+      "label": "据 JÙ"
+    },
+    "结": {
+      "emoji": "🎀",
+      "bg": "#db2777",
+      "glow": "rgba(219, 39, 119, 0.4)",
+      "label": "结 JIÉ"
+    },
+    "构": {
+      "emoji": "🏗️",
+      "bg": "#b45309",
+      "glow": "rgba(180, 83, 9, 0.4)",
+      "label": "构 GÒU"
+    },
+    "实": {
+      "emoji": "🧱",
+      "bg": "#b91c1c",
+      "glow": "rgba(185, 28, 28, 0.4)",
+      "label": "实 SHÍ"
+    },
+    "以": {
+      "emoji": "➡️",
+      "bg": "#0891b2",
+      "glow": "rgba(8, 145, 178, 0.4)",
+      "label": "以 YǏ"
+    },
+    "及": {
+      "emoji": "🧲",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "及 JÍ"
+    },
+    "题": {
+      "emoji": "🧾",
+      "bg": "#7c3aed",
+      "glow": "rgba(124, 58, 237, 0.4)",
+      "label": "题 TÍ"
+    },
+    "解": {
+      "emoji": "🔓",
+      "bg": "#22c55e",
+      "glow": "rgba(34, 197, 94, 0.4)",
+      "label": "解 JIĚ"
+    },
+    "对": {
+      "emoji": "✔️",
+      "bg": "#16a34a",
+      "glow": "rgba(22, 163, 74, 0.4)",
+      "label": "对 DUÌ"
+    },
+    "于": {
+      "emoji": "🔹",
+      "bg": "#64748b",
+      "glow": "rgba(100, 116, 139, 0.4)",
+      "label": "于 YÚ"
+    },
+    "相": {
+      "emoji": "🪞",
+      "bg": "#06b6d4",
+      "glow": "rgba(6, 182, 212, 0.4)",
+      "label": "相 XIĀNG"
+    },
+    "还": {
+      "emoji": "↩️",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "还 HÁI"
+    },
+    "提": {
+      "emoji": "🏋️",
+      "bg": "#dc2626",
+      "glow": "rgba(220, 38, 38, 0.4)",
+      "label": "提 TÍ"
+    },
+    "供": {
+      "emoji": "📤",
+      "bg": "#0891b2",
+      "glow": "rgba(8, 145, 178, 0.4)",
+      "label": "供 GŌNG"
+    },
+    "中": {
+      "emoji": "🀄",
+      "bg": "#dc2626",
+      "glow": "rgba(220, 38, 38, 0.4)",
+      "label": "中 ZHŌNG"
+    },
+    "文": {
+      "emoji": "📜",
+      "bg": "#a16207",
+      "glow": "rgba(161, 98, 7, 0.4)",
+      "label": "文 WÉN"
+    },
+    "注": {
+      "emoji": "🔖",
+      "bg": "#7c3aed",
+      "glow": "rgba(124, 58, 237, 0.4)",
+      "label": "注 ZHÙ"
+    },
+    "释": {
+      "emoji": "🔍",
+      "bg": "#0ea5e9",
+      "glow": "rgba(14, 165, 233, 0.4)",
+      "label": "释 SHÌ"
+    },
+    "可": {
+      "emoji": "🆗",
+      "bg": "#22c55e",
+      "glow": "rgba(34, 197, 94, 0.4)",
+      "label": "可 KĚ"
+    },
+    "帮": {
+      "emoji": "🛟",
+      "bg": "#f97316",
+      "glow": "rgba(249, 115, 22, 0.4)",
+      "label": "帮 BĀNG"
+    },
+    "助": {
+      "emoji": "🆘",
+      "bg": "#ef4444",
+      "glow": "rgba(239, 68, 68, 0.4)",
+      "label": "助 ZHÙ"
+    },
+    "家": {
+      "emoji": "🏡",
+      "bg": "#16a34a",
+      "glow": "rgba(22, 163, 74, 0.4)",
+      "label": "家 JIĀ"
+    },
+    "更": {
+      "emoji": "📈",
+      "bg": "#22c55e",
+      "glow": "rgba(34, 197, 94, 0.4)",
+      "label": "更 GÈNG"
+    },
+    "好": {
+      "emoji": "😊",
+      "bg": "#f59e0b",
+      "glow": "rgba(245, 158, 11, 0.4)",
+      "label": "好 HǍO"
+    },
+    "学": {
+      "emoji": "🏫",
+      "bg": "#6366f1",
+      "glow": "rgba(99, 102, 241, 0.4)",
+      "label": "学 XUÉ"
+    },
+    "习": {
+      "emoji": "🗓️",
+      "bg": "#8b5cf6",
+      "glow": "rgba(139, 92, 246, 0.4)",
+      "label": "习 XÍ"
     }
   }
 }
