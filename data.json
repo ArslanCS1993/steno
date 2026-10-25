@@ -2274,9 +2274,9 @@
       },
       "char": "现"
     },
-    "eht": {
+    "ht": {
       "lemma": "the",
-      "chord": "eht",
+      "chord": "ht",
       "emoji": "☝️",
       "note": "Definite article",
       "derivatives": {
@@ -5126,9 +5126,9 @@
         }
       }
     },
-    "hint": {
+    "hknt": {
       "lemma": "think",
-      "chord": "hint",
+      "chord": "hknt",
       "char": "思",
       "note": "Standalone vocabulary entry.",
       "derivatives": {},
@@ -7863,6 +7863,8 @@
     "1cdo": "doc ",
     "1cdr": "created ",
     "1cil": "click",
+    "1cinost": "constitutes ",
+    "1cins": "since ",
     "1cis": "sci ",
     "1cln": "clone ",
     "1cstu": "struct ",
@@ -7876,6 +7878,7 @@
     "1ehns": "生",
     "1ehnw": "whened ",
     "1ehos": "household ",
+    "1ehow": "whole ",
     "1eht": "they ",
     "1eilnt": "intellect ",
     "1eilv": "Ievlev ",
@@ -7889,9 +7892,11 @@
     "1enst": "tenses",
     "1enw": "温 ",
     "1eorsy": "yourselves ",
+    "1eps": "specs ",
     "1eqstu": "quest ",
     "1ersx": "exercises",
     "1es": "see",
+    "1fi": "fit ",
     "1flw": "following ",
     "1fmo": "from ",
     "1fo": "of ",
@@ -7901,10 +7906,13 @@
     "1glt": "togglable ",
     "1gno": "功 ",
     "1gnoy": "拥 ",
+    "1go": "go ",
     "1got": "toggle ",
     "1hint": "hitting ",
+    "1hist": "things ",
     "1how": "who ",
     "1hs": "书 ",
+    "1ht": "thumb ",
     "1i": "i ",
     "1ij": "机 ",
     "1is": "思 ",
@@ -7912,6 +7920,7 @@
     "1no": "no ",
     "1not": "note ",
     "1op": "pop ",
+    "1or": "or ",
     "1psu": "pushy ",
     "1st": "tests ",
     "1stw": "switch ",
@@ -7922,6 +7931,7 @@
     "2ad": "add",
     "2adt": "dat ",
     "2aegimn": "meaning ",
+    "2aelnr": "learn ",
     "2aer": "reader ",
     "2aest": "starter ",
     "2agiln": "良 ",
@@ -8074,6 +8084,7 @@
     "adforw": "forward ",
     "adgiln": "dealing ",
     "adgr": "reading",
+    "adh": "hand ",
     "adhnost": "thousand ",
     "adhr": "adhere ",
     "adims": "dismay ",
@@ -8094,6 +8105,7 @@
     "aefrt": "after",
     "aegilnpx": "explaining ",
     "aegimn": "imagine ",
+    "aegln": "language ",
     "aegm": "game ",
     "aegmn": "manager ",
     "aeh": "each",
@@ -8122,6 +8134,8 @@
     "aeioty": "etymologically ",
     "aekm": "make ",
     "aekt": "take ",
+    "aelmpx": "example ",
+    "aelmrs": "smaller ",
     "aelnnp": "pannel ",
     "aelnp": "plane ",
     "aelnr": "rectangle ",
@@ -8136,6 +8150,7 @@
     "aenors": "reason",
     "aenrsw": "answer",
     "aenru": "unread ",
+    "aent": "nature ",
     "aeovy": "voyage ",
     "aeps": "special",
     "aepst": "paste ",
@@ -8143,9 +8158,11 @@
     "aers": "restart ",
     "aest": "stead ",
     "aesty": "steady ",
+    "afmo": "format ",
     "afs": "fast ",
     "aft": "after",
     "agiintw": "waiting ",
+    "agimp": "mapping ",
     "agl": "global ",
     "aglorssy": "glossary ",
     "agmr": "grammar",
@@ -8159,6 +8176,8 @@
     "ailnst": "install ",
     "ailnsy": "analysis ",
     "ailprsy": "paralysis ",
+    "aim": "main ",
+    "aimopr": "programming ",
     "ainrs": "artisan ",
     "aint": "attain ",
     "aiotu": "tutorial ",
@@ -8176,6 +8195,7 @@
     "alos": "also ",
     "als": "also ",
     "alst": "last ",
+    "alw": "allow ",
     "am": "am ",
     "amn": "man ",
     "anor": "organ ",
@@ -8242,6 +8262,7 @@
     "cgiln": "cloning ",
     "cgimo": "git-commit ",
     "cginopy": "copying ",
+    "cgiopu": "occupying ",
     "chins": "chinese",
     "chistw": "switch ",
     "chiw": "which ",
@@ -8271,6 +8292,7 @@
     "cnot": "connect ",
     "cnst": "section",
     "co": "code ",
+    "copu": "occupy ",
     "copy": "copy ",
     "cor": "correct ",
     "cstu": "structure ",
@@ -8299,6 +8321,7 @@
     "dinow": "window ",
     "dint": "intended ",
     "dirt": "dirrect",
+    "dkn": "kind ",
     "dlpv": "develop ",
     "dmo": "mod ",
     "dmos": "modes ",
@@ -8310,10 +8333,13 @@
     "dorw": "word",
     "dorwy": "wordy ",
     "dosty": "destroy ",
+    "douw": "would ",
     "eensst": "tenses",
     "eenst": "tense ",
+    "ef": "feed ",
     "efhios": "housewife ",
     "efil": "file ",
+    "efl": "left ",
     "efo": "forget ",
     "eg": "get ",
     "eggirrst": "triggers",
@@ -8337,7 +8363,7 @@
     "ehrw": "where ",
     "ehs": "she ",
     "ehst": "these ",
-    "eht": "the ",
+    "eht": "they ",
     "ehty": "they ",
     "ehvw": "we have ",
     "eijnt": "inject ",
@@ -8378,6 +8404,7 @@
     "elty": "electrolyte ",
     "elw": "well ",
     "emnr": "enumerated ",
+    "emopr": "morpheme ",
     "emor": "more",
     "emos": "some",
     "emov": "remove ",
@@ -8394,18 +8421,22 @@
     "ens": "essence ",
     "enst": "sentence ",
     "entx": "next",
+    "eopry": "property ",
     "eor": "rootlet ",
     "eorsy": "yourself ",
     "eorw": "reword ",
+    "eost": "stored ",
     "eoty": "etymology ",
     "eprs": "press ",
     "eprsu": "pusher ",
+    "eps": "spec ",
     "epst": "step ",
     "eptu": "putter ",
     "epty": "type ",
     "eqru": "query ",
     "eqstu": "question",
     "er": "rect ",
+    "ersu": "sure ",
     "erx": "exercise",
     "esstt": "tests ",
     "est": "test ",
@@ -8430,16 +8461,19 @@
     "gils": "girls ",
     "gim": "might ",
     "gino": "ongoing ",
+    "gins": "sign ",
     "girt": "triggers",
     "gly": "logy ",
     "go": "go ",
-    "hint": "think ",
+    "hint": "thin ",
     "hist": "this ",
     "hit": "hit",
     "hitw": "with ",
+    "hknt": "think ",
     "hors": "short ",
     "how": "how ",
     "hst": "thus ",
+    "ht": "the ",
     "hw": "why ",
     "illw": "will",
     "ilst": "list ",
@@ -8457,12 +8491,14 @@
     "kl": "look ",
     "knorw": "working ",
     "know": "know ",
+    "ko": "ok ",
     "korsw": "works",
     "korw": "work",
     "kotu": "outlook ",
     "lntu": "untoggle ",
     "lpsu": "supply ",
     "mnost": "something ",
+    "mopr": "prompt ",
     "nnooprsu": "pronouns ",
     "no": "on ",
     "not": "not",
@@ -8487,6 +8523,7 @@
     "psu": "push ",
     "ptu": "put ",
     "pu": "up ",
+    "rsu": "rust ",
     "rty": "try",
     "tu": "tut ",
     "ty": "try"
@@ -9245,7 +9282,7 @@
       "word": "they",
       "chord": "eht",
       "keys": "the",
-      "note": "y skipped (conflict with h)"
+      "note": "Hand-picked (was sharing eht with 'the')"
     },
     {
       "word": "you",
@@ -9405,9 +9442,15 @@
     },
     {
       "word": "think",
+      "chord": "hknt",
+      "keys": "thnk",
+      "note": "Hand-picked, vowels dropped"
+    },
+    {
+      "word": "thin",
       "chord": "hint",
       "keys": "thin",
-      "note": "k skipped (conflict with i)"
+      "note": "Hand-picked"
     },
     {
       "word": "please",
@@ -9537,9 +9580,9 @@
     },
     {
       "word": "the",
-      "chord": "eht",
-      "keys": "the",
-      "note": "Definite article"
+      "chord": "ht",
+      "keys": "th",
+      "note": "Hand-picked short chord"
     },
     {
       "word": "time",
@@ -11063,6 +11106,216 @@
       "chord": "7ginx",
       "keys": "xing7",
       "note": "xìng - nature / property"
+    },
+    {
+      "word": "go",
+      "chord": "1go",
+      "keys": "go",
+      "note": "derived from go; disambiguated"
+    },
+    {
+      "word": "allow",
+      "chord": "alw",
+      "keys": "alw",
+      "note": "Clean 3-finger match"
+    },
+    {
+      "word": "constitutes",
+      "chord": "1cinost",
+      "keys": "consti",
+      "note": "derived from cinost; disambiguated"
+    },
+    {
+      "word": "example",
+      "chord": "aelmpx",
+      "keys": "exampl",
+      "note": "Clean 6-finger match"
+    },
+    {
+      "word": "feed",
+      "chord": "ef",
+      "keys": "fe",
+      "note": "Clean 2-finger match"
+    },
+    {
+      "word": "fit",
+      "chord": "1fi",
+      "keys": "fi",
+      "note": "derived from fi; disambiguated"
+    },
+    {
+      "word": "format",
+      "chord": "afmo",
+      "keys": "foma",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "hand",
+      "chord": "adh",
+      "keys": "had",
+      "note": "Clean 3-finger match"
+    },
+    {
+      "word": "kind",
+      "chord": "dkn",
+      "keys": "knd",
+      "note": "Clean 3-finger match"
+    },
+    {
+      "word": "language",
+      "chord": "aegln",
+      "keys": "lange",
+      "note": "Clean 5-finger match"
+    },
+    {
+      "word": "learn",
+      "chord": "2aelnr",
+      "keys": "learn",
+      "note": "derived from aelnr; disambiguated"
+    },
+    {
+      "word": "left",
+      "chord": "efl",
+      "keys": "lef",
+      "note": "Clean 3-finger match"
+    },
+    {
+      "word": "main",
+      "chord": "aim",
+      "keys": "mai",
+      "note": "Clean 3-finger match"
+    },
+    {
+      "word": "mapping",
+      "chord": "agimp",
+      "keys": "mapig",
+      "note": "Clean 5-finger match"
+    },
+    {
+      "word": "morpheme",
+      "chord": "emopr",
+      "keys": "morpe",
+      "note": "Clean 5-finger match"
+    },
+    {
+      "word": "nature",
+      "chord": "aent",
+      "keys": "nate",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "occupy",
+      "chord": "copu",
+      "keys": "ocup",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "occupying",
+      "chord": "cgiopu",
+      "keys": "ocupig",
+      "note": "Clean 6-finger match"
+    },
+    {
+      "word": "ok",
+      "chord": "ko",
+      "keys": "ok",
+      "note": "Clean 2-finger match"
+    },
+    {
+      "word": "or",
+      "chord": "1or",
+      "keys": "or",
+      "note": "derived from or; disambiguated"
+    },
+    {
+      "word": "programming",
+      "chord": "aimopr",
+      "keys": "proami",
+      "note": "Clean 6-finger match"
+    },
+    {
+      "word": "prompt",
+      "chord": "mopr",
+      "keys": "prom",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "property",
+      "chord": "eopry",
+      "keys": "proey",
+      "note": "Clean 5-finger match"
+    },
+    {
+      "word": "rust",
+      "chord": "rsu",
+      "keys": "rus",
+      "note": "Clean 3-finger match"
+    },
+    {
+      "word": "sign",
+      "chord": "gins",
+      "keys": "sign",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "since",
+      "chord": "1cins",
+      "keys": "sinc",
+      "note": "derived from cins; disambiguated"
+    },
+    {
+      "word": "smaller",
+      "chord": "aelmrs",
+      "keys": "smaler",
+      "note": "Clean 6-finger match"
+    },
+    {
+      "word": "spec",
+      "chord": "eps",
+      "keys": "spe",
+      "note": "Clean 3-finger match"
+    },
+    {
+      "word": "specs",
+      "chord": "1eps",
+      "keys": "spe",
+      "note": "derived from eps; disambiguated"
+    },
+    {
+      "word": "stored",
+      "chord": "eost",
+      "keys": "stoe",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "sure",
+      "chord": "ersu",
+      "keys": "sure",
+      "note": "Clean 4-finger match"
+    },
+    {
+      "word": "things",
+      "chord": "1hist",
+      "keys": "this",
+      "note": "derived from hist; disambiguated"
+    },
+    {
+      "word": "thumb",
+      "chord": "1ht",
+      "keys": "th",
+      "note": "Hand-picked (1 = disambiguating digit)"
+    },
+    {
+      "word": "whole",
+      "chord": "1ehow",
+      "keys": "whoe",
+      "note": "derived from ehow; disambiguated"
+    },
+    {
+      "word": "would",
+      "chord": "douw",
+      "keys": "woud",
+      "note": "Clean 4-finger match"
     }
   ],
   "chord_map": {
@@ -11082,14 +11335,19 @@
     "1cdo": "doc ",
     "1cdr": "created ",
     "1cil": "click ",
+    "1cinost": "constitutes ",
+    "1cins": "since ",
     "1crd": "created ",
     "1dfl": "folder ",
     "1dis": "side ",
     "1efil": "life ",
+    "1ehow": "whole ",
     "1enst": "tenses ",
     "1enw": "温 ",
+    "1eps": "specs ",
     "1ersx": "exercises ",
     "1es": "see ",
+    "1fi": "fit ",
     "1flw": "following ",
     "1fmo": "from ",
     "1fo": "of ",
@@ -11098,9 +11356,12 @@
     "1glt": "togglable ",
     "1gno": "功 ",
     "1gnoy": "拥 ",
+    "1go": "go ",
     "1got": "toggle ",
+    "1hist": "things ",
     "1how": "who ",
     "1hs": "书 ",
+    "1ht": "thumb ",
     "1i": "i ",
     "1ij": "机 ",
     "1is": "思 ",
@@ -11108,6 +11369,7 @@
     "1no": "no ",
     "1not": "note ",
     "1op": "pop ",
+    "1or": "or ",
     "1st": "tests ",
     "1stw": "switch ",
     "1t": "t ",
@@ -11115,6 +11377,7 @@
     "24agknoqu": "情况 ",
     "25ehmns": "什么 ",
     "2ad": "add ",
+    "2aelnr": "learn ",
     "2agiln": "良 ",
     "2ail": "来 ",
     "2ailn": "连 ",
@@ -11223,11 +11486,13 @@
     "add": "add ",
     "adforw": "forward ",
     "adgr": "reading ",
+    "adh": "hand ",
     "adkln": "andlook ",
     "adn": "and ",
     "adns": "sand ",
     "adnst": "stand ",
     "adt": "data ",
+    "aegln": "language ",
     "aegm": "game ",
     "aeh": "each ",
     "aehnps": "happens ",
@@ -11236,18 +11501,25 @@
     "aehv": "have ",
     "aekm": "make ",
     "aekt": "take ",
+    "aelmpx": "example ",
+    "aelmrs": "smaller ",
     "aelps": "please ",
     "aems": "same ",
     "aenors": "reason ",
+    "aent": "nature ",
     "aeps": "special ",
     "aer": "are ",
+    "afmo": "format ",
     "afs": "fast ",
     "aft": "after ",
     "after": "after ",
+    "agimp": "mapping ",
     "agl": "global ",
     "agmr": "grammar ",
     "aht": "that ",
     "ahtw": "what ",
+    "aim": "main ",
+    "aimopr": "programming ",
     "aist": "it was ",
     "aitw": "wait ",
     "aklw": "walk ",
@@ -11257,6 +11529,7 @@
     "als": "also ",
     "also": "also ",
     "alst": "last ",
+    "alw": "allow ",
     "am": "am ",
     "anrs": "answer ",
     "answer": "answer ",
@@ -11283,6 +11556,7 @@
     "btwn": "between ",
     "by": "by ",
     "cfinou": "function ",
+    "cgiopu": "occupying ",
     "change": "change ",
     "chins": "chinese ",
     "chiw": "which ",
@@ -11298,6 +11572,7 @@
     "cnst": "section ",
     "co": "code ",
     "column": "column ",
+    "copu": "occupy ",
     "copying": "copying ",
     "cpin": "copying ",
     "created": "created ",
@@ -11315,6 +11590,7 @@
     "dint": "intended ",
     "direct": "direct ",
     "dirt": "dirrect ",
+    "dkn": "kind ",
     "dlpv": "develop ",
     "dmos": "modes ",
     "dnos": "doesn ",
@@ -11324,8 +11600,11 @@
     "doc": "doc ",
     "doesn": "doesn ",
     "dorw": "word ",
+    "douw": "would ",
     "each": "each ",
+    "ef": "feed ",
     "efil": "file ",
+    "efl": "left ",
     "egin": "given ",
     "eglns": "english ",
     "eh": "he ",
@@ -11335,13 +11614,14 @@
     "ehr": "here ",
     "ehrw": "where ",
     "ehs": "she ",
-    "eht": "the ",
+    "eht": "they ",
     "ehvw": "we have ",
     "eilmps": "simple ",
     "elst": "lets ",
     "elt": "let ",
     "elw": "well ",
     "emnr": "enumerated ",
+    "emopr": "morpheme ",
     "emor": "more ",
     "emos": "some ",
     "emov": "remove ",
@@ -11354,10 +11634,14 @@
     "enst": "sentence ",
     "entx": "next ",
     "enumerated": "enumerated ",
+    "eopry": "property ",
+    "eost": "stored ",
     "eprs": "press ",
+    "eps": "spec ",
     "epst": "step ",
     "epty": "type ",
     "eqstu": "question ",
+    "ersu": "sure ",
     "erx": "exercise ",
     "esu": "use ",
     "etx": "text ",
@@ -11374,18 +11658,21 @@
     "game": "game ",
     "ghin": "thing ",
     "ghirt": "right ",
+    "gins": "sign ",
     "girt": "triggers ",
     "give": "give ",
     "given": "given ",
     "glossary": "glossary ",
     "grammar": "grammar ",
     "happens": "happens ",
-    "hint": "think ",
+    "hint": "thin ",
     "hist": "this ",
     "hit": "hit ",
     "hitw": "with ",
+    "hknt": "think ",
     "hors": "short ",
     "how": "how ",
+    "ht": "the ",
     "hw": "why ",
     "ilst": "list ",
     "ilw": "will ",
@@ -11397,6 +11684,7 @@
     "jst": "just ",
     "just": "just ",
     "know": "know ",
+    "ko": "ok ",
     "korsw": "works ",
     "korw": "work ",
     "last": "last ",
@@ -11406,6 +11694,7 @@
     "mnost": "something ",
     "modes": "modes ",
     "mods": "modes ",
+    "mopr": "prompt ",
     "more": "more ",
     "movable": "movable ",
     "movb": "movable ",
@@ -11439,6 +11728,7 @@
     "question": "question ",
     "reading": "reading ",
     "reason": "reason ",
+    "rsu": "rust ",
     "rty": "try ",
     "same": "same ",
     "sandbox": "sandbox ",
@@ -12217,7 +12507,9 @@
     "compile": "编",
     "procedure": "程",
     "language": "语",
-    "speech": "言"
+    "speech": "言",
+    "thin": "薄",
+    "thumb": "拇指"
   },
   "word_visuals": {
     "word": {
@@ -14578,6 +14870,18 @@
       "bg": "#b45309",
       "glow": "rgba(180, 83, 9, 0.4)",
       "label": "性 XÌNG"
+    },
+    "thin": {
+      "emoji": "📏",
+      "bg": "#38bdf8",
+      "glow": "rgba(56,189,248,0.4)",
+      "label": "THIN"
+    },
+    "thumb": {
+      "emoji": "👍",
+      "bg": "#f59e0b",
+      "glow": "rgba(245,158,11,0.4)",
+      "label": "THUMB"
     }
   }
 }
