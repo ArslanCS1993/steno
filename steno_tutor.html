@@ -272,12 +272,47 @@
         /* Custom scrollbar */
         ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+
+        /* ===== Minimal mode: the writing box and nothing else ===== */
+        body.minimal #app-header,
+        body.minimal #sandbox-topbar,
+        body.minimal #sandbox-tree-box { display: none !important; }
+
+        body.minimal main {
+            max-width: none !important;
+            padding: 0.75rem !important;
+            gap: 0 !important;
+        }
+        body.minimal #view-sandbox { gap: 0 !important; }
+        body.minimal #sandbox-input-box {
+            grid-column: span 12 / span 12 !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+        body.minimal #sandbox-editor {
+            min-height: calc(100vh - 6rem);
+            max-height: none !important;
+            font-size: 1.05rem;
+        }
+
+        /* Exit affordance for minimal mode */
+        #minimal-hint { display: none; }
+        body.minimal #minimal-hint { display: inline-flex; }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-full flex flex-col">
 
+    <!-- Minimal-mode exit affordance (visible only while minimal mode is on) -->
+    <button id="minimal-hint" onclick="app.toggleMinimalUI()"
+            class="fixed bottom-4 right-4 z-[60] items-center gap-2 text-[11px] font-mono font-bold text-slate-500 hover:text-indigo-300 bg-slate-900/80 border border-slate-800 hover:border-indigo-500/50 rounded-xl px-3 py-1.5 backdrop-blur transition-all shadow-lg"
+            title="Reveal the full interface (Alt+Z)">
+        ⛶ Full UI <span class="opacity-60">Alt+Z</span>
+    </button>
+
     <!-- Header Navigation -->
-    <header class="bg-slate-900/95 border-b border-slate-800 px-4 md:px-8 py-3 flex flex-wrap items-center justify-between gap-4 sticky top-0 z-50 backdrop-blur">
+    <header id="app-header" class="bg-slate-900/95 border-b border-slate-800 px-4 md:px-8 py-3 flex flex-wrap items-center justify-between gap-4 sticky top-0 z-50 backdrop-blur">
         <div class="flex items-center space-x-3">
             <div class="bg-gradient-to-tr from-indigo-600 to-violet-500 p-2.5 rounded-2xl shadow-lg shadow-indigo-500/25 text-white font-bold text-xl flex items-center justify-center w-11 h-11">
                 ⚡
@@ -398,9 +433,9 @@
             <!-- Hands Visualization Section -->
             <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 shadow-2xl flex flex-col items-center">
                 <div class="w-full flex items-center justify-between mb-1 px-3 text-xs font-bold uppercase tracking-wider text-slate-400">
-                    <span>🖐️ Left Hand (<span class="text-violet-400">Thumb = B</span>)</span>
+                    <span>🖐️ Left Hand (<span class="text-emerald-400">Index = B</span>)</span>
                     <span class="text-indigo-400 font-mono">Simultaneous Finger Placement</span>
-                    <span>(<span class="text-indigo-400">Thumb = N</span>) Right Hand 🖐️</span>
+                    <span>(<span class="text-sky-400">Index = N</span>) Right Hand 🖐️</span>
                 </div>
                 <div id="train-hands-container" class="w-full max-w-3xl h-44 md:h-48 my-1">
                     <!-- Dynamic SVG Hands -->
@@ -410,8 +445,8 @@
             <!-- Interactive Virtual QWERTY Keyboard -->
             <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-4 shadow-2xl flex flex-col items-center gap-2.5 select-none overflow-x-auto">
                 <div class="w-full flex items-center justify-between px-3 text-[11px] font-extrabold uppercase tracking-wider text-slate-400">
-                    <span>Left Hand: Pinky(1qaz), Ring(2wsx), Middle(3edc), Index(45rfvtg), Thumb(B)</span>
-                    <span>Right Hand: Thumb(N), Index(67yhujm), Middle(8ik,), Ring(9ol.), Pinky(0p;/)</span>
+                    <span>Left Hand: Pinky(1qaz), Ring(2wsx), Middle(3edc), Index(45rfvtgb)</span>
+                    <span>Right Hand: Index(67yhujmn), Middle(8ik,), Ring(9ol.), Pinky(0p;/)</span>
                 </div>
                 <div class="flex gap-1.5 w-full justify-center" id="train-key-row-1"></div>
                 <div class="flex gap-1.5 w-full justify-center" id="train-key-row-2"></div>
@@ -430,10 +465,10 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch flex-1">
                 
                 <!-- LEFT BOX: Typing Workspace with Mode Select & Actions -->
-                <div class="lg:col-span-7 bg-slate-900/90 border border-slate-800 rounded-3xl p-5 shadow-2xl flex flex-col justify-between gap-4">
+                <div id="sandbox-input-box" class="lg:col-span-7 bg-slate-900/90 border border-slate-800 rounded-3xl p-5 shadow-2xl flex flex-col justify-between gap-4">
                     
                     <!-- Top Bar: Output Mode Options & Quick Actions -->
-                    <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/80 pb-3">
+                    <div id="sandbox-topbar" class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/80 pb-3">
                         <div class="flex items-center gap-2">
                             <span class="text-xs font-extrabold uppercase tracking-wider text-slate-400">
                                 ✍️ Output Mode:
@@ -454,6 +489,14 @@
                                 <button onclick="app.setEditorOutputMode('combo')" id="editor-mode-combo" title="Both Graphics & Words (Shortcut: Alt+4)" class="px-2.5 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white flex items-center gap-1">
                                     <span>🎨 Combo</span>
                                     <span class="text-[10px] opacity-75 font-mono">Alt+4</span>
+                                </button>
+                                <button onclick="app.setEditorOutputMode('svgzh')" id="editor-mode-svgzh" title="Graphic + Chinese Character side by side (Shortcut: Alt+6)" class="px-2.5 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white flex items-center gap-1">
+                                    <span>🖼️ 图 + 中</span>
+                                    <span class="text-[10px] opacity-75 font-mono">Alt+6</span>
+                                </button>
+                                <button onclick="app.setEditorOutputMode('bilingual')" id="editor-mode-bilingual" title="English + Chinese Character side by side (Shortcut: Alt+5)" class="px-2.5 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white flex items-center gap-1">
+                                    <span>🇨🇳 EN + 中</span>
+                                    <span class="text-[10px] opacity-75 font-mono">Alt+5</span>
                                 </button>
                                 <button onclick="app.cycleEditorOutputMode()" id="editor-mode-cycle" title="Cycle Output Mode (Shortcut: Alt+M)" class="px-2 py-1.5 text-xs font-bold rounded-lg transition-all text-indigo-400 hover:text-indigo-200 bg-slate-900 border border-slate-700 hover:border-indigo-500/50 shadow flex items-center gap-1">
                                     <span>🔀</span>
@@ -504,7 +547,7 @@
                 </div>
 
                 <!-- RIGHT BOX: Dynamic 2-Step Morpheme Word Tree with SVG Signs -->
-                <div class="lg:col-span-5 bg-slate-900/90 border border-slate-800 rounded-3xl p-5 shadow-2xl flex flex-col justify-between gap-3">
+                <div id="sandbox-tree-box" class="lg:col-span-5 bg-slate-900/90 border border-slate-800 rounded-3xl p-5 shadow-2xl flex flex-col justify-between gap-3">
                     <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
                         <div class="flex items-center gap-2.5">
                             <span class="text-lg">🌳</span>
@@ -541,6 +584,13 @@
             <div class="text-center space-y-2 py-2">
                 <h2 class="text-2xl md:text-3xl font-extrabold text-white">Our 10-Finger Steno Scheme</h2>
                 <p class="text-slate-400 text-sm max-w-xl mx-auto">Physical key boundaries where each finger presses at most 1 key per chord.</p>
+                <p class="text-slate-500 text-xs max-w-2xl mx-auto leading-relaxed">
+                    This map is a <span class="text-slate-400 font-semibold">suggestion, not a rule</span> — the tutor matches the
+                    <em>keys</em>, never the finger that pressed them. Chinese chords disambiguate with
+                    <span class="font-mono text-slate-400">b</span>, <span class="font-mono text-slate-400">v</span> and
+                    <span class="font-mono text-slate-400">c</span>: reach them with your left thumb <em>or</em> your left
+                    index / middle finger, whichever you prefer. Same chord, same result. Just keep it to one key per finger.
+                </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4" id="scheme-guide-cards">
                 <!-- Dynamically generated scheme cards -->
@@ -687,18 +737,20 @@
             }
         }
 
-        // 10-Finger Scheme strictly matching our Python system
+        // 8-Finger Chording Scheme.
+        // b now belongs to Left Index and n to Right Index, so both thumbs are IDLE.
+        // A finger may press at most 1 key per chord.
         const FINGER_SCHEME = [
             // Left Hand
             { id: 'left-pinky', name: 'Left Pinky', hand: 'left', finger: 'Pinky', keys: ['1', 'q', 'a', 'z'], color: '#f43f5e' },
             { id: 'left-ring', name: 'Left Ring', hand: 'left', finger: 'Ring', keys: ['2', 'w', 's', 'x'], color: '#fb923c' },
             { id: 'left-middle', name: 'Left Middle', hand: 'left', finger: 'Middle', keys: ['3', 'e', 'd', 'c'], color: '#fbbf24' },
-            { id: 'left-index', name: 'Left Index', hand: 'left', finger: 'Index', keys: ['4', '5', 'r', 'f', 'v', 't', 'g'], color: '#34d399' },
-            { id: 'left-thumb', name: 'Left Thumb', hand: 'left', finger: 'Thumb', keys: ['b'], color: '#a78bfa' },
+            { id: 'left-index', name: 'Left Index', hand: 'left', finger: 'Index', keys: ['4', '5', 'r', 'f', 'v', 't', 'g', 'b'], color: '#34d399' },
+            { id: 'left-thumb', name: 'Left Thumb', hand: 'left', finger: 'Thumb', keys: [], color: '#a78bfa' },
 
             // Right Hand
-            { id: 'right-thumb', name: 'Right Thumb', hand: 'right', finger: 'Thumb', keys: ['n'], color: '#818cf8' },
-            { id: 'right-index', name: 'Right Index', hand: 'right', finger: 'Index', keys: ['6', '7', 'y', 'u', 'h', 'j', 'm'], color: '#38bdf8' },
+            { id: 'right-thumb', name: 'Right Thumb', hand: 'right', finger: 'Thumb', keys: [], color: '#818cf8' },
+            { id: 'right-index', name: 'Right Index', hand: 'right', finger: 'Index', keys: ['6', '7', 'y', 'u', 'h', 'j', 'm', 'n'], color: '#38bdf8' },
             { id: 'right-middle', name: 'Right Middle', hand: 'right', finger: 'Middle', keys: ['8', 'i', 'k', ','], color: '#60a5fa' },
             { id: 'right-ring', name: 'Right Ring', hand: 'right', finger: 'Ring', keys: ['9', 'o', 'l', '.'], color: '#c084fc' },
             { id: 'right-pinky', name: 'Right Pinky', hand: 'right', finger: 'Pinky', keys: ['0', 'p', ';', '/', "'"], color: '#f472b6' }
@@ -769,10 +821,42 @@
                 .join('');
         }
 
+        // Tone digits only - letters are left alone. Two reasons this exists:
+        //  1. the LETTER mirrors above can corrupt an otherwise valid chord:
+        //     pressing 7lei for 类 (stored '4eil') would rewrite l to s and look
+        //     for '4eis', which does not exist.
+        //  2. it is BIDIRECTIONAL, so a chord may store either hand's digit and
+        //     still be reachable from the other. 为 keeps its w by storing the
+        //     right-hand 9 ('9eiw', keys 'wei9'), so 2eiw must also resolve.
+        const MIRROR_TONES = {
+            '0': '1', '1': '0',
+            '9': '2', '2': '9',
+            '8': '3', '3': '8',
+            '7': '4', '4': '7'
+        };
+
+        function canonicalizeChordTones(chordStr) {
+            if (!chordStr) return "";
+            return Array.from(chordStr)
+                .map(k => MIRROR_TONES[k] || k)
+                .sort()
+                .join('');
+        }
+
+        /** True if the text contains any CJK ideograph. */
+        function isChineseText(s) {
+            return /[\u4e00-\u9fff]/.test(String(s || ''));
+        }
+
         function getWordInflections(word) {
             if (!word) return null;
             const lower = word.toLowerCase().trim();
             if (INFLECTION_LOOKUP[lower]) return INFLECTION_LOOKUP[lower];
+
+            // Chinese characters never inflect - no plural, no tense, no -ing.
+            // Without this guard the "smart regular fallback" below invents forms
+            // for anything it is handed, which is how 为 + tap 2 became 为ing.
+            if (isChineseText(lower)) return null;
 
             // Smart regular fallback for words not present in the roots tree
             const endsE = lower.endsWith('e');
@@ -841,10 +925,15 @@
 
                 if (target.classList.contains('chord-item')) {
                     const raw = target.dataset.english || target.dataset.word || target.innerText.trim();
+                    // `word` is the ENGLISH side (dataset.english), so for a Chinese
+                    // character it reads "why" for 为. Carry the literal + Chinese
+                    // datasets too, or a Chinese guard can never see the character.
                     return {
                         type: 'chord',
                         element: target,
-                        word: raw
+                        word: raw,
+                        literal: target.dataset.word || target.innerText.trim(),
+                        chinese: target.dataset.chinese || ''
                     };
                 }
                 if (target.classList.contains('typed-span')) {
@@ -868,6 +957,22 @@
                 if (!prec || !prec.word) return false;
 
                 const originalWord = prec.word.toLowerCase().trim();
+
+                // A tapped digit must never reshape a Chinese character. Check the
+                // LITERAL word only: prec.word is the ENGLISH side (dataset.english
+                // reads "why" for 为), which is how 为 + tap 2 slipped through to
+                // "whying". Do NOT test dataset.chinese - that is populated for every
+                // chord (walk -> 走), so testing it would block English inflection too.
+                const shownAs = prec.literal || prec.word;
+                if (isChineseText(shownAs)) {
+                    const t = document.getElementById('sandbox-toast');
+                    if (t) {
+                        t.innerText = `\u{1F1E8}\u{1F1F3} "${shownAs}" is a Chinese character - it never inflects. Tap Space to start the next word.`;
+                        t.className = "text-xs md:text-sm font-bold text-amber-300 bg-amber-500/20 border border-amber-500/40 px-6 py-2 rounded-xl text-center shadow";
+                    }
+                    return true;
+                }
+
                 const baseLemma = this.activeGrammarLemma || INFLECTION_TO_LEMMA[originalWord] || originalWord;
                 const entry = getWordInflections(baseLemma) || getWordInflections(originalWord);
 
@@ -936,7 +1041,7 @@
             }
 
             cycleEditorOutputMode() {
-                const modes = ['words', 'chinese', 'svg', 'combo'];
+                const modes = ['words', 'chinese', 'bilingual', 'svg', 'svgzh', 'combo'];
                 const idx = modes.indexOf(this.editorOutputMode);
                 const nextMode = modes[(idx + 1) % modes.length];
                 this.setEditorOutputMode(nextMode);
@@ -948,10 +1053,12 @@
                     'words': 'English Words [ENG]',
                     'chinese': 'Chinese Characters [中]',
                     'svg': 'Graphics SVG [SVG]',
+                    'bilingual': 'English + Chinese Character [EN+中]',
+                    'svgzh': 'Graphic + Chinese Character [图+中]',
                     'combo': 'Graphics & Words [COMBO]'
                 };
 
-                ['words', 'chinese', 'svg', 'combo'].forEach(m => {
+                ['words', 'chinese', 'bilingual', 'svg', 'svgzh', 'combo'].forEach(m => {
                     const btn = document.getElementById(`editor-mode-${m}`);
                     if (btn) {
                         if (m === mode) {
@@ -964,7 +1071,7 @@
 
                 const toast = document.getElementById('sandbox-toast');
                 if (toast && modeLabels[mode]) {
-                    toast.innerText = `🔀 [Output Mode] ${modeLabels[mode]} (Shortcut: Alt+M to cycle, or Alt+1/2/3/4)`;
+                    toast.innerText = `🔀 [Output Mode] ${modeLabels[mode]} (Shortcut: Alt+M to cycle, or Alt+1/2/3/4/5/6)`;
                     toast.className = "text-xs md:text-sm font-bold text-indigo-300 bg-indigo-500/20 border border-indigo-500/40 px-6 py-2 rounded-xl text-center shadow transition-all";
                 }
 
@@ -974,36 +1081,7 @@
                     editor.querySelectorAll('.chord-item').forEach(el => {
                         const word = el.dataset.word;
                         if (!word) return;
-                        const vis = this.getWordVisual(word);
-                        if (mode === 'words') {
-                            el.innerHTML = `
-                                <span class="px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-700/80 font-mono font-bold text-sm md:text-base text-emerald-400 shadow mr-1.5 hover:border-emerald-500">
-                                    ${word}
-                                </span>
-                            `;
-                        } else if (mode === 'chinese') {
-                            const chChar = ENGLISH_TO_CHINESE[word.toLowerCase()] || word;
-                            el.innerHTML = `
-                                <span class="px-3 py-1 rounded-xl bg-slate-900 border border-amber-500/50 font-sans font-black text-lg md:text-xl text-amber-300 shadow mr-1.5 hover:border-amber-400 select-none cursor-default" title="${word.toUpperCase()}">
-                                    ${chChar}
-                                </span>
-                            `;
-                        } else if (mode === 'svg') {
-                            el.innerHTML = `
-                                <span class="w-11 h-11 md:w-12 md:h-12 bg-slate-900 border-2 rounded-2xl p-1 mr-1.5 shadow-lg hover:scale-110 transition-transform cursor-pointer flex items-center justify-center text-2xl select-none" style="border-color: ${vis.bg}; box-shadow: 0 4px 14px ${vis.glow || 'rgba(99,102,241,0.2)'};" title="${word.toUpperCase()}">
-                                    ${this.getWordDisplayHtml(word, 'text-2xl')}
-                                </span>
-                            `;
-                        } else if (mode === 'combo') {
-                            el.innerHTML = `
-                                <span class="flex items-center gap-2 bg-slate-900 border rounded-2xl px-2.5 py-1 mr-1.5 shadow hover:scale-105 transition-transform" style="border-color: ${vis.bg}">
-                                    <span class="w-7 h-7 rounded-lg flex items-center justify-center text-lg select-none" style="background: ${vis.bg}22">
-                                        ${this.getWordDisplayHtml(word, 'text-lg')}
-                                    </span>
-                                    <span class="font-mono font-extrabold text-xs md:text-sm text-slate-100 uppercase tracking-wide">${word}</span>
-                                </span>
-                            `;
-                        }
+                        el.innerHTML = this.chordChipHtml(word);
                     });
                 }
             }
@@ -1590,35 +1668,7 @@
                 el.dataset.english = englishWord;
                 el.dataset.chinese = chineseChar;
 
-                if (this.editorOutputMode === 'words') {
-                    el.innerHTML = `
-                        <span class="px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-700/80 font-mono font-bold text-sm md:text-base text-emerald-400 shadow mr-1.5 hover:border-emerald-500">
-                            ${matchedWord}
-                        </span>
-                    `;
-                } else if (this.editorOutputMode === 'chinese') {
-                    const chChar = ENGLISH_TO_CHINESE[matchedWord.toLowerCase()] || matchedWord;
-                    el.innerHTML = `
-                        <span class="px-3 py-1 rounded-xl bg-slate-900 border border-amber-500/50 font-sans font-black text-lg md:text-xl text-amber-300 shadow mr-1.5 hover:border-amber-400 select-none cursor-default" title="${matchedWord.toUpperCase()}">
-                            ${chChar}
-                        </span>
-                    `;
-                } else if (this.editorOutputMode === 'svg') {
-                    el.innerHTML = `
-                        <span class="w-11 h-11 md:w-12 md:h-12 bg-slate-900 border-2 rounded-2xl p-1 mr-1.5 shadow-lg hover:scale-110 transition-transform cursor-pointer flex items-center justify-center text-2xl select-none" style="border-color: ${vis.bg}; box-shadow: 0 4px 14px ${vis.glow || 'rgba(99,102,241,0.2)'};" title="${matchedWord.toUpperCase()}">
-                            ${this.getWordDisplayHtml(matchedWord, 'text-2xl')}
-                        </span>
-                    `;
-                } else if (this.editorOutputMode === 'combo') {
-                    el.innerHTML = `
-                        <span class="flex items-center gap-2 bg-slate-900 border rounded-2xl px-2.5 py-1 mr-1.5 shadow hover:scale-105 transition-transform" style="border-color: ${vis.bg}">
-                            <span class="w-7 h-7 rounded-lg flex items-center justify-center text-lg select-none" style="background: ${vis.bg}22">
-                                ${this.getWordDisplayHtml(matchedWord, 'text-lg')}
-                            </span>
-                            <span class="font-mono font-extrabold text-xs md:text-sm text-slate-100 uppercase tracking-wide">${matchedWord}</span>
-                        </span>
-                    `;
-                }
+                el.innerHTML = this.chordChipHtml(matchedWord);
 
                 const caret = document.getElementById('editor-caret');
                 if (caret && caret.parentNode === editor) {
@@ -1639,6 +1689,8 @@
                 this.setMode('sandbox');
                 this.setupKeyboardListeners();
                 this.updateCaret();
+                // Enter minimal mode (writing box only) by default
+                this.toggleMinimalUI(true);
             }
 
             setMode(newMode) {
@@ -1663,6 +1715,31 @@
 
                 if (newMode === 'training') this.loadCurrentWord();
                 if (newMode === 'sandbox') this.loadSandboxWord();
+            }
+
+            /**
+             * Minimal mode: show ONLY the writing box. Everything else (header,
+             * output-mode bar, morpheme tree) is hidden by CSS on body.minimal.
+             * Toggle with Alt+Z. Pass true/false to force a state.
+             */
+            toggleMinimalUI(force) {
+                const on = typeof force === 'boolean'
+                    ? force
+                    : !document.body.classList.contains('minimal');
+                document.body.classList.toggle('minimal', on);
+
+                if (on) {
+                    this.setMode('sandbox');
+                    setTimeout(() => this.focusSandboxEditor(), 0);
+                }
+
+                const toast = document.getElementById('sandbox-toast');
+                if (toast) {
+                    toast.innerText = on
+                        ? '⛶ Minimal mode — press Alt+Z to show the full interface'
+                        : '🖥️ Full interface — press Alt+Z to hide it again';
+                }
+                return on;
             }
 
             setSandboxForm(form) {
@@ -1712,6 +1789,93 @@
                     if (scheme.keys.includes(lower)) return scheme;
                 }
                 return FINGER_SCHEME[3]; // Fallback to Left Index
+            }
+
+            /**
+             * Bilingual chip: the English word with its Chinese character beside it.
+             * Degrades gracefully for the few words with no translation on record.
+             */
+            /**
+             * THE single source of truth for drawing a matched word in the editor.
+             * Both the "just struck a chord" path and the "output mode changed"
+             * path call this, so the two can never drift apart.
+             */
+            chordChipHtml(word) {
+                const mode = this.editorOutputMode;
+                const lower = String(word).toLowerCase().trim();
+                const vis = this.getWordVisual(word);
+                const isZh = /[\u4e00-\u9fff]/.test(word);
+                const chinese = isZh ? word : (ENGLISH_TO_CHINESE[lower] || "");
+
+                if (mode === 'bilingual') return this.bilingualChipHtml(word);
+
+                if (mode === 'words') {
+                    return `
+                        <span class="px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-700/80 font-mono font-bold text-sm md:text-base text-emerald-400 shadow mr-1.5 hover:border-emerald-500">
+                            ${word}
+                        </span>
+                    `;
+                }
+                if (mode === 'chinese') {
+                    return `
+                        <span class="px-3 py-1 rounded-xl bg-slate-900 border border-amber-500/50 font-sans font-black text-lg md:text-xl text-amber-300 shadow mr-1.5 hover:border-amber-400 select-none cursor-default" title="${word.toUpperCase()}">
+                            ${chinese || word}
+                        </span>
+                    `;
+                }
+                if (mode === 'svg') {
+                    return `
+                        <span class="w-11 h-11 md:w-12 md:h-12 bg-slate-900 border-2 rounded-2xl p-1 mr-1.5 shadow-lg hover:scale-110 transition-transform cursor-pointer flex items-center justify-center text-2xl select-none" style="border-color: ${vis.bg}; box-shadow: 0 4px 14px ${vis.glow || 'rgba(99,102,241,0.2)'};" title="${word.toUpperCase()}">
+                            ${this.getWordDisplayHtml(word, 'text-2xl')}
+                        </span>
+                    `;
+                }
+                // Graphic + Chinese character, side by side
+                if (mode === 'svgzh') {
+                    return `
+                        <span class="flex items-center gap-2 bg-slate-900 border rounded-2xl px-2.5 py-1 mr-1.5 shadow hover:scale-105 transition-transform" style="border-color: ${vis.bg}">
+                            <span class="w-7 h-7 rounded-lg flex items-center justify-center text-lg select-none" style="background: ${vis.bg}22">
+                                ${this.getWordDisplayHtml(word, 'text-lg')}
+                            </span>
+                            <span class="font-sans font-black text-base md:text-lg text-amber-300 leading-none select-none">${chinese || '--'}</span>
+                        </span>
+                    `;
+                }
+                if (mode === 'combo') {
+                    return `
+                        <span class="flex items-center gap-2 bg-slate-900 border rounded-2xl px-2.5 py-1 mr-1.5 shadow hover:scale-105 transition-transform" style="border-color: ${vis.bg}">
+                            <span class="w-7 h-7 rounded-lg flex items-center justify-center text-lg select-none" style="background: ${vis.bg}22">
+                                ${this.getWordDisplayHtml(word, 'text-lg')}
+                            </span>
+                            <span class="font-mono font-extrabold text-xs md:text-sm text-slate-100 uppercase tracking-wide">${word}</span>
+                        </span>
+                    `;
+                }
+                return this.chordChipHtmlModeWord(word, { vis });
+            }
+
+            /** Fallback renderer (mode === 'words'), kept separate for clarity. */
+            chordChipHtmlModeWord(word) {
+                return `
+                    <span class="px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-700/80 font-mono font-bold text-sm md:text-base text-emerald-400 shadow mr-1.5 hover:border-emerald-500">
+                        ${word}
+                    </span>
+                `;
+            }
+
+            bilingualChipHtml(word) {
+                const isZh = /[\u4e00-\u9fff]/.test(word);
+                const lower = String(word).toLowerCase().trim();
+                const english = isZh
+                    ? (CHINESE_TO_ENGLISH[word] || CHINESE_TO_ENGLISH[lower] || word)
+                    : word;
+                const chinese = isZh ? word : (ENGLISH_TO_CHINESE[lower] || "");
+
+                const zhSpan = chinese
+                    ? `<span class="font-sans font-black text-base md:text-lg text-amber-300 leading-none select-none">${chinese}</span>`
+                    : `<span class="font-sans font-bold text-sm text-slate-600 leading-none select-none" title="No Chinese translation on record">--</span>`;
+
+                return `<span class="inline-flex items-center gap-2 bg-slate-900 border border-slate-700/80 rounded-xl px-2.5 py-1 mr-1.5 shadow hover:border-amber-400/70 transition-colors" title="${String(english).toUpperCase()}${chinese ? " \u00b7 " + chinese : ""}"><span class="font-mono font-bold text-sm md:text-base text-emerald-400">${english}</span>${zhSpan}</span>`;
             }
 
             getWordVisual(word) {
@@ -2002,10 +2166,10 @@
                             <!-- Left Middle (3, e, d, c) -->
                             <rect x="110" y="15" width="22" height="108" rx="11" fill="${getFingerColor('left-middle')}" stroke="${isLit('left-middle') ? '#ffffff' : '#475569'}" stroke-width="${isLit('left-middle') ? '3.5' : '1.5'}" class="${isLit('left-middle') ? 'finger-highlight' : ''}"/>
                             
-                            <!-- Left Index (4, 5, r, f, v, t, g) -->
+                            <!-- Left Index (4, 5, r, f, v, t, g, b) -->
                             <rect x="140" y="28" width="22" height="98" rx="11" fill="${getFingerColor('left-index')}" stroke="${isLit('left-index') ? '#ffffff' : '#475569'}" stroke-width="${isLit('left-index') ? '3.5' : '1.5'}" class="${isLit('left-index') ? 'finger-highlight' : ''}"/>
                             
-                            <!-- Left Thumb (B) -->
+                            <!-- Left Thumb (idle: no keys assigned) -->
                             <g transform="translate(180, 110) rotate(35)">
                                 <rect x="0" y="0" width="24" height="65" rx="12" fill="${getFingerColor('left-thumb')}" stroke="${isLit('left-thumb') ? '#ffffff' : '#475569'}" stroke-width="${isLit('left-thumb') ? '3.5' : '1.5'}" class="${isLit('left-thumb') ? 'finger-highlight' : ''}"/>
                                 <text x="12" y="38" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="900" font-family="'JetBrains Mono', monospace">B</text>
@@ -2027,13 +2191,13 @@
                             <!-- Palm -->
                             <path d="M 180 140 C 180 190 120 200 80 200 C 50 200 40 160 40 120 C 40 90 70 90 90 90 Z" fill="#1e293b" stroke="#334155" stroke-width="3"/>
                             
-                            <!-- Right Thumb (N) -->
+                            <!-- Right Thumb (idle: no keys assigned) -->
                             <g transform="translate(40, 125) rotate(-35)">
                                 <rect x="0" y="0" width="24" height="65" rx="12" fill="${getFingerColor('right-thumb')}" stroke="${isLit('right-thumb') ? '#ffffff' : '#475569'}" stroke-width="${isLit('right-thumb') ? '3.5' : '1.5'}" class="${isLit('right-thumb') ? 'finger-highlight' : ''}"/>
                                 <text x="12" y="38" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="900" font-family="'JetBrains Mono', monospace">N</text>
                             </g>
 
-                            <!-- Right Index (6, 7, y, u, h, j, m) -->
+                            <!-- Right Index (6, 7, y, u, h, j, m, n) -->
                             <rect x="78" y="28" width="22" height="98" rx="11" fill="${getFingerColor('right-index')}" stroke="${isLit('right-index') ? '#ffffff' : '#475569'}" stroke-width="${isLit('right-index') ? '3.5' : '1.5'}" class="${isLit('right-index') ? 'finger-highlight' : ''}"/>
                             
                             <!-- Right Middle (8, i, k, ,) -->
@@ -2104,7 +2268,9 @@
                                 <span class="text-[10px] uppercase font-bold text-slate-400">${s.hand} hand</span>
                             </div>
                             <div class="flex flex-wrap gap-1.5 pt-1">
-                                ${s.keys.map(k => `
+                                ${s.keys.length === 0
+                                    ? `<span class="text-[10px] uppercase font-bold text-slate-500 italic">idle \u2014 no keys</span>`
+                                    : s.keys.map(k => `
                                     <span class="w-7 h-7 rounded-lg font-mono font-black text-xs flex items-center justify-center bg-slate-950 text-white border border-slate-700 shadow">${k.toUpperCase()}</span>
                                 `).join('')}
                             </div>
@@ -2120,6 +2286,13 @@
                     if ((e.altKey && e.key.toLowerCase() === 's') || ((e.ctrlKey || e.metaKey) && e.key === '/') || (e.altKey && e.key === 'Enter')) {
                         e.preventDefault();
                         this.focusSandboxEditor();
+                        return;
+                    }
+
+                    // Minimal / full UI toggle: Alt+Z
+                    if (e.altKey && !e.shiftKey && !e.ctrlKey && e.key.toLowerCase() === 'z') {
+                        e.preventDefault();
+                        this.toggleMinimalUI();
                         return;
                     }
 
@@ -2152,9 +2325,9 @@
                     }
 
                     // Direct Mode Switch Shortcuts: Alt+1 (Words), Alt+2 (Chinese), Alt+3 (SVG), Alt+4 (Combo)
-                    if (e.altKey && ['1', '2', '3', '4'].includes(e.key) && this.mode === 'sandbox') {
+                    if (e.altKey && ['1', '2', '3', '4', '5', '6'].includes(e.key) && this.mode === 'sandbox') {
                         e.preventDefault();
-                        const modeMap = { '1': 'words', '2': 'chinese', '3': 'svg', '4': 'combo' };
+                        const modeMap = { '1': 'words', '2': 'chinese', '3': 'svg', '4': 'combo', '5': 'bilingual', '6': 'svgzh' };
                         this.setEditorOutputMode(modeMap[e.key]);
                         return;
                     }
@@ -2425,11 +2598,21 @@
                 let isMirrored = false;
 
                 if (!expanded) {
+                    // 1. full mirror: tone digits AND letters (l -> s, ; -> a, / -> z)
                     const canonical = canonicalizeChord(combo);
                     if (CHORD_MAP[canonical]) {
                         expanded = CHORD_MAP[canonical];
                         resolvedChord = canonical;
                         isMirrored = true;
+                    } else {
+                        // 2. tone digits only. A letter mirror must not be allowed to
+                        //    break a chord that only needed its tone digit swapped.
+                        const tonesOnly = canonicalizeChordTones(combo);
+                        if (CHORD_MAP[tonesOnly]) {
+                            expanded = CHORD_MAP[tonesOnly];
+                            resolvedChord = tonesOnly;
+                            isMirrored = true;
+                        }
                     }
                 }
 
@@ -2544,18 +2727,21 @@
                             }
                         } else if (this.rootsTree[combo] || this.rootsTree[resolvedChord]) {
                             this.activeRoot = this.rootsTree[combo] || this.rootsTree[resolvedChord];
-                            toast.innerText = `🌳 [Root Armed: ${matchedWord.toUpperCase()}] Ready for Step 2 Morpheme! (Or tap Space to commit as separate word)`;
+                            toast.innerText = `🌳 [Root Armed: ${matchedWord.toUpperCase()}] Waiting for a MORPHEME or another ROOT. Strike one morpheme to build the word, or chord another root to commit and move on. (Space commits as a bare word.)`;
                             toast.className = "text-xs md:text-sm font-bold text-amber-300 bg-amber-500/20 border border-amber-500/40 px-6 py-2 rounded-xl text-center animate-pulse";
                             
                             // Render the live armed tree on the right
                             this.renderMorphemeTree(this.activeRoot);
 
-                            // Auto-disarm after 2.8 seconds of no morpheme (or tap Space to disarm immediately)
+                            // STICKY ARM: the root stays armed until you explicitly leave
+                            // it, so you can take as long as you need to form the morpheme.
+                            // Previously this auto-disarmed after 2.8s, which made any
+                            // derivative chord of 4+ keys practically unreachable.
+                            // You leave the armed state by: tapping Space (bare word),
+                            // chording a different root (commit + re-arm), chording a
+                            // morpheme (produces the derivative), or typing normal text.
                             if (this.activeRootTimeout) clearTimeout(this.activeRootTimeout);
-                            this.activeRootTimeout = setTimeout(() => {
-                                this.activeRoot = null;
-                                this.renderMorphemeTree();
-                            }, 2800);
+                            this.activeRootTimeout = null;
                         } else {
                             const dictItem = this.dictionary.find(d => d.chord === resolvedChord);
                             const extra = (dictItem && dictItem.pinyin) ? ` (${dictItem.pinyin} - ${dictItem.english})` : '';
