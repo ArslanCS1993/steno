@@ -171,32 +171,37 @@ for (const c of Object.keys(d.roots)) if (!taken.has(c)) taken.set(c, "root=" + 
 // bidirectional, so a chord may carry either hand's digit and still be reachable.
 const TONE_PARTNER = { "1": "0", "0": "1", "2": "9", "9": "2", "3": "8", "8": "3", "4": "7", "7": "4" };
 
-// LETTERS claim fingers FIRST, then the tone digit is placed on whichever of the
-// two partner fingers is still free. Trying both and keeping the candidate that
-// retains more letters is what lets 为 hold its w and 性 hold its g:
-//   为 wéi  - 2 and w are both Left Ring, so the w was dropped -> '2ei'.
-//             9 is Right Ring, still free -> '9eiw', keys 'wei9'.
-//   性 xìng - 4 and g are both Left Index, so the g was dropped -> '4inx'.
-//             7 is Right Index, still free -> '7ginx', keys 'xing7'.
-function naturalChord(pinyin, tone) {
-  const letters = [...norm(pinyin)].filter(c => K2F[c]);
-  const digits = [...new Set([String(tone), TONE_PARTNER[String(tone)]])].filter(dg => dg && K2F[dg]);
-  const candidates = [];
-  for (const digit of digits) {
-    const used = { [K2F[digit]]: digit };
-    const claimed = [];
-    for (const ch of letters) {
-      const f = K2F[ch];
-      if (f in used) continue;
-      used[f] = ch; claimed.push(ch);
-    }
-    candidates.push({ digit, claimed, chord: canon(claimed.join("") + digit) });
+// LETTERS FIRST, TONE LAST. This is the whole rule:
+//
+//   1. the pinyin letters claim fingers, in word order. A letter is dropped ONLY
+//      when another LETTER already owns its finger - that pairing cannot be
+//      played. 构 gòu keeps g, o and u.
+//   2. the tone digit is then APPENDED, and it never displaces a letter. The
+//      number row is pressed with whatever finger happens to be free, so a tone
+//      does not have to own a finger of its own. 构 -> 'gou4', keys 'gou4'.
+//      (Previously the tone's finger was reserved first, which is why 构 came
+//      out as 'ou4' with its initial consonant thrown away.)
+//   3. the tone number is used when free; otherwise its partner on the other
+//      hand is tried, so a homophone can be separated without an extra letter
+//      (功 -> 1gno, 供 -> 0gno).
+//   4. only if BOTH are taken does a disambiguating letter v/c/n get appended.
+function lettersFirst(pinyin) {
+  const used = {};
+  const claimed = [];
+  const dropped = [];
+  for (const ch of [...norm(pinyin)]) {
+    const f = K2F[ch];
+    if (!f) continue;
+    if (f in used) { dropped.push(ch); continue; }
+    used[f] = ch; claimed.push(ch);
   }
-  if (!candidates.length) return { chord: "", claimed: [], digit: String(tone) };
-  // most letters kept wins; a tie keeps the character's own tone (sort is stable)
-  candidates.sort((a, b) => b.claimed.length - a.claimed.length);
-  const best = candidates[0];
-  return { chord: best.chord, claimed: best.claimed, digit: best.digit };
+  return { claimed, dropped, used };
+}
+
+function toneDigits(tone) {
+  const t = String(tone);
+  const partner = TONE_PARTNER[t];
+  return [t, partner].filter((d, i, a) => d && K2F[d] && a.indexOf(d) === i);
 }
 
 function makeUnique(base) {
@@ -218,21 +223,37 @@ function makeUnique(base) {
 const results = [];
 for (const ch of order) {
   const e = work.get(ch);
-  const nat = naturalChord(e.pinyin, e.tone);
-  const base = nat.chord;
-  let got, fromRoot = false;
-  if (zhRootChord[ch]) { got = { chord: zhRootChord[ch], extra: "" }; fromRoot = true; }
-  else {
-    got = makeUnique(base);
+  const L = lettersFirst(e.pinyin);
+  const digits = toneDigits(e.tone);
+  const letterStr = L.claimed.join("");
+  const base = canon(letterStr + (digits[0] || ""));
+
+  let got = null, digit = digits[0], fromRoot = false;
+  if (zhRootChord[ch]) {
+    got = { chord: zhRootChord[ch], extra: "" };
+    fromRoot = true;
+    // the root owns the chord; report the digit it actually carries
+    const m = zhRootChord[ch].match(/[0-9]/);
+    if (m && digits.indexOf(m[0]) !== -1) digit = m[0];
+  } else {
+    // letters + the tone number, else letters + its partner, else a letter
+    for (const dg of digits) {
+      const cand = canon(letterStr + dg);
+      if (!taken.has(cand) && cand.length >= 2) { got = { chord: cand, extra: "" }; digit = dg; break; }
+    }
+    if (!got) {
+      const uniq = makeUnique(canon(letterStr + (digits[0] || "")));
+      if (uniq) got = { chord: uniq.chord, extra: uniq.extra };
+    }
     if (got) taken.set(got.chord, "ZH:" + ch);
   }
   if (!got) { results.push({ ...e, base, skip: "no free chord" }); continue; }
-  // `keys` = the keys you actually press, written as pinyin letters then the
-  // tone digit (numbers at the end), e.g. 'wei9', 'xing7', 'lei4'. Guarded so it
-  // can never name a letter that the chord does not actually contain.
-  const spelled = nat.claimed.join("") + got.extra + nat.digit;
+  // `keys` = the keys you press, written as the pinyin letters then the tone
+  // digit, e.g. 'gou4', 'xing4'. Guarded so it can never name a letter the
+  // chord does not actually contain.
+  const spelled = letterStr + got.extra + digit;
   const pressKeys = canon(spelled) === canon(got.chord) ? spelled : got.chord;
-  results.push({ ...e, base, chord: got.chord, keys: pressKeys, extra: got.extra, digit: nat.digit, old: oldChordOf[ch], fromRoot });
+  results.push({ ...e, base, chord: got.chord, keys: pressKeys, extra: got.extra, digit, old: oldChordOf[ch], fromRoot });
 }
 
 console.log("\nchar  pinyin     tone  natural   chord      keys       note");
@@ -287,8 +308,15 @@ for (const [k, n] of Object.entries(byExtra)) console.log("  " + k.padEnd(30) + 
 
 const problems = [];
 const seen = new Map();
+// The tone digit is pressed on the number row and does not have to own a finger,
+// so only the LETTERS must be finger-distinct. The digit itself must be the
+// character's tone or that tone's partner on the other hand.
+const lettersOnly = c => String(c).replace(/[0-9]/g, "");
 for (const r of ok) {
-  if (!physical(r.chord)) problems.push("IMPOSSIBLE " + r.char + " [" + r.chord + "]");
+  if (!physical(lettersOnly(r.chord))) problems.push("IMPOSSIBLE LETTERS " + r.char + " [" + r.chord + "] (two letters share a finger)");
+  const digitsIn = String(r.chord).match(/[0-9]/g) || [];
+  if (digitsIn.length !== 1) problems.push("TONE DIGIT COUNT " + r.char + " [" + r.chord + "] has " + digitsIn.length + " digits");
+  else if (toneDigits(r.tone).indexOf(digitsIn[0]) === -1) problems.push("BAD TONE DIGIT " + r.char + " [" + r.chord + "] tone " + r.tone + " but digit " + digitsIn[0]);
   if (seen.has(r.chord) && seen.get(r.chord) !== r.char) problems.push("COLLISION " + r.chord + " -> " + seen.get(r.chord) + " / " + r.char);
   else seen.set(r.chord, r.char);
 }

@@ -8141,22 +8141,18 @@
     }
   },
   "flat_chords": {
-    "0abein": "编 ",
-    "0abgn": "帮 ",
     "0abin": "边 ",
-    "0abio": "标 ",
-    "0acghn": "窗 ",
-    "0aginx": "相 ",
-    "0agnu": "关 ",
-    "0aij": "家 ",
-    "0at": "他 ",
-    "0ghnoz": "中 ",
+    "0gno": "供 ",
     "12abinuy": "边缘",
     "12aegilnw": "温良",
     "134hinsu": "女士",
     "13abhio": "指标",
     "14abimo": "目标",
     "1a": "a ",
+    "1abgn": "帮 ",
+    "1abin": "编 ",
+    "1abio": "标 ",
+    "1acghn": "窗 ",
     "1acht": "chatter ",
     "1ad": "ad ",
     "1adt": "date ",
@@ -8164,9 +8160,13 @@
     "1aepst": "pastes ",
     "1aer": "read ",
     "1aest": "steadfast ",
+    "1aginx": "相 ",
+    "1agnu": "关 ",
+    "1aij": "家 ",
     "1alst": "stall ",
     "1am": "may ",
     "1apst": "pasta ",
+    "1at": "他 ",
     "1awy": "away ",
     "1begil": "legible ",
     "1cdo": "doc ",
@@ -8210,12 +8210,12 @@
     "1flw": "following ",
     "1fmo": "from ",
     "1fo": "of ",
+    "1ghnoz": "中 ",
     "1gim": "mighty ",
     "1giv": "give ",
     "1gls": "glossary ",
     "1glt": "togglable ",
     "1gno": "功 ",
-    "1gnov": "供 ",
     "1gnoy": "拥 ",
     "1go": "go ",
     "1got": "toggle ",
@@ -8256,8 +8256,7 @@
     "2al": "all",
     "2an": "拿 ",
     "2anp": "盘 ",
-    "2anvy": "言 ",
-    "2any": "缘 ",
+    "2any": "言 ",
     "2at": "她 ",
     "2ceghn": "程 ",
     "2cegn": "层 ",
@@ -8265,26 +8264,31 @@
     "2dmo": "model ",
     "2egn": "能 ",
     "2eh": "和 ",
-    "2ehv": "合 ",
+    "2ehis": "谁 ",
+    "2ehns": "什 ",
     "2eij": "结 ",
     "2eilv": "Ievlevli ",
+    "2eiw": "为 ",
     "2elt": "elect ",
     "2emn": "们 ",
-    "2emnv": "门 ",
+    "2enw": "文 ",
+    "2eux": "学 ",
     "2ginq": "情 ",
+    "2ginx": "形 ",
     "2hint": "hiting ",
+    "2his": "时 ",
     "2how": "whom ",
     "2ij": "及 ",
     "2it": "题 ",
-    "2itv": "提 ",
+    "2ix": "习 ",
     "2not": "onto ",
-    "2notv": "同 ",
     "2ru": "如 ",
     "2y": "于 ",
     "34adijsuz": "速记打字",
     "34adiz": "打字",
     "34aijnx": "仅限",
     "3ad": "aded ",
+    "3adgn": "档 ",
     "3af": "法 ",
     "3aginx": "想 ",
     "3aho": "好 ",
@@ -8293,21 +8297,22 @@
     "3ano": "脑 ",
     "3at": "它 ",
     "3ci": "此 ",
+    "3di": "底 ",
+    "3egi": "给 ",
+    "3eij": "解 ",
+    "3eiw": "伟 ",
+    "3eix": "写 ",
+    "3ek": "可 ",
+    "3enz": "怎 ",
     "3ghnoz": "种 ",
-    "3gi": "给 ",
     "3ginq": "请 ",
     "3gou": "狗 ",
     "3hiz": "指 ",
     "3hnz": "转 ",
-    "3i": "底 ",
-    "3ij": "解 ",
     "3ijn": "仅 ",
     "3il": "里 ",
     "3in": "你 ",
-    "3iw": "伟 ",
-    "3ix": "写 ",
     "3iy": "以 ",
-    "3k": "可 ",
     "3not": "统 ",
     "3nu": "女 ",
     "3osu": "所 ",
@@ -8315,75 +8320,70 @@
     "3ouz": "走 ",
     "3ow": "我 ",
     "3oy": "有 ",
-    "3vy": "与 ",
-    "3y": "语 ",
+    "3y": "与 ",
     "4ad": "大 ",
     "4adi": "代 ",
     "4adin": "电",
+    "4aghns": "上 ",
+    "4agi": "盖 ",
+    "4agknu": "况 ",
     "4ah": "化 ",
-    "4ahns": "上 ",
     "4ai": "爱 ",
     "4aijo": "教 ",
-    "4ainvx": "现 ",
-    "4ainx": "限 ",
-    "4aknu": "况 ",
+    "4ainx": "现 ",
     "4aku": "快 ",
     "4an": "那 ",
     "4ansu": "算 ",
-    "4anv": "按 ",
-    "4bnu": "步 ",
-    "4bu": "不 ",
-    "4chis": "适 ",
+    "4bu": "步 ",
+    "4chis": "士 ",
+    "4dgno": "动 ",
     "4di": "地 ",
     "4diu": "对 ",
+    "4eg": "各 ",
+    "4egn": "更 ",
     "4ehz": "这 ",
     "4eij": "界 ",
     "4eil": "类 ",
+    "4enr": "任 ",
     "4enw": "问 ",
-    "4hins": "释 ",
-    "4his": "是 ",
-    "4hisv": "士 ",
+    "4gimn": "命 ",
+    "4ginx": "性 ",
+    "4gnoy": "用 ",
+    "4gou": "构 ",
+    "4his": "适 ",
+    "4hisv": "是 ",
     "4hnz": "站 ",
     "4hs": "数 ",
-    "4hvz": "助 ",
-    "4hz": "注 ",
+    "4hz": "助 ",
     "4ij": "记 ",
     "4ijsu": "速记",
-    "4imn": "命 ",
     "4is": "似 ",
     "4ix": "系 ",
     "4iz": "字 ",
     "4j": "据 ",
     "4m": "目 ",
-    "4noy": "用 ",
-    "4ou": "构 ",
-    "4ouvz": "作 ",
-    "4ouz": "做 ",
+    "4ouz": "作 ",
     "4oy": "又 ",
     "4su": "速 ",
     "5d": "的 ",
     "5el": "了 ",
     "5em": "么 ",
-    "7agi": "盖 ",
-    "7dgno": "动 ",
-    "7eg": "各 ",
-    "7egn": "更 ",
-    "7enr": "任 ",
-    "7ginx": "性 ",
+    "7ainx": "限 ",
+    "7an": "按 ",
+    "7bu": "不 ",
+    "7his": "释 ",
+    "7hz": "注 ",
+    "7ouz": "做 ",
     "8ad": "打 ",
-    "8adgn": "档 ",
     "8dorw": "world ",
-    "8enz": "怎 ",
-    "9ehis": "谁 ",
-    "9ehns": "什 ",
-    "9ehnsv": "神 ",
-    "9eiw": "为 ",
-    "9enw": "文 ",
-    "9eux": "学 ",
-    "9ginx": "形 ",
-    "9his": "时 ",
-    "9hisv": "实 ",
-    "9ix": "习 ",
+    "8y": "语 ",
+    "9any": "缘 ",
+    "9eh": "合 ",
+    "9ehns": "神 ",
+    "9emn": "门 ",
+    "9his": "实 ",
+    "9it": "提 ",
+    "9not": "同 ",
     "aabcloruvy": "vocabulary ",
     "aaclltuy": "actually ",
     "aagmmrr": "grammar",
@@ -8883,17 +8883,17 @@
     "ty": "try"
   },
   "chinese_chords": {
-    "0abein": {
+    "1abin": {
       "char": "编",
       "pinyin": "biān",
-      "keys": "biane0",
+      "keys": "bian1",
       "tone": 1,
       "english": "compile"
     },
-    "0abgn": {
+    "1abgn": {
       "char": "帮",
       "pinyin": "bāng",
-      "keys": "bang0",
+      "keys": "bang1",
       "tone": 1,
       "english": "help"
     },
@@ -8904,52 +8904,52 @@
       "tone": 1,
       "english": "edge/side"
     },
-    "0abio": {
+    "1abio": {
       "char": "标",
       "pinyin": "biāo",
-      "keys": "biao0",
+      "keys": "biao1",
       "tone": 1,
       "english": "mark/target/standard"
     },
-    "0acghn": {
+    "1acghn": {
       "char": "窗",
       "pinyin": "chuāng",
-      "keys": "chang0",
+      "keys": "chang1",
       "tone": 1,
       "english": "window"
     },
-    "0aginx": {
+    "1aginx": {
       "char": "相",
       "pinyin": "xiāng",
-      "keys": "xiang0",
+      "keys": "xiang1",
       "tone": 1,
       "english": "mutual / appearance"
     },
-    "0agnu": {
+    "1agnu": {
       "char": "关",
       "pinyin": "guān",
-      "keys": "guan0",
+      "keys": "guan1",
       "tone": 1,
       "english": "about"
     },
-    "0aij": {
+    "1aij": {
       "char": "家",
       "pinyin": "jiā",
-      "keys": "jia0",
+      "keys": "jia1",
       "tone": 1,
       "english": "home / family"
     },
-    "0at": {
+    "1at": {
       "char": "他",
       "pinyin": "tā",
-      "keys": "ta0",
+      "keys": "ta1",
       "tone": 1,
       "english": "they"
     },
-    "0ghnoz": {
+    "1ghnoz": {
       "char": "中",
       "pinyin": "zhōng",
-      "keys": "zhong0",
+      "keys": "zhong1",
       "tone": 1,
       "english": "middle / China"
     },
@@ -8974,10 +8974,10 @@
       "tone": 1,
       "english": "function"
     },
-    "1gnov": {
+    "0gno": {
       "char": "供",
       "pinyin": "gōng",
-      "keys": "gonv1",
+      "keys": "gon0",
       "tone": 1,
       "english": "provide / supply"
     },
@@ -9086,17 +9086,17 @@
       "tone": 2,
       "english": "keyboard"
     },
-    "2anvy": {
+    "2any": {
       "char": "言",
       "pinyin": "yán",
-      "keys": "yanv2",
+      "keys": "yan2",
       "tone": 2,
       "english": "speech"
     },
-    "2any": {
+    "9any": {
       "char": "缘",
       "pinyin": "yuán",
-      "keys": "yan2",
+      "keys": "yan9",
       "tone": 2,
       "english": "edge/margin"
     },
@@ -9135,10 +9135,10 @@
       "tone": 2,
       "english": "with"
     },
-    "2ehv": {
+    "9eh": {
       "char": "合",
       "pinyin": "hé",
-      "keys": "hev2",
+      "keys": "he9",
       "tone": 2,
       "english": "join / combine"
     },
@@ -9156,10 +9156,10 @@
       "tone": 2,
       "english": "we"
     },
-    "2emnv": {
+    "9emn": {
       "char": "门",
       "pinyin": "mén",
-      "keys": "menv2",
+      "keys": "men9",
       "tone": 2,
       "english": "measure word"
     },
@@ -9184,17 +9184,17 @@
       "tone": 2,
       "english": "topic / question"
     },
-    "2itv": {
+    "9it": {
       "char": "提",
       "pinyin": "tí",
-      "keys": "tiv2",
+      "keys": "ti9",
       "tone": 2,
       "english": "lift / raise"
     },
-    "2notv": {
+    "9not": {
       "char": "同",
       "pinyin": "tóng",
-      "keys": "tonv2",
+      "keys": "ton9",
       "tone": 2,
       "english": "same / together"
     },
@@ -9275,10 +9275,10 @@
       "tone": 3,
       "english": "kind / seed"
     },
-    "3gi": {
+    "3egi": {
       "char": "给",
       "pinyin": "gěi",
-      "keys": "gi3",
+      "keys": "gei3",
       "tone": 3,
       "english": "for"
     },
@@ -9310,17 +9310,17 @@
       "tone": 3,
       "english": "turn"
     },
-    "3i": {
+    "3di": {
       "char": "底",
       "pinyin": "dǐ",
-      "keys": "i3",
+      "keys": "di3",
       "tone": 3,
       "english": "bottom / base"
     },
-    "3ij": {
+    "3eij": {
       "char": "解",
       "pinyin": "jiě",
-      "keys": "ji3",
+      "keys": "jie3",
       "tone": 3,
       "english": "solve / untie"
     },
@@ -9345,17 +9345,17 @@
       "tone": 3,
       "english": "you"
     },
-    "3iw": {
+    "3eiw": {
       "char": "伟",
       "pinyin": "wěi",
-      "keys": "wi3",
+      "keys": "wei3",
       "tone": 3,
       "english": "great / magnificent"
     },
-    "3ix": {
+    "3eix": {
       "char": "写",
       "pinyin": "xiě",
-      "keys": "xi3",
+      "keys": "xie3",
       "tone": 3,
       "english": "write"
     },
@@ -9366,10 +9366,10 @@
       "tone": 3,
       "english": "by means of"
     },
-    "3k": {
+    "3ek": {
       "char": "可",
       "pinyin": "kě",
-      "keys": "k3",
+      "keys": "ke3",
       "tone": 3,
       "english": "can / may"
     },
@@ -9415,17 +9415,17 @@
       "tone": 3,
       "english": "have"
     },
-    "3vy": {
+    "3y": {
       "char": "与",
       "pinyin": "yǔ",
-      "keys": "yv3",
+      "keys": "y3",
       "tone": 3,
       "english": "and / with"
     },
-    "3y": {
+    "8y": {
       "char": "语",
       "pinyin": "yǔ",
-      "keys": "y3",
+      "keys": "y8",
       "tone": 3,
       "english": "language"
     },
@@ -9450,10 +9450,10 @@
       "tone": 4,
       "english": "-ize"
     },
-    "4ahns": {
+    "4aghns": {
       "char": "上",
       "pinyin": "shàng",
-      "keys": "shan4",
+      "keys": "shang4",
       "tone": 4,
       "english": "on"
     },
@@ -9471,24 +9471,24 @@
       "tone": 4,
       "english": "teach"
     },
-    "4ainvx": {
-      "char": "现",
-      "pinyin": "xiàn",
-      "keys": "xianv4",
-      "tone": 4,
-      "english": "present"
-    },
     "4ainx": {
-      "char": "限",
+      "char": "现",
       "pinyin": "xiàn",
       "keys": "xian4",
       "tone": 4,
+      "english": "present"
+    },
+    "7ainx": {
+      "char": "限",
+      "pinyin": "xiàn",
+      "keys": "xian7",
+      "tone": 4,
       "english": "limit/restrict"
     },
-    "4aknu": {
+    "4agknu": {
       "char": "况",
       "pinyin": "kuàng",
-      "keys": "kuan4",
+      "keys": "kuang4",
       "tone": 4,
       "english": "condition/circumstance"
     },
@@ -9513,31 +9513,31 @@
       "tone": 4,
       "english": "calculate"
     },
-    "4anv": {
+    "7an": {
       "char": "按",
       "pinyin": "àn",
-      "keys": "anv4",
+      "keys": "an7",
       "tone": 4,
       "english": "press"
     },
-    "4bnu": {
-      "char": "步",
-      "pinyin": "bù",
-      "keys": "bun4",
-      "tone": 4,
-      "english": "step"
-    },
     "4bu": {
-      "char": "不",
+      "char": "步",
       "pinyin": "bù",
       "keys": "bu4",
       "tone": 4,
+      "english": "step"
+    },
+    "7bu": {
+      "char": "不",
+      "pinyin": "bù",
+      "keys": "bu7",
+      "tone": 4,
       "english": "no"
     },
-    "4chis": {
+    "4his": {
       "char": "适",
       "pinyin": "shì",
-      "keys": "shic4",
+      "keys": "shi4",
       "tone": 4,
       "english": "suitable / fit"
     },
@@ -9583,24 +9583,24 @@
       "tone": 4,
       "english": "ask"
     },
-    "4hins": {
+    "7his": {
       "char": "释",
       "pinyin": "shì",
-      "keys": "shin4",
+      "keys": "shi7",
       "tone": 4,
       "english": "explain / release"
     },
-    "4his": {
+    "4hisv": {
       "char": "是",
       "pinyin": "shì",
-      "keys": "shi4",
+      "keys": "shiv4",
       "tone": 4,
       "english": "is/be"
     },
-    "4hisv": {
+    "4chis": {
       "char": "士",
       "pinyin": "shì",
-      "keys": "shiv4",
+      "keys": "shic4",
       "tone": 4,
       "english": "scholar/person"
     },
@@ -9618,17 +9618,17 @@
       "tone": 4,
       "english": "number"
     },
-    "4hvz": {
+    "4hz": {
       "char": "助",
       "pinyin": "zhù",
-      "keys": "zhv4",
+      "keys": "zh4",
       "tone": 4,
       "english": "assist"
     },
-    "4hz": {
+    "7hz": {
       "char": "注",
       "pinyin": "zhù",
-      "keys": "zh4",
+      "keys": "zh7",
       "tone": 4,
       "english": "note / annotate"
     },
@@ -9639,10 +9639,10 @@
       "tone": 4,
       "english": "record/write down"
     },
-    "4imn": {
+    "4gimn": {
       "char": "命",
       "pinyin": "mìng",
-      "keys": "min4",
+      "keys": "ming4",
       "tone": 4,
       "english": "life"
     },
@@ -9681,31 +9681,31 @@
       "tone": 4,
       "english": "eye"
     },
-    "4noy": {
+    "4gnoy": {
       "char": "用",
       "pinyin": "yòng",
-      "keys": "yon4",
+      "keys": "yong4",
       "tone": 4,
       "english": "use"
     },
-    "4ou": {
+    "4gou": {
       "char": "构",
       "pinyin": "gòu",
-      "keys": "ou4",
+      "keys": "gou4",
       "tone": 4,
       "english": "structure / construct"
     },
-    "4ouvz": {
+    "4ouz": {
       "char": "作",
       "pinyin": "zuò",
-      "keys": "zuov4",
+      "keys": "zuo4",
       "tone": 4,
       "english": "do / make"
     },
-    "4ouz": {
+    "7ouz": {
       "char": "做",
       "pinyin": "zuò",
-      "keys": "zuo4",
+      "keys": "zuo7",
       "tone": 4,
       "english": "do"
     },
@@ -9744,45 +9744,45 @@
       "tone": 5,
       "english": "question suffix"
     },
-    "7agi": {
+    "4agi": {
       "char": "盖",
       "pinyin": "gài",
-      "keys": "gai7",
+      "keys": "gai4",
       "tone": 4,
       "english": "cover / lid"
     },
-    "7dgno": {
+    "4dgno": {
       "char": "动",
       "pinyin": "dòng",
-      "keys": "dong7",
+      "keys": "dong4",
       "tone": 4,
       "english": "act"
     },
-    "7eg": {
+    "4eg": {
       "char": "各",
       "pinyin": "gè",
-      "keys": "ge7",
+      "keys": "ge4",
       "tone": 4,
       "english": "each / various"
     },
-    "7egn": {
+    "4egn": {
       "char": "更",
       "pinyin": "gèng",
-      "keys": "gen7",
+      "keys": "gen4",
       "tone": 4,
       "english": "more / change"
     },
-    "7enr": {
+    "4enr": {
       "char": "任",
       "pinyin": "rèn",
-      "keys": "ren7",
+      "keys": "ren4",
       "tone": 4,
       "english": "any"
     },
-    "7ginx": {
+    "4ginx": {
       "char": "性",
       "pinyin": "xìng",
-      "keys": "xing7",
+      "keys": "xing4",
       "tone": 4,
       "english": "nature / property"
     },
@@ -9793,87 +9793,87 @@
       "tone": 3,
       "english": "type/hit/strike"
     },
-    "8adgn": {
+    "3adgn": {
       "char": "档",
       "pinyin": "dǎng",
-      "keys": "dang8",
+      "keys": "dang3",
       "tone": 3,
       "english": "file"
     },
-    "8enz": {
+    "3enz": {
       "char": "怎",
       "pinyin": "zěn",
-      "keys": "zen8",
+      "keys": "zen3",
       "tone": 3,
       "english": "how"
     },
-    "9ehis": {
+    "2ehis": {
       "char": "谁",
       "pinyin": "shéi",
-      "keys": "shei9",
+      "keys": "shei2",
       "tone": 2,
       "english": "whose"
     },
-    "9ehns": {
+    "2ehns": {
       "char": "什",
       "pinyin": "shén",
-      "keys": "shen9",
+      "keys": "shen2",
       "tone": 2,
       "english": "what"
     },
-    "9ehnsv": {
+    "9ehns": {
       "char": "神",
       "pinyin": "shén",
-      "keys": "shenv9",
+      "keys": "shen9",
       "tone": 2,
       "english": "god/spirit"
     },
-    "9eiw": {
+    "2eiw": {
       "char": "为",
       "pinyin": "wéi",
-      "keys": "wei9",
+      "keys": "wei2",
       "tone": 2,
       "english": "to be / act as"
     },
-    "9enw": {
+    "2enw": {
       "char": "文",
       "pinyin": "wén",
-      "keys": "wen9",
+      "keys": "wen2",
       "tone": 2,
       "english": "writing / culture"
     },
-    "9eux": {
+    "2eux": {
       "char": "学",
       "pinyin": "xué",
-      "keys": "xue9",
+      "keys": "xue2",
       "tone": 2,
       "english": "study"
     },
-    "9ginx": {
+    "2ginx": {
       "char": "形",
       "pinyin": "xíng",
-      "keys": "xing9",
+      "keys": "xing2",
       "tone": 2,
       "english": "form"
     },
-    "9his": {
+    "2his": {
       "char": "时",
       "pinyin": "shí",
-      "keys": "shi9",
+      "keys": "shi2",
       "tone": 2,
       "english": "when"
     },
-    "9hisv": {
+    "9his": {
       "char": "实",
       "pinyin": "shí",
-      "keys": "shiv9",
+      "keys": "shi9",
       "tone": 2,
       "english": "real / solid"
     },
-    "9ix": {
+    "2ix": {
       "char": "习",
       "pinyin": "xí",
-      "keys": "xi9",
+      "keys": "xi2",
       "tone": 2,
       "english": "practice"
     }
@@ -11206,14 +11206,14 @@
     },
     {
       "word": "是",
-      "chord": "4his",
-      "keys": "shi4",
+      "chord": "4hisv",
+      "keys": "shiv4",
       "note": "shì - is/be"
     },
     {
       "word": "他",
-      "chord": "0at",
-      "keys": "ta0",
+      "chord": "1at",
+      "keys": "ta1",
       "note": "tā - they"
     },
     {
@@ -11260,38 +11260,38 @@
     },
     {
       "word": "档",
-      "chord": "8adgn",
-      "keys": "dang8",
+      "chord": "3adgn",
+      "keys": "dang3",
       "note": "dǎng - file"
     },
     {
       "word": "命",
-      "chord": "4imn",
-      "keys": "min4",
+      "chord": "4gimn",
+      "keys": "ming4",
       "note": "mìng - life"
     },
     {
       "word": "上",
-      "chord": "4ahns",
-      "keys": "shan4",
+      "chord": "4aghns",
+      "keys": "shang4",
       "note": "shàng - on"
     },
     {
       "word": "不",
-      "chord": "4bu",
-      "keys": "bu4",
+      "chord": "7bu",
+      "keys": "bu7",
       "note": "bù - no"
     },
     {
       "word": "怎",
-      "chord": "8enz",
-      "keys": "zen8",
+      "chord": "3enz",
+      "keys": "zen3",
       "note": "zěn - how"
     },
     {
       "word": "谁",
-      "chord": "9ehis",
-      "keys": "shei9",
+      "chord": "2ehis",
+      "keys": "shei2",
       "note": "shéi - whose"
     },
     {
@@ -11326,20 +11326,20 @@
     },
     {
       "word": "什",
-      "chord": "9ehns",
-      "keys": "shen9",
+      "chord": "2ehns",
+      "keys": "shen2",
       "note": "shén - what"
     },
     {
       "word": "时",
-      "chord": "9his",
-      "keys": "shi9",
+      "chord": "2his",
+      "keys": "shi2",
       "note": "shí - when"
     },
     {
       "word": "为",
-      "chord": "9eiw",
-      "keys": "wei9",
+      "chord": "2eiw",
+      "keys": "wei2",
       "note": "wéi - to be / act as"
     },
     {
@@ -11362,8 +11362,8 @@
     },
     {
       "word": "步",
-      "chord": "4bnu",
-      "keys": "bun4",
+      "chord": "4bu",
+      "keys": "bu4",
       "note": "bù - step"
     },
     {
@@ -11380,14 +11380,14 @@
     },
     {
       "word": "给",
-      "chord": "3gi",
-      "keys": "gi3",
+      "chord": "3egi",
+      "keys": "gei3",
       "note": "gěi - for"
     },
     {
       "word": "做",
-      "chord": "4ouz",
-      "keys": "zuo4",
+      "chord": "7ouz",
+      "keys": "zuo7",
       "note": "zuò - do"
     },
     {
@@ -11410,8 +11410,8 @@
     },
     {
       "word": "任",
-      "chord": "7enr",
-      "keys": "ren7",
+      "chord": "4enr",
+      "keys": "ren4",
       "note": "rèn - any"
     },
     {
@@ -11422,8 +11422,8 @@
     },
     {
       "word": "窗",
-      "chord": "0acghn",
-      "keys": "chang0",
+      "chord": "1acghn",
+      "keys": "chang1",
       "note": "chuāng - window"
     },
     {
@@ -11452,8 +11452,8 @@
     },
     {
       "word": "关",
-      "chord": "0agnu",
-      "keys": "guan0",
+      "chord": "1agnu",
+      "keys": "guan1",
       "note": "guān - about"
     },
     {
@@ -11518,20 +11518,20 @@
     },
     {
       "word": "形",
-      "chord": "9ginx",
-      "keys": "xing9",
+      "chord": "2ginx",
+      "keys": "xing2",
       "note": "xíng - form"
     },
     {
       "word": "按",
-      "chord": "4anv",
-      "keys": "anv4",
+      "chord": "7an",
+      "keys": "an7",
       "note": "àn - press"
     },
     {
       "word": "动",
-      "chord": "7dgno",
-      "keys": "dong7",
+      "chord": "4dgno",
+      "keys": "dong4",
       "note": "dòng - act"
     },
     {
@@ -11560,8 +11560,8 @@
     },
     {
       "word": "标",
-      "chord": "0abio",
-      "keys": "biao0",
+      "chord": "1abio",
+      "keys": "biao1",
       "note": "biāo - mark/target/standard"
     },
     {
@@ -11578,8 +11578,8 @@
     },
     {
       "word": "限",
-      "chord": "4ainx",
-      "keys": "xian4",
+      "chord": "7ainx",
+      "keys": "xian7",
       "note": "xiàn - limit/restrict"
     },
     {
@@ -11602,8 +11602,8 @@
     },
     {
       "word": "士",
-      "chord": "4hisv",
-      "keys": "shiv4",
+      "chord": "4chis",
+      "keys": "shic4",
       "note": "shì - scholar/person"
     },
     {
@@ -11632,8 +11632,8 @@
     },
     {
       "word": "缘",
-      "chord": "2any",
-      "keys": "yan2",
+      "chord": "9any",
+      "keys": "yan9",
       "note": "yuán - edge/margin"
     },
     {
@@ -11644,26 +11644,26 @@
     },
     {
       "word": "况",
-      "chord": "4aknu",
-      "keys": "kuan4",
+      "chord": "4agknu",
+      "keys": "kuang4",
       "note": "kuàng - condition/circumstance"
     },
     {
       "word": "神",
-      "chord": "9ehnsv",
-      "keys": "shenv9",
+      "chord": "9ehns",
+      "keys": "shen9",
       "note": "shén - god/spirit"
     },
     {
       "word": "伟",
-      "chord": "3iw",
-      "keys": "wi3",
+      "chord": "3eiw",
+      "keys": "wei3",
       "note": "wěi - great / magnificent"
     },
     {
       "word": "作",
-      "chord": "4ouvz",
-      "keys": "zuov4",
+      "chord": "4ouz",
+      "keys": "zuo4",
       "note": "zuò - do / make"
     },
     {
@@ -11674,14 +11674,14 @@
     },
     {
       "word": "门",
-      "chord": "2emnv",
-      "keys": "menv2",
+      "chord": "9emn",
+      "keys": "men9",
       "note": "mén - measure word"
     },
     {
       "word": "现",
-      "chord": "4ainvx",
-      "keys": "xianv4",
+      "chord": "4ainx",
+      "keys": "xian4",
       "note": "xiàn - present"
     },
     {
@@ -11710,8 +11710,8 @@
     },
     {
       "word": "编",
-      "chord": "0abein",
-      "keys": "biane0",
+      "chord": "1abin",
+      "keys": "bian1",
       "note": "biān - compile"
     },
     {
@@ -11722,14 +11722,14 @@
     },
     {
       "word": "语",
-      "chord": "3y",
-      "keys": "y3",
+      "chord": "8y",
+      "keys": "y8",
       "note": "yǔ - language"
     },
     {
       "word": "言",
-      "chord": "2anvy",
-      "keys": "yanv2",
+      "chord": "2any",
+      "keys": "yan2",
       "note": "yán - speech"
     },
     {
@@ -11800,8 +11800,8 @@
     },
     {
       "word": "性",
-      "chord": "7ginx",
-      "keys": "xing7",
+      "chord": "4ginx",
+      "keys": "xing4",
       "note": "xìng - nature / property"
     },
     {
@@ -12016,14 +12016,14 @@
     },
     {
       "word": "与",
-      "chord": "3vy",
-      "keys": "yv3",
+      "chord": "3y",
+      "keys": "y3",
       "note": "yǔ - and / with"
     },
     {
       "word": "同",
-      "chord": "2notv",
-      "keys": "tonv2",
+      "chord": "9not",
+      "keys": "ton9",
       "note": "tóng - same / together"
     },
     {
@@ -12046,8 +12046,8 @@
     },
     {
       "word": "底",
-      "chord": "3i",
-      "keys": "i3",
+      "chord": "3di",
+      "keys": "di3",
       "note": "dǐ - bottom / base"
     },
     {
@@ -12076,20 +12076,20 @@
     },
     {
       "word": "适",
-      "chord": "4chis",
-      "keys": "shic4",
+      "chord": "4his",
+      "keys": "shi4",
       "note": "shì - suitable / fit"
     },
     {
       "word": "合",
-      "chord": "2ehv",
-      "keys": "hev2",
+      "chord": "9eh",
+      "keys": "he9",
       "note": "hé - join / combine"
     },
     {
       "word": "写",
-      "chord": "3ix",
-      "keys": "xi3",
+      "chord": "3eix",
+      "keys": "xie3",
       "note": "xiě - write"
     },
     {
@@ -12118,8 +12118,8 @@
     },
     {
       "word": "盖",
-      "chord": "7agi",
-      "keys": "gai7",
+      "chord": "4agi",
+      "keys": "gai4",
       "note": "gài - cover / lid"
     },
     {
@@ -12130,8 +12130,8 @@
     },
     {
       "word": "各",
-      "chord": "7eg",
-      "keys": "ge7",
+      "chord": "4eg",
+      "keys": "ge4",
       "note": "gè - each / various"
     },
     {
@@ -12142,8 +12142,8 @@
     },
     {
       "word": "用",
-      "chord": "4noy",
-      "keys": "yon4",
+      "chord": "4gnoy",
+      "keys": "yong4",
       "note": "yòng - use"
     },
     {
@@ -12166,14 +12166,14 @@
     },
     {
       "word": "构",
-      "chord": "4ou",
-      "keys": "ou4",
+      "chord": "4gou",
+      "keys": "gou4",
       "note": "gòu - structure / construct"
     },
     {
       "word": "实",
-      "chord": "9hisv",
-      "keys": "shiv9",
+      "chord": "9his",
+      "keys": "shi9",
       "note": "shí - real / solid"
     },
     {
@@ -12196,8 +12196,8 @@
     },
     {
       "word": "解",
-      "chord": "3ij",
-      "keys": "ji3",
+      "chord": "3eij",
+      "keys": "jie3",
       "note": "jiě - solve / untie"
     },
     {
@@ -12214,8 +12214,8 @@
     },
     {
       "word": "相",
-      "chord": "0aginx",
-      "keys": "xiang0",
+      "chord": "1aginx",
+      "keys": "xiang1",
       "note": "xiāng - mutual / appearance"
     },
     {
@@ -12226,68 +12226,68 @@
     },
     {
       "word": "提",
-      "chord": "2itv",
-      "keys": "tiv2",
+      "chord": "9it",
+      "keys": "ti9",
       "note": "tí - lift / raise"
     },
     {
       "word": "供",
-      "chord": "1gnov",
-      "keys": "gonv1",
+      "chord": "0gno",
+      "keys": "gon0",
       "note": "gōng - provide / supply"
     },
     {
       "word": "中",
-      "chord": "0ghnoz",
-      "keys": "zhong0",
+      "chord": "1ghnoz",
+      "keys": "zhong1",
       "note": "zhōng - middle / China"
     },
     {
       "word": "文",
-      "chord": "9enw",
-      "keys": "wen9",
+      "chord": "2enw",
+      "keys": "wen2",
       "note": "wén - writing / culture"
     },
     {
       "word": "注",
-      "chord": "4hz",
-      "keys": "zh4",
+      "chord": "7hz",
+      "keys": "zh7",
       "note": "zhù - note / annotate"
     },
     {
       "word": "释",
-      "chord": "4hins",
-      "keys": "shin4",
+      "chord": "7his",
+      "keys": "shi7",
       "note": "shì - explain / release"
     },
     {
       "word": "可",
-      "chord": "3k",
-      "keys": "k3",
+      "chord": "3ek",
+      "keys": "ke3",
       "note": "kě - can / may"
     },
     {
       "word": "帮",
-      "chord": "0abgn",
-      "keys": "bang0",
+      "chord": "1abgn",
+      "keys": "bang1",
       "note": "bāng - help"
     },
     {
       "word": "助",
-      "chord": "4hvz",
-      "keys": "zhv4",
+      "chord": "4hz",
+      "keys": "zh4",
       "note": "zhù - assist"
     },
     {
       "word": "家",
-      "chord": "0aij",
-      "keys": "jia0",
+      "chord": "1aij",
+      "keys": "jia1",
       "note": "jiā - home / family"
     },
     {
       "word": "更",
-      "chord": "7egn",
-      "keys": "gen7",
+      "chord": "4egn",
+      "keys": "gen4",
       "note": "gèng - more / change"
     },
     {
@@ -12298,35 +12298,35 @@
     },
     {
       "word": "学",
-      "chord": "9eux",
-      "keys": "xue9",
+      "chord": "2eux",
+      "keys": "xue2",
       "note": "xué - study"
     },
     {
       "word": "习",
-      "chord": "9ix",
-      "keys": "xi9",
+      "chord": "2ix",
+      "keys": "xi2",
       "note": "xí - practice"
     }
   ],
   "chord_map": {
-    "0abein": "编 ",
-    "0abgn": "帮 ",
     "0abin": "边 ",
-    "0abio": "标 ",
-    "0acghn": "窗 ",
-    "0aginx": "相 ",
-    "0agnu": "关 ",
-    "0aij": "家 ",
-    "0at": "他 ",
-    "0ghnoz": "中 ",
+    "0gno": "供 ",
     "12abinuy": "边缘 ",
     "12aegilnw": "温良 ",
     "134hinsu": "女士 ",
     "13abhio": "指标 ",
     "14abimo": "目标 ",
     "1a": "a ",
+    "1abgn": "帮 ",
+    "1abin": "编 ",
+    "1abio": "标 ",
+    "1acghn": "窗 ",
     "1ad": "ad ",
+    "1aginx": "相 ",
+    "1agnu": "关 ",
+    "1aij": "家 ",
+    "1at": "他 ",
     "1cdo": "doc ",
     "1cdr": "created ",
     "1cil": "click ",
@@ -12346,11 +12346,11 @@
     "1flw": "following ",
     "1fmo": "from ",
     "1fo": "of ",
+    "1ghnoz": "中 ",
     "1giv": "give ",
     "1gls": "glossary ",
     "1glt": "togglable ",
     "1gno": "功 ",
-    "1gnov": "供 ",
     "1gnoy": "拥 ",
     "1go": "go ",
     "1got": "toggle ",
@@ -12384,28 +12384,32 @@
     "2al": "all ",
     "2an": "拿 ",
     "2anp": "盘 ",
-    "2anvy": "言 ",
-    "2any": "缘 ",
+    "2any": "言 ",
     "2at": "她 ",
     "2ceghn": "程 ",
     "2cegn": "层 ",
     "2egn": "能 ",
     "2eh": "和 ",
-    "2ehv": "合 ",
+    "2ehis": "谁 ",
+    "2ehns": "什 ",
     "2eij": "结 ",
+    "2eiw": "为 ",
     "2emn": "们 ",
-    "2emnv": "门 ",
+    "2enw": "文 ",
+    "2eux": "学 ",
     "2ginq": "情 ",
+    "2ginx": "形 ",
+    "2his": "时 ",
     "2how": "whom ",
     "2ij": "及 ",
     "2it": "题 ",
-    "2itv": "提 ",
-    "2notv": "同 ",
+    "2ix": "习 ",
     "2ru": "如 ",
     "2y": "于 ",
     "34adijsuz": "速记打字 ",
     "34adiz": "打字 ",
     "34aijnx": "仅限 ",
+    "3adgn": "档 ",
     "3af": "法 ",
     "3aginx": "想 ",
     "3aho": "好 ",
@@ -12414,21 +12418,22 @@
     "3ano": "脑 ",
     "3at": "它 ",
     "3ci": "此 ",
+    "3di": "底 ",
+    "3egi": "给 ",
+    "3eij": "解 ",
+    "3eiw": "伟 ",
+    "3eix": "写 ",
+    "3ek": "可 ",
+    "3enz": "怎 ",
     "3ghnoz": "种 ",
-    "3gi": "给 ",
     "3ginq": "请 ",
     "3gou": "狗 ",
     "3hiz": "指 ",
     "3hnz": "转 ",
-    "3i": "底 ",
-    "3ij": "解 ",
     "3ijn": "仅 ",
     "3il": "里 ",
     "3in": "你 ",
-    "3iw": "伟 ",
-    "3ix": "写 ",
     "3iy": "以 ",
-    "3k": "可 ",
     "3not": "统 ",
     "3nu": "女 ",
     "3osu": "所 ",
@@ -12436,74 +12441,69 @@
     "3ouz": "走 ",
     "3ow": "我 ",
     "3oy": "有 ",
-    "3vy": "与 ",
-    "3y": "语 ",
+    "3y": "与 ",
     "4ad": "大 ",
     "4adi": "代 ",
+    "4aghns": "上 ",
+    "4agi": "盖 ",
+    "4agknu": "况 ",
     "4ah": "化 ",
-    "4ahns": "上 ",
     "4ai": "爱 ",
     "4aijo": "教 ",
-    "4ainvx": "现 ",
-    "4ainx": "限 ",
-    "4aknu": "况 ",
+    "4ainx": "现 ",
     "4aku": "快 ",
     "4an": "那 ",
     "4ansu": "算 ",
-    "4anv": "按 ",
-    "4bnu": "步 ",
-    "4bu": "不 ",
-    "4chis": "适 ",
+    "4bu": "步 ",
+    "4chis": "士 ",
+    "4dgno": "动 ",
     "4di": "地 ",
     "4diu": "对 ",
+    "4eg": "各 ",
+    "4egn": "更 ",
     "4ehz": "这 ",
     "4eij": "界 ",
     "4eil": "类 ",
+    "4enr": "任 ",
     "4enw": "问 ",
-    "4hins": "释 ",
-    "4his": "是 ",
-    "4hisv": "士 ",
+    "4gimn": "命 ",
+    "4ginx": "性 ",
+    "4gnoy": "用 ",
+    "4gou": "构 ",
+    "4his": "适 ",
+    "4hisv": "是 ",
     "4hnz": "站 ",
     "4hs": "数 ",
-    "4hvz": "助 ",
-    "4hz": "注 ",
+    "4hz": "助 ",
     "4ij": "记 ",
     "4ijsu": "速记 ",
-    "4imn": "命 ",
     "4is": "似 ",
     "4ix": "系 ",
     "4iz": "字 ",
     "4j": "据 ",
     "4m": "目 ",
-    "4noy": "用 ",
-    "4ou": "构 ",
-    "4ouvz": "作 ",
-    "4ouz": "做 ",
+    "4ouz": "作 ",
     "4oy": "又 ",
     "4su": "速 ",
     "5d": "的 ",
     "5el": "了 ",
     "5em": "么 ",
-    "7agi": "盖 ",
-    "7dgno": "动 ",
-    "7eg": "各 ",
-    "7egn": "更 ",
-    "7enr": "任 ",
-    "7ginx": "性 ",
+    "7ainx": "限 ",
+    "7an": "按 ",
+    "7bu": "不 ",
+    "7his": "释 ",
+    "7hz": "注 ",
+    "7ouz": "做 ",
     "8ad": "打 ",
-    "8adgn": "档 ",
     "8dorw": "world ",
-    "8enz": "怎 ",
-    "9ehis": "谁 ",
-    "9ehns": "什 ",
-    "9ehnsv": "神 ",
-    "9eiw": "为 ",
-    "9enw": "文 ",
-    "9eux": "学 ",
-    "9ginx": "形 ",
-    "9his": "时 ",
-    "9hisv": "实 ",
-    "9ix": "习 ",
+    "8y": "语 ",
+    "9any": "缘 ",
+    "9eh": "合 ",
+    "9ehns": "神 ",
+    "9emn": "门 ",
+    "9his": "实 ",
+    "9it": "提 ",
+    "9not": "同 ",
     "aabcloruvy": "vocabulary ",
     "aaclltuy": "actually ",
     "aadt": "data ",

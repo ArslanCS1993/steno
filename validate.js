@@ -110,8 +110,24 @@ function validate(d) {
     if (!physical(rc, K2F_EN)) impossibleEn++;
     for (const dc of Object.keys(R.derivatives || {})) if (!physical(dc, K2F_EN)) impossibleEn++;
   }
+  // Chinese tone digits live on the number row and are pressed with whatever
+  // finger is free, so a digit does NOT have to own a finger of its own: only
+  // the pinyin LETTERS must be finger-distinct. (构 is '4gou' = g,o,u + tone 4,
+  // even though g and 4 are both nominally the left index.)
   let impossibleZh = 0;
-  for (const c of zh.keys()) if (!physical(c, K2F_ZH)) impossibleZh++;
+  for (const c of zh.keys()) if (!physical(String(c).replace(/[0-9]/g, ""), K2F_ZH)) impossibleZh++;
+  // the digit that IS present must be that character's tone or its partner
+  const TONE_PARTNER = { '1': '0', '0': '1', '2': '9', '9': '2', '3': '8', '8': '3', '4': '7', '7': '4', '5': '6', '6': '5' };
+  let badToneDigit = 0;
+  for (const [c, v] of Object.entries(d.chinese_chords || {})) {
+    const ds = String(c).match(/[0-9]/g) || [];
+    const tone = String(v.tone);
+    if (ds.length !== 1 || (ds[0] !== tone && ds[0] !== TONE_PARTNER[tone])) {
+      badToneDigit++;
+      problems.push("BAD TONE DIGIT: '" + c + "' for " + v.char + " (tone " + v.tone + ") carries digit '" + ds.join("") + "'");
+    }
+  }
+  info.chineseBadToneDigit = badToneDigit;
   let rootsMissing = 0;
   for (const rc of Object.keys(d.roots || {})) if (!(rc in (d.chord_map || {}))) rootsMissing++;
 
@@ -230,7 +246,8 @@ if (require.main === module) {
   console.log("  disagreements: " + info.drift);
 
   console.log("\n[4] physical validity, per language scheme");
-  console.log("  chinese chords impossible under the chinese map: " + info.chineseImpossible);
+  console.log("  chinese chords with a letter-finger clash:      " + info.chineseImpossible + "   (the tone digit is exempt)");
+  console.log("  chinese chords whose digit is not the tone/its partner: " + info.chineseBadToneDigit);
   console.log("  english/root chords impossible under the english map: " + info.englishImpossible + "  (the b/n-move backlog)");
 
   console.log("\n[5] chords colliding with the inflection taps 1-4");
