@@ -13689,38 +13689,34 @@
       "label": "WE HAVE"
     },
     "这": {
-      "emoji": "这",
+      "emoji": "📌",
       "bg": "#f59e0b",
       "glow": "rgba(245, 158, 11, 0.4)",
-      "label": "这 (zhè - this)",
-      "svg": "<circle cx=\"24\" cy=\"24\" r=\"21\" fill=\"#78350f\" stroke=\"#f59e0b\" stroke-width=\"2.5\"/><text x=\"24\" y=\"32\" text-anchor=\"middle\" font-size=\"22\" font-family=\"'Microsoft YaHei', 'PingFang SC', sans-serif\" font-weight=\"900\" fill=\"#fef3c7\">这</text>"
+      "label": "这 (zhè - this)"
     },
     "是": {
-      "emoji": "🟢",
+      "emoji": "✅",
       "bg": "#10b981",
       "glow": "rgba(16, 185, 129, 0.4)",
       "label": "是 (IS)"
     },
     "他": {
-      "emoji": "他",
+      "emoji": "👨",
       "bg": "#3b82f6",
       "glow": "rgba(59, 130, 246, 0.4)",
-      "label": "他 (tā - he/him)",
-      "svg": "<circle cx=\"24\" cy=\"24\" r=\"21\" fill=\"#1e3a8a\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/><text x=\"24\" y=\"32\" text-anchor=\"middle\" font-size=\"22\" font-family=\"'Microsoft YaHei', 'PingFang SC', sans-serif\" font-weight=\"900\" fill=\"#bfdbfe\">他</text>"
+      "label": "他 (tā - he/him)"
     },
     "拿": {
-      "emoji": "拿",
+      "emoji": "✊",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
-      "label": "拿 (ná - take)",
-      "svg": "<circle cx=\"24\" cy=\"24\" r=\"21\" fill=\"#312e81\" stroke=\"#6366f1\" stroke-width=\"2.5\"/><text x=\"24\" y=\"32\" text-anchor=\"middle\" font-size=\"22\" font-family=\"'Microsoft YaHei', 'PingFang SC', sans-serif\" font-weight=\"900\" fill=\"#c7d2fe\">拿</text>"
+      "label": "拿 (ná - take)"
     },
     "狗": {
-      "emoji": "狗",
+      "emoji": "🐕",
       "bg": "#d97706",
       "glow": "rgba(217, 119, 6, 0.4)",
-      "label": "狗 (gǒu - dog)",
-      "svg": "<circle cx=\"24\" cy=\"24\" r=\"21\" fill=\"#78350f\" stroke=\"#d97706\" stroke-width=\"2.5\"/><text x=\"24\" y=\"32\" text-anchor=\"middle\" font-size=\"22\" font-family=\"'Microsoft YaHei', 'PingFang SC', sans-serif\" font-weight=\"900\" fill=\"#fde68a\">狗</text>"
+      "label": "狗 (gǒu - dog)"
     },
     "大": {
       "emoji": "🐘",
@@ -13729,18 +13725,16 @@
       "label": "大 (BIG)"
     },
     "书": {
-      "emoji": "书",
+      "emoji": "📖",
       "bg": "#ec4899",
       "glow": "rgba(236, 72, 153, 0.4)",
-      "label": "书 (shū - book)",
-      "svg": "<circle cx=\"24\" cy=\"24\" r=\"21\" fill=\"#831843\" stroke=\"#ec4899\" stroke-width=\"2.5\"/><text x=\"24\" y=\"32\" text-anchor=\"middle\" font-size=\"22\" font-family=\"'Microsoft YaHei', 'PingFang SC', sans-serif\" font-weight=\"900\" fill=\"#fbcfe8\">书</text>"
+      "label": "书 (shū - book)"
     },
     "爱": {
-      "emoji": "爱",
+      "emoji": "❤️",
       "bg": "#ef4444",
       "glow": "rgba(239, 68, 68, 0.4)",
-      "label": "爱 (ài - love)",
-      "svg": "<circle cx=\"24\" cy=\"24\" r=\"21\" fill=\"#7f1d1d\" stroke=\"#ef4444\" stroke-width=\"2.5\"/><text x=\"24\" y=\"32\" text-anchor=\"middle\" font-size=\"22\" font-family=\"'Microsoft YaHei', 'PingFang SC', sans-serif\" font-weight=\"900\" fill=\"#fecaca\">爱</text>"
+      "label": "爱 (ài - love)"
     },
     "步": {
       "emoji": "👣",
@@ -13791,7 +13785,7 @@
       "label": "标 (TARGET)"
     },
     "什": {
-      "emoji": "❓🤷",
+      "emoji": "❓",
       "bg": "#8b5cf6",
       "glow": "rgba(139, 92, 246, 0.4)",
       "label": "什 (WHAT)"
@@ -13815,19 +13809,19 @@
       "label": "限 (LIMIT)"
     },
     "温": {
-      "emoji": "🌱",
+      "emoji": "🌡️",
       "bg": "#10b981",
       "glow": "rgba(16, 185, 129, 0.4)",
       "label": "温 (WARM)"
     },
     "良": {
-      "emoji": "✨",
+      "emoji": "👍",
       "bg": "#facc15",
       "glow": "rgba(250, 204, 21, 0.4)",
       "label": "良 (GOOD)"
     },
     "女": {
-      "emoji": "👩",
+      "emoji": "♀️",
       "bg": "#f43f5e",
       "glow": "rgba(244, 63, 94, 0.4)",
       "label": "女 (WOMAN)"
@@ -13857,7 +13851,7 @@
       "label": "有 (HAVE)"
     },
     "的": {
-      "emoji": "🔗",
+      "emoji": "🧷",
       "bg": "#facc15",
       "glow": "rgba(250, 204, 21, 0.4)",
       "label": "的 (OF)"
@@ -13869,13 +13863,13 @@
       "label": "边 (EDGE)"
     },
     "缘": {
-      "emoji": "🧶",
+      "emoji": "🪢",
       "bg": "#f97316",
       "glow": "rgba(249, 115, 22, 0.4)",
       "label": "缘 (MARGIN)"
     },
     "情": {
-      "emoji": "💭",
+      "emoji": "💗",
       "bg": "#06b6d4",
       "glow": "rgba(6, 182, 212, 0.4)",
       "label": "情 (FEELING)"
@@ -14841,13 +14835,13 @@
       "label": "代 DÀI"
     },
     "化": {
-      "emoji": "🔄",
+      "emoji": "♻️",
       "bg": "#ec4899",
       "glow": "rgba(236, 72, 153, 0.4)",
       "label": "化 HUÀ"
     },
     "系": {
-      "emoji": "🧬",
+      "emoji": "🕸️",
       "bg": "#22c55e",
       "glow": "rgba(34, 197, 94, 0.4)",
       "label": "系 XÌ"
@@ -14865,7 +14859,7 @@
       "label": "编 BIĀN"
     },
     "程": {
-      "emoji": "📋",
+      "emoji": "📄",
       "bg": "#3b82f6",
       "glow": "rgba(59, 130, 246, 0.4)",
       "label": "程 CHÉNG"
@@ -14883,271 +14877,276 @@
       "label": "言 YÁN"
     },
     "能": {
-      "emoji": "字",
+      "emoji": "💪",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "能 NÉNG"
     },
     "快": {
-      "emoji": "字",
+      "emoji": "💨",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "快 KUÀI"
     },
     "档": {
-      "emoji": "字",
+      "emoji": "📁",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "档 DǍNG"
     },
     "命": {
-      "emoji": "字",
+      "emoji": "🌱",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "命 MÌNG"
     },
     "上": {
-      "emoji": "字",
+      "emoji": "⬆️",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "上 SHÀNG"
     },
     "不": {
-      "emoji": "字",
+      "emoji": "🚫",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "不 BÙ"
     },
     "怎": {
-      "emoji": "字",
+      "emoji": "🤷",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "怎 ZĚN"
     },
     "谁": {
-      "emoji": "字",
+      "emoji": "🕵️",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "谁 SHÉI"
     },
     "我": {
-      "emoji": "字",
+      "emoji": "👤",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "我 WǑ"
     },
     "她": {
-      "emoji": "字",
+      "emoji": "👩",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "她 TĀ"
     },
     "它": {
-      "emoji": "字",
+      "emoji": "📦",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "它 TĀ"
     },
     "们": {
-      "emoji": "字",
+      "emoji": "👥",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "们 MEN"
     },
     "你": {
-      "emoji": "字",
+      "emoji": "🫵",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "你 NǏ"
     },
     "时": {
-      "emoji": "字",
+      "emoji": "⏰",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "时 SHÍ"
     },
     "为": {
-      "emoji": "字",
+      "emoji": "🎭",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
-      "label": "为 WÈI"
+      "label": "为 WÈI",
+      "svg": "<circle cx=\"19\" cy=\"24\" r=\"10\" fill=\"#6366f1\" opacity=\"0.55\"/><circle cx=\"29\" cy=\"24\" r=\"10\" fill=\"#38bdf8\" opacity=\"0.55\"/>"
     },
     "哪": {
-      "emoji": "字",
+      "emoji": "🧭",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "哪 NǍ"
     },
     "里": {
-      "emoji": "字",
+      "emoji": "📥",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
-      "label": "里 LǏ"
+      "label": "里 LǏ",
+      "svg": "<rect x=\"9\" y=\"9\" width=\"30\" height=\"30\" rx=\"7\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.5\"/><circle cx=\"24\" cy=\"24\" r=\"6.5\" fill=\"#38bdf8\"/>"
     },
     "如": {
-      "emoji": "字",
+      "emoji": "🔀",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
-      "label": "如 RÚ"
+      "label": "如 RÚ",
+      "svg": "<path d=\"M7 24 H19\" stroke=\"#a855f7\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M19 24 C28 24 27 13 38 13\" stroke=\"#a855f7\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M19 24 C28 24 27 35 38 35\" stroke=\"#a855f7\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"7\" cy=\"24\" r=\"3.5\" fill=\"#a855f7\"/>"
     },
     "来": {
-      "emoji": "字",
+      "emoji": "🫴",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "来 LÁI"
     },
     "给": {
-      "emoji": "字",
+      "emoji": "🎁",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "给 GĚI"
     },
     "做": {
-      "emoji": "字",
+      "emoji": "🛠️",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "做 ZUÒ"
     },
     "和": {
-      "emoji": "字",
+      "emoji": "🤝",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "和 HÉ"
     },
     "想": {
-      "emoji": "字",
+      "emoji": "💭",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "想 XIǍNG"
     },
     "任": {
-      "emoji": "字",
+      "emoji": "🎲",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
-      "label": "任 RÈN"
+      "label": "任 RÈN",
+      "svg": "<circle cx=\"12\" cy=\"24\" r=\"5\" fill=\"none\" stroke=\"#f59e0b\" stroke-width=\"2.5\"/><circle cx=\"24\" cy=\"24\" r=\"5\" fill=\"#f59e0b\"/><circle cx=\"36\" cy=\"24\" r=\"5\" fill=\"none\" stroke=\"#f59e0b\" stroke-width=\"2.5\"/>"
     },
     "问": {
-      "emoji": "字",
+      "emoji": "🙋",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "问 WÈN"
     },
     "窗": {
-      "emoji": "字",
+      "emoji": "🪟",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "窗 CHUĀNG"
     },
     "那": {
-      "emoji": "字",
+      "emoji": "👉",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "那 NÀ"
     },
     "机": {
-      "emoji": "字",
+      "emoji": "⚙️",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "机 JĪ"
     },
     "连": {
-      "emoji": "字",
+      "emoji": "🔗",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "连 LIÁN"
     },
     "地": {
-      "emoji": "字",
+      "emoji": "📍",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "地 DÌ"
     },
     "关": {
-      "emoji": "字",
+      "emoji": "🔒",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
-      "label": "关 GUĀN"
+      "label": "关 GUĀN",
+      "svg": "<rect x=\"9\" y=\"13\" width=\"6\" height=\"23\" rx=\"2\" fill=\"#ef4444\"/><rect x=\"33\" y=\"13\" width=\"6\" height=\"23\" rx=\"2\" fill=\"#ef4444\"/><rect x=\"9\" y=\"19\" width=\"30\" height=\"5\" rx=\"2.5\" fill=\"#fca5a5\"/><rect x=\"9\" y=\"28\" width=\"30\" height=\"5\" rx=\"2.5\" fill=\"#fca5a5\"/>"
     },
     "思": {
-      "emoji": "字",
+      "emoji": "🤔",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "思 SĪ"
     },
     "请": {
-      "emoji": "字",
+      "emoji": "🙏",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "请 QǏNG"
     },
     "界": {
-      "emoji": "字",
+      "emoji": "🌐",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "界 JIÈ"
     },
     "码": {
-      "emoji": "字",
+      "emoji": "🔢",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "码 MǍ"
     },
     "脑": {
-      "emoji": "字",
+      "emoji": "🧠",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "脑 NǍO"
     },
     "盘": {
-      "emoji": "字",
+      "emoji": "🎛️",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "盘 PÁN"
     },
     "功": {
-      "emoji": "字",
+      "emoji": "🔧",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "功 GŌNG"
     },
     "站": {
-      "emoji": "字",
+      "emoji": "🧍",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "站 ZHÀN"
     },
     "转": {
-      "emoji": "字",
+      "emoji": "🔄",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "转 ZHUǍN"
     },
     "形": {
-      "emoji": "字",
+      "emoji": "📐",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "形 XÍNG"
     },
     "按": {
-      "emoji": "字",
+      "emoji": "👇",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "按 ÀN"
     },
     "动": {
-      "emoji": "字",
+      "emoji": "🏃",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "动 DÒNG"
     },
     "神": {
-      "emoji": "字",
+      "emoji": "🌟",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "神 SHÉN"
     },
     "伟": {
-      "emoji": "字",
+      "emoji": "🏆",
       "bg": "#6366f1",
       "glow": "rgba(99, 102, 241, 0.4)",
       "label": "伟 WĚI"
@@ -15171,7 +15170,7 @@
       "label": "似 SÌ"
     },
     "性": {
-      "emoji": "⚙️",
+      "emoji": "🧬",
       "bg": "#b45309",
       "glow": "rgba(180, 83, 9, 0.4)",
       "label": "性 XÌNG"

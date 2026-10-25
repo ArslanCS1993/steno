@@ -183,6 +183,28 @@ function validate(d) {
   info.grammar = grammar;
   info.posDistribution = byPos;
 
+  // 7. every Chinese character must have exactly ONE visual, and it must be a
+  // real picture - never the character itself dressed up as an emoji. A
+  // grapheme-cluster count is used because a single emoji can be several code
+  // points (1️⃣, ❤️, flags, ZWJ sequences), while "❓🤷" is genuinely two.
+  const segZh = new Intl.Segmenter('en', { granularity: 'grapheme' });
+  const PICTO = /\p{Extended_Pictographic}/u;
+  const KEYCAP = /\u20e3/u;
+  const clusters = s => (typeof s === 'string' && s)
+    ? [...segZh.segment(s)].map(x => x.segment).filter(g => PICTO.test(g) || KEYCAP.test(g))
+    : [];
+  const cv = { noVisual: 0, multipleEmoji: 0, glyphAsEmoji: 0, withSvg: 0 };
+  for (const [c, v] of Object.entries(d.chinese_chords || {})) {
+    const vis = (d.word_visuals || {})[v.char];
+    if (!vis) { cv.noVisual++; problems.push("chinese '" + v.char + "' (" + c + ") has no word_visuals entry"); continue; }
+    if (vis.svg) cv.withSvg++;
+    if (isZh(vis.emoji)) { cv.glyphAsEmoji++; problems.push("chinese '" + v.char + "' uses the character itself as its emoji: " + JSON.stringify(vis.emoji)); }
+    const n = clusters(vis.emoji).length;
+    if (n > 1) { cv.multipleEmoji++; problems.push("chinese '" + v.char + "' has " + n + " emojis: " + JSON.stringify(vis.emoji)); }
+    if (n === 0 && !vis.svg) { cv.noVisual++; problems.push("chinese '" + v.char + "' has neither an emoji nor an svg"); }
+  }
+  info.chineseVisuals = cv;
+
   return { problems, warnings, info };
 }
 
@@ -224,6 +246,13 @@ if (require.main === module) {
   console.log("  unlabelled derivative morphemes: " + g.unlabelledDerivative);
   console.log("  root lemmas that are inflected:  " + g.inflectedLemma);
   console.log("  roots flagged as junk lemmas:    " + g.junkRoots);
+
+  const c = info.chineseVisuals || {};
+  console.log("\n[7] CHINESE VISUALS - exactly one picture each");
+  console.log("  characters with multiple emojis: " + c.multipleEmoji + "   (blocking)");
+  console.log("  character used as its own emoji: " + c.glyphAsEmoji + "   (blocking)");
+  console.log("  characters with no visual:       " + c.noVisual + "   (blocking)");
+  console.log("  carrying a hand-drawn svg:       " + c.withSvg);
 
   console.log("\n[info, non-blocking] roots-tree roots missing from chord_map: " + info.rootsMissingFromChordMap);
 
