@@ -15,5 +15,6 @@ ENV/
 .idea/
 *.swp
 
-# Backups
+# Backups (generator scripts snapshot data.json before each --write)
 *.bak
+*.bak-*
