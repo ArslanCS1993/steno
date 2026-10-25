@@ -11,8 +11,12 @@
  *   - A chord needs >= 2 keys; a lone letter gains a digit on a free finger.
  *   - Cross-word collisions gain a digit on a free finger, then a spare letter.
  *
- * Chinese: chord = <tone digit> + <pinyin letters>, tone digit falling back to
- * its mirrored partner when that finger is taken (whichever keeps more letters).
+ * Chinese: LETTERS FIRST, TONE LAST. The pinyin letters claim fingers in word
+ * order (a letter is dropped only when another LETTER owns its finger). The tone
+ * digit is then appended and is EXEMPT from the finger rule, because the number
+ * row is pressed with whatever finger is free. The tone number is used when
+ * free, else its partner on the other hand, else a letter is appended.
+ * 构 gou -> '4gou', keys 'gou4'.
  *
  * All metadata (char / emoji / note / morpheme / translations) is preserved.
  * Inflection taps ("1".."4") are NOT chords -- they stay untouched.
@@ -22,6 +26,7 @@
  *   node chordgen.js --preserve      # keep existing chords that are still legal
  *   node chordgen.js --write         # apply (writes a timestamped backup first)
  *   node chordgen.js --preserve --write
+ *   node chordgen.js --english-only  # leave Chinese chords untouched (owned by addchinese.js)
  */
 
 const fs = require("fs");
@@ -30,6 +35,12 @@ const path = require("path");
 const DATA_FILE = path.join(__dirname, "data.json");
 const WRITE = process.argv.includes("--write");
 const PRESERVE = process.argv.includes("--preserve");
+// --english-only leaves the Chinese dictionary exactly as it is. This script
+// models ONE finger map (8 fingers, thumbs idle), which is the ENGLISH scheme;
+// Chinese chords use their own map with the thumbs carrying b/v/c/n, so they are
+// owned by addchinese.js. Rebuilding them here would re-key them against the
+// wrong map.
+const ENGLISH_ONLY = process.argv.includes("--english-only");
 
 // ---------------------------------------------------------------- finger map
 const FINGER_MAP = {
@@ -191,33 +202,46 @@ function englishChord(word, oldChord, label) {
   return assignEnglish(word, label);
 }
 
+const ZH_LETTERS_ONLY = c => String(c).replace(/[0-9]/g, "");
+/** Chinese physical check: only the LETTERS need distinct fingers. The tone
+ *  digit sits on the number row and is pressed with whatever finger is free. */
+const isPhysicalZh = c => isPhysical(ZH_LETTERS_ONLY(c));
+
+/** Display keys for a Chinese chord: pinyin letters in word order, then the tone. */
+function zhKeys(pinyin, chord) {
+  const digits = (String(chord).match(/[0-9]/g) || []).join("");
+  const letters = new Set([...String(chord)].filter(c => /[a-z]/.test(c)));
+  const ordered = [];
+  // de-duplicate: 供 gong -> 'gong' would name g twice, but the chord holds one
+  for (const c of normalizePinyin(pinyin)) if (letters.has(c) && !ordered.includes(c)) ordered.push(c);
+  const extra = [...String(chord)].filter(c => /[a-z]/.test(c) && !ordered.includes(c));
+  return ordered.join("") + extra.join("") + digits;
+}
+
 function assignChinese(char, pinyin, tone, label) {
   const py = normalizePinyin(pinyin);
   if (!py) { report.failures.push(label + ":" + char + " (no pinyin)"); return null; }
   const toneStr = String(tone || 5);
+  const partners = [...new Set([toneStr, TONE_PARTNER[toneStr]])].filter(t => t && ALLOWED.has(t));
 
-  // Evaluate both the tone digit and its mirrored partner; prefer more letters.
-  const candidates = [];
-  for (const t of [...new Set([toneStr, TONE_PARTNER[toneStr]])]) {
-    if (!ALLOWED.has(t)) continue;
-    const merged = [t, ...claimLetters(py)];
-    const used = {};
-    const keys = [];
-    for (const k of merged) {
-      const f = KEY_TO_FINGER[k];
-      if (f in used) continue;
-      used[f] = k; keys.push(k);
-    }
-    const chord = canonicalize(keys.join(""));
-    if (isPhysical(chord) && chord.length >= 2) candidates.push(chord);
+  // letters first - the tone digit never costs a letter
+  const letters = claimLetters(py);
+  if (!letters.length) { report.failures.push(label + ":" + char + " (no usable letters)"); return null; }
+  const base = letters.length > 1 ? letters.join("") : ensureMultiKey(letters).join("");
+
+  trace("assignChinese", char, "tone=" + tone, "letters=" + base, "partners=" + partners.join(","));
+  for (const t of partners) {
+    const chord = canonicalize(base + t);
+    if (chord.length >= 2 && !taken.has(chord)) { register(chord, char); return chord; }
   }
-  candidates.sort((a, b) => b.length - a.length);
-
-  trace("assignChinese", char, "tone=" + tone, "candidates=" + JSON.stringify(candidates), "taken=" + candidates.map(c => taken.has(c)).join(","));
-  for (const chord of candidates) {
-    if (!taken.has(chord)) { register(chord, char); return chord; }
-    const unique = makeUnique(chord, taken);
-    if (unique) { register(unique, char); return unique; }
+  // tone and its partner are both spoken for: append a free distinguishing letter
+  const used = usedFingers(base);
+  for (const t of (partners.length ? partners : [""])) {
+    for (const l of ["v", "c", "n", ...SPARE_LETTERS]) {
+      if (KEY_TO_FINGER[l] in used) continue;
+      const chord = canonicalize(base + l + t);
+      if (!taken.has(chord)) { register(chord, char); return chord; }
+    }
   }
   report.failures.push(label + ":" + char + "(" + pinyin + ")");
   return null;
@@ -251,12 +275,13 @@ const zhChord = {};
 for (const [oldChord, entry] of Object.entries(original.chinese_chords || {})) {
   if (zhChord[entry.char]) { report.notes.push("duplicate char merged: " + entry.char + " (" + oldChord + ")"); continue; }
   let chord = null;
-  if (isPhysical(oldChord) && !taken.has(oldChord)) { chord = oldChord; report.kept++; }
+  if (ENGLISH_ONLY) { chord = oldChord; report.kept++; }
+  else if (isPhysicalZh(oldChord) && !taken.has(oldChord)) { chord = oldChord; report.kept++; }
   else chord = assignChinese(entry.char, entry.pinyin, entry.tone, "chinese");
   if (!chord) continue;
   register(chord, entry.char);   // always reserve, even when we kept the old chord
   zhChord[entry.char] = chord;
-  newChinese[chord] = { ...entry, keys: String(entry.tone) + normalizePinyin(entry.pinyin) };
+  newChinese[chord] = { ...entry, keys: zhKeys(entry.pinyin, chord) };
   if (chord !== oldChord) report.changed.push("chinese " + oldChord + " -> " + chord + "  " + entry.char);
 }
 out.chinese_chords = sortObject(newChinese);
@@ -267,21 +292,22 @@ function assignChinesePhrase(text, label) {
   const pinyin = chars.map(c => (CHAR_INFO[c] ? normalizePinyin(CHAR_INFO[c].pinyin) : "")).join("");
   const tones = chars.map(c => (CHAR_INFO[c] ? String(CHAR_INFO[c].tone) : "")).filter(Boolean);
   if (!pinyin) { report.failures.push(label + ":" + text + " (no pinyin for any char)"); return null; }
-  const best = [];
-  for (const t of [...new Set(tones.length ? [tones[0], TONE_PARTNER[tones[0]]] : [])].filter(Boolean)) {
-    const merged = [t, ...claimLetters(pinyin)];
-    const used = {}; const keys = [];
-    for (const k of merged) { const f = KEY_TO_FINGER[k]; if (f in used) continue; used[f] = k; keys.push(k); }
-    const chord = canonicalize(keys.join(""));
-    if (isPhysical(chord) && chord.length >= 2) best.push(chord);
+  const digits = [...new Set(tones.length ? [tones[0], TONE_PARTNER[tones[0]]] : [])].filter(t => t && ALLOWED.has(t));
+
+  // letters first, tone appended - same rule as single characters
+  const letters = claimLetters(pinyin);
+  const base = letters.length > 1 ? letters.join("") : ensureMultiKey(letters).join("");
+  for (const t of digits) {
+    const chord = canonicalize(base + t);
+    if (chord.length >= 2 && !taken.has(chord)) { register(chord, text); return chord; }
   }
-  const plain = canonicalize(ensureMultiKey(claimLetters(pinyin)).join(""));
-  if (isPhysical(plain) && plain.length >= 2) best.push(plain);
-  best.sort((a, b) => b.length - a.length);
-  for (const chord of best) {
-    if (!taken.has(chord)) { register(chord, text); return chord; }
-    const unique = makeUnique(chord, taken);
-    if (unique) { register(unique, text); return unique; }
+  const used = usedFingers(base);
+  for (const t of (digits.length ? digits : [""])) {
+    for (const l of SPARE_LETTERS) {
+      if (KEY_TO_FINGER[l] in used) continue;
+      const chord = canonicalize(base + l + t);
+      if (!taken.has(chord)) { register(chord, text); return chord; }
+    }
   }
   report.failures.push(label + ":" + text);
   return null;
@@ -295,11 +321,11 @@ for (const [oldChord, root] of Object.entries(original.roots || {})) {
   let isZh = false;
   if (isChinese(lemma)) {
     isZh = true;
-    chord = [...lemma].length === 1
+    chord = ENGLISH_ONLY ? oldChord : ([...lemma].length === 1
       ? (CHAR_INFO[lemma]
-        ? ((isPhysical(oldChord) && !taken.has(oldChord)) ? oldChord : assignChinese(lemma, CHAR_INFO[lemma].pinyin, CHAR_INFO[lemma].tone, "roots-zh"))
+        ? ((isPhysicalZh(oldChord) && !taken.has(oldChord)) ? oldChord : assignChinese(lemma, CHAR_INFO[lemma].pinyin, CHAR_INFO[lemma].tone, "roots-zh"))
         : assignChinesePhrase(lemma, "roots-zh"))
-      : assignChinesePhrase(lemma, "roots-zh");
+      : assignChinesePhrase(lemma, "roots-zh"));
   } else {
     chord = englishChord(lemma, oldChord, "roots");
   }
@@ -313,9 +339,9 @@ for (const [oldChord, root] of Object.entries(original.roots || {})) {
   for (const [dOld, dv] of Object.entries(root.derivatives || {})) {
     let dChord;
     if (isChinese(dv.word)) {
-      dChord = [...dv.word].length === 1 && CHAR_INFO[dv.word]
+      dChord = ENGLISH_ONLY ? dOld : ([...dv.word].length === 1 && CHAR_INFO[dv.word]
         ? assignChinese(dv.word, CHAR_INFO[dv.word].pinyin, CHAR_INFO[dv.word].tone, "deriv-zh")
-        : assignChinesePhrase(dv.word, "deriv-zh");
+        : assignChinesePhrase(dv.word, "deriv-zh"));
     } else {
       dChord = englishChord(dv.word, dOld, "derivatives");
     }
@@ -325,17 +351,34 @@ for (const [oldChord, root] of Object.entries(original.roots || {})) {
     if (dChord !== dOld) report.changed.push("deriv " + dOld + " -> " + dChord + "  " + dv.word);
   }
   copy.derivatives = sortObject(copy.derivatives);
+  if (newRoots[chord] && String(newRoots[chord].lemma) !== String(copy.lemma)) {
+    // Would silently LOSE a root, and validate.js cannot see it.
+    report.failures.push("root chord collision: " + chord + " wanted by both " + newRoots[chord].lemma + " and " + copy.lemma);
+    continue;
+  }
   newRoots[chord] = copy;
 }
 out.roots = sortObject(newRoots);
 
 // ---- 3. steno_dictionary (array, English + Chinese mixed)
+// A word that is also a root lemma MUST carry the root's chord. Otherwise the
+// training list and the roots tree drift apart and the word becomes reachable by
+// two different chords (Training Mode would teach one and arming the root need
+// the other).
+const rootChordOf = {};
+for (const [c, R] of Object.entries(out.roots)) rootChordOf[String(R.lemma).trim().toLowerCase()] = c;
+
 out.steno_dictionary = (original.steno_dictionary || []).map(entry => {
   const word = String(entry.word);
   if (isChinese(word)) {
-    const chord = zhChord[word] || assignChinesePhrase(word, "dict-zh");
+    const chord = ENGLISH_ONLY ? entry.chord : (zhChord[word] || assignChinesePhrase(word, "dict-zh"));
     if (!chord) return null;
     return { ...entry, chord };
+  }
+  const asRoot = rootChordOf[word.trim().toLowerCase()];
+  if (asRoot) {
+    if (asRoot !== entry.chord) report.changed.push("dict " + entry.chord + " -> " + asRoot + "  " + word + " (follows its root)");
+    return { ...entry, chord: asRoot, keys: word.toLowerCase() };
   }
   const chord = englishChord(word, entry.chord, "steno_dictionary");
   if (!chord) return null;
@@ -349,21 +392,44 @@ const put = (chord, text) => { flat[chord] = text + " "; chordMap[chord] = text 
 
 for (const [chord, R] of Object.entries(out.roots)) {
   put(chord, R.lemma);
-  for (const [dc, dv] of Object.entries(R.derivatives)) put(dc, dv.word);
+  // Derivative chords deliberately stay OUT of chord_map: they are namespaced
+  // under their root and reached by arming it first (see addfamily.js). Putting
+  // them here would make them globally typeable and shadow the two-step
+  // morpheme flow - an earlier run added 415 of them before this was fixed.
 }
 for (const [chord, e] of Object.entries(out.chinese_chords)) put(chord, e.char);
 for (const e of out.steno_dictionary) if (!flat[e.chord]) put(e.chord, e.word);
 
-// leftover vocabulary that only ever lived in the old lookup maps
-const extra = new Set();
-for (const v of Object.values(original.flat_chords || {})) extra.add(String(v).trim());
-for (const v of Object.values(original.chord_map || {})) extra.add(String(v).trim());
-for (const w of extra) {
-  if (!w || isChinese(w)) continue;
-  if (chordOfWord.has(w.toLowerCase())) continue;
-  const chord = assignEnglish(w, "extra");
-  if (chord) put(chord, w);
+// Vocabulary that only ever lived in the legacy lookup maps is deliberately NOT
+// promoted into chord_map. flat_chords is a stale mirror: its leftovers are
+// mostly derivative chords (which belong namespaced under their root) plus junk
+// that has since been deleted - an earlier run resurrected 121 of them, including
+// 'whened', which had been removed from the roots tree on purpose. Anything that
+// truly needs to be typeable belongs in the roots tree or steno_dictionary, where
+// sections 3 and 4 pick it up.
+const unPromoted = new Set();
+for (const v of [...Object.values(original.flat_chords || {}), ...Object.values(original.chord_map || {})]) {
+  const w = String(v).trim();
+  if (w && !isChinese(w) && !chordOfWord.has(w.toLowerCase())) unPromoted.add(w);
 }
+report.extrasSkipped = unPromoted.size;
+// A single Chinese character may only appear in chord_map if it also has a
+// chinese_chords entry, otherwise it is a stale alias (validate.js check 2b).
+// Single Chinese characters are owned by addchinese.js, so the roots tree does
+// not get to introduce new ones here - 生 and 电 are Chinese roots that were
+// never given chinese_chords entries.
+const zhSingle = new Set(Object.values(out.chinese_chords).map(e => e.char));
+const dropStaleAlias = o => {
+  for (const [c, v] of Object.entries(o)) {
+    const t = String(v).trim();
+    if (isChinese(t) && [...t].length === 1 && !zhSingle.has(t)) {
+      delete o[c];
+      report.notes.push("dropped stale chinese alias " + c + " -> " + t + " (no chinese_chords entry)");
+    }
+  }
+};
+dropStaleAlias(flat);
+dropStaleAlias(chordMap);
 out.flat_chords = sortObject(flat);
 out.chord_map = sortObject(chordMap);
 
@@ -400,7 +466,7 @@ console.log("digit mirroring: " + (NO_DIGIT_MIRROR ? "OFF" : "on") + "   preserv
 // how healthy was the ORIGINAL data under this finger map?
 {
   let zhBad = 0;
-  for (const k of Object.keys(original.chinese_chords || {})) if (!isPhysical(k)) zhBad++;
+  for (const k of Object.keys(original.chinese_chords || {})) if (!isPhysicalZh(k)) zhBad++;
   const enBefore = [];
   for (const R of Object.values(original.roots || {})) {
     enBefore.push(R.chord);
@@ -432,6 +498,14 @@ if (report.notes.length) {
 const zhChanges = report.changed.filter(c => /^chinese|ZH/.test(c));
 const enChanges = report.changed.filter(c => !/^chinese|ZH/.test(c));
 console.log("\nchanged: " + enChanges.length + " English, " + zhChanges.length + " Chinese");
+const byKind = {};
+for (const c of report.changed) { const k = String(c).split(" ")[0]; byKind[k] = (byKind[k] || 0) + 1; }
+console.log("  by kind: " + Object.entries(byKind).sort((a, b) => b[1] - a[1]).map(([k, v]) => k + "=" + v).join("   ") + "    kept=" + report.kept);
+console.log("  legacy-map words left un-promoted: " + (report.extrasSkipped || 0));
+if (report.notes.length) {
+  console.log("  notes:");
+  report.notes.slice(0, 10).forEach(n => console.log("    . " + n));
+}
 console.log("sample English changes:");
 enChanges.slice(0, 12).forEach(c => console.log("  " + c));
 console.log("sample Chinese changes:");
@@ -477,9 +551,23 @@ for (const R of Object.values(out.roots)) {
 console.log("\nChinese chars preserved in roots tree: " + charsKept + "/" + charsTotal);
 
 if (WRITE) {
+  // Never write a file that breaks an invariant - checked on the in-memory
+  // result, exactly like addwords.js and addchinese.js do. This gate was
+  // missing here, so a bad rebuild could previously reach disk unchecked.
+  const { validate } = require("./validate");
+  const v = validate(out);
+  if (v.problems.length) {
+    console.log("\nREFUSING TO WRITE - " + v.problems.length + " validation problem(s):");
+    v.problems.slice(0, 15).forEach(p => console.log("  ! " + p));
+    process.exit(1);
+  }
+  console.log("\nvalidate.js: PASS (0 problems)");
+
   const backup = DATA_FILE + ".bak-" + Date.now();
   fs.copyFileSync(DATA_FILE, backup);
-  fs.writeFileSync(DATA_FILE, JSON.stringify(out, null, 2) + "\n", "utf8");
+  // preserve the file's CRLF line endings, like the other generators, or the
+  // whole file shows as changed in git
+  fs.writeFileSync(DATA_FILE, JSON.stringify(out, null, 2).replace(/\n/g, "\r\n"), "utf8");
   console.log("\nWROTE " + DATA_FILE + "\nbackup: " + backup);
 } else {
   console.log("\n(dry run - nothing written. add --write to apply)");
