@@ -2629,16 +2629,14 @@
                         return;
                     }
 
-                    // Grammar Number Modifier Tap (1-7):
-                    // If a number is tapped alone without holding other keys in Sandbox, check if it inflects the preceding word!
-                    if (['1', '2', '3', '4', '5', '6', '7'].includes(e.key) && this.mode === 'sandbox' && !e.ctrlKey && !e.altKey && !e.metaKey) {
-                        if (this.pressedKeys.size === 0) {
-                            if (this.tryApplyGrammarModifier(e.key)) {
-                                e.preventDefault();
-                                return;
-                            }
-                        }
-                    }
+                    // The Grammar Number Modifier Tap (1-7) is decided on RELEASE,
+                    // in onChordRelease - not here. Consuming the digit on keydown
+                    // stole it from every Chinese chord whose tone key is 1-7, which
+                    // is most of them (tone 1-4 sits on its own finger whenever that
+                    // finger is free). The chord then never completed, its letters
+                    // were stranded in the box, and clearing the character took
+                    // several Backspaces. The digit is now typed and joins the
+                    // stroke like any other key.
 
                     // Spacebar handling: ALWAYS inserts space in Sandbox and disarms active roots cleanly
                     if (e.code === 'Space' || e.key === ' ') {
@@ -2796,6 +2794,19 @@
                     // now, so stop treating the last stroke as throwaway junk.
                     this.pendingJunk = null;
                     return;
+                }
+
+                // A lone 1-7 is an inflection tap - not a chord, and not text. The
+                // digit was already typed on keydown, so take it back out first:
+                // otherwise getPrecedingWord() looks at the digit and finds no word.
+                if (combo.length === 1 && /^[1-7]$/.test(combo) && this.mode === 'sandbox') {
+                    this.eraseStrokeChars(strokeCount);
+                    if (this.tryApplyGrammarModifier(combo)) {
+                        this.pendingJunk = null;
+                        this.scheduleFit();
+                        return;
+                    }
+                    this.typeCharacter(combo);   // not a tap: keep the digit as text
                 }
 
                 // FINGER-TYPING GUARD: a chord only expands at a word boundary.
