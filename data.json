@@ -135,7 +135,8 @@
           "word": "done",
           "char": "做（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "cnot": {
       "lemma": "connect",
@@ -238,7 +239,8 @@
           "word": "connected",
           "char": "连（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "cmo": {
       "lemma": "come",
@@ -397,7 +399,8 @@
           "word": "come",
           "char": "来"
         }
-      }
+      },
+      "pos": "verb"
     },
     "aklw": {
       "lemma": "walk",
@@ -466,7 +469,8 @@
           "word": "walked",
           "char": "走（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "efil": {
       "lemma": "file",
@@ -529,7 +533,8 @@
           "word": "files'",
           "char": "档（复数所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "1efil": {
       "lemma": "life",
@@ -614,7 +619,8 @@
           "word": "lives'",
           "char": "命（复数所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "dorw": {
       "lemma": "word",
@@ -692,7 +698,8 @@
           "word": "words'",
           "char": "词（复数所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "co": {
       "lemma": "code",
@@ -761,7 +768,8 @@
           "word": "coded",
           "char": "码（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "adnst": {
       "lemma": "stand",
@@ -932,7 +940,8 @@
           "word": "stood",
           "char": "站（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "aekt": {
       "lemma": "take",
@@ -1153,7 +1162,8 @@
           "word": "taken",
           "char": "拿（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "ntu": {
       "lemma": "turn",
@@ -1318,7 +1328,8 @@
           "word": "turned",
           "char": "转（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "fmo": {
       "lemma": "form",
@@ -1523,7 +1534,8 @@
           "word": "formed",
           "char": "形（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "eprs": {
       "lemma": "press",
@@ -1728,7 +1740,8 @@
           "word": "pressed",
           "char": "按（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "act": {
       "lemma": "act",
@@ -1899,7 +1912,8 @@
           "word": "acted",
           "char": "动（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "4ad": {
       "lemma": "大",
@@ -1940,7 +1954,8 @@
           "char": "大小"
         }
       },
-      "char": "大"
+      "char": "大",
+      "pos": "chinese"
     },
     "2an": {
       "lemma": "拿",
@@ -1973,7 +1988,8 @@
           "char": "拿起"
         }
       },
-      "char": "拿"
+      "char": "拿",
+      "pos": "chinese"
     },
     "4adin": {
       "lemma": "电",
@@ -2006,7 +2022,8 @@
           "char": "电视"
         }
       },
-      "char": "电"
+      "char": "电",
+      "pos": "chinese"
     },
     "1ehns": {
       "lemma": "生",
@@ -2039,7 +2056,8 @@
           "char": "生产"
         }
       },
-      "char": "生"
+      "char": "生",
+      "pos": "chinese"
     },
     "acltu": {
       "lemma": "actual",
@@ -2072,7 +2090,8 @@
           "char": "实现"
         }
       },
-      "char": "实"
+      "char": "实",
+      "pos": "adjective"
     },
     "adforw": {
       "lemma": "forward",
@@ -2121,7 +2140,8 @@
           "char": "向前"
         }
       },
-      "char": "前"
+      "char": "前",
+      "pos": "verb"
     },
     "cfinou": {
       "lemma": "function",
@@ -2190,7 +2210,8 @@
           "word": "functions'",
           "char": "功（复数所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "ghirt": {
       "lemma": "right",
@@ -2239,7 +2260,8 @@
           "char": "正义"
         }
       },
-      "char": "对"
+      "char": "对",
+      "pos": "adjective"
     },
     "now": {
       "lemma": "now",
@@ -2272,7 +2294,8 @@
           "char": "现在"
         }
       },
-      "char": "现"
+      "char": "现",
+      "pos": "function"
     },
     "ht": {
       "lemma": "the",
@@ -2337,7 +2360,8 @@
           "char": "因此"
         }
       },
-      "char": "这"
+      "char": "这",
+      "pos": "function"
     },
     "ot": {
       "lemma": "to",
@@ -2402,7 +2426,8 @@
           "char": "朝向"
         }
       },
-      "char": "到"
+      "char": "到",
+      "pos": "function"
     },
     "aitw": {
       "lemma": "wait",
@@ -2451,7 +2476,8 @@
           "char": "等候"
         }
       },
-      "char": "等"
+      "char": "等",
+      "pos": "verb"
     },
     "box": {
       "lemma": "box",
@@ -2508,7 +2534,8 @@
           "char": "盒子"
         }
       },
-      "char": "盒"
+      "char": "盒",
+      "pos": "noun"
     },
     "aclr": {
       "lemma": "clear",
@@ -2549,7 +2576,8 @@
           "char": "许可"
         }
       },
-      "char": "清"
+      "char": "清",
+      "pos": "verb"
     },
     "dnp": {
       "lemma": "depend",
@@ -2598,7 +2626,8 @@
           "char": "取决于"
         }
       },
-      "char": "靠"
+      "char": "靠",
+      "pos": "verb"
     },
     "aekm": {
       "lemma": "make",
@@ -2631,7 +2660,8 @@
           "char": "使"
         }
       },
-      "char": "做"
+      "char": "做",
+      "pos": "verb"
     },
     "epty": {
       "lemma": "type",
@@ -2672,7 +2702,8 @@
           "char": "类型"
         }
       },
-      "char": "打字"
+      "char": "打字",
+      "pos": "verb"
     },
     "abelt": {
       "lemma": "table",
@@ -2697,7 +2728,8 @@
           "char": "表格"
         }
       },
-      "char": "表"
+      "char": "表",
+      "pos": "noun"
     },
     "bev": {
       "lemma": "verb",
@@ -2730,7 +2762,8 @@
           "char": "动词"
         }
       },
-      "char": "动词"
+      "char": "动词",
+      "pos": "noun"
     },
     "adns": {
       "lemma": "sand",
@@ -2755,7 +2788,8 @@
           "char": "沙质"
         }
       },
-      "char": "沙"
+      "char": "沙",
+      "pos": "noun"
     },
     "hors": {
       "lemma": "short",
@@ -2796,7 +2830,8 @@
           "char": "快捷键"
         }
       },
-      "char": "短"
+      "char": "短",
+      "pos": "adjective"
     },
     "eilmps": {
       "lemma": "simple",
@@ -2821,7 +2856,8 @@
           "char": "简单"
         }
       },
-      "char": "简"
+      "char": "简",
+      "pos": "adjective"
     },
     "elt": {
       "lemma": "let",
@@ -2862,7 +2898,8 @@
           "word": "let's",
           "char": "让（缩写形式）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "pu": {
       "lemma": "up",
@@ -2895,7 +2932,8 @@
           "char": "向上"
         }
       },
-      "char": "上"
+      "char": "上",
+      "pos": "function"
     },
     "enprs": {
       "lemma": "present",
@@ -2920,7 +2958,8 @@
           "char": "演示"
         }
       },
-      "char": "现在"
+      "char": "现在",
+      "pos": "adjective"
     },
     "am": {
       "lemma": "am",
@@ -2928,7 +2967,8 @@
       "emoji": "🙋",
       "note": "1st person be (I am)",
       "char": "我是",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "adkln": {
       "lemma": "andlook",
@@ -2936,7 +2976,8 @@
       "emoji": "👀",
       "note": "Look compound (and look)",
       "char": "来看",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "junk"
     },
     "aer": {
       "lemma": "are",
@@ -2944,7 +2985,8 @@
       "emoji": "👥",
       "note": "2nd/plural be",
       "char": "是",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "is": {
       "lemma": "is",
@@ -2952,7 +2994,8 @@
       "emoji": "☝️",
       "note": "3rd person be",
       "char": "是",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "dilms": {
       "lemma": "middles",
@@ -2977,7 +3020,8 @@
           "note": "Middle of day",
           "char": "正午"
         }
-      }
+      },
+      "pos": "junk"
     },
     "eno": {
       "lemma": "one",
@@ -2994,7 +3038,8 @@
           "note": "Person's self",
           "char": "自己"
         }
-      }
+      },
+      "pos": "function"
     },
     "emov": {
       "lemma": "remove",
@@ -3019,7 +3064,8 @@
           "note": "Past tense of remove",
           "char": "已移除"
         }
-      }
+      },
+      "pos": "verb"
     },
     "mnost": {
       "lemma": "something",
@@ -3027,7 +3073,8 @@
       "emoji": "📦",
       "note": "Unspecified entity",
       "char": "某事",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "pronoun"
     },
     "ckstu": {
       "lemma": "strucuture",
@@ -3052,7 +3099,8 @@
           "note": "Reorganize structure",
           "char": "重构"
         }
-      }
+      },
+      "pos": "junk"
     },
     "ghin": {
       "lemma": "thing",
@@ -3085,7 +3133,8 @@
           "note": "Not anything",
           "char": "无事"
         }
-      }
+      },
+      "pos": "noun"
     },
     "hist": {
       "lemma": "this",
@@ -3101,7 +3150,8 @@
           "word": "these",
           "char": "这些"
         }
-      }
+      },
+      "pos": "noun"
     },
     "1a": {
       "lemma": "a",
@@ -3158,7 +3208,8 @@
           "char": "一个"
         }
       },
-      "char": "一个"
+      "char": "一个",
+      "pos": "function"
     },
     "at": {
       "lemma": "at",
@@ -3187,7 +3238,8 @@
           "char": "遵守"
         }
       },
-      "char": "在"
+      "char": "在",
+      "pos": "function"
     },
     "awy": {
       "lemma": "way",
@@ -3216,7 +3268,8 @@
           "char": "马车"
         }
       },
-      "char": "方式"
+      "char": "方式",
+      "pos": "noun"
     },
     "bdiln": {
       "lemma": "blind",
@@ -3252,7 +3305,8 @@
           "char": "盲目地"
         }
       },
-      "char": "盲目"
+      "char": "盲目",
+      "pos": "adjective"
     },
     "chor": {
       "lemma": "chord",
@@ -3288,7 +3342,8 @@
           "char": "和弦"
         }
       },
-      "char": "和弦"
+      "char": "和弦",
+      "pos": "noun"
     },
     "1cln": {
       "lemma": "clone",
@@ -3324,7 +3379,8 @@
           "char": "已克隆"
         }
       },
-      "char": "克隆"
+      "char": "克隆",
+      "pos": "verb"
     },
     "cis": {
       "lemma": "cise",
@@ -3353,7 +3409,8 @@
           "char": "决定"
         }
       },
-      "char": "切"
+      "char": "切",
+      "pos": "bound"
     },
     "er": {
       "lemma": "rect",
@@ -3382,7 +3439,8 @@
           "char": "矩形"
         }
       },
-      "char": "正"
+      "char": "正",
+      "pos": "bound"
     },
     "adl": {
       "lemma": "deal",
@@ -3411,7 +3469,8 @@
           "char": "磨难"
         }
       },
-      "char": "交易"
+      "char": "交易",
+      "pos": "verb"
     },
     "ety": {
       "lemma": "etym",
@@ -3447,7 +3506,8 @@
           "char": "从词源上"
         }
       },
-      "char": "词源"
+      "char": "词源",
+      "pos": "bound"
     },
     "gly": {
       "lemma": "logy",
@@ -3469,7 +3529,8 @@
           "char": "生物学"
         }
       },
-      "char": "学说"
+      "char": "学说",
+      "pos": "bound"
     },
     "evy": {
       "lemma": "every",
@@ -3498,7 +3559,8 @@
           "char": "一切"
         }
       },
-      "char": "每个"
+      "char": "每个",
+      "pos": "function"
     },
     "ailnp": {
       "lemma": "plain",
@@ -3527,7 +3589,8 @@
           "char": "正在解释"
         }
       },
-      "char": "朴素"
+      "char": "朴素",
+      "pos": "adjective"
     },
     "eg": {
       "lemma": "get",
@@ -3556,7 +3619,8 @@
           "char": "可获得的"
         }
       },
-      "char": "得到"
+      "char": "得到",
+      "pos": "verb"
     },
     "gil": {
       "lemma": "girl",
@@ -3592,7 +3656,8 @@
           "char": "女孩们"
         }
       },
-      "char": "女孩"
+      "char": "女孩",
+      "pos": "noun"
     },
     "gi": {
       "lemma": "git",
@@ -3614,7 +3679,8 @@
           "char": "GitHub（代码托管平台）"
         }
       },
-      "char": "Git（版本控制系统）"
+      "char": "Git（版本控制系统）",
+      "pos": "bound"
     },
     "bh": {
       "lemma": "hub",
@@ -3636,7 +3702,8 @@
           "char": "HubSpot（客户关系管理平台）"
         }
       },
-      "char": "枢纽"
+      "char": "枢纽",
+      "pos": "bound"
     },
     "go": {
       "lemma": "go",
@@ -3665,7 +3732,8 @@
           "char": "放弃"
         }
       },
-      "char": "去"
+      "char": "去",
+      "pos": "verb"
     },
     "hit": {
       "lemma": "hit",
@@ -3701,7 +3769,8 @@
           "char": "未击中"
         }
       },
-      "char": "击打"
+      "char": "击打",
+      "pos": "verb"
     },
     "ehos": {
       "lemma": "house",
@@ -3730,7 +3799,8 @@
           "char": "家庭主妇"
         }
       },
-      "char": "房子"
+      "char": "房子",
+      "pos": "noun"
     },
     "eiv": {
       "lemma": "iev",
@@ -3759,7 +3829,8 @@
           "char": "工作"
         }
       },
-      "char": "约伯"
+      "char": "约伯",
+      "pos": "bound"
     },
     "1alst": {
       "lemma": "stall",
@@ -3781,7 +3852,8 @@
           "char": "预先阻止"
         }
       },
-      "char": "摊位"
+      "char": "摊位",
+      "pos": "bound"
     },
     "aest": {
       "lemma": "stead",
@@ -3810,7 +3882,8 @@
           "char": "稳定的"
         }
       },
-      "char": "位置"
+      "char": "位置",
+      "pos": "bound"
     },
     "eky": {
       "lemma": "key",
@@ -3866,7 +3939,8 @@
           "char": "按键"
         }
       },
-      "char": "关键"
+      "char": "关键",
+      "pos": "noun"
     },
     "eilt": {
       "lemma": "liter",
@@ -3902,7 +3976,8 @@
           "char": "字母"
         }
       },
-      "char": "文字"
+      "char": "文字",
+      "pos": "bound"
     },
     "eilv": {
       "lemma": "live",
@@ -3931,7 +4006,8 @@
           "char": "生计"
         }
       },
-      "char": "居住"
+      "char": "居住",
+      "pos": "verb"
     },
     "kl": {
       "lemma": "look",
@@ -3960,7 +4036,8 @@
           "char": "忽略"
         }
       },
-      "char": "看"
+      "char": "看",
+      "pos": "verb"
     },
     "amn": {
       "lemma": "man",
@@ -3989,7 +4066,8 @@
           "char": "制造"
         }
       },
-      "char": "手"
+      "char": "手",
+      "pos": "noun"
     },
     "1am": {
       "lemma": "may",
@@ -4018,7 +4096,8 @@
           "char": "沮丧"
         }
       },
-      "char": "可能"
+      "char": "可能",
+      "pos": "function"
     },
     "dmo": {
       "lemma": "mod",
@@ -4061,7 +4140,8 @@
           "char": "修改"
         }
       },
-      "char": "模式"
+      "char": "模式",
+      "pos": "bound"
     },
     "1cis": {
       "lemma": "sci",
@@ -4090,20 +4170,14 @@
           "char": "有意识的"
         }
       },
-      "char": "知"
+      "char": "知",
+      "pos": "bound"
     },
     "not": {
       "lemma": "not",
       "chord": "not",
       "note": "Root used by the supplied word family. Alternate root: note (Latin nota / noscere).",
       "derivatives": {
-        "1enot": {
-          "morpheme": "-ed",
-          "chord": "1enot",
-          "word": "noted",
-          "note": "Word-family form supplied for not.",
-          "char": "著名的"
-        },
         "cinot": {
           "morpheme": "-ice",
           "chord": "cinot",
@@ -4119,7 +4193,8 @@
           "char": "概念"
         }
       },
-      "char": "不"
+      "char": "不",
+      "pos": "function"
     },
     "iv": {
       "lemma": "vi",
@@ -4148,7 +4223,8 @@
           "char": "航行"
         }
       },
-      "char": "通过"
+      "char": "通过",
+      "pos": "bound"
     },
     "aepst": {
       "lemma": "paste",
@@ -4184,7 +4260,8 @@
           "char": "粘贴物"
         }
       },
-      "char": "粘贴"
+      "char": "粘贴",
+      "pos": "verb"
     },
     "enoprs": {
       "lemma": "person",
@@ -4213,7 +4290,8 @@
           "char": "个性"
         }
       },
-      "char": "人"
+      "char": "人",
+      "pos": "noun"
     },
     "ejt": {
       "lemma": "ject",
@@ -4242,7 +4320,8 @@
           "char": "弹出"
         }
       },
-      "char": "投掷"
+      "char": "投掷",
+      "pos": "bound"
     },
     "psu": {
       "lemma": "push",
@@ -4264,7 +4343,8 @@
           "char": "咄咄逼人的"
         }
       },
-      "char": "推"
+      "char": "推",
+      "pos": "verb"
     },
     "elp": {
       "lemma": "pel",
@@ -4286,7 +4366,8 @@
           "char": "迫使"
         }
       },
-      "char": "推"
+      "char": "推",
+      "pos": "bound"
     },
     "ptu": {
       "lemma": "put",
@@ -4315,7 +4396,8 @@
           "char": "推杆"
         }
       },
-      "char": "放"
+      "char": "放",
+      "pos": "verb"
     },
     "1aer": {
       "lemma": "read",
@@ -4351,7 +4433,8 @@
           "char": "自述文件"
         }
       },
-      "char": "读"
+      "char": "读",
+      "pos": "verb"
     },
     "aelr": {
       "lemma": "real",
@@ -4387,7 +4470,8 @@
           "char": "真的"
         }
       },
-      "char": "真实"
+      "char": "真实",
+      "pos": "adjective"
     },
     "eiqru": {
       "lemma": "quire",
@@ -4430,7 +4514,8 @@
           "char": "要求"
         }
       },
-      "char": "寻求"
+      "char": "寻求",
+      "pos": "bound"
     },
     "or": {
       "lemma": "root",
@@ -4466,7 +4551,8 @@
           "char": "根"
         }
       },
-      "char": "根"
+      "char": "根",
+      "pos": "noun"
     },
     "ahls": {
       "lemma": "shall",
@@ -4488,7 +4574,8 @@
           "char": "应该"
         }
       },
-      "char": "将"
+      "char": "将",
+      "pos": "function"
     },
     "ast": {
       "lemma": "start",
@@ -4517,7 +4604,8 @@
           "char": "使惊吓"
         }
       },
-      "char": "开始"
+      "char": "开始",
+      "pos": "verb"
     },
     "enost": {
       "lemma": "steno",
@@ -4560,7 +4648,8 @@
           "word": "steno's",
           "char": "速（所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "tu": {
       "lemma": "tut",
@@ -4589,7 +4678,8 @@
           "char": "直觉的"
         }
       },
-      "char": "教导"
+      "char": "教导",
+      "pos": "bound"
     },
     "1cstu": {
       "lemma": "struct",
@@ -4618,7 +4708,8 @@
           "char": "摧毁"
         }
       },
-      "char": "构造"
+      "char": "构造",
+      "pos": "bound"
     },
     "1adt": {
       "lemma": "date",
@@ -4647,7 +4738,8 @@
           "char": "版本"
         }
       },
-      "char": "日期"
+      "char": "日期",
+      "pos": "noun"
     },
     "ehnw": {
       "lemma": "when",
@@ -4667,16 +4759,10 @@
           "word": "whensoever",
           "note": "Word-family form supplied for when.",
           "char": "任何时候"
-        },
-        "1ehnw": {
-          "morpheme": "-ed",
-          "chord": "1ehnw",
-          "word": "whened",
-          "note": "Word-family form supplied for when.",
-          "char": "当时"
         }
       },
-      "char": "时"
+      "char": "时",
+      "pos": "function"
     },
     "ctu": {
       "lemma": "cut",
@@ -4705,7 +4791,8 @@
           "char": "决定"
         }
       },
-      "char": "切"
+      "char": "切",
+      "pos": "verb"
     },
     "aelnp": {
       "lemma": "plane",
@@ -4734,7 +4821,8 @@
           "char": "正在解释"
         }
       },
-      "char": "平面"
+      "char": "平面",
+      "pos": "noun"
     },
     "1elt": {
       "lemma": "letter",
@@ -4770,7 +4858,8 @@
           "char": "字母"
         }
       },
-      "char": "字母"
+      "char": "字母",
+      "pos": "noun"
     },
     "enot": {
       "lemma": "note",
@@ -4819,7 +4908,8 @@
           "word": "notes",
           "char": "笔记（第三人称单数）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "aiv": {
       "lemma": "via",
@@ -4848,7 +4938,8 @@
           "char": "航行"
         }
       },
-      "char": "通过"
+      "char": "通过",
+      "pos": "function"
     },
     "elpsu": {
       "lemma": "pulse",
@@ -4870,7 +4961,8 @@
           "char": "迫使"
         }
       },
-      "char": "脉搏"
+      "char": "脉搏",
+      "pos": "noun"
     },
     "1eqstu": {
       "lemma": "quest",
@@ -4913,7 +5005,8 @@
           "char": "要求"
         }
       },
-      "char": "探索"
+      "char": "探索",
+      "pos": "bound"
     },
     "dhos": {
       "lemma": "should",
@@ -4935,7 +5028,8 @@
           "char": "应该"
         }
       },
-      "char": "应该"
+      "char": "应该",
+      "pos": "function"
     },
     "otu": {
       "lemma": "tutor",
@@ -4964,7 +5058,8 @@
           "char": "直觉的"
         }
       },
-      "char": "导师"
+      "char": "导师",
+      "pos": "noun"
     },
     "2adt": {
       "lemma": "dat",
@@ -4993,7 +5088,8 @@
           "char": "版本"
         }
       },
-      "char": "给予"
+      "char": "给予",
+      "pos": "bound"
     },
     "bjo": {
       "lemma": "job",
@@ -5022,7 +5118,8 @@
           "char": "工作"
         }
       },
-      "char": "工作"
+      "char": "工作",
+      "pos": "noun"
     },
     "afs": {
       "lemma": "fast",
@@ -5043,7 +5140,8 @@
           "word": "fastest",
           "char": "快（最高级）"
         }
-      }
+      },
+      "pos": "adjective"
     },
     "bko": {
       "lemma": "book",
@@ -5070,7 +5168,8 @@
           "word": "books'",
           "char": "书（复数所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "dgo": {
       "lemma": "dog",
@@ -5097,7 +5196,8 @@
           "word": "dogs'",
           "char": "狗（复数所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "8dorw": {
       "lemma": "world",
@@ -5124,7 +5224,8 @@
           "word": "worlds'",
           "char": "界（复数所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "hknt": {
       "lemma": "think",
@@ -5157,14 +5258,16 @@
           "word": "thought",
           "char": "思（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "aelps": {
       "lemma": "please",
       "chord": "aelps",
       "char": "请",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "cmopt": {
       "lemma": "computer",
@@ -5191,42 +5294,48 @@
           "word": "computers'",
           "char": "脑（复数所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "ahtw": {
       "lemma": "what",
       "chord": "ahtw",
       "char": "什",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "how": {
       "lemma": "how",
       "chord": "how",
       "char": "怎",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "abotu": {
       "lemma": "about",
       "chord": "abotu",
       "char": "关",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "hw": {
       "lemma": "why",
       "chord": "hw",
       "char": "为",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "in": {
       "lemma": "in",
       "chord": "in",
       "char": "里",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "bgi": {
       "lemma": "big",
@@ -5247,7 +5356,8 @@
           "word": "biggest",
           "char": "大（最高级）"
         }
-      }
+      },
+      "pos": "adjective"
     },
     "epst": {
       "lemma": "step",
@@ -5280,14 +5390,16 @@
           "word": "stepped",
           "char": "步（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "fi": {
       "lemma": "if",
       "chord": "fi",
       "char": "如",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "oy": {
       "lemma": "you",
@@ -5320,7 +5432,8 @@
           "word": "yours",
           "char": "你的（名词性）"
         }
-      }
+      },
+      "pos": "pronoun"
     },
     "aegimn": {
       "lemma": "imagine",
@@ -5347,7 +5460,8 @@
           "word": "imagines",
           "char": "想象（第三人称单数）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "cmno": {
       "lemma": "condemn",
@@ -5374,7 +5488,8 @@
           "word": "condemns",
           "char": "谴责（第三人称单数）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "2aegimn": {
       "lemma": "meaning",
@@ -5395,7 +5510,8 @@
           "word": "meaning's",
           "char": "意义（所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "acn": {
       "lemma": "can",
@@ -5410,7 +5526,8 @@
           "word": "could",
           "char": "能（过去式）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "1i": {
       "lemma": "i",
@@ -5443,7 +5560,8 @@
           "word": "mine",
           "char": "我（物主代词）"
         }
-      }
+      },
+      "pos": "pronoun"
     },
     "eh": {
       "lemma": "he",
@@ -5470,7 +5588,8 @@
           "word": "himself",
           "char": "他（反身形式）"
         }
-      }
+      },
+      "pos": "pronoun"
     },
     "ehs": {
       "lemma": "she",
@@ -5503,7 +5622,8 @@
           "word": "hers",
           "char": "她（物主代词）"
         }
-      }
+      },
+      "pos": "pronoun"
     },
     "it": {
       "lemma": "it",
@@ -5530,7 +5650,8 @@
           "word": "itself",
           "char": "它（反身形式）"
         }
-      }
+      },
+      "pos": "pronoun"
     },
     "ew": {
       "lemma": "we",
@@ -5563,7 +5684,8 @@
           "word": "ours",
           "char": "们（物主代词）"
         }
-      }
+      },
+      "pos": "pronoun"
     },
     "1how": {
       "lemma": "who",
@@ -5584,49 +5706,56 @@
           "word": "whose",
           "char": "谁"
         }
-      }
+      },
+      "pos": "pronoun"
     },
     "ehrw": {
       "lemma": "where",
       "chord": "ehrw",
       "char": "哪",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "chiw": {
       "lemma": "which",
       "chord": "chiw",
       "char": "哪",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "ehow": {
       "lemma": "whose",
       "chord": "ehow",
       "char": "谁",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "pronoun"
     },
     "2how": {
       "lemma": "whom",
       "chord": "2how",
       "char": "谁（宾格）",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "pronoun"
     },
     "no": {
       "lemma": "on",
       "chord": "no",
       "char": "上",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "1no": {
       "lemma": "no",
       "chord": "1no",
       "char": "不",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "aehv": {
       "lemma": "have",
@@ -5659,7 +5788,8 @@
           "word": "had",
           "char": "有（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "dinow": {
       "lemma": "window",
@@ -5686,7 +5816,8 @@
           "word": "windows'",
           "char": "窗（复数所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "acimn": {
       "lemma": "machine",
@@ -5713,21 +5844,24 @@
           "word": "machines'",
           "char": "机（复数所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "hitw": {
       "lemma": "with",
       "chord": "hitw",
       "char": "和",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "aht": {
       "lemma": "that",
       "chord": "aht",
       "char": "那",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "acl": {
       "lemma": "local",
@@ -5754,7 +5888,8 @@
           "word": "locally",
           "char": "地（副词）"
         }
-      }
+      },
+      "pos": "adjective"
     },
     "aks": {
       "lemma": "ask",
@@ -5787,7 +5922,8 @@
           "word": "asked",
           "char": "问（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "antw": {
       "lemma": "want",
@@ -5820,7 +5956,8 @@
           "word": "wanted",
           "char": "想（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "1eht": {
       "lemma": "they",
@@ -5853,21 +5990,24 @@
           "word": "theirs",
           "char": "他（物主代词）"
         }
-      }
+      },
+      "pos": "pronoun"
     },
     "aehirtv": {
       "lemma": "have right",
       "chord": "aehirtv",
       "char": "拥有权利",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "junk"
     },
     "adn": {
       "lemma": "and",
       "chord": "adn",
       "char": "和",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "be": {
       "lemma": "be",
@@ -5918,56 +6058,64 @@
           "word": "being",
           "char": "是（现在分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "aist": {
       "lemma": "it was",
       "chord": "aist",
       "char": "曾经",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "junk"
     },
     "noy": {
       "lemma": "only",
       "chord": "noy",
       "char": "只有",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "ehot": {
       "lemma": "other",
       "chord": "ehot",
       "char": "他",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "1op": {
       "lemma": "pop",
       "chord": "1op",
       "char": "弹",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "enst": {
       "lemma": "sentence",
       "chord": "enst",
       "char": "句",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "os": {
       "lemma": "so",
       "chord": "os",
       "char": "所以",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "ehvw": {
       "lemma": "we have",
       "chord": "ehvw",
       "char": "我们有",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "junk"
     },
     "2ad": {
       "lemma": "add",
@@ -6000,35 +6148,40 @@
           "word": "addition",
           "char": "加（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "2al": {
       "lemma": "all",
       "chord": "2al",
       "char": "所有",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "begin": {
       "lemma": "beginner",
       "chord": "begin",
       "char": "初学者",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "by": {
       "lemma": "by",
       "chord": "by",
       "char": "由",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "achrs": {
       "lemma": "characters",
       "chord": "achrs",
       "char": "字符",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "achr": {
       "lemma": "character",
@@ -6049,21 +6202,24 @@
           "word": "character's",
           "char": "字（所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "chins": {
       "lemma": "chinese",
       "chord": "chins",
       "char": "中文",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "ehr": {
       "lemma": "here",
       "chord": "ehr",
       "char": "这里",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "1es": {
       "lemma": "see",
@@ -6096,21 +6252,24 @@
           "word": "seen",
           "char": "看（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "1dis": {
       "lemma": "side",
       "chord": "1dis",
       "char": "边",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "aehst": {
       "lemma": "teachers",
       "chord": "aehst",
       "char": "老师",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "aehrt": {
       "lemma": "teacher",
@@ -6131,7 +6290,8 @@
           "word": "teacher's",
           "char": "老师（所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "ty": {
       "lemma": "try",
@@ -6158,49 +6318,56 @@
           "word": "tries",
           "char": "尝试（第三人称单数）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "otw": {
       "lemma": "two",
       "chord": "otw",
       "char": "二",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "aft": {
       "lemma": "after",
       "chord": "aft",
       "char": "之后",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "btu": {
       "lemma": "but",
       "chord": "btu",
       "char": "但是",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "dirt": {
       "lemma": "dirrect",
       "chord": "dirt",
       "char": "直接",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "junk"
     },
     "dnos": {
       "lemma": "doesn",
       "chord": "dnos",
       "char": "不",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "junk"
     },
     "eghilns": {
       "lemma": "english",
       "chord": "eghilns",
       "char": "英语",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "fix": {
       "lemma": "fix",
@@ -6227,35 +6394,40 @@
           "word": "fixes",
           "char": "修复（第三人称单数）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "agmr": {
       "lemma": "grammar",
       "chord": "agmr",
       "char": "语法",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "aehnps": {
       "lemma": "happens",
       "chord": "aehnps",
       "char": "发生",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "den": {
       "lemma": "need",
       "chord": "den",
       "char": "需要",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "benrsu": {
       "lemma": "numbers",
       "chord": "benrsu",
       "char": "数字",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "aenors": {
       "lemma": "reason",
@@ -6276,35 +6448,40 @@
           "word": "reason's",
           "char": "原因（所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "emos": {
       "lemma": "some",
       "chord": "emos",
       "char": "一些",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "aeps": {
       "lemma": "special",
       "chord": "aeps",
       "char": "特别",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "adjective"
     },
     "1t": {
       "lemma": "t",
       "chord": "1t",
       "char": "字母T",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "junk"
     },
     "girt": {
       "lemma": "triggers",
       "chord": "girt",
       "char": "触发",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "korw": {
       "lemma": "work",
@@ -6331,154 +6508,176 @@
           "word": "works",
           "char": "运转"
         }
-      }
+      },
+      "pos": "verb"
     },
     "korsw": {
       "lemma": "works",
       "chord": "korsw",
       "char": "运转",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "anrs": {
       "lemma": "answer",
       "chord": "anrs",
       "char": "回答",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "acghn": {
       "lemma": "change",
       "chord": "acghn",
       "char": "改变",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "1cil": {
       "lemma": "click",
       "chord": "1cil",
       "char": "点击",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "aeh": {
       "lemma": "each",
       "chord": "aeh",
       "char": "每个",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "erx": {
       "lemma": "exercise",
       "chord": "erx",
       "char": "练习",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "1ersx": {
       "lemma": "exercises",
       "chord": "1ersx",
       "char": "练习",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "egin": {
       "lemma": "given",
       "chord": "egin",
       "char": "给定",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "junk"
     },
     "jst": {
       "lemma": "just",
       "chord": "jst",
       "char": "刚刚",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "emor": {
       "lemma": "more",
       "chord": "emor",
       "char": "更多",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "entx": {
       "lemma": "next",
       "chord": "entx",
       "char": "下一个",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "adgr": {
       "lemma": "reading",
       "chord": "adgr",
       "char": "阅读",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "asy": {
       "lemma": "say",
       "chord": "asy",
       "char": "说",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "cnst": {
       "lemma": "section",
       "chord": "cnst",
       "char": "部分",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "1enst": {
       "lemma": "tenses",
       "chord": "1enst",
       "char": "时态",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "etx": {
       "lemma": "text",
       "chord": "etx",
       "char": "文本",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "ilw": {
       "lemma": "will",
       "chord": "ilw",
       "char": "将",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "abel": {
       "lemma": "able",
       "chord": "abel",
       "char": "能够",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "adjective"
     },
     "als": {
       "lemma": "also",
       "chord": "als",
       "char": "也",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "as": {
       "lemma": "as",
       "chord": "as",
       "char": "作为",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "bntw": {
       "lemma": "between",
       "chord": "bntw",
       "char": "之间",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "clmn": {
       "lemma": "column",
@@ -6499,14 +6698,16 @@
           "word": "column's",
           "char": "列（所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "dfi": {
       "lemma": "different",
       "chord": "dfi",
       "char": "不同",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "adjective"
     },
     "1cdo": {
       "lemma": "doc",
@@ -6527,14 +6728,16 @@
           "word": "doc's",
           "char": "文档（所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "emnr": {
       "lemma": "enumerated",
       "chord": "emnr",
       "char": "枚举的",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "junk"
     },
     "1dfl": {
       "lemma": "folder",
@@ -6555,21 +6758,24 @@
           "word": "folder's",
           "char": "文件夹（所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "1flw": {
       "lemma": "following",
       "chord": "1flw",
       "char": "下列",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "fmr": {
       "lemma": "from",
       "chord": "fmr",
       "char": "来自",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "aegm": {
       "lemma": "game",
@@ -6590,7 +6796,8 @@
           "word": "game's",
           "char": "游戏（所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "1giv": {
       "lemma": "give",
@@ -6623,63 +6830,72 @@
           "word": "given",
           "char": "给定"
         }
-      }
+      },
+      "pos": "verb"
     },
     "1gls": {
       "lemma": "glossary",
       "chord": "1gls",
       "char": "词汇表",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "dint": {
       "lemma": "intended",
       "chord": "dint",
       "char": "预期的",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "junk"
     },
     "dmos": {
       "lemma": "modes",
       "chord": "dmos",
       "char": "模式",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "bmov": {
       "lemma": "movable",
       "chord": "bmov",
       "char": "可移动的",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "adjective"
     },
     "alnp": {
       "lemma": "pannel",
       "chord": "alnp",
       "char": "面板",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "junk"
     },
     "apst": {
       "lemma": "past",
       "chord": "apst",
       "char": "过去",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "bops": {
       "lemma": "possible",
       "chord": "bops",
       "char": "可能",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "adjective"
     },
     "aems": {
       "lemma": "same",
       "chord": "aems",
       "char": "相同",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "adjective"
     },
     "1stw": {
       "lemma": "switch",
@@ -6706,7 +6922,8 @@
           "word": "switches",
           "char": "切换（第三人称单数）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "nst": {
       "lemma": "tense",
@@ -6727,63 +6944,72 @@
           "word": "tense's",
           "char": "时态（所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "1st": {
       "lemma": "tests",
       "chord": "1st",
       "char": "测试",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "1glt": {
       "lemma": "togglable",
       "chord": "1glt",
       "char": "可切换的",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "adjective"
     },
     "bcov": {
       "lemma": "vocabulary",
       "chord": "bcov",
       "char": "词汇",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "elw": {
       "lemma": "well",
       "chord": "elw",
       "char": "好",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "dhlw": {
       "lemma": "wholed",
       "chord": "dhlw",
       "char": "完整",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "junk"
     },
     "cginopy": {
       "lemma": "copying",
       "chord": "cginopy",
       "char": "复制",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "junk"
     },
     "1cdr": {
       "lemma": "created",
       "chord": "1cdr",
       "char": "创建",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "junk"
     },
     "alst": {
       "lemma": "last",
       "chord": "alst",
       "char": "最后",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "ilst": {
       "lemma": "list",
@@ -6810,14 +7036,16 @@
           "word": "lists",
           "char": "列表（第三人称单数）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "nprs": {
       "lemma": "pronouns",
       "chord": "nprs",
       "char": "代词",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "1got": {
       "lemma": "toggle",
@@ -6844,14 +7072,16 @@
           "word": "toggles",
           "char": "切换（第三人称单数）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "dnpu": {
       "lemma": "unmapped",
       "chord": "dnpu",
       "char": "未映射",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "adjective"
     },
     "lntu": {
       "lemma": "untoggle",
@@ -6878,7 +7108,8 @@
           "word": "untoggles",
           "char": "取消切换（第三人称单数）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "ad": {
       "lemma": "ad",
@@ -6899,406 +7130,464 @@
           "word": "ad's",
           "char": "广告（所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "3ad": {
       "lemma": "aded",
       "chord": "3ad",
       "char": "已添加",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "junk"
     },
     "ory": {
       "lemma": "your",
       "chord": "ory",
       "char": "你的",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "pronoun"
     },
     "orsy": {
       "lemma": "yours",
       "chord": "orsy",
       "char": "你的（名词性）",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "pronoun"
     },
     "eorsy": {
       "lemma": "yourself",
       "chord": "eorsy",
       "char": "你自己",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "pronoun"
     },
     "1eorsy": {
       "lemma": "yourselves",
       "chord": "1eorsy",
       "char": "你们自己",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "pronoun"
     },
     "ai": {
       "lemma": "AI",
       "chord": "ai",
       "char": "人工智能",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "acilr": {
       "lemma": "artificial",
       "chord": "acilr",
       "char": "人工的",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "adjective"
     },
     "eilnt": {
       "lemma": "intelligence",
       "chord": "eilnt",
       "char": "智能",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "acilnr": {
       "lemma": "Artificial Intelligence",
       "chord": "acilnr",
       "char": "人工智能",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "junk"
     },
     "ar": {
       "lemma": "art",
       "chord": "ar",
       "char": "艺术",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "airs": {
       "lemma": "artist",
       "chord": "airs",
       "char": "艺术家",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "ainrs": {
       "lemma": "artisan",
       "chord": "ainrs",
       "char": "工匠",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "acfoy": {
       "lemma": "factory",
       "chord": "acfoy",
       "char": "工厂",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "acfo": {
       "lemma": "factor",
       "chord": "acfo",
       "char": "因素",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "df": {
       "lemma": "defect",
       "chord": "df",
       "char": "缺陷",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "1eilnt": {
       "lemma": "intellect",
       "chord": "1eilnt",
       "char": "智力",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "aeilntu": {
       "lemma": "intellectual",
       "chord": "aeilntu",
       "char": "知识分子",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "adjective"
     },
     "begil": {
       "lemma": "eligible",
       "chord": "begil",
       "char": "合格的",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "adjective"
     },
     "2elt": {
       "lemma": "elect",
       "chord": "2elt",
       "char": "选举",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "eltu": {
       "lemma": "lecture",
       "chord": "eltu",
       "char": "讲座",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "1begil": {
       "lemma": "legible",
       "chord": "1begil",
       "char": "易辨认的",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "adjective"
     },
     "acht": {
       "lemma": "chat",
       "chord": "acht",
       "char": "聊天",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "1acht": {
       "lemma": "chatter",
       "chord": "1acht",
       "char": "喋喋不休",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "abchotx": {
       "lemma": "chatterbox",
       "chord": "abchotx",
       "char": "话匣子",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "2acht": {
       "lemma": "chatty",
       "chord": "2acht",
       "char": "健谈的",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "adjective"
     },
     "bot": {
       "lemma": "bot",
       "chord": "bot",
       "char": "机器人",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "bor": {
       "lemma": "robot",
       "chord": "bor",
       "char": "机器人",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "bcior": {
       "lemma": "robotic",
       "chord": "bcior",
       "char": "机器人的",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "adjective"
     },
     "bciors": {
       "lemma": "robotics",
       "chord": "bciors",
       "char": "机器人学",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "aw": {
       "lemma": "was",
       "chord": "aw",
       "char": "曾是",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "ens": {
       "lemma": "essence",
       "chord": "ens",
       "char": "本质",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "aeilnst": {
       "lemma": "essential",
       "chord": "aeilnst",
       "char": "必要的",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "adjective"
     },
     "abenst": {
       "lemma": "absent",
       "chord": "abenst",
       "char": "缺席的",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "adjective"
     },
     "knorw": {
       "lemma": "working",
       "chord": "knorw",
       "char": "工作中的",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "ekorw": {
       "lemma": "worker",
       "chord": "ekorw",
       "char": "工人",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "ackoprw": {
       "lemma": "workplace",
       "chord": "ackoprw",
       "char": "工作场所",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "behknorw": {
       "lemma": "workbench",
       "chord": "behknorw",
       "char": "工作台",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "enry": {
       "lemma": "energy",
       "chord": "enry",
       "char": "能量",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "enrsy": {
       "lemma": "synergy",
       "chord": "enrsy",
       "char": "协同作用",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "eimnors": {
       "lemma": "ergonomics",
       "chord": "eimnors",
       "char": "人体工程学",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "anor": {
       "lemma": "organ",
       "chord": "anor",
       "char": "器官",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "aeinor": {
       "lemma": "organize",
       "chord": "aeinor",
       "char": "组织",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "2not": {
       "lemma": "onto",
       "chord": "2not",
       "char": "到……上",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "1enost": {
       "lemma": "onset",
       "chord": "1enost",
       "char": "开始",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "adnorw": {
       "lemma": "onward",
       "chord": "adnorw",
       "char": "向前",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "hst": {
       "lemma": "thus",
       "chord": "hst",
       "char": "因此",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "adhnost": {
       "lemma": "thousand",
       "chord": "adhnost",
       "char": "一千",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "eorw": {
       "lemma": "reword",
       "chord": "eorw",
       "char": "改写",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "abeimv": {
       "lemma": "verbatim",
       "chord": "abeimv",
       "char": "逐字地",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "beopr": {
       "lemma": "proverb",
       "chord": "beopr",
       "char": "谚语",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "ailnsy": {
       "lemma": "analysis",
       "chord": "ailnsy",
       "char": "分析",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "aelny": {
       "lemma": "analyze",
       "chord": "aelny",
       "char": "分析",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "verb"
     },
     "alnsty": {
       "lemma": "analyst",
       "chord": "alnsty",
       "char": "分析师",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "acilnty": {
       "lemma": "analytical",
       "chord": "acilnty",
       "char": "分析的",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "adjective"
     },
     "ailprsy": {
       "lemma": "paralysis",
       "chord": "ailprsy",
       "char": "瘫痪",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "aclsty": {
       "lemma": "catalyst",
       "chord": "aclsty",
       "char": "催化剂",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "elty": {
       "lemma": "electrolyte",
       "chord": "elty",
       "char": "电解质",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "noun"
     },
     "aehnp": {
       "lemma": "happen",
@@ -7325,7 +7614,8 @@
           "word": "happens",
           "char": "发生"
         }
-      }
+      },
+      "pos": "verb"
     },
     "eit": {
       "lemma": "trigger",
@@ -7352,7 +7642,8 @@
           "word": "triggers",
           "char": "触发"
         }
-      }
+      },
+      "pos": "verb"
     },
     "benru": {
       "lemma": "number",
@@ -7373,7 +7664,8 @@
           "word": "number's",
           "char": "数字（所有格）"
         }
-      }
+      },
+      "pos": "noun"
     },
     "est": {
       "lemma": "test",
@@ -7400,7 +7692,8 @@
           "word": "tests",
           "char": "测试"
         }
-      }
+      },
+      "pos": "verb"
     },
     "acr": {
       "lemma": "create",
@@ -7427,7 +7720,8 @@
           "word": "creates",
           "char": "创建（第三人称单数）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "copy": {
       "lemma": "copy",
@@ -7454,7 +7748,8 @@
           "word": "copies",
           "char": "复制（第三人称单数）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "eimt": {
       "lemma": "time",
@@ -7511,21 +7806,24 @@
           "char": "加班"
         }
       },
-      "char": "时"
+      "char": "时",
+      "pos": "noun"
     },
     "fo": {
       "lemma": "for",
       "chord": "fo",
       "char": "给",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "1fo": {
       "lemma": "of",
       "chord": "1fo",
       "char": "的",
       "note": "Standalone vocabulary entry.",
-      "derivatives": {}
+      "derivatives": {},
+      "pos": "function"
     },
     "cinost": {
       "lemma": "constitute",
@@ -7600,7 +7898,8 @@
           "word": "constituted",
           "char": "构成（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "dlpv": {
       "lemma": "develop",
@@ -7643,7 +7942,8 @@
           "word": "developed",
           "char": "发展（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "ciln": {
       "lemma": "include",
@@ -7677,7 +7977,8 @@
           "word": "included",
           "char": "包括（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "know": {
       "lemma": "know",
@@ -7720,7 +8021,8 @@
           "word": "known",
           "char": "知道（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "lpsu": {
       "lemma": "supply",
@@ -7763,7 +8065,8 @@
           "word": "supplied",
           "char": "供应（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "esu": {
       "lemma": "use",
@@ -7814,7 +8117,8 @@
           "word": "used",
           "char": "使用（过去分词）"
         }
-      }
+      },
+      "pos": "verb"
     },
     "agl": {
       "lemma": "global",
@@ -7832,7 +8136,8 @@
           "char": "全球地"
         }
       },
-      "inflections": {}
+      "inflections": {},
+      "pos": "adjective"
     }
   },
   "flat_chords": {

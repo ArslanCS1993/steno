@@ -945,6 +945,10 @@
                 // Whether the current stroke began at a word boundary (empty box,
                 // after a space, or after a finished chord). Chords only expand then.
                 this.strokeAtWordBoundary = true;
+                // Letters left in the box by a FAILED chord attempt ({ el, len }).
+                // They are throwaway: pressing Space deletes them so a botched
+                // chord never becomes a word, and never reaches the unmapped list.
+                this.pendingJunk = null;
 
                 // Stats
                 this.score = 0;
@@ -1139,6 +1143,7 @@
                     `;
                 }
                 this.scheduleFit();
+                this.pendingJunk = null;
                 this.currentStrokeChars = [];
                 this.lastMorphemeAttachment = null;
                 this.keyPressOrder = [];
@@ -1301,6 +1306,58 @@
                 if (prev.classList.contains('chord-item')) return true;
                 if (prev.classList.contains('basis-full')) return true;
                 if (prev.classList.contains('typed-span')) return /\s$/.test(prev.textContent);
+                return true;
+            }
+
+            /** Is the recorded junk still the last thing in the box? */
+            junkIsTrailing() {
+                const j = this.pendingJunk;
+                if (!j || !j.el || !j.el.isConnected) return false;
+                const editor = document.getElementById('sandbox-editor');
+                if (!editor) return false;
+                const caret = document.getElementById('editor-caret');
+                const last = caret ? caret.previousElementSibling : editor.lastElementChild;
+                return last === j.el;
+            }
+
+            /**
+             * Remember that the stroke we just handled produced nothing, so its
+             * letters are a throwaway chord attempt rather than real typing.
+             *
+             * Only recorded when the stroke began at a word boundary (a deliberate
+             * chord attempt) or when it continues an existing junk run. A multi-key
+             * overlap in the middle of a hand-typed word is left as ordinary text,
+             * so fast typing can never be deleted by this.
+             */
+            noteStrokeJunk(strokeCount, atBoundary) {
+                if (!strokeCount || strokeCount < 2) return;
+                const continues = this.junkIsTrailing();
+                if (!atBoundary && !continues) return;
+                const editor = document.getElementById('sandbox-editor');
+                if (!editor) return;
+                const caret = document.getElementById('editor-caret');
+                const el = caret ? caret.previousElementSibling : editor.lastElementChild;
+                if (!el || !el.classList.contains('typed-span')) return;
+                if (el.textContent.length < strokeCount) return;
+                if (this.pendingJunk && this.pendingJunk.el === el) this.pendingJunk.len += strokeCount;
+                else this.pendingJunk = { el, len: strokeCount };
+            }
+
+            /**
+             * Delete the letters left behind by failed chord attempts.
+             * Returns true if anything was removed.
+             */
+            discardPendingJunk() {
+                const j = this.pendingJunk;
+                this.pendingJunk = null;
+                if (!j || !j.el || !j.el.isConnected) return false;
+                const text = j.el.textContent;
+                if (text.length < j.len) return false;
+                const kept = text.slice(0, text.length - j.len);
+                if (kept.length === 0) j.el.remove();
+                else j.el.textContent = kept;
+                this.updateCaret();
+                this.scheduleFit();
                 return true;
             }
 
@@ -1790,6 +1847,9 @@
                 // Hide placeholder
                 const ph = document.getElementById('editor-placeholder');
                 if (ph) ph.classList.add('hidden');
+
+                // A real word landed, so nothing before it is throwaway any more.
+                this.pendingJunk = null;
 
                 const vis = WORD_VISUALS[matchedWord.toLowerCase()] || { emoji: "✨", bg: "#6366f1", label: matchedWord.toUpperCase() };
                 let el = document.createElement('span');
@@ -2585,7 +2645,14 @@
                         e.preventDefault();
 
                         if (this.mode === 'sandbox') {
-                            this.typeCharacter(' ');
+                            // A Space first wipes the junk left by failed chord
+                            // attempts, so a botched chord is never kept as a word.
+                            const hadJunk = this.discardPendingJunk();
+                            const box = document.getElementById('sandbox-editor');
+                            const hasContent = box && box.querySelector('.chord-item, .typed-span');
+                            // Do not leave a stray leading space if clearing the junk
+                            // emptied the box.
+                            if (hasContent || !hadJunk) this.typeCharacter(' ');
                         }
 
                         this.activeGrammarWord = null;
@@ -2725,6 +2792,9 @@
                 // Rule: Never treat a single letter (without digits) as a chord.
                 // Prevents normal typing from accidentally expanding chords or triggering morphemes!
                 if (combo.length === 1 && !/\d/.test(combo)) {
+                    // Ordinary single-key typing: whatever came before is real text
+                    // now, so stop treating the last stroke as throwaway junk.
+                    this.pendingJunk = null;
                     return;
                 }
 
@@ -2734,6 +2804,7 @@
                 // text. A stroke started mid-word is left exactly as typed, so the
                 // way to start a chord is to press Space first (or finish the word).
                 if (this.mode === 'sandbox' && combo.length > 1 && this.strokeAtWordBoundary === false) {
+                    this.noteStrokeJunk(strokeCount, false);
                     const guardToast = document.getElementById('sandbox-toast');
                     if (guardToast) {
                         guardToast.innerText = `⌨️ Kept your typing "${keyOrder.join('')}" — press Space before chording so a chord can't replace your word.`;
@@ -2914,6 +2985,10 @@
                     } else {
                         // SMART REGULAR TYPING: No chord matched.
                         // Characters were ALREADY displayed in real time on keydown!
+                        // If this was a deliberate attempt at a chord (started at a
+                        // word boundary), the letters are throwaway: mark them so a
+                        // Space clears them instead of leaving junk in the box.
+                        this.noteStrokeJunk(strokeCount, this.strokeAtWordBoundary !== false);
                         if (keyOrder && keyOrder.length > 0) {
                             if (toast) {
                                 toast.innerText = `⌨️ Typed: "${keyOrder.join('')}"`;

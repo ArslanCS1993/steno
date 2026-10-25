@@ -2,7 +2,7 @@
 
 **The rule that prevents `whened` / `whening`:** a word may only carry the
 inflection slots its **part of speech** actually has. `when` is a conjunction /
-adverb of time — it has *no* inflection slots, so nothing should ever produce
+adverb of time — it has *no* inflection slots, so nothing may ever produce
 `whened`, `whening` or `whens`.
 
 ## Two kinds of derived form — do not mix them
@@ -18,7 +18,7 @@ exactly how `whened` got in.
 
 ## Inflection slots per part of speech
 
-Taken from the labels already present in `data.json`.
+Taken from the labels already used in `data.json`.
 
 | POS | Slot 1 | Slot 2 | Slot 3 | Slot 4 |
 |---|---|---|---|---|
@@ -26,13 +26,11 @@ Taken from the labels already present in `data.json`.
 | **noun** | Plural `-s` | Possessive `'s` | Plural Possessive `s'` | — |
 | **adjective** | Comparative `-er` | Superlative `-est` | Adverb `-ly` | — |
 | **pronoun** | Objective Case | Possessive Case | Reflexive Case | Possessive Pronoun |
-| **adverb / conjunction / preposition / determiner / numeral / interjection** | — none — | | | |
+| **function · bound · chinese · junk** | — none — | | | |
 
-Irregular verbs (`be`, `have`, `do`, `can`, `shall`, `will`, `go`) keep their
-own labels: `be` → am / are / is / was / were / been / being, `can` → could.
-These are legitimate exceptions, not errors.
-
-Contractions (`can't`, `won't`) are their own single-slot case.
+Irregular verbs (`be`, `have`, `do`, `can`, `shall`, `will`, `go`) keep their own
+labels: `be` → am / are / is / was / were / been / being, `can` → could. These
+are legitimate exceptions, not errors. Contractions are a single-slot case.
 
 ## Rules
 
@@ -40,52 +38,68 @@ Contractions (`can't`, `won't`) are their own single-slot case.
    includes every function word (`when`, `where`, `why`, `if`, `and`, `not`).
    Having no slots is the *correct* state for them, not a gap to fill.
 2. **Never generate a form mechanically.** If a root has no slot for a tap, the
-   tap must do nothing (the tutor already behaves this way:
-   `tryApplyGrammarModifier` returns false when `entry.inflections[num]` is
-   missing).
+   tap must do nothing (`tryApplyGrammarModifier` already returns false when
+   `entry.inflections[num]` is missing).
 3. **A verb must be a real verb.** `not`, `when`, `every`, `now` are not verbs:
-   they may not take `-ed` / `-ing`. If `noted` is wanted, it belongs to the
-   root `note`.
+   they may not take `-ed` / `-ing`. If `noted` is wanted, it belongs to `note`.
 4. **Spelling is part of the data.** A misspelled form (`hiting`, `requirment`,
    `shoud`, `etimologically`) is a bug in the same class as a wrong chord.
 5. **A root lemma should be a base form** — not itself an inflected form
    (`wholed`, `enumerated`, `intended`, `created`, `copying` are not lemmas).
-6. **No self-referential derivatives**: `pulse → pulse`, `should → should`.
+6. **A derivative's morpheme is the affix**, not a copy of the word
+   (`come → become` should carry morpheme `be-`, not `become`).
 
-## Current state (measured, before any cleanup)
+## Current state — enforced
 
-| Detected POS | roots |
+Every one of the 319 roots now carries a `pos`, and `validate.js` checks it.
+
+| pos | roots | may inflect? |
+|---|---|---|
+| noun | 93 | yes |
+| verb | 84 | yes |
+| function | 56 | **never** |
+| adjective | 29 | yes |
+| bound | 20 | **never** — Latin/Greek roots used only to build families (`cise` → concise, precise, decision) |
+| junk | 18 | **never** — broken lemmas awaiting a decision |
+| pronoun | 15 | yes |
+| chinese | 4 | **never** |
+
+### What `validate.js` now enforces
+
+**Blocking** — a write is refused:
+
+- every root has a `pos`, and it is a known one;
+- `inflections` may only use the labels allowed for that `pos`; a `function`
+  word carrying an inflection fails;
+- **invented inflection** — a `function` / `bound` / `chinese` / `junk` root with
+  a derivative whose morpheme is a verb suffix (`-ed`, `-ing`, `-d`, `-es`,
+  `-en`) fails. *This is the `whened` rule.* `-s`, `-er`, `-est`, `-ly` stay
+  warnings, because they also build real words (`to → towards`, `up → upper`).
+
+**Warnings** — reported, non-blocking backlog:
+
+| Class | Count |
 |---|---|
-| verb | 42 |
-| noun | 23 |
-| pronoun | 8 |
-| adjective | 2 |
-| **no inflections at all (POS undecided)** | **243** |
+| unlabelled derivative morpheme (label repeats the word: `come → become` should be `be-`) | 102 |
+| inflection stored as a derivative (`forward → forwarded [-ed]`) | 57 |
+| root lemma is itself an inflected form (`wholed`, `intended`) | 14 |
+| roots flagged `junk` | 18 |
 
-Only 76 of 319 roots declare a POS. So the model above is not yet *enforceable*:
-there is nothing to check a new form against for 243 roots.
+### Removed
 
-### Violations found
+`when → whened` and `not → noted` — both were function words carrying an
+invented `-ed`. `noted` already exists correctly under the root `note`, as a
+derivative and as its Past Tense slot.
 
-| Class | Count | Genuine junk | Legitimate (false positives) |
-|---|---|---|---|
-| A. `-ed`/`-ing`/`-s` derivative on a root with no inflections | 32 | `when → whened`, `not → noted`, `hit → hiting` | `depend → depended`, `clear → cleared`, `box → boxing` (these really are verbs) |
-| B. root lemma is itself an inflected form | 14 | `wholed`, `enumerated`, `intended`, `created`, `copying`, `aded` | `reading`, `meaning`, `working`, `following`, `something` (real nouns) |
-| C. derivative morpheme equals the whole word (unlabelled) | 102 | `pulse → pulse`, `should → should`, `should → shoud`, `quire → requirment`, `etym → etimologically` | most are real compounds missing an affine label (`go → ongoing`, `get → forget`) |
-| D. suspicious affix spelling | 5 | `hit → hitting [-ting]`, `not → notice [-ice]` | `now → right now [right-]` |
+### Outstanding, awaiting a decision (nothing deleted without one)
 
-Note class A is mostly *false positives*: "root has no inflections" does not
-mean "not a verb". `depend → depended` is correct. The real fix is to record the
-POS (so `depend` is marked verb) rather than to delete the form.
+18 lemmas are flagged `pos: "junk"`; they are not words:
 
-## What is needed to enforce this
+```
+andlook  middles  strucuture  dirrect  doesn  t  pannel  wholed  copying
+created  aded  enumerated  intended  given
+have right   it was   we have   artificial intelligence
+```
 
-1. Add a `pos` field to every root (`verb`, `noun`, `adjective`, `pronoun`, or
-   `function` for the never-inflecting class).
-2. Extend `validate.js` with checks:
-   - every root has a `pos`;
-   - `inflections` only use the slots allowed for that `pos`;
-   - no derivative morpheme is a bare inflection suffix (`-ed`, `-ing`, `-s`);
-   - no self-referential derivative; no inflected-form lemma.
-3. Fix the confirmed junk (`whened`, `hiting`, `wholed`, `…`) — not the 243
-   function words, which are correct as they are.
+Misspellings still in the data: `hiting` (hit), `shoud` (shall), `requirment`
+(quire), `etimologically` (etym), `dirrect`, `pannel`, `strucuture`.

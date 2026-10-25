@@ -119,6 +119,70 @@ function validate(d) {
   info.chineseImpossible = impossibleZh;
   info.rootsMissingFromChordMap = rootsMissing;
 
+  // 6. GRAMMAR: a root's part of speech decides which inflections it may carry.
+  //
+  // This is the rule that keeps mechanically invented forms such as
+  // whened / whening / whying out of the dictionary. `function` words (when,
+  // where, not, if) have NO slots at all, so nothing may ever inflect them.
+  //
+  // Illegal inflections BLOCK a write. The older backlog - a bare inflection
+  // suffix smuggled into `derivatives` instead of `inflections` - is reported
+  // as a warning so the generators keep working while it is cleaned up.
+  const ALLOWED = {
+    verb: new Set(['Past Tense (-ed)', 'Continuous (-ing)', '3rd Person (-s)', 'Past Participle (-en)',
+      'Past Participle', 'Present Participle (-ing)', '1st Person Singular Present',
+      '2nd Person or Plural Present', '3rd Person Singular Present', 'Past Tense (Singular)',
+      'Past Tense (Plural/Subjunctive)', 'Contraction']),
+    noun: new Set(['Plural (-s)', 'Plural', "Possessive ('s)", "Plural Possessive (s')"]),
+    adjective: new Set(['Comparative (-er)', 'Superlative (-est)', 'Adverb (-ly)']),
+    pronoun: new Set(['Objective Case', 'Possessive Case', 'Reflexive Case', 'Possessive Pronoun']),
+    function: new Set(), bound: new Set(), chinese: new Set(), junk: new Set(),
+  };
+  const BARE_INFLECTION = /^-(e?d|ing|s|en|er|est|ly)$/;
+  const byPos = {};
+  const grammar = { missingPos: 0, badPos: 0, illegalInflection: 0, inventedInflection: 0, bareInflectionDerivative: 0, unlabelledDerivative: 0, inflectedLemma: 0, junkRoots: 0 };
+  for (const [rc, R] of Object.entries(d.roots || {})) {
+    const pos = R.pos;
+    byPos[pos || '(none)'] = (byPos[pos || '(none)'] || 0) + 1;
+    if (!pos) { grammar.missingPos++; problems.push("root '" + rc + "' (" + R.lemma + ") has no pos"); continue; }
+    if (!Object.prototype.hasOwnProperty.call(ALLOWED, pos)) { grammar.badPos++; problems.push("root '" + rc + "' has unknown pos '" + pos + "'"); continue; }
+    if (pos === 'junk') grammar.junkRoots++;
+    for (const [slot, inf] of Object.entries(R.inflections || {})) {
+      const label = (inf && inf.morpheme) || '';
+      if (!ALLOWED[pos].has(label)) {
+        grammar.illegalInflection++;
+        problems.push("ILLEGAL INFLECTION: " + pos + " '" + R.lemma + "' slot " + slot + " -> '" + label + "'" +
+          (ALLOWED[pos].size === 0 ? "  (pos '" + pos + "' never inflects)" : ""));
+      }
+    }
+    for (const der of Object.values(R.derivatives || {})) {
+      const m = (der && der.morpheme) || '';
+      if (BARE_INFLECTION.test(m)) {
+        // THE `whened` RULE. If the pos can never inflect (function/bound/
+        // chinese/junk) then a verb suffix is not a derivational morpheme at
+        // all - it is an invented inflection, and it BLOCKS a write.
+        // Only the verb suffixes: -er/-est also build real words from
+        // prepositions (up -> upper), and -s builds adverbs (to -> towards),
+        // so those stay warnings rather than hard errors.
+        if (ALLOWED[pos].size === 0 && /^-(ed|ing|d|es|en)$/.test(m)) {
+          grammar.inventedInflection++;
+          problems.push("INVENTED INFLECTION: '" + R.lemma + "' (" + pos + ", never inflects) -> '" + der.word + "' [" + m + "]");
+        } else {
+          grammar.bareInflectionDerivative++;
+          if (grammar.bareInflectionDerivative <= 5) warnings.push("inflection stored as derivative: '" + R.lemma + "' -> '" + der.word + "' [" + m + "] - move it to inflections");
+        }
+      }
+      if (m && m.toLowerCase() === String(der.word).toLowerCase()) {
+        // the morpheme label just repeats the word (be- became 'become')
+        grammar.unlabelledDerivative++;
+        if (grammar.unlabelledDerivative <= 5) warnings.push("unlabelled derivative morpheme: '" + R.lemma + "' -> '" + der.word + "' (the morpheme should be the affix, e.g. 'be-')");
+      }
+    }
+    if (/(ed|ing)$/.test(String(R.lemma))) grammar.inflectedLemma++;
+  }
+  info.grammar = grammar;
+  info.posDistribution = byPos;
+
   return { problems, warnings, info };
 }
 
@@ -149,6 +213,17 @@ if (require.main === module) {
 
   console.log("\n[5] chords colliding with the inflection taps 1-4");
   console.log("  single-key chords: " + info.singleKeyChords);
+
+  const g = info.grammar || {};
+  console.log("\n[6] GRAMMAR - part of speech governs inflection");
+  console.log("  roots by pos: " + Object.entries(info.posDistribution || {}).sort((a, b) => b[1] - a[1]).map(([k, v]) => k + "=" + v).join("  "));
+  console.log("  roots missing a pos:            " + g.missingPos);
+  console.log("  illegal inflections for the pos: " + g.illegalInflection + "   (blocking)");
+  console.log("  invented inflections on a word that never inflects: " + g.inventedInflection + "   (blocking - the 'whened' rule)");
+  console.log("  inflection kept as derivative:   " + g.bareInflectionDerivative + "   (warning)");
+  console.log("  unlabelled derivative morphemes: " + g.unlabelledDerivative);
+  console.log("  root lemmas that are inflected:  " + g.inflectedLemma);
+  console.log("  roots flagged as junk lemmas:    " + g.junkRoots);
 
   console.log("\n[info, non-blocking] roots-tree roots missing from chord_map: " + info.rootsMissingFromChordMap);
 
