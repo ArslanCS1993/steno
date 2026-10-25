@@ -942,6 +942,9 @@
                 this.chordHistory = new Set();
                 this.keyPressOrder = [];
                 this.currentStrokeChars = [];
+                // Whether the current stroke began at a word boundary (empty box,
+                // after a space, or after a finished chord). Chords only expand then.
+                this.strokeAtWordBoundary = true;
 
                 // Stats
                 this.score = 0;
@@ -1281,6 +1284,24 @@
                 result = result.replace(/\s+([,.\!?;:])/g, '$1');
                 result = result.replace(/([,.\!?;:])([a-zA-Z0-9])/g, '$1 $2');
                 return result.trim();
+            }
+
+            /**
+             * Is the caret at a word boundary? True when the box is empty, or the
+             * last thing before the caret is a space, a line break, or a finished
+             * chord. This is what decides whether a multi-key stroke may expand.
+             */
+            editorEndsAtWordBoundary() {
+                const editor = document.getElementById('sandbox-editor');
+                if (!editor) return true;
+                const caret = document.getElementById('editor-caret');
+                const prev = caret ? caret.previousElementSibling : editor.lastElementChild;
+                if (!prev) return true;
+                if (prev.id === 'editor-placeholder') return true;
+                if (prev.classList.contains('chord-item')) return true;
+                if (prev.classList.contains('basis-full')) return true;
+                if (prev.classList.contains('typed-span')) return /\s$/.test(prev.textContent);
+                return true;
             }
 
             updateCaret() {
@@ -2599,6 +2620,12 @@
                         this.keyPressOrder.push(e.key);
 
                         if (this.mode === 'sandbox') {
+                            // Record the boundary BEFORE this key becomes text, so a
+                            // stroke starting mid-word is distinguishable from one
+                            // that starts a new word.
+                            if (this.currentStrokeChars.length === 0) {
+                                this.strokeAtWordBoundary = this.editorEndsAtWordBoundary();
+                            }
                             this.typeCharacter(e.key);
                             this.currentStrokeChars.push(e.key);
                             const toast = document.getElementById('sandbox-toast');
@@ -2698,6 +2725,20 @@
                 // Rule: Never treat a single letter (without digits) as a chord.
                 // Prevents normal typing from accidentally expanding chords or triggering morphemes!
                 if (combo.length === 1 && !/\d/.test(combo)) {
+                    return;
+                }
+
+                // FINGER-TYPING GUARD: a chord only expands at a word boundary.
+                // Typing by hand makes keys overlap, which briefly looks like a
+                // chord; expanding then would wipe out letters the user meant as
+                // text. A stroke started mid-word is left exactly as typed, so the
+                // way to start a chord is to press Space first (or finish the word).
+                if (this.mode === 'sandbox' && combo.length > 1 && this.strokeAtWordBoundary === false) {
+                    const guardToast = document.getElementById('sandbox-toast');
+                    if (guardToast) {
+                        guardToast.innerText = `⌨️ Kept your typing "${keyOrder.join('')}" — press Space before chording so a chord can't replace your word.`;
+                        guardToast.className = "text-xs md:text-sm font-bold text-sky-300 bg-sky-500/20 border border-sky-500/40 px-6 py-2 rounded-xl text-center shadow";
+                    }
                     return;
                 }
 
