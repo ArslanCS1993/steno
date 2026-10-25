@@ -292,9 +292,47 @@
             padding: 0 !important;
         }
         body.minimal #sandbox-editor {
+            /* Bounded, not growing: the auto-fit solver needs a real box to fill,
+               so the words scale up to occupy it rather than the box stretching
+               to fit the words. */
             min-height: calc(100vh - 6rem);
-            max-height: none !important;
-            font-size: 1.05rem;
+            max-height: calc(100vh - 6rem) !important;
+        }
+
+        /* ======================================================== */
+        /* AUTO-FIT TYPING BOX                                      */
+        /* The words always occupy the whole box: one word is huge,  */
+        /* two split it, N shrink to fit. The box's base font-size   */
+        /* is solved in JS (fitSandboxEditor, binary search because  */
+        /* wrapping makes height non-linear). Every child sizes      */
+        /* itself in em, so the whole line scales as one unit.       */
+        /* ======================================================== */
+        #sandbox-editor {
+            gap: 0.34em;
+            align-content: center;
+            justify-content: center;
+            line-height: 1.15;
+            /* NOTE: the min-h-[220px] / max-h-[360px] classes on this element are
+               decorative - this project ships no Tailwind - so the height bound
+               has to be declared here. Without it the box just grows with the
+               words and there is no box for the text to fill. */
+            min-height: 220px;
+            max-height: 360px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        #sandbox-editor .chord-item,
+        #sandbox-editor .typed-span {
+            font-size: 1em;
+            flex: 0 0 auto;
+        }
+        #sandbox-editor #editor-caret {
+            width: 0.09em;
+            height: 1.25em;
+            margin-left: 0.12em;
+        }
+        #sandbox-editor #editor-placeholder {
+            font-size: 0.9em;
         }
 
         /* Exit affordance for minimal mode */
@@ -1083,6 +1121,7 @@
                         if (!word) return;
                         el.innerHTML = this.chordChipHtml(word);
                     });
+                    this.scheduleFit();
                 }
             }
 
@@ -1096,6 +1135,7 @@
                         <span id="editor-caret" class="inline-block w-0.5 h-5 bg-indigo-400 animate-pulse ml-0.5 align-middle rounded pointer-events-none select-none"></span>
                     `;
                 }
+                this.scheduleFit();
                 this.currentStrokeChars = [];
                 this.lastMorphemeAttachment = null;
                 this.keyPressOrder = [];
@@ -1267,6 +1307,76 @@
                 }
             }
 
+            /**
+             * Solve the largest base font-size at which the editor's content still
+             * fits its box, so the words always occupy the whole box: one word is
+             * huge, two split it in half, N shrink until everything fits.
+             * Binary search, because wrapping makes content height a non-linear
+             * function of font-size (a word jumping to the next line is a step).
+             */
+            fitSandboxEditor() {
+                const editor = document.getElementById('sandbox-editor');
+                if (!editor) return;
+
+                // Hidden view (e.g. Training mode) has no layout box to measure -
+                // leave the size alone rather than collapsing everything to MIN.
+                if (!editor.clientHeight || !editor.clientWidth) return;
+
+                // Nothing chording-typed yet: keep the placeholder readable.
+                if (!editor.querySelector('.chord-item, .typed-span')) {
+                    editor.style.fontSize = '16px';
+                    return;
+                }
+
+                const MIN = 7, MAX = 900;
+                let lo = MIN, hi = MAX, best = MIN;
+                for (let i = 0; i < 12; i++) {
+                    const mid = (lo + hi) / 2;
+                    editor.style.fontSize = `${mid}px`;
+                    const fits = editor.scrollHeight <= editor.clientHeight + 1 &&
+                                 editor.scrollWidth <= editor.clientWidth + 1;
+                    if (fits) { best = mid; lo = mid; } else { hi = mid; }
+                }
+
+                // The search can settle a hair above the boundary, because content
+                // height is a step function - a word dropping to the next line jumps
+                // it. Walk down in small steps until it genuinely fits.
+                let guard = 0;
+                while (guard++ < 80) {
+                    editor.style.fontSize = `${best}px`;
+                    const fits = editor.scrollHeight <= editor.clientHeight + 1 &&
+                                 editor.scrollWidth <= editor.clientWidth + 1;
+                    if (fits || best <= MIN) break;
+                    best = Math.max(MIN, best * 0.97);
+                }
+
+                editor.style.fontSize = `${best.toFixed(2)}px`;
+            }
+
+            /**
+             * Coalesce fit passes to one per frame: a single chord can touch the
+             * box more than once (remove a chip, insert two more), and every fit
+             * pass forces a layout.
+             */
+            scheduleFit() {
+                if (this._fitPending) return;
+                this._fitPending = true;
+
+                let done = false;
+                const run = () => {
+                    if (done) return;
+                    done = true;
+                    this._fitPending = false;
+                    this.fitSandboxEditor();
+                };
+
+                // Preferred: before the next paint (no visible flash).
+                if (typeof requestAnimationFrame === 'function') requestAnimationFrame(run);
+                // Safety net: the frame clock does not run in a hidden tab (and in
+                // some headless modes rAF never fires at all), so guarantee a solve.
+                setTimeout(run, 32);
+            }
+
             eraseStrokeChars(count) {
                 if (!count || count <= 0) return;
                 const editor = document.getElementById('sandbox-editor');
@@ -1293,6 +1403,7 @@
                     }
                 }
                 this.updateCaret();
+                this.scheduleFit();
             }
 
             // ==========================================
@@ -1627,6 +1738,7 @@
                     }
                     this.updateCaret();
                     editor.scrollTop = editor.scrollHeight;
+                    this.scheduleFit();
                     return;
                 }
 
@@ -1636,7 +1748,8 @@
                     prevEl.textContent += char;
                 } else {
                     const span = document.createElement('span');
-                    span.className = "typed-span font-mono font-bold text-sm md:text-base text-slate-100 whitespace-pre tracking-wide transition-all inline-block min-w-[0.55em]";
+                    span.className = "typed-span";
+                    span.style.cssText = "font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:700;font-size:1em;color:#f1f5f9;white-space:pre;letter-spacing:.03em;display:inline-block;min-width:.55em;";
                     span.textContent = char;
                     if (caret && caret.parentNode === editor) {
                         editor.insertBefore(span, caret);
@@ -1646,6 +1759,7 @@
                 }
                 this.updateCaret();
                 editor.scrollTop = editor.scrollHeight;
+                this.scheduleFit();
             }
 
             insertChordOutput(matchedWord) {
@@ -1678,6 +1792,7 @@
                 }
                 this.updateCaret();
                 editor.scrollTop = editor.scrollHeight;
+                this.scheduleFit();
             }
 
             init() {
@@ -1691,6 +1806,9 @@
                 this.updateCaret();
                 // Enter minimal mode (writing box only) by default
                 this.toggleMinimalUI(true);
+                // Re-solve the fit whenever the box takes on a new size
+                window.addEventListener('resize', () => this.scheduleFit());
+                this.scheduleFit();
             }
 
             setMode(newMode) {
@@ -1714,7 +1832,11 @@
                 });
 
                 if (newMode === 'training') this.loadCurrentWord();
-                if (newMode === 'sandbox') this.loadSandboxWord();
+                if (newMode === 'sandbox') {
+                    this.loadSandboxWord();
+                    // The box only has a measurable layout now that it is visible
+                    this.scheduleFit();
+                }
             }
 
             /**
@@ -1739,6 +1861,7 @@
                         ? '⛶ Minimal mode — press Alt+Z to show the full interface'
                         : '🖥️ Full interface — press Alt+Z to hide it again';
                 }
+                this.scheduleFit();
                 return on;
             }
 
@@ -1810,57 +1933,27 @@
                 if (mode === 'bilingual') return this.bilingualChipHtml(word);
 
                 if (mode === 'words') {
-                    return `
-                        <span class="px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-700/80 font-mono font-bold text-sm md:text-base text-emerald-400 shadow mr-1.5 hover:border-emerald-500">
-                            ${word}
-                        </span>
-                    `;
+                    return `<span style="display:inline-block;padding:.3em .7em;border-radius:.6em;background:#0f172a;border:1px solid rgba(71,85,105,.85);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:700;font-size:1em;line-height:1.2;color:#34d399;box-shadow:0 1px 4px rgba(0,0,0,.45);">${word}</span>`;
                 }
                 if (mode === 'chinese') {
-                    return `
-                        <span class="px-3 py-1 rounded-xl bg-slate-900 border border-amber-500/50 font-sans font-black text-lg md:text-xl text-amber-300 shadow mr-1.5 hover:border-amber-400 select-none cursor-default" title="${word.toUpperCase()}">
-                            ${chinese || word}
-                        </span>
-                    `;
+                    return `<span style="display:inline-block;padding:.1em .45em;border-radius:.35em;background:#0f172a;border:1px solid rgba(245,158,11,.5);font-weight:900;font-size:1.4em;line-height:1.15;color:#fcd34d;box-shadow:0 1px 4px rgba(0,0,0,.45);" title="${word.toUpperCase()}">${chinese || word}</span>`;
                 }
                 if (mode === 'svg') {
-                    return `
-                        <span class="w-11 h-11 md:w-12 md:h-12 bg-slate-900 border-2 rounded-2xl p-1 mr-1.5 shadow-lg hover:scale-110 transition-transform cursor-pointer flex items-center justify-center text-2xl select-none" style="border-color: ${vis.bg}; box-shadow: 0 4px 14px ${vis.glow || 'rgba(99,102,241,0.2)'};" title="${word.toUpperCase()}">
-                            ${this.getWordDisplayHtml(word, 'text-2xl')}
-                        </span>
-                    `;
+                    return `<span style="width:2.7em;height:2.7em;box-sizing:border-box;padding:.3em;border-radius:.7em;background:#0f172a;border:2px solid ${vis.bg};box-shadow:0 4px 14px ${vis.glow || 'rgba(99,102,241,0.2)'};display:inline-flex;align-items:center;justify-content:center;" title="${word.toUpperCase()}">${this.chipIconHtml(word, 1.9)}</span>`;
                 }
                 // Graphic + Chinese character, side by side
                 if (mode === 'svgzh') {
-                    return `
-                        <span class="flex items-center gap-2 bg-slate-900 border rounded-2xl px-2.5 py-1 mr-1.5 shadow hover:scale-105 transition-transform" style="border-color: ${vis.bg}">
-                            <span class="w-7 h-7 rounded-lg flex items-center justify-center text-lg select-none" style="background: ${vis.bg}22">
-                                ${this.getWordDisplayHtml(word, 'text-lg')}
-                            </span>
-                            <span class="font-sans font-black text-base md:text-lg text-amber-300 leading-none select-none">${chinese || '--'}</span>
-                        </span>
-                    `;
+                    return `<span style="display:inline-flex;align-items:center;gap:.45em;padding:.2em .6em .2em .3em;border-radius:.65em;background:#0f172a;border:1px solid ${vis.bg};box-shadow:0 2px 8px rgba(0,0,0,.4);">${this.chipIconHtml(word, 1.5, '2.1em')}<span style="font-weight:900;font-size:1.3em;line-height:1;color:#fcd34d;">${chinese || '--'}</span></span>`;
                 }
                 if (mode === 'combo') {
-                    return `
-                        <span class="flex items-center gap-2 bg-slate-900 border rounded-2xl px-2.5 py-1 mr-1.5 shadow hover:scale-105 transition-transform" style="border-color: ${vis.bg}">
-                            <span class="w-7 h-7 rounded-lg flex items-center justify-center text-lg select-none" style="background: ${vis.bg}22">
-                                ${this.getWordDisplayHtml(word, 'text-lg')}
-                            </span>
-                            <span class="font-mono font-extrabold text-xs md:text-sm text-slate-100 uppercase tracking-wide">${word}</span>
-                        </span>
-                    `;
+                    return `<span style="display:inline-flex;align-items:center;gap:.45em;padding:.2em .6em .2em .3em;border-radius:.65em;background:#0f172a;border:1px solid ${vis.bg};box-shadow:0 2px 8px rgba(0,0,0,.4);">${this.chipIconHtml(word, 1.5, '2.1em')}<span style="font-family:ui-monospace,Menlo,monospace;font-weight:800;font-size:.95em;letter-spacing:.02em;color:#e2e8f0;text-transform:uppercase;">${word}</span></span>`;
                 }
                 return this.chordChipHtmlModeWord(word, { vis });
             }
 
             /** Fallback renderer (mode === 'words'), kept separate for clarity. */
             chordChipHtmlModeWord(word) {
-                return `
-                    <span class="px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-700/80 font-mono font-bold text-sm md:text-base text-emerald-400 shadow mr-1.5 hover:border-emerald-500">
-                        ${word}
-                    </span>
-                `;
+                return `<span style="display:inline-block;padding:.3em .7em;border-radius:.6em;background:#0f172a;border:1px solid rgba(71,85,105,.85);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:700;font-size:1em;line-height:1.2;color:#34d399;box-shadow:0 1px 4px rgba(0,0,0,.45);">${word}</span>`;
             }
 
             bilingualChipHtml(word) {
@@ -1872,10 +1965,10 @@
                 const chinese = isZh ? word : (ENGLISH_TO_CHINESE[lower] || "");
 
                 const zhSpan = chinese
-                    ? `<span class="font-sans font-black text-base md:text-lg text-amber-300 leading-none select-none">${chinese}</span>`
-                    : `<span class="font-sans font-bold text-sm text-slate-600 leading-none select-none" title="No Chinese translation on record">--</span>`;
+                    ? `<span style="font-weight:900;font-size:1.25em;line-height:1;color:#fcd34d;">${chinese}</span>`
+                    : `<span style="font-weight:700;font-size:.85em;line-height:1;color:#64748b;" title="No Chinese translation on record">--</span>`;
 
-                return `<span class="inline-flex items-center gap-2 bg-slate-900 border border-slate-700/80 rounded-xl px-2.5 py-1 mr-1.5 shadow hover:border-amber-400/70 transition-colors" title="${String(english).toUpperCase()}${chinese ? " \u00b7 " + chinese : ""}"><span class="font-mono font-bold text-sm md:text-base text-emerald-400">${english}</span>${zhSpan}</span>`;
+                return `<span style="display:inline-flex;align-items:center;gap:.5em;padding:.2em .65em;border-radius:.65em;background:#0f172a;border:1px solid rgba(71,85,105,.85);box-shadow:0 2px 8px rgba(0,0,0,.4);" title="${String(english).toUpperCase()}${chinese ? " \u00b7 " + chinese : ""}"><span style="font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:1em;color:#34d399;">${english}</span>${zhSpan}</span>`;
             }
 
             getWordVisual(word) {
@@ -1897,6 +1990,20 @@
                 const lemma = INFLECTION_TO_LEMMA[lower];
                 if (lemma && WORD_VISUALS[lemma]) return WORD_VISUALS[lemma];
                 return { emoji: "✨", bg: "#6366f1", glow: "rgba(99,102,241,0.4)", label: word.toUpperCase() };
+            }
+
+            /**
+             * Emoji / SVG icon that scales with the auto-fit box. `emojiEm` is the
+             * glyph size and `boxEm` the square box size, both in em of the box's
+             * base font-size, so icons shrink alongside their word.
+             */
+            chipIconHtml(word, emojiEm, boxEm) {
+                const vis = this.getWordVisual(word);
+                const inner = vis.svg
+                    ? `<svg viewBox="0 0 48 48" style="width:100%;height:100%">${vis.svg}</svg>`
+                    : `<span style="font-size:${emojiEm}em;line-height:1;">${vis.emoji}</span>`;
+                if (!boxEm) return inner;
+                return `<span style="width:${boxEm};height:${boxEm};box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;border-radius:.45em;background:${vis.bg}22;">${inner}</span>`;
             }
 
             getWordDisplayHtml(word, sizeClass = "text-5xl") {
@@ -2435,6 +2542,7 @@
                                 }
                             }
                             this.updateCaret();
+                            this.scheduleFit();
 
                         }
                         return;
